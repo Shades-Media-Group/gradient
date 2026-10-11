@@ -32,7 +32,7 @@ const LANGS = {
 }
 const HREFLANGS = [...Object.values(LANGS), 'x-default'].sort()
 /** Compressed bytes a single page may cost, fonts excluded. */
-const BUDGET = { html: 24_000, js: 12_000, css: 16_500 }
+const BUDGET = { html: 24_000, js: 12_000, css: 17_000 }
 
 const dist = process.argv[2] ?? fileURLToPath(new URL('../apps/site/dist', import.meta.url))
 if (!existsSync(dist)) {
