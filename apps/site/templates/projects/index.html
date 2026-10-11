@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="{{@lang}}">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    {{@head}}
+    <script type="module" src="/src/main.ts"></script>
+  </head>
+  <body>
+    {{@nav}}
+
+    <main id="main">
+      <header class="page-head">
+        <h1>{{projects.heading}}</h1>
+        <p class="page-lead">{{projects.lead}}</p>
+        <nav class="page-toc" aria-label="{{nav.onThisPage}}">
+          <a href="#pagerecast">PageRecast</a>
+          <a href="#lessons">{{projects.lessons.title}}</a>
+          <a href="#next">{{projects.next.title}}</a>
+          <a href="#start">{{projects.start.title}}</a>
+        </nav>
+      </header>
+
+      <section class="doc" id="pagerecast">
+        <div class="doc-head">
+          <h2>PageRecast</h2>
+          <p>{{projects.pagerecast.text}}</p>
+          <p class="doc-links">
+            <a class="g-link" data-link="pagerecast">pagerecast.shades.md</a>
+            <a class="g-link" data-link="caseStudy">{{projects.pagerecast.full}}</a>
+          </p>
+        </div>
+        <div class="doc-body">
+          <ol class="timeline">
+            <li><b>{{projects.pagerecast.s1}}</b><p>{{projects.pagerecast.s1Text}}</p></li>
+            <li><b>{{projects.pagerecast.s2}}</b><p>{{projects.pagerecast.s2Text}}</p></li>
+            <li><b>{{projects.pagerecast.s3}}</b><p>{{projects.pagerecast.s3Text}}</p></li>
+            <li><b>{{projects.pagerecast.s4}}</b><p>{{projects.pagerecast.s4Text}}</p></li>
+            <li><b>{{projects.pagerecast.s5}}</b><p>{{projects.pagerecast.s5Text}}</p></li>
+          </ol>
+          <div class="pairs">
+            <div class="pair pair--yes">
+              <h3>{{@icon:check}}{{projects.pagerecast.kept}}</h3>
+              <ul>
+                <li>{{projects.pagerecast.kept1}}</li>
+                <li>{{projects.pagerecast.kept2}}</li>
+                <li>{{projects.pagerecast.kept3}}</li>
+                <li>{{projects.pagerecast.kept4}}</li>
+              </ul>
+            </div>
+            <div class="pair pair--no">
+              <h3>{{@icon:close}}{{projects.pagerecast.cut}}</h3>
+              <ul>
+                <li>{{projects.pagerecast.cut1}}</li>
+                <li>{{projects.pagerecast.cut2}}</li>
+                <li>{{projects.pagerecast.cut3}}</li>
+                <li>{{projects.pagerecast.cut4}}</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="doc doc--ink" data-theme="dark" id="lessons">
+        <div class="doc-head">
+          <h2>{{projects.lessons.title}}</h2>
+          <p>{{projects.lessons.text}}</p>
+          <p class="doc-links"><a class="g-link" data-link="lessons">{{projects.lessons.link}}</a></p>
+        </div>
+        <div class="doc-body">
+          <ol class="lessons">
+            <li><b>{{projects.lessons.l1}}</b><p>{{projects.lessons.l1Text}}</p></li>
+            <li><b>{{projects.lessons.l2}}</b><p>{{projects.lessons.l2Text}}</p></li>
+            <li><b>{{projects.lessons.l3}}</b><p>{{projects.lessons.l3Text}}</p></li>
+            <li><b>{{projects.lessons.l4}}</b><p>{{projects.lessons.l4Text}}</p></li>
+            <li><b>{{projects.lessons.l5}}</b><p>{{projects.lessons.l5Text}}</p></li>
+            <li><b>{{projects.lessons.l6}}</b><p>{{projects.lessons.l6Text}}</p></li>
+            <li><b>{{projects.lessons.l7}}</b><p>{{projects.lessons.l7Text}}</p></li>
+            <li><b>{{projects.lessons.l8}}</b><p>{{projects.lessons.l8Text}}</p></li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="doc" id="next">
+        <div class="doc-head">
+          <h2>{{projects.next.title}}</h2>
+          <p>{{projects.next.text}}</p>
+        </div>
+        <div class="doc-body">
+          <ul class="ledger ledger--plain">
+            <li>
+              <a data-link="imagereframe"><b>ImageReframe</b>{{@icon:arrowOutward}}</a>
+              <p>{{projects.next.imagereframe}}</p>
+              <span class="g-badge g-badge--accent">{{projects.next.planned}}</span>
+            </li>
+            <li>
+              <b>shades.md</b>
+              <p>{{projects.next.shades}}</p>
+              <span class="g-badge g-badge--accent">{{projects.next.planned}}</span>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="doc" id="start">
+        <div class="doc-head">
+          <h2>{{projects.start.title}}</h2>
+          <p>{{projects.start.text}}</p>
+          <p class="doc-links"><a class="g-link" data-link="newProject">{{projects.start.link}}</a></p>
+        </div>
+        <div class="doc-body">
+          <ol class="steps">
+            <li><b>{{projects.start.s1}}</b><p>{{projects.start.s1Text}}</p></li>
+            <li><b>{{projects.start.s2}}</b><p>{{projects.start.s2Text}}</p></li>
+            <li><b>{{projects.start.s3}}</b><p>{{projects.start.s3Text}}</p></li>
+            <li><b>{{projects.start.s4}}</b><p>{{projects.start.s4Text}}</p></li>
+            <li><b>{{projects.start.s5}}</b><p>{{projects.start.s5Text}}</p></li>
+          </ol>
+        </div>
+      </section>
+    </main>
+
+    {{@footer}}
+  </body>
+</html>

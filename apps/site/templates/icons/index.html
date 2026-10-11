@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="{{@lang}}">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    {{@head}}
+    <script type="module" src="/src/main.ts"></script>
+  </head>
+  <body>
+    {{@nav}}
+
+    <main id="main">
+      <header class="page-head">
+        <h1>{{icons.heading}}</h1>
+        <p class="page-lead">{{icons.lead}}</p>
+      </header>
+
+      <section class="doc" id="set">
+        <div class="doc-head">
+          <h2>{{icons.set.title}}</h2>
+          <p>{{icons.set.text}}</p>
+        </div>
+        <div class="doc-body">
+          <div class="icon-tools">
+            <div class="g-field icon-search">
+              <label class="g-visually-hidden" for="icon-search">{{icons.search}}</label>
+              <input class="g-input" id="icon-search" type="search" placeholder="{{icons.search}}" autocomplete="off" data-icon-search />
+            </div>
+            <p class="g-hint" role="status" data-icon-status>{{icons.hint}}</p>
+          </div>
+          {{@iconGrid}}
+          <p class="icon-empty" hidden data-icon-empty>{{icons.empty}}</p>
+        </div>
+      </section>
+
+      <section class="doc" id="rules">
+        <div class="doc-head">
+          <h2>{{icons.rules.title}}</h2>
+          <p>{{icons.rules.text}}</p>
+        </div>
+        <div class="doc-body">
+          <div class="icon-grid-demo" aria-hidden="true">
+            <svg viewBox="0 0 24 24" class="icon-blueprint">
+              <path d="M0 0h24v24H0z" class="bp-frame" />
+              <path d="M2 2h20v20H2z" class="bp-live" />
+              <path d="M4 12h16M14 6l6 6-6 6" class="bp-glyph" />
+            </svg>
+          </div>
+          <ol class="rules">
+            <li>{{icons.rules.rule1}}</li>
+            <li>{{icons.rules.rule2}}</li>
+            <li>{{icons.rules.rule3}}</li>
+            <li>{{icons.rules.rule4}}</li>
+            <li>{{icons.rules.rule5}}</li>
+          </ol>
+          <pre class="g-code"><code>import { renderIcon } from 'shades-gradient'
+el.innerHTML = renderIcon('arrowRight', 20)
+
+&lt;!-- plain HTML, from the sprite --&gt;
+&lt;svg width="24" height="24"&gt;&lt;use href="/icons.svg#g-arrow-right"/&gt;&lt;/svg&gt;</code></pre>
+        </div>
+      </section>
+
+      <section class="doc" id="marks">
+        <div class="doc-head">
+          <h2>{{icons.marks.title}}</h2>
+          <p>{{icons.marks.text}}</p>
+        </div>
+        <div class="doc-body">
+          {{@brandGrid}}
+        </div>
+      </section>
+    </main>
+
+    {{@footer}}
+  </body>
+</html>

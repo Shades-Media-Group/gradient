@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="{{@lang}}">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    {{@head}}
+    <script type="module" src="/src/main.ts"></script>
+  </head>
+  <body>
+    {{@nav}}
+
+    <main id="main">
+      <header class="page-head">
+        <h1>{{brand.heading}}</h1>
+        <p class="page-lead">{{brand.lead}}</p>
+        <nav class="page-toc" aria-label="{{nav.onThisPage}}">
+          <a href="#logo">{{brand.logo.title}}</a>
+          <a href="#family">{{brand.family.title}}</a>
+          <a href="#voice">{{brand.voice.title}}</a>
+        </nav>
+      </header>
+
+      <section class="doc" id="logo">
+        <div class="doc-head">
+          <h2>{{brand.logo.title}}</h2>
+          <p>{{brand.logo.text}}</p>
+        </div>
+        <div class="doc-body">
+          <div class="logo-stage">
+            <div class="logo-plate logo-plate--paper">{{@lockup}}</div>
+            <div class="logo-plate logo-plate--ink"><img src="/brand/shades-lockup-reverse.svg" alt="{{brand.logo.reverseAlt}}" width="284" height="64" /></div>
+            <div class="logo-plate logo-plate--red"><div class="logo-mark-only">{{@mark}}</div></div>
+          </div>
+
+          <div class="anatomy">
+            <figure class="anatomy-figure">
+              <svg viewBox="-14 -14 84 84" role="img" aria-label="{{brand.logo.anatomyAlt}}">
+                <rect x="-10" y="-10" width="76" height="76" class="anatomy-space" />
+                <rect width="56" height="56" fill="#E40523" />
+                <rect x="10" y="13" width="10" height="30" fill="#fff" />
+                <rect x="23" y="13" width="10" height="30" fill="#fff" fill-opacity="0.75" />
+                <rect x="36" y="13" width="10" height="30" fill="#fff" fill-opacity="0.5" />
+                <path d="M10 49h10M23 49h10M36 49h10" class="anatomy-rule" />
+                <path d="M0 -6h10" class="anatomy-rule anatomy-rule--x" />
+              </svg>
+            </figure>
+            <dl class="specs">
+              <div><dt>{{brand.logo.field}}</dt><dd>{{brand.logo.fieldText}}</dd></div>
+              <div><dt>{{brand.logo.bars}}</dt><dd>{{brand.logo.barsText}}</dd></div>
+              <div><dt>{{brand.logo.space}}</dt><dd>{{brand.logo.spaceText}}</dd></div>
+              <div><dt>{{brand.logo.size}}</dt><dd>{{brand.logo.sizeText}}</dd></div>
+            </dl>
+          </div>
+
+          <h3 class="doc-sub">{{brand.logo.misuseTitle}}</h3>
+          <ul class="misuse">
+            <li>
+              <div class="misuse-art misuse-art--round">{{@mark}}</div>
+              <p>{{brand.logo.misuseRound}}</p>
+            </li>
+            <li>
+              <div class="misuse-art misuse-art--tint">{{@mark}}</div>
+              <p>{{brand.logo.misuseTint}}</p>
+            </li>
+            <li>
+              <div class="misuse-art misuse-art--stretch">{{@mark}}</div>
+              <p>{{brand.logo.misuseStretch}}</p>
+            </li>
+            <li>
+              <div class="misuse-art misuse-art--gradient">{{@mark}}</div>
+              <p>{{brand.logo.misuseGradient}}</p>
+            </li>
+          </ul>
+
+          <h3 class="doc-sub">{{brand.logo.downloads}}</h3>
+          <ul class="downloads">
+            <li><a href="/brand/shades-mark.svg" download>{{@icon:download}}<span>{{brand.logo.dlMark}}</span><small>SVG</small></a></li>
+            <li><a href="/brand/shades-lockup.svg" download>{{@icon:download}}<span>{{brand.logo.dlLockup}}</span><small>SVG</small></a></li>
+            <li><a href="/brand/shades-lockup-reverse.svg" download>{{@icon:download}}<span>{{brand.logo.dlReverse}}</span><small>SVG</small></a></li>
+            <li><a href="/brand/shades-mark-mono.svg" download>{{@icon:download}}<span>{{brand.logo.dlMono}}</span><small>SVG</small></a></li>
+            <li><a href="/brand/shades-lockup-mono.svg" download>{{@icon:download}}<span>{{brand.logo.dlLockupMono}}</span><small>SVG</small></a></li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="doc doc--ink" data-theme="dark" id="family">
+        <div class="doc-head">
+          <h2>{{brand.family.title}}</h2>
+          <p>{{brand.family.text}}</p>
+        </div>
+        <div class="doc-body">
+          <ul class="cast">
+            <li>
+              <div class="cast-art g-idle g-idle--spectra">{{@family:spectra}}</div>
+              <div><h3>Spectra</h3><p class="cast-role">{{brand.family.spectra.role}}</p><p>{{brand.family.spectra.text}}</p></div>
+            </li>
+            <li>
+              <div class="cast-art g-idle g-idle--mera">{{@family:mera}}</div>
+              <div><h3>Mera</h3><p class="cast-role">{{brand.family.mera.role}}</p><p>{{brand.family.mera.text}}</p></div>
+            </li>
+            <li>
+              <div class="cast-art g-idle g-idle--sol">{{@family:sol}}</div>
+              <div><h3>Sol</h3><p class="cast-role">{{brand.family.sol.role}}</p><p>{{brand.family.sol.text}}</p></div>
+            </li>
+            <li>
+              <div class="cast-art g-idle g-idle--nova">{{@family:nova}}</div>
+              <div><h3>Nova</h3><p class="cast-role">{{brand.family.nova.role}}</p><p>{{brand.family.nova.text}}</p></div>
+            </li>
+            <li>
+              <div class="cast-art g-idle g-idle--sage">{{@family:sage}}</div>
+              <div><h3>Sage</h3><p class="cast-role">{{brand.family.sage.role}}</p><p>{{brand.family.sage.text}}</p></div>
+            </li>
+            <li>
+              <div class="cast-art g-idle g-idle--vio">{{@family:vio}}</div>
+              <div><h3>Vio</h3><p class="cast-role">{{brand.family.vio.role}}</p><p>{{brand.family.vio.text}}</p></div>
+            </li>
+            <li>
+              <div class="cast-art g-idle g-idle--sunny">{{@family:sunny}}</div>
+              <div><h3>Sunny</h3><p class="cast-role">{{brand.family.sunny.role}}</p><p>{{brand.family.sunny.text}}</p></div>
+            </li>
+          </ul>
+
+          <h3 class="doc-sub">{{brand.family.rulesTitle}}</h3>
+          <ol class="rules">
+            <li>{{brand.family.rule1}}</li>
+            <li>{{brand.family.rule2}}</li>
+            <li>{{brand.family.rule3}}</li>
+            <li>{{brand.family.rule4}}</li>
+            <li>{{brand.family.rule5}}</li>
+            <li>{{brand.family.rule6}}</li>
+          </ol>
+          <p class="doc-note">{{brand.family.motion}}</p>
+        </div>
+      </section>
+
+      <section class="doc" id="voice">
+        <div class="doc-head">
+          <h2>{{brand.voice.title}}</h2>
+          <p>{{brand.voice.text}}</p>
+        </div>
+        <div class="doc-body">
+          <p class="slogan">{{brand.voice.slogan}}</p>
+          <p class="doc-note">{{brand.voice.sloganRule}}</p>
+
+          <div class="pairs">
+            <div class="pair pair--no">
+              <h3>{{@icon:close}}{{brand.voice.no}}</h3>
+              <p>{{brand.voice.noExample}}</p>
+            </div>
+            <div class="pair pair--yes">
+              <h3>{{@icon:check}}{{brand.voice.yes}}</h3>
+              <p>{{brand.voice.yesExample}}</p>
+            </div>
+          </div>
+
+          <h3 class="doc-sub">{{brand.voice.rulesTitle}}</h3>
+          <ol class="rules">
+            <li>{{brand.voice.rule1}}</li>
+            <li>{{brand.voice.rule2}}</li>
+            <li>{{brand.voice.rule3}}</li>
+            <li>{{brand.voice.rule4}}</li>
+            <li>{{brand.voice.rule5}}</li>
+          </ol>
+
+          <h3 class="doc-sub">{{brand.voice.swapsTitle}}</h3>
+          <table class="g-table swaps">
+            <thead><tr><th>{{brand.voice.instead}}</th><th>{{brand.voice.write}}</th></tr></thead>
+            <tbody>
+              <tr><td>{{brand.voice.swap1a}}</td><td>{{brand.voice.swap1b}}</td></tr>
+              <tr><td>{{brand.voice.swap2a}}</td><td>{{brand.voice.swap2b}}</td></tr>
+              <tr><td>{{brand.voice.swap3a}}</td><td>{{brand.voice.swap3b}}</td></tr>
+              <tr><td>{{brand.voice.swap4a}}</td><td>{{brand.voice.swap4b}}</td></tr>
+              <tr><td>{{brand.voice.swap5a}}</td><td>{{brand.voice.swap5b}}</td></tr>
+            </tbody>
+          </table>
+
+          <h3 class="doc-sub">{{brand.voice.tagsTitle}}</h3>
+          <p class="tags-demo"><span class="g-tag">Branding</span> <span class="g-tag">UI/UX</span> <span class="g-tag">WebDevelopment</span> <span class="g-tag">Marketing</span></p>
+          <p class="doc-note">{{brand.voice.tagsText}}</p>
+        </div>
+      </section>
+    </main>
+
+    {{@footer}}
+  </body>
+</html>

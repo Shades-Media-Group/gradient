@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="{{@lang}}">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    {{@head}}
+    <script type="module" src="/src/main.ts"></script>
+  </head>
+  <body>
+    {{@nav}}
+
+    <main id="main">
+      <header class="page-head">
+        <h1>{{components.heading}}</h1>
+        <p class="page-lead">{{components.lead}}</p>
+        <nav class="page-toc" aria-label="{{nav.onThisPage}}">
+          <a href="#buttons">{{components.buttons.title}}</a>
+          <a href="#fields">{{components.fields.title}}</a>
+          <a href="#choices">{{components.choices.title}}</a>
+          <a href="#labels">{{components.labels.title}}</a>
+          <a href="#disclosure">{{components.disclosure.title}}</a>
+          <a href="#brand-parts">{{components.brand.title}}</a>
+        </nav>
+      </header>
+
+      <section class="doc" id="buttons">
+        <div class="doc-head">
+          <h2>{{components.buttons.title}}</h2>
+          <p>{{components.buttons.text}}</p>
+        </div>
+        <div class="doc-body">
+          <div class="demo">
+            <div class="demo-row">
+              <button class="g-btn g-btn--primary" type="button">{{components.buttons.primary}}{{@icon:arrowRight}}</button>
+              <button class="g-btn" type="button">{{components.buttons.secondary}}</button>
+              <button class="g-btn g-btn--inverse" type="button">{{components.buttons.inverse}}</button>
+              <button class="g-btn g-btn--ghost" type="button">{{components.buttons.ghost}}</button>
+            </div>
+            <div class="demo-row">
+              <button class="g-btn g-btn--primary g-btn--sm" type="button">{{components.buttons.small}}</button>
+              <button class="g-btn g-btn--primary" type="button">{{components.buttons.medium}}</button>
+              <button class="g-btn g-btn--primary g-btn--lg" type="button">{{components.buttons.large}}</button>
+            </div>
+            <div class="demo-row">
+              <button class="g-btn g-btn--primary" type="button" data-busy-demo>
+                {{components.buttons.save}}<span class="g-loader" aria-hidden="true"><i></i><i></i><i></i></span>
+              </button>
+              <button class="g-btn g-btn--primary" type="button" disabled>{{components.buttons.disabled}}</button>
+              <button class="g-icon-btn" type="button" aria-label="{{components.buttons.iconLabel}}">{{@icon:more}}</button>
+              <button class="g-icon-btn" type="button" aria-label="{{components.buttons.shareLabel}}">{{@icon:share}}</button>
+            </div>
+          </div>
+          <pre class="g-code"><code>&lt;button class="g-btn g-btn--primary"&gt;Send brief &lt;svg data-trail …/&gt;&lt;/button&gt;
+&lt;button class="g-btn"&gt;Secondary&lt;/button&gt;
+&lt;button class="g-btn g-btn--primary" aria-busy="true"&gt;
+  Save &lt;span class="g-loader"&gt;&lt;i&gt;&lt;/i&gt;&lt;i&gt;&lt;/i&gt;&lt;i&gt;&lt;/i&gt;&lt;/span&gt;
+&lt;/button&gt;</code></pre>
+          <ol class="rules">
+            <li>{{components.buttons.rule1}}</li>
+            <li>{{components.buttons.rule2}}</li>
+            <li>{{components.buttons.rule3}}</li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="doc" id="fields">
+        <div class="doc-head">
+          <h2>{{components.fields.title}}</h2>
+          <p>{{components.fields.text}}</p>
+        </div>
+        <div class="doc-body">
+          <div class="demo demo--grid">
+            <div class="g-field">
+              <label class="g-label" for="f-name">{{components.fields.name}}</label>
+              <input class="g-input" id="f-name" placeholder="Ana Popescu" autocomplete="off" />
+              <p class="g-hint">{{components.fields.nameHint}}</p>
+            </div>
+            <div class="g-field">
+              <label class="g-label" for="f-email">{{components.fields.email}}</label>
+              <input class="g-input" id="f-email" value="ana@" aria-invalid="true" aria-describedby="f-email-error" autocomplete="off" />
+              <p class="g-error" id="f-email-error">{{components.fields.emailError}}</p>
+            </div>
+            <div class="g-field">
+              <label class="g-label" for="f-service">{{components.fields.service}}</label>
+              <select class="g-select" id="f-service">
+                <option>{{components.fields.optBrand}}</option>
+                <option>{{components.fields.optSite}}</option>
+                <option>{{components.fields.optCampaign}}</option>
+              </select>
+            </div>
+            <div class="g-field">
+              <label class="g-label" for="f-locked">{{components.fields.locked}}</label>
+              <input class="g-input" id="f-locked" value="Shades Media Group" disabled />
+            </div>
+            <div class="g-field demo-wide">
+              <label class="g-label" for="f-brief">{{components.fields.brief}}</label>
+              <textarea class="g-textarea" id="f-brief" placeholder="{{components.fields.briefPlaceholder}}"></textarea>
+            </div>
+          </div>
+          <pre class="g-code"><code>&lt;div class="g-field"&gt;
+  &lt;label class="g-label" for="email"&gt;Email&lt;/label&gt;
+  &lt;input class="g-input" id="email" aria-invalid="true" aria-describedby="email-error"&gt;
+  &lt;p class="g-error" id="email-error"&gt;Add the part after the @.&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+        </div>
+      </section>
+
+      <section class="doc" id="choices">
+        <div class="doc-head">
+          <h2>{{components.choices.title}}</h2>
+          <p>{{components.choices.text}}</p>
+        </div>
+        <div class="doc-body">
+          <div class="demo">
+            <div class="demo-row">
+              <div class="g-segmented" role="radiogroup" aria-label="{{components.choices.view}}" data-segmented>
+                <button type="button" role="radio" aria-checked="true">{{components.choices.day}}</button>
+                <button type="button" role="radio" aria-checked="false">{{components.choices.week}}</button>
+                <button type="button" role="radio" aria-checked="false">{{components.choices.month}}</button>
+              </div>
+            </div>
+            <div class="demo-row">
+              <label class="g-check"><input class="g-switch" type="checkbox" role="switch" checked />{{components.choices.switch}}</label>
+              <label class="g-check"><input type="checkbox" checked />{{components.choices.check}}</label>
+              <label class="g-check"><input type="radio" name="r" checked />{{components.choices.radio1}}</label>
+              <label class="g-check"><input type="radio" name="r" />{{components.choices.radio2}}</label>
+            </div>
+          </div>
+          <pre class="g-code"><code>&lt;div class="g-segmented" role="radiogroup" aria-label="View"&gt;
+  &lt;button role="radio" aria-checked="true"&gt;Day&lt;/button&gt; …
+&lt;/div&gt;
+&lt;label class="g-check"&gt;&lt;input class="g-switch" type="checkbox" role="switch"&gt; Reminders&lt;/label&gt;</code></pre>
+        </div>
+      </section>
+
+      <section class="doc" id="labels">
+        <div class="doc-head">
+          <h2>{{components.labels.title}}</h2>
+          <p>{{components.labels.text}}</p>
+        </div>
+        <div class="doc-body">
+          <div class="demo">
+            <div class="demo-row">
+              <span class="g-tag">Branding</span><span class="g-tag">UI/UX</span><span class="g-tag">WebDevelopment</span>
+            </div>
+            <div class="demo-row">
+              <span class="g-badge">{{components.labels.draft}}</span>
+              <span class="g-badge g-badge--accent">{{components.labels.new}}</span>
+              <span class="g-badge g-badge--success">{{components.labels.shipped}}</span>
+              <span class="g-badge g-badge--warning">{{components.labels.review}}</span>
+              <span class="g-badge g-badge--danger">{{components.labels.blocked}}</span>
+            </div>
+            <div class="demo-row">
+              <p>{{components.labels.kbd}} <kbd class="g-kbd">⌘</kbd> <kbd class="g-kbd">K</kbd></p>
+            </div>
+          </div>
+          <pre class="g-code"><code>&lt;span class="g-tag"&gt;Branding&lt;/span&gt;
+&lt;span class="g-badge g-badge--success"&gt;Shipped&lt;/span&gt;</code></pre>
+        </div>
+      </section>
+
+      <section class="doc" id="disclosure">
+        <div class="doc-head">
+          <h2>{{components.disclosure.title}}</h2>
+          <p>{{components.disclosure.text}}</p>
+        </div>
+        <div class="doc-body">
+          <div class="demo demo--flat">
+            <details class="g-disclosure" open>
+              <summary>{{components.disclosure.q1}}</summary>
+              <p>{{components.disclosure.a1}}</p>
+            </details>
+            <details class="g-disclosure">
+              <summary>{{components.disclosure.q2}}</summary>
+              <p>{{components.disclosure.a2}}</p>
+            </details>
+          </div>
+          <table class="g-table">
+            <thead><tr><th>{{components.disclosure.colProject}}</th><th>{{components.disclosure.colStatus}}</th><th>{{components.disclosure.colPages}}</th></tr></thead>
+            <tbody>
+              <tr><td>PageRecast</td><td><span class="g-badge g-badge--success">{{components.labels.shipped}}</span></td><td class="g-num">5</td></tr>
+              <tr><td>Gradient</td><td><span class="g-badge g-badge--accent">{{components.labels.new}}</span></td><td class="g-num">7</td></tr>
+              <tr><td>ImageReframe</td><td><span class="g-badge">{{components.labels.draft}}</span></td><td class="g-num">0</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="doc" id="brand-parts">
+        <div class="doc-head">
+          <h2>{{components.brand.title}}</h2>
+          <p>{{components.brand.text}}</p>
+        </div>
+        <div class="doc-body">
+          <div class="demo">
+            <div class="demo-row demo-row--center">
+              <div class="brand-demo">{{@mark}}</div>
+              <div class="brand-demo brand-demo--animated" data-animate-mark>{{@mark}}</div>
+              <span class="g-loader brand-loader" role="img" aria-label="{{components.brand.loading}}"><i></i><i></i><i></i></span>
+            </div>
+            <hr class="g-spectrum" />
+          </div>
+          <pre class="g-code"><code>&lt;svg class="g-mark" data-animate …&gt;   &lt;!-- the bars come in one after another --&gt;
+&lt;span class="g-loader"&gt;&lt;i&gt;&lt;/i&gt;&lt;i&gt;&lt;/i&gt;&lt;i&gt;&lt;/i&gt;&lt;/span&gt;
+&lt;hr class="g-spectrum"&gt;</code></pre>
+          <p class="doc-note">{{components.brand.rule}}</p>
+        </div>
+      </section>
+    </main>
+
+    {{@footer}}
+  </body>
+</html>

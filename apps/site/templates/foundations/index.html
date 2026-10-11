@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="{{@lang}}">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    {{@head}}
+    <script type="module" src="/src/main.ts"></script>
+  </head>
+  <body>
+    {{@nav}}
+
+    <main id="main">
+      <header class="page-head">
+        <h1>{{foundations.heading}}</h1>
+        <p class="page-lead">{{foundations.lead}}</p>
+        <nav class="page-toc" aria-label="{{nav.onThisPage}}">
+          <a href="#colour">{{foundations.colour.title}}</a>
+          <a href="#roles">{{foundations.roles.title}}</a>
+          <a href="#type">{{foundations.type.title}}</a>
+          <a href="#space">{{foundations.space.title}}</a>
+          <a href="#motion">{{foundations.motion.title}}</a>
+        </nav>
+      </header>
+
+      <section class="doc" id="colour">
+        <div class="doc-head">
+          <h2>{{foundations.colour.title}}</h2>
+          <p>{{foundations.colour.text}}</p>
+        </div>
+        <div class="doc-body">
+          <h3 class="doc-sub">{{foundations.colour.red}}</h3>
+          <ul class="swatches" data-swatches="red">
+            <li style="--c: var(--g-red-50)" data-token="--g-red-50"></li>
+            <li style="--c: var(--g-red-100)" data-token="--g-red-100"></li>
+            <li style="--c: var(--g-red-200)" data-token="--g-red-200"></li>
+            <li style="--c: var(--g-red-300)" data-token="--g-red-300"></li>
+            <li style="--c: var(--g-red-400)" data-token="--g-red-400"></li>
+            <li style="--c: var(--g-red-500)" data-token="--g-red-500" data-key></li>
+            <li style="--c: var(--g-red-600)" data-token="--g-red-600"></li>
+            <li style="--c: var(--g-red-700)" data-token="--g-red-700"></li>
+            <li style="--c: var(--g-red-800)" data-token="--g-red-800"></li>
+            <li style="--c: var(--g-red-900)" data-token="--g-red-900"></li>
+          </ul>
+          <h3 class="doc-sub">{{foundations.colour.ink}}</h3>
+          <ul class="swatches" data-swatches="ink">
+            <li style="--c: var(--g-ink-0)" data-token="--g-ink-0"></li>
+            <li style="--c: var(--g-ink-50)" data-token="--g-ink-50"></li>
+            <li style="--c: var(--g-ink-100)" data-token="--g-ink-100"></li>
+            <li style="--c: var(--g-ink-200)" data-token="--g-ink-200"></li>
+            <li style="--c: var(--g-ink-300)" data-token="--g-ink-300"></li>
+            <li style="--c: var(--g-ink-400)" data-token="--g-ink-400"></li>
+            <li style="--c: var(--g-ink-500)" data-token="--g-ink-500"></li>
+            <li style="--c: var(--g-ink-600)" data-token="--g-ink-600"></li>
+            <li style="--c: var(--g-ink-700)" data-token="--g-ink-700"></li>
+            <li style="--c: var(--g-ink-800)" data-token="--g-ink-800"></li>
+            <li style="--c: var(--g-ink-900)" data-token="--g-ink-900"></li>
+            <li style="--c: var(--g-ink-950)" data-token="--g-ink-950"></li>
+          </ul>
+          <h3 class="doc-sub">{{foundations.colour.spectrum}}</h3>
+          <ul class="swatches swatches--wide" data-swatches="spectrum">
+            <li style="--c: var(--g-spectrum-blue)" data-token="--g-spectrum-blue"></li>
+            <li style="--c: var(--g-spectrum-magenta)" data-token="--g-spectrum-magenta"></li>
+            <li style="--c: var(--g-spectrum-red)" data-token="--g-spectrum-red"></li>
+            <li style="--c: var(--g-spectrum-orange)" data-token="--g-spectrum-orange"></li>
+          </ul>
+          <hr class="g-spectrum spectrum-demo" />
+          <p class="doc-note">{{foundations.colour.spectrumRule}}</p>
+          <p class="doc-note">{{foundations.colour.copy}}</p>
+        </div>
+      </section>
+
+      <section class="doc" id="roles">
+        <div class="doc-head">
+          <h2>{{foundations.roles.title}}</h2>
+          <p>{{foundations.roles.text}}</p>
+        </div>
+        <div class="doc-body">
+          <div class="theme-switch">
+            <div class="g-segmented" role="radiogroup" aria-label="{{foundations.roles.theme}}" data-theme-preview>
+              <button type="button" role="radio" aria-checked="true" data-value="light">{{@icon:sun}}{{foundations.roles.light}}</button>
+              <button type="button" role="radio" aria-checked="false" data-value="dark">{{@icon:moon}}{{foundations.roles.dark}}</button>
+            </div>
+          </div>
+          <div class="roles" data-theme="light" data-roles>
+            <table class="g-table">
+              <thead><tr><th>{{foundations.roles.token}}</th><th>{{foundations.roles.use}}</th><th>{{foundations.roles.sample}}</th></tr></thead>
+              <tbody>
+                <tr><td><code>--g-bg</code></td><td>{{foundations.roles.bg}}</td><td><i class="chip" style="--c: var(--g-bg)"></i></td></tr>
+                <tr><td><code>--g-surface</code></td><td>{{foundations.roles.surface}}</td><td><i class="chip" style="--c: var(--g-surface)"></i></td></tr>
+                <tr><td><code>--g-sunken</code></td><td>{{foundations.roles.sunken}}</td><td><i class="chip" style="--c: var(--g-sunken)"></i></td></tr>
+                <tr><td><code>--g-line</code></td><td>{{foundations.roles.line}}</td><td><i class="chip" style="--c: var(--g-line)"></i></td></tr>
+                <tr><td><code>--g-text</code></td><td>{{foundations.roles.text}}</td><td><span class="aa" style="color: var(--g-text)">Aa</span></td></tr>
+                <tr><td><code>--g-text-2</code></td><td>{{foundations.roles.text2}}</td><td><span class="aa" style="color: var(--g-text-2)">Aa</span></td></tr>
+                <tr><td><code>--g-text-3</code></td><td>{{foundations.roles.text3}}</td><td><span class="aa" style="color: var(--g-text-3)">Aa</span></td></tr>
+                <tr><td><code>--g-accent</code></td><td>{{foundations.roles.accent}}</td><td><i class="chip" style="--c: var(--g-accent)"></i></td></tr>
+                <tr><td><code>--g-accent-text</code></td><td>{{foundations.roles.accentText}}</td><td><span class="aa" style="color: var(--g-accent-text)">Aa</span></td></tr>
+                <tr><td><code>--g-inverse</code></td><td>{{foundations.roles.inverse}}</td><td><i class="chip" style="--c: var(--g-inverse)"></i></td></tr>
+                <tr><td><code>--g-success</code> <code>--g-warning</code> <code>--g-danger</code></td><td>{{foundations.roles.status}}</td><td><span class="aa" style="color: var(--g-success)">Aa</span> <span class="aa" style="color: var(--g-warning)">Aa</span> <span class="aa" style="color: var(--g-danger)">Aa</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="doc-note">{{foundations.roles.theming}}</p>
+          <pre class="g-code"><code>/* nails-by-alynna: same components, the studio's own colours */
+:root {
+  --g-accent: #d4115f;
+  --g-accent-hover: #b80e52;
+  --g-bg: #fdf6fd;
+  --g-font-body: 'Onest Variable', system-ui, sans-serif;
+}</code></pre>
+        </div>
+      </section>
+
+      <section class="doc" id="type">
+        <div class="doc-head">
+          <h2>{{foundations.type.title}}</h2>
+          <p>{{foundations.type.text}}</p>
+        </div>
+        <div class="doc-body">
+          <ol class="scale">
+            <li><code>--g-size-display</code><p class="t-display">{{foundations.type.sample}}</p></li>
+            <li><code>--g-size-title</code><p class="t-title">{{foundations.type.sample}}</p></li>
+            <li><code>--g-size-h1</code><p class="t-h1">{{foundations.type.sample}}</p></li>
+            <li><code>--g-size-h2</code><p class="t-h2">{{foundations.type.sample}}</p></li>
+            <li><code>--g-size-h3</code><p class="t-h3">{{foundations.type.sample}}</p></li>
+            <li><code>--g-size-lead</code><p class="t-lead">{{foundations.type.bodySample}}</p></li>
+            <li><code>--g-size-body</code><p class="t-body">{{foundations.type.bodySample}}</p></li>
+            <li><code>--g-size-small</code><p class="t-small">{{foundations.type.bodySample}}</p></li>
+          </ol>
+          <h3 class="doc-sub">{{foundations.type.rulesTitle}}</h3>
+          <ol class="rules">
+            <li>{{foundations.type.rule1}}</li>
+            <li>{{foundations.type.rule2}}</li>
+            <li>{{foundations.type.rule3}}</li>
+            <li>{{foundations.type.rule4}}</li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="doc" id="space">
+        <div class="doc-head">
+          <h2>{{foundations.space.title}}</h2>
+          <p>{{foundations.space.text}}</p>
+        </div>
+        <div class="doc-body">
+          <ol class="spaces">
+            <li><code>1</code><i style="--w: var(--g-space-1)"></i><span class="g-num">4</span></li>
+            <li><code>2</code><i style="--w: var(--g-space-2)"></i><span class="g-num">8</span></li>
+            <li><code>3</code><i style="--w: var(--g-space-3)"></i><span class="g-num">12</span></li>
+            <li><code>4</code><i style="--w: var(--g-space-4)"></i><span class="g-num">16</span></li>
+            <li><code>5</code><i style="--w: var(--g-space-5)"></i><span class="g-num">24</span></li>
+            <li><code>6</code><i style="--w: var(--g-space-6)"></i><span class="g-num">32</span></li>
+            <li><code>7</code><i style="--w: var(--g-space-7)"></i><span class="g-num">48</span></li>
+            <li><code>8</code><i style="--w: var(--g-space-8)"></i><span class="g-num">64</span></li>
+            <li><code>9</code><i style="--w: var(--g-space-9)"></i><span class="g-num">96</span></li>
+            <li><code>10</code><i style="--w: var(--g-space-10)"></i><span class="g-num">128</span></li>
+          </ol>
+          <h3 class="doc-sub">{{foundations.space.radiusTitle}}</h3>
+          <ul class="radii">
+            <li><i style="--r: 0"></i><code>none</code><span>{{foundations.space.rNone}}</span></li>
+            <li><i style="--r: var(--g-radius-sm)"></i><code>sm · 8</code><span>{{foundations.space.rSm}}</span></li>
+            <li><i style="--r: var(--g-radius-md)"></i><code>md · 12</code><span>{{foundations.space.rMd}}</span></li>
+            <li><i style="--r: var(--g-radius-lg)"></i><code>lg · 20</code><span>{{foundations.space.rLg}}</span></li>
+            <li><i style="--r: var(--g-radius-pill)"></i><code>pill</code><span>{{foundations.space.rPill}}</span></li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="doc" id="motion">
+        <div class="doc-head">
+          <h2>{{foundations.motion.title}}</h2>
+          <p>{{foundations.motion.text}}</p>
+        </div>
+        <div class="doc-body">
+          <ul class="speeds">
+            <li>
+              <button class="speed" type="button" data-speed="snap" aria-label="{{foundations.motion.play}}: snap"><i></i></button>
+              <h3>Snap <span class="g-num">180 ms</span></h3>
+              <code>cubic-bezier(0.2, 0, 0, 1)</code>
+              <p>{{foundations.motion.snap}}</p>
+            </li>
+            <li>
+              <button class="speed" type="button" data-speed="pop" aria-label="{{foundations.motion.play}}: pop"><i></i></button>
+              <h3>Pop <span class="g-num">320 ms</span></h3>
+              <code>cubic-bezier(0.34, 1.56, 0.64, 1)</code>
+              <p>{{foundations.motion.pop}}</p>
+            </li>
+            <li>
+              <button class="speed" type="button" data-speed="move" aria-label="{{foundations.motion.play}}: move"><i></i></button>
+              <h3>Move <span class="g-num">480 ms</span></h3>
+              <code>cubic-bezier(0.22, 1, 0.36, 1)</code>
+              <p>{{foundations.motion.move}}</p>
+            </li>
+            <li>
+              <div class="speed speed--loop" aria-hidden="true"><span class="g-loader"><i></i><i></i><i></i></span></div>
+              <h3>Loop <span class="g-num">2.4–5 s</span></h3>
+              <code>ease-in-out</code>
+              <p>{{foundations.motion.loop}}</p>
+            </li>
+          </ul>
+          <p class="doc-note">{{foundations.motion.reduced}}</p>
+        </div>
+      </section>
+    </main>
+
+    {{@footer}}
+  </body>
+</html>

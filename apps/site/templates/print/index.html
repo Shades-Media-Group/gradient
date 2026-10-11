@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="{{@lang}}">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    {{@head}}
+    <script type="module" src="/src/main.ts"></script>
+  </head>
+  <body>
+    {{@nav}}
+
+    <main id="main">
+      <header class="page-head">
+        <h1>{{print.heading}}</h1>
+        <p class="page-lead">{{print.lead}}</p>
+        <nav class="page-toc" aria-label="{{nav.onThisPage}}">
+          <a href="#card">{{print.card.title}}</a>
+          <a href="#badge">{{print.badge.title}}</a>
+          <a href="#merch">{{print.merch.title}}</a>
+          <a href="#signature">{{print.signature.title}}</a>
+          <a href="#colour">{{print.colour.title}}</a>
+        </nav>
+      </header>
+
+      <section class="doc" id="card">
+        <div class="doc-head">
+          <h2>{{print.card.title}}</h2>
+          <p>{{print.card.text}}</p>
+        </div>
+        <div class="doc-body">
+          <div class="cards">
+            <figure class="card card--front">
+              <div class="card-sheet">{{@mark}}</div>
+              <figcaption>{{print.card.front}}</figcaption>
+            </figure>
+            <figure class="card card--back">
+              <div class="card-sheet">
+                <div class="card-name">
+                  <b>Ana Popescu</b>
+                  <span>{{print.card.role}}</span>
+                </div>
+                <ul class="card-contact">
+                  <li>ana@shades.md</li>
+                  <li>+373 60 000 000</li>
+                  <li>shades.md</li>
+                </ul>
+                <div class="card-lockup">{{@lockup}}</div>
+              </div>
+              <figcaption>{{print.card.back}}</figcaption>
+            </figure>
+          </div>
+          <dl class="specs specs--row">
+            <div><dt>{{print.size}}</dt><dd class="g-num">85 × 55 mm</dd></div>
+            <div><dt>{{print.bleed}}</dt><dd class="g-num">3 mm</dd></div>
+            <div><dt>{{print.safe}}</dt><dd class="g-num">4 mm</dd></div>
+            <div><dt>{{print.stock}}</dt><dd>{{print.card.stock}}</dd></div>
+          </dl>
+          <p class="doc-note">{{print.card.sample}}</p>
+        </div>
+      </section>
+
+      <section class="doc" id="badge">
+        <div class="doc-head">
+          <h2>{{print.badge.title}}</h2>
+          <p>{{print.badge.text}}</p>
+        </div>
+        <div class="doc-body">
+          <div class="badges">
+            <figure class="event-badge" style="--role: var(--g-red-500)">
+              <div class="event-sheet">
+                <div class="event-top">{{@mark}}<span>Shades Day 2027</span></div>
+                <div class="event-name"><b>Ana</b><span>Popescu</span></div>
+                <p class="event-role">{{print.badge.team}}</p>
+              </div>
+              <figcaption>{{print.badge.teamCaption}}</figcaption>
+            </figure>
+            <figure class="event-badge" style="--role: var(--g-ink-950)">
+              <div class="event-sheet">
+                <div class="event-top">{{@mark}}<span>Shades Day 2027</span></div>
+                <div class="event-name"><b>Ion</b><span>Rusu</span></div>
+                <p class="event-role">{{print.badge.guest}}</p>
+              </div>
+              <figcaption>{{print.badge.guestCaption}}</figcaption>
+            </figure>
+          </div>
+          <dl class="specs specs--row">
+            <div><dt>{{print.size}}</dt><dd class="g-num">90 × 130 mm</dd></div>
+            <div><dt>{{print.bleed}}</dt><dd class="g-num">3 mm</dd></div>
+            <div><dt>{{print.badge.hole}}</dt><dd>{{print.badge.holeText}}</dd></div>
+            <div><dt>{{print.badge.name}}</dt><dd>{{print.badge.nameText}}</dd></div>
+          </dl>
+        </div>
+      </section>
+
+      <section class="doc doc--ink" data-theme="dark" id="merch">
+        <div class="doc-head">
+          <h2>{{print.merch.title}}</h2>
+          <p>{{print.merch.text}}</p>
+        </div>
+        <div class="doc-body">
+          <ul class="merch">
+            <li>
+              <div class="merch-art merch-art--tote" aria-hidden="true"><div class="merch-mark">{{@mark}}</div></div>
+              <h3>{{print.merch.tote}}</h3>
+              <p>{{print.merch.toteText}}</p>
+            </li>
+            <li>
+              <div class="merch-art merch-art--tee" aria-hidden="true"><div class="merch-word">SHADES</div></div>
+              <h3>{{print.merch.tee}}</h3>
+              <p>{{print.merch.teeText}}</p>
+            </li>
+            <li>
+              <div class="merch-art merch-art--sticker" aria-hidden="true"><div class="merch-sticker">{{@family:spectra}}</div></div>
+              <h3>{{print.merch.sticker}}</h3>
+              <p>{{print.merch.stickerText}}</p>
+            </li>
+          </ul>
+          <ol class="rules">
+            <li>{{print.merch.rule1}}</li>
+            <li>{{print.merch.rule2}}</li>
+            <li>{{print.merch.rule3}}</li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="doc" id="signature">
+        <div class="doc-head">
+          <h2>{{print.signature.title}}</h2>
+          <p>{{print.signature.text}}</p>
+        </div>
+        <div class="doc-body">
+          <div class="signature">
+            <p class="signature-sign">{{print.signature.sign}}</p>
+            <div class="signature-block">
+              <div class="signature-mark">{{@mark}}</div>
+              <div>
+                <b>Ana Popescu</b>
+                <span>{{print.card.role}} · Shades Media Group</span>
+                <span><a href="mailto:ana@shades.md">ana@shades.md</a> · <a data-link="shades">shades.md</a></span>
+              </div>
+            </div>
+          </div>
+          <ol class="rules">
+            <li>{{print.signature.rule1}}</li>
+            <li>{{print.signature.rule2}}</li>
+            <li>{{print.signature.rule3}}</li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="doc" id="colour">
+        <div class="doc-head">
+          <h2>{{print.colour.title}}</h2>
+          <p>{{print.colour.text}}</p>
+        </div>
+        <div class="doc-body">
+          <table class="g-table">
+            <thead><tr><th>{{print.colour.colour}}</th><th>{{print.colour.screen}}</th><th>{{print.colour.print}}</th></tr></thead>
+            <tbody>
+              <tr><td><i class="chip" style="--c: #E40523"></i> Shades Red</td><td><code>#E40523</code></td><td>{{print.colour.redPrint}}</td></tr>
+              <tr><td><i class="chip" style="--c: #0A0A0B"></i> Ink</td><td><code>#0A0A0B</code></td><td>{{print.colour.inkPrint}}</td></tr>
+              <tr><td><i class="chip" style="--c: #FDFDFC"></i> Paper</td><td><code>#FDFDFC</code></td><td>{{print.colour.paperPrint}}</td></tr>
+            </tbody>
+          </table>
+          <p class="doc-note">{{print.colour.proof}}</p>
+        </div>
+      </section>
+    </main>
+
+    {{@footer}}
+  </body>
+</html>
