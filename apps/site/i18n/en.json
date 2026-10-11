@@ -1,0 +1,566 @@
+{
+  "language": "Language",
+  "imageAlt": "The Shades mark, a red square with three white bars, beside the word Gradient.",
+  "nav": {
+    "skip": "Skip to content",
+    "label": "Gradient",
+    "homeLabel": "Gradient, home",
+    "home": "Gradient",
+    "brand": "Brand",
+    "foundations": "Foundations",
+    "components": "Components",
+    "icons": "Icons",
+    "print": "Print",
+    "projects": "Projects",
+    "cta": "Install",
+    "menu": "Menu",
+    "onThisPage": "On this page"
+  },
+  "footer": {
+    "label": "Site",
+    "about": "Gradient is the design system of Shades Media Group, a creative and technology agency in Chișinău, Moldova.",
+    "system": "System",
+    "work": "Work",
+    "code": "Code",
+    "legal": "Legal",
+    "changelog": "Changelog",
+    "issues": "Report an issue",
+    "license": "MIT licence",
+    "trademarks": "Trademarks",
+    "security": "Security",
+    "credit": "Free and open source. Built by Shades Media Group."
+  },
+  "home": {
+    "title": "Gradient: the Shades Media Group design system",
+    "description": "Gradient is the design system of Shades Media Group: the logo, colour, type, the Spectra characters, components and icons every Shades product is built from. Open source.",
+    "hero": {
+      "title": "Every Shades product starts here.",
+      "lead": "Gradient is how Shades Media Group looks, speaks and builds: one mark, one red, seven characters, and the code every project installs.",
+      "copy": "Copy the install command",
+      "brand": "See the brand",
+      "note": "Free and open source. The name and the mark stay ours."
+    },
+    "split": {
+      "label": "The three bars of the mark",
+      "brand": {
+        "title": "Brand",
+        "text": "The mark, the lockup, the Spectra family and the way Shades writes.",
+        "link": "Logo and family"
+      },
+      "foundations": {
+        "title": "Foundations",
+        "text": "Colour, type, space and motion, each defined once and used everywhere.",
+        "link": "The tokens"
+      },
+      "code": {
+        "title": "Code",
+        "text": "CSS components, a Tailwind theme and 76 Shades icons in one package.",
+        "link": "The components"
+      },
+      "caption": "Three bars at full, 75% and 50% white. That is the whole idea: shades of one colour, side by side, make a gradient."
+    },
+    "colour": {
+      "title": "One red. Used like a signal.",
+      "text": "Shades Red, #E40523, is the red of the mark itself. It marks the one action that matters on a screen and may fill one chapter of a page. Everything else is ink and paper.",
+      "link": "Every colour",
+      "red": "The Shades Red scale, from 50 to 900",
+      "ink": "The ink scale, from paper to ink",
+      "rule": "Red is the signal, never the wallpaper. The four-shade spectrum appears once per layout, as a strip."
+    },
+    "type": {
+      "title": "Space Grotesk speaks. Hanken Grotesk explains.",
+      "text": "Headlines are set heavy and tight in Space Grotesk. Everything you read at length is Hanken Grotesk. Russian falls back to Inter and Chinese to the system face, so every language reads as cleanly as English.",
+      "link": "The type scale",
+      "system": "System face",
+      "body": "Body text is set at 17 pixels with room to breathe, and numbers line up because they use tabular figures, not a typewriter face."
+    },
+    "family": {
+      "title": "Seven shades, one family.",
+      "text": "Spectra walked out of the logo, crest and all. Six coworkers followed, each with one job: Sage explains, Nova announces, Sunny confirms that it shipped.",
+      "link": "Meet the family"
+    },
+    "parts": {
+      "title": "The parts, working.",
+      "text": "Every component is a plain class that reads the tokens. It works in React, Preact or plain HTML, and a client brand can recolour the whole set by changing a few variables.",
+      "link": "All components",
+      "name": "Your name",
+      "namePlaceholder": "Ana Popescu",
+      "email": "Work email",
+      "emailError": "Add the part after the @, like ana@company.md.",
+      "kind": "What you need",
+      "kindBrand": "A brand",
+      "kindSite": "A website",
+      "kindBoth": "Both",
+      "checklist": "Send me the brand checklist",
+      "send": "Send the brief",
+      "call": "Book a call",
+      "demo": "A demo built from Gradient parts. It sends nothing.",
+      "sent": "Checked and ready. This demo stops here."
+    },
+    "licence": {
+      "title": "Open code. Our name.",
+      "text": "The tokens, styles and icons are MIT: use them in anything. The Shades name, the mark and the Spectra characters belong to Shades Media Group and its own work.",
+      "link": "What the trademark notice covers"
+    },
+    "work": {
+      "title": "Built from real work.",
+      "text": "Every rule here came from a product Shades shipped, including the parts we threw away.",
+      "link": "How the projects went",
+      "pagerecast": "Turns any web page into editable Figma layers. It taught us what reads as made by hand and what reads as generated.",
+      "nails": "A booking app for a nail studio. It proved a client brand can wear the same parts in its own colours.",
+      "lms": "Our own life-management app. It set the rules for icons and motion on a phone.",
+      "imagereframe": "Free, open image export and import for Figma. The first product to start from Gradient.",
+      "shades": "The agency's own site, to be rebuilt on Gradient.",
+      "live": "Live",
+      "next": "Next"
+    },
+    "install": {
+      "title": "Three ways in.",
+      "text": "One package, shades-gradient, for every Shades project. Pick the part your stack needs.",
+      "link": "shades-gradient on npm",
+      "any": "Any project",
+      "anyText": "Tokens, base styles, components and motion in one stylesheet, about 6 KB compressed.",
+      "tailwind": "Tailwind v4",
+      "tailwindText": "Every token becomes a utility that follows light and dark: bg-accent, text-text-2, rounded-pill.",
+      "icons": "Icons anywhere",
+      "iconsText": "76 Shades icons as SVG strings, or one sprite for plain HTML."
+    },
+    "faq": {
+      "title": "Questions",
+      "items": {
+        "what": {
+          "q": "What is Gradient?",
+          "a": "Gradient is the design system of Shades Media Group: brand rules, design tokens, CSS components, icons and the Spectra characters. The code ships as the shades-gradient npm package, and this site documents it."
+        },
+        "use": {
+          "q": "Can I use Gradient in my own project?",
+          "a": "Yes. The code is MIT, so you can use the tokens, components and icons in anything. The Shades name, the mark and the Spectra characters are not covered by that licence and stay with Shades Media Group."
+        },
+        "stack": {
+          "q": "Does Gradient need React or Tailwind?",
+          "a": "No. Components are plain CSS classes and icons are SVG strings, so they work with any framework or none. Tailwind v4 projects can import a theme that turns every token into utilities."
+        },
+        "client": {
+          "q": "How does a client brand use it?",
+          "a": "Override the role tokens, such as --g-accent, --g-bg and --g-text, in one stylesheet. Components read only those, so the whole set takes the client's colours at once."
+        },
+        "red": {
+          "q": "Why is the red #E40523?",
+          "a": "It is the red of the Shades logo file on shades.md, which is the brand's source of truth. Earlier explorations used other reds; Gradient keeps one."
+        }
+      }
+    }
+  },
+  "brand": {
+    "title": "Brand: the Shades mark, the Spectra family and voice | Gradient",
+    "description": "The Shades logo and how to use it, the seven Spectra characters and their jobs, and how Shades Media Group writes.",
+    "heading": "The brand",
+    "lead": "One mark, seven characters and a way of writing. Everything here is drawn from the files Shades already ships.",
+    "logo": {
+      "title": "The mark",
+      "text": "A sharp red square holding three white bars at full, 75% and 50%. The bars are the shades in the name. It is never redrawn: every file comes from the same geometry on shades.md.",
+      "reverseAlt": "The Shades lockup in white beside the red mark, on ink.",
+      "anatomyAlt": "The mark on its construction grid: one bar width of clear space on every side.",
+      "field": "Field",
+      "fieldText": "Shades Red #E40523, a square with sharp corners.",
+      "bars": "Bars",
+      "barsText": "Three bars, each one tenth of the square wide and more than half its height, white at 100%, 75% and 50%.",
+      "space": "Clear space",
+      "spaceText": "One bar width on every side. Nothing else enters it.",
+      "size": "Smallest size",
+      "sizeText": "16 px on screen as a favicon, 24 px in an interface, 8 mm in print.",
+      "misuseTitle": "Never",
+      "misuseRound": "Round the corners. The mark is square.",
+      "misuseTint": "Tint the bars pink or rose. They are white.",
+      "misuseStretch": "Stretch it or change its proportions.",
+      "misuseGradient": "Fill it with the spectrum or any gradient.",
+      "downloads": "Files",
+      "dlMark": "Mark",
+      "dlLockup": "Lockup",
+      "dlReverse": "Lockup for dark backgrounds",
+      "dlMono": "Mark, one colour",
+      "dlLockupMono": "Lockup, one colour"
+    },
+    "family": {
+      "title": "The Spectra family",
+      "text": "Seven characters, one per kind of moment. They share the same eyes, the three-bar crest from the mark and a quiet smile, and each has one flat colour.",
+      "spectra": {
+        "role": "Founder and welcome",
+        "text": "Walked out of the logo the day it was finished. Opens decks, greets new users and fronts launches."
+      },
+      "mera": {
+        "role": "Strategy",
+        "text": "Measured and precise. Appears next to plans, timelines and anything that needs a decision."
+      },
+      "sol": {
+        "role": "Art direction",
+        "text": "The loud one, with one arm always up. Used for creative work, reviews and inspiration."
+      },
+      "nova": {
+        "role": "Labs and what's new",
+        "text": "The smallest, with a spark overhead. Announces betas and new features."
+      },
+      "sage": {
+        "role": "Help and docs",
+        "text": "Patient and kind, eyes closed while listening. Owns tutorials, tooltips and the help centre."
+      },
+      "vio": {
+        "role": "Community",
+        "text": "Witty and warm, always mid-wink. Speaks on social, in campaigns and to the community."
+      },
+      "sunny": {
+        "role": "Production and done",
+        "text": "Steady and practical. Confirms progress, success and delivery."
+      },
+      "rulesTitle": "Family rules",
+      "rule1": "Same eyes on everyone: a white disc, a black pupil and one highlight.",
+      "rule2": "The three-bar crest is never removed. It is the family name.",
+      "rule3": "One soft shape per body, every corner rounded.",
+      "rule4": "One quiet curved smile. No teeth, no open grin.",
+      "rule5": "They hover over a soft shadow. They never stand.",
+      "rule6": "One flat colour each. No gradients on bodies.",
+      "motion": "One character per moment and at most two on a screen. Never in the logo's place. Their idle loops stop when the reader asks for reduced motion."
+    },
+    "voice": {
+      "title": "How Shades writes",
+      "text": "Short, confident, specific. We sell the result, not the feature, and every piece ends with one clear next step.",
+      "slogan": "Where identity becomes experience.",
+      "sloganRule": "The main line. One slogan per surface, never stacked with others.",
+      "no": "Not like this",
+      "noExample": "We are a creative powerhouse where design, marketing and technology converge to deliver unique solutions.",
+      "yes": "Like this",
+      "yesExample": "We build brands people recognise and sites that bring them work. Start with a brief.",
+      "rulesTitle": "Rules",
+      "rule1": "\"We\" for Shades, \"you\" for the client.",
+      "rule2": "Lead with the outcome, then how.",
+      "rule3": "Short declarative lines. One idea each.",
+      "rule4": "Show real results or say nothing. Never invent numbers, quotes or clients.",
+      "rule5": "No emoji in brand copy. Icons and the mark do that work.",
+      "swapsTitle": "Words we swap",
+      "instead": "Instead of",
+      "write": "Write",
+      "swap1a": "cheap",
+      "swap1b": "affordable",
+      "swap2a": "discount",
+      "swap2b": "special offer",
+      "swap3a": "unique",
+      "swap3b": "exceptional",
+      "swap4a": "basically",
+      "swap4b": "in essence",
+      "swap5a": "hurry up",
+      "swap5b": "don't miss out",
+      "tagsTitle": "Hashtags",
+      "tagsText": "What a project is, said as a tag with a red #. Three at most, never as decoration."
+    }
+  },
+  "foundations": {
+    "title": "Foundations: colour, type, space and motion | Gradient",
+    "description": "The Gradient design tokens: Shades Red and the ink scale, semantic roles for light and dark, the type scale, spacing, radius and motion.",
+    "heading": "Foundations",
+    "lead": "Every value is written once, in tokens.json, and reaches CSS, Tailwind and JSON from there. Click any swatch to copy its variable.",
+    "colour": {
+      "title": "Colour",
+      "text": "Shades Red and a neutral ink scale do almost all the work. The four spectrum shades exist for one strip per layout.",
+      "red": "Shades Red",
+      "ink": "Ink and paper",
+      "spectrum": "The spectrum",
+      "spectrumRule": "Blue, magenta, red and orange, in that order. Once per layout, as a strip or a rule, never as a background or on text.",
+      "copy": "Click a swatch to copy its custom property.",
+      "copied": "Copied {token}"
+    },
+    "roles": {
+      "title": "Roles",
+      "text": "Interfaces use roles, never the raw scales. Each role has a light and a dark value, and every text role passes WCAG AA on the backgrounds it sits on.",
+      "theme": "Preview theme",
+      "light": "Light",
+      "dark": "Dark",
+      "token": "Token",
+      "use": "Use",
+      "sample": "Sample",
+      "bg": "The page",
+      "surface": "Raised surfaces and fields",
+      "sunken": "Wells, code and quiet sections",
+      "line": "Hairlines and dividers",
+      "text": "Headings and body text",
+      "text2": "Supporting text",
+      "text3": "Hints and captions, the quietest readable text",
+      "accent": "The one primary action and selection",
+      "accentText": "Red text on light or dark ground",
+      "inverse": "Inverse buttons and ink sections",
+      "status": "Success, warning and danger text",
+      "theming": "A client brand changes the roles in one stylesheet. Every component follows, because none of them reads a raw colour."
+    },
+    "type": {
+      "title": "Type",
+      "text": "Space Grotesk for display and headings, Hanken Grotesk for everything else. Sizes above the body scale with the screen.",
+      "sample": "Built to be recognised",
+      "bodySample": "Shades builds brands and the products around them, from the first sketch to the shipped site.",
+      "rulesTitle": "Rules",
+      "rule1": "Tracking tightens as size grows, down to -0.04em at display size. Body text is never tracked.",
+      "rule2": "Numbers use tabular figures in the body face. Monospace is only for code someone types.",
+      "rule3": "No small capitals or tracked labels above headings. The heading carries its own weight.",
+      "rule4": "Buttons and links are never italic."
+    },
+    "space": {
+      "title": "Space and shape",
+      "text": "A 4 px base in ten steps. More space above a heading than below it, tight inside groups and generous between them.",
+      "radiusTitle": "Radius",
+      "rNone": "The mark, brand plates",
+      "rSm": "Small controls, tags",
+      "rMd": "Fields and code",
+      "rLg": "Panels and media",
+      "rPill": "Buttons and badges"
+    },
+    "motion": {
+      "title": "Motion",
+      "text": "Three speeds for the interface and one for the characters. Content is visible before anything moves.",
+      "play": "Play",
+      "snap": "Hovers, toggles, chips. Never bounces.",
+      "pop": "Entrances and reactions. One overshoot.",
+      "move": "Things that travel: panels, reveals, the house curve.",
+      "loop": "Spectra idles and the loader only.",
+      "reduced": "Under prefers-reduced-motion every animation stops and every transition is instant. Nothing important depends on motion."
+    }
+  },
+  "components": {
+    "title": "Components: buttons, fields, choices and labels | Gradient",
+    "description": "Live Gradient components with their states and the HTML to copy: buttons, fields, switches, segmented controls, tags, badges, disclosure and the brand parts.",
+    "heading": "Components",
+    "lead": "Plain classes that read the tokens. Copy the HTML, add the stylesheet, and they work in any framework.",
+    "buttons": {
+      "title": "Buttons",
+      "text": "Pills, because the mark is square and actions should not be. One red primary per view.",
+      "primary": "Send the brief",
+      "secondary": "Secondary",
+      "inverse": "Inverse",
+      "ghost": "Ghost",
+      "small": "Small",
+      "medium": "Medium",
+      "large": "Large",
+      "save": "Save",
+      "disabled": "Not yet",
+      "iconLabel": "More options",
+      "shareLabel": "Share",
+      "rule1": "Label the action with a verb: Send, Save, Start. Never OK or Submit.",
+      "rule2": "While busy, the label keeps its width and the three bars take its place.",
+      "rule3": "An icon-only button always has an aria-label."
+    },
+    "fields": {
+      "title": "Fields",
+      "text": "A visible label above every field, a hint when it helps, and an error that says how to fix it.",
+      "name": "Full name",
+      "nameHint": "As it should appear on the contract.",
+      "email": "Work email",
+      "emailError": "Add the part after the @.",
+      "service": "Service",
+      "optBrand": "Brand identity",
+      "optSite": "Website",
+      "optCampaign": "Campaign",
+      "locked": "Company",
+      "brief": "Brief",
+      "briefPlaceholder": "What should change after the work is done?"
+    },
+    "choices": {
+      "title": "Choices",
+      "text": "A segmented control switches between views of the same thing. A switch applies at once; a checkbox waits for a submit.",
+      "view": "View",
+      "day": "Day",
+      "week": "Week",
+      "month": "Month",
+      "switch": "Reminders",
+      "check": "Keep me posted",
+      "radio1": "Chișinău",
+      "radio2": "Remote"
+    },
+    "labels": {
+      "title": "Tags and badges",
+      "text": "A hashtag says what something is. A badge says what state it is in.",
+      "draft": "Draft",
+      "new": "New",
+      "shipped": "Shipped",
+      "review": "In review",
+      "blocked": "Blocked",
+      "kbd": "Search the system with"
+    },
+    "disclosure": {
+      "title": "Disclosure and tables",
+      "text": "Answers open in place, without script. Tables line their numbers up and use hairlines, not boxes.",
+      "q1": "When does a project start?",
+      "a1": "When the brief is signed and the first payment arrives. We send the plan within a week.",
+      "q2": "Who owns the files?",
+      "a2": "You do, once the project is paid. We keep the right to show it in our portfolio unless you ask us not to.",
+      "colProject": "Project",
+      "colStatus": "Status",
+      "colPages": "Pages"
+    },
+    "brand": {
+      "title": "Brand parts",
+      "text": "The pieces only Shades has: the mark that animates its bars, the loader made of those bars, and the spectrum strip.",
+      "loading": "Loading",
+      "rule": "The spectrum strip appears once per layout. The animated mark is for loading screens and the moment a page first opens, not for navigation."
+    }
+  },
+  "icons": {
+    "title": "Icons: the Shades icon set | Gradient",
+    "description": "76 Shades interface icons drawn on a 24 px grid with 2 px round strokes, free to use under MIT, plus the marks of the services Shades links to.",
+    "heading": "Icons",
+    "lead": "Shades' own set, drawn for Gradient: 24 px grid, 2 px round strokes, one file per icon. Click an icon to copy its name.",
+    "search": "Search icons",
+    "hint": "Click to copy the name.",
+    "copied": "Copied {name}",
+    "empty": "No icon by that name yet. Draw it to the rules below and add it.",
+    "set": {
+      "title": "The set",
+      "text": "Interface icons in currentColor, so they take the colour of the text around them."
+    },
+    "rules": {
+      "title": "Drawing rules",
+      "text": "Every icon follows the same five rules, so a new one sits with the rest.",
+      "rule1": "24 × 24 grid with 2 px of padding: drawing stays between 2 and 22.",
+      "rule2": "2 px strokes with round caps and joins. Fill only for dots of 1 to 1.6 px.",
+      "rule3": "Corners of 2 px on rectangles. No sharp boxes, no thin hairlines.",
+      "rule4": "currentColor only. Never a fixed colour inside the file.",
+      "rule5": "An icon must mean something. If the label alone is clear, leave the icon out."
+    },
+    "marks": {
+      "title": "Other services",
+      "text": "Filled marks of the services Shades links to, from Simple Icons. They belong to their owners: use them only to link to those services."
+    }
+  },
+  "print": {
+    "title": "Print: cards, badges, merchandise and email | Gradient",
+    "description": "Shades print and merchandise rules: business card, event badge, tote, tee, stickers, the email signature and colour for print.",
+    "heading": "Print and merchandise",
+    "lead": "The same mark and the same restraint on paper, cloth and email. Sizes are real; the colour values still need a printer's proof.",
+    "size": "Size",
+    "bleed": "Bleed",
+    "safe": "Safe margin",
+    "stock": "Stock",
+    "card": {
+      "title": "Business card",
+      "text": "The front is only the mark on red. The back carries the person, set in the brand type on paper.",
+      "front": "Front: the mark, centred, on Shades Red",
+      "back": "Back: name, role and contacts on paper",
+      "role": "Brand designer",
+      "stock": "Uncoated, 350 g/m² or heavier",
+      "sample": "Sample person and details. The card is drawn at its real proportions."
+    },
+    "badge": {
+      "title": "Event badge",
+      "text": "First names large, enough to read across a room. The colour band says who someone is.",
+      "team": "Shades team",
+      "teamCaption": "Team: a red band",
+      "guest": "Guest",
+      "guestCaption": "Guest: an ink band",
+      "hole": "Lanyard",
+      "holeText": "One slot, centred, 10 mm from the top",
+      "name": "Name",
+      "nameText": "First name in Space Grotesk, at least 18 mm tall"
+    },
+    "merch": {
+      "title": "Merchandise",
+      "text": "Small mark or big wordmark, never both on one item. The spectrum only as a trim.",
+      "tote": "Tote",
+      "toteText": "One-colour mark, screen printed, on natural canvas.",
+      "tee": "Tee",
+      "teeText": "The wordmark large across the back, the chest left empty.",
+      "sticker": "Sticker",
+      "stickerText": "A Spectra character, die cut with a 3 mm white border.",
+      "rule1": "Use the one-colour files for embroidery, foil, etching and screen print.",
+      "rule2": "Never print the mark smaller than 8 mm.",
+      "rule3": "One character per item. The characters never replace the mark."
+    },
+    "signature": {
+      "title": "Email signature",
+      "text": "Five lines at most, live text rather than one big image, so it reads with images turned off.",
+      "sign": "Thank you, and talk soon.",
+      "rule1": "The mark at 48 px, linked to shades.md.",
+      "rule2": "Name, role, then one line of contacts. No slogans, no banners.",
+      "rule3": "Images under 90 KB in total."
+    },
+    "colour": {
+      "title": "Colour for print",
+      "text": "Screens use the hex values. Print needs a spot or process match checked against a real proof.",
+      "colour": "Colour",
+      "screen": "Screen",
+      "print": "Print",
+      "redPrint": "Match to a warm spot red on a printed proof before the first run",
+      "inkPrint": "Rich black: C60 M40 Y40 K100 on coated stock",
+      "paperPrint": "The paper itself; never print a tint for white",
+      "proof": "No print value is final until a printer has proofed it. Record the approved values here, with the printer and the stock."
+    }
+  },
+  "projects": {
+    "title": "Projects: how Shades products were made | Gradient",
+    "description": "How PageRecast was built, what the team kept and threw away, the lessons every Shades project now follows, and what comes next.",
+    "heading": "Built from real work",
+    "lead": "Gradient keeps the decisions behind each product: what we made, what the owner rejected, and the rule it left behind.",
+    "pagerecast": {
+      "text": "A free Chrome extension and Figma plugin that turn any web page into editable layers. Built in October 2026, published on the Chrome Web Store, the Figma Community and npm.",
+      "full": "The full case study",
+      "s1": "Start from zero",
+      "s1Text": "The first version was thrown out completely. The rebuild began with a plan of every feature people expected and a few the market was asking for.",
+      "s2": "Find its own mark",
+      "s2Text": "Over twenty logo directions. The shadowed and three-dimensional ones went; a flat overlap of two pages stayed, the way Google and Apple marks work.",
+      "s3": "Remove what looked generated",
+      "s3Text": "Round after round, the owner pointed at parts that felt made by a template. Each one became a rule.",
+      "s4": "Ship everywhere",
+      "s4Text": "Chrome Web Store, Figma Community, npm, a site on Cloudflare Workers, releases and a wiki.",
+      "s5": "Speak six languages",
+      "s5Text": "The extension, the plugin and the site in English, French, Romanian, Russian, Spanish and Chinese, with search markup on every page.",
+      "kept": "Kept",
+      "kept1": "Pill buttons with a clear arrow, and the old buttons where people liked them",
+      "kept2": "The real product shown working, never a drawing of it",
+      "kept3": "Bold full-width chapters, one of them red",
+      "kept4": "The company credit only in the product, the founder's in the README",
+      "cut": "Thrown away",
+      "cut1": "Monospace numbers and labels",
+      "cut2": "Fake browser windows and grey skeleton drawings",
+      "cut3": "Icons on every row and lists in rounded boxes",
+      "cut4": "The same red block reused in every section"
+    },
+    "lessons": {
+      "title": "Lessons every project follows",
+      "text": "These come from the owner's own corrections. A Shades product breaks none of them.",
+      "link": "The full list in the repository",
+      "l1": "Show the real thing",
+      "l1Text": "The actual product, page or capture. If it does not exist yet, show nothing rather than a mock.",
+      "l2": "No monospace costume",
+      "l2Text": "Numbers use tabular figures in the body face. Monospace is for code only.",
+      "l3": "No labels above headings",
+      "l3Text": "No small tracked words, no section numbers. The heading speaks for itself.",
+      "l4": "Icons only when they mean something",
+      "l4Text": "No icon on every row, no icon in a circle as the centre of an empty state.",
+      "l5": "No boxes inside boxes",
+      "l5Text": "Lists sit on hairlines. Cards are rare and never nested.",
+      "l6": "Flat marks",
+      "l6Text": "Logos are flat and two-dimensional. No shadows, no glossy app-icon renders.",
+      "l7": "Every space has a job",
+      "l7Text": "Dense and purposeful, never empty for effect and never crowded with filler.",
+      "l8": "Fast first",
+      "l8Text": "Static HTML, no third-party scripts, self-hosted fonts. A Shades page opens instantly on a phone."
+    },
+    "next": {
+      "title": "Next on Gradient",
+      "text": "The products that will start from this system instead of from a template.",
+      "imagereframe": "Image export and import for Figma, free and open source, built under the Shades brand with features the market is missing.",
+      "shades": "The agency site, rebuilt: keep its best ideas, drop the template look.",
+      "planned": "Planned"
+    },
+    "start": {
+      "title": "Start a new project",
+      "text": "The same five steps every time, so the next product starts where the last one finished.",
+      "link": "The full guide",
+      "s1": "Write the product record",
+      "s1Text": "Who it is for, what it does, what it must never do. PRODUCT.md in the repository root.",
+      "s2": "Install Gradient",
+      "s2Text": "npm i shades-gradient, then import the stylesheet or the Tailwind theme.",
+      "s3": "Decide its own mark, or wear the Shades one",
+      "s3Text": "A product can have its own logo, but it uses Gradient's type, roles and rules.",
+      "s4": "Read the lessons",
+      "s4Text": "Before the first screen, not after the fifth review.",
+      "s5": "Ship with the checks",
+      "s5Text": "Typecheck, tests, the site audit and screenshots in light and dark before anything is called done."
+    }
+  }
+}
