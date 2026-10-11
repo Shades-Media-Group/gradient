@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="{{@lang}}">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    {{@head}}
+    <script type="module" src="/src/main.ts"></script>
+  </head>
+  <body>
+    {{@nav}}
+
+    <main id="main">
+      <section class="hero">
+        <h1>{{home.hero.title}}</h1>
+        <p class="hero-lead">{{home.hero.lead}}</p>
+        <div class="cta">
+          <button
+            class="g-btn g-btn--primary g-btn--lg"
+            type="button"
+            data-copy="npm i shades-gradient"
+            data-magnetic
+          >
+            <code>npm i shades-gradient</code>{{@icon:copy}}
+            <span class="g-visually-hidden" data-copy-label>{{home.hero.copy}}</span>
+          </button>
+          <a class="g-btn g-btn--lg" href="{{@to:brand}}">{{home.hero.brand}}{{@icon:arrowRight}}</a>
+        </div>
+        <p class="hero-note">{{home.hero.note}}</p>
+      </section>
+
+      <section class="split" data-split aria-labelledby="split-title">
+        <div class="split-sticky">
+          <h2 class="g-visually-hidden" id="split-title">{{home.split.label}}</h2>
+          <div class="split-stage" aria-hidden="true">
+            <div class="split-square"></div>
+            <div class="split-bar"></div>
+            <div class="split-bar"></div>
+            <div class="split-bar"></div>
+          </div>
+          <ol class="split-layers">
+            <li>
+              <h3>{{home.split.brand.title}}</h3>
+              <p>{{home.split.brand.text}}</p>
+              <a class="g-link" href="{{@to:brand}}">{{home.split.brand.link}}</a>
+            </li>
+            <li>
+              <h3>{{home.split.foundations.title}}</h3>
+              <p>{{home.split.foundations.text}}</p>
+              <a class="g-link" href="{{@to:foundations}}">{{home.split.foundations.link}}</a>
+            </li>
+            <li>
+              <h3>{{home.split.code.title}}</h3>
+              <p>{{home.split.code.text}}</p>
+              <a class="g-link" href="{{@to:components}}">{{home.split.code.link}}</a>
+            </li>
+          </ol>
+          <p class="split-caption">{{home.split.caption}}</p>
+        </div>
+      </section>
+
+      <section class="chapter chapter--ink" data-theme="dark" id="colour">
+        <div class="chapter-head" data-reveal>
+          <h2>{{home.colour.title}}</h2>
+          <div>
+            <p>{{home.colour.text}}</p>
+            <a class="g-link" href="{{@to:foundations}}#colour">{{home.colour.link}}</a>
+          </div>
+        </div>
+        <div class="ramps" data-reveal>
+          <div class="ramp" aria-label="{{home.colour.red}}" role="img">
+            <span style="--c: var(--g-red-50)"><b>50</b></span>
+            <span style="--c: var(--g-red-100)"><b>100</b></span>
+            <span style="--c: var(--g-red-200)"><b>200</b></span>
+            <span style="--c: var(--g-red-300)"><b>300</b></span>
+            <span style="--c: var(--g-red-400)"><b>400</b></span>
+            <span class="ramp-key" style="--c: var(--g-red-500)"><b>500</b><i>#E40523</i></span>
+            <span style="--c: var(--g-red-600)"><b>600</b></span>
+            <span style="--c: var(--g-red-700)"><b>700</b></span>
+            <span style="--c: var(--g-red-800)"><b>800</b></span>
+            <span style="--c: var(--g-red-900)"><b>900</b></span>
+          </div>
+          <div class="ramp" aria-label="{{home.colour.ink}}" role="img">
+            <span style="--c: var(--g-ink-0)"><b>0</b></span>
+            <span style="--c: var(--g-ink-50)"><b>50</b></span>
+            <span style="--c: var(--g-ink-100)"><b>100</b></span>
+            <span style="--c: var(--g-ink-200)"><b>200</b></span>
+            <span style="--c: var(--g-ink-300)"><b>300</b></span>
+            <span style="--c: var(--g-ink-400)"><b>400</b></span>
+            <span style="--c: var(--g-ink-500)"><b>500</b></span>
+            <span style="--c: var(--g-ink-600)"><b>600</b></span>
+            <span style="--c: var(--g-ink-700)"><b>700</b></span>
+            <span style="--c: var(--g-ink-800)"><b>800</b></span>
+            <span style="--c: var(--g-ink-900)"><b>900</b></span>
+            <span style="--c: var(--g-ink-950)"><b>950</b></span>
+          </div>
+          <p class="ramps-rule">{{home.colour.rule}}</p>
+        </div>
+      </section>
+
+      <section class="chapter" id="type">
+        <div class="chapter-head" data-reveal>
+          <h2>{{home.type.title}}</h2>
+          <div>
+            <p>{{home.type.text}}</p>
+            <a class="g-link" href="{{@to:foundations}}#type">{{home.type.link}}</a>
+          </div>
+        </div>
+        <div class="specimen" data-reveal>
+          <p class="specimen-glyphs" aria-hidden="true">Aa</p>
+          <ul class="specimen-lines">
+            <li lang="en"><span>Where identity becomes experience.</span><small>Space Grotesk 700</small></li>
+            <li lang="ro"><span>Acolo unde identitatea devine experiență.</span><small>Space Grotesk 700</small></li>
+            <li lang="ru" class="specimen-body"><span>Там, где айдентика становится опытом.</span><small>Inter · Cyrillic</small></li>
+            <li lang="zh-Hans" class="specimen-body"><span>让品牌识别成为体验。</span><small>{{home.type.system}}</small></li>
+            <li class="specimen-body"><span>{{home.type.body}}</span><small>Hanken Grotesk 400</small></li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="chapter chapter--ink" data-theme="dark" id="family">
+        <div class="chapter-head" data-reveal>
+          <h2>{{home.family.title}}</h2>
+          <div>
+            <p>{{home.family.text}}</p>
+            <a class="g-link" href="{{@to:brand}}#family">{{home.family.link}}</a>
+          </div>
+        </div>
+        <ul class="family-row" data-reveal>
+          <li><div class="g-idle g-idle--spectra">{{@family:spectra}}</div><b>Spectra</b><span>{{brand.family.spectra.role}}</span></li>
+          <li><div class="g-idle g-idle--mera">{{@family:mera}}</div><b>Mera</b><span>{{brand.family.mera.role}}</span></li>
+          <li><div class="g-idle g-idle--sol">{{@family:sol}}</div><b>Sol</b><span>{{brand.family.sol.role}}</span></li>
+          <li><div class="g-idle g-idle--nova">{{@family:nova}}</div><b>Nova</b><span>{{brand.family.nova.role}}</span></li>
+          <li><div class="g-idle g-idle--sage">{{@family:sage}}</div><b>Sage</b><span>{{brand.family.sage.role}}</span></li>
+          <li><div class="g-idle g-idle--vio">{{@family:vio}}</div><b>Vio</b><span>{{brand.family.vio.role}}</span></li>
+          <li><div class="g-idle g-idle--sunny">{{@family:sunny}}</div><b>Sunny</b><span>{{brand.family.sunny.role}}</span></li>
+        </ul>
+      </section>
+
+      <section class="chapter" id="parts">
+        <div class="chapter-head" data-reveal>
+          <h2>{{home.parts.title}}</h2>
+          <div>
+            <p>{{home.parts.text}}</p>
+            <a class="g-link" href="{{@to:components}}">{{home.parts.link}}</a>
+          </div>
+        </div>
+        <form class="brief" data-brief data-reveal novalidate>
+          <div class="brief-fields">
+            <div class="g-field">
+              <label class="g-label" for="brief-name">{{home.parts.name}}</label>
+              <input class="g-input" id="brief-name" name="name" autocomplete="name" placeholder="{{home.parts.namePlaceholder}}" />
+            </div>
+            <div class="g-field">
+              <label class="g-label" for="brief-email">{{home.parts.email}}</label>
+              <input class="g-input" id="brief-email" name="email" type="email" autocomplete="email" placeholder="you@company.md" aria-describedby="brief-email-error" />
+              <p class="g-error" id="brief-email-error" hidden>{{home.parts.emailError}}</p>
+            </div>
+            <div class="g-field">
+              <span class="g-label" id="brief-kind">{{home.parts.kind}}</span>
+              <div class="g-segmented" role="radiogroup" aria-labelledby="brief-kind" data-segmented>
+                <button type="button" role="radio" aria-checked="true">{{home.parts.kindBrand}}</button>
+                <button type="button" role="radio" aria-checked="false">{{home.parts.kindSite}}</button>
+                <button type="button" role="radio" aria-checked="false">{{home.parts.kindBoth}}</button>
+              </div>
+            </div>
+            <label class="g-check brief-switch">
+              <input class="g-switch" type="checkbox" role="switch" checked />
+              {{home.parts.checklist}}
+            </label>
+          </div>
+          <div class="brief-side">
+            <p class="brief-tags"><span class="g-tag">Branding</span> <span class="g-tag">UI/UX</span> <span class="g-tag">Web</span></p>
+            <div class="brief-actions">
+              <button class="g-btn g-btn--primary" type="submit" data-magnetic>
+                {{home.parts.send}}{{@icon:arrowRight}}<span class="g-loader" aria-hidden="true"><i></i><i></i><i></i></span>
+              </button>
+              <button class="g-btn" type="button" disabled>{{home.parts.call}}</button>
+            </div>
+            <p class="brief-note" role="status" data-brief-status>{{home.parts.demo}}</p>
+          </div>
+        </form>
+      </section>
+
+      <section class="chapter chapter--red" id="licence">
+        <div class="chapter-head" data-reveal>
+          <h2>{{home.licence.title}}</h2>
+          <div>
+            <p>{{home.licence.text}}</p>
+            <a class="g-link" data-link="trademarks">{{home.licence.link}}</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="chapter" id="work">
+        <div class="chapter-head" data-reveal>
+          <h2>{{home.work.title}}</h2>
+          <div>
+            <p>{{home.work.text}}</p>
+            <a class="g-link" href="{{@to:projects}}">{{home.work.link}}</a>
+          </div>
+        </div>
+        <ul class="ledger" data-reveal>
+          <li>
+            <a data-link="pagerecast"><b>PageRecast</b>{{@icon:arrowOutward}}</a>
+            <p>{{home.work.pagerecast}}</p>
+            <span class="g-badge g-badge--success">{{home.work.live}}</span>
+          </li>
+          <li>
+            <b>nails-by-alynna</b>
+            <p>{{home.work.nails}}</p>
+            <span class="g-badge g-badge--success">{{home.work.live}}</span>
+          </li>
+          <li>
+            <b>lms</b>
+            <p>{{home.work.lms}}</p>
+            <span class="g-badge g-badge--success">{{home.work.live}}</span>
+          </li>
+          <li>
+            <b>ImageReframe</b>
+            <p>{{home.work.imagereframe}}</p>
+            <span class="g-badge g-badge--accent">{{home.work.next}}</span>
+          </li>
+          <li>
+            <a data-link="shades"><b>shades.md</b>{{@icon:arrowOutward}}</a>
+            <p>{{home.work.shades}}</p>
+            <span class="g-badge g-badge--accent">{{home.work.next}}</span>
+          </li>
+        </ul>
+      </section>
+
+      <section class="chapter chapter--sunken" id="install">
+        <div class="chapter-head" data-reveal>
+          <h2>{{home.install.title}}</h2>
+          <div>
+            <p>{{home.install.text}}</p>
+            <a class="g-link" data-link="npm">{{home.install.link}}</a>
+          </div>
+        </div>
+        <ol class="install" data-reveal>
+          <li>
+            <h3>{{home.install.any}}</h3>
+            <pre class="g-code"><code>npm i shades-gradient
+
+import 'shades-gradient/gradient.css'</code></pre>
+            <p>{{home.install.anyText}}</p>
+          </li>
+          <li>
+            <h3>{{home.install.tailwind}}</h3>
+            <pre class="g-code"><code>@import 'tailwindcss';
+@import 'shades-gradient/theme.css';
+
+&lt;a class="bg-accent text-on-accent rounded-pill"&gt;</code></pre>
+            <p>{{home.install.tailwindText}}</p>
+          </li>
+          <li>
+            <h3>{{home.install.icons}}</h3>
+            <pre class="g-code"><code>import { renderIcon } from 'shades-gradient'
+
+button.innerHTML = renderIcon('arrowRight')</code></pre>
+            <p>{{home.install.iconsText}}</p>
+          </li>
+        </ol>
+      </section>
+
+      <section class="chapter" id="faq">
+        <div class="chapter-head" data-reveal>
+          <h2>{{home.faq.title}}</h2>
+        </div>
+        {{@faq}}
+      </section>
+    </main>
+
+    {{@footer}}
+  </body>
+</html>
