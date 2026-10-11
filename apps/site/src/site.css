@@ -943,11 +943,25 @@ body {
   border-top: 2px dashed #3a3a40;
 }
 
+/* The email sits as a sheet on a light grey ground, so the message and the
+   page never share one colour. */
 .page-art.tile.tile--email {
   aspect-ratio: 1 / 1;
-  padding: 0;
+  padding: clamp(14px, 2vw, 24px) clamp(14px, 2vw, 24px) 0;
   overflow: hidden;
-  background: #f7f6f3;
+  background: var(--g-ink-100);
+  box-shadow: inset 0 0 0 1px var(--g-line-strong);
+}
+
+:root[data-theme='dark'] .page-art.tile.tile--email,
+.chapter--ink .page-art.tile.tile--email {
+  background: var(--g-ink-700);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) .page-art.tile.tile--email {
+    background: var(--g-ink-700);
+  }
 }
 
 @media (max-width: 860px) {
@@ -961,7 +975,10 @@ body {
   display: block;
   width: 100%;
   height: 100%;
-  border: 0;
+  border: 1px solid var(--g-line-strong);
+  border-bottom: 0;
+  border-radius: 12px 12px 0 0;
+  background: #f7f6f3;
   pointer-events: none;
 }
 
