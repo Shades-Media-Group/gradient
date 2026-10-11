@@ -3,13 +3,21 @@ import '@fontsource-variable/hanken-grotesk/wght.css'
 import '@fontsource-variable/inter/wght.css'
 import 'shades-gradient/gradient.css'
 import { magnetic } from 'shades-gradient/magnetic'
+import type { ConsentLabels } from 'shades-gradient/consent'
+import { preferences, reducedMotion, type PreferenceLabels } from 'shades-gradient/preferences'
 import './site.css'
 
-type Strings = { copied: string; iconCopied: string; sent: string; emailError: string }
+type Strings = {
+  copied: string
+  iconCopied: string
+  sent: string
+  emailError: string
+  prefs: PreferenceLabels
+  consent: ConsentLabels
+}
 const strings = JSON.parse(document.getElementById('strings')?.textContent ?? '{}') as Strings
 const fill = (text: string, values: Record<string, string>) =>
   text.replace(/\{(\w+)\}/g, (_, key: string) => values[key] ?? '')
-const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches
 const $$ = <T extends Element = HTMLElement>(selector: string, root: ParentNode = document) => [
   ...root.querySelectorAll<T>(selector),
 ]
@@ -67,13 +75,14 @@ if (split) {
     frame = 0
     const rect = split.getBoundingClientRect()
     const travel = Math.max(1, split.offsetHeight - innerHeight)
-    const t = reduced || narrow.matches ? 1 : Math.min(1, Math.max(0, -rect.top / travel))
+    const t = reducedMotion() || narrow.matches ? 1 : Math.min(1, Math.max(0, -rect.top / travel))
     split.style.setProperty('--t', t.toFixed(4))
     split.toggleAttribute('data-done', t > 0.82)
   }
   const schedule = () => (frame ||= requestAnimationFrame(update))
   addEventListener('scroll', schedule, { passive: true })
   addEventListener('resize', schedule)
+  document.addEventListener('shades:preferences', schedule)
   update()
 }
 
@@ -194,4 +203,5 @@ document.addEventListener('keydown', (event) => {
     }
 })
 
+preferences({ labels: strings.prefs, consent: strings.consent })
 magnetic()

@@ -28,12 +28,17 @@ const { version } = JSON.parse(
 
 /** The languages the site is written in. English is the default, at the root. */
 export const LOCALES = [
-  { code: 'en', lang: 'en', og: 'en_US', name: 'English' },
-  { code: 'fr', lang: 'fr', og: 'fr_FR', name: 'Français' },
-  { code: 'ro', lang: 'ro', og: 'ro_RO', name: 'Română' },
-  { code: 'ru', lang: 'ru', og: 'ru_RU', name: 'Русский' },
-  { code: 'es', lang: 'es', og: 'es_ES', name: 'Español' },
-  { code: 'zh', lang: 'zh-Hans', og: 'zh_CN', name: '中文' },
+  { code: 'en', lang: 'en', og: 'en_US', name: 'English', short: 'EN' },
+  { code: 'fr', lang: 'fr', og: 'fr_FR', name: 'Français', short: 'FR' },
+  { code: 'ro', lang: 'ro', og: 'ro_RO', name: 'Română', short: 'RO' },
+  { code: 'ru', lang: 'ru', og: 'ru_RU', name: 'Русский', short: 'RU' },
+  { code: 'es', lang: 'es', og: 'es_ES', name: 'Español', short: 'ES' },
+  { code: 'it', lang: 'it', og: 'it_IT', name: 'Italiano', short: 'IT' },
+  { code: 'tr', lang: 'tr', og: 'tr_TR', name: 'Türkçe', short: 'TR' },
+  { code: 'hi', lang: 'hi', og: 'hi_IN', name: 'हिन्दी', short: 'HI' },
+  { code: 'ja', lang: 'ja', og: 'ja_JP', name: '日本語', short: 'JA' },
+  { code: 'zh', lang: 'zh-Hans', og: 'zh_CN', name: '简体中文', short: '简' },
+  { code: 'zh-hant', lang: 'zh-Hant', og: 'zh_TW', name: '繁體中文', short: '繁' },
 ] as const
 type Locale = (typeof LOCALES)[number]
 
@@ -224,6 +229,8 @@ function head(locale: Locale, page: Page, t: (key: string) => string, dict: Dict
     '@graph': structuredData(locale, page, t, dict),
   }).replaceAll('<', '\\u003c')
   return [
+    // Applies the reader's theme and accessibility choices before anything paints.
+    '<script vite-ignore src="/preferences-boot.js"></script>',
     `<title>${title}</title>`,
     `<meta name="description" content="${description}" />`,
     '<meta name="robots" content="index, follow, max-image-preview:large" />',
@@ -299,7 +306,7 @@ function render(locale: Locale, page: Page): string {
       </a>
       <nav class="nav-links" aria-label="${html(t('nav.label'))}">${navLinks}</nav>
       <details class="lang">
-        <summary><span class="g-visually-hidden">${t('language')}: </span>${icon('globe')}<span>${locale.code.toUpperCase()}</span></summary>
+        <summary><span class="g-visually-hidden">${t('language')}: </span>${icon('globe')}<span>${locale.short}</span></summary>
         <ul class="lang-menu">${langLinks}</ul>
       </details>
       <a class="g-btn g-btn--inverse g-btn--sm nav-cta" href="${base}#install">${t('nav.cta')}</a>
@@ -387,6 +394,8 @@ function render(locale: Locale, page: Page): string {
           iconCopied: t('icons.copied'),
           sent: t('home.parts.sent'),
           emailError: t('home.parts.emailError'),
+          prefs: dict.prefs,
+          consent: dict.consent,
         }).replaceAll('<', '\\u003c')}</script>\n  </body>`,
       )
   )
@@ -460,6 +469,11 @@ export function pages(): Plugin {
     name: 'gradient-pages',
     config: () => ({ build: { rollupOptions: { input: generate() } } }),
     generateBundle() {
+      this.emitFile({
+        type: 'asset',
+        fileName: 'preferences-boot.js',
+        source: readFileSync(join(root, '../../packages/gradient/dist/preferences-boot.js')),
+      })
       const { summary, full } = llms()
       this.emitFile({ type: 'asset', fileName: 'sitemap.xml', source: sitemap() })
       this.emitFile({ type: 'asset', fileName: 'llms.txt', source: summary })
