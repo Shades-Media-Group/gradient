@@ -1032,8 +1032,99 @@ body {
   border-bottom: 1px solid var(--g-line);
 }
 
+/* Each page opens on its own specimen: the tile that leads to it from the
+   home page index, now at the size of the room it opens. */
+.page-head {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+  column-gap: clamp(32px, 6vw, 96px);
+  align-items: end;
+}
+
+.page-head > :not(.page-art) {
+  grid-column: 1;
+}
+
+.page-art.tile {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  aspect-ratio: 4 / 3;
+  min-height: 0;
+}
+
+.page-art.tile--print {
+  padding: 0;
+}
+
+/* In a page head the specimen sits centred and fills its tile. */
+.page-art .tile-art {
+  place-self: center;
+}
+
+.page-art.tile--brand .tile-art {
+  width: 40%;
+}
+
+.page-art.tile--colour .tile-art {
+  font-size: clamp(2.5rem, 1.2rem + 3.6vw, 5.25rem);
+}
+
+.page-art.tile--components .tile-art {
+  transform: scale(1.7);
+}
+
+.page-art.tile--icons .tile-art {
+  grid-template-columns: repeat(3, clamp(32px, 3.4vw, 48px));
+  gap: clamp(20px, 2.4vw, 32px);
+}
+
+.page-art.tile--icons .tile-art svg {
+  width: 100%;
+  height: auto;
+}
+
+.page-art.tile--email .tile-art {
+  font-size: clamp(2.5rem, 1.2rem + 3.4vw, 5rem);
+}
+
+.page-art.tile--a11y .tile-art {
+  font-size: clamp(4rem, 2rem + 6vw, 8.5rem);
+}
+
+.page-art.tile--projects .tile-art img {
+  width: clamp(52px, 6vw, 88px);
+}
+
+.page-art.tile--icons,
+.page-art.tile--components {
+  box-shadow: inset 0 0 0 1px var(--g-line);
+}
+
+@media (max-width: 860px) {
+  .page-head {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  /* On a phone the specimen is a band under the lead, short enough to keep
+     the first section in reach. */
+  .page-art.tile {
+    grid-column: 1;
+    grid-row: auto;
+    aspect-ratio: 16 / 7;
+    margin-top: 28px;
+  }
+
+  .page-art.tile--brand .tile-art {
+    width: 24%;
+  }
+
+  .page-art.tile--components .tile-art {
+    transform: scale(1.3);
+  }
+}
+
 .page-head h1 {
-  font-size: var(--g-size-display);
+  font-size: clamp(3rem, 2rem + 4.6vw, 6.5rem);
   line-height: var(--g-leading-display);
   letter-spacing: var(--g-tracking-display);
 }
