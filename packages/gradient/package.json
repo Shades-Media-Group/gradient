@@ -1,0 +1,68 @@
+{
+  "name": "shades-gradient",
+  "version": "0.1.0",
+  "description": "Gradient, the Shades Media Group design system: tokens, CSS components, a Tailwind v4 theme, icons and brand files.",
+  "license": "MIT",
+  "author": "Shades Media Group (https://shades.md)",
+  "homepage": "https://gradient.shades.md",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Shades-Media-Group/gradient.git",
+    "directory": "packages/gradient"
+  },
+  "bugs": "https://github.com/Shades-Media-Group/gradient/issues",
+  "keywords": [
+    "design-system",
+    "design-tokens",
+    "css",
+    "tailwindcss",
+    "icons",
+    "shades"
+  ],
+  "type": "module",
+  "sideEffects": [
+    "*.css"
+  ],
+  "files": [
+    "dist",
+    "brand",
+    "icons",
+    "README.md",
+    "LICENSE"
+  ],
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./magnetic": {
+      "types": "./dist/magnetic.d.ts",
+      "default": "./dist/magnetic.js"
+    },
+    "./gradient.css": "./dist/gradient.css",
+    "./tokens.css": "./dist/tokens.css",
+    "./base.css": "./dist/base.css",
+    "./components.css": "./dist/components.css",
+    "./motion.css": "./dist/motion.css",
+    "./theme.css": "./dist/theme.css",
+    "./tokens.json": "./dist/tokens.json",
+    "./icons.svg": "./dist/icons.svg",
+    "./icons/*": "./icons/*",
+    "./brand/*": "./brand/*",
+    "./package.json": "./package.json"
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "icons": "node scripts/icons.mjs",
+    "prepublishOnly": "node scripts/build.mjs"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.2",
+    "simple-icons": "^16.35.0"
+  }
+}
