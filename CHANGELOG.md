@@ -4,6 +4,8 @@ Every notable change to Gradient and the `shades-gradient` package. The format f
 
 ## [Unreleased]
 
+## [0.4.0] - 2026-10-11
+
 ### Added
 
 - **A default theme:** `<html data-theme-default="light">` (or `"dark"`) opens a site in that theme until the reader chooses. The boot script applies it before paint, the panel shows it selected, Reset returns to it, and `defaultTheme()` reads it. The Gradient site now opens in light.
@@ -11,12 +13,27 @@ Every notable change to Gradient and the `shades-gradient` package. The format f
 - **Accessibility page:** the WCAG 2.2 AA standard, ten promises every product keeps, what each display-panel option does and who it helps, each product's status with its known gaps, how it is tested, and how to report a barrier.
 - **Home page:** an "About Shades" section and the product family, with the Gradient, PageRecast, ImageRefold and LMS marks; the brand page lists LMS among the products. ImageRefold appears under its own name and mark.
 - **Docs:** `docs/accessibility.md` and `docs/design-philosophy.md`, with the audit every page passes.
-- **Product shots** (`yarn renders`): the print files photographed in a code-built studio, including a cloth-simulated tee.
+- **Product shots** (`yarn renders`): the print files photographed in a code-built studio, and the tee print set into a real photograph.
+- **Email passes** (`shades-gradient/email`): every message centres on an ink, red or paper pass with a stub, through `pass()`, `ticket()` and `code()`, in a 520 px column.
+- **Site:** an index mosaic of real specimens on the home page, a specimen on every page head, a sticky section bar, a full-screen phone menu, studio shots of the print, and ImageRefold marked live.
 
 ### Changed
 
 - **Softer roles:** the page is warm paper (`ink.25`, #F7F6F3), text is `ink.800`, secondary text `ink.500`; dark mode moves to charcoal (`ink.900`) with off-white text. Every pair still passes WCAG AA.
 - **Consent banner on phones:** a compact sheet above the home indicator, with Customise beside the title.
+
+### Fixed
+
+- Statement chapters take the full measure on desktop (site)
+- Logo plates and the copied note on phones (site)
+- A calmer menu size and an optically centred footer wordmark (site)
+- Set the email specimen apart from the page (site)
+- Headings never split a word, the company name never wraps (site)
+- A compact sheet on phones instead of half the screen (consent)
+- Drop the about facts that repeated the paragraph (site)
+- Show every product as its own logo at one size (site)
+- Tighten small text under names and fit every page from 320 px (site)
+- Call ImageRefold by its name and show its real mark (site)
 
 ## [0.3.0] - 2026-10-11
 
