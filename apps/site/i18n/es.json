@@ -54,7 +54,7 @@
       },
       "code": {
         "title": "Código",
-        "text": "Componentes CSS, un tema de Tailwind y 76 iconos de Shades en un solo paquete.",
+        "text": "Componentes CSS, un tema de Tailwind y 78 iconos de Shades en un solo paquete.",
         "link": "Los componentes"
       },
       "caption": "Tres barras en blanco pleno, al 75% y al 50%. Esa es toda la idea: tonos de un mismo color, uno junto a otro, forman un degradado."
@@ -123,7 +123,7 @@
       "tailwind": "Tailwind v4",
       "tailwindText": "Cada token se convierte en una utilidad que sigue el modo claro y el oscuro: bg-accent, text-text-2, rounded-pill.",
       "icons": "Iconos en cualquier lugar",
-      "iconsText": "76 iconos de Shades como cadenas SVG, o un sprite para HTML puro."
+      "iconsText": "78 iconos de Shades como cadenas SVG, o un sprite para HTML puro."
     },
     "faq": {
       "title": "Preguntas",
@@ -270,7 +270,7 @@
     },
     "roles": {
       "title": "Roles",
-      "text": "Las interfaces usan roles, nunca las escalas en bruto. Cada rol tiene un valor claro y uno oscuro, y cada rol de texto cumple WCAG AA sobre los fondos donde se usa.",
+      "text": "Títulos y texto corrido",
       "theme": "Tema de vista previa",
       "light": "Claro",
       "dark": "Oscuro",
@@ -281,7 +281,6 @@
       "surface": "Superficies elevadas y campos",
       "sunken": "Zonas hundidas, código y secciones tranquilas",
       "line": "Líneas finas y divisores",
-      "text": "Títulos y texto corrido",
       "text2": "Texto de apoyo",
       "text3": "Pistas y pies de foto, el texto legible más discreto",
       "accent": "La única acción principal y la selección",
@@ -402,7 +401,7 @@
   },
   "icons": {
     "title": "Iconos: el conjunto de iconos de Shades | Gradient",
-    "description": "76 iconos de interfaz de Shades en una retícula de 24 px con trazos redondeados de 2 px, libres bajo MIT, y los logos de los servicios que enlaza Shades.",
+    "description": "78 iconos de interfaz de Shades en una retícula de 24 px con trazos redondeados de 2 px, libres bajo MIT, y los logos de los servicios que enlaza Shades.",
     "heading": "Iconos",
     "lead": "El conjunto propio de Shades, dibujado para Gradient: retícula de 24 px, trazos redondeados de 2 px, un archivo por icono. Haz clic en un icono para copiar su nombre.",
     "search": "Buscar iconos",
@@ -562,5 +561,37 @@
       "s5": "Publica con las comprobaciones",
       "s5Text": "Typecheck, tests, la auditoría del sitio y capturas en claro y oscuro antes de dar nada por terminado."
     }
+  },
+  "prefs": {
+    "open": "Pantalla y accesibilidad",
+    "title": "Pantalla",
+    "theme": "Tema",
+    "light": "Claro",
+    "dark": "Oscuro",
+    "system": "Auto",
+    "access": "Accesibilidad",
+    "text": "Texto más grande",
+    "contrast": "Más contraste",
+    "motion": "Reducir el movimiento",
+    "links": "Subrayar los enlaces",
+    "reading": "Lectura más fácil",
+    "saved": "Se guarda solo en este navegador.",
+    "reset": "Restablecer",
+    "close": "Cerrar",
+    "privacy": "Opciones de privacidad"
+  },
+  "consent": {
+    "title": "Tu privacidad",
+    "text": "Este sitio guarda solo lo que necesita para funcionar, como tus ajustes de pantalla. Las herramientas de analítica o marketing solo funcionarían con tu permiso.",
+    "acceptAll": "Aceptar todo",
+    "necessaryOnly": "Solo necesarias",
+    "customize": "Personalizar",
+    "save": "Guardar elección",
+    "necessary": "Necesarias",
+    "necessaryText": "Recuerdan tus ajustes de pantalla y privacidad. Siempre activas.",
+    "analytics": "Analítica",
+    "analyticsText": "Recuento anónimo de visitas, para saber qué ayuda. No se usa en este sitio hoy.",
+    "marketing": "Marketing",
+    "marketingText": "Publicidad y medición de campañas. No se usa en este sitio hoy."
   }
 }

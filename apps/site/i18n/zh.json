@@ -54,7 +54,7 @@
       },
       "code": {
         "title": "代码",
-        "text": "CSS 组件、Tailwind 主题和 76 个 Shades 图标，集于一个包。",
+        "text": "CSS 组件、Tailwind 主题和 78 个 Shades 图标，集于一个包。",
         "link": "组件"
       },
       "caption": "三根竖条，分别是 100%、75% 和 50% 的白。这就是全部理念：同一种颜色的不同深浅并排，便成了渐变。"
@@ -123,7 +123,7 @@
       "tailwind": "Tailwind v4",
       "tailwindText": "每个设计令牌都变成随亮色与暗色切换的工具类：bg-accent、text-text-2、rounded-pill。",
       "icons": "图标随处可用",
-      "iconsText": "76 个 Shades 图标，提供 SVG 字符串，也可用一张雪碧图直接用于纯 HTML。"
+      "iconsText": "78 个 Shades 图标，提供 SVG 字符串，也可用一张雪碧图直接用于纯 HTML。"
     },
     "faq": {
       "title": "常见问题",
@@ -270,7 +270,7 @@
     },
     "roles": {
       "title": "角色",
-      "text": "界面只使用角色，从不直接使用原始色阶。每个角色都有亮色值和暗色值，所有文字角色在其所处背景上均符合 WCAG AA 标准。",
+      "text": "标题与正文",
       "theme": "预览主题",
       "light": "亮色",
       "dark": "暗色",
@@ -281,7 +281,6 @@
       "surface": "浮起的表面和输入框",
       "sunken": "凹陷区域、代码和安静的区块",
       "line": "细线与分隔线",
-      "text": "标题与正文",
       "text2": "辅助文字",
       "text3": "提示与说明文字，最弱但仍可读",
       "accent": "唯一的主要操作与选中状态",
@@ -402,7 +401,7 @@
   },
   "icons": {
     "title": "图标：Shades 图标集 | Gradient",
-    "description": "76 个 Shades 界面图标，基于 24 px 网格、2 px 圆头描边绘制，采用 MIT 许可免费使用，另附 Shades 所链接服务的标志。",
+    "description": "78 个 Shades 界面图标，基于 24 px 网格、2 px 圆头描边绘制，采用 MIT 许可免费使用，另附 Shades 所链接服务的标志。",
     "heading": "图标",
     "lead": "Shades 自有图标集，专为 Gradient 绘制：24 px 网格，2 px 圆头描边，每个图标一个文件。点击图标即可复制其名称。",
     "search": "搜索图标",
@@ -562,5 +561,37 @@
       "s5": "带着检查上线",
       "s5Text": "类型检查、测试、网站审计，以及亮色和暗色下的截图，全部完成后才能说做完了。"
     }
+  },
+  "prefs": {
+    "open": "显示与无障碍",
+    "title": "显示",
+    "theme": "主题",
+    "light": "浅色",
+    "dark": "深色",
+    "system": "自动",
+    "access": "无障碍",
+    "text": "放大文字",
+    "contrast": "提高对比度",
+    "motion": "减少动效",
+    "links": "链接加下划线",
+    "reading": "更易阅读",
+    "saved": "仅保存在此浏览器中。",
+    "reset": "重置",
+    "close": "关闭",
+    "privacy": "隐私选项"
+  },
+  "consent": {
+    "title": "你的隐私",
+    "text": "本站只保存运行所需的信息，例如你的显示设置。分析或营销工具只有在你同意后才会运行。",
+    "acceptAll": "全部接受",
+    "necessaryOnly": "仅必要项",
+    "customize": "自定义",
+    "save": "保存选择",
+    "necessary": "必要",
+    "necessaryText": "记住你的显示和隐私选择。始终开启。",
+    "analytics": "分析",
+    "analyticsText": "匿名统计访问量，了解哪些内容有用。本站目前未使用。",
+    "marketing": "营销",
+    "marketingText": "广告与活动效果衡量。本站目前未使用。"
   }
 }

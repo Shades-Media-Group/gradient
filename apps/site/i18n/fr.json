@@ -54,7 +54,7 @@
       },
       "code": {
         "title": "Code",
-        "text": "Des composants CSS, un thème Tailwind et 76 icônes Shades dans un seul paquet.",
+        "text": "Des composants CSS, un thème Tailwind et 78 icônes Shades dans un seul paquet.",
         "link": "Les composants"
       },
       "caption": "Trois barres blanches à 100 %, 75 % et 50 %. Toute l'idée est là : des nuances d'une même couleur, côte à côte, forment un dégradé."
@@ -123,7 +123,7 @@
       "tailwind": "Tailwind v4",
       "tailwindText": "Chaque token devient une classe utilitaire qui suit les modes clair et sombre : bg-accent, text-text-2, rounded-pill.",
       "icons": "Des icônes partout",
-      "iconsText": "76 icônes Shades en chaînes SVG, ou un sprite unique pour le HTML pur."
+      "iconsText": "78 icônes Shades en chaînes SVG, ou un sprite unique pour le HTML pur."
     },
     "faq": {
       "title": "Questions",
@@ -270,7 +270,7 @@
     },
     "roles": {
       "title": "Rôles",
-      "text": "Les interfaces utilisent les rôles, jamais les échelles brutes. Chaque rôle a une valeur claire et une valeur sombre, et chaque rôle de texte respecte le niveau AA des WCAG sur les fonds où il apparaît.",
+      "text": "Titres et texte courant",
       "theme": "Thème d'aperçu",
       "light": "Clair",
       "dark": "Sombre",
@@ -281,7 +281,6 @@
       "surface": "Surfaces surélevées et champs",
       "sunken": "Creux, code et sections calmes",
       "line": "Filets et séparateurs",
-      "text": "Titres et texte courant",
       "text2": "Texte secondaire",
       "text3": "Indications et légendes, le texte lisible le plus discret",
       "accent": "L'unique action principale et la sélection",
@@ -402,7 +401,7 @@
   },
   "icons": {
     "title": "Icônes : le jeu d'icônes Shades | Gradient",
-    "description": "76 icônes d'interface Shades sur une grille de 24 px, traits arrondis de 2 px, libres sous licence MIT, plus les logos des services liés par Shades.",
+    "description": "78 icônes d'interface Shades sur une grille de 24 px, traits arrondis de 2 px, libres sous licence MIT, plus les logos des services liés par Shades.",
     "heading": "Icônes",
     "lead": "Le jeu propre à Shades, dessiné pour Gradient : grille de 24 px, traits arrondis de 2 px, un fichier par icône. Cliquez sur une icône pour copier son nom.",
     "search": "Rechercher une icône",
@@ -562,5 +561,37 @@
       "s5": "Livrer avec les vérifications",
       "s5Text": "Vérification des types, tests, audit du site et captures en clair et en sombre avant de déclarer quoi que ce soit terminé."
     }
+  },
+  "prefs": {
+    "open": "Affichage et accessibilité",
+    "title": "Affichage",
+    "theme": "Thème",
+    "light": "Clair",
+    "dark": "Sombre",
+    "system": "Auto",
+    "access": "Accessibilité",
+    "text": "Texte plus grand",
+    "contrast": "Plus de contraste",
+    "motion": "Réduire les animations",
+    "links": "Souligner les liens",
+    "reading": "Lecture facilitée",
+    "saved": "Enregistré dans ce navigateur uniquement.",
+    "reset": "Réinitialiser",
+    "close": "Fermer",
+    "privacy": "Choix de confidentialité"
+  },
+  "consent": {
+    "title": "Votre vie privée",
+    "text": "Ce site ne garde que ce dont il a besoin pour fonctionner, comme vos réglages d’affichage. Les outils d’analyse ou de marketing ne fonctionneraient qu’avec votre accord.",
+    "acceptAll": "Tout accepter",
+    "necessaryOnly": "Le nécessaire seulement",
+    "customize": "Personnaliser",
+    "save": "Enregistrer mes choix",
+    "necessary": "Nécessaires",
+    "necessaryText": "Retiennent vos choix d’affichage et de confidentialité. Toujours actifs.",
+    "analytics": "Mesure d’audience",
+    "analyticsText": "Visites comptées de façon anonyme, pour savoir ce qui aide. Non utilisé sur ce site aujourd’hui.",
+    "marketing": "Marketing",
+    "marketingText": "Publicité et mesure des campagnes. Non utilisé sur ce site aujourd’hui."
   }
 }

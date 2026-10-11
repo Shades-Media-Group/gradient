@@ -54,7 +54,7 @@
       },
       "code": {
         "title": "Code",
-        "text": "CSS components, a Tailwind theme and 76 Shades icons in one package.",
+        "text": "CSS components, a Tailwind theme and 78 Shades icons in one package.",
         "link": "The components"
       },
       "caption": "Three bars at full, 75% and 50% white. That is the whole idea: shades of one colour, side by side, make a gradient."
@@ -123,7 +123,7 @@
       "tailwind": "Tailwind v4",
       "tailwindText": "Every token becomes a utility that follows light and dark: bg-accent, text-text-2, rounded-pill.",
       "icons": "Icons anywhere",
-      "iconsText": "76 Shades icons as SVG strings, or one sprite for plain HTML."
+      "iconsText": "78 Shades icons as SVG strings, or one sprite for plain HTML."
     },
     "faq": {
       "title": "Questions",
@@ -270,7 +270,7 @@
     },
     "roles": {
       "title": "Roles",
-      "text": "Interfaces use roles, never the raw scales. Each role has a light and a dark value, and every text role passes WCAG AA on the backgrounds it sits on.",
+      "text": "Headings and body text",
       "theme": "Preview theme",
       "light": "Light",
       "dark": "Dark",
@@ -281,7 +281,6 @@
       "surface": "Raised surfaces and fields",
       "sunken": "Wells, code and quiet sections",
       "line": "Hairlines and dividers",
-      "text": "Headings and body text",
       "text2": "Supporting text",
       "text3": "Hints and captions, the quietest readable text",
       "accent": "The one primary action and selection",
@@ -402,7 +401,7 @@
   },
   "icons": {
     "title": "Icons: the Shades icon set | Gradient",
-    "description": "76 Shades interface icons drawn on a 24 px grid with 2 px round strokes, free to use under MIT, plus the marks of the services Shades links to.",
+    "description": "78 Shades interface icons drawn on a 24 px grid with 2 px round strokes, free to use under MIT, plus the marks of the services Shades links to.",
     "heading": "Icons",
     "lead": "Shades' own set, drawn for Gradient: 24 px grid, 2 px round strokes, one file per icon. Click an icon to copy its name.",
     "search": "Search icons",
@@ -562,5 +561,37 @@
       "s5": "Ship with the checks",
       "s5Text": "Typecheck, tests, the site audit and screenshots in light and dark before anything is called done."
     }
+  },
+  "prefs": {
+    "open": "Display and accessibility",
+    "title": "Display",
+    "theme": "Theme",
+    "light": "Light",
+    "dark": "Dark",
+    "system": "Auto",
+    "access": "Accessibility",
+    "text": "Larger text",
+    "contrast": "More contrast",
+    "motion": "Reduce motion",
+    "links": "Underline links",
+    "reading": "Easier reading",
+    "saved": "Saved in this browser only.",
+    "reset": "Reset",
+    "close": "Close",
+    "privacy": "Privacy choices"
+  },
+  "consent": {
+    "title": "Your privacy",
+    "text": "This site keeps only what it needs to work, like your display settings. Analytics or marketing tools would run only with your yes.",
+    "acceptAll": "Accept all",
+    "necessaryOnly": "Only necessary",
+    "customize": "Customise",
+    "save": "Save choices",
+    "necessary": "Necessary",
+    "necessaryText": "Remembers your display and privacy choices. Always on.",
+    "analytics": "Analytics",
+    "analyticsText": "Anonymous visit counts, to learn what helps. Not in use on this site today.",
+    "marketing": "Marketing",
+    "marketingText": "Ads and campaign measurement. Not in use on this site today."
   }
 }

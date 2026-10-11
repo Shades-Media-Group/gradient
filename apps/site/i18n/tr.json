@@ -1,0 +1,597 @@
+{
+  "language": "Dil",
+  "imageAlt": "Shades işareti: üç beyaz çubuklu kırmızı bir kare, yanında Gradient yazısı.",
+  "nav": {
+    "skip": "İçeriğe geç",
+    "label": "Gradient",
+    "homeLabel": "Gradient, ana sayfa",
+    "home": "Gradient",
+    "brand": "Marka",
+    "foundations": "Temeller",
+    "components": "Bileşenler",
+    "icons": "İkonlar",
+    "print": "Baskı",
+    "projects": "Projeler",
+    "cta": "Kur",
+    "menu": "Menü",
+    "onThisPage": "Bu sayfada"
+  },
+  "footer": {
+    "label": "Site",
+    "about": "Gradient, Chișinău, Moldova merkezli yaratıcı ve teknoloji ajansı Shades Media Group'un tasarım sistemidir.",
+    "system": "Sistem",
+    "work": "İşler",
+    "code": "Kod",
+    "legal": "Yasal",
+    "changelog": "Değişiklik günlüğü",
+    "issues": "Sorun bildir",
+    "license": "MIT lisansı",
+    "trademarks": "Ticari markalar",
+    "security": "Güvenlik",
+    "credit": "Ücretsiz ve açık kaynak. Shades Media Group tarafından geliştirildi."
+  },
+  "home": {
+    "title": "Gradient: Shades Media Group tasarım sistemi",
+    "description": "Gradient, Shades Media Group'un tasarım sistemi: her Shades ürününün üzerine kurulduğu logo, renk, tipografi, Spectra karakterleri, bileşenler ve ikonlar.",
+    "hero": {
+      "title": "Her Shades ürünü burada başlar.",
+      "lead": "Gradient, Shades Media Group'un nasıl göründüğü, nasıl konuştuğu ve nasıl ürettiğidir: tek işaret, tek kırmızı, yedi karakter ve her projenin kurduğu kod.",
+      "copy": "Kurulum komutunu kopyala",
+      "brand": "Markayı gör",
+      "note": "Ücretsiz ve açık kaynak. İsim ve işaret bizde kalır."
+    },
+    "split": {
+      "label": "İşaretin üç çubuğu",
+      "brand": {
+        "title": "Marka",
+        "text": "İşaret, logo kurgusu, Spectra ailesi ve Shades'in yazma biçimi.",
+        "link": "Logo ve aile"
+      },
+      "foundations": {
+        "title": "Temeller",
+        "text": "Renk, tipografi, boşluk ve hareket; her biri bir kez tanımlanır, her yerde kullanılır.",
+        "link": "Token'lar"
+      },
+      "code": {
+        "title": "Kod",
+        "text": "CSS bileşenleri, bir Tailwind teması ve 78 Shades ikonu tek pakette.",
+        "link": "Bileşenler"
+      },
+      "caption": "Tam, %75 ve %50 beyazlıkta üç çubuk. Bütün fikir bu: tek bir rengin tonları yan yana gelince bir gradyan oluşur."
+    },
+    "colour": {
+      "title": "Tek kırmızı. Bir sinyal gibi kullanılır.",
+      "text": "Shades Red, #E40523, işaretin kendi kırmızısıdır. Ekrandaki tek önemli eylemi işaretler ve sayfanın bir bölümünü doldurabilir. Geri kalan her şey mürekkep ve kâğıttır.",
+      "link": "Tüm renkler",
+      "red": "50'den 900'e Shades Red skalası",
+      "ink": "Kâğıttan mürekkebe mürekkep skalası",
+      "rule": "Kırmızı bir sinyaldir, asla duvar kâğıdı değil. Dört tonlu spektrum her düzende bir kez, şerit olarak görünür."
+    },
+    "type": {
+      "title": "Space Grotesk konuşur. Hanken Grotesk açıklar.",
+      "text": "Başlıklar Space Grotesk ile kalın ve sıkı dizilir. Uzun uzun okuduğun her şey Hanken Grotesk'tir. Rusça Inter'e, Çince sistem yazı tipine geçer; böylece her dil İngilizce kadar temiz okunur.",
+      "link": "Tipografi ölçeği",
+      "system": "Sistem yazı tipi",
+      "body": "Gövde metni rahat bir satır aralığıyla 17 pikselde dizilir; rakamlar daktilo yazı tipiyle değil, tablo rakamlarıyla hizalanır."
+    },
+    "family": {
+      "title": "Yedi ton, tek aile.",
+      "text": "Spectra, armasıyla birlikte logodan çıkıp geldi. Ardından her birinin tek bir görevi olan altı iş arkadaşı geldi: Sage açıklar, Nova duyurur, Sunny işin yayına çıktığını onaylar.",
+      "link": "Aileyle tanış"
+    },
+    "parts": {
+      "title": "Parçalar, iş başında.",
+      "text": "Her bileşen, token'ları okuyan sade bir sınıftır. React, Preact ya da düz HTML'de çalışır; bir müşteri markası birkaç değişkeni değiştirerek tüm seti yeniden renklendirebilir.",
+      "link": "Tüm bileşenler",
+      "name": "Adın",
+      "namePlaceholder": "Ana Popescu",
+      "email": "İş e-postası",
+      "emailError": "@ işaretinden sonraki kısmı ekle, örneğin ana@company.md.",
+      "kind": "Neye ihtiyacın var",
+      "kindBrand": "Bir marka",
+      "kindSite": "Bir web sitesi",
+      "kindBoth": "İkisi de",
+      "checklist": "Marka kontrol listesini bana gönder",
+      "send": "Brief'i gönder",
+      "call": "Görüşme ayarla",
+      "demo": "Gradient parçalarıyla kurulmuş bir demo. Hiçbir şey göndermez.",
+      "sent": "Kontrol edildi, hazır. Bu demo burada durur."
+    },
+    "licence": {
+      "title": "Açık kod. Bizim adımız.",
+      "text": "Token'lar, stiller ve ikonlar MIT lisanslıdır: her işte kullan. Shades adı, işaret ve Spectra karakterleri Shades Media Group'a ve onun kendi işlerine aittir.",
+      "link": "Ticari marka bildiriminin kapsadıkları"
+    },
+    "work": {
+      "title": "Gerçek işlerden doğdu.",
+      "text": "Buradaki her kural, Shades'in yayına aldığı bir üründen geldi; çöpe attığımız parçalar da dahil.",
+      "link": "Projeler nasıl geçti",
+      "pagerecast": "Her web sayfasını düzenlenebilir Figma katmanlarına dönüştürür. Bize neyin elle yapılmış, neyin makineyle üretilmiş gibi okunduğunu öğretti.",
+      "nails": "Bir tırnak stüdyosu için randevu uygulaması. Bir müşteri markasının aynı parçaları kendi renkleriyle giyebileceğini kanıtladı.",
+      "lms": "Kendi yaşam yönetimi uygulamamız. Telefonda ikon ve hareket kurallarını belirledi.",
+      "imagereframe": "Figma için ücretsiz ve açık görsel dışa ve içe aktarma. Gradient'ten başlayan ilk ürün.",
+      "shades": "Ajansın kendi sitesi; Gradient üzerine yeniden kurulacak.",
+      "live": "Yayında",
+      "next": "Sırada"
+    },
+    "install": {
+      "title": "Üç giriş yolu.",
+      "text": "Her Shades projesi için tek paket: shades-gradient. Kullandığın altyapının ihtiyaç duyduğu parçayı seç.",
+      "link": "npm'de shades-gradient",
+      "any": "Her proje",
+      "anyText": "Token'lar, temel stiller, bileşenler ve hareket tek stil dosyasında; sıkıştırılmış hâliyle yaklaşık 6 KB.",
+      "tailwind": "Tailwind v4",
+      "tailwindText": "Her token, açık ve koyu temayı izleyen bir utility sınıfına dönüşür: bg-accent, text-text-2, rounded-pill.",
+      "icons": "Her yerde ikonlar",
+      "iconsText": "SVG dizeleri olarak 78 Shades ikonu ya da düz HTML için tek bir sprite."
+    },
+    "faq": {
+      "title": "Sorular",
+      "items": {
+        "what": {
+          "q": "Gradient nedir?",
+          "a": "Gradient, Shades Media Group'un tasarım sistemidir: marka kuralları, tasarım token'ları, CSS bileşenleri, ikonlar ve Spectra karakterleri. Kod, shades-gradient npm paketi olarak yayınlanır; bu site de onu belgeler."
+        },
+        "use": {
+          "q": "Gradient'i kendi projemde kullanabilir miyim?",
+          "a": "Evet. Kod MIT lisanslı; token'ları, bileşenleri ve ikonları her işte kullanabilirsin. Shades adı, işaret ve Spectra karakterleri bu lisansın kapsamında değildir ve Shades Media Group'ta kalır."
+        },
+        "stack": {
+          "q": "Gradient için React ya da Tailwind gerekir mi?",
+          "a": "Hayır. Bileşenler düz CSS sınıfları, ikonlar ise SVG dizeleridir; bu yüzden herhangi bir framework ile ya da hiçbiri olmadan çalışır. Tailwind v4 projeleri, her token'ı utility sınıfına dönüştüren bir temayı içe aktarabilir."
+        },
+        "client": {
+          "q": "Bir müşteri markası bunu nasıl kullanır?",
+          "a": "--g-accent, --g-bg ve --g-text gibi rol token'larını tek bir stil dosyasında geçersiz kıl. Bileşenler yalnızca bunları okur; böylece tüm set bir anda müşterinin renklerini alır."
+        },
+        "red": {
+          "q": "Kırmızı neden #E40523?",
+          "a": "Bu, markanın tek doğruluk kaynağı olan shades.md'deki Shades logo dosyasının kırmızısıdır. Önceki denemelerde başka kırmızılar kullanıldı; Gradient yalnızca birini tutar."
+        }
+      }
+    }
+  },
+  "brand": {
+    "title": "Marka: Shades işareti, Spectra ailesi ve ses tonu | Gradient",
+    "description": "Shades logosu ve kullanımı, yedi Spectra karakteri ve görevleri, Shades Media Group'un nasıl yazdığı.",
+    "heading": "Marka",
+    "lead": "Tek işaret, yedi karakter ve bir yazma biçimi. Buradaki her şey Shades'in zaten yayınladığı dosyalardan alınmıştır.",
+    "logo": {
+      "title": "İşaret",
+      "text": "Tam, %75 ve %50 beyazlıkta üç çubuk taşıyan keskin köşeli kırmızı bir kare. Çubuklar, adındaki \"shades\", yani tonlardır. Asla yeniden çizilmez: her dosya shades.md'deki aynı geometriden gelir.",
+      "reverseAlt": "Mürekkep zemin üzerinde, kırmızı işaretin yanında beyaz Shades logo kurgusu.",
+      "anatomyAlt": "Yapı ızgarası üzerinde işaret: her yanda bir çubuk genişliğinde boş alan.",
+      "field": "Zemin",
+      "fieldText": "Shades Red #E40523, keskin köşeli bir kare.",
+      "bars": "Çubuklar",
+      "barsText": "Her biri karenin onda biri genişliğinde ve yüksekliğinin yarısından uzun üç çubuk; %100, %75 ve %50 beyaz.",
+      "space": "Boş alan",
+      "spaceText": "Her yanda bir çubuk genişliği. Buraya başka hiçbir şey giremez.",
+      "size": "En küçük boyut",
+      "sizeText": "Ekranda favicon olarak 16 px, arayüzde 24 px, baskıda 8 mm.",
+      "misuseTitle": "Asla",
+      "misuseRound": "Köşeleri yuvarlama. İşaret karedir.",
+      "misuseTint": "Çubukları pembeye ya da gül rengine boyama. Onlar beyazdır.",
+      "misuseStretch": "Esnetme ya da oranlarını değiştirme.",
+      "misuseGradient": "Spektrumla ya da herhangi bir gradyanla doldurma.",
+      "downloads": "Dosyalar",
+      "dlMark": "İşaret",
+      "dlLockup": "Logo kurgusu",
+      "dlReverse": "Koyu zeminler için logo kurgusu",
+      "dlMono": "İşaret, tek renk",
+      "dlLockupMono": "Logo kurgusu, tek renk"
+    },
+    "family": {
+      "title": "Spectra ailesi",
+      "text": "Her tür an için bir tane, yedi karakter. Aynı gözleri, işaretten gelen üç çubuklu armayı ve sakin bir gülümsemeyi paylaşırlar; her birinin tek bir düz rengi vardır.",
+      "spectra": {
+        "role": "Kurucu ve karşılama",
+        "text": "Logo bittiği gün logodan çıkıp geldi. Sunumları açar, yeni kullanıcıları karşılar, lansmanların yüzü olur."
+      },
+      "mera": {
+        "role": "Strateji",
+        "text": "Ölçülü ve kesin. Planların, zaman çizelgelerinin ve karar gerektiren her şeyin yanında görünür."
+      },
+      "sol": {
+        "role": "Sanat yönetimi",
+        "text": "Ailenin gürültücüsü, bir kolu hep havada. Yaratıcı işlerde, değerlendirmelerde ve ilham için kullanılır."
+      },
+      "nova": {
+        "role": "Laboratuvar ve yenilikler",
+        "text": "En küçükleri, başının üstünde bir kıvılcım. Beta sürümleri ve yeni özellikleri duyurur."
+      },
+      "sage": {
+        "role": "Yardım ve belgeler",
+        "text": "Sabırlı ve nazik, dinlerken gözleri kapalı. Eğitimler, araç ipuçları ve yardım merkezi ondan sorulur."
+      },
+      "vio": {
+        "role": "Topluluk",
+        "text": "Esprili ve sıcak, hep göz kırparken yakalanır. Sosyal medyada, kampanyalarda ve toplulukla o konuşur."
+      },
+      "sunny": {
+        "role": "Üretim ve teslim",
+        "text": "İstikrarlı ve pratik. İlerlemeyi, başarıyı ve teslimi onaylar."
+      },
+      "rulesTitle": "Aile kuralları",
+      "rule1": "Herkeste aynı gözler: beyaz bir disk, siyah bir göz bebeği ve tek bir parlama.",
+      "rule2": "Üç çubuklu arma asla çıkarılmaz. O, ailenin soyadıdır.",
+      "rule3": "Her gövdede tek bir yumuşak form, her köşesi yuvarlatılmış.",
+      "rule4": "Tek bir sakin, kavisli gülümseme. Diş yok, kocaman sırıtış yok.",
+      "rule5": "Yumuşak bir gölgenin üstünde süzülürler. Asla ayakta durmazlar.",
+      "rule6": "Her birine tek düz renk. Gövdelerde gradyan yok.",
+      "motion": "Her an için bir karakter, bir ekranda en fazla iki. Asla logonun yerinde değil. Okuyucu azaltılmış hareket istediğinde bekleme animasyonları durur."
+    },
+    "voice": {
+      "title": "Shades nasıl yazar",
+      "text": "Kısa, kendinden emin, net. Özelliği değil sonucu satarız ve her metin tek bir açık sonraki adımla biter.",
+      "slogan": "Kimliğin deneyime dönüştüğü yer.",
+      "sloganRule": "Ana cümle. Her yüzeyde tek slogan, asla başka sloganlarla üst üste değil.",
+      "no": "Böyle değil",
+      "noExample": "Tasarımın, pazarlamanın ve teknolojinin benzersiz çözümler sunmak için buluştuğu yaratıcı bir güç merkeziyiz.",
+      "yes": "Böyle",
+      "yesExample": "İnsanların tanıdığı markalar ve onlara iş getiren siteler kuruyoruz. Bir brief'le başla.",
+      "rulesTitle": "Kurallar",
+      "rule1": "Shades için \"biz\", müşteri için \"sen\".",
+      "rule2": "Önce sonuç, sonra nasıl.",
+      "rule3": "Kısa, net cümleler. Her birinde tek fikir.",
+      "rule4": "Gerçek sonuçlar göster ya da hiçbir şey söyleme. Asla rakam, alıntı ya da müşteri uydurma.",
+      "rule5": "Marka metinlerinde emoji yok. O işi ikonlar ve işaret yapar.",
+      "swapsTitle": "Değiştirdiğimiz kelimeler",
+      "instead": "Bunun yerine",
+      "write": "Bunu yaz",
+      "swap1a": "ucuz",
+      "swap1b": "uygun fiyatlı",
+      "swap2a": "indirim",
+      "swap2b": "özel teklif",
+      "swap3a": "benzersiz",
+      "swap3b": "olağanüstü",
+      "swap4a": "aslında",
+      "swap4b": "özünde",
+      "swap5a": "acele et",
+      "swap5b": "kaçırma",
+      "tagsTitle": "Hashtag'ler",
+      "tagsText": "Bir projenin ne olduğu, kırmızı bir # ile etiket olarak söylenir. En fazla üç tane, asla süs olarak değil."
+    }
+  },
+  "foundations": {
+    "title": "Temeller: renk, tipografi, boşluk ve hareket | Gradient",
+    "description": "Gradient tasarım token'ları: Shades Red ve mürekkep skalası, açık ve koyu tema için anlamsal roller, tipografi ölçeği, boşluk, köşe yarıçapı ve hareket.",
+    "heading": "Temeller",
+    "lead": "Her değer bir kez, tokens.json içinde yazılır ve CSS, Tailwind ve JSON'a oradan ulaşır. Değişkenini kopyalamak için herhangi bir renk örneğine tıkla.",
+    "colour": {
+      "title": "Renk",
+      "text": "İşin neredeyse tamamını Shades Red ve nötr bir mürekkep skalası yapar. Dört spektrum tonu, düzen başına tek bir şerit için vardır.",
+      "red": "Shades Red",
+      "ink": "Mürekkep ve kâğıt",
+      "spectrum": "Spektrum",
+      "spectrumRule": "Mavi, macenta, kırmızı ve turuncu, bu sırayla. Her düzende bir kez, şerit ya da çizgi olarak; asla arka plan olarak ya da metin üzerinde değil.",
+      "copy": "CSS değişkenini kopyalamak için bir renk örneğine tıkla.",
+      "copied": "{token} kopyalandı"
+    },
+    "roles": {
+      "title": "Roller",
+      "text": "Başlıklar ve gövde metni",
+      "theme": "Tema önizlemesi",
+      "light": "Açık",
+      "dark": "Koyu",
+      "token": "Token",
+      "use": "Kullanım",
+      "sample": "Örnek",
+      "bg": "Sayfa",
+      "surface": "Yükseltilmiş yüzeyler ve form alanları",
+      "sunken": "Çukur alanlar, kod ve sakin bölümler",
+      "line": "İnce çizgiler ve ayırıcılar",
+      "text2": "Destekleyici metin",
+      "text3": "İpuçları ve açıklamalar, okunabilir en sakin metin",
+      "accent": "Tek birincil eylem ve seçim",
+      "accentText": "Açık ya da koyu zeminde kırmızı metin",
+      "inverse": "Ters butonlar ve mürekkep rengi bölümler",
+      "status": "Başarı, uyarı ve tehlike metni",
+      "theming": "Bir müşteri markası rolleri tek bir stil dosyasında değiştirir. Hiçbiri ham bir renk okumadığı için her bileşen buna uyar."
+    },
+    "type": {
+      "title": "Tipografi",
+      "text": "Görüntü metinleri ve başlıklar için Space Grotesk, geri kalan her şey için Hanken Grotesk. Gövde boyutunun üstündeki boyutlar ekranla birlikte ölçeklenir.",
+      "sample": "Tanınmak için yapıldı",
+      "bodySample": "Shades, markaları ve onların etrafındaki ürünleri ilk eskizden yayına alınan siteye kadar kurar.",
+      "rulesTitle": "Kurallar",
+      "rule1": "Boyut büyüdükçe harf aralığı daralır; görüntü boyutunda -0.04em'e kadar. Gövde metninin harf aralığına asla dokunulmaz.",
+      "rule2": "Rakamlar gövde yazı tipinde tablo rakamları kullanır. Eş aralıklı yazı tipi yalnızca birinin yazacağı kod içindir.",
+      "rule3": "Başlıkların üstünde küçük büyük harfler ya da aralıklı etiketler yok. Başlık kendi ağırlığını taşır.",
+      "rule4": "Butonlar ve bağlantılar asla italik olmaz."
+    },
+    "space": {
+      "title": "Boşluk ve biçim",
+      "text": "On adımda 4 px taban. Başlığın üstünde altından daha fazla boşluk; grupların içinde sıkı, aralarında cömert.",
+      "radiusTitle": "Köşe yarıçapı",
+      "rNone": "İşaret, marka plakaları",
+      "rSm": "Küçük kontroller, etiketler",
+      "rMd": "Alanlar ve kod",
+      "rLg": "Paneller ve medya",
+      "rPill": "Butonlar ve rozetler"
+    },
+    "motion": {
+      "title": "Hareket",
+      "text": "Arayüz için üç hız, karakterler için bir hız. İçerik, herhangi bir şey hareket etmeden önce görünür.",
+      "play": "Oynat",
+      "snap": "Üzerine gelmeler, açma-kapamalar, çipler. Asla sekmez.",
+      "pop": "Girişler ve tepkiler. Tek bir hafif taşma.",
+      "move": "Yol alan öğeler: paneller, açılışlar, imza eğrimiz.",
+      "loop": "Yalnızca Spectra bekleme animasyonları ve yükleyici.",
+      "reduced": "prefers-reduced-motion açıkken her animasyon durur ve her geçiş anında olur. Önemli hiçbir şey harekete bağlı değildir."
+    }
+  },
+  "components": {
+    "title": "Bileşenler: butonlar, alanlar, seçimler, etiketler | Gradient",
+    "description": "Durumları ve kopyalanacak HTML'iyle canlı Gradient bileşenleri: butonlar, alanlar, anahtarlar, segmentli kontroller, etiketler, rozetler ve marka parçaları.",
+    "heading": "Bileşenler",
+    "lead": "Token'ları okuyan sade sınıflar. HTML'i kopyala, stil dosyasını ekle; her framework'te çalışırlar.",
+    "buttons": {
+      "title": "Butonlar",
+      "text": "Hap biçiminde, çünkü işaret kare ve eylemlerin kare olmaması gerekir. Her görünümde tek kırmızı birincil buton.",
+      "primary": "Brief'i gönder",
+      "secondary": "İkincil",
+      "inverse": "Ters",
+      "ghost": "Hayalet",
+      "small": "Küçük",
+      "medium": "Orta",
+      "large": "Büyük",
+      "save": "Kaydet",
+      "disabled": "Henüz değil",
+      "iconLabel": "Diğer seçenekler",
+      "shareLabel": "Paylaş",
+      "rule1": "Eylemi bir fiille adlandır: Gönder, Kaydet, Başla. Asla Tamam ya da Onayla değil.",
+      "rule2": "Meşgulken etiket genişliğini korur ve yerini üç çubuk alır.",
+      "rule3": "Yalnızca ikondan oluşan bir butonun her zaman bir aria-label'ı olur."
+    },
+    "fields": {
+      "title": "Alanlar",
+      "text": "Her alanın üstünde görünür bir etiket, işe yarıyorsa bir ipucu ve nasıl düzeltileceğini söyleyen bir hata mesajı.",
+      "name": "Ad soyad",
+      "nameHint": "Sözleşmede görünmesi gerektiği gibi.",
+      "email": "İş e-postası",
+      "emailError": "@ işaretinden sonraki kısmı ekle.",
+      "service": "Hizmet",
+      "optBrand": "Marka kimliği",
+      "optSite": "Web sitesi",
+      "optCampaign": "Kampanya",
+      "locked": "Şirket",
+      "brief": "Brief",
+      "briefPlaceholder": "İş bittikten sonra ne değişmeli?"
+    },
+    "choices": {
+      "title": "Seçimler",
+      "text": "Segmentli kontrol, aynı şeyin görünümleri arasında geçiş yapar. Anahtar hemen uygulanır; onay kutusu gönderilmeyi bekler.",
+      "view": "Görünüm",
+      "day": "Gün",
+      "week": "Hafta",
+      "month": "Ay",
+      "switch": "Hatırlatıcılar",
+      "check": "Beni haberdar et",
+      "radio1": "Chișinău",
+      "radio2": "Uzaktan"
+    },
+    "labels": {
+      "title": "Etiketler ve rozetler",
+      "text": "Hashtag bir şeyin ne olduğunu söyler. Rozet, hangi durumda olduğunu söyler.",
+      "draft": "Taslak",
+      "new": "Yeni",
+      "shipped": "Yayında",
+      "review": "İncelemede",
+      "blocked": "Engellendi",
+      "kbd": "Sistemde aramak için"
+    },
+    "disclosure": {
+      "title": "Açılır içerik ve tablolar",
+      "text": "Cevaplar script olmadan yerinde açılır. Tablolar rakamlarını hizalar; kutu değil, ince çizgi kullanır.",
+      "q1": "Bir proje ne zaman başlar?",
+      "a1": "Brief imzalandığında ve ilk ödeme geldiğinde. Planı bir hafta içinde göndeririz.",
+      "q2": "Dosyalar kimin?",
+      "a2": "Proje ödendiğinde senin. Sen istemediğin sürece işi portfolyomuzda gösterme hakkını saklı tutarız.",
+      "colProject": "Proje",
+      "colStatus": "Durum",
+      "colPages": "Sayfa"
+    },
+    "brand": {
+      "title": "Marka parçaları",
+      "text": "Yalnızca Shades'te olan parçalar: çubuklarını canlandıran işaret, o çubuklardan oluşan yükleyici ve spektrum şeridi.",
+      "loading": "Yükleniyor",
+      "rule": "Spektrum şeridi her düzende bir kez görünür. Animasyonlu işaret, yükleme ekranları ve sayfanın ilk açıldığı an içindir; gezinme için değil."
+    }
+  },
+  "icons": {
+    "title": "İkonlar: Shades ikon seti | Gradient",
+    "description": "24 px ızgarada 2 px yuvarlak çizgilerle çizilmiş, MIT ile ücretsiz kullanılabilen 78 Shades arayüz ikonu ve Shades'in bağlantı verdiği servislerin logoları.",
+    "heading": "İkonlar",
+    "lead": "Shades'in Gradient için çizilmiş kendi seti: 24 px ızgara, 2 px yuvarlak çizgiler, her ikon için bir dosya. Adını kopyalamak için bir ikona tıkla.",
+    "search": "İkon ara",
+    "hint": "Adını kopyalamak için tıkla.",
+    "copied": "{name} kopyalandı",
+    "empty": "Bu adla henüz bir ikon yok. Aşağıdaki kurallara göre çiz ve ekle.",
+    "set": {
+      "title": "Set",
+      "text": "currentColor kullanan arayüz ikonları; böylece çevrelerindeki metnin rengini alırlar."
+    },
+    "rules": {
+      "title": "Çizim kuralları",
+      "text": "Her ikon aynı beş kurala uyar; böylece yeni bir ikon diğerlerinin arasına rahatça oturur.",
+      "rule1": "2 px iç boşluklu 24 × 24 ızgara: çizim 2 ile 22 arasında kalır.",
+      "rule2": "Yuvarlak uçlu ve yuvarlak birleşimli 2 px çizgiler. Dolgu yalnızca 1 ile 1.6 px arası noktalar için.",
+      "rule3": "Dikdörtgenlerde 2 px köşe. Keskin kutular yok, kıl inceliğinde çizgiler yok.",
+      "rule4": "Yalnızca currentColor. Dosyanın içinde asla sabit bir renk yok.",
+      "rule5": "Bir ikonun bir anlamı olmalı. Etiket tek başına açıksa ikonu koyma."
+    },
+    "marks": {
+      "title": "Diğer servisler",
+      "text": "Shades'in bağlantı verdiği servislerin Simple Icons'tan alınmış dolu logoları. Sahiplerine aittirler: yalnızca o servislere bağlantı vermek için kullan."
+    }
+  },
+  "print": {
+    "title": "Baskı: kartvizit, yaka kartı, ürünler ve e-posta | Gradient",
+    "description": "Shades baskı ve promosyon ürünü kuralları: kartvizit, etkinlik yaka kartı, bez çanta, tişört, sticker'lar, e-posta imzası ve baskı için renk.",
+    "heading": "Baskı ve promosyon ürünleri",
+    "lead": "Kâğıtta, kumaşta ve e-postada aynı işaret, aynı ölçülülük. Boyutlar gerçek; renk değerleri ise hâlâ bir matbaa provası bekliyor.",
+    "size": "Boyut",
+    "bleed": "Taşma payı",
+    "safe": "Güvenli kenar boşluğu",
+    "stock": "Kâğıt",
+    "card": {
+      "title": "Kartvizit",
+      "text": "Ön yüzde kırmızı üzerinde yalnızca işaret var. Arka yüz kişiyi taşır; kâğıt üzerinde, marka yazı tipiyle dizilir.",
+      "front": "Ön yüz: Shades Red üzerinde ortalanmış işaret",
+      "back": "Arka yüz: kâğıt üzerinde ad, unvan ve iletişim bilgileri",
+      "role": "Marka tasarımcısı",
+      "stock": "Kuşesiz, 350 g/m² veya daha ağır",
+      "sample": "Örnek kişi ve bilgiler. Kart gerçek oranlarıyla çizilmiştir."
+    },
+    "badge": {
+      "title": "Etkinlik yaka kartı",
+      "text": "Adlar büyük, odanın öbür ucundan okunacak kadar. Renk bandı kimin kim olduğunu söyler.",
+      "team": "Shades ekibi",
+      "teamCaption": "Ekip: kırmızı bant",
+      "guest": "Misafir",
+      "guestCaption": "Misafir: mürekkep rengi bant",
+      "hole": "Boyun askısı",
+      "holeText": "Tek yuva, ortalanmış, üstten 10 mm",
+      "name": "Ad",
+      "nameText": "Space Grotesk ile ad, en az 18 mm yüksekliğinde"
+    },
+    "merch": {
+      "title": "Promosyon ürünleri",
+      "text": "Ya küçük işaret ya büyük logo yazısı; aynı üründe asla ikisi birden değil. Spektrum yalnızca bir şerit süs olarak.",
+      "tote": "Bez çanta",
+      "toteText": "Doğal kanvas üzerine serigrafi baskı, tek renk işaret.",
+      "tee": "Tişört",
+      "teeText": "Sırtta büyük logo yazısı, göğüs boş.",
+      "sticker": "Sticker",
+      "stickerText": "3 mm beyaz kenarlı, kontur kesimli bir Spectra karakteri.",
+      "rule1": "Nakış, yaldız, aşındırma ve serigrafi için tek renk dosyaları kullan.",
+      "rule2": "İşareti asla 8 mm'den küçük basma.",
+      "rule3": "Her üründe tek karakter. Karakterler asla işaretin yerini almaz."
+    },
+    "signature": {
+      "title": "E-posta imzası",
+      "text": "En fazla beş satır; tek büyük görsel yerine canlı metin, böylece görseller kapalıyken de okunur.",
+      "sign": "Teşekkürler, görüşmek üzere.",
+      "rule1": "48 px işaret, shades.md'ye bağlantılı.",
+      "rule2": "Ad, unvan, ardından tek satır iletişim bilgisi. Slogan yok, banner yok.",
+      "rule3": "Görseller toplamda 90 KB'ın altında."
+    },
+    "colour": {
+      "title": "Baskı için renk",
+      "text": "Ekranlar hex değerlerini kullanır. Baskı ise gerçek bir provayla kontrol edilmiş bir spot ya da proses renk eşleşmesi ister.",
+      "colour": "Renk",
+      "screen": "Ekran",
+      "print": "Baskı",
+      "redPrint": "İlk baskıdan önce, basılı bir provada sıcak bir spot kırmızıyla eşleştir",
+      "inkPrint": "Zengin siyah: kuşe kâğıtta C60 M40 Y40 K100",
+      "paperPrint": "Kâğıdın kendisi; beyaz için asla bir ton basma",
+      "proof": "Bir matbaa prova almadan hiçbir baskı değeri kesinleşmez. Onaylanan değerleri matbaa ve kâğıt bilgisiyle birlikte buraya kaydet."
+    }
+  },
+  "projects": {
+    "title": "Projeler: Shades ürünleri nasıl yapıldı | Gradient",
+    "description": "PageRecast nasıl geliştirildi, ekip neyi tuttu ve neyi attı, her Shades projesinin artık uyduğu dersler ve sırada ne var.",
+    "heading": "Gerçek işlerden doğdu",
+    "lead": "Gradient her ürünün arkasındaki kararları saklar: ne yaptık, sahibi neyi reddetti ve geride hangi kural kaldı.",
+    "pagerecast": {
+      "text": "Her web sayfasını düzenlenebilir katmanlara dönüştüren ücretsiz bir Chrome uzantısı ve Figma eklentisi. Ekim 2026'da geliştirildi; Chrome Web Store'da, Figma Community'de ve npm'de yayınlandı.",
+      "full": "Vaka çalışmasının tamamı",
+      "s1": "Sıfırdan başla",
+      "s1Text": "İlk sürüm tamamen çöpe atıldı. Yeniden yapım, insanların beklediği her özelliği ve pazarın talep ettiği birkaçını içeren bir planla başladı.",
+      "s2": "Kendi işaretini bul",
+      "s2Text": "Yirmiden fazla logo yönü. Gölgeli ve üç boyutlu olanlar gitti; Google ve Apple logolarındaki gibi, iki sayfanın düz bir şekilde üst üste binmesi kaldı.",
+      "s3": "Üretilmiş gibi duranı çıkar",
+      "s3Text": "Tur üstüne tur, sahibi şablondan çıkmış hissi veren parçaları gösterdi. Her biri bir kurala dönüştü.",
+      "s4": "Her yerde yayınla",
+      "s4Text": "Chrome Web Store, Figma Community, npm, Cloudflare Workers üzerinde bir site, sürümler ve bir wiki.",
+      "s5": "Altı dil konuş",
+      "s5Text": "Uzantı, eklenti ve site İngilizce, Fransızca, Rumence, Rusça, İspanyolca ve Çince; her sayfada yapılandırılmış veriyle.",
+      "kept": "Tutulanlar",
+      "kept1": "Belirgin oklu hap butonlar ve insanların sevdiği yerlerde eski butonlar",
+      "kept2": "Ürünün çizimi değil, çalışırken gerçek hâli",
+      "kept3": "Biri kırmızı, cesur tam genişlikte bölümler",
+      "kept4": "Şirket künyesi yalnızca üründe, kurucununki README'de",
+      "cut": "Atılanlar",
+      "cut1": "Eş aralıklı rakamlar ve etiketler",
+      "cut2": "Sahte tarayıcı pencereleri ve gri iskelet çizimleri",
+      "cut3": "Her satırda ikonlar ve yuvarlatılmış kutular içinde listeler",
+      "cut4": "Her bölümde tekrar kullanılan aynı kırmızı blok"
+    },
+    "lessons": {
+      "title": "Her projenin uyduğu dersler",
+      "text": "Bunlar, sahibinin kendi düzeltmelerinden geliyor. Bir Shades ürünü hiçbirini çiğnemez.",
+      "link": "Repodaki listenin tamamı",
+      "l1": "Gerçeğini göster",
+      "l1Text": "Gerçek ürün, sayfa ya da yakalama. Henüz yoksa mockup yerine hiçbir şey gösterme.",
+      "l2": "Eş aralıklı kostüm yok",
+      "l2Text": "Rakamlar gövde yazı tipinde tablo rakamları kullanır. Eş aralıklı yazı tipi yalnızca kod içindir.",
+      "l3": "Başlıkların üstünde etiket yok",
+      "l3Text": "Küçük, aralıklı kelimeler yok, bölüm numaraları yok. Başlık kendini anlatır.",
+      "l4": "İkon yalnızca bir anlamı varsa",
+      "l4Text": "Her satırda ikon yok, boş durumun ortasında daire içinde ikon yok.",
+      "l5": "Kutu içinde kutu yok",
+      "l5Text": "Listeler ince çizgilerin üstünde durur. Kartlar nadirdir ve asla iç içe geçmez.",
+      "l6": "Düz logolar",
+      "l6Text": "Logolar düz ve iki boyutludur. Gölge yok, parlak uygulama ikonu görselleri yok.",
+      "l7": "Her boşluğun bir görevi var",
+      "l7Text": "Yoğun ve amaçlı; asla etki için boş bırakılmaz, asla dolgu içerikle kalabalıklaşmaz.",
+      "l8": "Önce hız",
+      "l8Text": "Statik HTML, üçüncü taraf script yok, kendi sunucusunda barındırılan fontlar. Bir Shades sayfası telefonda anında açılır."
+    },
+    "next": {
+      "title": "Gradient'te sırada",
+      "text": "Bir şablondan değil, bu sistemden başlayacak ürünler.",
+      "imagereframe": "Figma için görsel dışa ve içe aktarma; ücretsiz ve açık kaynak, Shades markası altında, pazarda eksik olan özelliklerle geliştiriliyor.",
+      "shades": "Ajans sitesi, yeniden: en iyi fikirlerini koru, şablon görüntüsünü at.",
+      "planned": "Planlandı"
+    },
+    "start": {
+      "title": "Yeni bir proje başlat",
+      "text": "Her seferinde aynı beş adım; böylece bir sonraki ürün, bir öncekinin bittiği yerden başlar.",
+      "link": "Rehberin tamamı",
+      "s1": "Ürün kaydını yaz",
+      "s1Text": "Kimin için, ne yapıyor, asla neyi yapmamalı. Repo kök dizininde PRODUCT.md.",
+      "s2": "Gradient'i kur",
+      "s2Text": "npm i shades-gradient, ardından stil dosyasını ya da Tailwind temasını içe aktar.",
+      "s3": "Kendi işaretine karar ver ya da Shades'inkini kullan",
+      "s3Text": "Bir ürünün kendi logosu olabilir ama Gradient'in tipografisini, rollerini ve kurallarını kullanır.",
+      "s4": "Dersleri oku",
+      "s4Text": "İlk ekrandan önce; beşinci incelemeden sonra değil.",
+      "s5": "Kontrollerle yayınla",
+      "s5Text": "Bir şeye bitti demeden önce tip kontrolü, testler, site denetimi ve açık ve koyu temada ekran görüntüleri."
+    }
+  },
+  "prefs": {
+    "open": "Görünüm ve erişilebilirlik",
+    "title": "Görünüm",
+    "theme": "Tema",
+    "light": "Açık",
+    "dark": "Koyu",
+    "system": "Otomatik",
+    "access": "Erişilebilirlik",
+    "text": "Daha büyük metin",
+    "contrast": "Daha fazla kontrast",
+    "motion": "Hareketi azalt",
+    "links": "Bağlantıların altını çiz",
+    "reading": "Daha kolay okuma",
+    "saved": "Yalnızca bu tarayıcıya kaydedildi.",
+    "reset": "Sıfırla",
+    "close": "Kapat",
+    "privacy": "Gizlilik tercihleri"
+  },
+  "consent": {
+    "title": "Gizliliğin",
+    "text": "Bu site yalnızca çalışması için gerekenleri, örneğin görünüm ayarlarını saklar. Analiz veya pazarlama araçları ancak onay verirsen çalışır.",
+    "acceptAll": "Tümünü kabul et",
+    "necessaryOnly": "Yalnızca gerekli",
+    "customize": "Özelleştir",
+    "save": "Seçimleri kaydet",
+    "necessary": "Gerekli",
+    "necessaryText": "Görünüm ve gizlilik seçimlerini hatırlar. Her zaman açık.",
+    "analytics": "Analiz",
+    "analyticsText": "Neyin işe yaradığını görmek için anonim ziyaret sayımı. Şu an bu sitede kullanılmıyor.",
+    "marketing": "Pazarlama",
+    "marketingText": "Reklam ve kampanya ölçümü. Şu an bu sitede kullanılmıyor."
+  }
+}
