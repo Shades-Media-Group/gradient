@@ -1,0 +1,566 @@
+{
+  "language": "Limbă",
+  "imageAlt": "Simbolul Shades, un pătrat roșu cu trei bare albe, lângă cuvântul Gradient.",
+  "nav": {
+    "skip": "Sari la conținut",
+    "label": "Gradient",
+    "homeLabel": "Gradient, pagina principală",
+    "home": "Gradient",
+    "brand": "Brand",
+    "foundations": "Fundamente",
+    "components": "Componente",
+    "icons": "Iconițe",
+    "print": "Tipar",
+    "projects": "Proiecte",
+    "cta": "Instalează",
+    "menu": "Meniu",
+    "onThisPage": "Pe această pagină"
+  },
+  "footer": {
+    "label": "Site",
+    "about": "Gradient este sistemul de design al Shades Media Group, o agenție de creație și tehnologie din Chișinău, Moldova.",
+    "system": "Sistem",
+    "work": "Proiecte",
+    "code": "Cod",
+    "legal": "Juridic",
+    "changelog": "Jurnal de modificări",
+    "issues": "Raportează o problemă",
+    "license": "Licența MIT",
+    "trademarks": "Mărci înregistrate",
+    "security": "Securitate",
+    "credit": "Gratuit și open source. Creat de Shades Media Group."
+  },
+  "home": {
+    "title": "Gradient: sistemul de design al Shades Media Group",
+    "description": "Gradient, sistemul de design al Shades Media Group: logo, culoare, tipografie, personajele Spectra, componente și iconițe pentru produsele Shades. Open source.",
+    "hero": {
+      "title": "Orice produs Shades începe aici.",
+      "lead": "Gradient definește cum arată, cum vorbește și cum construiește Shades Media Group: un simbol, un roșu, șapte personaje și codul pe care îl instalează fiecare proiect.",
+      "copy": "Copiază comanda de instalare",
+      "brand": "Vezi brandul",
+      "note": "Gratuit și open source. Numele și simbolul rămân ale noastre."
+    },
+    "split": {
+      "label": "Cele trei bare ale simbolului",
+      "brand": {
+        "title": "Brand",
+        "text": "Simbolul, logo-ul complet, familia Spectra și felul în care scrie Shades.",
+        "link": "Logo și familie"
+      },
+      "foundations": {
+        "title": "Fundamente",
+        "text": "Culoare, tipografie, spațiu și mișcare, fiecare definit o singură dată și folosit peste tot.",
+        "link": "Tokenurile"
+      },
+      "code": {
+        "title": "Cod",
+        "text": "Componente CSS, o temă Tailwind și 76 de iconițe Shades într-un singur pachet.",
+        "link": "Componentele"
+      },
+      "caption": "Trei bare albe, la 100%, 75% și 50%. Asta e toată ideea: nuanțele unei singure culori, una lângă alta, formează un gradient."
+    },
+    "colour": {
+      "title": "Un singur roșu. Folosit ca semnal.",
+      "text": "Shades Red, #E40523, este roșul simbolului. Marchează singura acțiune care contează pe un ecran și poate umple un singur capitol al paginii. Restul e cerneală și hârtie.",
+      "link": "Toate culorile",
+      "red": "Scala Shades Red, de la 50 la 900",
+      "ink": "Scala de cerneală, de la hârtie la cerneală",
+      "rule": "Roșul e semnal, niciodată tapet. Spectrul de patru nuanțe apare o singură dată pe machetă, ca bandă."
+    },
+    "type": {
+      "title": "Space Grotesk vorbește. Hanken Grotesk explică.",
+      "text": "Titlurile sunt culese apăsat și strâns în Space Grotesk. Tot ce se citește pe îndelete e în Hanken Grotesk. Rusa trece pe Inter, iar chineza pe fontul sistemului, ca fiecare limbă să se citească la fel de curat ca engleza.",
+      "link": "Scala tipografică",
+      "system": "Fontul sistemului",
+      "body": "Textul curent are 17 pixeli și loc să respire, iar cifrele se aliniază pentru că sunt tabulare, nu dintr-un font de mașină de scris."
+    },
+    "family": {
+      "title": "Șapte nuanțe, o singură familie.",
+      "text": "Spectra a ieșit din logo cu tot cu creastă. Au urmat șase colegi, fiecare cu o singură treabă: Sage explică, Nova anunță, Sunny confirmă că s-a livrat.",
+      "link": "Cunoaște familia"
+    },
+    "parts": {
+      "title": "Piesele, la lucru.",
+      "text": "Fiecare componentă e o clasă simplă care citește tokenurile. Funcționează în React, Preact sau HTML simplu, iar brandul unui client poate recolora tot setul schimbând câteva variabile.",
+      "link": "Toate componentele",
+      "name": "Numele tău",
+      "namePlaceholder": "Ana Popescu",
+      "email": "Email de serviciu",
+      "emailError": "Adaugă partea de după @, de exemplu ana@company.md.",
+      "kind": "De ce ai nevoie",
+      "kindBrand": "Un brand",
+      "kindSite": "Un site",
+      "kindBoth": "Ambele",
+      "checklist": "Trimite-mi lista de verificare pentru brand",
+      "send": "Trimite brieful",
+      "call": "Programează un apel",
+      "demo": "Un demo construit din piese Gradient. Nu trimite nimic.",
+      "sent": "Verificat și gata. Demo-ul se oprește aici."
+    },
+    "licence": {
+      "title": "Cod deschis. Numele nostru.",
+      "text": "Tokenurile, stilurile și iconițele sunt sub licența MIT: folosește-le oriunde. Numele Shades, simbolul și personajele Spectra aparțin Shades Media Group și rămân în proiectele sale.",
+      "link": "Ce acoperă nota privind mărcile"
+    },
+    "work": {
+      "title": "Construit din proiecte reale.",
+      "text": "Fiecare regulă de aici vine dintr-un produs lansat de Shades, inclusiv din părțile pe care le-am aruncat.",
+      "link": "Cum au decurs proiectele",
+      "pagerecast": "Transformă orice pagină web în straturi Figma editabile. Ne-a învățat ce pare făcut de mână și ce pare generat.",
+      "nails": "O aplicație de programări pentru un studio de manichiură. A dovedit că brandul unui client poate purta aceleași piese în culorile sale.",
+      "lms": "Aplicația noastră pentru organizarea vieții. A stabilit regulile pentru iconițe și mișcare pe telefon.",
+      "imagereframe": "Export și import de imagini pentru Figma, gratuit și deschis. Primul produs care pornește de la Gradient.",
+      "shades": "Site-ul agenției, care va fi refăcut pe Gradient.",
+      "live": "Lansat",
+      "next": "Urmează"
+    },
+    "install": {
+      "title": "Trei moduri de a începe.",
+      "text": "Un singur pachet, shades-gradient, pentru fiecare proiect Shades. Alege partea de care are nevoie stack-ul tău.",
+      "link": "shades-gradient pe npm",
+      "any": "Orice proiect",
+      "anyText": "Tokenuri, stiluri de bază, componente și mișcare într-o singură foaie de stil, circa 6 KB comprimat.",
+      "tailwind": "Tailwind v4",
+      "tailwindText": "Fiecare token devine o clasă utilitară care urmează tema luminoasă și pe cea întunecată: bg-accent, text-text-2, rounded-pill.",
+      "icons": "Iconițe oriunde",
+      "iconsText": "76 de iconițe Shades ca șiruri SVG sau un singur sprite pentru HTML simplu."
+    },
+    "faq": {
+      "title": "Întrebări",
+      "items": {
+        "what": {
+          "q": "Ce este Gradient?",
+          "a": "Gradient este sistemul de design al Shades Media Group: reguli de brand, tokenuri de design, componente CSS, iconițe și personajele Spectra. Codul vine ca pachetul npm shades-gradient, iar acest site îl documentează."
+        },
+        "use": {
+          "q": "Pot folosi Gradient în propriul proiect?",
+          "a": "Da. Codul e sub licența MIT, deci poți folosi tokenurile, componentele și iconițele oriunde. Numele Shades, simbolul și personajele Spectra nu intră sub această licență și rămân ale Shades Media Group."
+        },
+        "stack": {
+          "q": "Gradient are nevoie de React sau Tailwind?",
+          "a": "Nu. Componentele sunt clase CSS simple, iar iconițele sunt șiruri SVG, deci funcționează cu orice framework sau fără niciunul. Proiectele Tailwind v4 pot importa o temă care transformă fiecare token în clase utilitare."
+        },
+        "client": {
+          "q": "Cum îl folosește brandul unui client?",
+          "a": "Suprascrie tokenurile de rol, precum --g-accent, --g-bg și --g-text, într-o singură foaie de stil. Componentele citesc doar aceste valori, așa că tot setul preia imediat culorile clientului."
+        },
+        "red": {
+          "q": "De ce roșul este #E40523?",
+          "a": "Este roșul din fișierul logo Shades de pe shades.md, sursa de adevăr a brandului. Explorările anterioare au folosit alte nuanțe de roșu; Gradient păstrează una singură."
+        }
+      }
+    }
+  },
+  "brand": {
+    "title": "Brand: simbolul Shades, familia Spectra și vocea | Gradient",
+    "description": "Logo-ul Shades și cum se folosește, cele șapte personaje Spectra și rolurile lor, și felul în care scrie Shades Media Group.",
+    "heading": "Brandul",
+    "lead": "Un simbol, șapte personaje și un fel de a scrie. Totul pornește de la fișierele pe care Shades le livrează deja.",
+    "logo": {
+      "title": "Simbolul",
+      "text": "Un pătrat roșu cu colțuri ascuțite, cu trei bare albe la 100%, 75% și 50%. Barele sunt nuanțele din nume. Nu se redesenează niciodată: fiecare fișier pornește de la aceeași geometrie de pe shades.md.",
+      "reverseAlt": "Logo-ul complet Shades în alb, lângă simbolul roșu, pe fundal de cerneală.",
+      "anatomyAlt": "Simbolul pe grila de construcție: lățimea unei bare ca spațiu liber pe fiecare latură.",
+      "field": "Câmpul",
+      "fieldText": "Shades Red #E40523, un pătrat cu colțuri ascuțite.",
+      "bars": "Barele",
+      "barsText": "Trei bare, fiecare lată cât o zecime din pătrat și înaltă cât mai mult de jumătate din el, albe la 100%, 75% și 50%.",
+      "space": "Spațiul liber",
+      "spaceText": "Lățimea unei bare pe fiecare latură. Nimic altceva nu intră acolo.",
+      "size": "Dimensiunea minimă",
+      "sizeText": "16 px pe ecran ca favicon, 24 px într-o interfață, 8 mm la tipar.",
+      "misuseTitle": "Niciodată",
+      "misuseRound": "Nu rotunji colțurile. Simbolul e pătrat.",
+      "misuseTint": "Nu colora barele în roz. Sunt albe.",
+      "misuseStretch": "Nu îl întinde și nu îi schimba proporțiile.",
+      "misuseGradient": "Nu îl umple cu spectrul sau cu vreun gradient.",
+      "downloads": "Fișiere",
+      "dlMark": "Simbol",
+      "dlLockup": "Logo complet",
+      "dlReverse": "Logo complet pentru fundaluri închise",
+      "dlMono": "Simbol, o culoare",
+      "dlLockupMono": "Logo complet, o culoare"
+    },
+    "family": {
+      "title": "Familia Spectra",
+      "text": "Șapte personaje, câte unul pentru fiecare tip de moment. Au aceiași ochi, creasta cu trei bare din simbol și un zâmbet discret, iar fiecare are o singură culoare plată.",
+      "spectra": {
+        "role": "Fondator și bun-venit",
+        "text": "A ieșit din logo în ziua în care acesta a fost gata. Deschide prezentările, întâmpină utilizatorii noi și e fața lansărilor."
+      },
+      "mera": {
+        "role": "Strategie",
+        "text": "Măsurat și precis. Apare lângă planuri, calendare și tot ce cere o decizie."
+      },
+      "sol": {
+        "role": "Direcție artistică",
+        "text": "Cel gălăgios, mereu cu o mână ridicată. Apare la lucrări creative, evaluări și inspirație."
+      },
+      "nova": {
+        "role": "Laborator și noutăți",
+        "text": "Cel mai mic, cu o scânteie deasupra. Anunță versiunile beta și funcțiile noi."
+      },
+      "sage": {
+        "role": "Ajutor și documentație",
+        "text": "Răbdător și blând, cu ochii închiși când ascultă. Se ocupă de tutoriale, tooltipuri și centrul de ajutor."
+      },
+      "vio": {
+        "role": "Comunitate",
+        "text": "Isteț și cald, mereu făcând cu ochiul. Vorbește pe rețelele sociale, în campanii și cu comunitatea."
+      },
+      "sunny": {
+        "role": "Producție și finalizare",
+        "text": "Echilibrat și practic. Confirmă progresul, succesul și livrarea."
+      },
+      "rulesTitle": "Regulile familiei",
+      "rule1": "Aceiași ochi pentru toți: un disc alb, o pupilă neagră și o singură sclipire.",
+      "rule2": "Creasta cu trei bare nu se scoate niciodată. Este numele familiei.",
+      "rule3": "O singură formă moale pentru fiecare corp, cu toate colțurile rotunjite.",
+      "rule4": "Un singur zâmbet discret, curbat. Fără dinți, fără rânjet larg.",
+      "rule5": "Plutesc deasupra unei umbre moi. Nu stau niciodată în picioare.",
+      "rule6": "Câte o singură culoare plată. Fără gradienți pe corpuri.",
+      "motion": "Un personaj pe moment și cel mult două pe ecran. Niciodată în locul logo-ului. Animațiile lor în repaus se opresc când cititorul cere mișcare redusă."
+    },
+    "voice": {
+      "title": "Cum scrie Shades",
+      "text": "Scurt, sigur, concret. Vindem rezultatul, nu funcția, și fiecare text se încheie cu un singur pas următor, clar.",
+      "slogan": "Acolo unde identitatea devine experiență.",
+      "sloganRule": "Linia principală. Un singur slogan pe suprafață, niciodată alături de altele.",
+      "no": "Nu așa",
+      "noExample": "Suntem o forță creativă în care designul, marketingul și tehnologia converg pentru a oferi soluții unice.",
+      "yes": "Așa",
+      "yesExample": "Construim branduri pe care oamenii le recunosc și site-uri care le aduc comenzi. Începe cu un brief.",
+      "rulesTitle": "Reguli",
+      "rule1": "„Noi” pentru Shades, „tu” pentru client.",
+      "rule2": "Începe cu rezultatul, apoi spune cum.",
+      "rule3": "Fraze scurte, afirmative. O idee pe frază.",
+      "rule4": "Arată rezultate reale sau nu spune nimic. Nu inventa niciodată cifre, citate sau clienți.",
+      "rule5": "Fără emoji în textele de brand. Iconițele și simbolul fac treaba asta.",
+      "swapsTitle": "Cuvinte pe care le înlocuim",
+      "instead": "În loc de",
+      "write": "Scrie",
+      "swap1a": "ieftin",
+      "swap1b": "accesibil",
+      "swap2a": "reducere",
+      "swap2b": "ofertă specială",
+      "swap3a": "unic",
+      "swap3b": "excepțional",
+      "swap4a": "practic",
+      "swap4b": "în esență",
+      "swap5a": "grăbiți-vă",
+      "swap5b": "nu ratați",
+      "tagsTitle": "Hashtaguri",
+      "tagsText": "Ce este un proiect, spus ca etichetă cu # roșu. Cel mult trei, niciodată ca decor."
+    }
+  },
+  "foundations": {
+    "title": "Fundamente: culoare, tipografie, spațiu și mișcare | Gradient",
+    "description": "Tokenurile de design Gradient: Shades Red și scala de cerneală, roluri semantice pentru tema luminoasă și întunecată, tipografie, spațiere, raze și mișcare.",
+    "heading": "Fundamente",
+    "lead": "Fiecare valoare e scrisă o singură dată, în tokens.json, și ajunge de acolo în CSS, Tailwind și JSON. Apasă pe orice mostră ca să-i copiezi variabila.",
+    "colour": {
+      "title": "Culoare",
+      "text": "Shades Red și o scală neutră de cerneală fac aproape toată treaba. Cele patru nuanțe ale spectrului există pentru o singură bandă pe machetă.",
+      "red": "Shades Red",
+      "ink": "Cerneală și hârtie",
+      "spectrum": "Spectrul",
+      "spectrumRule": "Albastru, magenta, roșu și portocaliu, în această ordine. O singură dată pe machetă, ca bandă sau linie, niciodată ca fundal sau pe text.",
+      "copy": "Apasă pe o mostră ca să-i copiezi proprietatea CSS personalizată.",
+      "copied": "Copiat: {token}"
+    },
+    "roles": {
+      "title": "Roluri",
+      "text": "Interfețele folosesc roluri, niciodată scalele brute. Fiecare rol are o valoare pentru tema luminoasă și una pentru cea întunecată, iar fiecare rol de text trece WCAG AA pe fundalurile pe care stă.",
+      "theme": "Previzualizare temă",
+      "light": "Luminoasă",
+      "dark": "Întunecată",
+      "token": "Token",
+      "use": "Utilizare",
+      "sample": "Mostră",
+      "bg": "Pagina",
+      "surface": "Suprafețe ridicate și câmpuri",
+      "sunken": "Zone adâncite, cod și secțiuni discrete",
+      "line": "Linii fine și separatoare",
+      "text": "Titluri și text curent",
+      "text2": "Text secundar",
+      "text3": "Indicii și legende, cel mai discret text lizibil",
+      "accent": "Singura acțiune principală și selecția",
+      "accentText": "Text roșu pe fundal deschis sau închis",
+      "inverse": "Butoane inverse și secțiuni de cerneală",
+      "status": "Text de succes, avertizare și pericol",
+      "theming": "Brandul unui client schimbă rolurile într-o singură foaie de stil. Fiecare componentă le urmează, pentru că niciuna nu citește o culoare brută."
+    },
+    "type": {
+      "title": "Tipografie",
+      "text": "Space Grotesk pentru display și titluri, Hanken Grotesk pentru tot restul. Dimensiunile de peste textul curent se adaptează la ecran.",
+      "sample": "Construit ca să fie recunoscut",
+      "bodySample": "Shades construiește branduri și produsele din jurul lor, de la prima schiță la site-ul lansat.",
+      "rulesTitle": "Reguli",
+      "rule1": "Spațierea dintre litere se strânge pe măsură ce crește dimensiunea, până la -0.04em la mărimea de display. Textul curent nu se spațiază niciodată.",
+      "rule2": "Cifrele sunt tabulare, în fontul de text. Monospace e doar pentru codul pe care cineva îl tastează.",
+      "rule3": "Fără majuscule mici sau etichete spațiate deasupra titlurilor. Titlul își poartă singur greutatea.",
+      "rule4": "Butoanele și linkurile nu sunt niciodată cursive."
+    },
+    "space": {
+      "title": "Spațiu și formă",
+      "text": "O bază de 4 px în zece trepte. Mai mult spațiu deasupra unui titlu decât sub el, strâns în interiorul grupurilor și generos între ele.",
+      "radiusTitle": "Rază",
+      "rNone": "Simbolul, plăcile de brand",
+      "rSm": "Controale mici, etichete",
+      "rMd": "Câmpuri și cod",
+      "rLg": "Panouri și media",
+      "rPill": "Butoane și badge-uri"
+    },
+    "motion": {
+      "title": "Mișcare",
+      "text": "Trei viteze pentru interfață și una pentru personaje. Conținutul e vizibil înainte să se miște ceva.",
+      "play": "Redă",
+      "snap": "Hover, comutatoare, etichete. Fără efect elastic.",
+      "pop": "Apariții și reacții. Un singur salt peste țintă.",
+      "move": "Elementele care se deplasează: panouri, dezvăluiri, curba noastră.",
+      "loop": "Doar animațiile Spectra în repaus și indicatorul de încărcare.",
+      "reduced": "Cu prefers-reduced-motion activ, fiecare animație se oprește și fiecare tranziție e instantanee. Nimic important nu depinde de mișcare."
+    }
+  },
+  "components": {
+    "title": "Componente: butoane, câmpuri, opțiuni și etichete | Gradient",
+    "description": "Componente Gradient live, cu stări și HTML de copiat: butoane, câmpuri, comutatoare, controale segmentate, etichete, badge-uri, acordeoane și piese de brand.",
+    "heading": "Componente",
+    "lead": "Clase simple care citesc tokenurile. Copiază HTML-ul, adaugă foaia de stil și funcționează în orice framework.",
+    "buttons": {
+      "title": "Butoane",
+      "text": "În formă de pastilă, pentru că simbolul e pătrat, iar acțiunile nu trebuie să fie. Un singur buton principal roșu pe ecran.",
+      "primary": "Trimite brieful",
+      "secondary": "Secundar",
+      "inverse": "Invers",
+      "ghost": "Transparent",
+      "small": "Mic",
+      "medium": "Mediu",
+      "large": "Mare",
+      "save": "Salvează",
+      "disabled": "Încă nu",
+      "iconLabel": "Mai multe opțiuni",
+      "shareLabel": "Distribuie",
+      "rule1": "Numește acțiunea cu un verb: Trimite, Salvează, Începe. Niciodată OK sau Confirmă.",
+      "rule2": "Cât timp se lucrează, eticheta își păstrează lățimea, iar cele trei bare îi iau locul.",
+      "rule3": "Un buton doar cu iconiță are întotdeauna aria-label."
+    },
+    "fields": {
+      "title": "Câmpuri",
+      "text": "O etichetă vizibilă deasupra fiecărui câmp, un indiciu când ajută și o eroare care spune cum se repară.",
+      "name": "Nume complet",
+      "nameHint": "Așa cum trebuie să apară în contract.",
+      "email": "Email de serviciu",
+      "emailError": "Adaugă partea de după @.",
+      "service": "Serviciu",
+      "optBrand": "Identitate de brand",
+      "optSite": "Site web",
+      "optCampaign": "Campanie",
+      "locked": "Companie",
+      "brief": "Brief",
+      "briefPlaceholder": "Ce ar trebui să se schimbe după ce lucrarea e gata?"
+    },
+    "choices": {
+      "title": "Opțiuni",
+      "text": "Un control segmentat comută între vizualizări ale aceluiași lucru. Un comutator se aplică imediat; o casetă de bifat așteaptă trimiterea.",
+      "view": "Vizualizare",
+      "day": "Zi",
+      "week": "Săptămână",
+      "month": "Lună",
+      "switch": "Mementouri",
+      "check": "Ține-mă la curent",
+      "radio1": "Chișinău",
+      "radio2": "La distanță"
+    },
+    "labels": {
+      "title": "Etichete și badge-uri",
+      "text": "Un hashtag spune ce este ceva. Un badge spune în ce stare se află.",
+      "draft": "Ciornă",
+      "new": "Nou",
+      "shipped": "Lansat",
+      "review": "În revizuire",
+      "blocked": "Blocat",
+      "kbd": "Caută în sistem cu"
+    },
+    "disclosure": {
+      "title": "Acordeoane și tabele",
+      "text": "Răspunsurile se deschid pe loc, fără script. Tabelele își aliniază cifrele și folosesc linii fine, nu casete.",
+      "q1": "Când începe un proiect?",
+      "a1": "Când brieful e semnat și sosește prima plată. Trimitem planul în cel mult o săptămână.",
+      "q2": "Cine deține fișierele?",
+      "a2": "Tu, după ce proiectul e plătit. Ne păstrăm dreptul să îl arătăm în portofoliu, dacă nu ne ceri altfel.",
+      "colProject": "Proiect",
+      "colStatus": "Stare",
+      "colPages": "Pagini"
+    },
+    "brand": {
+      "title": "Piese de brand",
+      "text": "Piesele pe care le are doar Shades: simbolul care își animă barele, indicatorul de încărcare făcut din aceleași bare și banda de spectru.",
+      "loading": "Se încarcă",
+      "rule": "Banda de spectru apare o singură dată pe machetă. Simbolul animat e pentru ecranele de încărcare și pentru momentul în care o pagină se deschide prima dată, nu pentru navigare."
+    }
+  },
+  "icons": {
+    "title": "Iconițe: setul de iconițe Shades | Gradient",
+    "description": "76 de iconițe de interfață Shades, desenate pe o grilă de 24 px cu linii rotunjite de 2 px, libere sub MIT, plus siglele serviciilor spre care trimite Shades.",
+    "heading": "Iconițe",
+    "lead": "Setul propriu Shades, desenat pentru Gradient: grilă de 24 px, linii rotunjite de 2 px, un fișier pentru fiecare iconiță. Apasă pe o iconiță ca să-i copiezi numele.",
+    "search": "Caută iconițe",
+    "hint": "Apasă ca să copiezi numele.",
+    "copied": "Copiat: {name}",
+    "empty": "Încă nu există o iconiță cu acest nume. Deseneaz-o după regulile de mai jos și adaug-o.",
+    "set": {
+      "title": "Setul",
+      "text": "Iconițe de interfață în currentColor, așa că preiau culoarea textului din jur."
+    },
+    "rules": {
+      "title": "Reguli de desen",
+      "text": "Fiecare iconiță urmează aceleași cinci reguli, ca una nouă să se potrivească cu restul.",
+      "rule1": "Grilă de 24 × 24 cu 2 px de margine interioară: desenul rămâne între 2 și 22.",
+      "rule2": "Linii de 2 px cu capete și îmbinări rotunjite. Umplere doar pentru puncte de 1 până la 1.6 px.",
+      "rule3": "Colțuri de 2 px la dreptunghiuri. Fără colțuri ascuțite, fără linii prea subțiri.",
+      "rule4": "Doar currentColor. Niciodată o culoare fixă în fișier.",
+      "rule5": "O iconiță trebuie să însemne ceva. Dacă eticheta e clară singură, renunță la iconiță."
+    },
+    "marks": {
+      "title": "Alte servicii",
+      "text": "Siglele pline ale serviciilor spre care trimite Shades, din Simple Icons. Aparțin proprietarilor lor: folosește-le doar în linkuri către acele servicii."
+    }
+  },
+  "print": {
+    "title": "Tipar: cărți de vizită, ecusoane, merch și email | Gradient",
+    "description": "Regulile Shades pentru tipar și merchandise: carte de vizită, ecuson, sacoșă, tricou, autocolante, semnătura de email și culoarea la tipar.",
+    "heading": "Tipar și merchandise",
+    "lead": "Același simbol și aceeași reținere pe hârtie, pe textil și în email. Dimensiunile sunt reale; valorile de culoare au încă nevoie de o probă de tipar.",
+    "size": "Dimensiune",
+    "bleed": "Margine de tăiere",
+    "safe": "Margine de siguranță",
+    "stock": "Hârtie",
+    "card": {
+      "title": "Carte de vizită",
+      "text": "Pe față e doar simbolul, pe roșu. Pe verso stă persoana, scrisă cu fonturile brandului, pe hârtie.",
+      "front": "Față: simbolul, centrat, pe Shades Red",
+      "back": "Verso: nume, rol și contacte pe hârtie",
+      "role": "Designer de brand",
+      "stock": "Hârtie necretată, de 350 g/m² sau mai grea",
+      "sample": "Persoană și date de exemplu. Cartea e desenată la proporțiile ei reale."
+    },
+    "badge": {
+      "title": "Ecuson de eveniment",
+      "text": "Prenumele mare, cât să se citească din celălalt capăt al sălii. Banda de culoare spune cine e fiecare.",
+      "team": "Echipa Shades",
+      "teamCaption": "Echipă: bandă roșie",
+      "guest": "Invitat",
+      "guestCaption": "Invitat: bandă de cerneală",
+      "hole": "Șnur",
+      "holeText": "O fantă, centrată, la 10 mm de marginea de sus",
+      "name": "Nume",
+      "nameText": "Prenumele în Space Grotesk, înalt de cel puțin 18 mm"
+    },
+    "merch": {
+      "title": "Merchandise",
+      "text": "Simbol mic sau logotip mare, niciodată ambele pe același obiect. Spectrul doar ca bordură.",
+      "tote": "Sacoșă",
+      "toteText": "Simbolul într-o culoare, serigrafiat, pe pânză naturală.",
+      "tee": "Tricou",
+      "teeText": "Logotipul mare pe spate, pieptul rămâne liber.",
+      "sticker": "Autocolant",
+      "stickerText": "Un personaj Spectra, decupat pe contur, cu margine albă de 3 mm.",
+      "rule1": "Folosește fișierele într-o culoare pentru broderie, folio, gravură și serigrafie.",
+      "rule2": "Nu tipări niciodată simbolul mai mic de 8 mm.",
+      "rule3": "Un singur personaj pe obiect. Personajele nu înlocuiesc niciodată simbolul."
+    },
+    "signature": {
+      "title": "Semnătura de email",
+      "text": "Cel mult cinci rânduri, text real în loc de o imagine mare, ca să se citească și cu imaginile dezactivate.",
+      "sign": "Mulțumesc și vorbim curând.",
+      "rule1": "Simbolul la 48 px, cu link către shades.md.",
+      "rule2": "Nume, rol, apoi un rând de contacte. Fără sloganuri, fără bannere.",
+      "rule3": "Imagini sub 90 KB în total."
+    },
+    "colour": {
+      "title": "Culoarea la tipar",
+      "text": "Ecranele folosesc valorile hex. Tiparul cere o culoare spot sau o potrivire CMYK, verificată pe o probă reală.",
+      "colour": "Culoare",
+      "screen": "Ecran",
+      "print": "Tipar",
+      "redPrint": "Potrivire cu un roșu spot cald pe o probă tipărită, înainte de primul tiraj",
+      "inkPrint": "Negru intens: C60 M40 Y40 K100 pe hârtie cretată",
+      "paperPrint": "Hârtia însăși; nu tipări niciodată un ton pentru alb",
+      "proof": "Nicio valoare de tipar nu e finală până nu o verifică tipografia pe o probă. Notează aici valorile aprobate, împreună cu tipografia și hârtia."
+    }
+  },
+  "projects": {
+    "title": "Proiecte: cum au fost făcute produsele Shades | Gradient",
+    "description": "Cum a fost construit PageRecast, ce a păstrat echipa și ce a aruncat, lecțiile pe care le urmează acum orice proiect Shades și ce urmează.",
+    "heading": "Construit din proiecte reale",
+    "lead": "Gradient păstrează deciziile din spatele fiecărui produs: ce am făcut, ce a respins proprietarul și regula care a rămas în urmă.",
+    "pagerecast": {
+      "text": "O extensie Chrome și un plugin Figma gratuite, care transformă orice pagină web în straturi editabile. Construite în octombrie 2026, publicate în Chrome Web Store, Figma Community și pe npm.",
+      "full": "Studiul de caz complet",
+      "s1": "Începe de la zero",
+      "s1Text": "Prima versiune a fost aruncată complet. Refacerea a început cu un plan al tuturor funcțiilor pe care oamenii le așteptau și al câtorva cerute de piață.",
+      "s2": "Găsește-i propriul simbol",
+      "s2Text": "Peste douăzeci de direcții de logo. Cele cu umbre și cele tridimensionale au plecat; a rămas o suprapunere plată a două pagini, așa cum funcționează siglele Google și Apple.",
+      "s3": "Elimină ce părea generat",
+      "s3Text": "Rundă după rundă, proprietarul a arătat părțile care păreau făcute după șablon. Fiecare a devenit o regulă.",
+      "s4": "Lansează peste tot",
+      "s4Text": "Chrome Web Store, Figma Community, npm, un site pe Cloudflare Workers, versiuni publicate și un wiki.",
+      "s5": "Vorbește șase limbi",
+      "s5Text": "Extensia, pluginul și site-ul în engleză, franceză, română, rusă, spaniolă și chineză, cu date structurate pe fiecare pagină.",
+      "kept": "Păstrat",
+      "kept1": "Butoane pastilă cu o săgeată clară și butoanele vechi acolo unde oamenilor le plăceau",
+      "kept2": "Produsul real, arătat în funcțiune, niciodată un desen al lui",
+      "kept3": "Capitole îndrăznețe pe toată lățimea, unul dintre ele roșu",
+      "kept4": "Mențiunea companiei doar în produs, cea a fondatorului în README",
+      "cut": "Aruncat",
+      "cut1": "Cifre și etichete monospace",
+      "cut2": "Ferestre de browser false și schițe-schelet gri",
+      "cut3": "Iconițe pe fiecare rând și liste în casete rotunjite",
+      "cut4": "Același bloc roșu refolosit în fiecare secțiune"
+    },
+    "lessons": {
+      "title": "Lecții pe care le urmează orice proiect",
+      "text": "Vin din corecturile proprietarului. Un produs Shades nu încalcă niciuna.",
+      "link": "Lista completă din repository",
+      "l1": "Arată lucrul real",
+      "l1Text": "Produsul, pagina sau captura reală. Dacă nu există încă, mai bine nu arăta nimic decât un mockup.",
+      "l2": "Fără costum monospace",
+      "l2Text": "Cifrele sunt tabulare, în fontul de text. Monospace e doar pentru cod.",
+      "l3": "Fără etichete deasupra titlurilor",
+      "l3Text": "Fără cuvinte mici spațiate, fără numere de secțiune. Titlul vorbește singur.",
+      "l4": "Iconițe doar când înseamnă ceva",
+      "l4Text": "Fără iconiță pe fiecare rând, fără iconiță într-un cerc în centrul unei stări goale.",
+      "l5": "Fără casete în casete",
+      "l5Text": "Listele stau pe linii fine. Cardurile sunt rare și nu se imbrică niciodată.",
+      "l6": "Sigle plate",
+      "l6Text": "Siglele sunt plate și bidimensionale. Fără umbre, fără randări lucioase de iconiță de aplicație.",
+      "l7": "Fiecare spațiu are un rost",
+      "l7Text": "Dens și cu scop, niciodată gol pentru efect și niciodată plin de umplutură.",
+      "l8": "Viteza pe primul loc",
+      "l8Text": "HTML static, fără scripturi terțe, fonturi găzduite local. O pagină Shades se deschide instant pe telefon."
+    },
+    "next": {
+      "title": "Urmează pe Gradient",
+      "text": "Produsele care vor porni de la acest sistem, nu de la un șablon.",
+      "imagereframe": "Export și import de imagini pentru Figma, gratuit și open source, construit sub brandul Shades, cu funcțiile care lipsesc pe piață.",
+      "shades": "Site-ul agenției, refăcut: păstrăm cele mai bune idei, renunțăm la aspectul de șablon.",
+      "planned": "Planificat"
+    },
+    "start": {
+      "title": "Începe un proiect nou",
+      "text": "Aceiași cinci pași de fiecare dată, ca următorul produs să pornească de unde s-a oprit cel dinainte.",
+      "link": "Ghidul complet",
+      "s1": "Scrie fișa produsului",
+      "s1Text": "Pentru cine e, ce face, ce nu trebuie să facă niciodată. PRODUCT.md în rădăcina repository-ului.",
+      "s2": "Instalează Gradient",
+      "s2Text": "npm i shades-gradient, apoi importă foaia de stil sau tema Tailwind.",
+      "s3": "Alege-i un simbol propriu sau folosește-l pe cel Shades",
+      "s3Text": "Un produs poate avea propriul logo, dar folosește tipografia, rolurile și regulile Gradient.",
+      "s4": "Citește lecțiile",
+      "s4Text": "Înainte de primul ecran, nu după a cincea revizuire.",
+      "s5": "Lansează cu verificările făcute",
+      "s5Text": "Verificarea tipurilor, testele, auditul site-ului și capturile de ecran în tema luminoasă și întunecată, înainte ca ceva să fie declarat gata."
+    }
+  }
+}

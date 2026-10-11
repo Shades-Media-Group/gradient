@@ -1,0 +1,566 @@
+{
+  "language": "Langue",
+  "imageAlt": "Le symbole Shades, un carré rouge à trois barres blanches, à côté du mot Gradient.",
+  "nav": {
+    "skip": "Aller au contenu",
+    "label": "Gradient",
+    "homeLabel": "Gradient, accueil",
+    "home": "Gradient",
+    "brand": "Marque",
+    "foundations": "Fondations",
+    "components": "Composants",
+    "icons": "Icônes",
+    "print": "Imprimés",
+    "projects": "Projets",
+    "cta": "Installer",
+    "menu": "Menu",
+    "onThisPage": "Sur cette page"
+  },
+  "footer": {
+    "label": "Site",
+    "about": "Gradient est le design system de Shades Media Group, agence de création et de technologie à Chișinău, en Moldavie.",
+    "system": "Système",
+    "work": "Réalisations",
+    "code": "Code",
+    "legal": "Juridique",
+    "changelog": "Journal des modifications",
+    "issues": "Signaler un problème",
+    "license": "Licence MIT",
+    "trademarks": "Marques déposées",
+    "security": "Sécurité",
+    "credit": "Libre et open source. Conçu par Shades Media Group."
+  },
+  "home": {
+    "title": "Gradient : le design system de Shades Media Group",
+    "description": "Gradient, le design system de Shades Media Group : logo, couleur, typographie, personnages Spectra, composants et icônes de chaque produit Shades. Open source.",
+    "hero": {
+      "title": "Tout produit Shades commence ici.",
+      "lead": "Gradient, c'est la façon dont Shades Media Group se montre, s'exprime et construit : un symbole, un rouge, sept personnages, et le code que chaque projet installe.",
+      "copy": "Copier la commande d'installation",
+      "brand": "Découvrir la marque",
+      "note": "Libre et open source. Le nom et le symbole restent les nôtres."
+    },
+    "split": {
+      "label": "Les trois barres du symbole",
+      "brand": {
+        "title": "Marque",
+        "text": "Le symbole, le bloc-marque, la famille Spectra et la façon dont Shades écrit.",
+        "link": "Logo et famille"
+      },
+      "foundations": {
+        "title": "Fondations",
+        "text": "Couleur, typographie, espace et mouvement, définis une fois, utilisés partout.",
+        "link": "Les tokens"
+      },
+      "code": {
+        "title": "Code",
+        "text": "Des composants CSS, un thème Tailwind et 76 icônes Shades dans un seul paquet.",
+        "link": "Les composants"
+      },
+      "caption": "Trois barres blanches à 100 %, 75 % et 50 %. Toute l'idée est là : des nuances d'une même couleur, côte à côte, forment un dégradé."
+    },
+    "colour": {
+      "title": "Un seul rouge. Employé comme un signal.",
+      "text": "Le Shades Red, #E40523, est le rouge du symbole lui-même. Il signale la seule action qui compte sur un écran et peut remplir un chapitre d'une page. Tout le reste est encre et papier.",
+      "link": "Toutes les couleurs",
+      "red": "L'échelle Shades Red, de 50 à 900",
+      "ink": "L'échelle d'encre, du papier à l'encre",
+      "rule": "Le rouge est un signal, jamais un papier peint. Le spectre à quatre nuances apparaît une fois par mise en page, en bandeau."
+    },
+    "type": {
+      "title": "Space Grotesk parle. Hanken Grotesk explique.",
+      "text": "Les titres sont composés en Space Grotesk, gras et serrés. Tout ce qui se lit longuement est en Hanken Grotesk. Le russe se replie sur Inter et le chinois sur la police système : chaque langue se lit aussi nettement que l'anglais.",
+      "link": "L'échelle typographique",
+      "system": "Police système",
+      "body": "Le texte courant est composé en 17 pixels et respire, et les chiffres s'alignent grâce aux chiffres tabulaires, pas à une police machine à écrire."
+    },
+    "family": {
+      "title": "Sept nuances, une famille.",
+      "text": "Spectra a quitté le logo, crête comprise. Six collègues ont suivi, chacun avec un rôle : Sage explique, Nova annonce, Sunny confirme que c'est livré.",
+      "link": "Rencontrer la famille"
+    },
+    "parts": {
+      "title": "Les pièces, en action.",
+      "text": "Chaque composant est une simple classe qui lit les tokens. Il fonctionne en React, en Preact ou en HTML pur, et une marque cliente peut recolorer tout l'ensemble en changeant quelques variables.",
+      "link": "Tous les composants",
+      "name": "Votre nom",
+      "namePlaceholder": "Ana Popescu",
+      "email": "E-mail professionnel",
+      "emailError": "Ajoutez la partie après le @, comme ana@company.md.",
+      "kind": "Votre besoin",
+      "kindBrand": "Une marque",
+      "kindSite": "Un site web",
+      "kindBoth": "Les deux",
+      "checklist": "Envoyez-moi la check-list de marque",
+      "send": "Envoyer le brief",
+      "call": "Réserver un appel",
+      "demo": "Une démo construite avec les pièces Gradient. Elle n'envoie rien.",
+      "sent": "Vérifié et prêt. La démo s'arrête ici."
+    },
+    "licence": {
+      "title": "Code ouvert. Notre nom.",
+      "text": "Les tokens, les styles et les icônes sont sous licence MIT : utilisez-les partout. Le nom Shades, le symbole et les personnages Spectra sont réservés à Shades Media Group et à ses propres projets.",
+      "link": "Ce que couvre la mention des marques"
+    },
+    "work": {
+      "title": "Tiré de vrais projets.",
+      "text": "Chaque règle vient d'un produit que Shades a livré, y compris ce que nous avons jeté.",
+      "link": "Le récit des projets",
+      "pagerecast": "Transforme n'importe quelle page web en calques Figma modifiables. Il nous a appris ce qui paraît fait main et ce qui paraît généré.",
+      "nails": "Une app de réservation pour un salon de manucure. Elle a prouvé qu'une marque cliente peut porter les mêmes pièces dans ses propres couleurs.",
+      "lms": "Notre propre app de gestion du quotidien. Elle a fixé les règles des icônes et du mouvement sur mobile.",
+      "imagereframe": "Export et import d'images pour Figma, gratuit et ouvert. Le premier produit né de Gradient.",
+      "shades": "Le site de l'agence, bientôt reconstruit sur Gradient.",
+      "live": "En ligne",
+      "next": "À venir"
+    },
+    "install": {
+      "title": "Trois points d'entrée.",
+      "text": "Un seul paquet, shades-gradient, pour tous les projets Shades. Prenez la partie dont votre stack a besoin.",
+      "link": "shades-gradient sur npm",
+      "any": "Tout projet",
+      "anyText": "Tokens, styles de base, composants et mouvement dans une seule feuille de style, environ 6 KB compressée.",
+      "tailwind": "Tailwind v4",
+      "tailwindText": "Chaque token devient une classe utilitaire qui suit les modes clair et sombre : bg-accent, text-text-2, rounded-pill.",
+      "icons": "Des icônes partout",
+      "iconsText": "76 icônes Shades en chaînes SVG, ou un sprite unique pour le HTML pur."
+    },
+    "faq": {
+      "title": "Questions",
+      "items": {
+        "what": {
+          "q": "Qu'est-ce que Gradient ?",
+          "a": "Gradient est le design system de Shades Media Group : règles de marque, design tokens, composants CSS, icônes et personnages Spectra. Le code est distribué dans le paquet npm shades-gradient, et ce site le documente."
+        },
+        "use": {
+          "q": "Puis-je utiliser Gradient dans mon propre projet ?",
+          "a": "Oui. Le code est sous licence MIT : vous pouvez utiliser les tokens, les composants et les icônes partout. Le nom Shades, le symbole et les personnages Spectra ne sont pas couverts par cette licence et restent la propriété de Shades Media Group."
+        },
+        "stack": {
+          "q": "Gradient nécessite-t-il React ou Tailwind ?",
+          "a": "Non. Les composants sont de simples classes CSS et les icônes des chaînes SVG : ils fonctionnent avec n'importe quel framework, ou sans. Les projets Tailwind v4 peuvent importer un thème qui transforme chaque token en classes utilitaires."
+        },
+        "client": {
+          "q": "Comment une marque cliente l'utilise-t-elle ?",
+          "a": "Redéfinissez les tokens de rôle, comme --g-accent, --g-bg et --g-text, dans une seule feuille de style. Les composants ne lisent que ceux-là : tout l'ensemble prend les couleurs du client d'un coup."
+        },
+        "red": {
+          "q": "Pourquoi le rouge est-il #E40523 ?",
+          "a": "C'est le rouge du fichier logo Shades sur shades.md, la source de vérité de la marque. Des explorations précédentes utilisaient d'autres rouges ; Gradient n'en garde qu'un."
+        }
+      }
+    }
+  },
+  "brand": {
+    "title": "Marque : symbole Shades, famille Spectra et voix | Gradient",
+    "description": "Le logo Shades et son usage, les sept personnages Spectra et leurs rôles, et la façon dont Shades Media Group écrit.",
+    "heading": "La marque",
+    "lead": "Un symbole, sept personnages et une façon d'écrire. Tout ici provient des fichiers que Shades livre déjà.",
+    "logo": {
+      "title": "Le symbole",
+      "text": "Un carré rouge aux angles vifs portant trois barres blanches à 100 %, 75 % et 50 %. Les barres sont les nuances du nom. Il n'est jamais redessiné : chaque fichier vient de la même géométrie, sur shades.md.",
+      "reverseAlt": "Le bloc-marque Shades en blanc à côté du symbole rouge, sur fond encre.",
+      "anatomyAlt": "Le symbole sur sa grille de construction : une largeur de barre de zone de protection de chaque côté.",
+      "field": "Fond",
+      "fieldText": "Shades Red #E40523, un carré aux angles vifs.",
+      "bars": "Barres",
+      "barsText": "Trois barres, chacune large d'un dixième du carré et haute de plus de la moitié, blanches à 100 %, 75 % et 50 %.",
+      "space": "Zone de protection",
+      "spaceText": "Une largeur de barre de chaque côté. Rien d'autre n'y entre.",
+      "size": "Taille minimale",
+      "sizeText": "16 px à l'écran en favicon, 24 px dans une interface, 8 mm à l'impression.",
+      "misuseTitle": "Jamais",
+      "misuseRound": "Arrondir les angles. Le symbole est carré.",
+      "misuseTint": "Teinter les barres en rose ou en vieux rose. Elles sont blanches.",
+      "misuseStretch": "L'étirer ou modifier ses proportions.",
+      "misuseGradient": "Le remplir du spectre ou de tout autre dégradé.",
+      "downloads": "Fichiers",
+      "dlMark": "Symbole",
+      "dlLockup": "Bloc-marque",
+      "dlReverse": "Bloc-marque pour fonds sombres",
+      "dlMono": "Symbole, une couleur",
+      "dlLockupMono": "Bloc-marque, une couleur"
+    },
+    "family": {
+      "title": "La famille Spectra",
+      "text": "Sept personnages, un par type de moment. Ils partagent les mêmes yeux, la crête à trois barres du symbole et un sourire discret, et chacun a sa couleur unie.",
+      "spectra": {
+        "role": "Origine et accueil",
+        "text": "A quitté le logo le jour de sa finalisation. Ouvre les présentations, accueille les nouveaux utilisateurs et porte les lancements."
+      },
+      "mera": {
+        "role": "Stratégie",
+        "text": "Tout en mesure et en précision. Apparaît à côté des plans, des calendriers et de tout ce qui demande une décision."
+      },
+      "sol": {
+        "role": "Direction artistique",
+        "text": "Toujours un bras levé, toujours à plein volume. Pour le travail créatif, les revues et l'inspiration."
+      },
+      "nova": {
+        "role": "Labs et nouveautés",
+        "text": "Petit gabarit, une étincelle au-dessus de la tête. Annonce les bêtas et les nouvelles fonctionnalités."
+      },
+      "sage": {
+        "role": "Aide et documentation",
+        "text": "Patience et douceur, les yeux fermés pour écouter. Gère les tutoriels, les infobulles et le centre d'aide."
+      },
+      "vio": {
+        "role": "Communauté",
+        "text": "De l'esprit et de la chaleur, toujours en plein clin d'œil. Prend la parole sur les réseaux sociaux, dans les campagnes et auprès de la communauté."
+      },
+      "sunny": {
+        "role": "Production et livraison",
+        "text": "Stable et pratique. Confirme l'avancement, la réussite et la livraison."
+      },
+      "rulesTitle": "Règles de la famille",
+      "rule1": "Les mêmes yeux pour tous : un disque blanc, une pupille noire et un reflet.",
+      "rule2": "La crête à trois barres n'est jamais retirée. C'est le nom de famille.",
+      "rule3": "Une forme douce par corps, tous les angles arrondis.",
+      "rule4": "Un sourire courbe et discret. Pas de dents, pas de grand sourire ouvert.",
+      "rule5": "Ils flottent au-dessus d'une ombre douce. Ils ne touchent jamais le sol.",
+      "rule6": "Une couleur unie chacun. Pas de dégradé sur les corps.",
+      "motion": "Un personnage par moment, deux au plus sur un écran. Jamais à la place du logo. Leurs animations d'attente s'arrêtent quand le lecteur demande moins de mouvement."
+    },
+    "voice": {
+      "title": "Comment Shades écrit",
+      "text": "Court, assuré, précis. Nous vendons le résultat, pas la fonctionnalité, et chaque texte se termine par une prochaine étape claire.",
+      "slogan": "Là où l'identité devient expérience.",
+      "sloganRule": "La signature principale. Un seul slogan par support, jamais empilé avec d'autres.",
+      "no": "Pas comme ça",
+      "noExample": "Nous sommes un véritable moteur créatif où design, marketing et technologie convergent pour proposer des solutions uniques.",
+      "yes": "Comme ça",
+      "yesExample": "Nous créons des marques qu'on reconnaît et des sites qui vous apportent du travail. Commencez par un brief.",
+      "rulesTitle": "Règles",
+      "rule1": "« Nous » pour Shades, « vous » pour le client.",
+      "rule2": "Le résultat d'abord, la méthode ensuite.",
+      "rule3": "Des phrases courtes et affirmatives. Une idée chacune.",
+      "rule4": "Montrez de vrais résultats ou ne dites rien. N'inventez jamais de chiffres, de citations ni de clients.",
+      "rule5": "Pas d'emoji dans les textes de marque. Les icônes et le symbole s'en chargent.",
+      "swapsTitle": "Les mots que nous remplaçons",
+      "instead": "Au lieu de",
+      "write": "Écrivez",
+      "swap1a": "pas cher",
+      "swap1b": "abordable",
+      "swap2a": "réduction",
+      "swap2b": "offre spéciale",
+      "swap3a": "unique",
+      "swap3b": "exceptionnel",
+      "swap4a": "en gros",
+      "swap4b": "en substance",
+      "swap5a": "dépêchez-vous",
+      "swap5b": "à ne pas manquer",
+      "tagsTitle": "Hashtags",
+      "tagsText": "Ce qu'est un projet, dit sous forme de tag avec un # rouge. Trois au maximum, jamais en décoration."
+    }
+  },
+  "foundations": {
+    "title": "Fondations : couleur, typographie, espace, mouvement | Gradient",
+    "description": "Les design tokens de Gradient : Shades Red et l'échelle d'encre, les rôles clair et sombre, l'échelle typographique, l'espacement, les rayons et le mouvement.",
+    "heading": "Fondations",
+    "lead": "Chaque valeur est écrite une seule fois, dans tokens.json, et rejoint de là le CSS, Tailwind et le JSON. Cliquez sur une pastille pour copier sa variable.",
+    "colour": {
+      "title": "Couleur",
+      "text": "Le Shades Red et une échelle d'encre neutre font presque tout le travail. Les quatre nuances du spectre servent à un seul bandeau par mise en page.",
+      "red": "Shades Red",
+      "ink": "Encre et papier",
+      "spectrum": "Le spectre",
+      "spectrumRule": "Bleu, magenta, rouge et orange, dans cet ordre. Une fois par mise en page, en bandeau ou en filet, jamais en fond ni sur du texte.",
+      "copy": "Cliquez sur une pastille pour copier sa propriété personnalisée.",
+      "copied": "{token} copié"
+    },
+    "roles": {
+      "title": "Rôles",
+      "text": "Les interfaces utilisent les rôles, jamais les échelles brutes. Chaque rôle a une valeur claire et une valeur sombre, et chaque rôle de texte respecte le niveau AA des WCAG sur les fonds où il apparaît.",
+      "theme": "Thème d'aperçu",
+      "light": "Clair",
+      "dark": "Sombre",
+      "token": "Token",
+      "use": "Usage",
+      "sample": "Exemple",
+      "bg": "La page",
+      "surface": "Surfaces surélevées et champs",
+      "sunken": "Creux, code et sections calmes",
+      "line": "Filets et séparateurs",
+      "text": "Titres et texte courant",
+      "text2": "Texte secondaire",
+      "text3": "Indications et légendes, le texte lisible le plus discret",
+      "accent": "L'unique action principale et la sélection",
+      "accentText": "Texte rouge sur fond clair ou sombre",
+      "inverse": "Boutons inversés et sections encre",
+      "status": "Texte de succès, d'avertissement et de danger",
+      "theming": "Une marque cliente modifie les rôles dans une seule feuille de style. Tous les composants suivent, car aucun ne lit une couleur brute."
+    },
+    "type": {
+      "title": "Typographie",
+      "text": "Space Grotesk pour l'affichage et les titres, Hanken Grotesk pour tout le reste. Au-delà du texte courant, les tailles s'adaptent à l'écran.",
+      "sample": "Conçu pour être reconnu",
+      "bodySample": "Shades construit des marques et les produits qui les entourent, du premier croquis au site livré.",
+      "rulesTitle": "Règles",
+      "rule1": "L'approche se resserre à mesure que la taille augmente, jusqu'à -0.04em en taille d'affichage. Le texte courant n'est jamais espacé.",
+      "rule2": "Les chiffres sont tabulaires, dans la police du texte. La chasse fixe est réservée au code que l'on tape.",
+      "rule3": "Pas de petites capitales ni de libellés espacés au-dessus des titres. Le titre porte son propre poids.",
+      "rule4": "Les boutons et les liens ne sont jamais en italique."
+    },
+    "space": {
+      "title": "Espace et forme",
+      "text": "Une base de 4 px en dix paliers. Plus d'espace au-dessus d'un titre qu'en dessous, serré dans les groupes, généreux entre eux.",
+      "radiusTitle": "Rayons",
+      "rNone": "Le symbole, les plaques de marque",
+      "rSm": "Petits contrôles, tags",
+      "rMd": "Champs et code",
+      "rLg": "Panneaux et médias",
+      "rPill": "Boutons et badges"
+    },
+    "motion": {
+      "title": "Mouvement",
+      "text": "Trois vitesses pour l'interface et une pour les personnages. Le contenu est visible avant que quoi que ce soit ne bouge.",
+      "play": "Lire",
+      "snap": "Survols, bascules, puces. Jamais de rebond.",
+      "pop": "Apparitions et réactions. Un seul dépassement.",
+      "move": "Ce qui se déplace : panneaux, révélations, la courbe maison.",
+      "loop": "Uniquement l'attente de Spectra et le chargement.",
+      "reduced": "Avec prefers-reduced-motion, toute animation s'arrête et toute transition est instantanée. Rien d'important ne dépend du mouvement."
+    }
+  },
+  "components": {
+    "title": "Composants : boutons, champs, choix et étiquettes | Gradient",
+    "description": "Les composants Gradient en direct, avec leurs états et le HTML à copier : boutons, champs, interrupteurs, tags, badges, accordéons et pièces de marque.",
+    "heading": "Composants",
+    "lead": "De simples classes qui lisent les tokens. Copiez le HTML, ajoutez la feuille de style : ils fonctionnent dans n'importe quel framework.",
+    "buttons": {
+      "title": "Boutons",
+      "text": "En pilule, parce que le symbole est carré et que les actions ne doivent pas l'être. Un seul bouton principal rouge par vue.",
+      "primary": "Envoyer le brief",
+      "secondary": "Secondaire",
+      "inverse": "Inversé",
+      "ghost": "Fantôme",
+      "small": "Petit",
+      "medium": "Moyen",
+      "large": "Grand",
+      "save": "Enregistrer",
+      "disabled": "Pas encore",
+      "iconLabel": "Plus d'options",
+      "shareLabel": "Partager",
+      "rule1": "Nommez l'action par un verbe : Envoyer, Enregistrer, Commencer. Jamais OK ni Valider.",
+      "rule2": "Pendant le chargement, le libellé garde sa largeur et les trois barres prennent sa place.",
+      "rule3": "Un bouton composé d'une seule icône a toujours un aria-label."
+    },
+    "fields": {
+      "title": "Champs",
+      "text": "Un libellé visible au-dessus de chaque champ, une indication quand elle aide, et une erreur qui dit comment corriger.",
+      "name": "Nom complet",
+      "nameHint": "Tel qu'il doit figurer sur le contrat.",
+      "email": "E-mail professionnel",
+      "emailError": "Ajoutez la partie après le @.",
+      "service": "Prestation",
+      "optBrand": "Identité de marque",
+      "optSite": "Site web",
+      "optCampaign": "Campagne",
+      "locked": "Entreprise",
+      "brief": "Brief",
+      "briefPlaceholder": "Qu'est-ce qui doit changer une fois le travail terminé ?"
+    },
+    "choices": {
+      "title": "Choix",
+      "text": "Un contrôle segmenté bascule entre plusieurs vues d'une même chose. Un interrupteur s'applique immédiatement ; une case à cocher attend une validation.",
+      "view": "Vue",
+      "day": "Jour",
+      "week": "Semaine",
+      "month": "Mois",
+      "switch": "Rappels",
+      "check": "Me tenir informé",
+      "radio1": "Chișinău",
+      "radio2": "À distance"
+    },
+    "labels": {
+      "title": "Tags et badges",
+      "text": "Un hashtag dit ce qu'est une chose. Un badge dit dans quel état elle se trouve.",
+      "draft": "Brouillon",
+      "new": "Nouveau",
+      "shipped": "Livré",
+      "review": "En relecture",
+      "blocked": "Bloqué",
+      "kbd": "Rechercher dans le système avec"
+    },
+    "disclosure": {
+      "title": "Accordéons et tableaux",
+      "text": "Les réponses s'ouvrent sur place, sans script. Les tableaux alignent leurs chiffres et utilisent des filets, pas des cadres.",
+      "q1": "Quand un projet démarre-t-il ?",
+      "a1": "Quand le brief est signé et que le premier paiement est reçu. Nous envoyons le plan sous une semaine.",
+      "q2": "À qui appartiennent les fichiers ?",
+      "a2": "À vous, une fois le projet payé. Nous gardons le droit de le montrer dans notre portfolio, sauf si vous nous demandez de ne pas le faire.",
+      "colProject": "Projet",
+      "colStatus": "Statut",
+      "colPages": "Pages"
+    },
+    "brand": {
+      "title": "Pièces de marque",
+      "text": "Les éléments que seul Shades possède : le symbole qui anime ses barres, le loader fait de ces barres et le bandeau spectre.",
+      "loading": "Chargement",
+      "rule": "Le bandeau spectre apparaît une fois par mise en page. Le symbole animé est réservé aux écrans de chargement et à la première ouverture d'une page, pas à la navigation."
+    }
+  },
+  "icons": {
+    "title": "Icônes : le jeu d'icônes Shades | Gradient",
+    "description": "76 icônes d'interface Shades sur une grille de 24 px, traits arrondis de 2 px, libres sous licence MIT, plus les logos des services liés par Shades.",
+    "heading": "Icônes",
+    "lead": "Le jeu propre à Shades, dessiné pour Gradient : grille de 24 px, traits arrondis de 2 px, un fichier par icône. Cliquez sur une icône pour copier son nom.",
+    "search": "Rechercher une icône",
+    "hint": "Cliquez pour copier le nom.",
+    "copied": "{name} copié",
+    "empty": "Aucune icône de ce nom pour l'instant. Dessinez-la selon les règles ci-dessous et ajoutez-la.",
+    "set": {
+      "title": "Le jeu",
+      "text": "Des icônes d'interface en currentColor : elles prennent la couleur du texte qui les entoure."
+    },
+    "rules": {
+      "title": "Règles de dessin",
+      "text": "Chaque icône suit les mêmes cinq règles, pour qu'une nouvelle s'intègre aux autres.",
+      "rule1": "Grille de 24 × 24 avec 2 px de marge : le dessin reste entre 2 et 22.",
+      "rule2": "Traits de 2 px aux extrémités et jonctions arrondies. Remplissage uniquement pour les points de 1 à 1.6 px.",
+      "rule3": "Angles de 2 px sur les rectangles. Pas de cadres à angles vifs, pas de filets trop fins.",
+      "rule4": "currentColor uniquement. Jamais de couleur fixe dans le fichier.",
+      "rule5": "Une icône doit avoir un sens. Si le libellé seul est clair, supprimez l'icône."
+    },
+    "marks": {
+      "title": "Autres services",
+      "text": "Les logos pleins des services vers lesquels Shades renvoie, issus de Simple Icons. Ils appartiennent à leurs propriétaires : utilisez-les uniquement pour renvoyer vers ces services."
+    }
+  },
+  "print": {
+    "title": "Imprimés : cartes, badges, merchandising et e-mail | Gradient",
+    "description": "Les règles d'impression et de merchandising Shades : carte de visite, badge, tote bag, tee-shirt, stickers, signature e-mail et couleur à l'impression.",
+    "heading": "Imprimés et merchandising",
+    "lead": "Le même symbole et la même retenue sur papier, sur tissu et dans les e-mails. Les tailles sont réelles ; les valeurs de couleur doivent encore passer par une épreuve d'imprimeur.",
+    "size": "Format",
+    "bleed": "Fond perdu",
+    "safe": "Marge de sécurité",
+    "stock": "Papier",
+    "card": {
+      "title": "Carte de visite",
+      "text": "Le recto n'affiche que le symbole sur rouge. Le verso porte la personne, composée dans la typographie de marque sur papier.",
+      "front": "Recto : le symbole, centré, sur Shades Red",
+      "back": "Verso : nom, fonction et coordonnées sur papier",
+      "role": "Designer de marque",
+      "stock": "Non couché, 350 g/m² ou plus",
+      "sample": "Personne et coordonnées fictives. La carte est dessinée à ses proportions réelles."
+    },
+    "badge": {
+      "title": "Badge d'événement",
+      "text": "Le prénom en grand, lisible d'un bout à l'autre de la salle. La bande de couleur indique qui est qui.",
+      "team": "Équipe Shades",
+      "teamCaption": "Équipe : une bande rouge",
+      "guest": "Invité",
+      "guestCaption": "Invité : une bande encre",
+      "hole": "Tour de cou",
+      "holeText": "Une fente, centrée, à 10 mm du haut",
+      "name": "Nom",
+      "nameText": "Prénom en Space Grotesk, d'au moins 18 mm de haut"
+    },
+    "merch": {
+      "title": "Merchandising",
+      "text": "Petit symbole ou grand logotype, jamais les deux sur un même objet. Le spectre seulement en liseré.",
+      "tote": "Tote bag",
+      "toteText": "Symbole une couleur, sérigraphié sur toile naturelle.",
+      "tee": "Tee-shirt",
+      "teeText": "Le logotype en grand dans le dos, la poitrine laissée vide.",
+      "sticker": "Sticker",
+      "stickerText": "Un personnage Spectra, découpé à la forme avec une bordure blanche de 3 mm.",
+      "rule1": "Utilisez les fichiers une couleur pour la broderie, la dorure, la gravure et la sérigraphie.",
+      "rule2": "N'imprimez jamais le symbole en dessous de 8 mm.",
+      "rule3": "Un personnage par objet. Les personnages ne remplacent jamais le symbole."
+    },
+    "signature": {
+      "title": "Signature e-mail",
+      "text": "Cinq lignes au maximum, en texte réel plutôt qu'en une grande image, pour rester lisible images désactivées.",
+      "sign": "Merci, et à très vite.",
+      "rule1": "Le symbole à 48 px, avec un lien vers shades.md.",
+      "rule2": "Nom, fonction, puis une ligne de coordonnées. Pas de slogan, pas de bannière.",
+      "rule3": "Images de moins de 90 KB au total."
+    },
+    "colour": {
+      "title": "Couleur à l'impression",
+      "text": "Les écrans utilisent les valeurs hex. L'impression demande une correspondance en ton direct ou en quadrichromie, vérifiée sur une vraie épreuve.",
+      "colour": "Couleur",
+      "screen": "Écran",
+      "print": "Impression",
+      "redPrint": "À faire correspondre à un rouge chaud en ton direct sur une épreuve imprimée avant le premier tirage",
+      "inkPrint": "Noir riche : C60 M40 Y40 K100 sur papier couché",
+      "paperPrint": "Le papier lui-même ; n'imprimez jamais une teinte pour le blanc",
+      "proof": "Aucune valeur d'impression n'est définitive avant l'épreuve de l'imprimeur. Consignez ici les valeurs validées, avec l'imprimeur et le papier."
+    }
+  },
+  "projects": {
+    "title": "Projets : comment naissent les produits Shades | Gradient",
+    "description": "Comment PageRecast a été construit, ce que l'équipe a gardé et jeté, les leçons que suit désormais chaque projet Shades, et la suite.",
+    "heading": "Tiré de vrais projets",
+    "lead": "Gradient conserve les décisions derrière chaque produit : ce que nous avons fait, ce que le propriétaire du produit a refusé et la règle qui en est restée.",
+    "pagerecast": {
+      "text": "Une extension Chrome et un plugin Figma gratuits qui transforment n'importe quelle page web en calques modifiables. Construits en octobre 2026, publiés sur le Chrome Web Store, la Figma Community et npm.",
+      "full": "L'étude de cas complète",
+      "s1": "Repartir de zéro",
+      "s1Text": "La première version a été entièrement jetée. La refonte a commencé par un plan de toutes les fonctionnalités attendues, et de quelques-unes que le marché réclamait.",
+      "s2": "Trouver son propre symbole",
+      "s2Text": "Plus de vingt pistes de logo. Les versions ombrées et en trois dimensions sont parties ; un chevauchement plat de deux pages est resté, comme le font les logos de Google et d'Apple.",
+      "s3": "Éliminer tout ce qui semblait généré",
+      "s3Text": "Tour après tour, le propriétaire du produit a pointé les parties qui sentaient le template. Chacune est devenue une règle.",
+      "s4": "Publier partout",
+      "s4Text": "Chrome Web Store, Figma Community, npm, un site sur Cloudflare Workers, des releases et un wiki.",
+      "s5": "Parler six langues",
+      "s5Text": "L'extension, le plugin et le site en anglais, français, roumain, russe, espagnol et chinois, avec des données structurées sur chaque page.",
+      "kept": "Gardé",
+      "kept1": "Des boutons pilule avec une flèche nette, et les anciens boutons là où ils plaisaient",
+      "kept2": "Le vrai produit montré en action, jamais un dessin du produit",
+      "kept3": "Des chapitres pleine largeur affirmés, dont un en rouge",
+      "kept4": "Le crédit de l'entreprise uniquement dans le produit, celui du fondateur dans le README",
+      "cut": "Jeté",
+      "cut1": "Chiffres et libellés en chasse fixe",
+      "cut2": "Fausses fenêtres de navigateur et squelettes gris",
+      "cut3": "Des icônes sur chaque ligne et des listes dans des cadres arrondis",
+      "cut4": "Le même bloc rouge réutilisé dans chaque section"
+    },
+    "lessons": {
+      "title": "Les leçons que suit chaque projet",
+      "text": "Elles viennent des corrections du propriétaire du produit. Un produit Shades n'en enfreint aucune.",
+      "link": "La liste complète dans le dépôt",
+      "l1": "Montrer le vrai",
+      "l1Text": "Le vrai produit, la vraie page ou la vraie capture. S'il n'existe pas encore, ne montrez rien plutôt qu'une maquette.",
+      "l2": "Pas de déguisement en chasse fixe",
+      "l2Text": "Les chiffres sont tabulaires, dans la police du texte. La chasse fixe est réservée au code.",
+      "l3": "Pas de libellés au-dessus des titres",
+      "l3Text": "Pas de petits mots espacés, pas de numéros de section. Le titre parle de lui-même.",
+      "l4": "Des icônes seulement quand elles ont un sens",
+      "l4Text": "Pas d'icône sur chaque ligne, pas d'icône dans un cercle au centre d'un état vide.",
+      "l5": "Pas de cadres dans des cadres",
+      "l5Text": "Les listes reposent sur des filets. Les cartes sont rares et jamais imbriquées.",
+      "l6": "Des logos plats",
+      "l6Text": "Les logos sont plats et en deux dimensions. Pas d'ombres, pas de rendus brillants façon icône d'app.",
+      "l7": "Chaque espace a une fonction",
+      "l7Text": "Dense et utile, jamais vide pour l'effet, jamais encombré de remplissage.",
+      "l8": "La vitesse d'abord",
+      "l8Text": "HTML statique, aucun script tiers, polices auto-hébergées. Une page Shades s'ouvre instantanément sur un téléphone."
+    },
+    "next": {
+      "title": "Prochainement sur Gradient",
+      "text": "Les produits qui partiront de ce système plutôt que d'un template.",
+      "imagereframe": "Export et import d'images pour Figma, gratuit et open source, conçu sous la marque Shades avec les fonctionnalités qui manquent au marché.",
+      "shades": "Le site de l'agence, reconstruit : garder ses meilleures idées, abandonner l'allure de template.",
+      "planned": "Prévu"
+    },
+    "start": {
+      "title": "Lancer un nouveau projet",
+      "text": "Les cinq mêmes étapes à chaque fois, pour que le prochain produit commence là où le précédent s'est arrêté.",
+      "link": "Le guide complet",
+      "s1": "Rédiger la fiche produit",
+      "s1Text": "Pour qui, ce qu'il fait, ce qu'il ne doit jamais faire. PRODUCT.md à la racine du dépôt.",
+      "s2": "Installer Gradient",
+      "s2Text": "npm i shades-gradient, puis importez la feuille de style ou le thème Tailwind.",
+      "s3": "Choisir son propre symbole ou porter celui de Shades",
+      "s3Text": "Un produit peut avoir son propre logo, mais il utilise la typographie, les rôles et les règles de Gradient.",
+      "s4": "Lire les leçons",
+      "s4Text": "Avant le premier écran, pas après la cinquième revue.",
+      "s5": "Livrer avec les vérifications",
+      "s5Text": "Vérification des types, tests, audit du site et captures en clair et en sombre avant de déclarer quoi que ce soit terminé."
+    }
+  }
+}
