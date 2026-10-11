@@ -21,6 +21,7 @@ const PAGES = [
   'components/',
   'icons/',
   'print/',
+  'applications/',
   'email/',
   'accessibility/',
   'docs/',
@@ -81,7 +82,7 @@ for (const width of WIDTHS) {
               r.width > 0 &&
               r.right > root.clientWidth + 1 &&
               !el.closest(
-                '.footer-word, .split-sticky, .g-code, .roles, .table-scroll, .g-tabs, .merch, .gradients, .poses, .swatches--five, .products, .page-toc, #index, pre',
+                '.footer-word, .split-sticky, .g-code, .roles, .table-scroll, .g-tabs, .merch, .gradients, .poses, .swatches--five, .posts, .stories, .formats, .slides, .board, .products, .page-toc, #index, pre',
               )
             )
           })

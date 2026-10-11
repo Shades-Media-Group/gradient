@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="{{@lang}}" data-theme-default="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    {{@head}}
+    <script type="module" src="/src/main.ts"></script>
+    <link rel="stylesheet" href="/src/showcase.css" />
+  </head>
+  <body>
+    {{@nav}}
+
+    <main id="main">
+      <header class="page-head">
+        <h1>{{applications.heading}}</h1>
+        <p class="page-lead">{{applications.lead}}</p>
+        <div class="page-art tile tile--apps" aria-hidden="true">
+          <span class="post post--red"><b class="post-big">{{applications.posts.p2}}</b></span>
+          <span class="story story--photo"><img src="/photos/balloons-800.webp" alt="" width="800" height="1199" /></span>
+        </div>
+      </header>
+      <nav class="page-toc" aria-label="{{nav.onThisPage}}">
+        <a href="#photography">{{applications.photo.title}}</a>
+        <a href="#social">{{applications.posts.title}}</a>
+        <a href="#stories">{{applications.stories.title}}</a>
+        <a href="#decks">{{applications.decks.title}}</a>
+      </nav>
+
+      <section class="doc" id="photography">
+        <div class="doc-head">
+          <h2>{{applications.photo.title}}</h2>
+          <p>{{applications.photo.text}}</p>
+        </div>
+        <div class="doc-body">
+          <ul class="board">
+            <li class="board-tall">
+              <img src="/photos/wall-800.webp" srcset="/photos/wall-800.webp 800w, /photos/wall-1600.webp 1600w" sizes="(max-width: 760px) 80vw, 30vw" alt="{{applications.photo.wallAlt}}" width="800" height="1131" loading="lazy" />
+              <span>{{applications.photo.wall}}</span>
+            </li>
+            <li class="board-wide">
+              <img src="/photos/dusk-800.webp" srcset="/photos/dusk-800.webp 800w, /photos/dusk-1600.webp 1600w" sizes="(max-width: 760px) 80vw, 40vw" alt="{{applications.photo.duskAlt}}" width="800" height="540" loading="lazy" />
+              <span>{{applications.photo.dusk}}</span>
+            </li>
+            <li>
+              <img src="/photos/umbrella-800.webp" srcset="/photos/umbrella-800.webp 800w, /photos/umbrella-1600.webp 1600w" sizes="(max-width: 760px) 80vw, 20vw" alt="{{applications.photo.umbrellaAlt}}" width="800" height="1200" loading="lazy" />
+              <span>{{applications.photo.umbrella}}</span>
+            </li>
+            <li>
+              <img src="/photos/balloons-800.webp" srcset="/photos/balloons-800.webp 800w, /photos/balloons-1600.webp 1600w" sizes="(max-width: 760px) 80vw, 20vw" alt="{{applications.photo.balloonsAlt}}" width="800" height="1199" loading="lazy" />
+              <span>{{applications.photo.balloons}}</span>
+            </li>
+          </ul>
+          <div class="pairs">
+            <div class="pair">
+              <h3>{{applications.photo.d1}}</h3>
+              <p>{{applications.photo.d1Text}}</p>
+            </div>
+            <div class="pair">
+              <h3>{{applications.photo.d2}}</h3>
+              <p>{{applications.photo.d2Text}}</p>
+            </div>
+          </div>
+          <p class="doc-note">{{applications.photo.note}}</p>
+        </div>
+      </section>
+
+      <section class="doc" id="social">
+        <div class="doc-head">
+          <h2>{{applications.posts.title}}</h2>
+          <p>{{applications.posts.text}}</p>
+        </div>
+        <div class="doc-body">
+          <ul class="posts">
+            <li class="post post--ink">
+              <span class="post-mark">{{@mark}}</span>
+              <b class="post-big">{{applications.posts.p1}}</b>
+              <span class="post-foot">shades.md</span>
+            </li>
+            <li class="post post--red">
+              <b class="post-big">{{applications.posts.p2}}</b>
+              <span class="post-foot">{{applications.posts.p2Foot}}{{@icon:arrowRight}}</span>
+            </li>
+            <li class="post post--paper">
+              <b class="post-list"><span>{{applications.posts.s1}}</span><span>{{applications.posts.s2}}</span><span>{{applications.posts.s3}}</span><span>{{applications.posts.s4}}</span></b>
+              <span class="post-foot">{{applications.posts.p3Foot}}</span>
+            </li>
+            <li class="post post--spectrum">
+              <b class="post-big">{{applications.posts.p4}}</b>
+              <span class="post-foot">pagerecast.shades.md</span>
+            </li>
+            <li class="post post--ink">
+              <span class="post-bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+              <b class="post-mid">{{applications.posts.p5}}</b>
+              <span class="post-foot">{{applications.posts.p5Foot}}{{@icon:arrowRight}}</span>
+            </li>
+            <li class="post post--paper">
+              <b class="post-mid">{{applications.posts.p6}}</b>
+              <ol class="post-steps"><li>{{applications.posts.p6a}}</li><li>{{applications.posts.p6b}}</li><li>{{applications.posts.p6c}}</li><li>{{applications.posts.p6d}}</li></ol>
+            </li>
+            <li class="post post--dawn">
+              <b class="post-big">{{applications.posts.p7}}</b>
+              <span class="post-foot">{{applications.posts.p7Foot}}</span>
+            </li>
+            <li class="post post--ink">
+              <s class="post-myth">{{applications.posts.p8Myth}}</s>
+              <b class="post-mid">{{applications.posts.p8}}</b>
+              <span class="post-foot">{{applications.posts.p8Foot}}</span>
+            </li>
+          </ul>
+          <p class="doc-note">{{applications.posts.note}}</p>
+        </div>
+      </section>
+
+      <section class="doc" id="stories">
+        <div class="doc-head">
+          <h2>{{applications.stories.title}}</h2>
+          <p>{{applications.stories.text}}</p>
+        </div>
+        <div class="doc-body">
+          <ul class="stories">
+            <li class="story story--photo">
+              <img src="/photos/balloons-800.webp" alt="" width="800" height="1199" loading="lazy" />
+              <i class="story-band" aria-hidden="true"></i>
+              <b>{{applications.stories.s1}}</b>
+              <span class="story-pill">{{applications.stories.s1Cta}}</span>
+            </li>
+            <li class="story story--spectrum">
+              <b>{{applications.stories.s2}}</b>
+              <ol class="story-list"><li>{{applications.stories.s2a}}</li><li>{{applications.stories.s2b}}</li><li>{{applications.stories.s2c}}</li></ol>
+            </li>
+            <li class="story story--photo">
+              <img src="/photos/dusk-800.webp" alt="" width="800" height="540" loading="lazy" />
+              <b>{{applications.stories.s3}}{{@icon:arrowRight}}</b>
+            </li>
+            <li class="story story--ink">
+              <span class="story-spectra" aria-hidden="true">{{@family:spectra-hello}}</span>
+              <b>{{applications.stories.s4}}</b>
+              <span class="story-pill">shades.md</span>
+            </li>
+          </ul>
+          <h3 class="doc-sub">{{applications.stories.formats}}</h3>
+          <ul class="formats">
+            <li>
+              <div class="format format--portrait story--photo">
+                <img src="/photos/wall-800.webp" alt="" width="800" height="1131" loading="lazy" />
+                <b>{{applications.stories.f1}}</b>
+                <span class="format-mark">{{@mark}}</span>
+              </div>
+              <span>{{applications.stories.f1Label}}</span>
+            </li>
+            <li>
+              <div class="format format--portrait story--dawn">
+                <b>{{applications.stories.f2}}</b>
+                <span class="format-foot">{{applications.stories.f2Foot}}</span>
+              </div>
+              <span>{{applications.stories.f2Label}}</span>
+            </li>
+            <li>
+              <div class="format format--reel story--photo">
+                <img src="/photos/umbrella-800.webp" alt="" width="800" height="1200" loading="lazy" />
+                <span class="format-play">{{@icon:play}}</span>
+                <b>{{applications.stories.f3}}</b>
+              </div>
+              <span>{{applications.stories.f3Label}}</span>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="doc" id="decks">
+        <div class="doc-head">
+          <h2>{{applications.decks.title}}</h2>
+          <p>{{applications.decks.text}}</p>
+        </div>
+        <div class="doc-body">
+          <ul class="slides">
+            <li class="slide slide--ink">
+              <i class="slide-band" aria-hidden="true"></i>
+              <span class="slide-kicker">Shades Media Group</span>
+              <b class="slide-title">{{applications.decks.cover}}</b>
+              <span class="slide-foot"><span>{{applications.decks.coverFoot}}</span><span class="g-num">1 / 6</span></span>
+            </li>
+            <li class="slide slide--paper slide--centre">
+              <b class="slide-statement">{{brand.voice.slogan}}</b>
+              <span class="slide-foot"><span>Shades</span><span class="g-num">2 / 6</span></span>
+            </li>
+            <li class="slide slide--paper">
+              <span class="slide-heading">{{applications.decks.approach}}</span>
+              <ol class="slide-steps">
+                <li><b class="g-num">01</b>{{applications.decks.step1}}</li>
+                <li><b class="g-num">02</b>{{applications.decks.step2}}</li>
+                <li><b class="g-num">03</b>{{applications.decks.step3}}</li>
+              </ol>
+              <span class="slide-foot"><span>Shades</span><span class="g-num">3 / 6</span></span>
+            </li>
+            <li class="slide slide--red">
+              <b class="slide-title">{{applications.decks.section}}</b>
+              <span class="slide-foot"><span>Shades</span><span class="g-num">4 / 6</span></span>
+            </li>
+            <li class="slide slide--ink">
+              <span class="slide-figures">
+                <span><b class="g-num">11</b>{{applications.decks.fig1}}</span>
+                <span><b class="g-num">76</b>{{applications.decks.fig2}}</span>
+              </span>
+              <span class="slide-foot"><span>Gradient</span><span class="g-num">5 / 6</span></span>
+            </li>
+            <li class="slide slide--photo">
+              <img src="/photos/umbrella-800.webp" alt="" width="800" height="1200" loading="lazy" />
+              <b class="slide-caption">{{applications.decks.photo}}</b>
+              <span class="slide-foot"><span>Shades</span><span class="g-num">6 / 6</span></span>
+            </li>
+          </ul>
+          <p class="doc-note">{{applications.decks.note}}</p>
+        </div>
+      </section>
+    </main>
+
+    {{@footer}}
+  </body>
+</html>

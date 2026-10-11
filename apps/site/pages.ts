@@ -55,6 +55,7 @@ export const PAGES = [
   { id: 'components', path: 'components/' },
   { id: 'icons', path: 'icons/' },
   { id: 'print', path: 'print/' },
+  { id: 'applications', path: 'applications/' },
   { id: 'email', path: 'email/' },
   { id: 'accessibility', path: 'accessibility/' },
   { id: 'docs', path: 'docs/' },
@@ -395,7 +396,7 @@ function emailSamples() {
 }
 const SAMPLES = emailSamples()
 
-const NAV: PageId[] = ['brand', 'foundations', 'components', 'icons', 'print', 'email', 'docs', 'projects']
+const NAV: PageId[] = ['brand', 'foundations', 'components', 'icons', 'print', 'applications', 'email', 'docs', 'projects']
 
 function render(locale: Locale, page: Page): string {
   const dict = dictionary(locale.code)
@@ -467,6 +468,7 @@ function render(locale: Locale, page: Page): string {
             .join('')}</ul></div>
           <div><p class="footer-h">${t('footer.work')}</p><ul>
             <li><a href="${to('print')}">${t('nav.print')}</a></li>
+            <li><a href="${to('applications')}">${t('nav.applications')}</a></li>
             <li><a href="${to('email')}">${t('nav.email')}</a></li>
             <li><a href="${to('projects')}">${t('nav.projects')}</a></li>
             <li><a href="${LINKS.pagerecast}" rel="noopener">PageRecast</a></li>
