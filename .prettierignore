@@ -1,0 +1,5 @@
+dist
+coverage
+yarn.lock
+graphify-out
+apps/site/i18n

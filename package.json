@@ -1,0 +1,52 @@
+{
+  "name": "gradient",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Gradient, the design system of Shades Media Group: brand, tokens, components, icons and the lessons behind them.",
+  "license": "MIT",
+  "author": "Shades Media Group (https://shades.md)",
+  "homepage": "https://gradient.shades.md",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Shades-Media-Group/gradient.git"
+  },
+  "bugs": "https://github.com/Shades-Media-Group/gradient/issues",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "typecheck": "tsc -p tsconfig.json",
+    "lint": "eslint . --cache",
+    "test": "vitest run",
+    "build": "yarn --cwd packages/gradient build",
+    "brand": "node scripts/brand.mjs",
+    "dev:site": "yarn --cwd apps/site dev",
+    "build:site": "yarn --cwd apps/site build",
+    "deploy:site": "yarn --cwd apps/site deploy",
+    "audit:site": "node scripts/audit-site.mjs",
+    "verify": "yarn typecheck && yarn lint && yarn test && yarn build && yarn build:site && yarn audit:site",
+    "format": "prettier --write .",
+    "release": "node scripts/release.mjs"
+  },
+  "packageManager": "yarn@1.22.22",
+  "type": "module",
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@fontsource-variable/hanken-grotesk": "^5.3.0",
+    "@fontsource-variable/inter": "^5.3.0",
+    "@fontsource-variable/space-grotesk": "^5.3.0",
+    "@types/node": "^26.6.5",
+    "eslint": "^10.12.0",
+    "globals": "^17.13.0",
+    "prettier": "^3.9.10",
+    "typescript": "~6.0.3",
+    "typescript-eslint": "^8.71.1",
+    "vite": "^8.3.4",
+    "vitest": "^5.0.3",
+    "wrangler": "^4.149.0"
+  }
+}
