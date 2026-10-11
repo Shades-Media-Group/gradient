@@ -191,6 +191,55 @@
         </div>
       </section>
 
+      <section class="chapter" id="about">
+        <div class="chapter-head" data-reveal>
+          <h2>{{home.about.title}}</h2>
+          <div>
+            <p>{{home.about.text}}</p>
+            <a class="g-link" data-link="shades">shades.md</a>
+          </div>
+        </div>
+        <div class="about" data-reveal>
+          <p class="about-tags"><span class="g-tag">Branding</span> <span class="g-tag">UI/UX</span> <span class="g-tag">WebDevelopment</span> <span class="g-tag">Marketing</span></p>
+          <dl class="specs specs--row">
+            <div><dt>{{home.about.based}}</dt><dd>{{home.about.basedValue}}</dd></div>
+            <div><dt>{{home.about.disciplines}}</dt><dd>{{home.about.disciplinesValue}}</dd></div>
+            <div><dt>{{home.about.open}}</dt><dd>Gradient, PageRecast</dd></div>
+            <div><dt>{{home.about.languages}}</dt><dd class="g-num">11</dd></div>
+          </dl>
+        </div>
+      </section>
+
+      <section class="chapter chapter--ink" data-theme="dark" id="products">
+        <div class="chapter-head" data-reveal>
+          <h2>{{home.products.title}}</h2>
+          <div>
+            <p>{{home.products.text}}</p>
+            <a class="g-link" href="{{@to:brand}}#products">{{home.products.link}}</a>
+          </div>
+        </div>
+        <ul class="products" data-reveal>
+          <li>
+            <div class="product-plate product-plate--paper"><div class="product-lockup">{{@mark}}<span>Gradient</span></div></div>
+            <div class="product-meta"><h3>Gradient</h3><span class="g-badge g-badge--success">{{home.work.live}}</span></div>
+            <p>{{home.products.gradient}}</p>
+            <p class="product-links"><a class="g-link" data-link="npm">npm</a> <a class="g-link" data-link="repo">GitHub</a></p>
+          </li>
+          <li>
+            <div class="product-plate product-plate--paper"><img src="/products/pagerecast-logo.svg" alt="PageRecast" width="358" height="66" loading="lazy" /></div>
+            <div class="product-meta"><h3>PageRecast</h3><span class="g-badge g-badge--success">{{home.work.live}}</span></div>
+            <p>{{home.products.pagerecast}}</p>
+            <p class="product-links"><a class="g-link" data-link="pagerecast">pagerecast.shades.md</a> <a class="g-link" data-link="pagerecastRepo">GitHub</a></p>
+          </li>
+          <li>
+            <div class="product-plate product-plate--paper"><div class="product-lockup"><img src="/products/imagereframe-mark.svg" alt="" width="56" height="56" loading="lazy" /><span>ImageReframe</span></div></div>
+            <div class="product-meta"><h3>ImageReframe</h3><span class="g-badge g-badge--accent">{{home.work.next}}</span></div>
+            <p>{{home.products.imagereframe}}</p>
+            <p class="product-links"><span class="product-note">{{home.products.concept}}</span> <a class="g-link" data-link="imagereframe">{{home.products.brief}}</a></p>
+          </li>
+        </ul>
+      </section>
+
       <section class="chapter" id="work">
         <div class="chapter-head" data-reveal>
           <h2>{{home.work.title}}</h2>
