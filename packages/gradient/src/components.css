@@ -601,4 +601,194 @@
       inset 0 0 0 1px var(--g-line),
       var(--g-shadow-sm);
   }
+
+  /* Tabs: views of one thing, a red underline on the current one. ---------- */
+
+  .g-tabs {
+    display: flex;
+    gap: 4px;
+    border-bottom: 1px solid var(--g-line);
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .g-tabs > [role='tab'] {
+    position: relative;
+    min-height: 44px;
+    padding: 0 14px;
+    border: 0;
+    background: transparent;
+    color: var(--g-text-2);
+    font-weight: 600;
+    white-space: nowrap;
+    transition: color var(--g-dur-snap) var(--g-ease-snap);
+  }
+
+  .g-tabs > [role='tab']:hover {
+    color: var(--g-text);
+  }
+
+  .g-tabs > [role='tab']::after {
+    content: '';
+    position: absolute;
+    left: 14px;
+    right: 14px;
+    bottom: -1px;
+    height: 2px;
+    background: var(--g-accent);
+    transform: scaleX(0);
+    transition: transform var(--g-dur-move) var(--g-ease-move);
+  }
+
+  .g-tabs > [aria-selected='true'] {
+    color: var(--g-text);
+  }
+
+  .g-tabs > [aria-selected='true']::after {
+    transform: scaleX(1);
+  }
+
+  /* Inline message: an icon, a line, an optional action. On a hairline, never in a tinted box. */
+
+  .g-message {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    gap: 2px 12px;
+    align-items: start;
+    padding: 14px 0;
+    border-top: 1px solid var(--g-line);
+    border-bottom: 1px solid var(--g-line);
+  }
+
+  .g-message > svg {
+    width: 20px;
+    height: 20px;
+    margin-top: 2px;
+    color: var(--g-text-2);
+  }
+
+  .g-message--success > svg {
+    color: var(--g-success);
+  }
+
+  .g-message--warning > svg {
+    color: var(--g-warning);
+  }
+
+  .g-message--danger > svg {
+    color: var(--g-danger);
+  }
+
+  .g-message b {
+    display: block;
+    font-weight: 700;
+  }
+
+  .g-message p {
+    color: var(--g-text-2);
+  }
+
+  /* Progress: a bar that fills with the house curve; indeterminate runs the bars. */
+
+  .g-progress {
+    position: relative;
+    height: 6px;
+    overflow: hidden;
+    border-radius: var(--g-radius-pill);
+    background: var(--g-sunken);
+    box-shadow: inset 0 0 0 1px var(--g-line);
+  }
+
+  .g-progress > i {
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: var(--g-accent);
+    transform: scaleX(var(--value, 0));
+    transform-origin: left;
+    transition: transform var(--g-dur-move) var(--g-ease-move);
+  }
+
+  /* Breadcrumb: where this page sits. */
+
+  .g-breadcrumb {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    color: var(--g-text-3);
+    font-size: var(--g-size-small);
+  }
+
+  .g-breadcrumb li + li::before {
+    content: '/';
+    margin-right: 6px;
+    color: var(--g-line-strong);
+  }
+
+  .g-breadcrumb a {
+    color: var(--g-text-2);
+    text-decoration: none;
+  }
+
+  .g-breadcrumb a:hover {
+    color: var(--g-text);
+    text-decoration: underline;
+  }
+
+  .g-breadcrumb [aria-current] {
+    color: var(--g-text);
+    font-weight: 600;
+  }
+
+  /* Toast: a short confirmation, bottom centre, gone on its own. */
+
+  .g-toast {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    min-height: 44px;
+    padding: 0 18px;
+    border-radius: var(--g-radius-pill);
+    background: var(--g-inverse);
+    box-shadow: var(--g-shadow-md);
+    color: var(--g-on-inverse);
+    font-weight: 600;
+  }
+
+  .g-toast > svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  /* Avatar: initials on a family colour, or a photo. */
+
+  .g-avatar {
+    display: inline-grid;
+    place-items: center;
+    flex: none;
+    width: var(--g-avatar, 40px);
+    height: var(--g-avatar, 40px);
+    overflow: hidden;
+    border-radius: 50%;
+    background: var(--g-avatar-bg, var(--g-ink-950));
+    color: #fff;
+    font: 700 calc(var(--g-avatar, 40px) * 0.38) / 1 var(--g-font-display);
+  }
+
+  .g-avatar > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .g-avatar--sm {
+    --g-avatar: 28px;
+  }
+
+  .g-avatar--lg {
+    --g-avatar: 56px;
+  }
 }
