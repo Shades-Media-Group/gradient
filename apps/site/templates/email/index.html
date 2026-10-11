@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="{{@lang}}">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    {{@head}}
+    <script type="module" src="/src/main.ts"></script>
+  </head>
+  <body>
+    {{@nav}}
+
+    <main id="main">
+      <header class="page-head">
+        <h1>{{email.heading}}</h1>
+        <p class="page-lead">{{email.lead}}</p>
+        <nav class="page-toc" aria-label="{{nav.onThisPage}}">
+          <a href="#previews">{{email.previews.title}}</a>
+          <a href="#clients">{{email.clients.title}}</a>
+          <a href="#codes">{{email.codes.title}}</a>
+          <a href="#calendar">{{email.calendar.title}}</a>
+          <a href="#build">{{email.build.title}}</a>
+        </nav>
+      </header>
+
+      <section class="doc" id="previews">
+        <div class="doc-head">
+          <h2>{{email.previews.title}}</h2>
+          <p>{{email.previews.text}}</p>
+        </div>
+        <div class="doc-body">
+          <div class="g-segmented email-switch" role="radiogroup" aria-label="{{email.previews.title}}" data-email-switch>
+            <button type="button" role="radio" aria-checked="true" data-value="code">{{email.previews.code}}</button>
+            <button type="button" role="radio" aria-checked="false" data-value="booking">{{email.previews.booking}}</button>
+            <button type="button" role="radio" aria-checked="false" data-value="update">{{email.previews.update}}</button>
+          </div>
+          <div class="email-frame">
+            {{@emailPreviews}}
+          </div>
+          <p class="doc-note">{{email.previews.note}}</p>
+        </div>
+      </section>
+
+      <section class="doc" id="clients">
+        <div class="doc-head">
+          <h2>{{email.clients.title}}</h2>
+          <p>{{email.clients.text}}</p>
+        </div>
+        <div class="doc-body">
+          <div class="table-scroll">
+            <table class="g-table support">
+              <thead>
+                <tr>
+                  <th></th>
+                  <th>Outlook (Windows)</th>
+                  <th>Outlook.com</th>
+                  <th>Gmail</th>
+                  <th>Apple Mail</th>
+                  <th>iOS Mail</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>{{email.clients.layout}}</td><td>{{@icon:check}}</td><td>{{@icon:check}}</td><td>{{@icon:check}}</td><td>{{@icon:check}}</td><td>{{@icon:check}}</td></tr>
+                <tr><td>{{email.clients.buttons}}</td><td>{{@icon:check}} VML</td><td>{{@icon:check}}</td><td>{{@icon:check}}</td><td>{{@icon:check}}</td><td>{{@icon:check}}</td></tr>
+                <tr><td>{{email.clients.dark}}</td><td>{{email.clients.inverted}}</td><td>{{@icon:check}}</td><td>{{email.clients.inverted}}</td><td>{{@icon:check}}</td><td>{{@icon:check}}</td></tr>
+                <tr><td>{{email.clients.font}}</td><td>Arial</td><td>Arial</td><td>{{email.clients.system}}</td><td>{{@icon:check}}</td><td>{{@icon:check}}</td></tr>
+                <tr><td>{{email.clients.copy}}</td><td>—</td><td>—</td><td>{{@icon:check}}</td><td>{{@icon:check}} AutoFill</td><td>{{@icon:check}} AutoFill</td></tr>
+                <tr><td>{{email.clients.invite}}</td><td>{{@icon:check}}</td><td>{{@icon:check}}</td><td>{{@icon:check}}</td><td>{{@icon:check}}</td><td>{{@icon:check}}</td></tr>
+                <tr><td>{{email.clients.actions}}</td><td>—</td><td>—</td><td>{{email.clients.registered}}</td><td>—</td><td>—</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="doc-note">{{email.clients.note}}</p>
+        </div>
+      </section>
+
+      <section class="doc" id="codes">
+        <div class="doc-head">
+          <h2>{{email.codes.title}}</h2>
+          <p>{{email.codes.text}}</p>
+        </div>
+        <div class="doc-body">
+          <ol class="rules">
+            <li>{{email.codes.rule1}}</li>
+            <li>{{email.codes.rule2}}</li>
+            <li>{{email.codes.rule3}}</li>
+            <li>{{email.codes.rule4}}</li>
+          </ol>
+          <pre class="g-code"><code>email.code('Your code', '418203', 'Valid for 10 minutes')
+// subject: 'Your Shades code: 418203'</code></pre>
+        </div>
+      </section>
+
+      <section class="doc" id="calendar">
+        <div class="doc-head">
+          <h2>{{email.calendar.title}}</h2>
+          <p>{{email.calendar.text}}</p>
+        </div>
+        <div class="doc-body">
+          <ol class="rules">
+            <li>{{email.calendar.rule1}}</li>
+            <li>{{email.calendar.rule2}}</li>
+            <li>{{email.calendar.rule3}}</li>
+            <li>{{email.calendar.rule4}}</li>
+          </ol>
+          <pre class="g-code"><code>import { icsFile, calendarLinks, eventReservation } from 'shades-gradient/email'
+
+const invite = icsFile({ uid: 'booking-42@shades.md', title, start, end, location,
+  organizer: { name: 'Shades Media Group', email: 'hello@shades.md' },
+  attendee: { email: client.email } })            // METHOD:REQUEST, an event card in Gmail and Outlook
+
+renderEmail({ …, blocks: [summary, calendarLinks(event, labels)],
+  schema: eventReservation({ … }), attachments: [invite] })</code></pre>
+        </div>
+      </section>
+
+      <section class="doc" id="build">
+        <div class="doc-head">
+          <h2>{{email.build.title}}</h2>
+          <p>{{email.build.text}}</p>
+        </div>
+        <div class="doc-body">
+          <pre class="g-code"><code>import { renderEmail, email } from 'shades-gradient/email'
+
+const message = renderEmail({
+  lang: 'en',
+  subject: 'Your brief is in',
+  preheader: 'We reply within one working day.',
+  heading: 'Your brief is in',
+  lead: 'Thank you, Ana. Here is what happens next.',
+  blocks: [
+    email.panel(email.fields([{ label: 'Project', value: 'Brand identity' }, { label: 'Reply by', value: 'Tue, 9 March' }])),
+    email.button('See the brief', 'https://shades.md/brief/42'),
+  ],
+})
+// message.html, message.text, message.attachments</code></pre>
+          <ol class="rules">
+            <li>{{email.build.rule1}}</li>
+            <li>{{email.build.rule2}}</li>
+            <li>{{email.build.rule3}}</li>
+            <li>{{email.build.rule4}}</li>
+          </ol>
+        </div>
+      </section>
+    </main>
+
+    {{@footer}}
+  </body>
+</html>

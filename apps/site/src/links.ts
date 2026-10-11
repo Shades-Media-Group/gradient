@@ -18,4 +18,5 @@ export const LINKS: Record<string, string> = {
   imagereframe: `${REPO}/blob/main/docs/projects/imagereframe.md`,
   newProject: `${REPO}/blob/main/docs/guides/start-a-project.md`,
   contact: 'mailto:support@shades.md',
+  preferred: 'https://www.google.com/preferences/source?q=gradient.shades.md',
 }

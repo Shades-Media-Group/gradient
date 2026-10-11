@@ -14,7 +14,16 @@ import { chromium } from '@playwright/test'
 
 const dist = fileURLToPath(new URL('../apps/site/dist', import.meta.url))
 const LANGS = ['', 'fr/', 'ro/', 'ru/', 'es/', 'it/', 'tr/', 'hi/', 'ja/', 'zh/', 'zh-hant/']
-const PAGES = ['', 'brand/', 'foundations/', 'components/', 'icons/', 'print/', 'projects/']
+const PAGES = [
+  '',
+  'brand/',
+  'foundations/',
+  'components/',
+  'icons/',
+  'print/',
+  'email/',
+  'projects/',
+]
 const WIDTHS = [375, 1440]
 const TYPES = {
   '.html': 'text/html',
@@ -68,7 +77,7 @@ for (const width of WIDTHS) {
             return (
               r.width > 0 &&
               r.right > root.clientWidth + 1 &&
-              !el.closest('.footer-word, .split-sticky, .g-code, .roles, pre')
+              !el.closest('.footer-word, .split-sticky, .g-code, .roles, .table-scroll, .g-tabs, pre')
             )
           })
           .slice(0, 3)
