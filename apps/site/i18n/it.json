@@ -185,6 +185,25 @@
       "dlMono": "Marchio, un colore",
       "dlLockupMono": "Lockup, un colore"
     },
+    "devices": {
+      "short": "Segni",
+      "title": "Segni del brand",
+      "text": "Sei mosse che fanno leggere un layout come Shades. Una o due per pezzo, mai tutte e sei.",
+      "bars": "Il motivo delle barre",
+      "barsText": "Le tre barre del marchio, ripetute o scalate: separatori, elenchi, caricamenti.",
+      "sweep": "La fascia spettro",
+      "sweepText": "Una fascia di 10 px sul bordo alto di una copertina o di un footer. Una volta per layout.",
+      "arrow": "La freccia in avanti",
+      "arrowText": "Punta sempre a destra: avanti, via, continua.",
+      "tags": "Sticker ed etichette",
+      "tagsText": "Sticker a pillola per timbri e richiami, appena storti.",
+      "tagOne": "Fatto da Shades",
+      "tagTwo": "Fatto a Chișinău",
+      "stripes": "Righe diagonali",
+      "stripesText": "Rosso e inchiostro a 135 gradi, come texture dietro una copertina o un foglio di sticker.",
+      "crop": "Taglio fuori scala",
+      "cropText": "Il logotipo che esce dal bordo, per poster e copertine."
+    },
     "family": {
       "title": "La famiglia Spectra",
       "text": "Sette personaggi, uno per ogni tipo di momento. Condividono gli stessi occhi, la cresta a tre barre del marchio e un sorriso discreto, e ognuno ha un solo colore piatto.",
@@ -222,6 +241,19 @@
         "role": "Produzione e consegna",
         "text": "Costante e concreto. Conferma avanzamenti, successi e consegne.",
         "where": "Avanzamenti, schermate di successo, email di consegna"
+      },
+      "constructionTitle": "Costruzione",
+      "construction": "Il corpo è il quadrato rosso del logo, con angoli di 28 su 92. La cresta sono le tre barre, nella proporzione del marchio. Gli occhi stanno sul centro orizzontale e ogni parte è simmetrica rispetto all’asse.",
+      "posesTitle": "Espressioni",
+      "poses": {
+        "hello": "Ciao",
+        "helloUse": "Benvenuto e primi passi",
+        "idea": "Idea",
+        "ideaUse": "Stati vuoti",
+        "nice": "Ottimo",
+        "niceUse": "Successo",
+        "hmm": "Mmm",
+        "hmmUse": "Caricamento e pagine 404"
       },
       "rulesTitle": "Regole di famiglia",
       "rule1": "Gli stessi occhi per tutti: un disco bianco, una pupilla nera e un solo riflesso.",
@@ -398,6 +430,21 @@
       "client": "Lavori per i clienti",
       "clientMark": "Il brand del cliente, sui ruoli di Gradient",
       "note": "Un prodotto può avere un marchio proprio. Usa comunque caratteri, ruoli, icone e regole di Gradient, e la sua riga di credito non cambia mai."
+    },
+    "keep": {
+      "short": "Regole",
+      "title": "Shades resta Shades.",
+      "text": "Dieci regole che chiunque nel team può seguire senza aprire questo sito. Nel dubbio, fai meno, ma più forte.",
+      "r1": "Il rosso serve a dare enfasi: il marchio, un’azione, un capitolo. Mai dietro il testo.",
+      "r2": "Le tre barre non cambiano mai ordine: piena, tre quarti, metà.",
+      "r3": "Una sfumatura per layout. Due fanno rumore.",
+      "r4": "Titoli stretti, testo con interlinea 1,5. I token tipografici fanno entrambe le cose.",
+      "r5": "Il monospazio è per il codice. I numeri usano cifre tabulari nel font del testo.",
+      "r6": "Lo spettro si muove in un solo verso, da sinistra a destra, e non rimbalza mai.",
+      "r7": "Lascia aria intorno a ciò che conta. Non riempire un angolo solo perché è vuoto.",
+      "r8": "Spectra è per prodotti e social, mai per proposte o fatture.",
+      "r9": "Scrivi come parli: breve, sicuro, senza gergo.",
+      "r10": "Ogni pezzo finisce con un solo passo successivo, chiaro."
     }
   },
   "foundations": {
@@ -407,11 +454,15 @@
     "lead": "Ogni valore è scritto una volta sola, in tokens.json, e da lì arriva a CSS, Tailwind e JSON. Fai clic su un campione per copiarne la variabile.",
     "colour": {
       "title": "Colore",
-      "text": "Shades Red e una scala neutra di inchiostro fanno quasi tutto il lavoro. Le quattro tonalità dello spettro servono per una sola striscia per layout.",
+      "text": "Il rosso Shades e una scala neutra di inchiostro fanno quasi tutto il lavoro. Le altre tinte servono alle illustrazioni, agli stati e a una sola fascia per layout.",
       "red": "Shades Red",
       "ink": "Inchiostro e carta",
       "spectrum": "Lo spettro",
-      "spectrumRule": "Blu, magenta, rosso e arancione, in quest'ordine. Una volta per layout, come striscia o filetto, mai come sfondo o sul testo.",
+      "spectrumRule": "Blu, magenta, rosso e arancione, in quest’ordine. In un’interfaccia, una volta per layout come fascia o filetto, mai sul testo.",
+      "secondary": "Secondari",
+      "secondaryRule": "Blu, arancione e rosa danno accento alle illustrazioni e alla famiglia Spectra. Verde e ambra riempiono i segni di stato; il testo sopra usa i ruoli di successo e avviso.",
+      "gradients": "Sfumature firma",
+      "gradientsRule": "Per copertine, poster e post social. Una per layout, mai sul testo né sull’interfaccia. Fai clic su una per copiarne la proprietà.",
       "copy": "Fai clic su un campione per copiarne la custom property.",
       "copied": "Copiato {token}"
     },

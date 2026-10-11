@@ -185,6 +185,25 @@
       "dlMono": "Simbol, o culoare",
       "dlLockupMono": "Logo complet, o culoare"
     },
+    "devices": {
+      "short": "Elemente",
+      "title": "Elemente de brand",
+      "text": "Șase gesturi care fac o pagină să se citească drept Shades. Unul sau două pe material, niciodată toate șase.",
+      "bars": "Motivul barelor",
+      "barsText": "Cele trei bare ale mărcii, repetate sau scalate: separatoare, buline, încărcare.",
+      "sweep": "Banda spectrului",
+      "sweepText": "O bandă de 10 px pe marginea de sus a unei coperți sau a unui subsol. O dată pe pagină.",
+      "arrow": "Săgeata înainte",
+      "arrowText": "Arată mereu spre dreapta: următorul, pornim, continuă.",
+      "tags": "Stickere și etichete",
+      "tagsText": "Stickere-pastilă pentru ștampile și atenționări, puțin înclinate.",
+      "tagOne": "Făcut de Shades",
+      "tagTwo": "Făcut în Chișinău",
+      "stripes": "Dungi diagonale",
+      "stripesText": "Roșu și cerneală la 135 de grade, ca textură în spatele unei coperți sau al unei coli de stickere.",
+      "crop": "Decupaj supradimensionat",
+      "cropText": "Logotipul care iese din cadru, pentru afișe și coperți."
+    },
     "family": {
       "title": "Familia Spectra",
       "text": "Șapte personaje, câte unul pentru fiecare tip de moment. Au aceiași ochi, creasta cu trei bare din simbol și un zâmbet discret, iar fiecare are o singură culoare plată.",
@@ -222,6 +241,19 @@
         "role": "Producție și finalizare",
         "text": "Echilibrat și practic. Confirmă progresul, succesul și livrarea.",
         "where": "Progres, ecrane de succes, emailuri de livrare"
+      },
+      "constructionTitle": "Construcție",
+      "construction": "Corpul este pătratul roșu al logoului, cu colțuri de 28 din 92. Creasta sunt cele trei bare, în proporția mărcii. Ochii stau pe centrul orizontal, iar fiecare parte e simetrică față de ax.",
+      "posesTitle": "Expresii",
+      "poses": {
+        "hello": "Salut",
+        "helloUse": "Bun venit și primii pași",
+        "idea": "Idee",
+        "ideaUse": "Stări goale",
+        "nice": "Bravo",
+        "niceUse": "Reușită",
+        "hmm": "Hmm",
+        "hmmUse": "Încărcare și pagini 404"
       },
       "rulesTitle": "Regulile familiei",
       "rule1": "Aceiași ochi pentru toți: un disc alb, o pupilă neagră și o singură sclipire.",
@@ -398,6 +430,21 @@
       "client": "Proiecte pentru clienți",
       "clientMark": "Brandul propriu al clientului, pe rolurile Gradient",
       "note": "Un produs poate avea propriul simbol. Folosește totuși tipografia, rolurile, iconițele și regulile Gradient, iar mențiunea lui de credit nu se schimbă niciodată."
+    },
+    "keep": {
+      "short": "Reguli",
+      "title": "Shades rămâne Shades.",
+      "text": "Zece reguli pe care oricine din echipă le poate urma fără să deschidă acest site. Când ai dubii, fă mai puțin, dar mai apăsat.",
+      "r1": "Roșul e pentru accent: marca, o acțiune, un capitol. Niciodată sub textul de bază.",
+      "r2": "Cele trei bare nu își schimbă niciodată ordinea: plină, trei sferturi, jumătate.",
+      "r3": "Un singur degradeu pe pagină. Două fac zgomot.",
+      "r4": "Titlurile strânse, textul la interlinie 1,5. Tokenurile de tipografie le fac pe amândouă.",
+      "r5": "Monospace e doar pentru cod. Cifrele folosesc cifre tabulare în fontul de text.",
+      "r6": "Spectrul se mișcă într-un singur sens, de la stânga la dreapta, și nu sare niciodată.",
+      "r7": "Lasă aer în jurul a ce contează. Nu umple un colț doar pentru că e gol.",
+      "r8": "Spectra e pentru produse și social media, niciodată pentru oferte sau facturi.",
+      "r9": "Scrie cum vorbești: scurt, sigur, fără jargon.",
+      "r10": "Fiecare material se încheie cu un singur pas următor, clar."
     }
   },
   "foundations": {
@@ -407,11 +454,15 @@
     "lead": "Fiecare valoare e scrisă o singură dată, în tokens.json, și ajunge de acolo în CSS, Tailwind și JSON. Apasă pe orice mostră ca să-i copiezi variabila.",
     "colour": {
       "title": "Culoare",
-      "text": "Shades Red și o scală neutră de cerneală fac aproape toată treaba. Cele patru nuanțe ale spectrului există pentru o singură bandă pe machetă.",
+      "text": "Roșul Shades și o scală neutră de cerneală fac aproape toată treaba. Celelalte nuanțe sunt pentru ilustrații, stări și o singură bandă pe pagină.",
       "red": "Shades Red",
       "ink": "Cerneală și hârtie",
       "spectrum": "Spectrul",
-      "spectrumRule": "Albastru, magenta, roșu și portocaliu, în această ordine. O singură dată pe machetă, ca bandă sau linie, niciodată ca fundal sau pe text.",
+      "spectrumRule": "Albastru, magenta, roșu și portocaliu, în această ordine. Într-o interfață, o dată pe pagină, ca bandă sau linie, niciodată pe text.",
+      "secondary": "Culori secundare",
+      "secondaryRule": "Albastrul, portocaliul și rozul accentuează ilustrațiile și familia Spectra. Verdele și chihlimbarul umplu marcajele de stare; textul de pe ele folosește rolurile de succes și avertizare.",
+      "gradients": "Degradeuri de semnătură",
+      "gradientsRule": "Pentru coperți, afișe și postări sociale. Unul pe pagină, niciodată pe text sau pe interfață. Apasă pe unul ca să-i copiezi proprietatea.",
       "copy": "Apasă pe o mostră ca să-i copiezi proprietatea CSS personalizată.",
       "copied": "Copiat: {token}"
     },

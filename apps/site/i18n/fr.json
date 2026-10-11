@@ -185,6 +185,25 @@
       "dlMono": "Symbole, une couleur",
       "dlLockupMono": "Bloc-marque, une couleur"
     },
+    "devices": {
+      "short": "Signes",
+      "title": "Signes de marque",
+      "text": "Six gestes qui font qu’une mise en page se lit comme Shades. Un ou deux par support, jamais les six.",
+      "bars": "Le motif des barres",
+      "barsText": "Les trois barres de la marque, répétées ou agrandies : séparateurs, puces, chargements.",
+      "sweep": "Le bandeau spectre",
+      "sweepText": "Un bandeau de 10 px en haut d’une couverture ou d’un pied de page. Une fois par mise en page.",
+      "arrow": "La flèche en avant",
+      "arrowText": "Toujours vers la droite : suivant, on y va, continuer.",
+      "tags": "Autocollants et étiquettes",
+      "tagsText": "Des pastilles pour tamponner et signaler, légèrement de travers.",
+      "tagOne": "Fait par Shades",
+      "tagTwo": "Fait à Chișinău",
+      "stripes": "Rayures diagonales",
+      "stripesText": "Rouge et encre à 135 degrés, comme texture derrière une couverture ou une planche d’autocollants.",
+      "crop": "Recadrage XXL",
+      "cropText": "Le logotype qui déborde du cadre, pour les affiches et les couvertures."
+    },
     "family": {
       "title": "La famille Spectra",
       "text": "Sept personnages, un par type de moment. Ils partagent les mêmes yeux, la crête à trois barres du symbole et un sourire discret, et chacun a sa couleur unie.",
@@ -222,6 +241,19 @@
         "role": "Production et livraison",
         "text": "Stable et pratique. Confirme l'avancement, la réussite et la livraison.",
         "where": "Avancement, écrans de réussite, e-mails de livraison"
+      },
+      "constructionTitle": "Construction",
+      "construction": "Le corps est le carré rouge du logo, aux coins de 28 sur 92. La crête, ce sont les trois barres, dans les proportions de la marque. Les yeux se placent au centre horizontal, et chaque partie est symétrique autour de l’axe.",
+      "posesTitle": "Expressions",
+      "poses": {
+        "hello": "Bonjour",
+        "helloUse": "Accueil et prise en main",
+        "idea": "Idée",
+        "ideaUse": "États vides",
+        "nice": "Bravo",
+        "niceUse": "Réussite",
+        "hmm": "Hmm",
+        "hmmUse": "Chargement et pages 404"
       },
       "rulesTitle": "Règles de la famille",
       "rule1": "Les mêmes yeux pour tous : un disque blanc, une pupille noire et un reflet.",
@@ -398,6 +430,21 @@
       "client": "Projets clients",
       "clientMark": "La marque du client, sur les rôles Gradient",
       "note": "Un produit peut avoir son propre symbole. Il utilise toujours la typographie, les rôles, les icônes et les règles de Gradient, et sa mention de crédit ne change jamais."
+    },
+    "keep": {
+      "short": "Règles",
+      "title": "Shades reste Shades.",
+      "text": "Dix règles que toute l’équipe peut suivre sans ouvrir ce site. Dans le doute, faites moins, mais plus fort.",
+      "r1": "Le rouge sert à souligner : la marque, une action, un chapitre. Jamais derrière du texte courant.",
+      "r2": "Les trois barres ne changent jamais d’ordre : pleine, trois quarts, moitié.",
+      "r3": "Un dégradé par mise en page. Deux, c’est du bruit.",
+      "r4": "Titres serrés, texte courant à 1,5 d’interligne. Les tokens typographiques font les deux.",
+      "r5": "Le monospace est réservé au code. Les chiffres utilisent des chiffres tabulaires dans la police de texte.",
+      "r6": "Le spectre avance dans un seul sens, de gauche à droite, sans jamais rebondir.",
+      "r7": "Laissez de l’air autour de l’essentiel. Ne remplissez pas un coin parce qu’il est vide.",
+      "r8": "Spectra, c’est pour les produits et les réseaux, jamais pour les propositions ni les factures.",
+      "r9": "Écrivez comme vous parlez : court, sûr, sans jargon.",
+      "r10": "Chaque support se termine par une prochaine étape claire."
     }
   },
   "foundations": {
@@ -407,11 +454,15 @@
     "lead": "Chaque valeur est écrite une seule fois, dans tokens.json, et rejoint de là le CSS, Tailwind et le JSON. Cliquez sur une pastille pour copier sa variable.",
     "colour": {
       "title": "Couleur",
-      "text": "Le Shades Red et une échelle d'encre neutre font presque tout le travail. Les quatre nuances du spectre servent à un seul bandeau par mise en page.",
+      "text": "Le rouge Shades et une échelle d’encre neutre font presque tout. Les autres teintes servent aux illustrations, aux états et à un seul bandeau par mise en page.",
       "red": "Shades Red",
       "ink": "Encre et papier",
       "spectrum": "Le spectre",
-      "spectrumRule": "Bleu, magenta, rouge et orange, dans cet ordre. Une fois par mise en page, en bandeau ou en filet, jamais en fond ni sur du texte.",
+      "spectrumRule": "Bleu, magenta, rouge et orange, dans cet ordre. Dans une interface, une fois par mise en page, en bandeau ou en filet, jamais sur du texte.",
+      "secondary": "Couleurs secondaires",
+      "secondaryRule": "Le bleu, l’orange et le rose rehaussent les illustrations et la famille Spectra. Le vert et l’ambre remplissent les marques d’état ; le texte posé dessus utilise les rôles succès et avertissement.",
+      "gradients": "Dégradés signature",
+      "gradientsRule": "Pour les couvertures, les affiches et les publications sociales. Un par mise en page, jamais sur du texte ni sur l’interface. Cliquez pour copier sa propriété.",
       "copy": "Cliquez sur une pastille pour copier sa propriété personnalisée.",
       "copied": "{token} copié"
     },

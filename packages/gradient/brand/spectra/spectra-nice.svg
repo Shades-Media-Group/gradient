@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 200" fill="none" role="img" aria-label="Spectra, winking">
+  <style>
+    .g-blink { animation: g-blink var(--g-blink, 4.6s) ease-in-out var(--g-blink-delay, 0s) infinite; transform-box: fill-box; transform-origin: center; }
+    .g-twinkle { animation: g-twinkle 2.6s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+    @keyframes g-blink { 0%, 91%, 100% { transform: scaleY(1); } 95% { transform: scaleY(0.08); } }
+    @keyframes g-twinkle { 0%, 100% { opacity: 0.35; transform: scale(0.8) rotate(0deg); } 50% { opacity: 1; transform: scale(1.12) rotate(16deg); } }
+    @media (prefers-reduced-motion: reduce) { .g-blink, .g-twinkle { animation: none; } }
+  </style>
+  <ellipse cx="80" cy="187" rx="42" ry="7" fill="#000000" opacity="0.28"/>
+  <ellipse cx="62" cy="151" rx="13" ry="7" fill="#AB000D"/>
+  <ellipse cx="98" cy="151" rx="13" ry="7" fill="#AB000D"/>
+  <rect x="20" y="92" width="14" height="34" rx="7" fill="#E40523" transform="rotate(-20 27 109)"/>
+  <rect x="60" y="22" width="11" height="36" rx="5.5" fill="#FFFFFF"/>
+  <rect x="74.5" y="9" width="11" height="49" rx="5.5" fill="#FFC4CF"/>
+  <rect x="89" y="22" width="11" height="36" rx="5.5" fill="#FF8299"/>
+  <rect x="34" y="50" width="92" height="92" rx="28" fill="#E40523"/>
+  <path d="M58 91 Q66 84 74 91" stroke="#0A0A0B" stroke-width="4.5" stroke-linecap="round" fill="none"/>
+  <circle cx="94" cy="91" r="12" fill="#FDFDFC"/>
+  <circle cx="93" cy="93" r="5" fill="#0A0A0B"/>
+  <path d="M64 112 Q80 126 96 112" stroke="#0A0A0B" stroke-width="4" stroke-linecap="round" fill="none"/>
+</svg>

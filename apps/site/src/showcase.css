@@ -1,0 +1,285 @@
+/* The brand in use: Spectra's build and poses, devices, posts, decks.
+   Loaded only on the pages that show them, so the rest stay light. */
+
+.construction {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1fr);
+  gap: 32px;
+  align-items: center;
+}
+
+.construction svg {
+  width: 100%;
+  max-height: 320px;
+  padding: 24px;
+  border-radius: var(--g-radius-lg);
+  background: var(--g-sunken);
+}
+
+.construction p {
+  max-width: 44ch;
+  color: var(--g-text-2);
+}
+
+.c-spine {
+  stroke: var(--g-line-strong);
+}
+
+.c-body {
+  stroke: var(--g-red-300);
+  stroke-width: 1.5;
+  stroke-dasharray: 4 4;
+}
+
+.c-crest {
+  stroke: var(--g-secondary-blue);
+  stroke-width: 1.5;
+}
+
+.c-eye {
+  stroke: var(--g-secondary-amber);
+  stroke-width: 1.5;
+}
+
+.poses {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.poses li {
+  display: grid;
+  gap: 2px;
+}
+
+.pose-art {
+  display: grid;
+  place-items: center;
+  margin-bottom: 12px;
+  padding: 20px 16px 8px;
+  border-radius: var(--g-radius-lg);
+  background: var(--g-sunken);
+}
+
+.pose-art svg {
+  width: min(100%, 120px);
+  height: auto;
+}
+
+.poses b {
+  font-weight: 600;
+}
+
+.poses span {
+  color: var(--g-text-2);
+  font-size: var(--g-size-small);
+}
+
+@media (max-width: 760px) {
+  .construction {
+    grid-template-columns: 1fr;
+  }
+
+  .construction svg {
+    max-height: 240px;
+  }
+
+  .poses {
+    grid-template-columns: none;
+    grid-auto-flow: column;
+    grid-auto-columns: 44%;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+  }
+
+  .poses li {
+    scroll-snap-align: start;
+  }
+}
+
+/* Brand devices: each one working, at the size it is used. */
+.devices {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px 16px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.devices li {
+  display: grid;
+  align-content: start;
+  gap: 2px;
+}
+
+.devices b {
+  font-weight: 600;
+}
+
+.devices span {
+  color: var(--g-text-2);
+  font-size: var(--g-size-small);
+}
+
+.device {
+  position: relative;
+  container-type: inline-size;
+  display: grid;
+  place-items: center;
+  aspect-ratio: 4 / 3;
+  margin-bottom: 12px;
+  overflow: hidden;
+  border-radius: var(--g-radius-lg);
+  background: var(--g-ink-950);
+  box-shadow: inset 0 0 0 1px var(--g-line);
+}
+
+.device--bars {
+  grid-auto-flow: column;
+  justify-content: center;
+  gap: 3cqi;
+}
+
+/* The mark's own bars: 10 wide, 3 apart, 30 tall, at full, three-quarter and half white. */
+.device--bars i {
+  width: 10cqi;
+  height: 30cqi;
+  background: #fff;
+  animation: g-bar 2.4s var(--g-ease-out) infinite;
+}
+
+.device--bars i:nth-child(2) {
+  opacity: 0.75;
+  animation-delay: 0.3s;
+}
+
+.device--bars i:nth-child(3) {
+  opacity: 0.5;
+  animation-delay: 0.5s;
+}
+
+@keyframes g-bar {
+  50% {
+    opacity: 0.2;
+  }
+}
+
+.device--sweep {
+  grid-template-rows: auto 1fr;
+  place-items: stretch;
+}
+
+.device--sweep i {
+  height: 10px;
+  background: var(--g-spectrum);
+}
+
+.device--sweep b {
+  align-self: end;
+  padding: 0 8% 8%;
+  color: #fff;
+  font: 700 clamp(1.5rem, 3vw, 2.25rem) / 1 var(--g-font-display);
+  letter-spacing: var(--g-tracking-title);
+}
+
+.device--arrow {
+  background: var(--g-surface);
+  box-shadow: inset 0 0 0 1px var(--g-line);
+  color: var(--g-accent);
+}
+
+.device--arrow svg {
+  width: 38%;
+  height: auto;
+  stroke-width: 2.4;
+}
+
+.device--tags {
+  align-content: center;
+  gap: 10px;
+  background: var(--g-sunken);
+}
+
+.device--tags i {
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: var(--g-accent);
+  color: var(--g-on-accent);
+  font: 700 var(--g-size-caption) / 1 var(--g-font-display);
+  font-style: normal;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  rotate: -3deg;
+}
+
+.device--tags i + i {
+  background: var(--g-ink-0);
+  color: var(--g-ink-950);
+  box-shadow: inset 0 0 0 1px var(--g-line);
+  rotate: 2deg;
+}
+
+.device--stripes {
+  background: repeating-linear-gradient(
+    135deg,
+    var(--g-accent) 0 14px,
+    var(--g-ink-950) 14px 28px
+  );
+}
+
+.device--crop {
+  place-items: end start;
+  background: var(--g-accent);
+  color: var(--g-ink-950);
+}
+
+.device--crop .wordmark {
+  width: 160%;
+  height: auto;
+  margin: 0 0 -7% 7%;
+}
+
+/* The one red chapter on the brand page: the rules to keep. */
+.doc--red {
+  background: var(--g-accent-soft);
+}
+
+.doc--red h2 {
+  color: var(--g-accent-text);
+}
+
+.rules--two {
+  display: block;
+  columns: 2;
+  column-gap: 40px;
+}
+
+.rules--two li {
+  break-inside: avoid;
+}
+
+@media (max-width: 760px) {
+  .devices {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .rules--two {
+    columns: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .device--bars i {
+    animation: none;
+  }
+}
+
+:root[data-g-motion] .device--bars i {
+  animation: none;
+}
+

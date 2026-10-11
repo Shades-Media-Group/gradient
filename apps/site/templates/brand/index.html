@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     {{@head}}
     <script type="module" src="/src/main.ts"></script>
+    <link rel="stylesheet" href="/src/showcase.css" />
   </head>
   <body>
     {{@nav}}
@@ -22,9 +23,11 @@
           <a href="#colour-use">{{brand.colourUse.title}}</a>
           <a href="#type">{{brand.type.title}}</a>
           <a href="#imagery">{{brand.imagery.title}}</a>
+          <a href="#devices">{{brand.devices.short}}</a>
           <a href="#family">{{brand.family.title}}</a>
           <a href="#voice">{{brand.voice.title}}</a>
           <a href="#moments">{{brand.moments.title}}</a>
+          <a href="#rules">{{brand.keep.short}}</a>
           <a href="#products">{{brand.products.title}}</a>
         </nav>
 
@@ -256,6 +259,41 @@
         </div>
       </section>
 
+      <section class="doc" id="devices">
+        <div class="doc-head">
+          <h2>{{brand.devices.title}}</h2>
+          <p>{{brand.devices.text}}</p>
+        </div>
+        <div class="doc-body">
+          <ul class="devices">
+            <li>
+              <div class="device device--bars" aria-hidden="true"><i></i><i></i><i></i></div>
+              <b>{{brand.devices.bars}}</b><span>{{brand.devices.barsText}}</span>
+            </li>
+            <li>
+              <div class="device device--sweep" aria-hidden="true"><i></i><b>Gradient</b></div>
+              <b>{{brand.devices.sweep}}</b><span>{{brand.devices.sweepText}}</span>
+            </li>
+            <li>
+              <div class="device device--arrow" aria-hidden="true">{{@icon:arrowRight}}</div>
+              <b>{{brand.devices.arrow}}</b><span>{{brand.devices.arrowText}}</span>
+            </li>
+            <li>
+              <div class="device device--tags" aria-hidden="true"><i>{{brand.devices.tagOne}}</i><i>{{brand.devices.tagTwo}}</i></div>
+              <b>{{brand.devices.tags}}</b><span>{{brand.devices.tagsText}}</span>
+            </li>
+            <li>
+              <div class="device device--stripes" aria-hidden="true"></div>
+              <b>{{brand.devices.stripes}}</b><span>{{brand.devices.stripesText}}</span>
+            </li>
+            <li>
+              <div class="device device--crop" aria-hidden="true">{{@wordmark}}</div>
+              <b>{{brand.devices.crop}}</b><span>{{brand.devices.cropText}}</span>
+            </li>
+          </ul>
+        </div>
+      </section>
+
       <section class="doc doc--ink" data-theme="dark" id="family">
         <div class="doc-head">
           <h2>{{brand.family.title}}</h2>
@@ -293,6 +331,42 @@
             </li>
           </ul>
 
+          <h3 class="doc-sub">{{brand.family.constructionTitle}}</h3>
+          <div class="construction">
+            <svg viewBox="0 0 160 200" fill="none" aria-hidden="true">
+              <line class="c-spine" x1="80" y1="0" x2="80" y2="200" />
+              <rect class="c-body" x="34" y="50" width="92" height="92" rx="28" />
+              <rect class="c-crest" x="60" y="22" width="11" height="36" rx="5.5" />
+              <rect class="c-crest" x="74.5" y="9" width="11" height="49" rx="5.5" />
+              <rect class="c-crest" x="89" y="22" width="11" height="36" rx="5.5" />
+              <circle class="c-eye" cx="66" cy="91" r="13" />
+              <circle class="c-eye" cx="94" cy="91" r="13" />
+            </svg>
+            <p>{{brand.family.construction}}</p>
+          </div>
+          <h3 class="doc-sub">{{brand.family.posesTitle}}</h3>
+          <ul class="poses">
+            <li>
+              <div class="pose-art g-idle g-idle--spectra">{{@family:spectra-hello}}</div>
+              <b>{{brand.family.poses.hello}}</b>
+              <span>{{brand.family.poses.helloUse}}</span>
+            </li>
+            <li>
+              <div class="pose-art g-idle g-idle--spectra">{{@family:spectra-idea}}</div>
+              <b>{{brand.family.poses.idea}}</b>
+              <span>{{brand.family.poses.ideaUse}}</span>
+            </li>
+            <li>
+              <div class="pose-art g-idle g-idle--spectra">{{@family:spectra-nice}}</div>
+              <b>{{brand.family.poses.nice}}</b>
+              <span>{{brand.family.poses.niceUse}}</span>
+            </li>
+            <li>
+              <div class="pose-art g-idle g-idle--spectra">{{@family:spectra-hmm}}</div>
+              <b>{{brand.family.poses.hmm}}</b>
+              <span>{{brand.family.poses.hmmUse}}</span>
+            </li>
+          </ul>
           <h3 class="doc-sub">{{brand.family.rulesTitle}}</h3>
           <ol class="rules">
             <li>{{brand.family.rule1}}</li>
@@ -397,6 +471,27 @@
             <li>{{brand.moments.mech4}}</li>
             <li>{{brand.moments.mech5}}</li>
             <li>{{brand.moments.mech6}}</li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="doc doc--red" id="rules">
+        <div class="doc-head">
+          <h2>{{brand.keep.title}}</h2>
+          <p>{{brand.keep.text}}</p>
+        </div>
+        <div class="doc-body">
+          <ol class="rules rules--two">
+            <li><span>{{brand.keep.r1}}</span></li>
+            <li><span>{{brand.keep.r2}}</span></li>
+            <li><span>{{brand.keep.r3}}</span></li>
+            <li><span>{{brand.keep.r4}}</span></li>
+            <li><span>{{brand.keep.r5}}</span></li>
+            <li><span>{{brand.keep.r6}}</span></li>
+            <li><span>{{brand.keep.r7}}</span></li>
+            <li><span>{{brand.keep.r8}}</span></li>
+            <li><span>{{brand.keep.r9}}</span></li>
+            <li><span>{{brand.keep.r10}}</span></li>
           </ol>
         </div>
       </section>

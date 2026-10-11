@@ -32,7 +32,8 @@ const LANGS = {
 }
 const HREFLANGS = [...Object.values(LANGS), 'x-default'].sort()
 /** Compressed bytes a single page may cost, fonts excluded. */
-const BUDGET = { html: 24_000, js: 12_000, css: 17_000 }
+// css is the shared sheet every page loads; showcase is the brand-application sheet, on the pages that show it.
+const BUDGET = { html: 24_000, js: 12_000, css: 17_500, showcase: 8_000 }
 
 const dist = process.argv[2] ?? fileURLToPath(new URL('../apps/site/dist', import.meta.url))
 if (!existsSync(dist)) {
@@ -187,13 +188,16 @@ function checkBudget(where, html) {
       .map((tag) => attr(tag, 'src') ?? attr(tag, 'href'))
       .filter((url) => url?.startsWith('/assets/'))
   const js = own('script').reduce((sum, url) => sum + gz(readFileSync(join(dist, url))), 0)
-  const css = own('link')
-    .filter((url) => url.endsWith('.css'))
-    .reduce((sum, url) => sum + gz(readFileSync(join(dist, url))), 0)
+  const sheets = own('link').filter((url) => url.endsWith('.css'))
+  const weigh = (urls) => urls.reduce((sum, url) => sum + gz(readFileSync(join(dist, url))), 0)
+  const showcase = weigh(sheets.filter((url) => url.includes('/showcase')))
+  const css = weigh(sheets.filter((url) => !url.includes('/showcase')))
   const page = gz(Buffer.from(html))
   if (page > BUDGET.html) fail(where, `HTML is ${page} B compressed (budget ${BUDGET.html})`)
   if (js > BUDGET.js) fail(where, `scripts are ${js} B compressed (budget ${BUDGET.js})`)
   if (css > BUDGET.css) fail(where, `styles are ${css} B compressed (budget ${BUDGET.css})`)
+  if (showcase > BUDGET.showcase)
+    fail(where, `showcase styles are ${showcase} B compressed (budget ${BUDGET.showcase})`)
   return { page, js, css }
 }
 

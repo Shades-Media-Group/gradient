@@ -185,6 +185,25 @@
       "dlMono": "Símbolo, un color",
       "dlLockupMono": "Firma, un color"
     },
+    "devices": {
+      "short": "Recursos",
+      "title": "Recursos de marca",
+      "text": "Seis gestos que hacen que un diseño se lea como Shades. Uno o dos por pieza, nunca los seis.",
+      "bars": "El motivo de barras",
+      "barsText": "Las tres barras de la marca, repetidas o escaladas: separadores, viñetas, cargas.",
+      "sweep": "La franja del espectro",
+      "sweepText": "Una franja de 10 px en el borde superior de una portada o un pie. Una vez por diseño.",
+      "arrow": "La flecha hacia delante",
+      "arrowText": "Siempre apunta a la derecha: siguiente, vamos, continuar.",
+      "tags": "Pegatinas y etiquetas",
+      "tagsText": "Pegatinas en píldora para sellos y avisos, un poco torcidas.",
+      "tagOne": "Hecho por Shades",
+      "tagTwo": "Hecho en Chișinău",
+      "stripes": "Rayas diagonales",
+      "stripesText": "Rojo y tinta a 135 grados, como textura tras una portada o una hoja de pegatinas.",
+      "crop": "Recorte gigante",
+      "cropText": "El logotipo que se sale del borde, para carteles y portadas."
+    },
     "family": {
       "title": "La familia Spectra",
       "text": "Siete personajes, uno para cada tipo de momento. Comparten los mismos ojos, la cresta de tres barras del símbolo y una sonrisa discreta, y cada uno tiene un color plano.",
@@ -222,6 +241,19 @@
         "role": "Producción y entrega",
         "text": "Constante y práctico. Confirma avances, éxitos y entregas.",
         "where": "Avances, pantallas de éxito, correos de entrega"
+      },
+      "constructionTitle": "Construcción",
+      "construction": "El cuerpo es el cuadrado rojo del logo, con esquinas de 28 sobre 92. La cresta son las tres barras, en la proporción de la marca. Los ojos van en el centro horizontal y cada parte es simétrica respecto al eje.",
+      "posesTitle": "Expresiones",
+      "poses": {
+        "hello": "Hola",
+        "helloUse": "Bienvenidas e incorporación",
+        "idea": "Idea",
+        "ideaUse": "Estados vacíos",
+        "nice": "Genial",
+        "niceUse": "Éxito",
+        "hmm": "Mmm",
+        "hmmUse": "Carga y páginas 404"
       },
       "rulesTitle": "Reglas de la familia",
       "rule1": "Los mismos ojos en todos: un disco blanco, una pupila negra y un brillo.",
@@ -398,6 +430,21 @@
       "client": "Trabajo para clientes",
       "clientMark": "La marca propia del cliente, sobre los roles de Gradient",
       "note": "Un producto puede tener su propio símbolo. Aun así usa la tipografía, los roles, los iconos y las reglas de Gradient, y su línea de crédito nunca cambia."
+    },
+    "keep": {
+      "short": "Reglas",
+      "title": "Shades sigue siendo Shades.",
+      "text": "Diez reglas que cualquiera del equipo puede seguir sin abrir este sitio. Ante la duda, haz menos, pero más fuerte.",
+      "r1": "El rojo es para destacar: la marca, una acción, un capítulo. Nunca detrás del texto.",
+      "r2": "Las tres barras nunca cambian de orden: entera, tres cuartos, media.",
+      "r3": "Un degradado por diseño. Dos suenan a ruido.",
+      "r4": "Titulares ajustados, texto a 1,5 de interlineado. Los tokens tipográficos hacen ambas cosas.",
+      "r5": "El monoespaciado es para código. Las cifras usan números tabulares en la fuente de texto.",
+      "r6": "El espectro avanza en un solo sentido, de izquierda a derecha, y nunca rebota.",
+      "r7": "Deja aire alrededor de lo importante. No llenes una esquina porque esté vacía.",
+      "r8": "Spectra es para productos y redes, nunca para propuestas ni facturas.",
+      "r9": "Escribe como hablas: breve, seguro, sin jerga.",
+      "r10": "Cada pieza termina con un único paso siguiente, claro."
     }
   },
   "foundations": {
@@ -407,11 +454,15 @@
     "lead": "Cada valor se escribe una sola vez, en tokens.json, y de ahí llega a CSS, Tailwind y JSON. Haz clic en una muestra para copiar su variable.",
     "colour": {
       "title": "Color",
-      "text": "Shades Red y una escala de tinta neutra hacen casi todo el trabajo. Los cuatro tonos del espectro existen para una franja por diseño.",
+      "text": "El rojo Shades y una escala neutra de tinta hacen casi todo el trabajo. Los demás tonos son para ilustraciones, estados y una sola franja por diseño.",
       "red": "Shades Red",
       "ink": "Tinta y papel",
       "spectrum": "El espectro",
-      "spectrumRule": "Azul, magenta, rojo y naranja, en ese orden. Una vez por diseño, como franja o filete, nunca como fondo ni sobre texto.",
+      "spectrumRule": "Azul, magenta, rojo y naranja, en ese orden. En una interfaz, una vez por diseño como franja o línea, nunca sobre texto.",
+      "secondary": "Secundarios",
+      "secondaryRule": "El azul, el naranja y el rosa acentúan las ilustraciones y la familia Spectra. El verde y el ámbar rellenan las marcas de estado; el texto sobre ellos usa los roles de éxito y aviso.",
+      "gradients": "Degradados de firma",
+      "gradientsRule": "Para portadas, carteles y publicaciones sociales. Uno por diseño, nunca sobre texto ni en la interfaz. Pulsa uno para copiar su propiedad.",
       "copy": "Haz clic en una muestra para copiar su propiedad personalizada.",
       "copied": "Copiado {token}"
     },

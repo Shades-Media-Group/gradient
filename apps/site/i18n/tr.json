@@ -185,6 +185,25 @@
       "dlMono": "İşaret, tek renk",
       "dlLockupMono": "Logo kurgusu, tek renk"
     },
+    "devices": {
+      "short": "Öğeler",
+      "title": "Marka öğeleri",
+      "text": "Bir sayfayı Shades gibi okutan altı hamle. Her işte bir ya da iki tane, asla altısı birden.",
+      "bars": "Çubuk motifi",
+      "barsText": "İşaretin üç çubuğu, tekrarlanmış ya da büyütülmüş: ayraçlar, madde işaretleri, yükleyiciler.",
+      "sweep": "Spektrum şeridi",
+      "sweepText": "Bir kapağın ya da alt bilginin üst kenarında 10 px şerit. Sayfa başına bir kez.",
+      "arrow": "İleri ok",
+      "arrowText": "Her zaman sağı gösterir: sonraki, hadi, devam.",
+      "tags": "Çıkartmalar ve etiketler",
+      "tagsText": "Damga ve vurgu için hap biçimli çıkartmalar, hafif yamuk.",
+      "tagOne": "Shades yaptı",
+      "tagTwo": "Kişinev’de yapıldı",
+      "stripes": "Çapraz çizgiler",
+      "stripesText": "135 derecede kırmızı ve mürekkep; bir kapağın ya da çıkartma sayfasının arkasında doku olarak.",
+      "crop": "Büyük kırpma",
+      "cropText": "Kenardan taşan logotip, afişler ve kapaklar için."
+    },
     "family": {
       "title": "Spectra ailesi",
       "text": "Her tür an için bir tane, yedi karakter. Aynı gözleri, işaretten gelen üç çubuklu armayı ve sakin bir gülümsemeyi paylaşırlar; her birinin tek bir düz rengi vardır.",
@@ -222,6 +241,19 @@
         "role": "Üretim ve teslim",
         "text": "İstikrarlı ve pratik. İlerlemeyi, başarıyı ve teslimi onaylar.",
         "where": "İlerleme, başarı ekranları, teslim e-postaları"
+      },
+      "constructionTitle": "Yapı",
+      "construction": "Gövde, logonun kırmızı karesidir; köşeleri 92’de 28’dir. Tepelik, işaretin oranındaki üç çubuktur. Gözler yatay merkezde durur ve her parça eksene göre simetriktir.",
+      "posesTitle": "İfadeler",
+      "poses": {
+        "hello": "Merhaba",
+        "helloUse": "Karşılama ve ilk adımlar",
+        "idea": "Fikir",
+        "ideaUse": "Boş durumlar",
+        "nice": "Harika",
+        "niceUse": "Başarı",
+        "hmm": "Hmm",
+        "hmmUse": "Yükleniyor ve 404 sayfaları"
       },
       "rulesTitle": "Aile kuralları",
       "rule1": "Herkeste aynı gözler: beyaz bir disk, siyah bir göz bebeği ve tek bir parlama.",
@@ -398,6 +430,21 @@
       "client": "Müşteri işleri",
       "clientMark": "Müşterinin kendi markası, Gradient rolleri üzerinde",
       "note": "Bir ürünün kendi işareti olabilir. Yine de Gradient'in tipografisini, rollerini, ikonlarını ve kurallarını kullanır; künye satırı ise hiç değişmez."
+    },
+    "keep": {
+      "short": "Kurallar",
+      "title": "Shades, Shades kalsın.",
+      "text": "Ekipteki herkesin bu siteyi açmadan uygulayabileceği on kural. Emin değilsen daha az yap, ama daha yüksek sesle.",
+      "r1": "Kırmızı vurgu içindir: işaret, bir eylem, bir bölüm. Asla gövde metninin arkasında değil.",
+      "r2": "Üç çubuğun sırası asla değişmez: tam, dörtte üç, yarım.",
+      "r3": "Sayfa başına bir gradyan. İkisi gürültü olur.",
+      "r4": "Başlıklar sıkı, gövde metni 1,5 satır aralığında. Tipografi tokenları ikisini de yapar.",
+      "r5": "Eş aralıklı yazı yalnızca kod içindir. Sayılar gövde fontunun tablo rakamlarını kullanır.",
+      "r6": "Spektrum tek yöne, soldan sağa hareket eder ve asla zıplamaz.",
+      "r7": "Önemli olanın etrafında boşluk bırak. Bir köşeyi boş diye doldurma.",
+      "r8": "Spectra ürünler ve sosyal medya içindir; asla teklifler ya da faturalar için değil.",
+      "r9": "Konuştuğun gibi yaz: kısa, kendinden emin, jargonsuz.",
+      "r10": "Her iş tek ve net bir sonraki adımla biter."
     }
   },
   "foundations": {
@@ -407,11 +454,15 @@
     "lead": "Her değer bir kez, tokens.json içinde yazılır ve CSS, Tailwind ve JSON'a oradan ulaşır. Değişkenini kopyalamak için herhangi bir renk örneğine tıkla.",
     "colour": {
       "title": "Renk",
-      "text": "İşin neredeyse tamamını Shades Red ve nötr bir mürekkep skalası yapar. Dört spektrum tonu, düzen başına tek bir şerit için vardır.",
+      "text": "Shades kırmızısı ve nötr bir mürekkep ölçeği işin neredeyse tamamını yapar. Diğer tonlar illüstrasyon, durum ve sayfa başına tek bir şerit içindir.",
       "red": "Shades Red",
       "ink": "Mürekkep ve kâğıt",
       "spectrum": "Spektrum",
-      "spectrumRule": "Mavi, macenta, kırmızı ve turuncu, bu sırayla. Her düzende bir kez, şerit ya da çizgi olarak; asla arka plan olarak ya da metin üzerinde değil.",
+      "spectrumRule": "Mavi, macenta, kırmızı ve turuncu, bu sırayla. Arayüzde sayfa başına bir kez, şerit ya da çizgi olarak; asla metin üzerinde değil.",
+      "secondary": "İkincil renkler",
+      "secondaryRule": "Mavi, turuncu ve pembe illüstrasyonlara ve Spectra ailesine vurgu katar. Yeşil ve kehribar durum işaretlerini doldurur; üzerlerindeki metin başarı ve uyarı rollerini kullanır.",
+      "gradients": "İmza gradyanlar",
+      "gradientsRule": "Kapaklar, afişler ve sosyal medya gönderileri için. Sayfa başına bir tane; asla metin ya da arayüz üzerinde değil. Özelliğini kopyalamak için birine tıklayın.",
       "copy": "CSS değişkenini kopyalamak için bir renk örneğine tıkla.",
       "copied": "{token} kopyalandı"
     },

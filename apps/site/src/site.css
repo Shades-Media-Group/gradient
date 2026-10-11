@@ -1858,6 +1858,72 @@ body {
   box-shadow: inset 0 0 0 1px var(--g-line);
 }
 
+.swatches--five {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+@media (max-width: 560px) {
+  .swatches--five {
+    grid-template-columns: none;
+    grid-auto-flow: column;
+    grid-auto-columns: 34%;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+}
+
+/* Signature gradients: the surface itself, named on it. */
+.gradients {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@media (max-width: 760px) {
+  .gradients {
+    grid-template-columns: none;
+    grid-auto-flow: column;
+    grid-auto-columns: 42%;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+  }
+
+  .gradients li {
+    scroll-snap-align: start;
+  }
+}
+
+.gradients button {
+  display: grid;
+  align-content: end;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  padding: 14px;
+  border: 0;
+  border-radius: var(--g-radius-lg);
+  background: var(--c);
+  color: #fff;
+  font-size: var(--g-size-small);
+  text-align: left;
+  transition: transform var(--g-dur-snap) var(--g-ease-snap);
+}
+
+.gradients button:hover {
+  transform: translateY(-2px);
+}
+
+.gradients b {
+  font: 700 var(--g-size-h3) / 1.1 var(--g-font-display);
+}
+
+.gradients li:nth-child(4) button {
+  color: var(--g-ink-950);
+}
+
 .spectrum-demo {
   height: 12px;
 }

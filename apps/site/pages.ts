@@ -430,6 +430,11 @@ function render(locale: Locale, page: Page): string {
     family: (name) => inline(`spectra/${name}.svg`, `spectra spectra--${name}`),
     mark: () => inline('shades-mark.svg', 'g-mark'),
     lockup: () => inline('shades-lockup.svg', 'g-mark lockup'),
+    // The wordmark alone: the mono lockup cropped past the mark, as the print renders do.
+    wordmark: () =>
+      inline('shades-lockup-mono.svg', 'wordmark')
+        .replace(/viewBox="[^"]*"/, 'viewBox="41 0 101 32"')
+        .replace(/ width="\d+" height="\d+"/, ''),
     nav: () => `<a class="skip" href="#main">${t('nav.skip')}</a>
     <header class="nav">
       <a class="nav-home" href="${base}" aria-label="${html(t('nav.homeLabel'))}">

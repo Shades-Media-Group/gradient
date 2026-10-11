@@ -185,6 +185,25 @@
       "dlMono": "Mark, one colour",
       "dlLockupMono": "Lockup, one colour"
     },
+    "devices": {
+      "short": "Devices",
+      "title": "Brand devices",
+      "text": "Six moves that make a layout read as Shades. One or two per piece, never all six.",
+      "bars": "The bar motif",
+      "barsText": "The mark's three bars, repeated or scaled: dividers, bullets, loaders.",
+      "sweep": "The spectrum band",
+      "sweepText": "A 10 px band along the top edge of a cover or a footer. Once per layout.",
+      "arrow": "The forward arrow",
+      "arrowText": "Always points right: next, go, continue.",
+      "tags": "Stickers and tags",
+      "tagsText": "Pill stickers for stamps and call-outs, a little off the straight.",
+      "tagOne": "Built by Shades",
+      "tagTwo": "Made in Chișinău",
+      "stripes": "Diagonal stripes",
+      "stripesText": "Red and ink at 135 degrees, for texture behind a cover or a sticker sheet.",
+      "crop": "Oversized crop",
+      "cropText": "The wordmark blown past the edge, for posters and covers."
+    },
     "family": {
       "title": "The Spectra family",
       "text": "Seven characters, one per kind of moment. They share the same eyes, the three-bar crest from the mark and a quiet smile, and each has one flat colour.",
@@ -222,6 +241,19 @@
         "role": "Production and done",
         "text": "Steady and practical. Confirms progress, success and delivery.",
         "where": "Progress, success screens, delivery emails"
+      },
+      "constructionTitle": "Construction",
+      "construction": "The body is the logo's red square, its corners at 28 of 92. The crest is the three bars, in the mark's ratio. The eyes sit on the horizontal centre, and every part mirrors about the spine.",
+      "posesTitle": "Expressions",
+      "poses": {
+        "hello": "Hello",
+        "helloUse": "Welcomes and onboarding",
+        "idea": "Idea",
+        "ideaUse": "Empty states",
+        "nice": "Nice",
+        "niceUse": "Success",
+        "hmm": "Hmm",
+        "hmmUse": "Loading and 404 pages"
       },
       "rulesTitle": "Family rules",
       "rule1": "Same eyes on everyone: a white disc, a black pupil and one highlight.",
@@ -398,6 +430,21 @@
       "client": "Client work",
       "clientMark": "The client’s own brand, on Gradient roles",
       "note": "A product may have its own mark. It still uses Gradient’s type, roles, icons and rules, and its credit line never changes."
+    },
+    "keep": {
+      "short": "Rules to keep",
+      "title": "Keep Shades, Shades.",
+      "text": "Ten rules anyone on the team can follow without opening this site. When in doubt, do less, louder.",
+      "r1": "Red is for emphasis: the mark, one action, one chapter. Never behind body text.",
+      "r2": "The three bars never change order: full, three quarters, half.",
+      "r3": "One gradient per layout. Two read as noise.",
+      "r4": "Headlines set tight, body text at 1.5 line height. The type tokens do both.",
+      "r5": "Monospace is for code. Numbers use tabular figures in the body face.",
+      "r6": "The spectrum moves one way, left to right, and never bounces.",
+      "r7": "Leave room around what matters. Don't fill a corner because it's empty.",
+      "r8": "Spectra is for products and social, never proposals or invoices.",
+      "r9": "Write like you talk: short, confident, no jargon.",
+      "r10": "Every piece ends with one clear next step."
     }
   },
   "foundations": {
@@ -407,11 +454,15 @@
     "lead": "Every value is written once, in tokens.json, and reaches CSS, Tailwind and JSON from there. Click any swatch to copy its variable.",
     "colour": {
       "title": "Colour",
-      "text": "Shades Red and a neutral ink scale do almost all the work. The four spectrum shades exist for one strip per layout.",
+      "text": "Shades Red and a neutral ink scale do almost all the work. The other shades are for artwork, status and one strip per layout.",
       "red": "Shades Red",
       "ink": "Ink and paper",
       "spectrum": "The spectrum",
-      "spectrumRule": "Blue, magenta, red and orange, in that order. Once per layout, as a strip or a rule, never as a background or on text.",
+      "spectrumRule": "Blue, magenta, red and orange, in that order. In an interface, once per layout as a strip or a rule, never on text.",
+      "secondary": "Secondary",
+      "secondaryRule": "Blue, orange and pink accent artwork and the Spectra family. Green and amber fill status marks; text on them uses the success and warning roles.",
+      "gradients": "Signature gradients",
+      "gradientsRule": "For covers, posters and social posts. One per layout, never on text or interface chrome. Click one to copy its custom property.",
       "copy": "Click a swatch to copy its custom property.",
       "copied": "Copied {token}"
     },
