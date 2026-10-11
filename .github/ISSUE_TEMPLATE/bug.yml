@@ -1,0 +1,29 @@
+name: Bug report
+description: Something in the package or on the site doesn't work.
+title: '[Bug] '
+labels: [bug]
+body:
+  - type: dropdown
+    id: where
+    attributes:
+      label: Where
+      options: [npm package (shades-gradient), Website (gradient.shades.md), Brand files]
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+      description: What you did, what you expected, and what happened instead.
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      placeholder: 0.1.0
+  - type: input
+    id: environment
+    attributes:
+      label: Browser, framework and build tool
+      placeholder: Safari 26 on iOS, React 19 with Vite 8 and Tailwind 4

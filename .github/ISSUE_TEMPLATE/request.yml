@@ -1,0 +1,19 @@
+name: Request
+description: A token, component, icon or rule the system is missing.
+title: '[Request] '
+labels: [request]
+body:
+  - type: dropdown
+    id: kind
+    attributes:
+      label: What kind
+      options: [Token, Component, Icon, Brand rule, Print or merchandise, Documentation]
+    validations:
+      required: true
+  - type: textarea
+    id: need
+    attributes:
+      label: What you need and where
+      description: The product and screen that needs it, and what you use today instead.
+    validations:
+      required: true
