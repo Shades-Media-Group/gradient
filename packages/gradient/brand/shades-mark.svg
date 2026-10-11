@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 56 56" fill="none" role="img" aria-label="Shades">
+  <rect width="56" height="56" fill="#E40523"/>
+  <rect x="10" y="13" width="10" height="30" fill="#FFFFFF"/>
+  <rect x="23" y="13" width="10" height="30" fill="#FFFFFF" fill-opacity="0.75"/>
+  <rect x="36" y="13" width="10" height="30" fill="#FFFFFF" fill-opacity="0.5"/>
+</svg>
