@@ -5,6 +5,7 @@
  *   apps/site/public/social-preview.png   1280 × 640, the link preview
  *   apps/site/public/apple-touch-icon.png 180 × 180
  *   apps/site/public/shades-mark.png      512 × 512, for structured data
+ *   apps/site/public/email/shades-lockup.png 284 × 64, the email header
  *   assets/readme-banner-light.png        1600 × 560, README header
  *   assets/readme-banner-dark.png         1600 × 560
  *
@@ -74,6 +75,16 @@ const JOBS = [
   ['assets/readme-banner-dark.png', 1600, 560, card(1600, 560, true)],
   ['apps/site/public/apple-touch-icon.png', 180, 180, square(180, 0)],
   ['apps/site/public/shades-mark.png', 512, 512, square(512, 0)],
+  // The email header: Gmail shows no SVG, so the lockup ships as a PNG at twice its size.
+  [
+    'apps/site/public/email/shades-lockup.png',
+    284,
+    64,
+    page(284, 64, brand('shades-lockup.svg')).replace(
+      'body { background: #fdfdfc;',
+      'body { background: transparent;',
+    ),
+  ],
 ]
 
 const browser = await chromium.launch(
@@ -84,7 +95,7 @@ for (const [out, width, height, html] of JOBS) {
   await tab.setContent(html)
   await tab.evaluate(() => document.fonts.ready)
   mkdirSync(dirname(join(root, out)), { recursive: true })
-  await tab.screenshot({ path: join(root, out) })
+  await tab.screenshot({ path: join(root, out), omitBackground: out.includes('/email/') })
   await tab.close()
   console.log(`Wrote ${out}`)
 }
