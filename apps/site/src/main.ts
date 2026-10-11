@@ -156,6 +156,33 @@ for (const swatch of $$<HTMLLIElement>('[data-token]')) {
     )
 }
 
+// The section bar marks where the reader is and keeps that link in view.
+const toc = document.querySelector<HTMLElement>('.page-toc')
+if (toc) {
+  const links = new Map(
+    [...toc.querySelectorAll<HTMLAnchorElement>('a[href^="#"]')].map((a) => [a.hash.slice(1), a]),
+  )
+  const spy = new IntersectionObserver(
+    (entries) => {
+      for (const entry of entries) {
+        const link = entry.isIntersecting && links.get(entry.target.id)
+        if (!link) continue
+        for (const other of links.values()) other.removeAttribute('aria-current')
+        link.setAttribute('aria-current', 'location')
+        toc.scrollTo({
+          left: link.offsetLeft - (toc.clientWidth - link.offsetWidth) / 2,
+          behavior: reducedMotion() ? 'auto' : 'smooth',
+        })
+      }
+    },
+    { rootMargin: '-35% 0px -60% 0px' },
+  )
+  for (const id of links.keys()) {
+    const section = document.getElementById(id)
+    if (section) spy.observe(section)
+  }
+}
+
 // The busy demo on the components page.
 for (const button of $$<HTMLButtonElement>('[data-busy-demo]'))
   button.addEventListener('click', () => {
