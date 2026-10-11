@@ -114,11 +114,22 @@ const store = {
   },
 }
 
+/**
+ * The theme a reader gets before choosing one. A site opts into light or dark
+ * with <html data-theme-default="light">; without it, the system decides.
+ */
+export function defaultTheme(root = document.documentElement): Theme {
+  const theme = root.getAttribute('data-theme-default')
+  return theme === 'light' || theme === 'dark' ? theme : 'system'
+}
+
+const defaults = (): Preferences => ({ ...DEFAULTS, theme: defaultTheme() })
+
 export function readPreferences(): Preferences {
   try {
-    return { ...DEFAULTS, ...(JSON.parse(store.get(STORAGE_KEY) ?? '{}') as Partial<Preferences>) }
+    return { ...defaults(), ...(JSON.parse(store.get(STORAGE_KEY) ?? '{}') as Partial<Preferences>) }
   } catch {
-    return { ...DEFAULTS }
+    return defaults()
   }
 }
 
@@ -257,7 +268,7 @@ export function preferences(options: PreferencesOptions = {}): () => void {
     )
   wrap.querySelector('.g-prefs-reset')!.addEventListener('click', () => {
     store.remove(STORAGE_KEY)
-    save({ ...DEFAULTS })
+    save(defaults())
   })
 
   const onKey = (event: KeyboardEvent) => event.key === 'Escape' && close()

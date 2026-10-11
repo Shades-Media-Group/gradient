@@ -6,6 +6,7 @@ Every notable change to Gradient and the `shades-gradient` package. The format f
 
 ### Added
 
+- **A default theme:** `<html data-theme-default="light">` (or `"dark"`) opens a site in that theme until the reader chooses. The boot script applies it before paint, the panel shows it selected, Reset returns to it, and `defaultTheme()` reads it. The Gradient site now opens in light.
 - **Documentation page** (`/docs/`): install, the files in the package, tokens and roles, theming, Tailwind v4, components, icons, display settings and consent, email, motion and versions, in every language. The nav and menu button now open it.
 - **Accessibility page:** the WCAG 2.2 AA standard, ten promises every product keeps, what each display-panel option does and who it helps, each product's status with its known gaps, how it is tested, and how to report a barrier.
 - **Home page:** an "About Shades" section and the product family, with the Gradient, PageRecast, ImageRefold and LMS marks; the brand page lists LMS among the products. ImageRefold appears under its own name and mark.

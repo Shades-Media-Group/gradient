@@ -97,7 +97,13 @@ A 20 px dot in the bottom-right corner opens a panel. It offers light, dark or t
 <script src="/preferences-boot.js"></script>
 ```
 
-Copy `shades-gradient/preferences-boot.js` next to your pages. Then:
+Copy `shades-gradient/preferences-boot.js` next to your pages. To open in light (or dark) until the reader chooses, say so on `<html>`; the panel then shows that theme selected, and Reset returns to it:
+
+```html
+<html lang="en" data-theme-default="light">
+```
+
+Then:
 
 ```js
 import 'shades-gradient/preferences.css' // already inside gradient.css
@@ -146,7 +152,7 @@ import tokens from 'shades-gradient/tokens.json' with { type: 'json' }
 
 ## Themes
 
-Light and dark follow the system setting. To pin either one on any element, use `data-theme`:
+Light and dark follow the system setting, unless `<html data-theme-default="light">` sets a default (see above). To pin either one on any element, use `data-theme`:
 
 ```html
 <section data-theme="dark">…</section>
