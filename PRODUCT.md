@@ -16,7 +16,7 @@ Built the way PageRecast is built, at the owner's request:
 
 ## Users
 
-The site is mainly for the Shades Media Group team, and the AI agents working with them, while they build Shades products and client work: PageRecast, the upcoming ImageRefold, the shades.md rebuild, nails-by-alynna, lms. Readers come to look up a token, copy a component, check a logo rule, or learn how a past project went before starting the next one. Clients may also be shown it as proof of how Shades works.
+The site is mainly for the Shades Media Group team, and the AI agents working with them, while they build Shades products and client work: PageRecast, ImageRefold, the shades.md rebuild, nails-by-alynna, lms. Readers come to look up a token, copy a component, check a logo rule, or learn how a past project went before starting the next one. Clients may also be shown it as proof of how Shades works.
 
 ## Product Purpose
 
@@ -30,7 +30,7 @@ It is one agency's living system, built from the projects it has actually shippe
 
 ## Operating Context
 
-- **Consumers:** React 19 + Tailwind v4 apps (nails-by-alynna, lms), Preact/Vite apps and extensions (PageRecast), static sites on Cloudflare Workers, and a Figma plugin (ImageRefold, planned).
+- **Consumers:** React 19 + Tailwind v4 apps (nails-by-alynna, lms), Preact/Vite apps and extensions (PageRecast), static sites on Cloudflare Workers, and a Figma plugin (ImageRefold).
 - **Languages:** the site ships in English, French, Romanian, Russian, Spanish, Italian, Turkish, Hindi, Japanese, and Simplified and Traditional Chinese.
 - **Authors:** work is often done by Claude Code sessions, so the docs have to be readable by agents (CLAUDE.md, llms.txt).
 
