@@ -70,7 +70,7 @@ A client keeps the components and changes the roles. In one stylesheet loaded af
 
 Check every text role you change against its background at 4.5:1. Gradient's own test (`packages/gradient/src/tokens.test.ts`) shows how. The Shades mark and the Spectra characters are never part of a client's product.
 
-## Preact and the Figma plugin panels (PageRecast, ImageReframe)
+## Preact and the Figma plugin panels (PageRecast, ImageRefold)
 
 The same CSS works. Panels are denser than web pages, so scale the components with the custom properties they expose:
 

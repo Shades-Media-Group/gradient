@@ -18,7 +18,7 @@ The website, [gradient.shades.md](https://gradient.shades.md), shows the system 
 ## Projects
 
 - [PageRecast](projects/pagerecast.md): how it was made, what was rejected, what stayed
-- [ImageReframe](projects/imagereframe.md): the brief for the next product
+- [ImageRefold](projects/imagerefold.md): the starting brief for the image tool, now at imagerefold.shades.md
 
 ## Brand
 

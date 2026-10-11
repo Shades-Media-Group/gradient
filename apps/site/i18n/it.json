@@ -112,7 +112,7 @@
       "pagerecast": "Trasforma qualsiasi pagina web in livelli Figma modificabili. Ci ha insegnato cosa sembra fatto a mano e cosa sembra generato.",
       "nails": "Un'app di prenotazione per un centro unghie. Ha dimostrato che un brand cliente può indossare gli stessi pezzi nei propri colori.",
       "lms": "La nostra app per organizzare la vita. Ha fissato le regole di icone e movimento sul telefono.",
-      "imagereframe": "Esportazione e importazione di immagini per Figma, gratis e open source. Il primo prodotto a nascere da Gradient.",
+      "imagerefold": "Esportazione e importazione di immagini per Figma, gratis e open source. Il primo prodotto a nascere da Gradient.",
       "shades": "Il sito dell'agenzia, da ricostruire su Gradient.",
       "live": "Online",
       "next": "In arrivo"
@@ -170,9 +170,7 @@
       "link": "Come i prodotti indossano il brand",
       "gradient": "Il design system: token, componenti, icone, email e il brand, in un solo pacchetto e in questo sito.",
       "pagerecast": "Qualsiasi pagina web in livelli Figma modificabili. Un'estensione per Chrome e un plugin per Figma, gratis.",
-      "imagereframe": "Esportazione e importazione di immagini per Figma, gratis e open source. Il primo prodotto a nascere da Gradient.",
-      "concept": "Marchio provvisorio, non definitivo.",
-      "brief": "Leggi il brief"
+      "imagerefold": "Esportazione e importazione di immagini per Figma, gratis e open source. Il primo prodotto a nascere da Gradient."
     }
   },
   "brand": {
@@ -413,7 +411,7 @@
       "shadesMark": "Il marchio e il lockup Shades",
       "gradientMark": "Il marchio Shades accanto alla parola Gradient",
       "pagerecastMark": "Un marchio proprio: due pagine sovrapposte",
-      "imagereframeMark": "Un marchio proprio: un'immagine orizzontale reinquadrata in verticale (marchio provvisorio)",
+      "imagerefoldMark": "Il suo marchio, «Scale»: tre quadrati arrotondati con un angolo in comune",
       "client": "Lavori per i clienti",
       "clientMark": "Il brand del cliente, sui ruoli di Gradient",
       "note": "Un prodotto può avere un marchio proprio. Usa comunque caratteri, ruoli, icone e regole di Gradient, e la sua riga di credito non cambia mai."
@@ -810,7 +808,7 @@
     "next": {
       "title": "Prossimi su Gradient",
       "text": "I prodotti che partiranno da questo sistema invece che da un template.",
-      "imagereframe": "Esportazione e importazione di immagini per Figma, gratis e open source, costruito sotto il brand Shades con le funzioni che mancano sul mercato.",
+      "imagerefold": "Esportazione e importazione di immagini per Figma, gratis e open source, costruito sotto il brand Shades con le funzioni che mancano sul mercato.",
       "shades": "Il sito dell'agenzia, ricostruito: tenere le idee migliori, eliminare l'aspetto da template.",
       "planned": "In programma"
     },

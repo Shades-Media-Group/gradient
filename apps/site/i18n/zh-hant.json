@@ -112,7 +112,7 @@
       "pagerecast": "把任何網頁變成可編輯的 Figma 圖層。它讓我們看清，什麼像手工打造，什麼像機器生成。",
       "nails": "一間美甲工作室的預約 App。它證明客戶品牌能用自己的顏色，套上同一套元件。",
       "lms": "我們自己的生活管理 App，為手機上的圖示與動態定下規則。",
-      "imagereframe": "免費開源的 Figma 圖片匯出與匯入工具，第一個從 Gradient 起步的產品。",
+      "imagerefold": "免費開源的 Figma 圖片匯出與匯入工具，第一個從 Gradient 起步的產品。",
       "shades": "公司官網，即將以 Gradient 重建。",
       "live": "已上線",
       "next": "即將推出"
@@ -170,9 +170,7 @@
       "link": "產品如何套用品牌",
       "gradient": "設計系統：設計 token、元件、圖示、電子郵件與品牌，全在一個套件與本站中。",
       "pagerecast": "把任何網頁變成可編輯的 Figma 圖層。免費的 Chrome 擴充功能與 Figma 外掛。",
-      "imagereframe": "免費開源的 Figma 圖片匯出與匯入工具，第一個從 Gradient 起步的產品。",
-      "concept": "暫定標誌，並非定稿。",
-      "brief": "閱讀簡介"
+      "imagerefold": "免費開源的 Figma 圖片匯出與匯入工具，第一個從 Gradient 起步的產品。"
     }
   },
   "brand": {
@@ -413,7 +411,7 @@
       "shadesMark": "Shades 標誌與組合標誌",
       "gradientMark": "Shades 標誌，旁邊是 Gradient 一詞",
       "pagerecastMark": "自有標誌：兩頁重疊",
-      "imagereframeMark": "自有標誌：橫幅圖片重新構圖為直幅（暫定標誌）",
+      "imagerefoldMark": "自有標誌「Scale」：三個共用一角的圓角方形",
       "client": "客戶作品",
       "clientMark": "客戶自己的品牌，套用 Gradient 角色",
       "note": "產品可以有自己的標誌，但仍使用 Gradient 的字型、角色、圖示與規則，署名行永遠不變。"
@@ -810,7 +808,7 @@
     "next": {
       "title": "Gradient 的下一步",
       "text": "這些產品會從這套系統起步，而不是從範本開始。",
-      "imagereframe": "Figma 圖片匯出與匯入工具，免費開源，以 Shades 品牌打造，補上市場缺少的功能。",
+      "imagerefold": "Figma 圖片匯出與匯入工具，免費開源，以 Shades 品牌打造，補上市場缺少的功能。",
       "shades": "重建的公司官網：保留最好的點子，拋掉範本感。",
       "planned": "規劃中"
     },

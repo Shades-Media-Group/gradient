@@ -112,7 +112,7 @@
       "pagerecast": "Transformă orice pagină web în straturi Figma editabile. Ne-a învățat ce pare făcut de mână și ce pare generat.",
       "nails": "O aplicație de programări pentru un studio de manichiură. A dovedit că brandul unui client poate purta aceleași piese în culorile sale.",
       "lms": "Aplicația noastră pentru organizarea vieții. A stabilit regulile pentru iconițe și mișcare pe telefon.",
-      "imagereframe": "Export și import de imagini pentru Figma, gratuit și deschis. Primul produs care pornește de la Gradient.",
+      "imagerefold": "Export și import de imagini pentru Figma, gratuit și deschis. Primul produs care pornește de la Gradient.",
       "shades": "Site-ul agenției, care va fi refăcut pe Gradient.",
       "live": "Lansat",
       "next": "Urmează"
@@ -170,9 +170,7 @@
       "link": "Cum poartă produsele brandul",
       "gradient": "Sistemul de design: tokenuri, componente, iconițe, email și brandul, într-un singur pachet și pe acest site.",
       "pagerecast": "Orice pagină web, transformată în straturi Figma editabile. O extensie Chrome și un plugin Figma, gratuite.",
-      "imagereframe": "Export și import de imagini pentru Figma, gratuit și open source. Primul produs care pornește de la Gradient.",
-      "concept": "Simbol provizoriu, nu final.",
-      "brief": "Citește brieful"
+      "imagerefold": "Export și import de imagini pentru Figma, gratuit și open source. Primul produs care pornește de la Gradient."
     }
   },
   "brand": {
@@ -413,7 +411,7 @@
       "shadesMark": "Simbolul Shades și logo-ul complet",
       "gradientMark": "Simbolul Shades lângă cuvântul Gradient",
       "pagerecastMark": "Simbol propriu: două pagini suprapuse",
-      "imagereframeMark": "Simbol propriu: o imagine orizontală reîncadrată pe verticală (simbol provizoriu)",
+      "imagerefoldMark": "Propriul simbol, „Scale”: trei pătrate rotunjite cu un colț comun",
       "client": "Proiecte pentru clienți",
       "clientMark": "Brandul propriu al clientului, pe rolurile Gradient",
       "note": "Un produs poate avea propriul simbol. Folosește totuși tipografia, rolurile, iconițele și regulile Gradient, iar mențiunea lui de credit nu se schimbă niciodată."
@@ -810,7 +808,7 @@
     "next": {
       "title": "Urmează pe Gradient",
       "text": "Produsele care vor porni de la acest sistem, nu de la un șablon.",
-      "imagereframe": "Export și import de imagini pentru Figma, gratuit și open source, construit sub brandul Shades, cu funcțiile care lipsesc pe piață.",
+      "imagerefold": "Export și import de imagini pentru Figma, gratuit și open source, construit sub brandul Shades, cu funcțiile care lipsesc pe piață.",
       "shades": "Site-ul agenției, refăcut: păstrăm cele mai bune idei, renunțăm la aspectul de șablon.",
       "planned": "Planificat"
     },

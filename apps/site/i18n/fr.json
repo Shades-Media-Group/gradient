@@ -112,7 +112,7 @@
       "pagerecast": "Transforme n'importe quelle page web en calques Figma modifiables. Il nous a appris ce qui paraît fait main et ce qui paraît généré.",
       "nails": "Une app de réservation pour un salon de manucure. Elle a prouvé qu'une marque cliente peut porter les mêmes pièces dans ses propres couleurs.",
       "lms": "Notre propre app de gestion du quotidien. Elle a fixé les règles des icônes et du mouvement sur mobile.",
-      "imagereframe": "Export et import d'images pour Figma, gratuit et ouvert. Le premier produit né de Gradient.",
+      "imagerefold": "Export et import d'images pour Figma, gratuit et ouvert. Le premier produit né de Gradient.",
       "shades": "Le site de l'agence, bientôt reconstruit sur Gradient.",
       "live": "En ligne",
       "next": "À venir"
@@ -170,9 +170,7 @@
       "link": "Comment les produits portent la marque",
       "gradient": "Le design system : tokens, composants, icônes, e-mail et marque, en un seul paquet et sur ce site.",
       "pagerecast": "N'importe quelle page web en calques Figma modifiables. Une extension Chrome et un plugin Figma gratuits.",
-      "imagereframe": "Export et import d'images pour Figma, gratuit et open source. Le premier produit né de Gradient.",
-      "concept": "Symbole provisoire, pas définitif.",
-      "brief": "Lire le brief"
+      "imagerefold": "Export et import d'images pour Figma, gratuit et open source. Le premier produit né de Gradient."
     }
   },
   "brand": {
@@ -413,7 +411,7 @@
       "shadesMark": "Le symbole et le bloc-marque Shades",
       "gradientMark": "Le symbole Shades à côté du mot Gradient",
       "pagerecastMark": "Son propre symbole : deux pages qui se chevauchent",
-      "imagereframeMark": "Son propre symbole : une image paysage recadrée en portrait (symbole provisoire)",
+      "imagerefoldMark": "Son propre symbole, « Scale » : trois carrés arrondis qui partagent un coin",
       "client": "Projets clients",
       "clientMark": "La marque du client, sur les rôles Gradient",
       "note": "Un produit peut avoir son propre symbole. Il utilise toujours la typographie, les rôles, les icônes et les règles de Gradient, et sa mention de crédit ne change jamais."
@@ -810,7 +808,7 @@
     "next": {
       "title": "Prochainement sur Gradient",
       "text": "Les produits qui partiront de ce système plutôt que d'un template.",
-      "imagereframe": "Export et import d'images pour Figma, gratuit et open source, conçu sous la marque Shades avec les fonctionnalités qui manquent au marché.",
+      "imagerefold": "Export et import d'images pour Figma, gratuit et open source, conçu sous la marque Shades avec les fonctionnalités qui manquent au marché.",
       "shades": "Le site de l'agence, reconstruit : garder ses meilleures idées, abandonner l'allure de template.",
       "planned": "Prévu"
     },

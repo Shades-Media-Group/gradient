@@ -112,7 +112,7 @@
       "pagerecast": "Her web sayfasını düzenlenebilir Figma katmanlarına dönüştürür. Bize neyin elle yapılmış, neyin makineyle üretilmiş gibi okunduğunu öğretti.",
       "nails": "Bir tırnak stüdyosu için randevu uygulaması. Bir müşteri markasının aynı parçaları kendi renkleriyle giyebileceğini kanıtladı.",
       "lms": "Kendi yaşam yönetimi uygulamamız. Telefonda ikon ve hareket kurallarını belirledi.",
-      "imagereframe": "Figma için ücretsiz ve açık görsel dışa ve içe aktarma. Gradient'ten başlayan ilk ürün.",
+      "imagerefold": "Figma için ücretsiz ve açık görsel dışa ve içe aktarma. Gradient'ten başlayan ilk ürün.",
       "shades": "Ajansın kendi sitesi; Gradient üzerine yeniden kurulacak.",
       "live": "Yayında",
       "next": "Sırada"
@@ -170,9 +170,7 @@
       "link": "Ürünler markayı nasıl taşır",
       "gradient": "Tasarım sistemi: token'lar, bileşenler, ikonlar, e-posta ve marka; tek pakette ve bu sitede.",
       "pagerecast": "Her web sayfasını düzenlenebilir Figma katmanlarına dönüştürür. Ücretsiz bir Chrome uzantısı ve Figma eklentisi.",
-      "imagereframe": "Figma için ücretsiz ve açık kaynak görsel dışa ve içe aktarma. Gradient'ten başlayan ilk ürün.",
-      "concept": "Çalışma işareti, son hâli değil.",
-      "brief": "Brief'i oku"
+      "imagerefold": "Figma için ücretsiz ve açık kaynak görsel dışa ve içe aktarma. Gradient'ten başlayan ilk ürün."
     }
   },
   "brand": {
@@ -413,7 +411,7 @@
       "shadesMark": "Shades işareti ve logo kurgusu",
       "gradientMark": "Gradient kelimesinin yanında Shades işareti",
       "pagerecastMark": "Kendi işareti: üst üste binen iki sayfa",
-      "imagereframeMark": "Kendi işareti: dikey olarak yeniden kadrajlanmış yatay bir görsel (çalışma işareti)",
+      "imagerefoldMark": "Kendi işareti \"Scale\": bir köşeyi paylaşan üç yuvarlatılmış kare",
       "client": "Müşteri işleri",
       "clientMark": "Müşterinin kendi markası, Gradient rolleri üzerinde",
       "note": "Bir ürünün kendi işareti olabilir. Yine de Gradient'in tipografisini, rollerini, ikonlarını ve kurallarını kullanır; künye satırı ise hiç değişmez."
@@ -810,7 +808,7 @@
     "next": {
       "title": "Gradient'te sırada",
       "text": "Bir şablondan değil, bu sistemden başlayacak ürünler.",
-      "imagereframe": "Figma için görsel dışa ve içe aktarma; ücretsiz ve açık kaynak, Shades markası altında, pazarda eksik olan özelliklerle geliştiriliyor.",
+      "imagerefold": "Figma için görsel dışa ve içe aktarma; ücretsiz ve açık kaynak, Shades markası altında, pazarda eksik olan özelliklerle geliştiriliyor.",
       "shades": "Ajans sitesi, yeniden: en iyi fikirlerini koru, şablon görüntüsünü at.",
       "planned": "Planlandı"
     },

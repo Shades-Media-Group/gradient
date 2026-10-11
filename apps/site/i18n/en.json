@@ -112,7 +112,7 @@
       "pagerecast": "Turns any web page into editable Figma layers. It taught us what reads as made by hand and what reads as generated.",
       "nails": "A booking app for a nail studio. It proved a client brand can wear the same parts in its own colours.",
       "lms": "Our own life-management app. It set the rules for icons and motion on a phone.",
-      "imagereframe": "Free, open image export and import for Figma. The first product to start from Gradient.",
+      "imagerefold": "Free, open image export and import for Figma. The first product to start from Gradient.",
       "shades": "The agency's own site, to be rebuilt on Gradient.",
       "live": "Live",
       "next": "Next"
@@ -170,9 +170,7 @@
       "link": "How products wear the brand",
       "gradient": "The design system: tokens, components, icons, email and the brand, as one package and this site.",
       "pagerecast": "Any web page into editable Figma layers. A free Chrome extension and Figma plugin.",
-      "imagereframe": "Image export and import for Figma, free and open source. The first product to start from Gradient.",
-      "concept": "Working mark, not final.",
-      "brief": "Read the brief"
+      "imagerefold": "Image export and import for Figma, free and open source. The first product to start from Gradient."
     }
   },
   "brand": {
@@ -413,7 +411,7 @@
       "shadesMark": "The Shades mark and lockup",
       "gradientMark": "The Shades mark beside the word Gradient",
       "pagerecastMark": "Its own mark: two overlapping pages",
-      "imagereframeMark": "Its own mark: a landscape image reframed as a portrait (working mark)",
+      "imagerefoldMark": "Its own mark, \"Scale\": three rounded squares sharing a corner",
       "client": "Client work",
       "clientMark": "The client’s own brand, on Gradient roles",
       "note": "A product may have its own mark. It still uses Gradient’s type, roles, icons and rules, and its credit line never changes."
@@ -810,7 +808,7 @@
     "next": {
       "title": "Next on Gradient",
       "text": "The products that will start from this system instead of from a template.",
-      "imagereframe": "Image export and import for Figma, free and open source, built under the Shades brand with features the market is missing.",
+      "imagerefold": "Image export and import for Figma, free and open source, built under the Shades brand with features the market is missing.",
       "shades": "The agency site, rebuilt: keep its best ideas, drop the template look.",
       "planned": "Planned"
     },

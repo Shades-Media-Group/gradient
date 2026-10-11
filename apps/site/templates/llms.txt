@@ -13,7 +13,7 @@
 - Type: Space Grotesk for display, Hanken Grotesk for text, Inter for Cyrillic.
 - Spectra family: Spectra (founder, welcome), Mera (strategy), Sol (art direction), Nova (labs, new features), Sage (help, docs), Vio (community), Sunny (production, success).
 - Icons: 78 Shades interface icons on a 24 px grid with 2 px round strokes.
-- Products built with the system: PageRecast (https://pagerecast.shades.md), nails-by-alynna, lms. Next: ImageReframe and the shades.md rebuild.
+- Products built with the system: PageRecast (https://pagerecast.shades.md), nails-by-alynna, lms. ImageRefold (https://imagerefold.shades.md), in development. Next: the shades.md rebuild.
 
 ## Pages
 
