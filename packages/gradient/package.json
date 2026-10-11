@@ -49,6 +49,10 @@
       "types": "./dist/consent.d.ts",
       "default": "./dist/consent.js"
     },
+    "./email": {
+      "types": "./dist/email.d.ts",
+      "default": "./dist/email.js"
+    },
     "./preferences-boot.js": "./dist/preferences-boot.js",
     "./gradient.css": "./dist/gradient.css",
     "./tokens.css": "./dist/tokens.css",

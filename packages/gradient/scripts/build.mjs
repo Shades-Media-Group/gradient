@@ -173,7 +173,7 @@ writeFileSync(
 )
 
 await build({
-  entryPoints: [join(src, 'index.ts'), join(src, 'magnetic.ts'), join(src, 'preferences.ts'), join(src, 'consent.ts')],
+  entryPoints: [join(src, 'index.ts'), join(src, 'magnetic.ts'), join(src, 'preferences.ts'), join(src, 'consent.ts'), join(src, 'email.ts')],
   outdir: dist,
   bundle: true,
   format: 'esm',
