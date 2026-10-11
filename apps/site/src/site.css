@@ -228,15 +228,18 @@ body {
   padding-inline: max(var(--gutter), calc((100% - var(--measure)) / 2));
 }
 
-[data-reveal] {
+/* One authored entrance instead of the same fade on every block: a chapter's
+   heading rises out of its own baseline, like type set on a press. The rest
+   of the chapter is simply there. */
+[data-reveal] :is(h2, h3):first-child {
   transition:
-    opacity 700ms var(--g-ease-move),
-    transform 700ms var(--g-ease-move);
+    clip-path 900ms var(--g-ease-move),
+    transform 900ms var(--g-ease-move);
 }
 
-.js [data-reveal]:not([data-shown]) {
-  opacity: 0;
-  transform: translateY(24px);
+.js [data-reveal]:not([data-shown]) :is(h2, h3):first-child {
+  clip-path: inset(0 0 100% 0);
+  transform: translateY(0.35em);
 }
 
 /* Hero ---------------------------------------------------------------------- */
@@ -2368,8 +2371,8 @@ body {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .js [data-reveal]:not([data-shown]) {
-    opacity: 1;
+  .js [data-reveal]:not([data-shown]) :is(h2, h3):first-child {
+    clip-path: none;
     transform: none;
   }
 }
