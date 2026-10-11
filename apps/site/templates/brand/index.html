@@ -15,8 +15,15 @@
         <p class="page-lead">{{brand.lead}}</p>
         <nav class="page-toc" aria-label="{{nav.onThisPage}}">
           <a href="#logo">{{brand.logo.title}}</a>
+          <a href="#lockups">{{brand.lockups.title}}</a>
+          <a href="#sizes">{{brand.sizes.title}}</a>
+          <a href="#colour-use">{{brand.colourUse.title}}</a>
+          <a href="#type">{{brand.type.title}}</a>
+          <a href="#imagery">{{brand.imagery.title}}</a>
           <a href="#family">{{brand.family.title}}</a>
           <a href="#voice">{{brand.voice.title}}</a>
+          <a href="#moments">{{brand.moments.title}}</a>
+          <a href="#products">{{brand.products.title}}</a>
         </nav>
       </header>
 
@@ -83,6 +90,171 @@
         </div>
       </section>
 
+
+      <section class="doc" id="lockups">
+        <div class="doc-head">
+          <h2>{{brand.lockups.title}}</h2>
+          <p>{{brand.lockups.text}}</p>
+        </div>
+        <div class="doc-body">
+          <ul class="lockups">
+            <li>
+              <div class="lockup-art lockup-art--paper">{{@lockup}}</div>
+              <h3>{{brand.lockups.horizontal}}</h3>
+              <p>{{brand.lockups.horizontalText}}</p>
+            </li>
+            <li>
+              <div class="lockup-art lockup-art--paper"><div class="lockup-mark">{{@mark}}</div></div>
+              <h3>{{brand.lockups.mark}}</h3>
+              <p>{{brand.lockups.markText}}</p>
+            </li>
+            <li>
+              <div class="lockup-art lockup-art--ink"><img src="/brand/shades-lockup-reverse.svg" alt="" width="284" height="64" loading="lazy" /></div>
+              <h3>{{brand.lockups.reverse}}</h3>
+              <p>{{brand.lockups.reverseText}}</p>
+            </li>
+            <li>
+              <div class="lockup-art lockup-art--mono"><img src="/brand/shades-lockup-mono.svg" alt="" width="284" height="64" loading="lazy" /></div>
+              <h3>{{brand.lockups.mono}}</h3>
+              <p>{{brand.lockups.monoText}}</p>
+            </li>
+          </ul>
+          <h3 class="doc-sub">{{brand.lockups.placementTitle}}</h3>
+          <ol class="rules">
+            <li>{{brand.lockups.place1}}</li>
+            <li>{{brand.lockups.place2}}</li>
+            <li>{{brand.lockups.place3}}</li>
+            <li>{{brand.lockups.place4}}</li>
+          </ol>
+          <h3 class="doc-sub">{{brand.lockups.creditTitle}}</h3>
+          <div class="table-scroll"><table class="g-table">
+            <thead><tr><th>{{brand.lockups.where}}</th><th>{{brand.lockups.line}}</th></tr></thead>
+            <tbody>
+              <tr><td>{{brand.lockups.inProduct}}</td><td><b>Built by Shades Media Group</b></td></tr>
+              <tr><td>{{brand.lockups.inReadme}}</td><td><b>Built by Cristian Brinza | Shades Media Group</b></td></tr>
+              <tr><td>{{brand.lockups.inClient}}</td><td><b>Crafted by Shades Media Group</b></td></tr>
+            </tbody>
+          </table></div>
+        </div>
+      </section>
+
+      <section class="doc" id="sizes">
+        <div class="doc-head">
+          <h2>{{brand.sizes.title}}</h2>
+          <p>{{brand.sizes.text}}</p>
+        </div>
+        <div class="doc-body">
+          <ul class="mark-sizes" aria-label="{{brand.sizes.ladder}}">
+            <li><div style="width: 16px">{{@mark}}</div><span class="g-num">16</span></li>
+            <li><div style="width: 24px">{{@mark}}</div><span class="g-num">24</span></li>
+            <li><div style="width: 32px">{{@mark}}</div><span class="g-num">32</span></li>
+            <li><div style="width: 48px">{{@mark}}</div><span class="g-num">48</span></li>
+            <li><div style="width: 64px">{{@mark}}</div><span class="g-num">64</span></li>
+            <li><div style="width: 96px">{{@mark}}</div><span class="g-num">96</span></li>
+          </ul>
+          <div class="table-scroll"><table class="g-table">
+            <thead><tr><th>{{brand.sizes.use}}</th><th>{{brand.sizes.markCol}}</th><th>{{brand.sizes.lockupCol}}</th></tr></thead>
+            <tbody>
+              <tr><td>{{brand.sizes.favicon}}</td><td class="g-num">16–32 px</td><td>—</td></tr>
+              <tr><td>{{brand.sizes.nav}}</td><td class="g-num">28 px</td><td class="g-num">120–142 px</td></tr>
+              <tr><td>{{brand.sizes.app}}</td><td class="g-num">180 px</td><td>—</td></tr>
+              <tr><td>{{brand.sizes.email}}</td><td>—</td><td class="g-num">142 px (PNG @2×)</td></tr>
+              <tr><td>{{brand.sizes.print}}</td><td class="g-num">8 mm</td><td class="g-num">30 mm</td></tr>
+              <tr><td>{{brand.sizes.sign}}</td><td class="g-num">≥ 120 mm</td><td class="g-num">≥ 400 mm</td></tr>
+            </tbody>
+          </table></div>
+        </div>
+      </section>
+
+      <section class="doc" id="colour-use">
+        <div class="doc-head">
+          <h2>{{brand.colourUse.title}}</h2>
+          <p>{{brand.colourUse.text}}</p>
+        </div>
+        <div class="doc-body">
+          <div class="share" role="img" aria-label="{{brand.colourUse.shareLabel}}">
+            <span class="share-paper" style="flex: 60"><b class="g-num">60%</b>{{brand.colourUse.paper}}</span>
+            <span class="share-ink" style="flex: 25"><b class="g-num">25%</b>{{brand.colourUse.ink}}</span>
+            <span class="share-red" style="flex: 12"><b class="g-num">12%</b>{{brand.colourUse.red}}</span>
+            <span class="share-spectrum" style="flex: 3"></span>
+          </div>
+          <p class="doc-note">{{brand.colourUse.shareNote}}</p>
+          <h3 class="doc-sub">{{brand.colourUse.pairsTitle}}</h3>
+          <ul class="pairings">
+            <li style="--fg: #0a0a0b; --bg: #fdfdfc"><span>Aa</span><div><b>{{brand.colourUse.inkOnPaper}}</b><small class="g-num">19.4 : 1 · AAA</small></div></li>
+            <li style="--fg: #fdfdfc; --bg: #0a0a0b"><span>Aa</span><div><b>{{brand.colourUse.paperOnInk}}</b><small class="g-num">19.4 : 1 · AAA</small></div></li>
+            <li style="--fg: #ffffff; --bg: #e40523"><span>Aa</span><div><b>{{brand.colourUse.whiteOnRed}}</b><small class="g-num">4.83 : 1 · AA</small></div></li>
+            <li style="--fg: #d10420; --bg: #fdfdfc"><span>Aa</span><div><b>{{brand.colourUse.redText}}</b><small class="g-num">5.50 : 1 · AA</small></div></li>
+            <li class="pairings-no" style="--fg: #0a0a0b; --bg: #e40523"><span>Aa</span><div><b>{{brand.colourUse.inkOnRed}}</b><small class="g-num">4.09 : 1 · {{brand.colourUse.largeOnly}}</small></div></li>
+            <li class="pairings-no" style="--fg: #ffffff; --bg: #6364ff"><span>Aa</span><div><b>{{brand.colourUse.whiteOnBlue}}</b><small class="g-num">4.38 : 1 · {{brand.colourUse.largeOnly}}</small></div></li>
+          </ul>
+          <ol class="rules">
+            <li>{{brand.colourUse.rule1}}</li>
+            <li>{{brand.colourUse.rule2}}</li>
+            <li>{{brand.colourUse.rule3}}</li>
+            <li>{{brand.colourUse.rule4}}</li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="doc" id="type">
+        <div class="doc-head">
+          <h2>{{brand.type.title}}</h2>
+          <p>{{brand.type.text}}</p>
+        </div>
+        <div class="doc-body">
+          <div class="type-pair">
+            <div>
+              <p class="type-pair-sample type-pair-sample--display">Aa Bb 0123</p>
+              <h3>Space Grotesk</h3>
+              <p>{{brand.type.display}}</p>
+            </div>
+            <div>
+              <p class="type-pair-sample">Aa Bb 0123</p>
+              <h3>Hanken Grotesk</h3>
+              <p>{{brand.type.body}}</p>
+            </div>
+          </div>
+          <ol class="rules">
+            <li>{{brand.type.rule1}}</li>
+            <li>{{brand.type.rule2}}</li>
+            <li>{{brand.type.rule3}}</li>
+            <li>{{brand.type.rule4}}</li>
+            <li>{{brand.type.rule5}}</li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="doc" id="imagery">
+        <div class="doc-head">
+          <h2>{{brand.imagery.title}}</h2>
+          <p>{{brand.imagery.text}}</p>
+        </div>
+        <div class="doc-body">
+          <div class="pairs">
+            <div class="pair pair--yes">
+              <h3>{{@icon:check}}{{brand.imagery.yes}}</h3>
+              <ul>
+                <li>{{brand.imagery.yes1}}</li>
+                <li>{{brand.imagery.yes2}}</li>
+                <li>{{brand.imagery.yes3}}</li>
+                <li>{{brand.imagery.yes4}}</li>
+              </ul>
+            </div>
+            <div class="pair pair--no">
+              <h3>{{@icon:close}}{{brand.imagery.no}}</h3>
+              <ul>
+                <li>{{brand.imagery.no1}}</li>
+                <li>{{brand.imagery.no2}}</li>
+                <li>{{brand.imagery.no3}}</li>
+                <li>{{brand.imagery.no4}}</li>
+              </ul>
+            </div>
+          </div>
+          <p class="doc-note">{{brand.imagery.alt}}</p>
+        </div>
+      </section>
+
       <section class="doc doc--ink" data-theme="dark" id="family">
         <div class="doc-head">
           <h2>{{brand.family.title}}</h2>
@@ -129,6 +301,26 @@
             <li>{{brand.family.rule5}}</li>
             <li>{{brand.family.rule6}}</li>
           </ol>
+          <h3 class="doc-sub">{{brand.family.whereTitle}}</h3>
+          <div class="table-scroll"><table class="g-table">
+            <thead><tr><th>{{brand.family.who}}</th><th>{{brand.family.where}}</th></tr></thead>
+            <tbody>
+              <tr><td>Spectra</td><td>{{brand.family.spectra.where}}</td></tr>
+              <tr><td>Mera</td><td>{{brand.family.mera.where}}</td></tr>
+              <tr><td>Sol</td><td>{{brand.family.sol.where}}</td></tr>
+              <tr><td>Nova</td><td>{{brand.family.nova.where}}</td></tr>
+              <tr><td>Sage</td><td>{{brand.family.sage.where}}</td></tr>
+              <tr><td>Vio</td><td>{{brand.family.vio.where}}</td></tr>
+              <tr><td>Sunny</td><td>{{brand.family.sunny.where}}</td></tr>
+            </tbody>
+          </table></div>
+          <h3 class="doc-sub">{{brand.family.neverTitle}}</h3>
+          <ol class="rules">
+            <li>{{brand.family.never1}}</li>
+            <li>{{brand.family.never2}}</li>
+            <li>{{brand.family.never3}}</li>
+            <li>{{brand.family.never4}}</li>
+          </ol>
           <p class="doc-note">{{brand.family.motion}}</p>
         </div>
       </section>
@@ -163,7 +355,7 @@
           </ol>
 
           <h3 class="doc-sub">{{brand.voice.swapsTitle}}</h3>
-          <table class="g-table swaps">
+          <div class="table-scroll"><table class="g-table swaps">
             <thead><tr><th>{{brand.voice.instead}}</th><th>{{brand.voice.write}}</th></tr></thead>
             <tbody>
               <tr><td>{{brand.voice.swap1a}}</td><td>{{brand.voice.swap1b}}</td></tr>
@@ -172,11 +364,59 @@
               <tr><td>{{brand.voice.swap4a}}</td><td>{{brand.voice.swap4b}}</td></tr>
               <tr><td>{{brand.voice.swap5a}}</td><td>{{brand.voice.swap5b}}</td></tr>
             </tbody>
-          </table>
+          </table></div>
 
           <h3 class="doc-sub">{{brand.voice.tagsTitle}}</h3>
           <p class="tags-demo"><span class="g-tag">Branding</span> <span class="g-tag">UI/UX</span> <span class="g-tag">WebDevelopment</span> <span class="g-tag">Marketing</span></p>
           <p class="doc-note">{{brand.voice.tagsText}}</p>
+        </div>
+      </section>
+
+      <section class="doc" id="moments">
+        <div class="doc-head">
+          <h2>{{brand.moments.title}}</h2>
+          <p>{{brand.moments.text}}</p>
+        </div>
+        <div class="doc-body">
+          <div class="table-scroll"><table class="g-table moments">
+            <thead><tr><th>{{brand.moments.moment}}</th><th>{{brand.moments.rule}}</th><th>{{brand.moments.example}}</th></tr></thead>
+            <tbody>
+              <tr><td>{{brand.moments.error}}</td><td>{{brand.moments.errorRule}}</td><td>{{brand.moments.errorExample}}</td></tr>
+              <tr><td>{{brand.moments.success}}</td><td>{{brand.moments.successRule}}</td><td>{{brand.moments.successExample}}</td></tr>
+              <tr><td>{{brand.moments.empty}}</td><td>{{brand.moments.emptyRule}}</td><td>{{brand.moments.emptyExample}}</td></tr>
+              <tr><td>{{brand.moments.button}}</td><td>{{brand.moments.buttonRule}}</td><td>{{brand.moments.buttonExample}}</td></tr>
+              <tr><td>{{brand.moments.marketing}}</td><td>{{brand.moments.marketingRule}}</td><td>{{brand.moments.marketingExample}}</td></tr>
+            </tbody>
+          </table></div>
+          <h3 class="doc-sub">{{brand.moments.mechanicsTitle}}</h3>
+          <ol class="rules">
+            <li>{{brand.moments.mech1}}</li>
+            <li>{{brand.moments.mech2}}</li>
+            <li>{{brand.moments.mech3}}</li>
+            <li>{{brand.moments.mech4}}</li>
+            <li>{{brand.moments.mech5}}</li>
+            <li>{{brand.moments.mech6}}</li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="doc" id="products">
+        <div class="doc-head">
+          <h2>{{brand.products.title}}</h2>
+          <p>{{brand.products.text}}</p>
+        </div>
+        <div class="doc-body">
+          <div class="table-scroll"><table class="g-table">
+            <thead><tr><th>{{brand.products.name}}</th><th>{{brand.products.mark}}</th><th>{{brand.products.credit}}</th></tr></thead>
+            <tbody>
+              <tr><td><b>Shades Media Group</b></td><td>{{brand.products.shadesMark}}</td><td>—</td></tr>
+              <tr><td><b>Gradient</b></td><td>{{brand.products.gradientMark}}</td><td>Built by Shades Media Group</td></tr>
+              <tr><td><b>PageRecast</b></td><td>{{brand.products.pagerecastMark}}</td><td>Built by Shades Media Group</td></tr>
+              <tr><td><b>ImageReframe</b></td><td>{{brand.products.imagereframeMark}}</td><td>Built by Shades Media Group</td></tr>
+              <tr><td><b>{{brand.products.client}}</b></td><td>{{brand.products.clientMark}}</td><td>Crafted by Shades Media Group</td></tr>
+            </tbody>
+          </table></div>
+          <p class="doc-note">{{brand.products.note}}</p>
         </div>
       </section>
     </main>
