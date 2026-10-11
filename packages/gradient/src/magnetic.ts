@@ -20,7 +20,8 @@ export function magnetic(selector = '[data-magnetic]', root: Document = document
   }
 
   const move = (event: PointerEvent) => {
-    if (event.pointerType === 'touch') return
+    // The site's own "Reduce motion" switch (see preferences.ts) counts too.
+    if (event.pointerType === 'touch' || root.documentElement.hasAttribute('data-g-motion')) return
     let nearest: { el: HTMLElement; dx: number; dy: number; d: number } | null = null
     for (const el of root.querySelectorAll<HTMLElement>(selector)) {
       const r = el.getBoundingClientRect()

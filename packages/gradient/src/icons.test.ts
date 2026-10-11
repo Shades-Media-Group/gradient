@@ -32,3 +32,11 @@ describe('Shades icons', () => {
     expect(() => renderIcon('nope' as 'add')).toThrow()
   })
 })
+
+describe('the preferences panel', () => {
+  it('draws the same icons as the set', async () => {
+    const source = readFileSync(new URL('./preferences.ts', import.meta.url), 'utf8')
+    for (const name of ['sun', 'moon', 'contrast', 'close'] as const)
+      expect(source).toContain(`'${icons[name]}'`)
+  })
+})
