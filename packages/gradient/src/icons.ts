@@ -6,6 +6,7 @@
 
 /** Shades interface icons: 24 × 24, 2 px round strokes in currentColor. */
 export const icons = {
+  accessibility: '<circle cx="12" cy="4.5" r="1.5" fill="currentColor" stroke="none"/><path d="M5 8.5c4.5 1.3 9.5 1.3 14 0M12 9.8V14m0 0-3 6.5M12 14l3 6.5"/>',
   add: '<path d="M12 5v14M5 12h14"/>',
   arrowDown: '<path d="M12 4v16M6 14l6 6 6-6"/>',
   arrowLeft: '<path d="M20 12H4M10 6l-6 6 6 6"/>',
@@ -25,6 +26,7 @@ export const icons = {
   chevronUp: '<path d="m6 15 6-6 6 6"/>',
   close: '<path d="M6 6l12 12M18 6 6 18"/>',
   code: '<path d="m8 7-5 5 5 5M16 7l5 5-5 5M13.5 4l-3 16"/>',
+  contrast: '<circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor" stroke="none"/>',
   copy: '<rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/>',
   crop: '<path d="M7 3v12a2 2 0 0 0 2 2h12"/><path d="M3 7h12a2 2 0 0 1 2 2v12"/>',
   delete: '<path d="M4 7h16M10 3h4M6 7l1 12a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2l1-12"/><path d="M10 11v6M14 11v6"/>',
