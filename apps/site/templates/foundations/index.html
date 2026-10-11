@@ -18,7 +18,10 @@
           <a href="#roles">{{foundations.roles.title}}</a>
           <a href="#type">{{foundations.type.title}}</a>
           <a href="#space">{{foundations.space.title}}</a>
+          <a href="#elevation">{{foundations.elevation.title}}</a>
+          <a href="#layout">{{foundations.layout.title}}</a>
           <a href="#motion">{{foundations.motion.title}}</a>
+          <a href="#contrast">{{foundations.contrast.title}}</a>
         </nav>
       </header>
 
@@ -82,7 +85,7 @@
             </div>
           </div>
           <div class="roles" data-theme="light" data-roles>
-            <table class="g-table">
+            <div class="table-scroll"><table class="g-table">
               <thead><tr><th>{{foundations.roles.token}}</th><th>{{foundations.roles.use}}</th><th>{{foundations.roles.sample}}</th></tr></thead>
               <tbody>
                 <tr><td><code>--g-bg</code></td><td>{{foundations.roles.bg}}</td><td><i class="chip" style="--c: var(--g-bg)"></i></td></tr>
@@ -97,7 +100,7 @@
                 <tr><td><code>--g-inverse</code></td><td>{{foundations.roles.inverse}}</td><td><i class="chip" style="--c: var(--g-inverse)"></i></td></tr>
                 <tr><td><code>--g-success</code> <code>--g-warning</code> <code>--g-danger</code></td><td>{{foundations.roles.status}}</td><td><span class="aa" style="color: var(--g-success)">Aa</span> <span class="aa" style="color: var(--g-warning)">Aa</span> <span class="aa" style="color: var(--g-danger)">Aa</span></td></tr>
               </tbody>
-            </table>
+            </table></div>
           </div>
           <p class="doc-note">{{foundations.roles.theming}}</p>
           <pre class="g-code"><code>/* nails-by-alynna: same components, the studio's own colours */
@@ -165,6 +168,47 @@
         </div>
       </section>
 
+      <section class="doc" id="elevation">
+        <div class="doc-head">
+          <h2>{{foundations.elevation.title}}</h2>
+          <p>{{foundations.elevation.text}}</p>
+        </div>
+        <div class="doc-body">
+          <ul class="elevations">
+            <li><i style="box-shadow: var(--g-shadow-sm)"></i><code>--g-shadow-sm</code><span>{{foundations.elevation.sm}}</span></li>
+            <li><i style="box-shadow: var(--g-shadow-md)"></i><code>--g-shadow-md</code><span>{{foundations.elevation.md}}</span></li>
+            <li><i style="box-shadow: var(--g-shadow-lg)"></i><code>--g-shadow-lg</code><span>{{foundations.elevation.lg}}</span></li>
+            <li><i class="elevation-accent" style="box-shadow: var(--g-shadow-accent)"></i><code>--g-shadow-accent</code><span>{{foundations.elevation.accent}}</span></li>
+          </ul>
+          <p class="doc-note">{{foundations.elevation.rule}}</p>
+        </div>
+      </section>
+
+      <section class="doc" id="layout">
+        <div class="doc-head">
+          <h2>{{foundations.layout.title}}</h2>
+          <p>{{foundations.layout.text}}</p>
+        </div>
+        <div class="doc-body">
+          <div class="table-scroll"><table class="g-table">
+            <thead><tr><th>{{foundations.layout.name}}</th><th>{{foundations.layout.width}}</th><th>{{foundations.layout.what}}</th></tr></thead>
+            <tbody>
+              <tr><td>{{foundations.layout.phone}}</td><td class="g-num">375–559 px</td><td>{{foundations.layout.phoneWhat}}</td></tr>
+              <tr><td>{{foundations.layout.large}}</td><td class="g-num">560–859 px</td><td>{{foundations.layout.largeWhat}}</td></tr>
+              <tr><td>{{foundations.layout.tablet}}</td><td class="g-num">860–1059 px</td><td>{{foundations.layout.tabletWhat}}</td></tr>
+              <tr><td>{{foundations.layout.desktop}}</td><td class="g-num">1060 px +</td><td>{{foundations.layout.desktopWhat}}</td></tr>
+            </tbody>
+          </table></div>
+          <dl class="specs specs--row">
+            <div><dt>{{foundations.layout.measure}}</dt><dd class="g-num">1240 px</dd></div>
+            <div><dt>{{foundations.layout.gutter}}</dt><dd class="g-num">20–48 px</dd></div>
+            <div><dt>{{foundations.layout.lineLength}}</dt><dd class="g-num">52–72 ch</dd></div>
+            <div><dt>{{foundations.layout.target}}</dt><dd class="g-num">≥ 44 px</dd></div>
+          </dl>
+          <p class="doc-note">{{foundations.layout.rule}}</p>
+        </div>
+      </section>
+
       <section class="doc" id="motion">
         <div class="doc-head">
           <h2>{{foundations.motion.title}}</h2>
@@ -198,6 +242,17 @@
             </li>
           </ul>
           <p class="doc-note">{{foundations.motion.reduced}}</p>
+        </div>
+      </section>
+
+      <section class="doc" id="contrast">
+        <div class="doc-head">
+          <h2>{{foundations.contrast.title}}</h2>
+          <p>{{foundations.contrast.text}}</p>
+        </div>
+        <div class="doc-body">
+          {{@contrast}}
+          <p class="doc-note">{{foundations.contrast.note}}</p>
         </div>
       </section>
     </main>

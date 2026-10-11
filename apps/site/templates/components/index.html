@@ -18,8 +18,12 @@
           <a href="#fields">{{components.fields.title}}</a>
           <a href="#choices">{{components.choices.title}}</a>
           <a href="#labels">{{components.labels.title}}</a>
+          <a href="#navigation">{{components.navigation.title}}</a>
+          <a href="#feedback">{{components.feedback.title}}</a>
+          <a href="#people">{{components.people.title}}</a>
           <a href="#disclosure">{{components.disclosure.title}}</a>
           <a href="#brand-parts">{{components.brand.title}}</a>
+          <a href="#access">{{components.access.title}}</a>
         </nav>
       </header>
 
@@ -60,6 +64,24 @@
             <li>{{components.buttons.rule2}}</li>
             <li>{{components.buttons.rule3}}</li>
           </ol>
+          <h3 class="doc-sub">{{components.buttons.statesTitle}}</h3>
+          <ul class="states">
+            <li><button class="g-btn g-btn--primary" type="button" tabindex="-1">{{components.buttons.save}}</button><span>{{components.buttons.stateDefault}}</span></li>
+            <li><button class="g-btn g-btn--primary is-hover" type="button" tabindex="-1">{{components.buttons.save}}</button><span>{{components.buttons.stateHover}}</span></li>
+            <li><button class="g-btn g-btn--primary is-focus" type="button" tabindex="-1">{{components.buttons.save}}</button><span>{{components.buttons.stateFocus}}</span></li>
+            <li><button class="g-btn g-btn--primary is-active" type="button" tabindex="-1">{{components.buttons.save}}</button><span>{{components.buttons.statePressed}}</span></li>
+            <li><button class="g-btn g-btn--primary" type="button" disabled>{{components.buttons.save}}</button><span>{{components.buttons.stateDisabled}}</span></li>
+            <li><button class="g-btn g-btn--primary" type="button" aria-busy="true" tabindex="-1">{{components.buttons.save}}<span class="g-loader" aria-hidden="true"><i></i><i></i><i></i></span></button><span>{{components.buttons.stateBusy}}</span></li>
+          </ul>
+          <h3 class="doc-sub">{{components.buttons.specTitle}}</h3>
+          <div class="table-scroll"><table class="g-table">
+            <thead><tr><th>{{components.buttons.size}}</th><th>{{components.buttons.height}}</th><th>{{components.buttons.padding}}</th><th>{{components.buttons.textSize}}</th><th>{{components.buttons.use}}</th></tr></thead>
+            <tbody>
+              <tr><td><code>g-btn--sm</code></td><td class="g-num">36 px</td><td class="g-num">14 px</td><td class="g-num">15 px</td><td>{{components.buttons.useSm}}</td></tr>
+              <tr><td><code>g-btn</code></td><td class="g-num">48 px</td><td class="g-num">22 px</td><td class="g-num">16 px</td><td>{{components.buttons.useMd}}</td></tr>
+              <tr><td><code>g-btn--lg</code></td><td class="g-num">56 px</td><td class="g-num">28 px</td><td class="g-num">17 px</td><td>{{components.buttons.useLg}}</td></tr>
+            </tbody>
+          </table></div>
         </div>
       </section>
 
@@ -159,6 +181,90 @@
         </div>
       </section>
 
+      <section class="doc" id="navigation">
+        <div class="doc-head">
+          <h2>{{components.navigation.title}}</h2>
+          <p>{{components.navigation.text}}</p>
+        </div>
+        <div class="doc-body">
+          <div class="demo">
+            <div class="g-tabs" role="tablist" aria-label="{{components.navigation.tabsLabel}}" data-tabs>
+              <button role="tab" type="button" aria-selected="true">{{components.navigation.tabOverview}}</button>
+              <button role="tab" type="button" aria-selected="false">{{components.navigation.tabFiles}}</button>
+              <button role="tab" type="button" aria-selected="false">{{components.navigation.tabActivity}}</button>
+              <button role="tab" type="button" aria-selected="false">{{components.navigation.tabSettings}}</button>
+            </div>
+            <nav aria-label="{{components.navigation.crumbLabel}}">
+              <ol class="g-breadcrumb">
+                <li><a href="{{@base}}">Gradient</a></li>
+                <li><a href="{{@to:components}}">{{nav.components}}</a></li>
+                <li aria-current="page">{{components.navigation.title}}</li>
+              </ol>
+            </nav>
+          </div>
+          <pre class="g-code"><code>&lt;div class="g-tabs" role="tablist"&gt;
+  &lt;button role="tab" aria-selected="true"&gt;Overview&lt;/button&gt; …
+&lt;/div&gt;
+&lt;ol class="g-breadcrumb"&gt;&lt;li&gt;&lt;a href="/"&gt;Gradient&lt;/a&gt;&lt;/li&gt; … &lt;li aria-current="page"&gt;Navigation&lt;/li&gt;&lt;/ol&gt;</code></pre>
+          <ol class="rules">
+            <li>{{components.navigation.rule1}}</li>
+            <li>{{components.navigation.rule2}}</li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="doc" id="feedback">
+        <div class="doc-head">
+          <h2>{{components.feedback.title}}</h2>
+          <p>{{components.feedback.text}}</p>
+        </div>
+        <div class="doc-body">
+          <div class="demo demo--flat">
+            <div class="g-message g-message--success" role="status">{{@icon:success}}<div><b>{{components.feedback.successTitle}}</b><p>{{components.feedback.successText}}</p></div></div>
+            <div class="g-message g-message--warning">{{@icon:warning}}<div><b>{{components.feedback.warningTitle}}</b><p>{{components.feedback.warningText}}</p></div><a class="g-link" href="#feedback">{{components.feedback.warningAction}}</a></div>
+            <div class="g-message g-message--danger" role="alert">{{@icon:error}}<div><b>{{components.feedback.dangerTitle}}</b><p>{{components.feedback.dangerText}}</p></div></div>
+          </div>
+          <div class="demo">
+            <div class="progress-demo">
+              <span class="g-label" id="progress-label">{{components.feedback.progress}}</span>
+              <div class="g-progress" role="progressbar" aria-labelledby="progress-label" aria-valuemin="0" aria-valuemax="100" aria-valuenow="64" style="--value: 0.64"><i></i></div>
+              <span class="g-num g-hint">64%</span>
+            </div>
+            <div class="demo-row demo-row--center">
+              <span class="g-toast">{{@icon:check}}{{components.feedback.toast}}</span>
+            </div>
+          </div>
+          <pre class="g-code"><code>&lt;div class="g-message g-message--success" role="status"&gt;&lt;svg …/&gt;&lt;div&gt;&lt;b&gt;Saved&lt;/b&gt;&lt;p&gt;…&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class="g-progress" role="progressbar" aria-valuenow="64" style="--value: .64"&gt;&lt;i&gt;&lt;/i&gt;&lt;/div&gt;
+&lt;span class="g-toast"&gt;&lt;svg …/&gt;Link copied&lt;/span&gt;</code></pre>
+          <ol class="rules">
+            <li>{{components.feedback.rule1}}</li>
+            <li>{{components.feedback.rule2}}</li>
+            <li>{{components.feedback.rule3}}</li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="doc" id="people">
+        <div class="doc-head">
+          <h2>{{components.people.title}}</h2>
+          <p>{{components.people.text}}</p>
+        </div>
+        <div class="doc-body">
+          <div class="demo">
+            <div class="demo-row">
+              <span class="g-avatar g-avatar--sm" style="--g-avatar-bg: var(--g-family-mera)" aria-hidden="true">AP</span>
+              <span class="g-avatar" style="--g-avatar-bg: var(--g-family-sage)" aria-hidden="true">IR</span>
+              <span class="g-avatar g-avatar--lg" style="--g-avatar-bg: var(--g-red-500)" aria-hidden="true">CB</span>
+              <span class="people-name"><b>Ana Popescu</b><small>{{components.people.role}}</small></span>
+            </div>
+          </div>
+          <pre class="g-code"><code>&lt;span class="g-avatar" style="--g-avatar-bg: var(--g-family-sage)"&gt;IR&lt;/span&gt;
+&lt;span class="g-avatar g-avatar--lg"&gt;&lt;img src="…" alt="Ion Rusu"&gt;&lt;/span&gt;</code></pre>
+          <p class="doc-note">{{components.people.rule}}</p>
+        </div>
+      </section>
+
       <section class="doc" id="disclosure">
         <div class="doc-head">
           <h2>{{components.disclosure.title}}</h2>
@@ -175,14 +281,14 @@
               <p>{{components.disclosure.a2}}</p>
             </details>
           </div>
-          <table class="g-table">
+          <div class="table-scroll"><table class="g-table">
             <thead><tr><th>{{components.disclosure.colProject}}</th><th>{{components.disclosure.colStatus}}</th><th>{{components.disclosure.colPages}}</th></tr></thead>
             <tbody>
               <tr><td>PageRecast</td><td><span class="g-badge g-badge--success">{{components.labels.shipped}}</span></td><td class="g-num">5</td></tr>
               <tr><td>Gradient</td><td><span class="g-badge g-badge--accent">{{components.labels.new}}</span></td><td class="g-num">7</td></tr>
               <tr><td>ImageReframe</td><td><span class="g-badge">{{components.labels.draft}}</span></td><td class="g-num">0</td></tr>
             </tbody>
-          </table>
+          </table></div>
         </div>
       </section>
 
@@ -204,6 +310,26 @@
 &lt;span class="g-loader"&gt;&lt;i&gt;&lt;/i&gt;&lt;i&gt;&lt;/i&gt;&lt;i&gt;&lt;/i&gt;&lt;/span&gt;
 &lt;hr class="g-spectrum"&gt;</code></pre>
           <p class="doc-note">{{components.brand.rule}}</p>
+        </div>
+      </section>
+
+      <section class="doc" id="access">
+        <div class="doc-head">
+          <h2>{{components.access.title}}</h2>
+          <p>{{components.access.text}}</p>
+        </div>
+        <div class="doc-body">
+          <div class="table-scroll"><table class="g-table">
+            <thead><tr><th>{{components.access.part}}</th><th>{{components.access.keyboard}}</th><th>{{components.access.reader}}</th></tr></thead>
+            <tbody>
+              <tr><td>{{components.buttons.title}}</td><td>{{components.access.btnKeys}}</td><td>{{components.access.btnReader}}</td></tr>
+              <tr><td>{{components.fields.title}}</td><td>{{components.access.fieldKeys}}</td><td>{{components.access.fieldReader}}</td></tr>
+              <tr><td>{{components.choices.title}}</td><td>{{components.access.choiceKeys}}</td><td>{{components.access.choiceReader}}</td></tr>
+              <tr><td>{{components.navigation.title}}</td><td>{{components.access.navKeys}}</td><td>{{components.access.navReader}}</td></tr>
+              <tr><td>{{components.feedback.title}}</td><td>—</td><td>{{components.access.feedbackReader}}</td></tr>
+            </tbody>
+          </table></div>
+          <p class="doc-note">{{components.access.note}}</p>
         </div>
       </section>
     </main>
