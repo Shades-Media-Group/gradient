@@ -2695,3 +2695,115 @@ body {
     grid-template-columns: minmax(0, 1fr);
   }
 }
+
+/* Small text that sits under a name keeps its own tight leading. */
+.family-row span,
+.pairings small,
+.people-name small,
+.cast-role {
+  display: block;
+  line-height: 1.35;
+}
+
+.family-row span {
+  margin-top: 4px;
+}
+
+/* The ramps: a hairline edge so the darkest step shows on ink. */
+.ramp {
+  box-shadow: 0 0 0 1px var(--g-line);
+}
+
+@media (max-width: 720px) {
+  /* On phones the ramps stand up: one band per step, the number and the hex side by side. */
+  .ramp {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .ramp span {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 40px;
+    padding: 0 14px;
+  }
+
+  .ramp b,
+  .ramp-key i {
+    position: static;
+  }
+
+  .ramp-key {
+    order: 0;
+    min-height: 64px !important;
+  }
+
+  .ramp-key i {
+    font-size: 1.25rem;
+  }
+
+  .ramp-key b {
+    order: 1;
+  }
+
+  .ramps {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
+
+  .ramps-rule {
+    grid-column: 1 / -1;
+  }
+
+  /* The email switcher stacks rather than overflowing a small phone. */
+  .email-switch {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    justify-self: stretch;
+    border-radius: var(--g-radius-lg);
+  }
+
+  .email-switch > button {
+    border-radius: var(--g-radius-md);
+  }
+}
+
+.radii span,
+.elevations span,
+.states span {
+  display: block;
+  line-height: 1.4;
+}
+
+.g-table code {
+  white-space: nowrap;
+}
+
+/* Long words in long languages (Russian, Romanian, Turkish) on the smallest phones. */
+h1,
+h2,
+.family-row span,
+.split-layers h3 {
+  hyphens: auto;
+  overflow-wrap: break-word;
+}
+
+@media (max-width: 400px) {
+  .hero h1 {
+    font-size: clamp(2.5rem, 12.5vw, 3.5rem);
+  }
+
+  .family-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Ink and paper slices keep an edge on a ground of their own colour. */
+.share {
+  box-shadow: 0 0 0 1px var(--g-line-strong);
+}
+
+.share-ink {
+  box-shadow: inset 1px 0 0 var(--g-line-strong);
+}
