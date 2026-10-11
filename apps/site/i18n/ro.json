@@ -15,7 +15,8 @@
     "cta": "Instalează",
     "menu": "Meniu",
     "onThisPage": "Pe această pagină",
-    "email": "Email"
+    "email": "Email",
+    "accessibility": "Accesibilitate"
   },
   "footer": {
     "label": "Site",
@@ -152,6 +153,26 @@
           "a": "Este roșul din fișierul logo Shades de pe shades.md, sursa de adevăr a brandului. Explorările anterioare au folosit alte nuanțe de roșu; Gradient păstrează una singură."
         }
       }
+    },
+    "about": {
+      "title": "Shades Media Group.",
+      "text": "O agenție de creație și tehnologie din Chișinău, Moldova. Construim identități de brand, site-uri și produse pentru clienți și publicăm open source instrumentele pe care le facem pe parcurs.",
+      "based": "Cu sediul în",
+      "basedValue": "Chișinău, Moldova",
+      "disciplines": "Discipline",
+      "disciplinesValue": "Brand, interfață, web și marketing",
+      "open": "Open source",
+      "languages": "Limbile site-ului"
+    },
+    "products": {
+      "title": "Familia de produse.",
+      "text": "Gradient e sistemul; produsele sunt construite pe el. Fiecare poate purta propriul simbol și toate sunt făcute de Shades.",
+      "link": "Cum poartă produsele brandul",
+      "gradient": "Sistemul de design: tokenuri, componente, iconițe, email și brandul, într-un singur pachet și pe acest site.",
+      "pagerecast": "Orice pagină web, transformată în straturi Figma editabile. O extensie Chrome și un plugin Figma, gratuite.",
+      "imagereframe": "Export și import de imagini pentru Figma, gratuit și open source. Primul produs care pornește de la Gradient.",
+      "concept": "Simbol provizoriu, nu final.",
+      "brief": "Citește brieful"
     }
   },
   "brand": {
@@ -392,7 +413,7 @@
       "shadesMark": "Simbolul Shades și logo-ul complet",
       "gradientMark": "Simbolul Shades lângă cuvântul Gradient",
       "pagerecastMark": "Simbol propriu: două pagini suprapuse",
-      "imagereframeMark": "Simbol propriu, încă nedesenat",
+      "imagereframeMark": "Simbol propriu: o imagine orizontală reîncadrată pe verticală (simbol provizoriu)",
       "client": "Proiecte pentru clienți",
       "clientMark": "Brandul propriu al clientului, pe rolurile Gradient",
       "note": "Un produs poate avea propriul simbol. Folosește totuși tipografia, rolurile, iconițele și regulile Gradient, iar mențiunea lui de credit nu se schimbă niciodată."
@@ -892,6 +913,108 @@
       "rule2": "Trimite mereu și partea de text simplu; unii cititori și unele filtre văd doar atât.",
       "rule3": "Markupul Gmail apare doar pentru expeditorii înregistrați la Google care trec de SPF și DKIM. Îl poți include fără risc în orice caz.",
       "rule4": "Brandurile clienților își transmit culorile, logo-ul și fontul în brand; structura rămâne aceeași."
+    }
+  },
+  "accessibility": {
+    "title": "Accesibilitate: produse Shades pentru toată lumea | Gradient",
+    "description": "Standardul de accesibilitate al fiecărui produs Shades, ce promite, panoul de afișare, stadiul fiecărui produs și cum raportezi o barieră.",
+    "heading": "Accesibilitate",
+    "lead": "Fiecare produs Shades e făcut pentru oameni care văd, aud, se mișcă și citesc diferit. Iată standardul pe care îl urmăm, cum îl verificăm și unde încă nu ajungem.",
+    "standard": {
+      "title": "Standardul",
+      "text": "O singură țintă pentru tot ce lansează Shades, de la acest site la aplicațiile clienților și emailurile pe care le trimit.",
+      "target": "Țintă",
+      "europe": "Standard european",
+      "law": "Legislație europeană",
+      "lawValue": "Actul european privind accesibilitatea, din iunie 2025",
+      "languages": "Limbile acestui site",
+      "note": "WCAG 2.2 AA e o țintă, nu o certificare. Acolo unde un produs nu o atinge, o spune mai jos."
+    },
+    "promises": {
+      "title": "Ce promite fiecare produs",
+      "text": "Zece lucruri pe care le face un produs Shades înainte de lansare. Sunt incluse în Gradient, așa că un produs nou pornește cu ele.",
+      "contrast": "Contrast lizibil",
+      "contrastText": "Fiecare culoare de text atinge 4.5 : 1 față de fundal, în tema luminoasă și în cea întunecată. Altfel, un test oprește buildul.",
+      "keyboard": "Totul de la tastatură",
+      "keyboardText": "Totul merge fără mouse: Tab avansează, Enter și Space acționează, Escape închide, săgețile te mută în interiorul grupurilor.",
+      "focus": "Focus vizibil",
+      "focusText": "Elementul cu focus are mereu un inel de doi pixeli, cu spațiu, în ambele teme.",
+      "motion": "Mișcare sub control",
+      "motionText": "Animațiile se opresc când sistemul sau panoul de afișare cere mișcare redusă. Nimic important nu depinde de mișcare.",
+      "resize": "Text care crește",
+      "resizeText": "Paginile se rearanjează când textul e mărit sau la zoom de 200%, până la un ecran de 320 px lățime, fără derulare laterală.",
+      "language": "Limba potrivită",
+      "languageText": "Fiecare pagină își declară limba, ca cititoarele de ecran să o pronunțe corect și instrumentele de traducere să știe ce citesc.",
+      "images": "Imagini explicate",
+      "imagesText": "Imaginile cu sens au text alternativ scris ca o legendă. Cele decorative sunt ascunse de cititoarele de ecran.",
+      "forms": "Formulare care ajută",
+      "formsText": "Fiecare câmp are o etichetă vizibilă. Erorile spun ce nu a mers și cum se repară, și sunt anunțate.",
+      "targets": "Loc pentru deget",
+      "targetsText": "Pe ecranele tactile, zona de atingere a controalelor are cel puțin 44 px, chiar dacă par mai mici, ca punctul de afișare de 20 px.",
+      "colour": "Niciodată doar culoarea",
+      "colourText": "Starea se arată prin cuvinte sau iconițe, nu doar prin culoare: un badge are etichetă, o eroare are text."
+    },
+    "panel": {
+      "title": "Panoul de afișare",
+      "text": "Îl deschide punctul mic din colțul fiecărui site Shades. Alegerile rămân doar în browser.",
+      "option": "Opțiune",
+      "does": "Ce face",
+      "helps": "Cui îi folosește",
+      "themeDoes": "Luminoasă, întunecată sau setarea sistemului",
+      "themeHelps": "Sensibilitate la lumină, migrene, citit noaptea",
+      "textDoes": "Mărește toată pagina cu 15% și o rearanjează",
+      "textHelps": "Vedere slabă, ecrane mici",
+      "contrastDoes": "Textul discret și liniile fine trec la intensitate maximă",
+      "contrastHelps": "Sensibilitate scăzută la contrast, soare puternic",
+      "motionDoes": "Oprește animațiile și derularea lină",
+      "motionHelps": "Tulburări vestibulare, de atenție, rău de mișcare",
+      "linksDoes": "Subliniază toate linkurile",
+      "linksHelps": "Daltonism, efort cognitiv",
+      "readingDoes": "Spațiere mai largă între litere, cuvinte și rânduri",
+      "readingHelps": "Dislexie, citit într-o a doua limbă",
+      "note": "Panoul se adaugă setărilor de sistem ale cititorului și nu le suprascrie niciodată: o cerere de mișcare redusă din sistem are mereu prioritate."
+    },
+    "products": {
+      "title": "Produsele azi",
+      "text": "Unde e fiecare produs și ce a rămas deschis. Actualizăm tabelul când se schimbă ceva.",
+      "product": "Produs",
+      "checked": "Verificat",
+      "gaps": "Lipsuri cunoscute",
+      "gradientChecked": "Fiecare build verifică titlurile, numele, etichetele, linkurile, contrastul și macheta la două lățimi, în unsprezece limbi.",
+      "gradientGaps": "Încă netestat cap-coadă cu VoiceOver și NVDA. Ilustrațiile personajelor se bazează pe numele scrise lângă ele.",
+      "pagerecastChecked": "Site-ul are panoul de afișare și aceleași verificări automate. Extensia și pluginul urmează convențiile de tastatură din Figma și Chrome.",
+      "pagerecastGaps": "Panoul pluginului Figma e dens prin design; cele mai mici controale au 28 px. E planificată o verificare a extensiei cu cititorul de ecran.",
+      "nailsChecked": "Construită la nivelul WCAG 2.2 AA, cu zone de atingere de 44 px, mișcare redusă și etichete în trei limbi.",
+      "nailsGaps": "Navigarea prin calendarul de programări cu cititorul de ecran are nevoie de un test dedicat.",
+      "lmsChecked": "Gândită întâi pentru telefon, zone de atingere de 44 px, mișcare redusă respectată peste tot.",
+      "lmsGaps": "Ilustrațiile proprii pentru mâncare și antrenamente au nevoie de text alternativ mai complet.",
+      "email": "Emailurile Shades",
+      "emailChecked": "Text real, nu imagini; o parte de text simplu; o ordine de citire logică; limba declarată.",
+      "emailGaps": "În Gmail și Outlook, culorile pentru modul întunecat depind de inversarea făcută de clientul de email.",
+      "note": "Lipsurile cunoscute sunt listate pentru că sunt reale. Un produs scoate o lipsă de pe listă doar după ce e reparată și verificată."
+    },
+    "testing": {
+      "title": "Cum testăm",
+      "text": "Mașinile prind la fiecare build tot ce e mecanic. Oamenii verifică înainte de fiecare lansare ce nu pot prinde mașinile.",
+      "autoTitle": "La fiecare build",
+      "auto1": "Contrast: fiecare rol de text și de fundal e măsurat în ambele teme; sub 4.5 : 1, buildul eșuează.",
+      "auto2": "Structură: un singur h1 pe pagină, niciun nivel de titlu sărit, un nume pe fiecare buton și link, o etichetă pe fiecare câmp, id-uri unice.",
+      "auto3": "Machetă: fiecare pagină, în fiecare limbă, la 375 și 1440 px, fără depășire laterală și fără erori în consolă.",
+      "auto4": "Limbă: fiecare pagină își declară limba și trimite la aceeași pagină în toate celelalte limbi.",
+      "manualTitle": "Înainte de fiecare lansare",
+      "manual1": "Tot fluxul doar cu tastatura, cu focusul mereu vizibil.",
+      "manual2": "VoiceOver pe macOS și iOS, NVDA pe Windows: fiecare control își spune numele și fiecare schimbare e anunțată.",
+      "manual3": "Zoom la 200% și text mărit în browser: nimic nu e tăiat, nimic nu se suprapune.",
+      "manual4": "Mișcare redusă și ambele teme activate, în sistem și în panoul de afișare.",
+      "manual5": "Un telefon ținut într-o mână: fiecare control la îndemână și de cel puțin 44 px.",
+      "manual6": "Textul citit cu voce tare: cuvinte simple, propoziții scurte, niciun sens transmis doar prin culoare."
+    },
+    "report": {
+      "title": "Raportează o barieră",
+      "text": "Dacă ceva dintr-un produs Shades îți stă în cale, spune-ne. Un om citește fiecare raport și răspunde în cel mult trei zile lucrătoare.",
+      "email": "Scrie echipei de suport",
+      "issue": "Deschide un tichet",
+      "note": "Spune ce încercai să faci, ce te-a împiedicat și ce dispozitiv, browser și tehnologie asistivă ai folosit."
     }
   }
 }

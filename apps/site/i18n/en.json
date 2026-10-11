@@ -15,7 +15,8 @@
     "cta": "Install",
     "menu": "Menu",
     "onThisPage": "On this page",
-    "email": "Email"
+    "email": "Email",
+    "accessibility": "Accessibility"
   },
   "footer": {
     "label": "Site",
@@ -152,6 +153,26 @@
           "a": "It is the red of the Shades logo file on shades.md, which is the brand's source of truth. Earlier explorations used other reds; Gradient keeps one."
         }
       }
+    },
+    "about": {
+      "title": "Shades Media Group.",
+      "text": "A creative and technology agency in Chișinău, Moldova. We build brand identities, websites and products for clients, and we open-source the tools we make along the way.",
+      "based": "Based in",
+      "basedValue": "Chișinău, Moldova",
+      "disciplines": "Disciplines",
+      "disciplinesValue": "Brand, interface, web and marketing",
+      "open": "Open source",
+      "languages": "Website languages"
+    },
+    "products": {
+      "title": "The family of products.",
+      "text": "Gradient is the system; the products are built on it. Each one can wear its own mark, and every one is built by Shades.",
+      "link": "How products wear the brand",
+      "gradient": "The design system: tokens, components, icons, email and the brand, as one package and this site.",
+      "pagerecast": "Any web page into editable Figma layers. A free Chrome extension and Figma plugin.",
+      "imagereframe": "Image export and import for Figma, free and open source. The first product to start from Gradient.",
+      "concept": "Working mark, not final.",
+      "brief": "Read the brief"
     }
   },
   "brand": {
@@ -392,7 +413,7 @@
       "shadesMark": "The Shades mark and lockup",
       "gradientMark": "The Shades mark beside the word Gradient",
       "pagerecastMark": "Its own mark: two overlapping pages",
-      "imagereframeMark": "Its own mark, to be drawn",
+      "imagereframeMark": "Its own mark: a landscape image reframed as a portrait (working mark)",
       "client": "Client work",
       "clientMark": "The client’s own brand, on Gradient roles",
       "note": "A product may have its own mark. It still uses Gradient’s type, roles, icons and rules, and its credit line never changes."
@@ -892,6 +913,108 @@
       "rule2": "Always send the plain-text part; some readers and filters only see that.",
       "rule3": "Gmail markup shows only for senders registered with Google that pass SPF and DKIM. It is safe to include either way.",
       "rule4": "Client brands pass their own colours, logo and font in brand; the structure stays the same."
+    }
+  },
+  "accessibility": {
+    "title": "Accessibility: how Shades products work for everyone | Gradient",
+    "description": "The accessibility standard every Shades product meets, what it promises, the display panel, the status of each product and how to report a barrier.",
+    "heading": "Accessibility",
+    "lead": "Every Shades product is built to be used by people who see, hear, move and read differently. Here is the standard we hold, how we check it, and where we still fall short.",
+    "standard": {
+      "title": "The standard",
+      "text": "One target for everything Shades ships, from this site to client apps and the emails they send.",
+      "target": "Target",
+      "europe": "European standard",
+      "law": "European law",
+      "lawValue": "European Accessibility Act, from June 2025",
+      "languages": "Languages on this site",
+      "note": "WCAG 2.2 AA is the target, not a claim of certification. Where a product falls short, it says so below."
+    },
+    "promises": {
+      "title": "What every product promises",
+      "text": "Ten things a Shades product does before it ships. They are built into Gradient, so a new product starts with them.",
+      "contrast": "Readable contrast",
+      "contrastText": "Every text colour reaches 4.5 : 1 against its background in light and dark. A test fails the build otherwise.",
+      "keyboard": "Keyboard all the way",
+      "keyboardText": "Everything works without a mouse: Tab moves, Enter and Space act, Escape closes, arrow keys move inside groups.",
+      "focus": "Visible focus",
+      "focusText": "The focused element always shows a two-pixel ring with a gap, in both themes.",
+      "motion": "Motion you control",
+      "motionText": "Animations stop when the system or the display panel asks for less motion. Nothing important depends on movement.",
+      "resize": "Text that grows",
+      "resizeText": "Pages reflow when text is enlarged or zoomed to 200 %, down to a 320 px wide screen, without sideways scrolling.",
+      "language": "The right language",
+      "languageText": "Every page declares its language, so screen readers pronounce it correctly and translation tools know what they read.",
+      "images": "Images explained",
+      "imagesText": "Meaningful images have alt text written like a caption. Decorative ones are hidden from screen readers.",
+      "forms": "Forms that help",
+      "formsText": "Every field has a visible label. Errors say what went wrong and how to fix it, and are announced.",
+      "targets": "Room to tap",
+      "targetsText": "Controls are at least 44 px to hit on touch screens, even when they look smaller, like the 20 px display dot.",
+      "colour": "Never colour alone",
+      "colourText": "State is shown with words or icons as well as colour: a badge has a label, an error has text."
+    },
+    "panel": {
+      "title": "The display panel",
+      "text": "The small dot in the corner of every Shades site opens it. Choices are kept in the browser only.",
+      "option": "Option",
+      "does": "What it does",
+      "helps": "Who it helps",
+      "themeDoes": "Light, dark, or the system setting",
+      "themeHelps": "Light sensitivity, migraine, reading at night",
+      "textDoes": "Enlarges the whole page by 15 % and reflows it",
+      "textHelps": "Low vision, small screens",
+      "contrastDoes": "Quiet text and hairlines go to full strength",
+      "contrastHelps": "Low contrast sensitivity, bright sunlight",
+      "motionDoes": "Stops animations and smooth scrolling",
+      "motionHelps": "Vestibular disorders, attention, motion sickness",
+      "linksDoes": "Underlines every link",
+      "linksHelps": "Colour blindness, cognitive load",
+      "readingDoes": "Wider letter, word and line spacing",
+      "readingHelps": "Dyslexia, reading in a second language",
+      "note": "The panel adds to the reader’s own system settings and never overrides them: a system request for less motion always wins."
+    },
+    "products": {
+      "title": "Products today",
+      "text": "Where each product stands, and what is still open. We update this table when something changes.",
+      "product": "Product",
+      "checked": "Checked",
+      "gaps": "Known gaps",
+      "gradientChecked": "Every build checks headings, names, labels, links, contrast and layout at two widths in eleven languages.",
+      "gradientGaps": "Not yet tested end to end with VoiceOver and NVDA. Character illustrations rely on their names beside them.",
+      "pagerecastChecked": "The website has the display panel and the same automated checks. The extension and plugin follow Figma’s and Chrome’s keyboard conventions.",
+      "pagerecastGaps": "The Figma plugin panel is dense by design; its smallest controls are 28 px. A screen-reader pass of the extension is planned.",
+      "nailsChecked": "Built to WCAG 2.2 AA with 44 px touch targets, reduced motion and labels in three languages.",
+      "nailsGaps": "Booking calendar navigation by screen reader needs a dedicated test.",
+      "lmsChecked": "Phone-first, 44 px targets, reduced motion respected throughout.",
+      "lmsGaps": "Custom food and training illustrations need fuller alt text.",
+      "email": "Shades emails",
+      "emailChecked": "Real text, not images; a plain-text part; sensible reading order; language declared.",
+      "emailGaps": "Dark-mode colours in Gmail and Outlook depend on the client’s own inversion.",
+      "note": "Known gaps are listed because they are real. A product moves a gap off this list only after it is fixed and checked."
+    },
+    "testing": {
+      "title": "How we test",
+      "text": "Machines catch what is mechanical on every build. People check what machines cannot, before every release.",
+      "autoTitle": "On every build",
+      "auto1": "Contrast: every text and background role is measured in both themes; below 4.5 : 1 fails.",
+      "auto2": "Structure: one h1 per page, no skipped heading levels, a name on every button and link, a label on every field, unique ids.",
+      "auto3": "Layout: every page in every language at 375 and 1440 px, with no sideways overflow and no console errors.",
+      "auto4": "Language: every page declares its language and links to the same page in every other language.",
+      "manualTitle": "Before every release",
+      "manual1": "The whole flow with the keyboard only, with focus always visible.",
+      "manual2": "VoiceOver on macOS and iOS, NVDA on Windows: every control names itself and every change is announced.",
+      "manual3": "Zoom to 200 % and enlarge text in the browser: nothing is cut off or overlaps.",
+      "manual4": "Reduced motion and both themes switched on, at the system and in the display panel.",
+      "manual5": "A phone held in one hand: every control in reach and at least 44 px.",
+      "manual6": "Copy read aloud: plain words, short sentences, no meaning carried by colour alone."
+    },
+    "report": {
+      "title": "Report a barrier",
+      "text": "If something in a Shades product gets in your way, tell us. A person reads every report and answers within three working days.",
+      "email": "Email support",
+      "issue": "Open an issue",
+      "note": "Say what you were trying to do, what got in the way, and which device, browser and assistive technology you used."
     }
   }
 }

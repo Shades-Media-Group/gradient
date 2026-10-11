@@ -15,7 +15,8 @@
     "cta": "Installa",
     "menu": "Menu",
     "onThisPage": "In questa pagina",
-    "email": "Email"
+    "email": "Email",
+    "accessibility": "Accessibilità"
   },
   "footer": {
     "label": "Sito",
@@ -152,6 +153,26 @@
           "a": "È il rosso del file del logo Shades su shades.md, la fonte di verità del brand. Le esplorazioni precedenti usavano altri rossi; Gradient ne tiene uno solo."
         }
       }
+    },
+    "about": {
+      "title": "Shades Media Group.",
+      "text": "Un'agenzia creativa e tecnologica di Chișinău, in Moldavia. Costruiamo identità di brand, siti web e prodotti per i clienti, e rendiamo open source gli strumenti che creiamo lungo la strada.",
+      "based": "Sede",
+      "basedValue": "Chișinău, Moldavia",
+      "disciplines": "Discipline",
+      "disciplinesValue": "Brand, interfaccia, web e marketing",
+      "open": "Open source",
+      "languages": "Lingue del sito"
+    },
+    "products": {
+      "title": "La famiglia di prodotti.",
+      "text": "Gradient è il sistema; i prodotti ci sono costruiti sopra. Ognuno può avere un marchio proprio, e tutti sono costruiti da Shades.",
+      "link": "Come i prodotti indossano il brand",
+      "gradient": "Il design system: token, componenti, icone, email e il brand, in un solo pacchetto e in questo sito.",
+      "pagerecast": "Qualsiasi pagina web in livelli Figma modificabili. Un'estensione per Chrome e un plugin per Figma, gratis.",
+      "imagereframe": "Esportazione e importazione di immagini per Figma, gratis e open source. Il primo prodotto a nascere da Gradient.",
+      "concept": "Marchio provvisorio, non definitivo.",
+      "brief": "Leggi il brief"
     }
   },
   "brand": {
@@ -392,7 +413,7 @@
       "shadesMark": "Il marchio e il lockup Shades",
       "gradientMark": "Il marchio Shades accanto alla parola Gradient",
       "pagerecastMark": "Un marchio proprio: due pagine sovrapposte",
-      "imagereframeMark": "Un marchio proprio, ancora da disegnare",
+      "imagereframeMark": "Un marchio proprio: un'immagine orizzontale reinquadrata in verticale (marchio provvisorio)",
       "client": "Lavori per i clienti",
       "clientMark": "Il brand del cliente, sui ruoli di Gradient",
       "note": "Un prodotto può avere un marchio proprio. Usa comunque caratteri, ruoli, icone e regole di Gradient, e la sua riga di credito non cambia mai."
@@ -892,6 +913,108 @@
       "rule2": "Invia sempre la parte in testo semplice; alcuni lettori e filtri vedono solo quella.",
       "rule3": "Il markup Gmail compare solo per i mittenti registrati presso Google che superano SPF e DKIM. Includerlo è comunque sicuro.",
       "rule4": "I brand dei clienti passano colori, logo e font propri in brand; la struttura resta la stessa."
+    }
+  },
+  "accessibility": {
+    "title": "Accessibilità: prodotti Shades per tutti | Gradient",
+    "description": "Lo standard di accessibilità di ogni prodotto Shades, cosa promette, il pannello di visualizzazione, lo stato di ogni prodotto e come segnalare una barriera.",
+    "heading": "Accessibilità",
+    "lead": "Ogni prodotto Shades è pensato per chi vede, sente, si muove e legge in modo diverso. Ecco lo standard che seguiamo, come lo verifichiamo e dove non ci arriviamo ancora.",
+    "standard": {
+      "title": "Lo standard",
+      "text": "Un solo obiettivo per tutto ciò che Shades pubblica, da questo sito alle app dei clienti e alle email che inviano.",
+      "target": "Obiettivo",
+      "europe": "Norma europea",
+      "law": "Legge europea",
+      "lawValue": "Atto europeo sull'accessibilità, da giugno 2025",
+      "languages": "Lingue di questo sito",
+      "note": "WCAG 2.2 AA è l'obiettivo, non una certificazione. Dove un prodotto non ci arriva, lo dice qui sotto."
+    },
+    "promises": {
+      "title": "Cosa promette ogni prodotto",
+      "text": "Dieci cose che un prodotto Shades fa prima di essere pubblicato. Sono integrate in Gradient, quindi ogni nuovo prodotto parte già con queste.",
+      "contrast": "Contrasto leggibile",
+      "contrastText": "Ogni colore del testo raggiunge 4,5 : 1 sul proprio sfondo, in chiaro e in scuro. Altrimenti un test fa fallire la build.",
+      "keyboard": "Tutto da tastiera",
+      "keyboardText": "Tutto funziona senza mouse: Tab sposta, Invio e Spazio attivano, Esc chiude, le frecce si muovono dentro i gruppi.",
+      "focus": "Focus visibile",
+      "focusText": "L'elemento con il focus mostra sempre un anello di due pixel con uno stacco, in entrambi i temi.",
+      "motion": "Movimento sotto controllo",
+      "motionText": "Le animazioni si fermano quando il sistema o il pannello di visualizzazione chiedono meno movimento. Nulla di importante dipende dal movimento.",
+      "resize": "Testo che cresce",
+      "resizeText": "Le pagine si riadattano quando il testo viene ingrandito o lo zoom arriva al 200%, fino a uno schermo largo 320 px, senza scorrimento orizzontale.",
+      "language": "La lingua giusta",
+      "languageText": "Ogni pagina dichiara la propria lingua, così gli screen reader la pronunciano bene e gli strumenti di traduzione sanno cosa stanno leggendo.",
+      "images": "Immagini spiegate",
+      "imagesText": "Le immagini che contano hanno un testo alternativo scritto come una didascalia. Quelle decorative sono nascoste agli screen reader.",
+      "forms": "Moduli che aiutano",
+      "formsText": "Ogni campo ha un'etichetta visibile. Gli errori dicono cosa è andato storto e come correggerlo, e vengono annunciati.",
+      "targets": "Spazio per toccare",
+      "targetsText": "Sui touch screen i controlli hanno un'area di tocco di almeno 44 px, anche quando sembrano più piccoli, come il punto di visualizzazione da 20 px.",
+      "colour": "Mai solo il colore",
+      "colourText": "Lo stato si mostra con parole o icone oltre che con il colore: un badge ha un'etichetta, un errore ha un testo."
+    },
+    "panel": {
+      "title": "Il pannello di visualizzazione",
+      "text": "Si apre dal piccolo punto nell'angolo di ogni sito Shades. Le scelte restano solo nel browser.",
+      "option": "Opzione",
+      "does": "Cosa fa",
+      "helps": "A chi serve",
+      "themeDoes": "Chiaro, scuro o l'impostazione di sistema",
+      "themeHelps": "Sensibilità alla luce, emicrania, lettura di notte",
+      "textDoes": "Ingrandisce l'intera pagina del 15% e la riadatta",
+      "textHelps": "Ipovisione, schermi piccoli",
+      "contrastDoes": "Testi tenui e linee sottili passano a piena intensità",
+      "contrastHelps": "Bassa sensibilità al contrasto, luce del sole diretta",
+      "motionDoes": "Ferma le animazioni e lo scorrimento fluido",
+      "motionHelps": "Disturbi vestibolari, attenzione, chinetosi",
+      "linksDoes": "Sottolinea ogni link",
+      "linksHelps": "Daltonismo, carico cognitivo",
+      "readingDoes": "Spaziatura più ampia tra lettere, parole e righe",
+      "readingHelps": "Dislessia, lettura in una seconda lingua",
+      "note": "Il pannello si aggiunge alle impostazioni di sistema di chi legge e non le sovrascrive mai: se il sistema chiede meno movimento, vince sempre il sistema."
+    },
+    "products": {
+      "title": "I prodotti oggi",
+      "text": "A che punto è ogni prodotto e cosa resta aperto. Aggiorniamo questa tabella quando qualcosa cambia.",
+      "product": "Prodotto",
+      "checked": "Verificato",
+      "gaps": "Lacune note",
+      "gradientChecked": "Ogni build controlla titoli, nomi, etichette, link, contrasto e layout a due larghezze in undici lingue.",
+      "gradientGaps": "Non ancora testato dall'inizio alla fine con VoiceOver e NVDA. Le illustrazioni dei personaggi si affidano ai nomi scritti accanto.",
+      "pagerecastChecked": "Il sito ha il pannello di visualizzazione e gli stessi controlli automatici. L'estensione e il plugin seguono le convenzioni da tastiera di Figma e Chrome.",
+      "pagerecastGaps": "Il pannello del plugin Figma è denso per scelta; i suoi controlli più piccoli sono da 28 px. È prevista una verifica dell'estensione con screen reader.",
+      "nailsChecked": "Costruita secondo WCAG 2.2 AA, con aree di tocco da 44 px, movimento ridotto ed etichette in tre lingue.",
+      "nailsGaps": "La navigazione del calendario delle prenotazioni con screen reader richiede un test dedicato.",
+      "lmsChecked": "Pensata prima per il telefono, aree di tocco da 44 px, movimento ridotto rispettato ovunque.",
+      "lmsGaps": "Le illustrazioni personalizzate di cibo e allenamento richiedono testi alternativi più completi.",
+      "email": "Email Shades",
+      "emailChecked": "Testo vero, non immagini; una parte in testo semplice; un ordine di lettura sensato; lingua dichiarata.",
+      "emailGaps": "In Gmail e Outlook i colori in modalità scura dipendono dall'inversione del client.",
+      "note": "Le lacune note sono elencate perché sono reali. Un prodotto toglie una lacuna da questa lista solo dopo averla corretta e verificata."
+    },
+    "testing": {
+      "title": "Come testiamo",
+      "text": "Le macchine colgono ciò che è meccanico a ogni build. Le persone controllano ciò che le macchine non possono, prima di ogni rilascio.",
+      "autoTitle": "A ogni build",
+      "auto1": "Contrasto: ogni ruolo di testo e di sfondo è misurato in entrambi i temi; sotto 4,5 : 1 la build fallisce.",
+      "auto2": "Struttura: un solo h1 per pagina, nessun livello di titolo saltato, un nome su ogni pulsante e link, un'etichetta su ogni campo, id univoci.",
+      "auto3": "Layout: ogni pagina in ogni lingua a 375 e 1440 px, senza overflow orizzontale e senza errori in console.",
+      "auto4": "Lingua: ogni pagina dichiara la propria lingua e rimanda alla stessa pagina in tutte le altre lingue.",
+      "manualTitle": "Prima di ogni rilascio",
+      "manual1": "L'intero flusso solo da tastiera, con il focus sempre visibile.",
+      "manual2": "VoiceOver su macOS e iOS, NVDA su Windows: ogni controllo dice il proprio nome e ogni cambiamento viene annunciato.",
+      "manual3": "Zoom al 200% e testo ingrandito nel browser: nulla viene tagliato o si sovrappone.",
+      "manual4": "Movimento ridotto ed entrambi i temi attivati, nel sistema e nel pannello di visualizzazione.",
+      "manual5": "Un telefono tenuto con una mano: ogni controllo a portata di pollice e di almeno 44 px.",
+      "manual6": "Testi letti ad alta voce: parole semplici, frasi brevi, nessun significato affidato al solo colore."
+    },
+    "report": {
+      "title": "Segnala una barriera",
+      "text": "Se qualcosa in un prodotto Shades ti ostacola, diccelo. Una persona legge ogni segnalazione e risponde entro tre giorni lavorativi.",
+      "email": "Scrivi al supporto",
+      "issue": "Apri una segnalazione",
+      "note": "Racconta cosa stavi cercando di fare, cosa ti ha ostacolato e quali dispositivo, browser e tecnologia assistiva usavi."
     }
   }
 }

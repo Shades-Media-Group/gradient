@@ -15,7 +15,8 @@
     "cta": "Kur",
     "menu": "Menü",
     "onThisPage": "Bu sayfada",
-    "email": "E-posta"
+    "email": "E-posta",
+    "accessibility": "Erişilebilirlik"
   },
   "footer": {
     "label": "Site",
@@ -152,6 +153,26 @@
           "a": "Bu, markanın tek doğruluk kaynağı olan shades.md'deki Shades logo dosyasının kırmızısıdır. Önceki denemelerde başka kırmızılar kullanıldı; Gradient yalnızca birini tutar."
         }
       }
+    },
+    "about": {
+      "title": "Shades Media Group.",
+      "text": "Chișinău, Moldova merkezli bir yaratıcı ve teknoloji ajansı. Müşteriler için marka kimlikleri, web siteleri ve ürünler yapıyoruz; yol boyunca geliştirdiğimiz araçları da açık kaynak olarak paylaşıyoruz.",
+      "based": "Merkez",
+      "basedValue": "Chișinău, Moldova",
+      "disciplines": "Disiplinler",
+      "disciplinesValue": "Marka, arayüz, web ve pazarlama",
+      "open": "Açık kaynak",
+      "languages": "Site dilleri"
+    },
+    "products": {
+      "title": "Ürün ailesi.",
+      "text": "Gradient sistemdir; ürünler onun üzerine kurulur. Her biri kendi işaretini taşıyabilir ve hepsini Shades yapar.",
+      "link": "Ürünler markayı nasıl taşır",
+      "gradient": "Tasarım sistemi: token'lar, bileşenler, ikonlar, e-posta ve marka; tek pakette ve bu sitede.",
+      "pagerecast": "Her web sayfasını düzenlenebilir Figma katmanlarına dönüştürür. Ücretsiz bir Chrome uzantısı ve Figma eklentisi.",
+      "imagereframe": "Figma için ücretsiz ve açık kaynak görsel dışa ve içe aktarma. Gradient'ten başlayan ilk ürün.",
+      "concept": "Çalışma işareti, son hâli değil.",
+      "brief": "Brief'i oku"
     }
   },
   "brand": {
@@ -392,7 +413,7 @@
       "shadesMark": "Shades işareti ve logo kurgusu",
       "gradientMark": "Gradient kelimesinin yanında Shades işareti",
       "pagerecastMark": "Kendi işareti: üst üste binen iki sayfa",
-      "imagereframeMark": "Kendi işareti, henüz çizilecek",
+      "imagereframeMark": "Kendi işareti: dikey olarak yeniden kadrajlanmış yatay bir görsel (çalışma işareti)",
       "client": "Müşteri işleri",
       "clientMark": "Müşterinin kendi markası, Gradient rolleri üzerinde",
       "note": "Bir ürünün kendi işareti olabilir. Yine de Gradient'in tipografisini, rollerini, ikonlarını ve kurallarını kullanır; künye satırı ise hiç değişmez."
@@ -892,6 +913,108 @@
       "rule2": "Düz metin bölümünü her zaman gönder; bazı okuyucular ve filtreler yalnızca onu görür.",
       "rule3": "Gmail işaretlemesi yalnızca Google'a kayıtlı ve SPF ile DKIM denetiminden geçen göndericilerde görünür. Her durumda eklemek güvenlidir.",
       "rule4": "Müşteri markaları kendi renklerini, logolarını ve yazı tiplerini brand içinde verir; yapı aynı kalır."
+    }
+  },
+  "accessibility": {
+    "title": "Erişilebilirlik: Shades ürünleri herkes için | Gradient",
+    "description": "Her Shades ürününün karşıladığı erişilebilirlik standardı, verdiği sözler, görünüm paneli, her ürünün durumu ve bir engelin nasıl bildirileceği.",
+    "heading": "Erişilebilirlik",
+    "lead": "Her Shades ürünü; farklı gören, duyan, hareket eden ve okuyan insanların kullanabilmesi için yapılır. Tuttuğumuz standart, onu nasıl kontrol ettiğimiz ve hâlâ nerede eksik kaldığımız burada.",
+    "standard": {
+      "title": "Standart",
+      "text": "Shades'in yayına aldığı her şey için tek hedef: bu siteden müşteri uygulamalarına ve onların gönderdiği e-postalara kadar.",
+      "target": "Hedef",
+      "europe": "Avrupa standardı",
+      "law": "Avrupa yasası",
+      "lawValue": "Avrupa Erişilebilirlik Yasası, Haziran 2025'ten itibaren",
+      "languages": "Bu sitedeki diller",
+      "note": "WCAG 2.2 AA bir hedeftir, sertifika iddiası değil. Bir ürün eksik kaldığında bunu aşağıda belirtir."
+    },
+    "promises": {
+      "title": "Her ürünün verdiği sözler",
+      "text": "Bir Shades ürününün yayına çıkmadan önce yaptığı on şey. Hepsi Gradient'in içinde gelir; böylece yeni bir ürün bunlarla başlar.",
+      "contrast": "Okunur kontrast",
+      "contrastText": "Her metin rengi, açık ve koyu temada arka planına karşı 4.5 : 1'e ulaşır. Aksi hâlde bir test derlemeyi başarısız kılar.",
+      "keyboard": "Baştan sona klavye",
+      "keyboardText": "Her şey fare olmadan çalışır: Tab ilerletir, Enter ve Boşluk çalıştırır, Esc kapatır, ok tuşları grupların içinde gezinir.",
+      "focus": "Görünür odak",
+      "focusText": "Odaktaki öğe, iki temada da her zaman arada boşluk bırakan iki piksellik bir halka gösterir.",
+      "motion": "Kontrolü sende olan hareket",
+      "motionText": "Sistem ya da görünüm paneli daha az hareket istediğinde animasyonlar durur. Önemli hiçbir şey harekete bağlı değildir.",
+      "resize": "Büyüyen metin",
+      "resizeText": "Metin büyütüldüğünde ya da %200'e yakınlaştırıldığında sayfalar, 320 px genişliğindeki bir ekrana kadar yatay kaydırma olmadan yeniden akar.",
+      "language": "Doğru dil",
+      "languageText": "Her sayfa kendi dilini bildirir; böylece ekran okuyucular doğru telaffuz eder, çeviri araçları da ne okuduklarını bilir.",
+      "images": "Açıklanan görseller",
+      "imagesText": "Anlam taşıyan görsellerin bir resim altı gibi yazılmış alternatif metni vardır. Dekoratif olanlar ekran okuyuculardan gizlenir.",
+      "forms": "Yardım eden formlar",
+      "formsText": "Her alanın görünür bir etiketi vardır. Hatalar neyin yanlış gittiğini ve nasıl düzeltileceğini söyler ve duyurulur.",
+      "targets": "Dokunmak için yer",
+      "targetsText": "Kontroller, 20 px'lik görünüm noktası gibi daha küçük görünseler bile dokunmatik ekranlarda en az 44 px'lik bir dokunma alanına sahiptir.",
+      "colour": "Asla yalnızca renk",
+      "colourText": "Durum, rengin yanında kelimelerle ya da ikonlarla da gösterilir: bir rozetin etiketi, bir hatanın metni vardır."
+    },
+    "panel": {
+      "title": "Görünüm paneli",
+      "text": "Her Shades sitesinin köşesindeki küçük nokta onu açar. Seçimler yalnızca tarayıcıda saklanır.",
+      "option": "Seçenek",
+      "does": "Ne yapar",
+      "helps": "Kime yardım eder",
+      "themeDoes": "Açık, koyu ya da sistem ayarı",
+      "themeHelps": "Işık hassasiyeti, migren, gece okuma",
+      "textDoes": "Tüm sayfayı %15 büyütür ve yeniden akıtır",
+      "textHelps": "Az görme, küçük ekranlar",
+      "contrastDoes": "Soluk metinler ve ince çizgiler tam yoğunluğa çıkar",
+      "contrastHelps": "Düşük kontrast duyarlılığı, parlak güneş ışığı",
+      "motionDoes": "Animasyonları ve yumuşak kaydırmayı durdurur",
+      "motionHelps": "Vestibüler bozukluklar, dikkat, hareket tutması",
+      "linksDoes": "Her bağlantının altını çizer",
+      "linksHelps": "Renk körlüğü, bilişsel yük",
+      "readingDoes": "Daha geniş harf, kelime ve satır aralığı",
+      "readingHelps": "Disleksi, ikinci bir dilde okuma",
+      "note": "Panel, okuyucunun kendi sistem ayarlarına eklenir ve onları asla geçersiz kılmaz: sistemden gelen daha az hareket isteği her zaman kazanır."
+    },
+    "products": {
+      "title": "Bugün ürünler",
+      "text": "Her ürünün nerede durduğu ve neyin hâlâ açık olduğu. Bir şey değiştiğinde bu tabloyu güncelliyoruz.",
+      "product": "Ürün",
+      "checked": "Kontrol edilenler",
+      "gaps": "Bilinen eksikler",
+      "gradientChecked": "Her derleme; başlıkları, adları, etiketleri, bağlantıları, kontrastı ve düzeni on bir dilde, iki genişlikte kontrol eder.",
+      "gradientGaps": "Henüz VoiceOver ve NVDA ile uçtan uca test edilmedi. Karakter illüstrasyonları yanlarındaki adlara dayanır.",
+      "pagerecastChecked": "Web sitesinde görünüm paneli ve aynı otomatik kontroller var. Uzantı ve eklenti, Figma'nın ve Chrome'un klavye kurallarına uyar.",
+      "pagerecastGaps": "Figma eklentisinin paneli bilinçli olarak yoğundur; en küçük kontrolleri 28 px'tir. Uzantının ekran okuyucuyla incelenmesi planlanıyor.",
+      "nailsChecked": "44 px dokunma alanları, azaltılmış hareket ve üç dilde etiketlerle WCAG 2.2 AA'ya göre yapıldı.",
+      "nailsGaps": "Randevu takviminde ekran okuyucuyla gezinme için ayrı bir test gerekiyor.",
+      "lmsChecked": "Önce telefon için tasarlandı; 44 px dokunma alanları, her yerde azaltılmış harekete uyum.",
+      "lmsGaps": "Özel yemek ve antrenman illüstrasyonlarının daha kapsamlı alternatif metne ihtiyacı var.",
+      "email": "Shades e-postaları",
+      "emailChecked": "Görsel değil gerçek metin; düz metin bölümü; mantıklı okuma sırası; bildirilmiş dil.",
+      "emailGaps": "Gmail ve Outlook'ta koyu mod renkleri, istemcinin kendi renk ters çevirmesine bağlıdır.",
+      "note": "Bilinen eksikler gerçek oldukları için listelenir. Bir ürün bir eksiği bu listeden ancak düzeltilip kontrol edildikten sonra çıkarır."
+    },
+    "testing": {
+      "title": "Nasıl test ediyoruz",
+      "text": "Makineler mekanik olanı her derlemede yakalar. İnsanlar da makinelerin yakalayamadığını her sürümden önce kontrol eder.",
+      "autoTitle": "Her derlemede",
+      "auto1": "Kontrast: her metin ve arka plan rolü iki temada da ölçülür; 4.5 : 1'in altı başarısız olur.",
+      "auto2": "Yapı: sayfa başına tek h1, atlanmış başlık seviyesi yok, her buton ve bağlantıda bir ad, her alanda bir etiket, benzersiz id'ler.",
+      "auto3": "Düzen: her dildeki her sayfa 375 ve 1440 px'te; yatay taşma yok, konsol hatası yok.",
+      "auto4": "Dil: her sayfa kendi dilini bildirir ve diğer tüm dillerdeki aynı sayfaya bağlantı verir.",
+      "manualTitle": "Her sürümden önce",
+      "manual1": "Tüm akış yalnızca klavyeyle; odak her zaman görünür.",
+      "manual2": "macOS ve iOS'ta VoiceOver, Windows'ta NVDA: her kontrol kendi adını söyler ve her değişiklik duyurulur.",
+      "manual3": "Tarayıcıda %200 yakınlaştırma ve metin büyütme: hiçbir şey kesilmez ya da üst üste binmez.",
+      "manual4": "Azaltılmış hareket ve iki tema, hem sistemde hem görünüm panelinde açık.",
+      "manual5": "Tek elde tutulan bir telefon: her kontrol erişilebilir mesafede ve en az 44 px.",
+      "manual6": "Sesli okunan metinler: sade kelimeler, kısa cümleler, yalnızca renge bırakılmış bir anlam yok."
+    },
+    "report": {
+      "title": "Bir engeli bildir",
+      "text": "Bir Shades ürününde bir şey önüne engel çıkarırsa bize söyle. Her bildirimi bir insan okur ve üç iş günü içinde yanıtlar.",
+      "email": "Desteğe e-posta gönder",
+      "issue": "Sorun kaydı aç",
+      "note": "Ne yapmaya çalıştığını, neyin engel olduğunu ve hangi cihazı, tarayıcıyı ve yardımcı teknolojiyi kullandığını yaz."
     }
   }
 }
