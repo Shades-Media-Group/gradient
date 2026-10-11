@@ -265,14 +265,14 @@ function head(locale: Locale, page: Page, t: (key: string) => string, dict: Dict
     ...LOCALES.filter((l) => l !== locale).map(
       (l) => `<meta property="og:locale:alternate" content="${l.og}" />`,
     ),
-    `<meta property="og:image" content="${SITE}/social-preview.png" />`,
-    '<meta property="og:image:width" content="1280" />',
-    '<meta property="og:image:height" content="640" />',
+    `<meta property="og:image" content="${SITE}/social-card.png" />`,
+    '<meta property="og:image:width" content="1200" />',
+    '<meta property="og:image:height" content="630" />',
     `<meta property="og:image:alt" content="${image}" />`,
     '<meta name="twitter:card" content="summary_large_image" />',
     `<meta name="twitter:title" content="${title}" />`,
     `<meta name="twitter:description" content="${description}" />`,
-    `<meta name="twitter:image" content="${SITE}/social-preview.png" />`,
+    `<meta name="twitter:image" content="${SITE}/social-card.png" />`,
     `<meta name="twitter:image:alt" content="${image}" />`,
     `<script type="application/ld+json">${json}</script>`,
   ].join('\n    ')

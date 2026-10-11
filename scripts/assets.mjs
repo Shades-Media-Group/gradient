@@ -2,7 +2,7 @@
  * Renders the raster files the site and the repository need, from the brand
  * SVGs and the package's own CSS, with Playwright's Chromium:
  *
- *   apps/site/public/social-preview.png   1280 × 640, the link preview
+ *   apps/site/public/social-card.png   1200 × 630, the link preview
  *   apps/site/public/apple-touch-icon.png 180 × 180
  *   apps/site/public/shades-mark.png      512 × 512, for structured data
  *   apps/site/public/email/shades-lockup.png 284 × 64, the email header
@@ -62,6 +62,21 @@ const card = (width, height, dark) =>
     dark,
   )
 
+// The link preview: the studio shot of the cards (yarn renders og) under the name,
+// set huge and cut by the bottom edge, with the spectrum as a trim.
+const shot = `data:image/webp;base64,${readFileSync(join(root, 'apps/site/public/renders/og-1200.webp')).toString('base64')}`
+const preview = page(
+  1200,
+  630,
+  `<div style="position:absolute; inset:0; background:#141416 url(${shot}) center / cover"></div>
+  <div style="position:absolute; left:64px; top:56px; display:flex; align-items:center; gap:16px; color:#ECECEA; font:600 22px/1 Body">
+    <div style="width:40px">${mark}</div>The Shades Media Group design system
+  </div>
+  <h1 style="position:absolute; left:52px; bottom:-18px; margin:0; color:#ECECEA; font:700 236px/0.9 Display; letter-spacing:-0.065em">Gradient</h1>
+  <div class="spectrum" style="height:6px"></div>`,
+  true,
+)
+
 const square = (size, pad) =>
   page(
     size,
@@ -70,7 +85,7 @@ const square = (size, pad) =>
   )
 
 const JOBS = [
-  ['apps/site/public/social-preview.png', 1280, 640, card(1280, 640, false)],
+  ['apps/site/public/social-card.png', 1200, 630, preview],
   ['assets/readme-banner-light.png', 1600, 560, card(1600, 560, false)],
   ['assets/readme-banner-dark.png', 1600, 560, card(1600, 560, true)],
   ['apps/site/public/apple-touch-icon.png', 180, 180, square(180, 0)],

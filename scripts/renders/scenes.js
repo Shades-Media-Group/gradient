@@ -922,6 +922,39 @@ async function tee(assets) {
   return encode(s.shoot(256, 7, { aperture: 3, focus: [0, 520, 10] }), [1200, 600])
 }
 
-const SCENES = { cards, tote, badges, sticker, tee }
+/** The link preview (1200 × 630): the card stack on the right, room on the left for the name. */
+async function og(assets) {
+  const s = studio({
+    width: 2400,
+    height: 1260,
+    fov: 13,
+    eye: [-70, 300, 400],
+    target: [-62, 0, 14],
+    exposure: 1.06,
+    env: 0.16,
+  })
+  const { scene, renderer } = s
+  scene.add(floorPlane(renderer, 0x2a2d33))
+  const { stack, single } = await cardSet(assets, renderer)
+  stack.position.set(-20, 0, -18)
+  stack.rotation.y = 0.22
+  single.position.set(36, 0.23, 44)
+  single.rotation.y = -0.16
+  scene.add(stack, single)
+  const sun = [-900, 420, -420]
+  s.light({
+    kind: 'area',
+    position: sun,
+    radius: 45,
+    illuminance: 4.6,
+    color: 0xfff1e6,
+    bounds: 240,
+  })
+  s.light({ kind: 'sky', intensity: 0.35, color: 0xe6ecff, bounds: 240 })
+  windowFrame(s, sun, [0, 0, 0], 0.35, [2000, 2000], [120, 150], 26, 4, 5)
+  return encode(s.shoot(256, 7, { aperture: 2, focus: [10, 1, 20] }), [1200])
+}
+
+const SCENES = { cards, tote, badges, sticker, tee, og }
 
 window.render = async (name, assets) => SCENES[name](assets)
