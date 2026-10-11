@@ -142,7 +142,12 @@
     pointer-events: none;
   }
 
+  .g-btn > .g-loader {
+    display: none;
+  }
+
   .g-btn[aria-busy='true'] > .g-loader {
+    display: inline-flex;
     position: absolute;
     inset: 0;
     margin: auto;
@@ -296,7 +301,7 @@
     cursor: pointer;
   }
 
-  .g-check > input {
+  .g-check > input:not(.g-switch) {
     width: 18px;
     height: 18px;
     margin: 0;
