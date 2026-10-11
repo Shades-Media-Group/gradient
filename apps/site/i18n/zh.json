@@ -81,23 +81,8 @@
       "text": "Spectra 带着冠饰，从标志里走了出来。随后又来了六位同事，各司其职：Sage 负责讲解，Nova 负责发布，Sunny 确认东西已经上线。",
       "link": "认识这个家族"
     },
-    "parts": {
-      "title": "组件，实际运行。",
-      "text": "每个组件都是一个读取设计令牌的普通 CSS 类。改几个变量，客户品牌就能为整套组件换色。",
-      "link": "全部组件",
-      "name": "你的姓名",
-      "namePlaceholder": "Ana Popescu",
-      "email": "工作邮箱",
-      "emailError": "请补全 @ 之后的部分，例如 ana@company.md。",
-      "kind": "你需要什么",
-      "kindBrand": "品牌",
-      "kindSite": "网站",
-      "kindBoth": "两者都要",
-      "checklist": "把品牌清单发给我",
-      "send": "发送简报",
-      "call": "预约通话",
-      "demo": "这是用 Gradient 组件搭建的演示，不会发送任何内容。",
-      "sent": "检查通过，一切就绪。演示到此为止。"
+    "index": {
+      "title": "Gradient 的全部。"
     },
     "licence": {
       "title": "代码开放，名称归我们。",

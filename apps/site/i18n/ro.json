@@ -81,23 +81,8 @@
       "text": "Spectra a ieșit din logo cu tot cu creastă. Au urmat șase colegi, fiecare cu o singură treabă: Sage explică, Nova anunță, Sunny confirmă că s-a livrat.",
       "link": "Cunoaște familia"
     },
-    "parts": {
-      "title": "Piesele, la lucru.",
-      "text": "Fiecare componentă e o clasă CSS simplă care citește tokenurile. Schimbă câteva variabile și brandul unui client recolorează tot setul.",
-      "link": "Toate componentele",
-      "name": "Numele tău",
-      "namePlaceholder": "Ana Popescu",
-      "email": "Email de serviciu",
-      "emailError": "Adaugă partea de după @, de exemplu ana@company.md.",
-      "kind": "De ce ai nevoie",
-      "kindBrand": "Un brand",
-      "kindSite": "Un site",
-      "kindBoth": "Ambele",
-      "checklist": "Trimite-mi lista de verificare pentru brand",
-      "send": "Trimite brieful",
-      "call": "Programează un apel",
-      "demo": "Un demo construit din piese Gradient. Nu trimite nimic.",
-      "sent": "Verificat și gata. Demo-ul se oprește aici."
+    "index": {
+      "title": "Tot ce e în Gradient."
     },
     "licence": {
       "title": "Cod deschis. Numele nostru.",

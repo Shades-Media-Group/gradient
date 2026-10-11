@@ -81,23 +81,8 @@
       "text": "Spectra 帶著頭冠，從標誌裡走了出來。隨後又來了六位同事，各有一份工作：Sage 負責說明，Nova 負責宣布，Sunny 確認東西已經上線。",
       "link": "認識這個家族"
     },
-    "parts": {
-      "title": "元件，實際運作中。",
-      "text": "每個元件都是讀取設計 token 的一般 CSS class。改幾個變數，客戶品牌就能替整套元件換色。",
-      "link": "所有元件",
-      "name": "你的姓名",
-      "namePlaceholder": "Ana Popescu",
-      "email": "工作電子郵件",
-      "emailError": "請補上 @ 後面的部分，例如 ana@company.md。",
-      "kind": "你需要什麼",
-      "kindBrand": "品牌",
-      "kindSite": "網站",
-      "kindBoth": "兩者都要",
-      "checklist": "寄品牌檢核表給我",
-      "send": "送出需求簡介",
-      "call": "預約通話",
-      "demo": "這是用 Gradient 元件做成的示範，不會送出任何內容。",
-      "sent": "檢查完成，一切就緒。示範到此為止。"
+    "index": {
+      "title": "Gradient 的全部。"
     },
     "licence": {
       "title": "程式碼開放，名稱是我們的。",

@@ -10,8 +10,6 @@ import './site.css'
 type Strings = {
   copied: string
   iconCopied: string
-  sent: string
-  emailError: string
   prefs: PreferenceLabels
   consent: ConsentLabels
 }
@@ -157,25 +155,6 @@ for (const swatch of $$<HTMLLIElement>('[data-token]')) {
       copy(`var(${token})`, fill(strings.copied, { token: `var(${token})` })),
     )
 }
-
-// The brief demo on the home page: checks the email, plays the busy state, sends nothing.
-const brief = document.querySelector<HTMLFormElement>('[data-brief]')
-brief?.addEventListener('submit', (event) => {
-  event.preventDefault()
-  const email = brief.querySelector<HTMLInputElement>('input[type="email"]')!
-  const error = brief.querySelector<HTMLElement>('.g-error')!
-  const status = brief.querySelector<HTMLElement>('[data-brief-status]')!
-  const valid = /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email.value)
-  email.setAttribute('aria-invalid', String(!valid))
-  error.hidden = valid
-  if (!valid) return email.focus()
-  const send = brief.querySelector<HTMLButtonElement>('[type="submit"]')!
-  send.setAttribute('aria-busy', 'true')
-  setTimeout(() => {
-    send.removeAttribute('aria-busy')
-    status.textContent = strings.sent
-  }, 1400)
-})
 
 // The busy demo on the components page.
 for (const button of $$<HTMLButtonElement>('[data-busy-demo]'))

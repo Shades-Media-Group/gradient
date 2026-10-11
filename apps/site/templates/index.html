@@ -135,49 +135,46 @@
         </ul>
       </section>
 
-      <section class="chapter" id="parts">
-        <div class="chapter-head" data-reveal>
-          <h2>{{home.parts.title}}</h2>
-          <div>
-            <p>{{home.parts.text}}</p>
-            <a class="g-link" href="{{@to:components}}">{{home.parts.link}}</a>
-          </div>
-        </div>
-        <form class="brief" data-brief data-reveal novalidate>
-          <div class="brief-fields">
-            <div class="g-field">
-              <label class="g-label" for="brief-name">{{home.parts.name}}</label>
-              <input class="g-input" id="brief-name" name="name" autocomplete="name" placeholder="{{home.parts.namePlaceholder}}" />
-            </div>
-            <div class="g-field">
-              <label class="g-label" for="brief-email">{{home.parts.email}}</label>
-              <input class="g-input" id="brief-email" name="email" type="email" autocomplete="email" placeholder="you@company.md" aria-describedby="brief-email-error" />
-              <p class="g-error" id="brief-email-error" hidden>{{home.parts.emailError}}</p>
-            </div>
-            <div class="g-field">
-              <span class="g-label" id="brief-kind">{{home.parts.kind}}</span>
-              <div class="g-segmented" role="radiogroup" aria-labelledby="brief-kind" data-segmented>
-                <button type="button" role="radio" aria-checked="true">{{home.parts.kindBrand}}</button>
-                <button type="button" role="radio" aria-checked="false">{{home.parts.kindSite}}</button>
-                <button type="button" role="radio" aria-checked="false">{{home.parts.kindBoth}}</button>
-              </div>
-            </div>
-            <label class="g-check brief-switch">
-              <input class="g-switch" type="checkbox" role="switch" checked />
-              {{home.parts.checklist}}
-            </label>
-          </div>
-          <div class="brief-side">
-            <p class="brief-tags"><span class="g-tag">Branding</span> <span class="g-tag">UI/UX</span> <span class="g-tag">Web</span></p>
-            <div class="brief-actions">
-              <button class="g-btn g-btn--primary" type="submit" data-magnetic>
-                {{home.parts.send}}{{@icon:arrowRight}}<span class="g-loader" aria-hidden="true"><i></i><i></i><i></i></span>
-              </button>
-              <button class="g-btn" type="button" disabled>{{home.parts.call}}</button>
-            </div>
-            <p class="brief-note" role="status" data-brief-status>{{home.parts.demo}}</p>
-          </div>
-        </form>
+      <section class="chapter" id="index">
+        <h2 class="index-title">{{home.index.title}}</h2>
+        <nav class="index" aria-label="{{home.index.title}}">
+          <a class="tile tile--brand" href="{{@to:brand}}" style="--dx: -90; --dy: -40; --r: -4deg">
+            <span class="tile-label">{{nav.brand}}{{@icon:arrowRight}}</span>
+            <span class="tile-art" aria-hidden="true">{{@mark}}</span>
+          </a>
+          <a class="tile tile--colour" href="{{@to:foundations}}" style="--dx: 30; --dy: -70; --r: 3deg">
+            <span class="tile-label">{{nav.foundations}}{{@icon:arrowRight}}</span>
+            <span class="tile-art g-num" aria-hidden="true">#E40523</span>
+          </a>
+          <a class="tile tile--type" href="{{@to:foundations}}#type" style="--dx: 90; --dy: -30; --r: 5deg">
+            <span class="tile-label">{{home.type.link}}{{@icon:arrowRight}}</span>
+            <span class="tile-art" aria-hidden="true">Aa</span>
+          </a>
+          <a class="tile tile--components" href="{{@to:components}}" style="--dx: -40; --dy: 50; --r: -2deg">
+            <span class="tile-label">{{nav.components}}{{@icon:arrowRight}}</span>
+            <span class="tile-art" aria-hidden="true"><span class="tile-pill">{{@icon:arrowRight}}</span><span class="tile-switch"></span></span>
+          </a>
+          <a class="tile tile--icons" href="{{@to:icons}}" style="--dx: 50; --dy: 40; --r: 3deg">
+            <span class="tile-label">{{nav.icons}}{{@icon:arrowRight}}</span>
+            <span class="tile-art" aria-hidden="true"><i>{{@icon:brush}}</i><i>{{@icon:type}}</i><i>{{@icon:grid}}</i><i>{{@icon:mail}}</i><i>{{@icon:globe}}</i><i>{{@icon:image}}</i></span>
+          </a>
+          <a class="tile tile--print" href="{{@to:print}}" style="--dx: -70; --dy: 60; --r: -3deg">
+            <span class="tile-label">{{nav.print}}{{@icon:arrowRight}}</span>
+            <img class="tile-photo" src="/renders/tee-600.webp" srcset="/renders/tee-600.webp 600w, /renders/tee-1200.webp 1200w" sizes="(max-width: 640px) 100vw, 50vw" width="1200" height="1500" alt="" loading="lazy" decoding="async" />
+          </a>
+          <a class="tile tile--email" href="{{@to:email}}" style="--dx: 40; --dy: 70; --r: 4deg">
+            <span class="tile-label">{{nav.email}}{{@icon:arrowRight}}</span>
+            <span class="tile-art g-num" aria-hidden="true">418&#8202;203</span>
+          </a>
+          <a class="tile tile--a11y" href="{{@to:accessibility}}" style="--dx: 80; --dy: 30; --r: -4deg">
+            <span class="tile-label">{{nav.accessibility}}{{@icon:arrowRight}}</span>
+            <span class="tile-art" aria-hidden="true">AA</span>
+          </a>
+          <a class="tile tile--projects" href="{{@to:projects}}" style="--dx: 20; --dy: 90; --r: 2deg">
+            <span class="tile-label">{{nav.projects}}{{@icon:arrowRight}}</span>
+            <span class="tile-art" aria-hidden="true"><img src="/products/pagerecast-mark.svg" alt="" width="48" height="48" /><img src="/products/imagerefold-mark.svg" alt="" width="48" height="48" /><img src="/products/lms-mark.svg" alt="" width="48" height="48" /></span>
+          </a>
+        </nav>
       </section>
 
       <section class="chapter chapter--red" id="licence">

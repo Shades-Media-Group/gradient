@@ -81,23 +81,8 @@
       "text": "Spectra è uscita dal logo, cresta compresa. L'hanno seguita sei colleghi, ognuno con un compito: Sage spiega, Nova annuncia, Sunny conferma che è stato consegnato.",
       "link": "Conosci la famiglia"
     },
-    "parts": {
-      "title": "I pezzi, al lavoro.",
-      "text": "Ogni componente è una semplice classe CSS che legge i token. Cambia poche variabili e un brand cliente ricolora l'intero set.",
-      "link": "Tutti i componenti",
-      "name": "Il tuo nome",
-      "namePlaceholder": "Ana Popescu",
-      "email": "Email di lavoro",
-      "emailError": "Aggiungi la parte dopo la @, come ana@company.md.",
-      "kind": "Di cosa hai bisogno",
-      "kindBrand": "Un brand",
-      "kindSite": "Un sito web",
-      "kindBoth": "Entrambi",
-      "checklist": "Inviami la checklist del brand",
-      "send": "Invia il brief",
-      "call": "Prenota una call",
-      "demo": "Una demo costruita con i pezzi di Gradient. Non invia nulla.",
-      "sent": "Tutto verificato e pronto. La demo si ferma qui."
+    "index": {
+      "title": "Tutto ciò che c’è in Gradient."
     },
     "licence": {
       "title": "Codice aperto. Il nostro nome.",

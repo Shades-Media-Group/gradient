@@ -81,23 +81,8 @@
       "text": "Spectra, armasıyla birlikte logodan çıkıp geldi. Ardından her birinin tek bir görevi olan altı iş arkadaşı geldi: Sage açıklar, Nova duyurur, Sunny işin yayına çıktığını onaylar.",
       "link": "Aileyle tanış"
     },
-    "parts": {
-      "title": "Parçalar, iş başında.",
-      "text": "Her bileşen, token'ları okuyan sade bir CSS sınıfıdır. Bir müşteri markasının tüm seti yeniden renklendirmesi için birkaç değişkeni değiştirmesi yeter.",
-      "link": "Tüm bileşenler",
-      "name": "Adın",
-      "namePlaceholder": "Ana Popescu",
-      "email": "İş e-postası",
-      "emailError": "@ işaretinden sonraki kısmı ekle, örneğin ana@company.md.",
-      "kind": "Neye ihtiyacın var",
-      "kindBrand": "Bir marka",
-      "kindSite": "Bir web sitesi",
-      "kindBoth": "İkisi de",
-      "checklist": "Marka kontrol listesini bana gönder",
-      "send": "Brief'i gönder",
-      "call": "Görüşme ayarla",
-      "demo": "Gradient parçalarıyla kurulmuş bir demo. Hiçbir şey göndermez.",
-      "sent": "Kontrol edildi, hazır. Bu demo burada durur."
+    "index": {
+      "title": "Gradient’te olan her şey."
     },
     "licence": {
       "title": "Açık kod. Bizim adımız.",

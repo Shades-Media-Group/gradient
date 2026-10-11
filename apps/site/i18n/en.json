@@ -81,23 +81,8 @@
       "text": "Spectra walked out of the logo, crest and all. Six coworkers followed, each with one job: Sage explains, Nova announces, Sunny confirms that it shipped.",
       "link": "Meet the family"
     },
-    "parts": {
-      "title": "The parts, working.",
-      "text": "Every component is a plain CSS class that reads the tokens. Change a few variables and a client brand recolours the whole set.",
-      "link": "All components",
-      "name": "Your name",
-      "namePlaceholder": "Ana Popescu",
-      "email": "Work email",
-      "emailError": "Add the part after the @, like ana@company.md.",
-      "kind": "What you need",
-      "kindBrand": "A brand",
-      "kindSite": "A website",
-      "kindBoth": "Both",
-      "checklist": "Send me the brand checklist",
-      "send": "Send the brief",
-      "call": "Book a call",
-      "demo": "A demo built from Gradient parts. It sends nothing.",
-      "sent": "Checked and ready. This demo stops here."
+    "index": {
+      "title": "Everything in Gradient."
     },
     "licence": {
       "title": "Open code. Our name.",

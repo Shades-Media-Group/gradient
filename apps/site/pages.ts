@@ -523,8 +523,6 @@ function render(locale: Locale, page: Page): string {
         `  <script type="application/json" id="strings">${JSON.stringify({
           copied: t('foundations.colour.copied'),
           iconCopied: t('icons.copied'),
-          sent: t('home.parts.sent'),
-          emailError: t('home.parts.emailError'),
           prefs: dict.prefs,
           consent: dict.consent,
         }).replaceAll('<', '\\u003c')}</script>\n  </body>`,
