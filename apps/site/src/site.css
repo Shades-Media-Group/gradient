@@ -2585,25 +2585,45 @@ body {
     justify-self: start;
   }
 
+  /* On a phone the split still plays with the scroll: a smaller stage, the
+     bars spreading to three thumb-wide columns, each with its name and link. */
   .split {
-    height: auto;
+    --s: min(38svh, 68vw);
+    --spread: min(28vw, 220px);
+    height: 220vh;
   }
 
   .split-sticky {
-    position: static;
-    height: auto;
-    padding-block: 48px 72px;
-    gap: 40px;
+    padding-block: 16px 28px;
+    gap: 12px;
   }
 
-  .split-layers {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 32px;
-  }
-
+  /* Each bar ends centred over its own column, whatever the screen. */
   .split-bar {
-    transform: translateX(calc(var(--t) * (var(--i) - 1) * var(--s) * 0.34))
+    transform: translateX(calc(var(--t) * (var(--i) - 1) * (var(--spread) - var(--s) * 13 / 56)))
       scaleY(calc(1 + var(--t) * 0.5));
+  }
+
+  .split-layers li {
+    padding: 0 4px;
+  }
+
+  .split-layers h3 {
+    font-size: clamp(1rem, 4.6vw, 1.5rem);
+  }
+
+  .split-layers p {
+    display: none;
+  }
+
+  .split-layers .g-link {
+    display: inline-block;
+    margin-top: 6px;
+    font-size: var(--g-size-caption);
+  }
+
+  .split-caption {
+    margin-top: 12px;
   }
 
   .misuse,

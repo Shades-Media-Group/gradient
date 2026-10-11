@@ -68,12 +68,11 @@ for (const el of $$('[data-reveal]')) reveal.observe(el)
 const split = document.querySelector<HTMLElement>('[data-split]')
 if (split) {
   let frame = 0
-  const narrow = matchMedia('(max-width: 860px)')
   const update = () => {
     frame = 0
     const rect = split.getBoundingClientRect()
     const travel = Math.max(1, split.offsetHeight - innerHeight)
-    const t = reducedMotion() || narrow.matches ? 1 : Math.min(1, Math.max(0, -rect.top / travel))
+    const t = reducedMotion() ? 1 : Math.min(1, Math.max(0, -rect.top / travel))
     split.style.setProperty('--t', t.toFixed(4))
     split.toggleAttribute('data-done', t > 0.82)
   }
