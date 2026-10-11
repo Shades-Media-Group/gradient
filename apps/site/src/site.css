@@ -1150,10 +1150,6 @@ body {
   scrollbar-width: none;
 }
 
-.page-toc::-webkit-scrollbar {
-  display: none;
-}
-
 .page-toc a {
   flex: none;
   padding: 7px 14px;
@@ -2432,23 +2428,6 @@ body {
     gap: 6px;
   }
 
-  /* On a phone sets of things are a row to swipe through, not a long stack. */
-  .merch {
-    display: flex;
-    gap: 16px;
-    margin-inline: -16px;
-    padding: 0 16px 8px;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    scroll-padding-inline: 16px;
-    scrollbar-width: none;
-  }
-
-  .merch > li {
-    flex: 0 0 78%;
-    scroll-snap-align: start;
-  }
-
   .family-row {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
@@ -3232,8 +3211,9 @@ h3,
   box-shadow: inset 1px 0 0 var(--g-line-strong);
 }
 
-/* The product family, like the merchandise, is a row to swipe on a phone. */
+/* On a phone sets of things are a row to swipe through, not a long stack. */
 @media (max-width: 560px) {
+  .merch,
   .products {
     display: flex;
     gap: 16px;
@@ -3245,8 +3225,9 @@ h3,
     scrollbar-width: none;
   }
 
+  .merch > li,
   .products > li {
-    flex: 0 0 82%;
+    flex: 0 0 80%;
     scroll-snap-align: start;
   }
 }
