@@ -723,9 +723,9 @@
       "title": "Promosyon ürünleri",
       "text": "Ya küçük işaret ya büyük logo yazısı; aynı üründe asla ikisi birden değil. Spektrum yalnızca bir şerit süs olarak.",
       "tote": "Bez çanta",
-      "toteText": "Doğal kanvas üzerine serigrafi baskı, tek renk işaret.",
+      "toteText": "Tek renk logo, 300 mm genişliğinde, doğal kanvasın kenarından taşıyor.",
       "tee": "Tişört",
-      "teeText": "Sırtta büyük logo yazısı, göğüs boş.",
+      "teeText": "Üç çubuk sırt boyunca uzun basılır; ikinci ve üçüncüsü raster, ayrıntılar altta küçük.",
       "sticker": "Sticker",
       "stickerText": "3 mm beyaz kenarlı, kontur kesimli bir Spectra karakteri.",
       "rule1": "Nakış, yaldız, aşındırma ve serigrafi için tek renk dosyaları kullan.",
@@ -750,6 +750,13 @@
       "inkPrint": "Zengin siyah: kuşe kâğıtta C60 M40 Y40 K100",
       "paperPrint": "Kâğıdın kendisi; beyaz için asla bir ton basma",
       "proof": "Bir matbaa prova almadan hiçbir baskı değeri kesinleşmez. Onaylanan değerleri matbaa ve kâğıt bilgisiyle birlikte buraya kaydet."
+    },
+    "shots": {
+      "cards": "Pencere ışığında Shades kartvizitleri: kırmızı yüzü üstte bir deste ve arka yüzü çevrilmiş bir kart.",
+      "badges": "Askılarıyla iki Shades Day yaka kartı: kırmızı şeritli ekip kartı ve mürekkep şeritli misafir kartı.",
+      "tote": "Shades Kırmızısı bir duvarın önünde doğal kanvas çanta; logo büyük basılmış, kenardan taşıyor.",
+      "sticker": "Beyaz kenarlı kesim bir Spectra çıkartması, siyah bir defterin üzerinde.",
+      "tee": "Askıda, sırtı dönük mürekkep rengi tişört: uzun basılmış üç çubuk, ikisi raster, altında küçük Shades Media Group yazısı."
     }
   },
   "projects": {

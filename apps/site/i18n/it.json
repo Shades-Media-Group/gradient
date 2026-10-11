@@ -723,9 +723,9 @@
       "title": "Merchandising",
       "text": "Marchio piccolo o logotipo grande, mai entrambi sullo stesso articolo. Lo spettro solo come bordino.",
       "tote": "Tote bag",
-      "toteText": "Marchio a un colore, serigrafato, su tela naturale.",
+      "toteText": "Il marchio a un colore, largo 300 mm, che esce dal bordo della tela naturale.",
       "tee": "T-shirt",
-      "teeText": "Il logotipo grande sulla schiena, il petto lasciato vuoto.",
+      "teeText": "Le tre barre stampate in verticale sulla schiena, la seconda e la terza a retino, i dettagli in piccolo sotto.",
       "sticker": "Adesivo",
       "stickerText": "Un personaggio Spectra, fustellato con un bordo bianco di 3 mm.",
       "rule1": "Usa i file a un colore per ricamo, lamina, incisione e serigrafia.",
@@ -750,6 +750,13 @@
       "inkPrint": "Nero ricco: C60 M40 Y40 K100 su carta patinata",
       "paperPrint": "La carta stessa; mai stampare un retino per il bianco",
       "proof": "Nessun valore di stampa è definitivo finché uno stampatore non ne ha fatto la prova. Registra qui i valori approvati, con lo stampatore e la carta."
+    },
+    "shots": {
+      "cards": "Biglietti da visita Shades alla luce di una finestra: una pila con il rosso in su e un biglietto girato sul retro.",
+      "badges": "Due badge Shades Day con il loro cordino: il team con la fascia rossa, l’ospite con la fascia inchiostro.",
+      "tote": "Una shopper in tela naturale contro una parete rosso Shades, con il marchio stampato grande fino a uscire dal bordo.",
+      "sticker": "Un adesivo di Spectra fustellato con bordo bianco, su un taccuino nero.",
+      "tee": "Una t-shirt inchiostro su una gruccia, di spalle: le tre barre stampate in verticale, due a retino, e Shades Media Group in piccolo sotto."
     }
   },
   "projects": {

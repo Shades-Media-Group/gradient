@@ -723,9 +723,9 @@
       "title": "Merchandising",
       "text": "Petit symbole ou grand logotype, jamais les deux sur un même objet. Le spectre seulement en liseré.",
       "tote": "Tote bag",
-      "toteText": "Symbole une couleur, sérigraphié sur toile naturelle.",
+      "toteText": "Le logo une couleur, 300 mm de large, qui déborde de la toile naturelle.",
       "tee": "Tee-shirt",
-      "teeText": "Le logotype en grand dans le dos, la poitrine laissée vide.",
+      "teeText": "Les trois barres imprimées en hauteur dans le dos, la deuxième et la troisième en trame, les détails en petit dessous.",
       "sticker": "Sticker",
       "stickerText": "Un personnage Spectra, découpé à la forme avec une bordure blanche de 3 mm.",
       "rule1": "Utilisez les fichiers une couleur pour la broderie, la dorure, la gravure et la sérigraphie.",
@@ -750,6 +750,13 @@
       "inkPrint": "Noir riche : C60 M40 Y40 K100 sur papier couché",
       "paperPrint": "Le papier lui-même ; n'imprimez jamais une teinte pour le blanc",
       "proof": "Aucune valeur d'impression n'est définitive avant l'épreuve de l'imprimeur. Consignez ici les valeurs validées, avec l'imprimeur et le papier."
+    },
+    "shots": {
+      "cards": "Cartes de visite Shades à la lumière d’une fenêtre : une pile côté rouge, une carte retournée sur son verso.",
+      "badges": "Deux badges Shades Day sur leurs cordons : l’équipe avec une bande rouge, l’invité avec une bande encre.",
+      "tote": "Un tote en toile naturelle contre un mur rouge Shades, le logo imprimé en grand jusqu’à déborder du bord.",
+      "sticker": "Un autocollant Spectra découpé avec un liseré blanc, sur un carnet noir.",
+      "tee": "Un t-shirt encre sur un cintre, de dos : les trois barres imprimées en hauteur, deux en trame, et Shades Media Group en petit dessous."
     }
   },
   "projects": {

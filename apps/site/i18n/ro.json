@@ -723,9 +723,9 @@
       "title": "Merchandise",
       "text": "Simbol mic sau logotip mare, niciodată ambele pe același obiect. Spectrul doar ca bordură.",
       "tote": "Sacoșă",
-      "toteText": "Simbolul într-o culoare, serigrafiat, pe pânză naturală.",
+      "toteText": "Marca într-o singură culoare, lată de 300 mm, care iese peste marginea pânzei naturale.",
       "tee": "Tricou",
-      "teeText": "Logotipul mare pe spate, pieptul rămâne liber.",
+      "teeText": "Cele trei bare imprimate înalt pe spate, a doua și a treia în raster, detaliile mărunt dedesubt.",
       "sticker": "Autocolant",
       "stickerText": "Un personaj Spectra, decupat pe contur, cu margine albă de 3 mm.",
       "rule1": "Folosește fișierele într-o culoare pentru broderie, folio, gravură și serigrafie.",
@@ -750,6 +750,13 @@
       "inkPrint": "Negru intens: C60 M40 Y40 K100 pe hârtie cretată",
       "paperPrint": "Hârtia însăși; nu tipări niciodată un ton pentru alb",
       "proof": "Nicio valoare de tipar nu e finală până nu o verifică tipografia pe o probă. Notează aici valorile aprobate, împreună cu tipografia și hârtia."
+    },
+    "shots": {
+      "cards": "Cărți de vizită Shades în lumina ferestrei: un teanc cu fața roșie în sus, o carte întoarsă pe verso.",
+      "badges": "Două ecusoane Shades Day pe șnururi: echipa cu bandă roșie, invitatul cu bandă neagră.",
+      "tote": "O sacoșă din pânză naturală pe un perete roșu Shades, cu marca imprimată mare, până dincolo de margine.",
+      "sticker": "Un autocolant Spectra decupat cu margine albă, pe un carnet negru.",
+      "tee": "Un tricou negru pe umeraș, cu spatele: cele trei bare imprimate înalt, două în raster, cu Shades Media Group scris mărunt dedesubt."
     }
   },
   "projects": {

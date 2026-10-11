@@ -28,6 +28,7 @@
           <p>{{print.card.text}}</p>
         </div>
         <div class="doc-body">
+          <figure class="shot shot--wide"><img src="/renders/cards-1600.webp" srcset="/renders/cards-800.webp 800w, /renders/cards-1600.webp 1600w" sizes="(max-width: 860px) 100vw, 62vw" width="1600" height="900" alt="{{print.shots.cards}}" loading="lazy" decoding="async" /></figure>
           <div class="cards">
             <figure class="card card--front">
               <div class="card-sheet">{{@mark}}</div>
@@ -65,24 +66,7 @@
           <p>{{print.badge.text}}</p>
         </div>
         <div class="doc-body">
-          <div class="badges">
-            <figure class="event-badge" style="--role: var(--g-red-500)">
-              <div class="event-sheet">
-                <div class="event-top">{{@mark}}<span>Shades Day 2027</span></div>
-                <div class="event-name"><b>Ana</b><span>Popescu</span></div>
-                <p class="event-role">{{print.badge.team}}</p>
-              </div>
-              <figcaption>{{print.badge.teamCaption}}</figcaption>
-            </figure>
-            <figure class="event-badge" style="--role: var(--g-ink-950)">
-              <div class="event-sheet">
-                <div class="event-top">{{@mark}}<span>Shades Day 2027</span></div>
-                <div class="event-name"><b>Ion</b><span>Rusu</span></div>
-                <p class="event-role">{{print.badge.guest}}</p>
-              </div>
-              <figcaption>{{print.badge.guestCaption}}</figcaption>
-            </figure>
-          </div>
+          <figure class="shot shot--badge"><img src="/renders/badges-1200.webp" srcset="/renders/badges-600.webp 600w, /renders/badges-1200.webp 1200w" sizes="(max-width: 860px) 100vw, 480px" width="1200" height="1500" alt="{{print.shots.badges}}" loading="lazy" decoding="async" /></figure>
           <dl class="specs specs--row">
             <div><dt>{{print.size}}</dt><dd class="g-num">90 × 130 mm</dd></div>
             <div><dt>{{print.bleed}}</dt><dd class="g-num">3 mm</dd></div>
@@ -100,17 +84,17 @@
         <div class="doc-body">
           <ul class="merch">
             <li>
-              <div class="merch-art merch-art--tote" aria-hidden="true"><div class="merch-mark">{{@mark}}</div></div>
+              <figure class="shot"><img src="/renders/tote-1200.webp" srcset="/renders/tote-600.webp 600w, /renders/tote-1200.webp 1200w" sizes="(max-width: 560px) 80vw, (max-width: 860px) 33vw, 260px" width="1200" height="1500" alt="{{print.shots.tote}}" loading="lazy" decoding="async" /></figure>
               <h3>{{print.merch.tote}}</h3>
               <p>{{print.merch.toteText}}</p>
             </li>
             <li>
-              <div class="merch-art merch-art--tee" aria-hidden="true"><div class="merch-word">SHADES</div></div>
+              <figure class="shot"><img src="/renders/tee-1200.webp" srcset="/renders/tee-600.webp 600w, /renders/tee-1200.webp 1200w" sizes="(max-width: 560px) 80vw, (max-width: 860px) 33vw, 260px" width="1200" height="1500" alt="{{print.shots.tee}}" loading="lazy" decoding="async" /></figure>
               <h3>{{print.merch.tee}}</h3>
               <p>{{print.merch.teeText}}</p>
             </li>
             <li>
-              <div class="merch-art merch-art--sticker" aria-hidden="true"><div class="merch-sticker">{{@family:spectra}}</div></div>
+              <figure class="shot"><img src="/renders/sticker-1200.webp" srcset="/renders/sticker-600.webp 600w, /renders/sticker-1200.webp 1200w" sizes="(max-width: 560px) 80vw, (max-width: 860px) 33vw, 260px" width="1200" height="1500" alt="{{print.shots.sticker}}" loading="lazy" decoding="async" /></figure>
               <h3>{{print.merch.sticker}}</h3>
               <p>{{print.merch.stickerText}}</p>
             </li>

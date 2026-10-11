@@ -723,9 +723,9 @@
       "title": "Merchandise",
       "text": "Small mark or big wordmark, never both on one item. The spectrum only as a trim.",
       "tote": "Tote",
-      "toteText": "One-colour mark, screen printed, on natural canvas.",
+      "toteText": "The one-colour mark, 300 mm wide, running off the edge of natural canvas.",
       "tee": "Tee",
-      "teeText": "The wordmark large across the back, the chest left empty.",
+      "teeText": "The three bars printed tall down the back, the second and third as halftone, the details set small below.",
       "sticker": "Sticker",
       "stickerText": "A Spectra character, die cut with a 3 mm white border.",
       "rule1": "Use the one-colour files for embroidery, foil, etching and screen print.",
@@ -750,6 +750,13 @@
       "inkPrint": "Rich black: C60 M40 Y40 K100 on coated stock",
       "paperPrint": "The paper itself; never print a tint for white",
       "proof": "No print value is final until a printer has proofed it. Record the approved values here, with the printer and the stock."
+    },
+    "shots": {
+      "cards": "Shades business cards in window light: a stack face up on red, one card turned to its back.",
+      "badges": "Two Shades Day badges on lanyards: the team badge with a red band, the guest badge with an ink band.",
+      "tote": "A natural canvas tote against a Shades Red wall, the mark printed large so it runs off the edge.",
+      "sticker": "A Spectra sticker, die cut with a white border, on a black notebook.",
+      "tee": "An ink tee on a hanger, back to camera: the three bars printed tall, two in halftone, with Shades Media Group set small below."
     }
   },
   "projects": {
