@@ -177,8 +177,7 @@ body {
   color: var(--g-text);
 }
 
-.lang-menu,
-.nav-sheet {
+.lang-menu {
   position: absolute;
   top: calc(100% + 8px);
   right: 0;
@@ -216,6 +215,144 @@ body {
 
 .nav-more {
   display: none;
+}
+
+/* The menu on phones and tablets: two lines that turn into an X, and a sheet
+   that wipes down from the bar with the pages set large. */
+.burger {
+  position: relative;
+  display: block;
+  width: 20px;
+  height: 12px;
+}
+
+.burger i {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  border-radius: 2px;
+  background: currentColor;
+  transition:
+    transform 320ms var(--g-ease-move),
+    top 320ms var(--g-ease-move);
+}
+
+.burger i:first-child {
+  top: 1px;
+}
+
+.burger i:last-child {
+  top: 9px;
+}
+
+.nav-more[open] .burger i:first-child {
+  top: 5px;
+  transform: rotate(45deg);
+}
+
+.nav-more[open] .burger i:last-child {
+  top: 5px;
+  transform: rotate(-45deg);
+}
+
+.nav-more > summary {
+  width: 44px;
+  justify-content: center;
+}
+
+.nav-sheet {
+  position: fixed;
+  inset: var(--nav-h) 0 0;
+  z-index: 60;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  overflow-y: auto;
+  padding: 24px var(--gutter) calc(32px + env(safe-area-inset-bottom));
+  background: var(--g-bg);
+  animation: sheet-in 460ms var(--g-ease-move) both;
+}
+
+.nav-sheet nav {
+  display: grid;
+}
+
+.nav-sheet nav a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--g-line);
+  border-radius: 0;
+  background: none;
+  color: var(--g-text);
+  font: 700 clamp(2rem, 8.5vw, 3.25rem) / 1.05 var(--g-font-display);
+  letter-spacing: -0.03em;
+  text-decoration: none;
+}
+
+.nav-sheet nav a svg {
+  width: 26px;
+  height: 26px;
+  color: var(--g-text-3);
+}
+
+.nav-sheet nav a[aria-current] {
+  color: var(--g-accent-text);
+}
+
+.nav-sheet nav a[aria-current] svg {
+  color: currentColor;
+}
+
+.nav-sheet .nav-sheet-cta {
+  width: 100%;
+  color: var(--g-on-accent);
+}
+
+.nav-sheet-credit {
+  color: var(--g-text-3);
+  font-size: var(--g-size-small);
+}
+
+.nav-sheet > *,
+.nav-sheet nav a {
+  animation: sheet-item 520ms calc(80ms + var(--i, 0) * 40ms) var(--g-ease-move) both;
+}
+
+.nav-sheet nav {
+  animation: none;
+}
+
+@keyframes sheet-in {
+  from {
+    clip-path: inset(0 0 100% 0);
+  }
+
+  to {
+    clip-path: inset(0);
+  }
+}
+
+@keyframes sheet-item {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.nav-more:not([open]) .nav-sheet {
+  display: none;
+}
+
+:root:has(.nav-more[open]) {
+  overflow: hidden;
 }
 
 /* Shared layout ------------------------------------------------------------- */
@@ -2334,10 +2471,6 @@ body {
 
   .nav-more {
     display: block;
-  }
-
-  .nav-sheet {
-    min-width: 220px;
   }
 
   .install {

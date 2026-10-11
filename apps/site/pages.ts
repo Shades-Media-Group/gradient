@@ -397,6 +397,10 @@ function render(locale: Locale, page: Page): string {
     (id) =>
       `<a href="${to(id)}"${id === page.id ? ' aria-current="page"' : ''}>${t(`nav.${id}`)}</a>`,
   ).join('')
+  const sheetLinks = NAV.map(
+    (id, i) =>
+      `<a href="${to(id)}" style="--i: ${i}"${id === page.id ? ' aria-current="page"' : ''}><span>${t(`nav.${id}`)}</span>${icon('arrowRight')}</a>`,
+  ).join('')
 
   const specials: Record<string, (arg: string) => string> = {
     lang: () => locale.lang,
@@ -420,8 +424,12 @@ function render(locale: Locale, page: Page): string {
       </details>
       <a class="g-btn g-btn--inverse g-btn--sm nav-cta" href="${base}#install">${t('nav.cta')}</a>
       <details class="nav-more">
-        <summary aria-label="${html(t('nav.menu'))}">${icon('menu')}</summary>
-        <nav class="nav-sheet" aria-label="${html(t('nav.label'))}">${navLinks}</nav>
+        <summary aria-label="${html(t('nav.menu'))}"><span class="burger" aria-hidden="true"><i></i><i></i></span></summary>
+        <div class="nav-sheet">
+          <nav aria-label="${html(t('nav.label'))}">${sheetLinks}</nav>
+          <a class="g-btn g-btn--primary g-btn--lg nav-sheet-cta" href="${base}#install" style="--i: ${NAV.length}">${t('nav.cta')}${icon('arrowRight')}</a>
+          <p class="nav-sheet-credit" style="--i: ${NAV.length + 1}">${t('footer.credit')}</p>
+        </div>
       </details>
     </header>`,
     footer: () => `<footer class="footer">
