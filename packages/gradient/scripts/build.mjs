@@ -75,10 +75,14 @@ const darkOf = (token) => token.$extensions?.['md.shades.gradient']?.dark
 function tokensCss() {
   const light = []
   const dark = []
+  const lightRoles = []
   for (const [group, prefix] of GROUPS) {
     for (const [name, token] of entries(group)) {
       light.push(`  ${varName(prefix, name)}: ${css(token.$value)};`)
-      if (darkOf(token)) dark.push(`  ${varName(prefix, name)}: ${css(darkOf(token))};`)
+      if (darkOf(token)) {
+        dark.push(`  ${varName(prefix, name)}: ${css(darkOf(token))};`)
+        lightRoles.push(`  ${varName(prefix, name)}: ${css(token.$value)};`)
+      }
     }
   }
   const spectrum =
@@ -98,9 +102,15 @@ ${dark.map((line) => `  ${line}`).join('\n')}
   }
 }
 
-:root[data-theme='dark'] {
+/* Themes can also be pinned on any element: a dark section, a preview. */
+[data-theme='dark'] {
   color-scheme: dark;
 ${dark.join('\n')}
+}
+
+[data-theme='light'] {
+  color-scheme: light;
+${lightRoles.join('\n')}
 }
 `
 }
