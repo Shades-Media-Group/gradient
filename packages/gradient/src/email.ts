@@ -10,7 +10,7 @@
  *
  * The rules that keep it working everywhere:
  * - tables and inline styles only
- * - a 560 px column
+ * - a 520 px column, the width of a pass on a phone
  * - buttons drawn twice: VML for Outlook's Word engine, a styled link for
  *   everyone else
  * - web fonts only where the client loads them, with Arial in Outlook
@@ -19,7 +19,13 @@
  *
  * It runs anywhere JavaScript runs (Node, Workers, the browser), with no
  * dependencies. Client brands pass their own colours, logo and font in
- * `brand`; nails-by-alynna's passes fit inside `panel()`.
+ * `brand`.
+ *
+ * Every message is built around one object, the pass: a coloured field with
+ * the Shades mark in its corner like an issuer on a boarding pass, the one
+ * fact that matters set large, label-over-value fields, and a perforated stub
+ * for what comes after. Ink holds codes, soft red holds bookings, paper holds
+ * everything else.
  *
  *   import { renderEmail, email, SHADES } from 'shades-gradient/email'
  */
@@ -42,21 +48,33 @@ export interface EmailBrand {
   font: string
   /** Optional font stylesheet, loaded only by clients that load web fonts. */
   fontCss?: string
+  /** The square mark as a PNG at twice its size, for the corner of a pass. */
+  mark?: string
+}
+
+export type PassTone = 'ink' | 'red' | 'paper'
+
+/** A pass's field, its text, its deep tone (labels, from the same hue) and its perforation. */
+const TONES: Record<PassTone, { field: string; text: string; deep: string; perf: string }> = {
+  ink: { field: '#1C1C20', text: '#FFFFFF', deep: '#BDBDC3', perf: '#3A3A40' },
+  red: { field: '#FFF0F2', text: '#1C1C20', deep: '#AB000D', perf: '#FFC4CF' },
+  paper: { field: '#EFEEEA', text: '#1C1C20', deep: '#56565E', perf: '#D5D3CE' },
 }
 
 /** Shades Media Group. Logo: the lockup PNG on gradient.shades.md. */
 export const SHADES: EmailBrand = {
   name: 'Shades Media Group',
   logo: { src: 'https://gradient.shades.md/email/shades-lockup.png', width: 142, height: 32 },
+  mark: 'https://gradient.shades.md/shades-mark.png',
   home: 'https://shades.md',
   address: 'Shades Media Group · Chișinău, Moldova',
   accent: '#E40523',
   onAccent: '#FFFFFF',
-  ink: '#0A0A0B',
+  ink: '#1C1C20',
   muted: '#56565E',
-  line: '#E6E6E4',
-  page: '#FFFFFF',
-  panel: '#F3F3F1',
+  line: '#E3E1DC',
+  page: '#F7F6F3',
+  panel: '#EFEEEA',
   font: "'Hanken Grotesk',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif",
   fontCss: 'https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700&display=swap',
 }
@@ -109,8 +127,111 @@ export function blocks(brand: EmailBrand = SHADES) {
     text: value,
   })
 
+  type Field = { label: string; value: string | null | undefined }
+
+  /** Label-over-value pairs, two to a row, in a pass's own colours. */
+  const fieldRows = (
+    items: Field[],
+    text: string,
+    deep: string,
+    cls = 'g-e-text',
+    deepCls = 'g-e-muted',
+  ) => {
+    const present = items.filter((f): f is { label: string; value: string } => Boolean(f.value))
+    if (!present.length) return NONE
+    const cell = (f: { label: string; value: string }) =>
+      `<td valign="top" width="50%" style="padding:0 12px 14px 0"><p class="${deepCls}" style="margin:0 0 2px;font-size:12px;line-height:1.4;color:${deep}">${escapeHtml(f.label)}</p><p class="${cls}" style="margin:0;font-size:15px;line-height:1.4;font-weight:700;color:${text}">${escapeHtml(f.value)}</p></td>`
+    const rows: string[] = []
+    for (let i = 0; i < present.length; i += 2)
+      rows.push(
+        `<tr>${cell(present[i]!)}${present[i + 1] ? cell(present[i + 1]!) : '<td></td>'}</tr>`,
+      )
+    return {
+      html: `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="table-layout:fixed">${rows.join('')}</table>`,
+      text: present.map((f) => `${f.label}: ${f.value}`).join('\n'),
+    }
+  }
+
+  /** The ticket cut between a pass and its stub: two notches in the page colour and a dashed line. */
+  const perforation = (tone: PassTone) => {
+    const notch = (left: boolean) =>
+      `<td width="12" class="g-e-page" style="width:12px;height:24px;background:${brand.page};border-radius:${left ? '0 12px 12px 0' : '12px 0 0 12px'};font-size:0;line-height:0">&nbsp;</td>`
+    return `<tr><td style="padding:0"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>${notch(true)}<td style="vertical-align:middle;padding:0 6px"><div class="g-e-perf-${tone}" style="border-top:2px dashed ${TONES[tone].perf};height:0;font-size:0;line-height:0">&nbsp;</div></td>${notch(false)}</tr></table></td></tr>`
+  }
+
+  /**
+   * The pass: a label and the mark on its first line, the main fact, fields under
+   * it and, after the perforation, the stub. Colour only, 16 px corners, no
+   * border, no shadow: what happened is the headline's job, the pass holds the facts.
+   */
+  const pass = (opts: {
+    tone?: PassTone
+    label: string
+    main: Block
+    fields?: Field[]
+    stub?: Block[]
+  }): Block => {
+    const tone = opts.tone ?? 'paper'
+    const t = TONES[tone]
+    const textCls = tone === 'ink' ? 'g-e-on-ink' : 'g-e-text'
+    const deepCls = `g-e-deep-${tone}`
+    const mark = brand.mark
+      ? `<td align="right" width="22" style="width:22px"><img src="${escapeHtml(brand.mark)}" width="22" height="22" alt="" style="display:block;border:0;width:22px;height:22px"></td>`
+      : ''
+    const head = `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:0 0 14px"><tr><td class="${deepCls}" style="font-size:12px;line-height:1.4;font-weight:600;color:${t.deep}">${escapeHtml(opts.label)}</td>${mark}</tr></table>`
+    const fields = opts.fields ? fieldRows(opts.fields, t.text, t.deep, textCls, deepCls) : NONE
+    const stub = (opts.stub ?? []).filter((x) => x.html)
+    return {
+      html:
+        `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" class="g-e-pass-${tone}" style="margin:0 0 24px;background:${t.field};border-radius:16px;border-collapse:separate">` +
+        `<tr><td style="padding:18px 20px ${fields.html || stub.length ? '6px' : '20px'}">${head}${opts.main.html}</td></tr>` +
+        (fields.html
+          ? `<tr><td style="padding:10px 20px ${stub.length ? '2px' : '6px'}">${fields.html}</td></tr>`
+          : '') +
+        (stub.length
+          ? perforation(tone) +
+            `<tr><td style="padding:12px 20px 16px">${stub.map((x) => x.html.replace(/margin:0 0 16px/g, 'margin:0')).join('')}</td></tr>`
+          : '') +
+        `</table>`,
+      text: [opts.label, opts.main.text, fields.text, ...stub.map((x) => x.text)]
+        .filter(Boolean)
+        .join('\n'),
+    }
+  }
+
   return {
     paragraph: (value: string) => p(value),
+
+    pass,
+
+    /**
+     * A booking or an event on a pass: the time large, the day under it, the
+     * details as fields and, in the stub, the calendar links.
+     */
+    ticket(opts: {
+      tone?: PassTone
+      label: string
+      time: string
+      day: string
+      fields?: Field[]
+      stub?: Block[]
+    }): Block {
+      const tone = opts.tone ?? 'red'
+      const t = TONES[tone]
+      const cls = tone === 'ink' ? 'g-e-on-ink' : 'g-e-text'
+      return pass({
+        tone,
+        label: opts.label,
+        main: {
+          html:
+            `<p class="${cls}" style="margin:0;font-size:44px;line-height:1.05;font-weight:700;letter-spacing:-0.02em;font-variant-numeric:tabular-nums;color:${t.text};mso-line-height-rule:exactly">${escapeHtml(opts.time)}</p>` +
+            `<p class="${cls}" style="margin:6px 0 0;font-size:20px;line-height:1.3;font-weight:600;color:${t.text}">${escapeHtml(opts.day)}</p>`,
+          text: `${opts.time}, ${opts.day}`,
+        },
+        fields: opts.fields,
+        stub: opts.stub,
+      })
+    },
     /** Smaller, quieter text: a reason, a reassurance, a legal line. */
     note: (value: string) => p(value, 13, brand.muted, 'g-e-muted'),
 
@@ -151,31 +272,17 @@ export function blocks(brand: EmailBrand = SHADES) {
       }
     },
 
-    /** A tinted panel holding other blocks: the booking, the order, the summary. */
+    /** A paper field holding other blocks, for a client brand's own content. */
     panel(...inner: Block[]): Block {
       const body = inner.filter((b) => b.html)
       return {
-        html: `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" class="g-e-panel" style="margin:0 0 20px;background:${brand.panel};border-radius:16px;border-collapse:separate"><tr><td style="padding:20px 20px 4px">${body.map((b) => b.html).join('')}</td></tr></table>`,
+        html: `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" class="g-e-pass-paper" style="margin:0 0 24px;background:${brand.panel};border-radius:16px;border-collapse:separate"><tr><td style="padding:20px 20px 6px">${body.map((b) => b.html).join('')}</td></tr></table>`,
         text: body.map((b) => b.text).join('\n'),
       }
     },
 
     /** Label-over-value pairs, two to a row. */
-    fields(items: Array<{ label: string; value: string | null | undefined }>): Block {
-      const present = items.filter((f): f is { label: string; value: string } => Boolean(f.value))
-      if (!present.length) return NONE
-      const cell = (f: { label: string; value: string }) =>
-        `<td valign="top" width="50%" style="padding:0 12px 16px 0"><p class="g-e-muted" style="margin:0 0 2px;font-size:12px;line-height:1.4;color:${brand.muted}">${escapeHtml(f.label)}</p><p class="g-e-text" style="margin:0;font-size:15px;line-height:1.4;font-weight:700;color:${brand.ink}">${escapeHtml(f.value)}</p></td>`
-      const rows: string[] = []
-      for (let i = 0; i < present.length; i += 2)
-        rows.push(
-          `<tr>${cell(present[i]!)}${present[i + 1] ? cell(present[i + 1]!) : '<td></td>'}</tr>`,
-        )
-      return {
-        html: `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="table-layout:fixed">${rows.join('')}</table>`,
-        text: present.map((f) => `${f.label}: ${f.value}`).join('\n'),
-      }
-    },
+    fields: (items: Field[]): Block => fieldRows(items, brand.ink, brand.muted),
 
     /**
      * A one-time code. Gmail offers "Copy" and Apple Mail offers AutoFill when the
@@ -184,16 +291,18 @@ export function blocks(brand: EmailBrand = SHADES) {
      * with the code too: "418 203 is your Shades code" reads badly, "Your Shades
      * code: 418203" works.
      */
-    code(label: string, code: string, valid: string): Block {
-      return {
-        html:
-          `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:0 0 20px;background:${brand.ink};border-radius:16px;border-collapse:separate"><tr><td style="padding:22px 24px">` +
-          `<p style="margin:0 0 6px;font-size:13px;line-height:1.4;color:#C8C8CD">${escapeHtml(label)}</p>` +
-          `<p style="margin:0;font-size:40px;line-height:1.1;font-weight:700;letter-spacing:6px;color:#FFFFFF;font-variant-numeric:tabular-nums;mso-line-height-rule:exactly">${escapeHtml(code)}</p>` +
-          `<p style="margin:8px 0 0;font-size:13px;line-height:1.4;color:#C8C8CD">${escapeHtml(valid)}</p>` +
-          `</td></tr></table>`,
-        text: `${label}: ${code}\n${valid}`,
-      }
+    code(label: string, code: string, valid: string, stub?: string): Block {
+      return pass({
+        tone: 'ink',
+        label,
+        main: {
+          html:
+            `<p class="g-e-on-ink" style="margin:0;font-size:44px;line-height:1.05;font-weight:700;letter-spacing:0.12em;color:#FFFFFF;font-variant-numeric:tabular-nums;mso-line-height-rule:exactly">${escapeHtml(code)}</p>` +
+            `<p class="g-e-deep-ink" style="margin:8px 0 0;font-size:14px;line-height:1.4;color:${TONES.ink.deep}">${escapeHtml(valid)}</p>`,
+          text: `${label}: ${code}\n${valid}`,
+        },
+        stub: stub ? [p(stub, 13, TONES.ink.deep, 'g-e-deep-ink')] : undefined,
+      })
     },
 
     divider(): Block {
@@ -259,16 +368,18 @@ a[x-apple-data-detectors]{color:inherit !important;text-decoration:none !importa
 #MessageViewBody a{color:inherit;text-decoration:none}
 @media (max-width:600px){.g-e-col{padding-left:20px !important;padding-right:20px !important}}
 @media (prefers-color-scheme:dark){
-.g-e-page{background:#0A0A0B !important}
-.g-e-text{color:#F5F5F3 !important}
-.g-e-muted{color:#C8C8CD !important}
-.g-e-panel{background:#18181B !important}
+.g-e-page{background:#141416 !important}
+.g-e-text,.g-e-on-ink{color:#ECECEA !important}
+.g-e-muted,.g-e-deep-paper{color:#BDBDC3 !important}
 .g-e-rule{border-color:#2A2A31 !important}
-.g-e-btn-alt{background:transparent !important;color:#F5F5F3 !important;border-color:#3A3A40 !important}
+.g-e-btn-alt{background:transparent !important;color:#ECECEA !important;border-color:#3A3A40 !important}
+.g-e-pass-ink{background:#26262E !important}.g-e-perf-ink{border-color:#45454E !important}
+.g-e-pass-red{background:#3A1015 !important}.g-e-deep-red{color:#FF9AAA !important}.g-e-perf-red{border-color:#6A2530 !important}
+.g-e-pass-paper{background:#1E1E22 !important}.g-e-perf-paper{border-color:#3A3A40 !important}
 }
-[data-ogsc] .g-e-text{color:#F5F5F3 !important}
-[data-ogsc] .g-e-muted{color:#C8C8CD !important}
-[data-ogsb] .g-e-panel{background:#18181B !important}
+[data-ogsc] .g-e-text{color:#ECECEA !important}
+[data-ogsc] .g-e-muted{color:#BDBDC3 !important}
+[data-ogsb] .g-e-pass-paper{background:#1E1E22 !important}
 </style>
 </head>
 <body class="g-e-page" style="margin:0;padding:0;background:${brand.page};-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%">
@@ -276,11 +387,11 @@ ${schema}
 <div style="display:none;max-height:0;overflow:hidden;opacity:0;mso-hide:all">${escapeHtml(opts.preheader)}${'&#8199;&#847;'.repeat(40)}</div>
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" class="g-e-page" style="background:${brand.page}">
 <tr><td align="center" style="padding:32px 12px 40px">
-<!--[if mso]><table role="presentation" width="560" align="center" cellpadding="0" cellspacing="0" border="0"><tr><td><![endif]-->
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width:560px;font-family:${brand.font}">
+<!--[if mso]><table role="presentation" width="520" align="center" cellpadding="0" cellspacing="0" border="0"><tr><td><![endif]-->
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width:520px;font-family:${brand.font}">
 <tr><td class="g-e-col" style="padding:0 24px 28px"><a href="${escapeHtml(home)}" style="text-decoration:none"><img src="${escapeHtml(brand.logo.src)}" width="${brand.logo.width}" height="${brand.logo.height}" alt="${escapeHtml(brand.name)}" style="display:block;border:0;outline:none;width:${brand.logo.width}px;height:auto;font-family:${MSO_FONT};font-size:18px;font-weight:bold;color:${brand.accent}"></a></td></tr>
 <tr><td class="g-e-col" style="padding:0 24px;font-family:${brand.font};color:${brand.ink}">
-<h1 class="g-e-text" style="margin:0 0 12px;font-size:28px;line-height:1.2;font-weight:700;letter-spacing:-0.02em;color:${brand.ink};mso-line-height-rule:exactly">${escapeHtml(opts.heading)}</h1>
+<h1 class="g-e-text" style="margin:0 0 10px;font-size:30px;line-height:1.12;font-weight:700;letter-spacing:-0.025em;color:${brand.ink};mso-line-height-rule:exactly">${escapeHtml(opts.heading)}</h1>
 ${body.map((x) => x.html).join('\n')}
 </td></tr>
 <tr><td class="g-e-col" style="padding:8px 24px 0;font-family:${brand.font}">

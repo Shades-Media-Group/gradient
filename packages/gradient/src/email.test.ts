@@ -35,6 +35,11 @@ describe('renderEmail', () => {
     schema: viewAction('Open the brief', 'https://shades.md/brief'),
   })
 
+  it('closes every table it opens', () => {
+    const count = (tag: string) => message.html.split(tag).length - 1
+    expect(count('<table')).toBe(count('</table>'))
+  })
+
   it('escapes what it is given', () => {
     expect(message.html).toContain('Confirm your email &lt;now&gt;')
     expect(escapeHtml(`"'&`)).toBe('&quot;&#39;&amp;')
@@ -43,7 +48,7 @@ describe('renderEmail', () => {
   it('draws buttons for Outlook and for everyone else', () => {
     expect(message.html).toContain('<v:roundrect')
     expect(message.html).toContain('<!--[if !mso]><!-->')
-    expect(message.html).toContain('<!--[if mso]><table role="presentation" width="560"')
+    expect(message.html).toContain('<!--[if mso]><table role="presentation" width="520"')
   })
 
   it('drops links that are not http(s)', () => {

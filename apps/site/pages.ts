@@ -332,7 +332,12 @@ function emailSamples() {
       heading: 'Confirm your email',
       lead: 'Enter this code to finish signing in to the Shades client space.',
       blocks: [
-        email.code('Your code', '418203', 'Valid for 10 minutes'),
+        email.code(
+          'Your code',
+          '418203',
+          'Valid for 10 minutes',
+          'Never share it. Shades will never ask you for it.',
+        ),
         email.note('Didn’t ask for it? Ignore this email: nothing changes without the code.'),
       ],
     }),
@@ -341,17 +346,22 @@ function emailSamples() {
       subject: 'Your brand workshop is booked',
       preheader: 'Thursday, 4 March, 11:00 in the studio.',
       heading: 'Your workshop is booked',
-      lead: 'Thursday, 4 March, from 11:00 to 12:30. Bring the brief; the coffee is on us.',
+      lead: 'Bring the brief; the coffee is on us.',
       blocks: [
-        email.panel(
-          email.fields([
-            { label: 'When', value: 'Thu, 4 March · 11:00' },
+        email.ticket({
+          label: 'Brand workshop',
+          time: '11:00',
+          day: 'Thursday, 4 March',
+          fields: [
             { label: 'Length', value: '1 h 30 min' },
-            { label: 'Where', value: 'Shades studio, Chișinău' },
             { label: 'Booking', value: 'SH-0042' },
-          ]),
-        ),
-        calendarLinks(event, { google: 'Add to Google Calendar', outlook: 'Add to Outlook' }),
+            { label: 'Where', value: 'Shades studio, Chișinău' },
+            { label: 'With', value: 'Ana Popescu' },
+          ],
+          stub: [
+            calendarLinks(event, { google: 'Add to Google Calendar', outlook: 'Add to Outlook' }),
+          ],
+        }),
         email.button('Manage the booking', 'https://shades.md/booking/42'),
       ],
     }),
@@ -362,13 +372,20 @@ function emailSamples() {
       heading: 'Your brief is in',
       lead: 'Thank you, Ana. Here is what happens next.',
       blocks: [
-        email.panel(
-          email.fields([
-            { label: 'Project', value: 'Brand identity' },
+        email.pass({
+          label: 'Brief SH-0042',
+          main: {
+            html: '<p class="g-e-text" style="margin:0;font-size:24px;line-height:1.2;font-weight:700;color:#1C1C20">Brand identity</p>',
+            text: 'Brand identity',
+          },
+          fields: [
+            { label: 'Received', value: 'Fri, 5 March' },
             { label: 'Reply by', value: 'Tue, 9 March' },
-          ]),
-        ),
-        email.paragraph('A designer reads every brief. You will hear from a person, not a robot.'),
+          ],
+          stub: [
+            email.note('A designer reads every brief. You will hear from a person, not a robot.'),
+          ],
+        }),
         email.button('See the brief', 'https://shades.md/brief/42'),
         email.button('Book a call', 'https://shades.md/call', false),
       ],
@@ -490,6 +507,9 @@ function render(locale: Locale, page: Page): string {
           return `<tr><td><code>--g-${fg}</code> / <code>--g-${bg}</code></td>${cell(false)}${cell(true)}</tr>`
         },
       ).join('')}</tbody></table></div>`,
+    // The sign-in email itself, live and unclickable, as the email page's specimen.
+    emailArt: () =>
+      `<iframe class="page-art-email" title="" tabindex="-1" scrolling="no" srcdoc="${SAMPLES.code.html.replaceAll('&', '&amp;').replaceAll('"', '&quot;').replaceAll('<', '&lt;').replaceAll('>', '&gt;')}"></iframe>`,
     emailPreviews: () =>
       Object.entries(SAMPLES)
         .map(
