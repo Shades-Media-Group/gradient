@@ -282,19 +282,19 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px 0;
+  padding: 14px 0;
   border-bottom: 1px solid var(--g-line);
   border-radius: 0;
   background: none;
   color: var(--g-text);
-  font: 700 clamp(2rem, 8.5vw, 3.25rem) / 1.05 var(--g-font-display);
-  letter-spacing: -0.03em;
+  font: 700 clamp(1.5rem, 6vw, 2.25rem) / 1.1 var(--g-font-display);
+  letter-spacing: -0.02em;
   text-decoration: none;
 }
 
 .nav-sheet nav a svg {
-  width: 26px;
-  height: 26px;
+  width: 22px;
+  height: 22px;
   color: var(--g-text-3);
 }
 
@@ -2477,7 +2477,9 @@ body {
 }
 
 .footer-word {
-  margin: clamp(32px, 5vw, 56px) 0 -0.12em -0.05em;
+  /* 0.05em brings the ink to the gutter; 0.03em more balances the light, round
+     G against the heavy "nt", so the word looks centred, not just measures it. */
+  margin: clamp(32px, 5vw, 56px) 0 -0.12em -0.08em;
   font: 700 calc(100cqi / 3.576) / 0.8 var(--g-font-display);
   letter-spacing: -0.065em;
   white-space: nowrap;
