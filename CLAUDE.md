@@ -6,7 +6,7 @@ Gradient is the design system of Shades Media Group. It holds:
 - the `shades-gradient` npm package that every Shades product installs
 - the website at gradient.shades.md, in eleven languages
 
-Product truth lives in [PRODUCT.md](PRODUCT.md); the rejected patterns live in [docs/lessons.md](docs/lessons.md). Read both before any visual work.
+Product truth lives in [PRODUCT.md](PRODUCT.md); the rejected patterns live in [docs/lessons.md](docs/lessons.md); the quality bar and the audit live in [docs/design-philosophy.md](docs/design-philosophy.md) and the `shades-craft` skill. Read them before any visual work.
 
 ## Commands
 
@@ -18,6 +18,7 @@ yarn deploy:site     # build, audit, wrangler deploy to gradient.shades.md
 yarn brand           # regenerate the logo files from the shades.md geometry
 yarn --cwd packages/gradient icons   # rebuild src/icons.ts from icons/*.svg
 yarn assets          # social card, touch icon, README banners
+yarn renders         # product shots of the print files (GPU machine; files are committed)
 ```
 
 Use Node 22: `export PATH=$HOME/.nvm/versions/node/v22.23.1/bin:$PATH`; the shell defaults to an older Node.
