@@ -13,7 +13,7 @@ import { fileURLToPath } from 'node:url'
 import { chromium } from '@playwright/test'
 
 const dist = fileURLToPath(new URL('../apps/site/dist', import.meta.url))
-const LANGS = ['', 'fr/', 'ro/', 'ru/', 'es/', 'zh/']
+const LANGS = ['', 'fr/', 'ro/', 'ru/', 'es/', 'it/', 'tr/', 'hi/', 'ja/', 'zh/', 'zh-hant/']
 const PAGES = ['', 'brand/', 'foundations/', 'components/', 'icons/', 'print/', 'projects/']
 const WIDTHS = [375, 1440]
 const TYPES = {

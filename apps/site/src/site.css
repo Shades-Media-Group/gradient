@@ -21,6 +21,38 @@ body {
 :lang(zh-Hans) {
   --g-font-display:
     'Space Grotesk Variable', 'PingFang SC', 'Microsoft YaHei', 'Noto Sans SC', sans-serif;
+  --g-font-body:
+    'Hanken Grotesk Variable', 'PingFang SC', 'Microsoft YaHei', 'Noto Sans SC', sans-serif;
+}
+
+:lang(zh-Hant) {
+  --g-font-display:
+    'Space Grotesk Variable', 'PingFang TC', 'Microsoft JhengHei', 'Noto Sans TC', sans-serif;
+  --g-font-body:
+    'Hanken Grotesk Variable', 'PingFang TC', 'Microsoft JhengHei', 'Noto Sans TC', sans-serif;
+}
+
+:lang(ja) {
+  --g-font-display:
+    'Space Grotesk Variable', 'Hiragino Sans', 'Yu Gothic', 'Noto Sans JP', sans-serif;
+  --g-font-body:
+    'Hanken Grotesk Variable', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Yu Gothic', 'Meiryo',
+    'Noto Sans JP', sans-serif;
+}
+
+:lang(hi) {
+  --g-font-display:
+    'Space Grotesk Variable', 'Kohinoor Devanagari', 'Nirmala UI', 'Noto Sans Devanagari',
+    sans-serif;
+  --g-font-body:
+    'Hanken Grotesk Variable', 'Kohinoor Devanagari', 'Nirmala UI', 'Noto Sans Devanagari',
+    sans-serif;
+}
+
+/* Chinese, Japanese and Devanagari headings don't take negative tracking. */
+:is(:lang(zh-Hans), :lang(zh-Hant), :lang(ja), :lang(hi))
+  :is(h1, h2, h3, .specimen-lines span, .slogan) {
+  letter-spacing: 0;
 }
 
 .i {

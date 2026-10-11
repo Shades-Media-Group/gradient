@@ -17,7 +17,19 @@ import { fileURLToPath } from 'node:url'
 import { gzipSync } from 'node:zlib'
 
 const SITE = 'https://gradient.shades.md'
-const LANGS = { en: 'en', fr: 'fr', ro: 'ro', ru: 'ru', es: 'es', zh: 'zh-Hans' }
+const LANGS = {
+  en: 'en',
+  fr: 'fr',
+  ro: 'ro',
+  ru: 'ru',
+  es: 'es',
+  it: 'it',
+  tr: 'tr',
+  hi: 'hi',
+  ja: 'ja',
+  zh: 'zh-Hans',
+  'zh-hant': 'zh-Hant',
+}
 const HREFLANGS = [...Object.values(LANGS), 'x-default'].sort()
 /** Compressed bytes a single page may cost, fonts excluded. */
 const BUDGET = { html: 24_000, js: 12_000, css: 16_000 }
@@ -96,7 +108,7 @@ function checkJsonLd(where, html, path) {
     for (const field of REQUIRED[node['@type']] ?? [])
       if (node[field] === undefined || node[field] === '' || node[field]?.length === 0)
         fail(where, `${node['@type']} has no ${field}`)
-  const isHome = /^\/([a-z]{2}\/)?$/.test(path)
+  const isHome = /^\/([a-z]{2}(-hant)?\/)?$/.test(path)
   const expected = isHome
     ? ['Organization', 'WebSite', 'WebPage', 'SoftwareSourceCode', 'FAQPage']
     : ['Organization', 'WebSite', 'WebPage', 'BreadcrumbList']
@@ -217,8 +229,8 @@ for (const file of pages) {
     if (!exists(attr(tag, 'href'))) fail(where, `hreflang ${attr(tag, 'hreflang')} points nowhere`)
   if (meta(html, 'property', 'og:url')[0] !== `${SITE}${path}`)
     fail(where, 'og:url is not this page')
-  if (meta(html, 'property', 'og:locale:alternate').length !== 5)
-    fail(where, 'og:locale:alternate does not list the other five languages')
+  if (meta(html, 'property', 'og:locale:alternate').length !== Object.keys(LANGS).length - 1)
+    fail(where, 'og:locale:alternate does not list every other language')
   for (const key of ['og:title', 'og:description', 'og:image'])
     if (!meta(html, 'property', key)[0]) fail(where, `no ${key}`)
   if (!meta(html, 'name', 'twitter:card')[0]) fail(where, 'no twitter:card')
