@@ -1,0 +1,206 @@
+/*
+ * Motion. Three speeds: snap (180 ms, never bounces) for hovers and toggles,
+ * pop (320 ms, one overshoot) for entrances and reactions, loop (2.4-5 s) for
+ * the Spectra idles only. Content is visible before any of it runs, and all
+ * of it stops under prefers-reduced-motion (see base.css).
+ */
+
+@keyframes g-rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+}
+
+@keyframes g-fade {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes g-pop {
+  from {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+}
+
+/* The mark's bars, fading in turn: the navbar logo on shades.md. */
+@keyframes g-bars {
+  0% {
+    opacity: 0;
+  }
+  10%,
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* The bars as an equaliser: the loader. */
+@keyframes g-eq {
+  0%,
+  100% {
+    transform: scaleY(0.32);
+  }
+  50% {
+    transform: scaleY(1);
+  }
+}
+
+/* Spectra family idles. Travel stays under 12 px; nobody squashes. */
+@keyframes g-bob {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes g-float {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-6px) rotate(-1.2deg);
+  }
+}
+
+@keyframes g-hop {
+  0%,
+  60%,
+  100% {
+    transform: translateY(0);
+  }
+  74% {
+    transform: translateY(-12px);
+  }
+  86% {
+    transform: translateY(-2px);
+  }
+}
+
+@keyframes g-breathe {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.022);
+  }
+}
+
+@keyframes g-sway {
+  0%,
+  100% {
+    transform: rotate(-1.5deg);
+  }
+  50% {
+    transform: rotate(1.5deg);
+  }
+}
+
+@keyframes g-shadow {
+  0%,
+  100% {
+    transform: scaleX(1);
+    opacity: 0.28;
+  }
+  50% {
+    transform: scaleX(0.88);
+    opacity: 0.18;
+  }
+}
+
+@keyframes g-blink {
+  0%,
+  91%,
+  100% {
+    transform: scaleY(1);
+  }
+  95% {
+    transform: scaleY(0.08);
+  }
+}
+
+@keyframes g-twinkle {
+  0%,
+  100% {
+    opacity: 0.35;
+    transform: scale(0.8) rotate(0deg);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.12) rotate(16deg);
+  }
+}
+
+@layer components {
+  .g-enter {
+    animation: g-rise var(--g-dur-move) var(--g-ease-move) both;
+  }
+
+  .g-enter-pop {
+    animation: g-pop var(--g-dur-pop) var(--g-ease-pop) both;
+  }
+
+  /*
+   * A character's idle: put the class on the element that wraps the inline
+   * SVG. Each member has one; see the family page for who does what.
+   */
+  .g-idle {
+    transform-origin: 50% 90%;
+    animation: var(--g-idle, g-bob) var(--g-idle-dur, 3.6s) ease-in-out infinite;
+  }
+
+  .g-idle--spectra {
+    --g-idle: g-bob;
+    --g-idle-dur: 3.6s;
+  }
+  .g-idle--mera {
+    --g-idle: g-float;
+    --g-idle-dur: 4.2s;
+  }
+  .g-idle--sol {
+    --g-idle: g-bob;
+    --g-idle-dur: 2.8s;
+  }
+  .g-idle--nova {
+    --g-idle: g-hop;
+    --g-idle-dur: 3.2s;
+  }
+  .g-idle--sage {
+    --g-idle: g-breathe;
+    --g-idle-dur: 5s;
+  }
+  .g-idle--vio {
+    --g-idle: g-sway;
+    --g-idle-dur: 3.8s;
+  }
+  .g-idle--sunny {
+    --g-idle: g-bob;
+    --g-idle-dur: 3.4s;
+  }
+
+  .g-blink {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: g-blink var(--g-blink, 4.6s) ease-in-out var(--g-blink-delay, 0s) infinite;
+  }
+
+  .g-twinkle {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: g-twinkle 2.6s ease-in-out infinite;
+  }
+
+  .g-paused,
+  .g-paused * {
+    animation-play-state: paused !important;
+  }
+}

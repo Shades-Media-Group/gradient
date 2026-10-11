@@ -1,0 +1,145 @@
+/*
+ * Base: the page itself. Fonts are not loaded here; load Space Grotesk and
+ * Hanken Grotesk (and Inter for Cyrillic) yourself, or override --g-font-*.
+ * Layers match Tailwind's names, so its utilities still win.
+ */
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    caret-color: var(--g-accent);
+    accent-color: var(--g-accent);
+    scrollbar-color: var(--g-line-strong) transparent;
+  }
+
+  body {
+    margin: 0;
+    background: var(--g-bg);
+    color: var(--g-text);
+    font: 400 var(--g-size-body) / var(--g-leading-body) var(--g-font-body);
+    font-feature-settings: 'kern', 'calt';
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    margin: 0;
+    font-family: var(--g-font-display);
+    font-weight: 700;
+    line-height: var(--g-leading-heading);
+    letter-spacing: var(--g-tracking-heading);
+    text-wrap: balance;
+  }
+
+  p,
+  li,
+  dd,
+  figcaption {
+    text-wrap: pretty;
+  }
+
+  p,
+  ul,
+  ol,
+  dl,
+  figure,
+  blockquote {
+    margin: 0;
+  }
+
+  img,
+  svg,
+  video,
+  canvas {
+    display: block;
+    max-width: 100%;
+  }
+
+  img,
+  video {
+    height: auto;
+  }
+
+  input,
+  button,
+  textarea,
+  select {
+    font: inherit;
+    color: inherit;
+  }
+
+  button {
+    cursor: pointer;
+  }
+
+  a {
+    color: inherit;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.2em;
+  }
+
+  code,
+  kbd,
+  pre,
+  samp {
+    font-family: var(--g-font-code);
+    font-size: 0.9em;
+  }
+
+  ::selection {
+    background: var(--g-accent);
+    color: var(--g-on-accent);
+  }
+
+  :focus-visible {
+    outline: none;
+    box-shadow: var(--g-focus);
+  }
+
+  hr {
+    height: 1px;
+    margin: 0;
+    border: 0;
+    background: var(--g-line);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer components {
+  /* Numbers that line up: counts, sizes, prices, dates. Never monospace. */
+  .g-num {
+    font-variant-numeric: tabular-nums;
+  }
+
+  .g-visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+    border: 0;
+  }
+}
