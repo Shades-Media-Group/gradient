@@ -42,20 +42,8 @@ async function printTexture(source, renderer) {
   return texture(c, renderer, { color: true })
 }
 
-/** Business cards: a short stack face up on red, one card turned to its back. */
-async function cards(assets) {
-  const s = studio({
-    width: 3200,
-    height: 1800,
-    fov: 13,
-    eye: [30, 300, 420],
-    target: [0, 0, 0],
-    exposure: 1.08,
-    env: 0.16,
-  })
-  const { scene, renderer } = s
-  scene.add(floorPlane(renderer, 0x2a2d33))
-
+/** Seven cards in a loose stack, red side up, and one card turned to its back. */
+async function cardSet(assets, renderer) {
   const tooth = paperNormal(renderer, { repeat: [3, 2], strength: 1.4, seed: 11 })
   const paper = (map, roughness = 0.84) =>
     new THREE.MeshStandardMaterial({
@@ -96,14 +84,32 @@ async function cards(assets) {
     c.rotation.y = (random() - 0.5) * 0.014
     stack.add(c)
   }
+  const single = card(back, front, twisted)
+  single.position.y = 0.23
+  return { stack, single }
+}
+
+/** Business cards: a short stack face up on red, one card turned to its back. */
+async function cards(assets) {
+  const s = studio({
+    width: 3200,
+    height: 1800,
+    fov: 13,
+    eye: [30, 300, 420],
+    target: [0, 0, 0],
+    exposure: 1.08,
+    env: 0.16,
+  })
+  const { scene, renderer } = s
+  scene.add(floorPlane(renderer, 0x2a2d33))
+
+  const { stack, single } = await cardSet(assets, renderer)
   stack.position.set(-50, 0, -4)
   stack.rotation.y = 0.16
-  scene.add(stack)
-
-  const single = card(back, front, twisted)
-  single.position.set(46, 0.23, 10)
+  single.position.x = 46
+  single.position.z = 10
   single.rotation.y = -0.1
-  scene.add(single)
+  scene.add(stack, single)
 
   const sun = [-900, 420, -420]
   s.light({
@@ -645,7 +651,8 @@ function layFlat(mesh) {
  * The Spectra sticker: the character die cut with a 3 mm white border on
  * gloss vinyl, one corner peeling up off the table.
  */
-async function sticker(assets) {
+/** A black notebook with the Spectra sticker on its cover, one corner peeling. */
+async function stickeredNotebook(assets, renderer) {
   const PX = 20
   const art = await image(assets.spectra)
   const artW = 52 * PX
@@ -689,17 +696,6 @@ async function sticker(assets) {
   }
   geometry.computeVertexNormals()
 
-  const s = studio({
-    width: 2400,
-    height: 3000,
-    fov: 25,
-    eye: [30, 430, 190],
-    target: [-8, 12, 4],
-    exposure: 1.12,
-    env: 0.45,
-  })
-  const { scene, renderer } = s
-  scene.add(floorPlane(renderer, 0xd3cfc8))
   // A black notebook: soft-touch cover and an elastic band.
   const leather = normalMap(512, 512, (x, y) => fbm(x / 5, y / 5, 4, 41), 1.2)
   const cover = new THREE.Mesh(
@@ -721,7 +717,8 @@ async function sticker(assets) {
   band.position.set(55, 0.4, 0)
   band.castShadow = band.receiveShadow = true
   cover.add(band)
-  scene.add(cover)
+  const group = new THREE.Group()
+  group.add(cover)
   const map = texture(c, renderer, { color: true })
   const vinyl = new THREE.MeshPhysicalMaterial({
     map,
@@ -759,8 +756,24 @@ async function sticker(assets) {
     m.rotation.z = 0.32
     m.scale.setScalar(1.25)
     m.position.set(-18, 12.15, 6)
-    scene.add(m)
+    group.add(m)
   }
+  return group
+}
+
+async function sticker(assets) {
+  const s = studio({
+    width: 2400,
+    height: 3000,
+    fov: 25,
+    eye: [30, 430, 190],
+    target: [-8, 12, 4],
+    exposure: 1.12,
+    env: 0.45,
+  })
+  const { scene, renderer } = s
+  scene.add(floorPlane(renderer, 0xd3cfc8))
+  scene.add(await stickeredNotebook(assets, renderer))
 
   const sun = [-800, 520, -380]
   s.light({

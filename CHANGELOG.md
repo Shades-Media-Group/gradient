@@ -8,7 +8,13 @@ Every notable change to Gradient and the `shades-gradient` package. The format f
 
 - **Accessibility page:** the WCAG 2.2 AA standard, ten promises every product keeps, what each display-panel option does and who it helps, each product's status with its known gaps, how it is tested, and how to report a barrier.
 - **Home page:** an "About Shades" section and the product family, with the Gradient, PageRecast, ImageRefold and LMS marks; the brand page lists LMS among the products. ImageRefold appears under its own name and mark.
-- **Docs:** `docs/accessibility.md`.
+- **Docs:** `docs/accessibility.md` and `docs/design-philosophy.md`, with the audit every page passes.
+- **Product shots** (`yarn renders`): the print files photographed in a code-built studio, including a cloth-simulated tee.
+
+### Changed
+
+- **Softer roles:** the page is warm paper (`ink.25`, #F7F6F3), text is `ink.800`, secondary text `ink.500`; dark mode moves to charcoal (`ink.900`) with off-white text. Every pair still passes WCAG AA.
+- **Consent banner on phones:** a compact sheet above the home indicator, with Customise beside the title.
 
 ## [0.3.0] - 2026-10-11
 
