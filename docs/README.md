@@ -9,6 +9,7 @@ The website, [gradient.shades.md](https://gradient.shades.md), shows the system 
 - [Start a new Shades project](guides/start-a-project.md): the five steps, from `PRODUCT.md` to the first deploy.
 - [Accessibility](accessibility.md): the standard, the promises, how it is checked and the open gaps
 - [Using the package](guides/using-the-package.md): React and Tailwind, Preact and Figma panels, plain HTML, client themes.
+- [Tool panels](guides/tool-panels.md): how a plugin, extension or small-app panel is laid out, and the redesign process behind it.
 
 ## Working on Gradient
 
@@ -19,7 +20,7 @@ The website, [gradient.shades.md](https://gradient.shades.md), shows the system 
 ## Projects
 
 - [PageRecast](projects/pagerecast.md): how it was made, what was rejected, what stayed
-- [ImageRefold](projects/imagerefold.md): the starting brief for the image tool, now at imagerefold.shades.md
+- [ImageRefold](projects/imagerefold.md): the starting brief for the image tool, live at imagerefold.shades.md, and the panel redesign
 
 ## Brand
 

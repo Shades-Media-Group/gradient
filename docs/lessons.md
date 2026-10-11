@@ -45,3 +45,13 @@ If a rule seems to be in the way, raise it in an issue. Don't quietly break it.
 22. **Commits like a real project.** One logical change per conventional commit, pushed as you go, with no AI attribution.
 23. **Never name competitors in public.** Not in the README, docs, UI, store listings or commits.
 24. **Free means free.** No paywalls, limits or upgrade prompts in the open-source products.
+
+## Tool panels
+
+From ImageRefold's first Figma panel, which he called AI slop. The full layout is in [Tool panels](guides/tool-panels.md).
+
+25. **Labelled rows, not headed blocks.** "It very complicated and not easy to understand the difference between block of settings." Each setting is one row with a short label on the left; no section titles.
+26. **Three type sizes.** "A lot of fonts." A panel uses 11, 12 and 20 px, in two weights.
+27. **One column, not a grid.** "Grid looks AI slop." Settings stack as rows in one column.
+28. **Light by default, the theme in Settings.** "Make the default always white… settings icon to toggle dark." The panel opens light whatever the host's theme; Light, Dark and Automatic sit behind the gear.
+29. **Remember the user's setup, and let them reset it.** "Make sure the plugin will remember last user setup… a reset all preferences." Every choice persists between runs, and Settings ends with Reset all preferences.

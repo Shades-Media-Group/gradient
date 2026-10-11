@@ -42,6 +42,7 @@ Either way, the logo files are generated from one geometry by a script, never dr
 
 ## 5. Build, check, ship
 
+- **A plugin, extension or app panel:** lay it out as in [Tool panels](tool-panels.md): one calm screen per task, labelled rows, three type sizes, one action, settings behind a gear.
 - **The website:** copy `apps/site` from Gradient. You get templates, six dictionaries, `pages.ts`, the audits, `wrangler.jsonc` with a `<name>.shades.md` custom domain, and the CSP in `public/_headers`.
 - **Before calling anything done:**
   - `yarn verify`
@@ -49,6 +50,6 @@ Either way, the logo files are generated from one geometry by a script, never dr
   - screenshots in light and dark at phone and desktop widths
   - impeccable as the design review
 - **Deploy:** `yarn deploy:site`. The first deploy creates the custom domain on the shades.md zone.
-- **Release:** `yarn release <patch|minor|major>`, then `git push --follow-tags`.
+- **Release:** `yarn release <patch|minor|major>`, then `git push --follow-tags`. To redesign later, tag the current version first so a rollback is one command.
 
 Afterwards, add the project to `docs/projects/` in Gradient: what was asked, what was rejected, what stayed.

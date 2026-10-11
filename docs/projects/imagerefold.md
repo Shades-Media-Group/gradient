@@ -1,6 +1,6 @@
 # ImageRefold: the brief
 
-**Status:** in development at [imagerefold.shades.md](https://imagerefold.shades.md) ([repository](https://github.com/Shades-Media-Group/ImageRefold)). Its mark is "Scale": three rounded squares sharing a corner, in PageRecast's red, rose and ink. This is the starting brief, kept as the record of how the project began.
+**Status:** live at [imagerefold.shades.md](https://imagerefold.shades.md) ([repository](https://github.com/Shades-Media-Group/ImageRefold)). Its mark is "Scale": three rounded squares sharing a corner, in PageRecast's red, rose and ink. This is the starting brief, kept as the record of how the project began.
 
 ## What it is
 
@@ -38,3 +38,17 @@ A free, open-source Figma plugin under the Shades brand for exporting images fro
 - **Import:** drop images into Figma, already compressed, replacing image fills in place.
 - **Presets per file:** remembered with `clientStorage`.
 - **Languages:** the same six as the rest of Shades.
+
+## The panel redesign
+
+The first Figma panel was rejected as AI slop: "very complicated, hard to tell the setting blocks apart, a lot of font sizes, the grid looks AI". The owner was asked what felt wrong before anything changed, and the old panel was tagged `plugin-ui-v1` first.
+
+The approved panel (ImageRefold commits `586839b`, `1214228`, `8237ac3`):
+
+- one calm screen per tab: the real file on a stage, one result figure, labelled rows, one red action in the dock
+- three type sizes (11, 12, 20 px) and two weights
+- rare options behind a gear, ending with Reset all preferences
+- light whatever Figma's theme, with Dark and Automatic as choices
+- every setting remembered, older saved settings migrated
+
+It was built in a browser harness, then tested in Figma desktop with real selections and huge frames. The layout is now the rule for every Shades panel: [Tool panels](../guides/tool-panels.md). The rejected patterns are lessons 25 to 29 in [lessons.md](../lessons.md).
