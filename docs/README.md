@@ -6,6 +6,7 @@ The website, [gradient.shades.md](https://gradient.shades.md), shows the system 
 
 - [Lessons every Shades project follows](lessons.md): the rejected patterns, in the owner's words. Read before any visual work.
 - [Start a new Shades project](guides/start-a-project.md): the five steps, from `PRODUCT.md` to the first deploy.
+- [Accessibility](accessibility.md): the standard, the promises, how it is checked and the open gaps
 - [Using the package](guides/using-the-package.md): React and Tailwind, Preact and Figma panels, plain HTML, client themes.
 
 ## Working on Gradient

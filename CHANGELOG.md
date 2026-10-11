@@ -4,6 +4,12 @@ Every notable change to Gradient and the `shades-gradient` package. The format f
 
 ## [Unreleased]
 
+### Added
+
+- **Accessibility page:** the WCAG 2.2 AA standard, ten promises every product keeps, what each display-panel option does and who it helps, each product's status with its known gaps, how it is tested, and how to report a barrier.
+- **Home page:** an "About Shades" section and the product family, with the Gradient, PageRecast and ImageReframe marks. The ImageReframe mark is a working mark, labelled as one.
+- **Docs:** `docs/accessibility.md`.
+
 ## [0.3.0] - 2026-10-11
 
 ### Added
