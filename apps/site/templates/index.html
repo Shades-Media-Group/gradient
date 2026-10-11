@@ -187,22 +187,19 @@
         </div>
       </section>
 
-      <section class="chapter" id="about">
+      <section class="chapter chapter--ink" data-theme="dark" id="about">
         <div class="chapter-head" data-reveal>
           <h2>{{home.about.title}}</h2>
           <div>
             <p>{{home.about.text}}</p>
-            <a class="g-link" data-link="shades">shades.md</a>
+            <div class="about-actions">
+              <a class="g-btn g-btn--primary" data-link="shades">{{home.about.visit}}{{@icon:external}}</a>
+            </div>
           </div>
         </div>
-        <div class="about" data-reveal>
-          <p class="about-tags"><span class="g-tag">Branding</span> <span class="g-tag">UI/UX</span> <span class="g-tag">WebDevelopment</span> <span class="g-tag">Marketing</span></p>
-        </div>
-      </section>
-
-      <section class="chapter chapter--ink" data-theme="dark" id="products">
-        <div class="chapter-head" data-reveal>
-          <h2>{{home.products.title}}</h2>
+        <p class="about-tags" data-reveal><span class="g-tag">Branding</span> <span class="g-tag">UI/UX</span> <span class="g-tag">WebDevelopment</span> <span class="g-tag">Marketing</span></p>
+        <div class="products-head" id="products" data-reveal>
+          <h3>{{home.products.title}}</h3>
           <div>
             <p>{{home.products.text}}</p>
             <a class="g-link" href="{{@to:brand}}#products">{{home.products.link}}</a>

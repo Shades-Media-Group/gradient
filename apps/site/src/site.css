@@ -2302,7 +2302,7 @@ body {
     gap: 6px;
   }
 
-  /* On a phone the merchandise is a row to swipe through, not a long stack. */
+  /* On a phone sets of things are a row to swipe through, not a long stack. */
   .merch {
     display: flex;
     gap: 16px;
@@ -2851,10 +2851,49 @@ body {
   }
 }
 
-/* Home: about Shades and the product family. */
-.about {
+/* Home: about Shades, then straight into what it makes. */
+.about-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.products-head {
   display: grid;
-  gap: 32px;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+  gap: 16px 64px;
+  align-items: end;
+  margin: clamp(56px, 8vw, 104px) 0 clamp(32px, 4vw, 48px);
+  padding-top: clamp(32px, 4vw, 48px);
+  border-top: 1px solid var(--g-line);
+}
+
+.products-head h3 {
+  font-size: var(--g-size-h1);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+}
+
+.products-head p {
+  max-width: 46ch;
+  color: var(--g-text-2);
+}
+
+.products-head .g-link {
+  display: inline-block;
+  margin-top: 12px;
+  font-weight: 600;
+}
+
+@media (max-width: 860px) {
+  .products-head {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .about-actions .g-btn {
+    width: 100%;
+  }
 }
 
 .about-tags {
@@ -3038,4 +3077,23 @@ h2,
 
 .share-ink {
   box-shadow: inset 1px 0 0 var(--g-line-strong);
+}
+
+/* The product family, like the merchandise, is a row to swipe on a phone. */
+@media (max-width: 560px) {
+  .products {
+    display: flex;
+    gap: 16px;
+    margin-inline: -16px;
+    padding: 0 16px 8px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: 16px;
+    scrollbar-width: none;
+  }
+
+  .products > li {
+    flex: 0 0 82%;
+    scroll-snap-align: start;
+  }
 }
