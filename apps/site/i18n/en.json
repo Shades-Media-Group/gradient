@@ -156,13 +156,7 @@
     },
     "about": {
       "title": "Shades Media Group.",
-      "text": "A creative and technology agency in Chișinău, Moldova. We build brand identities, websites and products for clients, and we open-source the tools we make along the way.",
-      "based": "Based in",
-      "basedValue": "Chișinău, Moldova",
-      "disciplines": "Disciplines",
-      "disciplinesValue": "Brand, interface, web and marketing",
-      "open": "Open source",
-      "languages": "Website languages"
+      "text": "A creative and technology agency in Chișinău, Moldova. We build brand identities, websites and products for clients, and we open-source the tools we make along the way."
     },
     "products": {
       "title": "The family of products.",

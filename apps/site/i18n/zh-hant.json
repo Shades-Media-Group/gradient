@@ -156,13 +156,7 @@
     },
     "about": {
       "title": "Shades Media Group。",
-      "text": "位於摩爾多瓦奇希瑙的創意與科技公司。我們為客戶打造品牌識別、網站與產品，也把一路上做出的工具開源釋出。",
-      "based": "所在地",
-      "basedValue": "摩爾多瓦奇希瑙",
-      "disciplines": "專業領域",
-      "disciplinesValue": "品牌、介面、網站與行銷",
-      "open": "開源",
-      "languages": "網站語言"
+      "text": "位於摩爾多瓦奇希瑙的創意與科技公司。我們為客戶打造品牌識別、網站與產品，也把一路上做出的工具開源釋出。"
     },
     "products": {
       "title": "產品家族。",
