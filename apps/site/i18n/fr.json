@@ -754,7 +754,8 @@
       "hole": "Tour de cou",
       "holeText": "Une fente, centrée, à 10 mm du haut",
       "name": "Nom",
-      "nameText": "Prénom en Space Grotesk, d'au moins 18 mm de haut"
+      "nameText": "Prénom en Space Grotesk, d'au moins 18 mm de haut",
+      "roles": "Les rôles en un coup d’œil : l’intervenant sous le spectre, les participants en bleu sur encre, l’équipe en rouge."
     },
     "merch": {
       "title": "Merchandising",
@@ -793,7 +794,8 @@
       "badges": "Deux badges Shades Day sur leurs cordons : l’équipe avec une bande rouge, l’invité avec une bande encre.",
       "tote": "Un tote en toile naturelle contre un mur rouge Shades, le logo imprimé en grand jusqu’à déborder du bord.",
       "sticker": "Un autocollant Spectra découpé avec un liseré blanc, sur un carnet noir.",
-      "tee": "Deux t-shirts noirs sur cintre ; le devant de l’un porte les trois barres, deux en trame, et Shades Media Group en petit dessous."
+      "tee": "Deux t-shirts noirs sur cintre ; le devant de l’un porte les trois barres, deux en trame, et Shades Media Group en petit dessous.",
+      "roles": "Trois badges Shades Day sur leurs cordons : un badge intervenant avec un bandeau spectre, un badge participant encre avec un bandeau bleu et un badge équipe rouge."
     }
   },
   "projects": {

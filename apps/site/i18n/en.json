@@ -754,7 +754,8 @@
       "hole": "Lanyard",
       "holeText": "One slot, centred, 10 mm from the top",
       "name": "Name",
-      "nameText": "First name in Space Grotesk, at least 18 mm tall"
+      "nameText": "First name in Space Grotesk, at least 18 mm tall",
+      "roles": "Roles at a glance: the speaker under the spectrum, attendees in blue on ink, the crew in red."
     },
     "merch": {
       "title": "Merchandise",
@@ -793,7 +794,8 @@
       "badges": "Two Shades Day badges on lanyards: the team badge with a red band, the guest badge with an ink band.",
       "tote": "A natural canvas tote against a Shades Red wall, the mark printed large so it runs off the edge.",
       "sticker": "A Spectra sticker, die cut with a white border, on a black notebook.",
-      "tee": "Two black tees on hangers; the front of one carries the three bars, two in halftone, with Shades Media Group set small below."
+      "tee": "Two black tees on hangers; the front of one carries the three bars, two in halftone, with Shades Media Group set small below.",
+      "roles": "Three Shades Day badges on lanyards: a speaker badge with a spectrum band, an ink attendee badge with a blue band, and a red crew badge."
     }
   },
   "projects": {

@@ -754,7 +754,8 @@
       "hole": "Boyun askısı",
       "holeText": "Tek yuva, ortalanmış, üstten 10 mm",
       "name": "Ad",
-      "nameText": "Space Grotesk ile ad, en az 18 mm yüksekliğinde"
+      "nameText": "Space Grotesk ile ad, en az 18 mm yüksekliğinde",
+      "roles": "Roller bir bakışta: konuşmacı spektrumun altında, katılımcılar mürekkep üzerinde mavi, ekip kırmızı."
     },
     "merch": {
       "title": "Promosyon ürünleri",
@@ -793,7 +794,8 @@
       "badges": "Askılarıyla iki Shades Day yaka kartı: kırmızı şeritli ekip kartı ve mürekkep şeritli misafir kartı.",
       "tote": "Shades Kırmızısı bir duvarın önünde doğal kanvas çanta; logo büyük basılmış, kenardan taşıyor.",
       "sticker": "Beyaz kenarlı kesim bir Spectra çıkartması, siyah bir defterin üzerinde.",
-      "tee": "Askıda iki siyah tişört; birinin önünde üç çubuk, ikisi raster, altında küçük Shades Media Group yazısı."
+      "tee": "Askıda iki siyah tişört; birinin önünde üç çubuk, ikisi raster, altında küçük Shades Media Group yazısı.",
+      "roles": "Askılarında üç Shades Day yaka kartı: spektrum şeritli konuşmacı kartı, mavi şeritli mürekkep renkli katılımcı kartı ve kırmızı ekip kartı."
     }
   },
   "projects": {

@@ -754,7 +754,8 @@
       "hole": "挂绳孔",
       "holeText": "一个槽孔，居中，距顶部 10 mm",
       "name": "姓名",
-      "nameText": "名字使用 Space Grotesk，高度至少 18 mm"
+      "nameText": "名字使用 Space Grotesk，高度至少 18 mm",
+      "roles": "角色一目了然：演讲者是光谱色带，参会者是墨色配蓝，工作人员是红色。"
     },
     "merch": {
       "title": "周边",
@@ -793,7 +794,8 @@
       "badges": "两枚挂在挂绳上的 Shades Day 胸卡：红色色带的团队胸卡和墨色色带的嘉宾胸卡。",
       "tote": "挂在 Shades 红墙前的本色帆布袋，标志印得很大，一直延伸出边缘。",
       "sticker": "一张带白边模切的 Spectra 贴纸，贴在黑色笔记本上。",
-      "tee": "衣架上的两件黑色 T 恤；其中一件正面印有三条竖条，两条为网点，下方小字 Shades Media Group。"
+      "tee": "衣架上的两件黑色 T 恤；其中一件正面印有三条竖条，两条为网点，下方小字 Shades Media Group。",
+      "roles": "挂绳上的三张 Shades Day 胸牌：带光谱色带的演讲者胸牌、墨色配蓝色带的参会者胸牌，以及红色的工作人员胸牌。"
     }
   },
   "projects": {

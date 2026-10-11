@@ -521,17 +521,12 @@ async function lanyardTape(renderer, color, wordmark) {
   return texture(c, renderer, { color: true, repeat: [1, 1] })
 }
 
-/** Event badges on their lanyards: a team badge in front, a guest badge behind. */
-async function badges(assets) {
-  const s = studio({
-    width: 2400,
-    height: 3000,
-    fov: 13.5,
-    eye: [0, 95, 1450],
-    target: [4, 95, 0],
-    exposure: 0.95,
-    env: 0.24,
-  })
+/**
+ * Badges hanging on their lanyards against a paper wall, lit by late sun through a window.
+ * Each item: the face, the tape colour, and where it hangs.
+ */
+async function hangBadges(assets, items, camera, focus) {
+  const s = studio({ exposure: 0.95, env: 0.24, ...camera })
   const { scene, renderer } = s
   const wall = new THREE.Mesh(
     new THREE.PlaneGeometry(4000, 4000),
@@ -557,20 +552,11 @@ async function badges(assets) {
   const tooth = paperNormal(renderer, { repeat: [5, 7], strength: 1.2, seed: 5 })
 
   const one = async (faceSource, tapeColor, { x, y, z, tilt, lean }) => {
-    const map = await (async () => {
-      const t = texture(
-        await (async () => {
-          const img = await image(faceSource)
-          const [c, ctx] = canvas(img.naturalWidth, img.naturalHeight)
-          ctx.drawImage(img, 0, 0)
-          return c
-        })(),
-        renderer,
-        { color: true },
-      )
-      t.repeat.set(1 / 90, 1 / 130)
-      return t
-    })()
+    const img = await image(faceSource)
+    const [c, ctx] = canvas(img.naturalWidth, img.naturalHeight)
+    ctx.drawImage(img, 0, 0)
+    const map = texture(c, renderer, { color: true })
+    map.repeat.set(1 / 90, 1 / 130)
     const face = new THREE.MeshPhysicalMaterial({
       map,
       roughness: 0.62,
@@ -623,8 +609,7 @@ async function badges(assets) {
     group.rotation.set(lean, 0, tilt)
     scene.add(group)
   }
-  await one(assets.badgeGuest, '#1a1a1d', { x: 58, y: 118, z: -6, tilt: -0.05, lean: -0.04 })
-  await one(assets.badgeTeam, '#E40523', { x: -48, y: 98, z: 18, tilt: 0.035, lean: -0.05 })
+  for (const [faceSource, tape, place] of items) await one(faceSource, tape, place)
 
   const sun = [-1400, 900, 900]
   s.light({
@@ -637,7 +622,36 @@ async function badges(assets) {
   })
   s.light({ kind: 'sky', intensity: 0.5, color: 0xe6ecff, bounds: 280 })
   windowFrame(s, sun, [0, 60, 0], 0.32, [2200, 2200], [110, 140], 24, 4, 5)
-  return encode(s.shoot(256, 7, { aperture: 3, focus: [-48, 60, 18] }), [1200, 600])
+  return s.shoot(256, 7, { aperture: 3, focus })
+}
+
+/** Event badges on their lanyards: a team badge in front, a guest badge behind. */
+async function badges(assets) {
+  const shot = await hangBadges(
+    assets,
+    [
+      [assets.badgeGuest, '#1a1a1d', { x: 58, y: 118, z: -6, tilt: -0.05, lean: -0.04 }],
+      [assets.badgeTeam, '#E40523', { x: -48, y: 98, z: 18, tilt: 0.035, lean: -0.05 }],
+    ],
+    { width: 2400, height: 3000, fov: 13.5, eye: [0, 95, 1450], target: [4, 95, 0] },
+    [-48, 60, 18],
+  )
+  return encode(shot, [1200, 600])
+}
+
+/** The conference roles side by side: speaker, attendee, crew. */
+async function roles(assets) {
+  const shot = await hangBadges(
+    assets,
+    [
+      [assets.badgeAttendee, '#6364FF', { x: 14, y: 124, z: -34, tilt: 0.025, lean: -0.03 }],
+      [assets.badgeCrew, '#E40523', { x: 104, y: 104, z: 6, tilt: -0.045, lean: -0.05 }],
+      [assets.badgeSpeaker, '#1a1a1d', { x: -92, y: 96, z: 30, tilt: 0.05, lean: -0.06 }],
+    ],
+    { width: 3000, height: 2400, fov: 12, eye: [-260, 150, 1480], target: [6, 86, 0] },
+    [-92, 60, 30],
+  )
+  return encode(shot, [1600, 800])
 }
 
 /** Lays a mesh built in the XY plane flat on the floor, top edge away from the camera. */
@@ -935,6 +949,6 @@ async function og(assets) {
   return encode(s.shoot(256, 7, { aperture: 2, focus: [10, 1, 20] }), [1200])
 }
 
-const SCENES = { cards, tote, badges, sticker, tee, og }
+const SCENES = { cards, tote, badges, roles, sticker, tee, og }
 
 window.render = async (name, assets) => SCENES[name](assets)

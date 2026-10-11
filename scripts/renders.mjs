@@ -68,14 +68,15 @@ const FACES = {
   ),
 }
 
-const badge = (first, last, role, band) =>
+// One badge system, colour-coded by role: the face and the band say who you are.
+const badge = (first, last, role, band, { bg = '#FDFDFC', fg = '#0a0a0b', mark = 'shades-mark.svg' } = {}) =>
   face(
     90,
     130,
-    '#FDFDFC',
-    `<div style="display:grid; grid-template-rows:auto 1fr auto; height:100%">
+    bg,
+    `<div style="display:grid; grid-template-rows:auto 1fr auto; height:100%; color:${fg}">
       <div style="display:flex; align-items:center; gap:${3.5 * MM}px; padding:${16 * MM}px ${8 * MM}px 0; font:600 ${4.2 * MM}px/1 Body">
-        <div style="width:${10 * MM}px">${brand('shades-mark.svg')}</div>Shades Day 2027
+        <div style="width:${10 * MM}px">${brand(mark)}</div>Shades Day 2027
       </div>
       <div style="align-self:center; padding:0 ${8 * MM}px">
         <div style="font:700 ${17 * MM}px/0.95 Display; letter-spacing:-0.04em">${first}</div>
@@ -86,6 +87,19 @@ const badge = (first, last, role, band) =>
   )
 FACES.badgeTeam = badge('Ana', 'Popescu', 'Shades team', '#E40523')
 FACES.badgeGuest = badge('Ion', 'Rusu', 'Guest', '#0A0A0B')
+// The roles of a conference: a speaker under the spectrum, an attendee on ink, the crew in red.
+FACES.badgeSpeaker = badge(
+  'Maria',
+  'Cojocaru',
+  'Speaker',
+  'linear-gradient(90deg, #6364FF, #D212D6 34%, #E40523 67%, #FF5900)',
+)
+FACES.badgeAttendee = badge('Dan', 'Ciobanu', 'Attendee', '#6364FF', { bg: '#141416', fg: '#ECECEA' })
+FACES.badgeCrew = badge('Crew', 'Ask me anything', 'Shades team', '#0A0A0B', {
+  bg: '#E40523',
+  fg: '#FFFFFF',
+  mark: 'shades-mark-mono.svg',
+})
 
 // The tee's back print, 300 × 420 mm at 8 px/mm, one ink on a clear ground.
 // The three bars of the mark, tall, the second and third as halftone at 75

@@ -754,7 +754,8 @@
       "hole": "Cordón",
       "holeText": "Una ranura, centrada, a 10 mm del borde superior",
       "name": "Nombre",
-      "nameText": "Nombre de pila en Space Grotesk, de al menos 18 mm de alto"
+      "nameText": "Nombre de pila en Space Grotesk, de al menos 18 mm de alto",
+      "roles": "Los roles de un vistazo: el ponente bajo el espectro, los asistentes en azul sobre tinta, el equipo en rojo."
     },
     "merch": {
       "title": "Merchandising",
@@ -793,7 +794,8 @@
       "badges": "Dos acreditaciones de Shades Day con su cinta: el equipo con banda roja y el invitado con banda tinta.",
       "tote": "Una bolsa de lona natural contra una pared rojo Shades, con la marca impresa en grande hasta salirse del borde.",
       "sticker": "Una pegatina de Spectra troquelada con borde blanco, sobre una libreta negra.",
-      "tee": "Dos camisetas negras en perchas; el frente de una lleva las tres barras, dos en trama, y Shades Media Group en pequeño debajo."
+      "tee": "Dos camisetas negras en perchas; el frente de una lleva las tres barras, dos en trama, y Shades Media Group en pequeño debajo.",
+      "roles": "Tres acreditaciones de Shades Day con su cinta: la de ponente con una franja de espectro, la de asistente en tinta con franja azul y la roja del equipo."
     }
   },
   "projects": {

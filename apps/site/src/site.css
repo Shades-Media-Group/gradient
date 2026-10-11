@@ -2351,6 +2351,12 @@ body {
   margin-bottom: 24px;
 }
 
+.shot figcaption {
+  margin-top: 10px;
+  color: var(--g-text-2);
+  font-size: var(--g-size-small);
+}
+
 .shot--badge {
   max-width: 480px;
 }
