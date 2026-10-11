@@ -96,7 +96,8 @@ The [package README](packages/gradient/README.md) covers every export. The [usin
 | Icons      | [`packages/gradient/icons/`](packages/gradient/icons)                    | 78 hand-drawn SVGs, `renderIcon()`, `icons.svg` sprite                                                                              |
 | Logo       | [`packages/gradient/brand/`](packages/gradient/brand)                    | mark, lockup, reverse and one-colour versions                                                                                       |
 | Spectra    | [`packages/gradient/brand/spectra/`](packages/gradient/brand/spectra)    | Spectra, Mera, Sol, Nova, Sage, Vio, Sunny                                                                                          |
-| Website    | [`apps/site`](apps/site)                                                 | 77 static pages in eleven languages on a Cloudflare Worker                                                                          |
+| Email      | [`email.ts`](packages/gradient/src/email.ts)                             | Outlook-safe templates, copyable codes, `.ics` invites, Gmail markup                                                                |
+| Website    | [`apps/site`](apps/site)                                                 | 88 static pages in eleven languages on a Cloudflare Worker                                                                          |
 
 ## The rules that matter most
 

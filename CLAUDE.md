@@ -12,7 +12,7 @@ Product truth lives in [PRODUCT.md](PRODUCT.md); the rejected patterns live in [
 
 ```bash
 yarn verify          # typecheck, lint, tests, package build, site build, site audit: before every commit
-yarn audit:layout    # all 77 pages at 375 and 1440 px: before every UI commit
+yarn audit:layout    # all 88 pages at 375 and 1440 px: before every UI commit
 yarn dev:site        # the website with live reload
 yarn deploy:site     # build, audit, wrangler deploy to gradient.shades.md
 yarn brand           # regenerate the logo files from the shades.md geometry

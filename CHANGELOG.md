@@ -4,6 +4,23 @@ Every notable change to Gradient and the `shades-gradient` package. The format f
 
 ## [Unreleased]
 
+## [0.3.0] - 2026-10-11
+
+### Added
+
+- **Email** (`shades-gradient/email`): transactional email that holds up in every client.
+  - Outlook-safe table layout, VML buttons for Outlook, a plain-text twin.
+  - Codes that Gmail can copy and Apple Mail can fill.
+  - RFC 5545 calendar invites, plus Google and Outlook links.
+  - schema.org markup for Gmail.
+  - Client brands pass their own colours, logo and font.
+- **Components:** tabs, inline messages, progress, breadcrumbs, toasts and avatars.
+- **Website, new email page:** live previews and a client support matrix.
+- **Website, brand page:** now also covers lockups and placement, sizes, colour in use with measured pairings, type in the brand, photography, where each Spectra character appears, writing by moment, and products.
+- **Website, components page:** now also covers states, sizes, navigation, feedback, people and accessibility.
+- **Website, foundations page:** now also covers elevation, layout and a contrast table computed from the tokens.
+- **Website, Google button:** "Add as a preferred source" in the footer and on the home page.
+
 ## [0.2.0] - 2026-10-11
 
 ### Added

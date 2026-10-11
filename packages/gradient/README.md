@@ -114,6 +114,22 @@ The panel works on sites that don't use the rest of Gradient: its colours fall b
 
 A site's own styles can respond to them too.
 
+### Email
+
+```js
+import { renderEmail, email, icsFile, calendarLinks } from 'shades-gradient/email'
+
+const { subject, html, text, attachments } = renderEmail({
+  lang: 'en',
+  subject: 'Your Shades code: 418203',
+  preheader: 'It works for 10 minutes.',
+  heading: 'Confirm your email',
+  blocks: [email.code('Your code', '418203', 'Valid for 10 minutes')],
+})
+```
+
+The layout is Outlook-safe: 560 px tables, inline styles and VML buttons. Codes are set so Gmail and Apple Mail offer to copy them. `icsFile()` writes invitations that Gmail and Outlook show as event cards, and `viewAction()` / `eventReservation()` add Gmail markup. See [gradient.shades.md/email](https://gradient.shades.md/email/).
+
 ### Magnetic hover
 
 ```js
