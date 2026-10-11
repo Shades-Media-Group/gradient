@@ -4,7 +4,7 @@ Gradient is the design system of Shades Media Group. It holds:
 
 - the brand: logo, colour, type, the Spectra characters, voice, print
 - the `shades-gradient` npm package that every Shades product installs
-- the website at gradient.shades.md, in six languages
+- the website at gradient.shades.md, in eleven languages
 
 Product truth lives in [PRODUCT.md](PRODUCT.md); the rejected patterns live in [docs/lessons.md](docs/lessons.md). Read both before any visual work.
 
@@ -12,7 +12,7 @@ Product truth lives in [PRODUCT.md](PRODUCT.md); the rejected patterns live in [
 
 ```bash
 yarn verify          # typecheck, lint, tests, package build, site build, site audit: before every commit
-yarn audit:layout    # all 42 pages at 375 and 1440 px: before every UI commit
+yarn audit:layout    # all 77 pages at 375 and 1440 px: before every UI commit
 yarn dev:site        # the website with live reload
 yarn deploy:site     # build, audit, wrangler deploy to gradient.shades.md
 yarn brand           # regenerate the logo files from the shades.md geometry

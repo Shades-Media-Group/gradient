@@ -28,7 +28,7 @@ A free, open-source Figma plugin under the Shades brand for exporting images fro
 
 - **The Figma panel UI:** `shades-gradient` tokens and components, with the panel density PageRecast's plugin uses (32 px rows, 11–13 px text, one red primary action).
 - **Icons:** the Shades icon set. Add `crop`, `aspectRatio`, `image`, `download` and new ones as needed, drawn to the rules.
-- **The website:** the same site build as gradient.shades.md and pagerecast.shades.md, in six languages, at imagereframe.shades.md.
+- **The website:** the same site build as gradient.shades.md and pagerecast.shades.md, in the same eleven languages, at imagereframe.shades.md.
 
 ## Features to plan
 

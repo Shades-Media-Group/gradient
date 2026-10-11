@@ -4,6 +4,15 @@ Every notable change to Gradient and the `shades-gradient` package. The format f
 
 ## [Unreleased]
 
+### Added
+
+- **Display and accessibility panel** (`shades-gradient/preferences`): a 20 px dot in the corner opens it. Readers choose light, dark or the system theme, and can turn on larger text, more contrast, reduced motion, underlined links and easier reading.
+  - Choices are saved in the browser only.
+  - `preferences-boot.js` applies them before the first paint.
+  - A one-time notice says the site sets no cookies.
+- **Icons:** `contrast` and `accessibility`.
+- **Website:** Italian, Turkish, Hindi, Japanese and Traditional Chinese, for eleven languages in all.
+
 ## [0.1.0] - 2026-10-11
 
 The first release.

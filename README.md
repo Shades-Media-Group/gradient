@@ -32,7 +32,12 @@
   <a href="https://gradient.shades.md/ro/">Română</a> ·
   <a href="https://gradient.shades.md/ru/">Русский</a> ·
   <a href="https://gradient.shades.md/es/">Español</a> ·
-  <a href="https://gradient.shades.md/zh/">中文</a>
+  <a href="https://gradient.shades.md/it/">Italiano</a> ·
+  <a href="https://gradient.shades.md/tr/">Türkçe</a> ·
+  <a href="https://gradient.shades.md/hi/">हिन्दी</a> ·
+  <a href="https://gradient.shades.md/ja/">日本語</a> ·
+  <a href="https://gradient.shades.md/zh/">简体中文</a> ·
+  <a href="https://gradient.shades.md/zh-hant/">繁體中文</a>
 </p>
 
 ## What it is
@@ -41,7 +46,7 @@ Shades Media Group is called Shades, and a gradient is what shades make when the
 
 - **Brand:** the mark and lockup, drawn from one geometry; the seven Spectra characters; the voice rules; print and merchandise.
 - **Foundations:** colour, roles for light and dark, type, space, radius and motion. Each is written once, in [`tokens.json`](packages/gradient/src/tokens.json).
-- **Code:** the [`shades-gradient`](packages/gradient) npm package. It ships CSS custom properties, framework-free component classes, a Tailwind v4 theme, DTCG token JSON, 76 Shades icons and the brand SVGs.
+- **Code:** the [`shades-gradient`](packages/gradient) npm package. It ships CSS custom properties, framework-free component classes, a Tailwind v4 theme, DTCG token JSON, 78 Shades icons and the brand SVGs.
 - **Lessons:** how each Shades product was made, and the patterns its owner rejected, so the next one starts further ahead. See [docs/projects](docs/projects).
 
 ## Install
@@ -88,10 +93,10 @@ The [package README](packages/gradient/README.md) covers every export. The [usin
 | Tokens     | [`packages/gradient/src/tokens.json`](packages/gradient/src/tokens.json) | `tokens.css`, `theme.css` (Tailwind v4), `tokens.json` (DTCG)                                                                       |
 | Components | [`components.css`](packages/gradient/src/components.css)                 | `.g-btn`, `.g-input`, `.g-switch`, `.g-segmented`, `.g-tag`, `.g-badge`, `.g-disclosure`, `.g-table`, `.g-loader`, `.g-spectrum`, … |
 | Motion     | [`motion.css`](packages/gradient/src/motion.css)                         | snap, pop, move and the Spectra idles; all stop under reduced motion                                                                |
-| Icons      | [`packages/gradient/icons/`](packages/gradient/icons)                    | 76 hand-drawn SVGs, `renderIcon()`, `icons.svg` sprite                                                                              |
+| Icons      | [`packages/gradient/icons/`](packages/gradient/icons)                    | 78 hand-drawn SVGs, `renderIcon()`, `icons.svg` sprite                                                                              |
 | Logo       | [`packages/gradient/brand/`](packages/gradient/brand)                    | mark, lockup, reverse and one-colour versions                                                                                       |
 | Spectra    | [`packages/gradient/brand/spectra/`](packages/gradient/brand/spectra)    | Spectra, Mera, Sol, Nova, Sage, Vio, Sunny                                                                                          |
-| Website    | [`apps/site`](apps/site)                                                 | 42 static pages in six languages on a Cloudflare Worker                                                                             |
+| Website    | [`apps/site`](apps/site)                                                 | 77 static pages in eleven languages on a Cloudflare Worker                                                                          |
 
 ## The rules that matter most
 

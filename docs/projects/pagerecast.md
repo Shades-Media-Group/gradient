@@ -32,7 +32,7 @@ The repository began as an older "Shades Web2Figma" draft in beige, blue and ora
    - **Hosting:** a static Vite build on a Cloudflare Worker.
    - **Signature moment:** a pinned, exploded 3D view of a real page's layers on scroll.
    - **Rest of the page:** a width viewer, a red privacy band, the install row, FAQ and footer.
-   - **Reach:** later translated into six languages, with JSON-LD, a sitemap, llms.txt and a Google "preferred source" button.
+   - **Reach:** later translated into six languages, then eleven, with JSON-LD, a sitemap, llms.txt and a Google "preferred source" button.
 5. **Round after round of "this looks AI-made".** Each correction became a rule; see below.
 6. **Shipping.** Every channel went live:
    - Chrome Web Store, under the "Shades Media Group" publisher

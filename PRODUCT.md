@@ -31,7 +31,7 @@ It is one agency's living system, built from the projects it has actually shippe
 ## Operating Context
 
 - **Consumers:** React 19 + Tailwind v4 apps (nails-by-alynna, lms), Preact/Vite apps and extensions (PageRecast), static sites on Cloudflare Workers, and a Figma plugin (ImageReframe, planned).
-- **Languages:** the site ships in English, French, Romanian, Russian, Spanish and Chinese.
+- **Languages:** the site ships in English, French, Romanian, Russian, Spanish, Italian, Turkish, Hindi, Japanese, and Simplified and Traditional Chinese.
 - **Authors:** work is often done by Claude Code sessions, so the docs have to be readable by agents (CLAUDE.md, llms.txt).
 
 ## Capabilities and Constraints

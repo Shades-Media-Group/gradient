@@ -4,7 +4,7 @@
 
 ## Facts
 
-- Website: https://gradient.shades.md (English, French, Romanian, Russian, Spanish, Chinese)
+- Website: https://gradient.shades.md (English, French, Romanian, Russian, Spanish, Italian, Turkish, Hindi, Japanese, and Simplified and Traditional Chinese)
 - Repository: https://github.com/Shades-Media-Group/gradient
 - npm package: shades-gradient, version {{@version}}
 - Licence: the code is MIT. The Shades name, logo and Spectra characters are trademarks of Shades Media Group and are not covered by the MIT licence.
@@ -12,7 +12,7 @@
 - Colour: Shades Red #E40523, an ink scale from #FDFDFC (paper) to #0A0A0B (ink), and a four-shade spectrum #6364FF, #D212D6, #E40523, #FF5900 used once per layout.
 - Type: Space Grotesk for display, Hanken Grotesk for text, Inter for Cyrillic.
 - Spectra family: Spectra (founder, welcome), Mera (strategy), Sol (art direction), Nova (labs, new features), Sage (help, docs), Vio (community), Sunny (production, success).
-- Icons: 76 Shades interface icons on a 24 px grid with 2 px round strokes.
+- Icons: 78 Shades interface icons on a 24 px grid with 2 px round strokes.
 - Products built with the system: PageRecast (https://pagerecast.shades.md), nails-by-alynna, lms. Next: ImageReframe and the shades.md rebuild.
 
 ## Pages
