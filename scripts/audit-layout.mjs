@@ -89,6 +89,23 @@ for (const width of WIDTHS) {
             (el) =>
               `${el.tagName.toLowerCase()}.${[...el.classList].join('.')} "${el.textContent.trim().slice(0, 30)}"`,
           )
+        // A heading word split across two lines ("Component / s").
+        const broken = []
+        for (const el of document.querySelectorAll('h1, h2, h3, .family-row span, .tile-label')) {
+          const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT)
+          for (let node = walker.nextNode(); node; node = walker.nextNode()) {
+            // Latin and Cyrillic words only: Chinese and Japanese break between characters, and a hyphen is a break.
+            for (const match of node.textContent.matchAll(
+              /[\p{Script=Latin}\p{Script=Cyrillic}\d]{3,}/gu,
+            )) {
+              const range = document.createRange()
+              range.setStart(node, match.index)
+              range.setEnd(node, match.index + match[0].length)
+              const tops = new Set([...range.getClientRects()].map((r) => Math.round(r.top)))
+              if (tops.size > 1) broken.push(match[0])
+            }
+          }
+        }
         const fonts = [...document.fonts].filter((f) => f.status === 'error').map((f) => f.family)
         // Wrapped inline text whose lines sit far apart: small text inside a block
         // that keeps the page's larger line height.
@@ -111,6 +128,7 @@ for (const width of WIDTHS) {
           wide,
           fonts,
           loose: loose.slice(0, 3),
+          broken: broken.slice(0, 3),
         }
       })
       if (result.overflow > 1)
@@ -118,6 +136,8 @@ for (const width of WIDTHS) {
       for (const el of result.wide) problems.push(`${path} @${width}: sticks out: ${el}`)
       for (const font of result.fonts) problems.push(`${path} @${width}: font failed: ${font}`)
       for (const el of result.loose) problems.push(`${path} @${width}: lines too far apart: ${el}`)
+      for (const word of result.broken)
+        problems.push(`${path} @${width}: a heading splits "${word}"`)
       await tab.close()
     }
   await context.close()

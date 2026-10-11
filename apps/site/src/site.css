@@ -2284,9 +2284,17 @@ body {
   font-size: var(--g-size-small);
 }
 
+/* The wordmark fills the footer's measure exactly, ink edge to ink edge:
+   "Gradient" in Space Grotesk 700 at -0.065em is about 3.58em of ink that starts
+   0.05em inside its box (measured from the font file), so the margins on
+   both sides are the gutters themselves. */
+.footer {
+  container-type: inline-size;
+}
+
 .footer-word {
-  margin: clamp(32px, 5vw, 56px) 0 -0.12em;
-  font: 700 clamp(6rem, 25vw, 23rem) / 0.8 var(--g-font-display);
+  margin: clamp(32px, 5vw, 56px) 0 -0.12em -0.05em;
+  font: 700 calc(100cqi / 3.576) / 0.8 var(--g-font-display);
   letter-spacing: -0.065em;
   white-space: nowrap;
 }
@@ -2457,7 +2465,6 @@ body {
 
   .page-head h1 {
     font-size: clamp(2.25rem, 11vw, 3.5rem);
-    hyphens: auto;
   }
 }
 
@@ -2583,37 +2590,34 @@ body {
 
 .pairings {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(min(100%, 230px), 1fr));
-  gap: 12px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px 12px;
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-.pairings li {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  padding: 12px;
-  border-radius: var(--g-radius-md);
-  box-shadow: inset 0 0 0 1px var(--g-line);
-}
-
+/* A colour chart, as a printer would show it: the chip in its real pair,
+   the measured ratio under it in page text, so the caption always reads. */
 .pairings span {
-  display: grid;
-  place-items: center;
-  flex: none;
-  width: 64px;
-  height: 64px;
-  border-radius: var(--g-radius-sm);
+  display: flex;
+  align-items: flex-end;
+  aspect-ratio: 5 / 4;
+  padding: clamp(12px, 1.6vw, 20px);
   background: var(--bg);
   color: var(--fg);
   box-shadow: inset 0 0 0 1px var(--g-line);
-  font: 700 1.75rem / 1 var(--g-font-display);
+  font: 700 clamp(2.5rem, 1.6rem + 2.4vw, 4.25rem) / 0.9 var(--g-font-display);
+  letter-spacing: -0.04em;
+}
+
+.pairings div {
+  display: grid;
+  gap: 2px;
+  margin-top: 10px;
 }
 
 .pairings b {
-  display: block;
   font-size: var(--g-size-small);
 }
 
@@ -2624,6 +2628,13 @@ body {
 
 .pairings-no small {
   color: var(--g-warning);
+}
+
+@media (max-width: 560px) {
+  .pairings {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px 8px;
+  }
 }
 
 .type-pair {
@@ -2974,6 +2985,18 @@ body {
 }
 
 /* Home: about Shades, then straight into what it makes. */
+/* The company name stays on one line: the heading takes the title size where
+   it fits and shrinks to its column where it does not (up to 10.6em of text
+   with the Chinese full stop). */
+.fit-line {
+  container-type: inline-size;
+}
+
+.fit-line h2 {
+  font-size: min(var(--g-size-title), 100cqi / 10.6);
+  white-space: nowrap;
+}
+
 .about-actions {
   display: flex;
   flex-wrap: wrap;
@@ -3173,13 +3196,21 @@ body {
   white-space: nowrap;
 }
 
-/* Long words in long languages (Russian, Romanian, Turkish) on the smallest phones. */
+/* Headings never split a word: they break between words, and their sizes
+   are set so the longest word in every language fits (audit-layout checks). */
 h1,
 h2,
+h3,
 .family-row span,
 .split-layers h3 {
-  hyphens: auto;
-  overflow-wrap: break-word;
+  hyphens: manual;
+  overflow-wrap: normal;
+  text-wrap: balance;
+}
+
+/* Chinese and Japanese headings break between phrases, not inside them. */
+:is(:lang(ja), :lang(zh)) :is(h1, h2, h3) {
+  word-break: auto-phrase;
 }
 
 @media (max-width: 400px) {

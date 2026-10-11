@@ -500,7 +500,7 @@ function render(locale: Locale, page: Page): string {
         .join('')}\n        </div>`,
   }
 
-  return (
+  return keepTogether(
     template
       .replace(
         /\{\{(@?)([\w.]+)(?::([\w-]+))?\}\}/g,
@@ -526,8 +526,28 @@ function render(locale: Locale, page: Page): string {
           prefs: dict.prefs,
           consent: dict.consent,
         }).replaceAll('<', '\\u003c')}</script>\n  </body>`,
-      )
+      ),
   )
+}
+
+/** Names that never break across lines, in every language. */
+const UNBROKEN = ['Shades Media Group', 'Shades Day']
+
+/** Joins the words of UNBROKEN names with no-break spaces in the visible body, never inside scripts. */
+function keepTogether(page: string): string {
+  const start = page.indexOf('<body')
+  const parts = page.slice(start).split(/(<script[\s\S]*?<\/script>)/)
+  const body = parts
+    .map((part) =>
+      part.startsWith('<script')
+        ? part
+        : UNBROKEN.reduce(
+            (text, name) => text.replaceAll(name, name.replaceAll(' ', '\u00a0')),
+            part,
+          ),
+    )
+    .join('')
+  return page.slice(0, start) + body
 }
 
 /** The last commit that touched the site, so lastmod only moves when a page can have. */
