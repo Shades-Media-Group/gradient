@@ -2560,3 +2560,138 @@ body {
     height: 680px;
   }
 }
+
+/* Accessibility page. */
+.promises {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 32px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.promises li {
+  display: grid;
+  grid-template-columns: 24px minmax(0, 1fr);
+  gap: 14px;
+  padding: 18px 0;
+  border-top: 1px solid var(--g-line);
+}
+
+.promises .i {
+  width: 24px;
+  height: 24px;
+  color: var(--g-accent-text);
+}
+
+.promises h3 {
+  font-size: var(--g-size-body);
+}
+
+.promises p {
+  margin-top: 4px;
+  color: var(--g-text-2);
+}
+
+.report-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+@media (max-width: 560px) {
+  .promises {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* Home: about Shades and the product family. */
+.about {
+  display: grid;
+  gap: 32px;
+}
+
+.about-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 24px;
+  font: 700 var(--g-size-h1) / 1.1 var(--g-font-display);
+  letter-spacing: -0.02em;
+}
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 40px 28px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.product-plate {
+  display: grid;
+  place-items: center;
+  aspect-ratio: 4 / 3;
+  margin-bottom: 18px;
+  padding: 12%;
+}
+
+.product-plate--paper {
+  background: #fdfdfc;
+}
+
+.product-plate img {
+  width: 100%;
+  height: auto;
+}
+
+.product-lockup {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  color: #0a0a0b;
+  font: 700 clamp(1.5rem, 2.4vw, 2.25rem) / 1 var(--g-font-display);
+  letter-spacing: -0.03em;
+}
+
+.product-lockup .g-mark,
+.product-lockup img {
+  flex: none;
+  width: clamp(40px, 4vw, 56px);
+  height: auto;
+}
+
+.product-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.product-meta h3 {
+  font-size: var(--g-size-h2);
+}
+
+.products p {
+  margin-top: 8px;
+  color: var(--g-text-2);
+}
+
+.product-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 18px;
+  font-weight: 600;
+}
+
+.product-note {
+  color: var(--g-text-3);
+  font-weight: 400;
+}
+
+@media (max-width: 860px) {
+  .products {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
