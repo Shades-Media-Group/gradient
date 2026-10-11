@@ -7,7 +7,7 @@ Every notable change to Gradient and the `shades-gradient` package. The format f
 ### Added
 
 - **Accessibility page:** the WCAG 2.2 AA standard, ten promises every product keeps, what each display-panel option does and who it helps, each product's status with its known gaps, how it is tested, and how to report a barrier.
-- **Home page:** an "About Shades" section and the product family, with the Gradient, PageRecast and ImageRefold marks. ImageRefold appears under its own name and mark.
+- **Home page:** an "About Shades" section and the product family, with the Gradient, PageRecast, ImageRefold and LMS marks; the brand page lists LMS among the products. ImageRefold appears under its own name and mark.
 - **Docs:** `docs/accessibility.md`.
 
 ## [0.3.0] - 2026-10-11

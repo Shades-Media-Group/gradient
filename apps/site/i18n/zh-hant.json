@@ -170,7 +170,9 @@
       "link": "產品如何套用品牌",
       "gradient": "設計系統：設計 token、元件、圖示、電子郵件與品牌，全在一個套件與本站中。",
       "pagerecast": "把任何網頁變成可編輯的 Figma 圖層。免費的 Chrome 擴充功能與 Figma 外掛。",
-      "imagerefold": "免費開源的 Figma 圖片匯出與匯入工具，第一個從 Gradient 起步的產品。"
+      "imagerefold": "免費開源的 Figma 圖片匯出與匯入工具，第一個從 Gradient 起步的產品。",
+      "lms": "Life Management System：集訓練、飲食等生活各面向於一處的私人空間，可安裝到手機上。",
+      "private": "僅限邀請。"
     }
   },
   "brand": {
@@ -411,6 +413,7 @@
       "shadesMark": "Shades 標誌與組合標誌",
       "gradientMark": "Shades 標誌，旁邊是 Gradient 一詞",
       "pagerecastMark": "自有標誌：兩頁重疊",
+      "lmsMark": "自有標誌：帶白色四角星光的紅色方塊",
       "imagerefoldMark": "自有標誌「Scale」：三個共用一角的圓角方形",
       "client": "客戶作品",
       "clientMark": "客戶自己的品牌，套用 Gradient 角色",

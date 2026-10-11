@@ -170,7 +170,9 @@
       "link": "Come i prodotti indossano il brand",
       "gradient": "Il design system: token, componenti, icone, email e il brand, in un solo pacchetto e in questo sito.",
       "pagerecast": "Qualsiasi pagina web in livelli Figma modificabili. Un'estensione per Chrome e un plugin per Figma, gratis.",
-      "imagerefold": "Esportazione e importazione di immagini per Figma, gratis e open source. Il primo prodotto a nascere da Gradient."
+      "imagerefold": "Esportazione e importazione di immagini per Figma, gratis e open source. Il primo prodotto a nascere da Gradient.",
+      "lms": "Life Management System: uno spazio privato per allenamento, alimentazione e le altre aree della vita, installabile sul telefono.",
+      "private": "Solo su invito."
     }
   },
   "brand": {
@@ -411,6 +413,7 @@
       "shadesMark": "Il marchio e il lockup Shades",
       "gradientMark": "Il marchio Shades accanto alla parola Gradient",
       "pagerecastMark": "Un marchio proprio: due pagine sovrapposte",
+      "lmsMark": "Il suo marchio: un quadrato rosso con una scintilla bianca a quattro punte",
       "imagerefoldMark": "Il suo marchio, «Scale»: tre quadrati arrotondati con un angolo in comune",
       "client": "Lavori per i clienti",
       "clientMark": "Il brand del cliente, sui ruoli di Gradient",

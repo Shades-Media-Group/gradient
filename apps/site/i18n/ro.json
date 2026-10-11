@@ -170,7 +170,9 @@
       "link": "Cum poartă produsele brandul",
       "gradient": "Sistemul de design: tokenuri, componente, iconițe, email și brandul, într-un singur pachet și pe acest site.",
       "pagerecast": "Orice pagină web, transformată în straturi Figma editabile. O extensie Chrome și un plugin Figma, gratuite.",
-      "imagerefold": "Export și import de imagini pentru Figma, gratuit și open source. Primul produs care pornește de la Gradient."
+      "imagerefold": "Export și import de imagini pentru Figma, gratuit și open source. Primul produs care pornește de la Gradient.",
+      "lms": "Life Management System: un singur loc privat pentru antrenamente, mâncare și celelalte domenii ale vieții, instalabil pe telefon.",
+      "private": "Doar pe bază de invitație."
     }
   },
   "brand": {
@@ -411,6 +413,7 @@
       "shadesMark": "Simbolul Shades și logo-ul complet",
       "gradientMark": "Simbolul Shades lângă cuvântul Gradient",
       "pagerecastMark": "Simbol propriu: două pagini suprapuse",
+      "lmsMark": "Propriul simbol: un pătrat roșu cu o scânteie albă în patru colțuri",
       "imagerefoldMark": "Propriul simbol, „Scale”: trei pătrate rotunjite cu un colț comun",
       "client": "Proiecte pentru clienți",
       "clientMark": "Brandul propriu al clientului, pe rolurile Gradient",

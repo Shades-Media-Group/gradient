@@ -170,7 +170,9 @@
       "link": "Ürünler markayı nasıl taşır",
       "gradient": "Tasarım sistemi: token'lar, bileşenler, ikonlar, e-posta ve marka; tek pakette ve bu sitede.",
       "pagerecast": "Her web sayfasını düzenlenebilir Figma katmanlarına dönüştürür. Ücretsiz bir Chrome uzantısı ve Figma eklentisi.",
-      "imagerefold": "Figma için ücretsiz ve açık kaynak görsel dışa ve içe aktarma. Gradient'ten başlayan ilk ürün."
+      "imagerefold": "Figma için ücretsiz ve açık kaynak görsel dışa ve içe aktarma. Gradient'ten başlayan ilk ürün.",
+      "lms": "Life Management System: antrenman, beslenme ve hayatın diğer alanları için telefona kurulabilen özel bir alan.",
+      "private": "Yalnızca davetle."
     }
   },
   "brand": {
@@ -411,6 +413,7 @@
       "shadesMark": "Shades işareti ve logo kurgusu",
       "gradientMark": "Gradient kelimesinin yanında Shades işareti",
       "pagerecastMark": "Kendi işareti: üst üste binen iki sayfa",
+      "lmsMark": "Kendi işareti: beyaz, dört köşeli bir parıltı taşıyan kırmızı kare",
       "imagerefoldMark": "Kendi işareti \"Scale\": bir köşeyi paylaşan üç yuvarlatılmış kare",
       "client": "Müşteri işleri",
       "clientMark": "Müşterinin kendi markası, Gradient rolleri üzerinde",

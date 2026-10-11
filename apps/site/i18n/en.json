@@ -170,7 +170,9 @@
       "link": "How products wear the brand",
       "gradient": "The design system: tokens, components, icons, email and the brand, as one package and this site.",
       "pagerecast": "Any web page into editable Figma layers. A free Chrome extension and Figma plugin.",
-      "imagerefold": "Image export and import for Figma, free and open source. The first product to start from Gradient."
+      "imagerefold": "Image export and import for Figma, free and open source. The first product to start from Gradient.",
+      "lms": "Life Management System: one private home for training, food and the other areas of a life, installable on a phone.",
+      "private": "Invite only."
     }
   },
   "brand": {
@@ -411,6 +413,7 @@
       "shadesMark": "The Shades mark and lockup",
       "gradientMark": "The Shades mark beside the word Gradient",
       "pagerecastMark": "Its own mark: two overlapping pages",
+      "lmsMark": "Its own mark: a red square with a white four-point sparkle",
       "imagerefoldMark": "Its own mark, \"Scale\": three rounded squares sharing a corner",
       "client": "Client work",
       "clientMark": "The client’s own brand, on Gradient roles",

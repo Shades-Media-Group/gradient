@@ -170,7 +170,9 @@
       "link": "プロダクトとブランドの関係",
       "gradient": "デザインシステム。トークン、コンポーネント、アイコン、メール、ブランドを、ひとつのパッケージとこのサイトに。",
       "pagerecast": "あらゆるWebページを、編集可能なFigmaレイヤーに。無料のChrome拡張機能とFigmaプラグイン。",
-      "imagerefold": "Figma向けの画像書き出し＆読み込み。無料のオープンソース。Gradientから始まる最初のプロダクトです。"
+      "imagerefold": "Figma向けの画像書き出し＆読み込み。無料のオープンソース。Gradientから始まる最初のプロダクトです。",
+      "lms": "Life Management System：トレーニング、食事など、暮らしのさまざまな領域をまとめるプライベートな場所。スマートフォンにインストールできます。",
+      "private": "招待制です。"
     }
   },
   "brand": {
@@ -411,6 +413,7 @@
       "shadesMark": "Shadesのマークとロックアップ",
       "gradientMark": "Gradientの文字の横にShadesのマーク",
       "pagerecastMark": "独自のマーク：重なり合う2枚のページ",
+      "lmsMark": "独自のマーク：白い四芒星のきらめきを入れた赤い正方形",
       "imagerefoldMark": "独自のマーク「Scale」：角をひとつ共有する、角の丸い3つの正方形",
       "client": "クライアントワーク",
       "clientMark": "クライアント自身のブランドを、Gradientのロールで",

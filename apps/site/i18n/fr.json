@@ -170,7 +170,9 @@
       "link": "Comment les produits portent la marque",
       "gradient": "Le design system : tokens, composants, icônes, e-mail et marque, en un seul paquet et sur ce site.",
       "pagerecast": "N'importe quelle page web en calques Figma modifiables. Une extension Chrome et un plugin Figma gratuits.",
-      "imagerefold": "Export et import d'images pour Figma, gratuit et open source. Le premier produit né de Gradient."
+      "imagerefold": "Export et import d'images pour Figma, gratuit et open source. Le premier produit né de Gradient.",
+      "lms": "Life Management System : un espace privé pour l'entraînement, l'alimentation et les autres domaines de la vie, installable sur téléphone.",
+      "private": "Sur invitation."
     }
   },
   "brand": {
@@ -411,6 +413,7 @@
       "shadesMark": "Le symbole et le bloc-marque Shades",
       "gradientMark": "Le symbole Shades à côté du mot Gradient",
       "pagerecastMark": "Son propre symbole : deux pages qui se chevauchent",
+      "lmsMark": "Son propre symbole : un carré rouge avec une étincelle blanche à quatre branches",
       "imagerefoldMark": "Son propre symbole, « Scale » : trois carrés arrondis qui partagent un coin",
       "client": "Projets clients",
       "clientMark": "La marque du client, sur les rôles Gradient",

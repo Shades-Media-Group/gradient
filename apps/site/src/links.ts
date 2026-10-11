@@ -16,6 +16,7 @@ export const LINKS: Record<string, string> = {
   lessons: `${REPO}/blob/main/docs/lessons.md`,
   caseStudy: `${REPO}/blob/main/docs/projects/pagerecast.md`,
   imagerefold: 'https://imagerefold.shades.md',
+  lmsRepo: 'https://github.com/CristianBrinza/lms',
   imagerefoldRepo: 'https://github.com/Shades-Media-Group/ImageRefold',
   newProject: `${REPO}/blob/main/docs/guides/start-a-project.md`,
   contact: 'mailto:support@shades.md',

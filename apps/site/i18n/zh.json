@@ -170,7 +170,9 @@
       "link": "产品如何使用品牌",
       "gradient": "设计系统：设计令牌、组件、图标、邮件与品牌，集于一个包和本站。",
       "pagerecast": "把任意网页变成可编辑的 Figma 图层。免费的 Chrome 扩展和 Figma 插件。",
-      "imagerefold": "免费开源的 Figma 图片导出与导入工具，第一个从 Gradient 起步的产品。"
+      "imagerefold": "免费开源的 Figma 图片导出与导入工具，第一个从 Gradient 起步的产品。",
+      "lms": "Life Management System：集训练、饮食等生活各方面于一体的私人空间，可安装到手机上。",
+      "private": "仅限邀请。"
     }
   },
   "brand": {
@@ -411,6 +413,7 @@
       "shadesMark": "Shades 标志与组合标识",
       "gradientMark": "Shades 标志，旁边是 Gradient 一词",
       "pagerecastMark": "自有标志：两页重叠",
+      "lmsMark": "自有标志：带白色四角星光的红色方块",
       "imagerefoldMark": "自有标志“Scale”：三个共用一角的圆角方形",
       "client": "客户项目",
       "clientMark": "客户自己的品牌，基于 Gradient 角色令牌",
