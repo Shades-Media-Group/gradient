@@ -582,6 +582,22 @@ body {
   margin-bottom: 0;
 }
 
+/* A statement chapter: the line takes the full measure, the copy sits under it
+   on the right, so the statement never breaks into a narrow column. */
+.chapter-head--stack {
+  grid-template-columns: minmax(0, 1fr);
+  gap: clamp(28px, 4vw, 48px);
+}
+
+.chapter-head--stack > div:last-child {
+  justify-self: end;
+  width: min(100%, 46ch);
+}
+
+.chapter-head--stack h2 {
+  max-width: 12ch;
+}
+
 .chapter--red .chapter-head h2 {
   font-size: var(--g-size-display);
   line-height: var(--g-leading-display);
