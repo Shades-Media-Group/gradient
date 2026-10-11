@@ -4,5 +4,12 @@
     "lib": ["ES2022", "DOM", "DOM.Iterable"],
     "types": ["node", "vite/client"]
   },
-  "include": ["packages/*/src", "packages/*/scripts", "apps/site/src", "apps/site/*.ts", "scripts", "*.config.ts"]
+  "include": [
+    "packages/*/src",
+    "packages/*/scripts",
+    "apps/site/src",
+    "apps/site/*.ts",
+    "scripts",
+    "*.config.ts"
+  ]
 }

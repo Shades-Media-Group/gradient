@@ -42,8 +42,7 @@ const GROUPS = [
 const at = (path) => path.split('.').reduce((node, key) => node?.[key], tokens)
 
 /** A group's tokens as [name, token], skipping $-keys. */
-const entries = (path) =>
-  Object.entries(at(path)).filter(([key]) => !key.startsWith('$'))
+const entries = (path) => Object.entries(at(path)).filter(([key]) => !key.startsWith('$'))
 
 const varName = (prefix, name) => `--g-${prefix ? `${prefix}-` : ''}${name}`
 
@@ -57,7 +56,8 @@ function refVar(ref) {
 
 /** A reference resolved all the way to its literal value. */
 export function resolve(value) {
-  if (typeof value === 'string' && value.startsWith('{')) return resolve(at(value.slice(1, -1)).$value)
+  if (typeof value === 'string' && value.startsWith('{'))
+    return resolve(at(value.slice(1, -1)).$value)
   return value
 }
 
@@ -119,7 +119,8 @@ ${lightRoles.join('\n')}
 function themeCss() {
   const lines = []
   const add = (twPrefix, prefix, group) => {
-    for (const [name] of entries(group)) lines.push(`  --${twPrefix}-${name}: var(${varName(prefix, name)});`)
+    for (const [name] of entries(group))
+      lines.push(`  --${twPrefix}-${name}: var(${varName(prefix, name)});`)
   }
   add('color-red', 'red', 'color.red')
   add('color-ink', 'ink', 'color.ink')
@@ -147,16 +148,19 @@ const tokenSheet = tokensCss()
 writeFileSync(join(dist, 'tokens.css'), tokenSheet)
 writeFileSync(join(dist, 'theme.css'), themeCss())
 copyFileSync(join(src, 'tokens.json'), join(dist, 'tokens.json'))
-for (const sheet of sheets) writeFileSync(join(dist, sheet), banner + readFileSync(join(src, sheet), 'utf8'))
+for (const sheet of sheets)
+  writeFileSync(join(dist, sheet), banner + readFileSync(join(src, sheet), 'utf8'))
 writeFileSync(
   join(dist, 'gradient.css'),
   [tokenSheet, ...sheets.map((sheet) => readFileSync(join(src, sheet), 'utf8'))].join('\n'),
 )
 
 // A sprite for plain HTML: <svg><use href="/icons.svg#g-arrow-right"/></svg>
-const { icons } = await import(`data:text/javascript,${encodeURIComponent(
-  readFileSync(join(src, 'icons.ts'), 'utf8').replace(/ as const/g, ''),
-)}`)
+const { icons } = await import(
+  `data:text/javascript,${encodeURIComponent(
+    readFileSync(join(src, 'icons.ts'), 'utf8').replace(/ as const/g, ''),
+  )}`
+)
 const kebab = (name) => name.replace(/[A-Z]/g, (c) => `-${c.toLowerCase()}`)
 writeFileSync(
   join(dist, 'icons.svg'),

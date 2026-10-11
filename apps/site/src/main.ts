@@ -62,7 +62,7 @@ for (const el of $$('[data-reveal]')) reveal.observe(el)
 const split = document.querySelector<HTMLElement>('[data-split]')
 if (split) {
   let frame = 0
-  const narrow = matchMedia("(max-width: 860px)")
+  const narrow = matchMedia('(max-width: 860px)')
   const update = () => {
     frame = 0
     const rect = split.getBoundingClientRect()
@@ -113,9 +113,11 @@ for (const swatch of $$<HTMLLIElement>('[data-token]')) {
   const token = swatch.dataset.token!
   const value = styles.getPropertyValue(token).trim()
   swatch.innerHTML = `<button type="button"><b>${token.replace('--g-', '')}</b><span>${value.toUpperCase()}</span></button>`
-  swatch.querySelector('button')!.addEventListener('click', () =>
-    copy(`var(${token})`, fill(strings.copied, { token: `var(${token})` })),
-  )
+  swatch
+    .querySelector('button')!
+    .addEventListener('click', () =>
+      copy(`var(${token})`, fill(strings.copied, { token: `var(${token})` })),
+    )
 }
 
 // The brief demo on the home page: checks the email, plays the busy state, sends nothing.
@@ -145,7 +147,8 @@ for (const button of $$<HTMLButtonElement>('[data-busy-demo]'))
   })
 
 // The animated mark demo.
-for (const holder of $$('[data-animate-mark]')) holder.querySelector('svg')?.setAttribute('data-animate', '')
+for (const holder of $$('[data-animate-mark]'))
+  holder.querySelector('svg')?.setAttribute('data-animate', '')
 
 // Motion speeds: each button replays its curve.
 for (const button of $$<HTMLButtonElement>('[data-speed]'))

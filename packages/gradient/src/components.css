@@ -80,9 +80,7 @@
   }
 
   .g-btn--primary:focus-visible {
-    box-shadow:
-      var(--g-shadow-accent),
-      var(--g-focus);
+    box-shadow: var(--g-shadow-accent), var(--g-focus);
   }
 
   .g-btn--inverse {

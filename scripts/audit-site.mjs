@@ -84,7 +84,8 @@ function checkJsonLd(where, html, path) {
   for (const block of blocks) {
     try {
       const data = JSON.parse(block.replace(/^<script[^>]*>|<\/script>$/g, ''))
-      if (data['@context'] !== 'https://schema.org') fail(where, 'JSON-LD @context is not schema.org')
+      if (data['@context'] !== 'https://schema.org')
+        fail(where, 'JSON-LD @context is not schema.org')
       nodes.push(...(data['@graph'] ?? [data]))
     } catch (error) {
       fail(where, `JSON-LD does not parse: ${error.message}`)
@@ -104,7 +105,8 @@ function checkJsonLd(where, html, path) {
   for (const node of nodes) {
     if (node['@type'] === 'FAQPage')
       for (const question of node.mainEntity)
-        if (!visible.includes(question.name)) fail(where, `FAQ question not on the page: ${question.name}`)
+        if (!visible.includes(question.name))
+          fail(where, `FAQ question not on the page: ${question.name}`)
     if (node['@type'] === 'BreadcrumbList')
       node.itemListElement.forEach((item, i) => {
         if (item.position !== i + 1 || !item.name || !exists(item.item))
@@ -122,13 +124,17 @@ function checkAccess(where, html) {
     if (Number(level) > last + 1) fail(where, `heading jumps from h${last} to h${level}`)
     last = Number(level)
   }
-  for (const img of tags(body, 'img')) if (attr(img, 'alt') === undefined) fail(where, `img without alt: ${img}`)
-  for (const [, open, inner] of body.matchAll(/<(button|a)\b([^>]*)>([\s\S]*?)<\/\1>/g).map((m) => [m[0], m[2], m[3]])) {
+  for (const img of tags(body, 'img'))
+    if (attr(img, 'alt') === undefined) fail(where, `img without alt: ${img}`)
+  for (const [, open, inner] of body
+    .matchAll(/<(button|a)\b([^>]*)>([\s\S]*?)<\/\1>/g)
+    .map((m) => [m[0], m[2], m[3]])) {
     const named = attr(` ${open}`, 'aria-label') || text(inner).trim()
     if (!named) fail(where, `a button or link has no name: <${open.slice(0, 80)}>`)
   }
   const ids = [...body.matchAll(/\sid="([^"]+)"/g)].map((m) => m[1])
-  for (const id of new Set(ids.filter((id, i) => ids.indexOf(id) !== i))) fail(where, `duplicate id "${id}"`)
+  for (const id of new Set(ids.filter((id, i) => ids.indexOf(id) !== i)))
+    fail(where, `duplicate id "${id}"`)
   for (const field of tags(body, '(?:input|select|textarea)')) {
     if (/type="(hidden|submit|button)"/.test(field)) continue
     const id = attr(field, 'id')
@@ -142,14 +148,22 @@ function checkAccess(where, html) {
 }
 
 function checkLinks(where, html) {
-  for (const tag of [...tags(html, 'a'), ...tags(html, 'link'), ...tags(html, 'script'), ...tags(html, 'img')]) {
+  for (const tag of [
+    ...tags(html, 'a'),
+    ...tags(html, 'link'),
+    ...tags(html, 'script'),
+    ...tags(html, 'img'),
+  ]) {
     const url = attr(tag, 'href') ?? attr(tag, 'src')
     if (!url || url.startsWith('#') || url.startsWith('mailto:')) continue
     if (url.startsWith('/')) {
       if (!local(url)) fail(where, `broken link ${url}`)
     } else if (url.startsWith(SITE)) {
       if (!exists(url) && !local(url.slice(SITE.length))) fail(where, `broken link ${url}`)
-    } else if (/^(script|link|img)/.test(tag.slice(1)) && !/rel="(canonical|alternate)"/.test(tag)) {
+    } else if (
+      /^(script|link|img)/.test(tag.slice(1)) &&
+      !/rel="(canonical|alternate)"/.test(tag)
+    ) {
       fail(where, `third-party resource ${url}`)
     }
   }
@@ -161,7 +175,9 @@ function checkBudget(where, html) {
       .map((tag) => attr(tag, 'src') ?? attr(tag, 'href'))
       .filter((url) => url?.startsWith('/assets/'))
   const js = own('script').reduce((sum, url) => sum + gz(readFileSync(join(dist, url))), 0)
-  const css = own('link').filter((url) => url.endsWith('.css')).reduce((sum, url) => sum + gz(readFileSync(join(dist, url))), 0)
+  const css = own('link')
+    .filter((url) => url.endsWith('.css'))
+    .reduce((sum, url) => sum + gz(readFileSync(join(dist, url))), 0)
   const page = gz(Buffer.from(html))
   if (page > BUDGET.html) fail(where, `HTML is ${page} B compressed (budget ${BUDGET.html})`)
   if (js > BUDGET.js) fail(where, `scripts are ${js} B compressed (budget ${BUDGET.js})`)
@@ -186,17 +202,23 @@ for (const file of pages) {
   else titles.set(title, path)
   const [description] = meta(html, 'name', 'description')
   if (!description) fail(where, 'no meta description')
-  else if (descriptions.has(description)) fail(where, `same description as ${descriptions.get(description)}`)
+  else if (descriptions.has(description))
+    fail(where, `same description as ${descriptions.get(description)}`)
   else descriptions.set(description, path)
 
   const canonical = tags(html, 'link').find((tag) => attr(tag, 'rel') === 'canonical')
   if (attr(canonical ?? '', 'href') !== `${SITE}${path}`) fail(where, 'canonical is not this page')
-  const alternates = tags(html, 'link').filter((tag) => attr(tag, 'rel') === 'alternate' && attr(tag, 'hreflang'))
+  const alternates = tags(html, 'link').filter(
+    (tag) => attr(tag, 'rel') === 'alternate' && attr(tag, 'hreflang'),
+  )
   const hreflangs = alternates.map((tag) => attr(tag, 'hreflang')).sort()
   if (hreflangs.join() !== HREFLANGS.join()) fail(where, `hreflang set is ${hreflangs.join(', ')}`)
-  for (const tag of alternates) if (!exists(attr(tag, 'href'))) fail(where, `hreflang ${attr(tag, 'hreflang')} points nowhere`)
-  if (meta(html, 'property', 'og:url')[0] !== `${SITE}${path}`) fail(where, 'og:url is not this page')
-  if (meta(html, 'property', 'og:locale:alternate').length !== 5) fail(where, 'og:locale:alternate does not list the other five languages')
+  for (const tag of alternates)
+    if (!exists(attr(tag, 'href'))) fail(where, `hreflang ${attr(tag, 'hreflang')} points nowhere`)
+  if (meta(html, 'property', 'og:url')[0] !== `${SITE}${path}`)
+    fail(where, 'og:url is not this page')
+  if (meta(html, 'property', 'og:locale:alternate').length !== 5)
+    fail(where, 'og:locale:alternate does not list the other five languages')
   for (const key of ['og:title', 'og:description', 'og:image'])
     if (!meta(html, 'property', key)[0]) fail(where, `no ${key}`)
   if (!meta(html, 'name', 'twitter:card')[0]) fail(where, 'no twitter:card')
@@ -210,7 +232,9 @@ for (const file of pages) {
 // The English pages must not be served under another language's address.
 for (const code of Object.keys(LANGS).filter((code) => code !== 'en')) {
   const en = readFileSync(join(dist, 'index.html'), 'utf8').match(/<h1>([\s\S]*?)<\/h1>/)?.[1]
-  const other = readFileSync(join(dist, code, 'index.html'), 'utf8').match(/<h1>([\s\S]*?)<\/h1>/)?.[1]
+  const other = readFileSync(join(dist, code, 'index.html'), 'utf8').match(
+    /<h1>([\s\S]*?)<\/h1>/,
+  )?.[1]
   if (en === other) fail(`/${code}/`, 'the home page heading is still in English')
 }
 
@@ -224,14 +248,20 @@ if (locs.length !== pages.length - (existsSync(join(dist, '404', 'index.html')) 
   fail('sitemap.xml', `lists ${locs.length} pages, the build has ${pages.length}`)
 for (const loc of locs) if (!exists(loc)) fail('sitemap.xml', `${loc} does not exist`)
 for (const name of ['llms.txt', 'llms-full.txt'])
-  if (!read(name).startsWith('# Gradient')) fail(name, 'missing or does not start with "# Gradient"')
-if (!read('_headers').includes('Content-Security-Policy')) fail('_headers', 'no Content-Security-Policy')
+  if (!read(name).startsWith('# Gradient'))
+    fail(name, 'missing or does not start with "# Gradient"')
+if (!read('_headers').includes('Content-Security-Policy'))
+  fail('_headers', 'no Content-Security-Policy')
 
 // Never name competitors or call a product a copy in anything public.
-const banned = [new RegExp(['html', 'to', 'design'].join('\\.'), 'i'), new RegExp(['div', 'riots'].join(''), 'i')]
+const banned = [
+  new RegExp(['html', 'to', 'design'].join('\\.'), 'i'),
+  new RegExp(['div', 'riots'].join(''), 'i'),
+]
 for (const file of files.filter((f) => /\.(html|txt|xml|js|css)$/.test(f)))
   for (const pattern of banned)
-    if (pattern.test(readFileSync(file, 'utf8'))) fail(relative(dist, file), `names a competitor (${pattern})`)
+    if (pattern.test(readFileSync(file, 'utf8')))
+      fail(relative(dist, file), `names a competitor (${pattern})`)
 
 const total = files.reduce((sum, file) => sum + statSync(file).size, 0)
 const heaviest = sizes.sort((a, b) => b[1].page - a[1].page)[0]

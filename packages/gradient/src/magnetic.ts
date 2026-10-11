@@ -30,7 +30,8 @@ export function magnetic(selector = '[data-magnetic]', root: Document = document
         Math.max(0, Math.abs(dx) - r.width / 2),
         Math.max(0, Math.abs(dy) - r.height / 2),
       )
-      if (outside <= REACH && (!nearest || outside < nearest.d)) nearest = { el, dx, dy, d: outside }
+      if (outside <= REACH && (!nearest || outside < nearest.d))
+        nearest = { el, dx, dy, d: outside }
     }
     if (active && active !== nearest?.el) release(active)
     active = nearest?.el ?? null

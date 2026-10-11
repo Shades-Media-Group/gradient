@@ -1,7 +1,10 @@
 import { readFileSync } from 'node:fs'
 import { describe, expect, it } from 'vitest'
 
-type Node = { [key: string]: Node } & { $value?: unknown; $extensions?: Record<string, { dark?: string }> }
+type Node = { [key: string]: Node } & {
+  $value?: unknown
+  $extensions?: Record<string, { dark?: string }>
+}
 const tokens = JSON.parse(readFileSync(new URL('./tokens.json', import.meta.url), 'utf8')) as Node
 
 const at = (path: string) => path.split('.').reduce<Node>((node, key) => node[key]!, tokens)
@@ -10,7 +13,9 @@ const resolve = (value: string): string =>
 
 const role = (name: string, theme: 'light' | 'dark') => {
   const token = at(`role.${name}`)
-  return resolve(theme === 'dark' ? token.$extensions!['md.shades.gradient']!.dark! : (token.$value as string))
+  return resolve(
+    theme === 'dark' ? token.$extensions!['md.shades.gradient']!.dark! : (token.$value as string),
+  )
 }
 
 /** WCAG 2.x relative luminance and contrast ratio. */

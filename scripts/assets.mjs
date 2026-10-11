@@ -48,7 +48,7 @@ const card = (width, height, dark) =>
       <div>
         <div style="width:${height * 0.15}px; margin-bottom:${height * 0.07}px">${mark}</div>
         <h1 style="font: 700 ${height * 0.25}px/0.88 Display; letter-spacing:-0.05em">Gradient</h1>
-        <p style="margin-top:${height * 0.05}px; font-size:${height * 0.055}px; color:${dark ? "#c8c8cd" : "#3a3a40"}; white-space:nowrap">The Shades Media Group design system</p>
+        <p style="margin-top:${height * 0.05}px; font-size:${height * 0.055}px; color:${dark ? '#c8c8cd' : '#3a3a40'}; white-space:nowrap">The Shades Media Group design system</p>
       </div>
       <div style="display:flex; align-items:flex-end; gap:${width * 0.004}px; width:${width * 0.32}px">
         ${family
@@ -62,7 +62,11 @@ const card = (width, height, dark) =>
   )
 
 const square = (size, pad) =>
-  page(size, size, `<div style="width:${size}px; height:${size}px; padding:${pad}px; background:#e40523">${mark.replace('<rect width="56" height="56" fill="#E40523"/>', '')}</div>`)
+  page(
+    size,
+    size,
+    `<div style="width:${size}px; height:${size}px; padding:${pad}px; background:#e40523">${mark.replace('<rect width="56" height="56" fill="#E40523"/>', '')}</div>`,
+  )
 
 const JOBS = [
   ['apps/site/public/social-preview.png', 1280, 640, card(1280, 640, false)],

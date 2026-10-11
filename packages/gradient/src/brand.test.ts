@@ -10,8 +10,12 @@ describe('the Shades mark', () => {
     expect(svg).toContain('<rect width="56" height="56" fill="#E40523"/>')
     expect(svg).not.toContain('rx=')
     expect(svg).toContain('<rect x="10" y="13" width="10" height="30" fill="#FFFFFF"/>')
-    expect(svg).toContain('<rect x="23" y="13" width="10" height="30" fill="#FFFFFF" fill-opacity="0.75"/>')
-    expect(svg).toContain('<rect x="36" y="13" width="10" height="30" fill="#FFFFFF" fill-opacity="0.5"/>')
+    expect(svg).toContain(
+      '<rect x="23" y="13" width="10" height="30" fill="#FFFFFF" fill-opacity="0.75"/>',
+    )
+    expect(svg).toContain(
+      '<rect x="36" y="13" width="10" height="30" fill="#FFFFFF" fill-opacity="0.5"/>',
+    )
   })
 
   it('sits in the lockup at the navbar size', () => {

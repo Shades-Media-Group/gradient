@@ -3,3 +3,5 @@ coverage
 yarn.lock
 graphify-out
 apps/site/i18n
+apps/site/templates
+packages/gradient/src/icons.ts
