@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="{{@lang}}">
+<html lang="{{@lang}}" data-theme-default="light">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -188,7 +188,10 @@ link.innerHTML = renderIcon('download', 20, 'Download the logo')</code></pre>
           <p>{{docs.settings.text}}</p>
         </div>
         <div class="doc-body">
-          <pre class="g-code"><code>&lt;!-- in &lt;head&gt;, before anything paints --&gt;
+          <pre class="g-code"><code>&lt;!-- light until the reader chooses; leave it out to follow the system --&gt;
+&lt;html lang="en" data-theme-default="light"&gt;
+
+&lt;!-- in &lt;head&gt;, before anything paints --&gt;
 &lt;script src="/preferences-boot.js"&gt;&lt;/script&gt;
 
 import 'shades-gradient/preferences.css'
