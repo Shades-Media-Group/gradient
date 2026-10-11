@@ -823,8 +823,26 @@ async function tee(assets) {
     albedo.height,
     (x, y) => {
       const mmY = 760 - y / PX
+      const mmX = x / PX - 400
       let v = noise(x / 1.1, y / 0.7, 3) * 0.3
-      v -= 0.5 * (Math.exp(-(((mmY - 20) / 0.8) ** 2)) + Math.exp(-(((mmY - 26) / 0.8) ** 2)))
+      const groove = (d) => Math.exp(-((d / 0.8) ** 2))
+      // Hem: two rows of stitches.
+      v -= 0.5 * (groove(mmY - 20) + groove(mmY - 26))
+      // Collar: a 16 mm rib band along the neckline, stitched on its lower edge.
+      const neck = NECK - 18 * Math.sin(Math.PI * Math.min(1, Math.max(0, (mmX + 92) / 184)))
+      if (Math.abs(mmX) < 96 && mmY > neck - 16 && mmY <= neck + 1)
+        v += 0.35 + 0.28 * Math.sin(mmX * 2.4)
+      if (Math.abs(mmX) < 96) v -= 0.6 * groove(mmY - (neck - 16))
+      // Shoulder seams, from the collar to the shoulder point.
+      const ax = Math.abs(mmX)
+      if (ax > 92 && ax < 246) v -= 0.5 * groove(mmY - (NECK - ((ax - 92) / 154) * 34))
+      // Sleeve hems: stitches 18 mm and 24 mm in from the cuff.
+      const cuff =
+        ((ax - 392) * (336 - 392) + (mmY - 576) * (480 - 576)) / Math.hypot(336 - 392, 480 - 576)
+      const across =
+        ((ax - 392) * (480 - 576) - (mmY - 576) * (336 - 392)) / Math.hypot(336 - 392, 480 - 576)
+      if (ax > 250 && cuff > -4 && cuff < 112)
+        v -= 0.5 * (groove(across + 18) + groove(across + 24))
       if (printed[(y * albedo.width + x) * 4] > 110) v += 0.45
       return v
     },
@@ -869,7 +887,7 @@ async function tee(assets) {
     new THREE.TubeGeometry(
       new THREE.CatmullRomCurve3(
         [
-          [0, NECK - 14, -2],
+          [0, NECK - 4, -2],
           [0, NECK + 46, -2],
           [0, NECK + 98, 12],
           [0, NECK + 114, -4],

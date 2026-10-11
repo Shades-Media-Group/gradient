@@ -89,7 +89,8 @@ FACES.badgeGuest = badge('Ion', 'Rusu', 'Guest', '#0A0A0B')
 // The tee's back print, 300 × 420 mm at 8 px/mm, one ink on a clear ground.
 // The three bars of the mark, tall, the second and third as halftone at 75
 // and 50 per cent: shades of one colour, printed with one screen.
-const INK = '#EDEBE5'
+// Plastisol on cotton: an off-white, never paper-bright.
+const INK = '#DEDCD4'
 const dots = (radius) =>
   `background-image: radial-gradient(circle, ${INK} ${radius * 8}px, transparent ${radius * 8 + 0.8}px); background-size: ${2.2 * 8}px ${2.2 * 8}px;`
 FACES.teeBack = {

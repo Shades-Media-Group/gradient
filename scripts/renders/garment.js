@@ -4,22 +4,27 @@
  * let fall under gravity (position-based dynamics). The folds are the
  * simulation's, not drawn.
  *
- * Pattern units are millimetres, size M: origin at the hem's centre, y up.
+ * Pattern units are millimetres, size L (560 mm chest, 700 mm long): origin at
+ * the hem's centre, y up.
  */
 import { THREE, noise } from './studio.js'
 
-export const NECK = 718
+export const NECK = 700
+
+/** A wooden hanger: arms 175 mm each side, sloping down from the hook, 14 mm thick. */
+export const HANGER = { reach: 175, thick: 14 }
+export const hangerTop = (a) => NECK - 4 - Math.max(0, a - 70) * 0.42
 
 /** The outline as segments, each a seam or an opening (neck, hem, sleeve hems). */
 function pattern() {
   const right = {
     neck: [92, NECK],
-    shoulder: [232, 684],
-    sleeveTop: [372, 592],
-    sleeveHem: [318, 498],
-    underarm: [262, 548],
-    waist: [266, 300],
-    hem: [260, 0],
+    shoulder: [246, 666],
+    sleeveTop: [392, 576],
+    sleeveHem: [336, 480],
+    underarm: [280, 530],
+    waist: [284, 300],
+    hem: [280, 0],
   }
   const mirror = ([x, y]) => [-x, y]
   const segments = []
@@ -80,7 +85,7 @@ function closest(segments, x, y, filter = () => true) {
  * back of the shirt, facing the camera) and the inner panel, with UVs in
  * pattern space: u = (x + 400) / 800, v = y / 760.
  */
-export function drapeTee({ spacing = 8, steps = 420, iterations = 22, seed = 3 } = {}) {
+export function drapeTee({ spacing = 8, steps = 560, iterations = 22, seed = 3 } = {}) {
   const segments = pattern()
   const x0 = -400
   const y0 = 0
@@ -117,9 +122,11 @@ export function drapeTee({ spacing = 8, steps = 420, iterations = 22, seed = 3 }
     const n = node[k]
     front.set(k, px.length / 3)
     const seamDistance = closest(segments, n.x, n.y, (s) => !s.open).d
-    const puff = 9 * Math.min(1, seamDistance / 70)
+    const puff = 5 * Math.min(1, seamDistance / 80)
     px.push(n.x, n.y, puff + (noise(n.x / 40, n.y / 40, seed) - 0.5) * 3)
-    inv.push(n.edge && n.shoulder ? 0 : 1)
+    // Only the part of the shoulder seam that rests on the hanger is held; past the
+    // hanger's tips the shoulders roll over and drop, as they do on a real hanger.
+    inv.push(n.edge && n.shoulder && Math.abs(n.x) <= HANGER.reach ? 0 : 1)
     rest2d.push([n.x, n.y])
   }
   for (const k of used) {
@@ -130,15 +137,19 @@ export function drapeTee({ spacing = 8, steps = 420, iterations = 22, seed = 3 }
     }
     back.set(k, px.length / 3)
     const seamDistance = closest(segments, n.x, n.y, (s) => !s.open).d
-    const puff = 9 * Math.min(1, seamDistance / 70)
+    const puff = 5 * Math.min(1, seamDistance / 80)
     px.push(n.x, n.y, -puff + (noise(n.x / 40, n.y / 40, seed + 5) - 0.5) * 3)
     inv.push(1)
     rest2d.push([n.x, n.y])
   }
-  // The hanger is narrower than the shoulders, so the pinned seam sits 6 % in.
   const count = px.length / 3
   const P = new Float32Array(px)
-  for (let p = 0; p < count; p++) if (inv[p] === 0) P[p * 3] *= 0.94
+  // Held seam nodes sit on the hanger's arms, which slope down from the hook.
+  for (let p = 0; p < count; p++)
+    if (inv[p] === 0) {
+      P[p * 3 + 1] = hangerTop(Math.abs(P[p * 3]))
+      P[p * 3 + 2] = 0
+    }
   const Q = new Float32Array(P)
   const W = new Float32Array(inv)
 
@@ -210,11 +221,39 @@ export function drapeTee({ spacing = 8, steps = 420, iterations = 22, seed = 3 }
         P[b + 1] -= dy * diff * wb
         P[b + 2] -= dz * diff * wb
       }
-      // The two panels never pass through each other.
+      // Cotton jersey barely stretches: no structural link grows past 2 %.
+      if (it === iterations - 1)
+        for (let c = 0; c < A.length; c++) {
+          if (K[c] !== 1) continue
+          const a = A[c] * 3
+          const b = B[c] * 3
+          const dx = P[b] - P[a]
+          const dy = P[b + 1] - P[a + 1]
+          const dz = P[b + 2] - P[a + 2]
+          const len = Math.sqrt(dx * dx + dy * dy + dz * dz) || 1e-6
+          const max = R[c] * 1.02
+          if (len <= max) continue
+          const wa = W[A[c]]
+          const wb = W[B[c]]
+          const w = wa + wb
+          if (w === 0) continue
+          const diff = (len - max) / (len * w)
+          P[a] += dx * diff * wa
+          P[a + 1] += dy * diff * wa
+          P[a + 2] += dz * diff * wa
+          P[b] -= dx * diff * wb
+          P[b + 1] -= dy * diff * wb
+          P[b + 2] -= dz * diff * wb
+        }
+      // The two panels never pass through each other, and part around the hanger.
       for (const [f, b] of pairs) {
+        const x = Math.abs(P[f * 3])
+        const y = P[f * 3 + 1]
+        const onHanger = x < HANGER.reach + 12 && y > hangerTop(x) - 40
+        const min = onHanger ? HANGER.thick : 3
         const gap = P[f * 3 + 2] - P[b * 3 + 2]
-        if (gap < 3) {
-          const push = (3 - gap) / 2
+        if (gap < min) {
+          const push = (min - gap) / 2
           P[f * 3 + 2] += push * (W[f] ? 1 : 0)
           P[b * 3 + 2] -= push
         }
