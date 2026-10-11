@@ -38,10 +38,9 @@
     "description": "Gradient 是 Shades Media Group 的设计系统：标志、色彩、字体、Spectra 角色、组件与图标，每个 Shades 产品都由此构建。开源。",
     "hero": {
       "title": "每个 Shades 产品，都从这里开始。",
-      "lead": "Gradient 决定了 Shades Media Group 的样子、说话方式和构建方式：一个标志，一种红，七个角色，以及每个项目都会安装的代码。",
+      "lead": "Shades 每个产品背后的品牌、设计令牌和代码，都在一个免费的包里。",
       "copy": "复制安装命令",
-      "brand": "查看品牌",
-      "note": "免费开源。名称和标志归我们所有。"
+      "brand": "查看品牌"
     },
     "split": {
       "label": "标志的三根竖条",
@@ -60,22 +59,22 @@
         "text": "CSS 组件、Tailwind 主题和 78 个 Shades 图标，集于一个包。",
         "link": "组件"
       },
-      "caption": "三根竖条，分别是 100%、75% 和 50% 的白。这就是全部理念：同一种颜色的不同深浅并排，便成了渐变。"
+      "caption": "三根竖条，分别是 100%、75% 和 50% 的白：同一种颜色的不同深浅，并排而立。"
     },
     "colour": {
       "title": "一种红，当作信号来用。",
-      "text": "Shades Red #E40523 就是标志本身的红。它标出屏幕上最重要的那个操作，也可以铺满页面中的一个章节。其余一切，只用墨色与纸色。",
+      "text": "Shades Red #E40523 来自标志。它指向屏幕上最重要的那个操作。其余一切，只用墨色与纸色。",
       "link": "全部色彩",
       "red": "Shades Red 色阶，从 50 到 900",
       "ink": "墨色色阶，从纸色到墨色",
-      "rule": "红色是信号，不是墙纸。四色光谱每个版面只出现一次，以色条形式呈现。"
+      "rule": "红色只留给最重要的那一件事。光谱每个版面只出现一次，以色条呈现。"
     },
     "type": {
       "title": "Space Grotesk 负责发声，Hanken Grotesk 负责解释。",
-      "text": "标题用 Space Grotesk，字重粗、字距紧。所有长篇阅读的文字都用 Hanken Grotesk。俄文回退到 Inter，中文使用系统字体，每种语言都和英文一样清晰易读。",
+      "text": "标题用 Space Grotesk，字重粗、字距紧。所有长篇阅读的文字都用 Hanken Grotesk。俄文回退到 Inter，中文使用系统字体。",
       "link": "字号体系",
       "system": "系统字体",
-      "body": "正文字号 17 像素，行距从容；数字采用等宽数字对齐，而不是打字机字体。"
+      "body": "正文字号 17 px。数字采用等宽数字，让每一列都能对齐。"
     },
     "family": {
       "title": "七种深浅，一个家族。",
@@ -84,7 +83,7 @@
     },
     "parts": {
       "title": "组件，实际运行。",
-      "text": "每个组件都是一个读取设计令牌的普通类名，可用于 React、Preact 或纯 HTML。客户品牌只需改几个变量，就能为整套组件换色。",
+      "text": "每个组件都是一个读取设计令牌的普通 CSS 类。改几个变量，客户品牌就能为整套组件换色。",
       "link": "全部组件",
       "name": "你的姓名",
       "namePlaceholder": "Ana Popescu",
@@ -102,7 +101,7 @@
     },
     "licence": {
       "title": "代码开放，名称归我们。",
-      "text": "设计令牌、样式和图标采用 MIT 许可，可用于任何项目。Shades 名称、标志和 Spectra 角色归 Shades Media Group 所有，仅用于其自身作品。",
+      "text": "设计令牌、样式和图标采用 MIT 许可，可用于任何项目。Shades 名称、标志和 Spectra 角色归 Shades Media Group 所有。",
       "link": "商标声明涵盖哪些内容"
     },
     "work": {
@@ -119,7 +118,7 @@
     },
     "install": {
       "title": "三种接入方式。",
-      "text": "一个包 shades-gradient，服务所有 Shades 项目。按你的技术栈选取所需部分。",
+      "text": "一个包：shades-gradient。按你的技术栈取用所需部分。",
       "link": "npm 上的 shades-gradient",
       "any": "任意项目",
       "anyText": "设计令牌、基础样式、组件和动效，集于一份样式表，压缩后约 6 KB。",
@@ -156,11 +155,11 @@
     },
     "about": {
       "title": "Shades Media Group。",
-      "text": "一家位于摩尔多瓦基希讷乌的创意与技术公司。我们为客户打造品牌形象、网站和产品，也把一路做出的工具开源出来。"
+      "text": "一家位于摩尔多瓦基希讷乌的创意与技术公司。我们为客户打造品牌、网站和产品，并把自己做出的工具开源。"
     },
     "products": {
       "title": "产品家族。",
-      "text": "Gradient 是系统，产品都构建在它之上。每个产品都可以有自己的标志，而每一个都出自 Shades 之手。",
+      "text": "每个产品都构建在 Gradient 之上，也都可以有自己的标志。",
       "link": "产品如何使用品牌",
       "gradient": "设计系统：设计令牌、组件、图标、邮件与品牌，集于一个包和本站。",
       "pagerecast": "把任意网页变成可编辑的 Figma 图层。免费的 Chrome 扩展和 Figma 插件。",

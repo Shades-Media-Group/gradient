@@ -38,10 +38,9 @@
     "description": "Gradient è il design system di Shades Media Group: logo, colore, caratteri, personaggi Spectra, componenti e icone di ogni prodotto Shades. Open source.",
     "hero": {
       "title": "Ogni prodotto Shades parte da qui.",
-      "lead": "Gradient è il modo in cui Shades Media Group si presenta, parla e costruisce: un marchio, un rosso, sette personaggi e il codice che ogni progetto installa.",
+      "lead": "Il brand, i token e il codice dietro ogni prodotto Shades, in un unico pacchetto gratuito.",
       "copy": "Copia il comando di installazione",
-      "brand": "Scopri il brand",
-      "note": "Gratis e open source. Il nome e il marchio restano nostri."
+      "brand": "Scopri il brand"
     },
     "split": {
       "label": "Le tre barre del marchio",
@@ -60,22 +59,22 @@
         "text": "Componenti CSS, un tema Tailwind e 78 icone Shades in un unico pacchetto.",
         "link": "I componenti"
       },
-      "caption": "Tre barre in bianco pieno, al 75% e al 50%. L'idea è tutta qui: sfumature di un solo colore, una accanto all'altra, formano un gradiente."
+      "caption": "Tre barre in bianco pieno, al 75% e al 50%: sfumature di un solo colore, una accanto all'altra."
     },
     "colour": {
       "title": "Un solo rosso. Usato come un segnale.",
-      "text": "Shades Red, #E40523, è il rosso del marchio stesso. Segnala l'unica azione che conta in una schermata e può riempire un solo capitolo di una pagina. Tutto il resto è inchiostro e carta.",
+      "text": "Shades Red, #E40523, nasce dal marchio. Indica l'unica azione che conta in una schermata. Tutto il resto è inchiostro e carta.",
       "link": "Tutti i colori",
       "red": "La scala Shades Red, da 50 a 900",
       "ink": "La scala dell'inchiostro, dalla carta all'inchiostro",
-      "rule": "Il rosso è il segnale, mai la carta da parati. Lo spettro a quattro tonalità compare una volta per layout, come striscia."
+      "rule": "Usa il rosso per l'unica cosa che conta. Lo spettro compare una volta per layout, come striscia."
     },
     "type": {
       "title": "Space Grotesk parla. Hanken Grotesk spiega.",
-      "text": "I titoli sono composti in Space Grotesk, pesanti e serrati. Tutto ciò che si legge a lungo è in Hanken Grotesk. Il russo ripiega su Inter e il cinese sul carattere di sistema, così ogni lingua si legge pulita come l'inglese.",
+      "text": "Space Grotesk compone i titoli, pesanti e serrati. Hanken Grotesk compone tutto ciò che si legge a lungo. Il russo ripiega su Inter, il cinese sul carattere di sistema.",
       "link": "La scala tipografica",
       "system": "Carattere di sistema",
-      "body": "Il testo corrente è a 17 pixel, con spazio per respirare, e i numeri si allineano perché usano cifre tabellari, non un carattere da macchina da scrivere."
+      "body": "Il testo corrente è a 17 px. I numeri usano cifre tabellari, così le colonne si allineano."
     },
     "family": {
       "title": "Sette sfumature, una famiglia.",
@@ -84,7 +83,7 @@
     },
     "parts": {
       "title": "I pezzi, al lavoro.",
-      "text": "Ogni componente è una semplice classe che legge i token. Funziona in React, Preact o HTML puro, e un brand cliente può ricolorare l'intero set cambiando poche variabili.",
+      "text": "Ogni componente è una semplice classe CSS che legge i token. Cambia poche variabili e un brand cliente ricolora l'intero set.",
       "link": "Tutti i componenti",
       "name": "Il tuo nome",
       "namePlaceholder": "Ana Popescu",
@@ -102,7 +101,7 @@
     },
     "licence": {
       "title": "Codice aperto. Il nostro nome.",
-      "text": "Token, stili e icone sono MIT: usali dove vuoi. Il nome Shades, il marchio e i personaggi Spectra appartengono a Shades Media Group e ai suoi lavori.",
+      "text": "Usa token, stili e icone ovunque: sono MIT. Il nome Shades, il marchio e i personaggi Spectra restano di Shades Media Group.",
       "link": "Cosa copre l'avviso sui marchi"
     },
     "work": {
@@ -119,7 +118,7 @@
     },
     "install": {
       "title": "Tre modi per iniziare.",
-      "text": "Un solo pacchetto, shades-gradient, per ogni progetto Shades. Scegli la parte che serve al tuo stack.",
+      "text": "Un solo pacchetto, shades-gradient. Prendi la parte che serve al tuo stack.",
       "link": "shades-gradient su npm",
       "any": "Qualsiasi progetto",
       "anyText": "Token, stili di base, componenti e movimento in un solo foglio di stile, circa 6 KB compresso.",
@@ -156,11 +155,11 @@
     },
     "about": {
       "title": "Shades Media Group.",
-      "text": "Un'agenzia creativa e tecnologica di Chișinău, in Moldavia. Costruiamo identità di brand, siti web e prodotti per i clienti, e rendiamo open source gli strumenti che creiamo lungo la strada."
+      "text": "Un'agenzia creativa e tecnologica di Chișinău, in Moldavia. Costruiamo brand, siti web e prodotti per i clienti, e rendiamo open source gli strumenti che creiamo."
     },
     "products": {
       "title": "La famiglia di prodotti.",
-      "text": "Gradient è il sistema; i prodotti ci sono costruiti sopra. Ognuno può avere un marchio proprio, e tutti sono costruiti da Shades.",
+      "text": "Ogni prodotto è costruito su Gradient e può avere un marchio proprio.",
       "link": "Come i prodotti indossano il brand",
       "gradient": "Il design system: token, componenti, icone, email e il brand, in un solo pacchetto e in questo sito.",
       "pagerecast": "Qualsiasi pagina web in livelli Figma modificabili. Un'estensione per Chrome e un plugin per Figma, gratis.",

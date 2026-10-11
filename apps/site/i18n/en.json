@@ -38,10 +38,9 @@
     "description": "Gradient is the design system of Shades Media Group: the logo, colour, type, the Spectra characters, components and icons every Shades product is built from. Open source.",
     "hero": {
       "title": "Every Shades product starts here.",
-      "lead": "Gradient is how Shades Media Group looks, speaks and builds: one mark, one red, seven characters, and the code every project installs.",
+      "lead": "The brand, the tokens and the code behind every Shades product, in one free package.",
       "copy": "Copy the install command",
-      "brand": "See the brand",
-      "note": "Free and open source. The name and the mark stay ours."
+      "brand": "See the brand"
     },
     "split": {
       "label": "The three bars of the mark",
@@ -60,22 +59,22 @@
         "text": "CSS components, a Tailwind theme and 78 Shades icons in one package.",
         "link": "The components"
       },
-      "caption": "Three bars at full, 75% and 50% white. That is the whole idea: shades of one colour, side by side, make a gradient."
+      "caption": "Three bars at full, 75% and 50% white: shades of one colour, side by side."
     },
     "colour": {
       "title": "One red. Used like a signal.",
-      "text": "Shades Red, #E40523, is the red of the mark itself. It marks the one action that matters on a screen and may fill one chapter of a page. Everything else is ink and paper.",
+      "text": "Shades Red, #E40523, comes from the mark. It points to the one action that matters on a screen. Everything else is ink and paper.",
       "link": "Every colour",
       "red": "The Shades Red scale, from 50 to 900",
       "ink": "The ink scale, from paper to ink",
-      "rule": "Red is the signal, never the wallpaper. The four-shade spectrum appears once per layout, as a strip."
+      "rule": "Use red for the one thing that matters. The spectrum appears once per layout, as a strip."
     },
     "type": {
       "title": "Space Grotesk speaks. Hanken Grotesk explains.",
-      "text": "Headlines are set heavy and tight in Space Grotesk. Everything you read at length is Hanken Grotesk. Russian falls back to Inter and Chinese to the system face, so every language reads as cleanly as English.",
+      "text": "Space Grotesk sets the headlines, heavy and tight. Hanken Grotesk sets everything you read at length. Russian falls back to Inter, Chinese to the system face.",
       "link": "The type scale",
       "system": "System face",
-      "body": "Body text is set at 17 pixels with room to breathe, and numbers line up because they use tabular figures, not a typewriter face."
+      "body": "Body text is 17 px. Numbers use tabular figures, so columns line up."
     },
     "family": {
       "title": "Seven shades, one family.",
@@ -84,7 +83,7 @@
     },
     "parts": {
       "title": "The parts, working.",
-      "text": "Every component is a plain class that reads the tokens. It works in React, Preact or plain HTML, and a client brand can recolour the whole set by changing a few variables.",
+      "text": "Every component is a plain CSS class that reads the tokens. Change a few variables and a client brand recolours the whole set.",
       "link": "All components",
       "name": "Your name",
       "namePlaceholder": "Ana Popescu",
@@ -102,7 +101,7 @@
     },
     "licence": {
       "title": "Open code. Our name.",
-      "text": "The tokens, styles and icons are MIT: use them in anything. The Shades name, the mark and the Spectra characters belong to Shades Media Group and its own work.",
+      "text": "Use the tokens, styles and icons in anything: they are MIT. The Shades name, the mark and the Spectra characters stay with Shades Media Group.",
       "link": "What the trademark notice covers"
     },
     "work": {
@@ -119,7 +118,7 @@
     },
     "install": {
       "title": "Three ways in.",
-      "text": "One package, shades-gradient, for every Shades project. Pick the part your stack needs.",
+      "text": "One package, shades-gradient. Take the part your stack needs.",
       "link": "shades-gradient on npm",
       "any": "Any project",
       "anyText": "Tokens, base styles, components and motion in one stylesheet, about 6 KB compressed.",
@@ -156,11 +155,11 @@
     },
     "about": {
       "title": "Shades Media Group.",
-      "text": "A creative and technology agency in Chișinău, Moldova. We build brand identities, websites and products for clients, and we open-source the tools we make along the way."
+      "text": "A creative and technology agency in Chișinău, Moldova. We build brands, websites and products for clients, and open-source the tools we make."
     },
     "products": {
       "title": "The family of products.",
-      "text": "Gradient is the system; the products are built on it. Each one can wear its own mark, and every one is built by Shades.",
+      "text": "Each product is built on Gradient and can wear its own mark.",
       "link": "How products wear the brand",
       "gradient": "The design system: tokens, components, icons, email and the brand, as one package and this site.",
       "pagerecast": "Any web page into editable Figma layers. A free Chrome extension and Figma plugin.",

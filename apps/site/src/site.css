@@ -281,12 +281,6 @@ body {
   font-weight: 600;
 }
 
-.hero-note {
-  margin-top: 20px;
-  color: var(--g-text-3);
-  font-size: var(--g-size-small);
-}
-
 /* The split: the mark's bars become the three layers ----------------------- */
 
 .split {
@@ -405,12 +399,12 @@ body {
 }
 
 .chapter--red {
-  --g-text: #fff;
-  --g-text-2: #fff;
-  --g-line-strong: rgb(255 255 255 / 0.6);
-  --g-accent: #fff;
-  background: var(--g-red-500);
-  color: #fff;
+  background: var(--g-accent-soft);
+  color: var(--g-text);
+}
+
+.chapter--red h2 {
+  color: var(--g-accent-text);
 }
 
 .chapter--sunken {

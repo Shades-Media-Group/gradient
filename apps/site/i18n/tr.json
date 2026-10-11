@@ -38,10 +38,9 @@
     "description": "Gradient, Shades Media Group'un tasarım sistemi: her Shades ürününün üzerine kurulduğu logo, renk, tipografi, Spectra karakterleri, bileşenler ve ikonlar.",
     "hero": {
       "title": "Her Shades ürünü burada başlar.",
-      "lead": "Gradient, Shades Media Group'un nasıl göründüğü, nasıl konuştuğu ve nasıl ürettiğidir: tek işaret, tek kırmızı, yedi karakter ve her projenin kurduğu kod.",
+      "lead": "Her Shades ürününün arkasındaki marka, token'lar ve kod, tek bir ücretsiz pakette.",
       "copy": "Kurulum komutunu kopyala",
-      "brand": "Markayı gör",
-      "note": "Ücretsiz ve açık kaynak. İsim ve işaret bizde kalır."
+      "brand": "Markayı gör"
     },
     "split": {
       "label": "İşaretin üç çubuğu",
@@ -60,22 +59,22 @@
         "text": "CSS bileşenleri, bir Tailwind teması ve 78 Shades ikonu tek pakette.",
         "link": "Bileşenler"
       },
-      "caption": "Tam, %75 ve %50 beyazlıkta üç çubuk. Bütün fikir bu: tek bir rengin tonları yan yana gelince bir gradyan oluşur."
+      "caption": "Tam, %75 ve %50 beyazlıkta üç çubuk: tek bir rengin tonları, yan yana."
     },
     "colour": {
       "title": "Tek kırmızı. Bir sinyal gibi kullanılır.",
-      "text": "Shades Red, #E40523, işaretin kendi kırmızısıdır. Ekrandaki tek önemli eylemi işaretler ve sayfanın bir bölümünü doldurabilir. Geri kalan her şey mürekkep ve kâğıttır.",
+      "text": "Shades Red, #E40523, işaretten gelir. Ekrandaki tek önemli eylemi gösterir. Geri kalan her şey mürekkep ve kâğıttır.",
       "link": "Tüm renkler",
       "red": "50'den 900'e Shades Red skalası",
       "ink": "Kâğıttan mürekkebe mürekkep skalası",
-      "rule": "Kırmızı bir sinyaldir, asla duvar kâğıdı değil. Dört tonlu spektrum her düzende bir kez, şerit olarak görünür."
+      "rule": "Kırmızıyı yalnızca önemli olan tek şey için kullan. Spektrum her düzende bir kez, şerit olarak görünür."
     },
     "type": {
       "title": "Space Grotesk konuşur. Hanken Grotesk açıklar.",
-      "text": "Başlıklar Space Grotesk ile kalın ve sıkı dizilir. Uzun uzun okuduğun her şey Hanken Grotesk'tir. Rusça Inter'e, Çince sistem yazı tipine geçer; böylece her dil İngilizce kadar temiz okunur.",
+      "text": "Başlıkları Space Grotesk kalın ve sıkı dizer. Uzun uzun okuduğun her şeyi Hanken Grotesk dizer. Rusça Inter'e, Çince sistem yazı tipine geçer.",
       "link": "Tipografi ölçeği",
       "system": "Sistem yazı tipi",
-      "body": "Gövde metni rahat bir satır aralığıyla 17 pikselde dizilir; rakamlar daktilo yazı tipiyle değil, tablo rakamlarıyla hizalanır."
+      "body": "Gövde metni 17 px boyutundadır. Rakamlar tablo rakamlarıyla dizilir, böylece sütunlar hizalanır."
     },
     "family": {
       "title": "Yedi ton, tek aile.",
@@ -84,7 +83,7 @@
     },
     "parts": {
       "title": "Parçalar, iş başında.",
-      "text": "Her bileşen, token'ları okuyan sade bir sınıftır. React, Preact ya da düz HTML'de çalışır; bir müşteri markası birkaç değişkeni değiştirerek tüm seti yeniden renklendirebilir.",
+      "text": "Her bileşen, token'ları okuyan sade bir CSS sınıfıdır. Bir müşteri markasının tüm seti yeniden renklendirmesi için birkaç değişkeni değiştirmesi yeter.",
       "link": "Tüm bileşenler",
       "name": "Adın",
       "namePlaceholder": "Ana Popescu",
@@ -102,7 +101,7 @@
     },
     "licence": {
       "title": "Açık kod. Bizim adımız.",
-      "text": "Token'lar, stiller ve ikonlar MIT lisanslıdır: her işte kullan. Shades adı, işaret ve Spectra karakterleri Shades Media Group'a ve onun kendi işlerine aittir.",
+      "text": "Token'ları, stilleri ve ikonları her işte kullan: MIT lisanslıdırlar. Shades adı, işaret ve Spectra karakterleri Shades Media Group'a aittir.",
       "link": "Ticari marka bildiriminin kapsadıkları"
     },
     "work": {
@@ -119,7 +118,7 @@
     },
     "install": {
       "title": "Üç giriş yolu.",
-      "text": "Her Shades projesi için tek paket: shades-gradient. Kullandığın altyapının ihtiyaç duyduğu parçayı seç.",
+      "text": "Tek paket: shades-gradient. Kullandığın altyapının ihtiyaç duyduğu parçayı al.",
       "link": "npm'de shades-gradient",
       "any": "Her proje",
       "anyText": "Token'lar, temel stiller, bileşenler ve hareket tek stil dosyasında; sıkıştırılmış hâliyle yaklaşık 6 KB.",
@@ -156,11 +155,11 @@
     },
     "about": {
       "title": "Shades Media Group.",
-      "text": "Chișinău, Moldova merkezli bir yaratıcı ve teknoloji ajansı. Müşteriler için marka kimlikleri, web siteleri ve ürünler yapıyoruz; yol boyunca geliştirdiğimiz araçları da açık kaynak olarak paylaşıyoruz."
+      "text": "Chișinău, Moldova merkezli bir yaratıcı ve teknoloji ajansı. Müşteriler için markalar, web siteleri ve ürünler yapıyoruz; geliştirdiğimiz araçları da açık kaynak olarak paylaşıyoruz."
     },
     "products": {
       "title": "Ürün ailesi.",
-      "text": "Gradient sistemdir; ürünler onun üzerine kurulur. Her biri kendi işaretini taşıyabilir ve hepsini Shades yapar.",
+      "text": "Her ürün Gradient üzerine kurulur ve kendi işaretini taşıyabilir.",
       "link": "Ürünler markayı nasıl taşır",
       "gradient": "Tasarım sistemi: token'lar, bileşenler, ikonlar, e-posta ve marka; tek pakette ve bu sitede.",
       "pagerecast": "Her web sayfasını düzenlenebilir Figma katmanlarına dönüştürür. Ücretsiz bir Chrome uzantısı ve Figma eklentisi.",

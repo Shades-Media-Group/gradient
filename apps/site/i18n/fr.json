@@ -38,10 +38,9 @@
     "description": "Gradient, le design system de Shades Media Group : logo, couleur, typographie, personnages Spectra, composants et icônes de chaque produit Shades. Open source.",
     "hero": {
       "title": "Tout produit Shades commence ici.",
-      "lead": "Gradient, c'est la façon dont Shades Media Group se montre, s'exprime et construit : un symbole, un rouge, sept personnages, et le code que chaque projet installe.",
+      "lead": "La marque, les tokens et le code derrière chaque produit Shades, dans un seul paquet gratuit.",
       "copy": "Copier la commande d'installation",
-      "brand": "Découvrir la marque",
-      "note": "Libre et open source. Le nom et le symbole restent les nôtres."
+      "brand": "Découvrir la marque"
     },
     "split": {
       "label": "Les trois barres du symbole",
@@ -60,22 +59,22 @@
         "text": "Des composants CSS, un thème Tailwind et 78 icônes Shades dans un seul paquet.",
         "link": "Les composants"
       },
-      "caption": "Trois barres blanches à 100 %, 75 % et 50 %. Toute l'idée est là : des nuances d'une même couleur, côte à côte, forment un dégradé."
+      "caption": "Trois barres blanches à 100 %, 75 % et 50 % : les nuances d'une même couleur, côte à côte."
     },
     "colour": {
       "title": "Un seul rouge. Employé comme un signal.",
-      "text": "Le Shades Red, #E40523, est le rouge du symbole lui-même. Il signale la seule action qui compte sur un écran et peut remplir un chapitre d'une page. Tout le reste est encre et papier.",
+      "text": "Le Shades Red, #E40523, vient du symbole. Il désigne la seule action qui compte sur un écran. Tout le reste est encre et papier.",
       "link": "Toutes les couleurs",
       "red": "L'échelle Shades Red, de 50 à 900",
       "ink": "L'échelle d'encre, du papier à l'encre",
-      "rule": "Le rouge est un signal, jamais un papier peint. Le spectre à quatre nuances apparaît une fois par mise en page, en bandeau."
+      "rule": "Réservez le rouge à la seule chose qui compte. Le spectre apparaît une fois par mise en page, en bandeau."
     },
     "type": {
       "title": "Space Grotesk parle. Hanken Grotesk explique.",
-      "text": "Les titres sont composés en Space Grotesk, gras et serrés. Tout ce qui se lit longuement est en Hanken Grotesk. Le russe se replie sur Inter et le chinois sur la police système : chaque langue se lit aussi nettement que l'anglais.",
+      "text": "Space Grotesk compose les titres, gras et serrés. Hanken Grotesk compose tout ce qui se lit longuement. Le russe se replie sur Inter, le chinois sur la police système.",
       "link": "L'échelle typographique",
       "system": "Police système",
-      "body": "Le texte courant est composé en 17 pixels et respire, et les chiffres s'alignent grâce aux chiffres tabulaires, pas à une police machine à écrire."
+      "body": "Le texte courant fait 17 px. Les chiffres sont tabulaires, pour que les colonnes s'alignent."
     },
     "family": {
       "title": "Sept nuances, une famille.",
@@ -84,7 +83,7 @@
     },
     "parts": {
       "title": "Les pièces, en action.",
-      "text": "Chaque composant est une simple classe qui lit les tokens. Il fonctionne en React, en Preact ou en HTML pur, et une marque cliente peut recolorer tout l'ensemble en changeant quelques variables.",
+      "text": "Chaque composant est une simple classe CSS qui lit les tokens. Changez quelques variables, et une marque cliente recolore tout l'ensemble.",
       "link": "Tous les composants",
       "name": "Votre nom",
       "namePlaceholder": "Ana Popescu",
@@ -102,7 +101,7 @@
     },
     "licence": {
       "title": "Code ouvert. Notre nom.",
-      "text": "Les tokens, les styles et les icônes sont sous licence MIT : utilisez-les partout. Le nom Shades, le symbole et les personnages Spectra sont réservés à Shades Media Group et à ses propres projets.",
+      "text": "Utilisez les tokens, les styles et les icônes partout : ils sont sous licence MIT. Le nom Shades, le symbole et les personnages Spectra restent la propriété de Shades Media Group.",
       "link": "Ce que couvre la mention des marques"
     },
     "work": {
@@ -119,7 +118,7 @@
     },
     "install": {
       "title": "Trois points d'entrée.",
-      "text": "Un seul paquet, shades-gradient, pour tous les projets Shades. Prenez la partie dont votre stack a besoin.",
+      "text": "Un seul paquet, shades-gradient. Prenez la partie dont votre stack a besoin.",
       "link": "shades-gradient sur npm",
       "any": "Tout projet",
       "anyText": "Tokens, styles de base, composants et mouvement dans une seule feuille de style, environ 6 KB compressée.",
@@ -156,11 +155,11 @@
     },
     "about": {
       "title": "Shades Media Group.",
-      "text": "Une agence de création et de technologie à Chișinău, en Moldavie. Nous créons des identités de marque, des sites web et des produits pour nos clients, et nous publions en open source les outils que nous fabriquons en chemin."
+      "text": "Une agence de création et de technologie à Chișinău, en Moldavie. Nous créons des marques, des sites web et des produits pour nos clients, et publions en open source les outils que nous fabriquons."
     },
     "products": {
       "title": "La famille de produits.",
-      "text": "Gradient est le système ; les produits sont construits dessus. Chacun peut porter son propre symbole, et tous sont conçus par Shades.",
+      "text": "Chaque produit est construit sur Gradient et peut porter son propre symbole.",
       "link": "Comment les produits portent la marque",
       "gradient": "Le design system : tokens, composants, icônes, e-mail et marque, en un seul paquet et sur ce site.",
       "pagerecast": "N'importe quelle page web en calques Figma modifiables. Une extension Chrome et un plugin Figma gratuits.",

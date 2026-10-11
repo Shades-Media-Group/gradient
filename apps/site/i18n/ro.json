@@ -38,10 +38,9 @@
     "description": "Gradient, sistemul de design al Shades Media Group: logo, culoare, tipografie, personajele Spectra, componente și iconițe pentru produsele Shades. Open source.",
     "hero": {
       "title": "Orice produs Shades începe aici.",
-      "lead": "Gradient definește cum arată, cum vorbește și cum construiește Shades Media Group: un simbol, un roșu, șapte personaje și codul pe care îl instalează fiecare proiect.",
+      "lead": "Brandul, tokenurile și codul din spatele fiecărui produs Shades, într-un singur pachet gratuit.",
       "copy": "Copiază comanda de instalare",
-      "brand": "Vezi brandul",
-      "note": "Gratuit și open source. Numele și simbolul rămân ale noastre."
+      "brand": "Vezi brandul"
     },
     "split": {
       "label": "Cele trei bare ale simbolului",
@@ -60,22 +59,22 @@
         "text": "Componente CSS, o temă Tailwind și 78 de iconițe Shades într-un singur pachet.",
         "link": "Componentele"
       },
-      "caption": "Trei bare albe, la 100%, 75% și 50%. Asta e toată ideea: nuanțele unei singure culori, una lângă alta, formează un gradient."
+      "caption": "Trei bare albe, la 100%, 75% și 50%: nuanțele unei singure culori, una lângă alta."
     },
     "colour": {
       "title": "Un singur roșu. Folosit ca semnal.",
-      "text": "Shades Red, #E40523, este roșul simbolului. Marchează singura acțiune care contează pe un ecran și poate umple un singur capitol al paginii. Restul e cerneală și hârtie.",
+      "text": "Shades Red, #E40523, vine din simbol. Indică singura acțiune care contează pe un ecran. Restul e cerneală și hârtie.",
       "link": "Toate culorile",
       "red": "Scala Shades Red, de la 50 la 900",
       "ink": "Scala de cerneală, de la hârtie la cerneală",
-      "rule": "Roșul e semnal, niciodată tapet. Spectrul de patru nuanțe apare o singură dată pe machetă, ca bandă."
+      "rule": "Folosește roșul pentru singurul lucru care contează. Spectrul apare o singură dată pe machetă, ca bandă."
     },
     "type": {
       "title": "Space Grotesk vorbește. Hanken Grotesk explică.",
-      "text": "Titlurile sunt culese apăsat și strâns în Space Grotesk. Tot ce se citește pe îndelete e în Hanken Grotesk. Rusa trece pe Inter, iar chineza pe fontul sistemului, ca fiecare limbă să se citească la fel de curat ca engleza.",
+      "text": "Titlurile sunt în Space Grotesk, apăsat și strâns. Tot ce se citește pe îndelete e în Hanken Grotesk. Rusa trece pe Inter, chineza pe fontul sistemului.",
       "link": "Scala tipografică",
       "system": "Fontul sistemului",
-      "body": "Textul curent are 17 pixeli și loc să respire, iar cifrele se aliniază pentru că sunt tabulare, nu dintr-un font de mașină de scris."
+      "body": "Textul curent are 17 px. Cifrele sunt tabulare, așa că coloanele se aliniază."
     },
     "family": {
       "title": "Șapte nuanțe, o singură familie.",
@@ -84,7 +83,7 @@
     },
     "parts": {
       "title": "Piesele, la lucru.",
-      "text": "Fiecare componentă e o clasă simplă care citește tokenurile. Funcționează în React, Preact sau HTML simplu, iar brandul unui client poate recolora tot setul schimbând câteva variabile.",
+      "text": "Fiecare componentă e o clasă CSS simplă care citește tokenurile. Schimbă câteva variabile și brandul unui client recolorează tot setul.",
       "link": "Toate componentele",
       "name": "Numele tău",
       "namePlaceholder": "Ana Popescu",
@@ -102,7 +101,7 @@
     },
     "licence": {
       "title": "Cod deschis. Numele nostru.",
-      "text": "Tokenurile, stilurile și iconițele sunt sub licența MIT: folosește-le oriunde. Numele Shades, simbolul și personajele Spectra aparțin Shades Media Group și rămân în proiectele sale.",
+      "text": "Folosește tokenurile, stilurile și iconițele oriunde: sunt sub licența MIT. Numele Shades, simbolul și personajele Spectra rămân ale Shades Media Group.",
       "link": "Ce acoperă nota privind mărcile"
     },
     "work": {
@@ -119,7 +118,7 @@
     },
     "install": {
       "title": "Trei moduri de a începe.",
-      "text": "Un singur pachet, shades-gradient, pentru fiecare proiect Shades. Alege partea de care are nevoie stack-ul tău.",
+      "text": "Un singur pachet, shades-gradient. Ia partea de care are nevoie stack-ul tău.",
       "link": "shades-gradient pe npm",
       "any": "Orice proiect",
       "anyText": "Tokenuri, stiluri de bază, componente și mișcare într-o singură foaie de stil, circa 6 KB comprimat.",
@@ -156,11 +155,11 @@
     },
     "about": {
       "title": "Shades Media Group.",
-      "text": "O agenție de creație și tehnologie din Chișinău, Moldova. Construim identități de brand, site-uri și produse pentru clienți și publicăm open source instrumentele pe care le facem pe parcurs."
+      "text": "O agenție de creație și tehnologie din Chișinău, Moldova. Construim branduri, site-uri și produse pentru clienți și publicăm open source instrumentele pe care le facem."
     },
     "products": {
       "title": "Familia de produse.",
-      "text": "Gradient e sistemul; produsele sunt construite pe el. Fiecare poate purta propriul simbol și toate sunt făcute de Shades.",
+      "text": "Fiecare produs e construit pe Gradient și poate purta propriul simbol.",
       "link": "Cum poartă produsele brandul",
       "gradient": "Sistemul de design: tokenuri, componente, iconițe, email și brandul, într-un singur pachet și pe acest site.",
       "pagerecast": "Orice pagină web, transformată în straturi Figma editabile. O extensie Chrome și un plugin Figma, gratuite.",
