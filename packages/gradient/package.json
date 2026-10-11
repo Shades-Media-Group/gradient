@@ -1,6 +1,6 @@
 {
   "name": "shades-gradient",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Gradient, the Shades Media Group design system: tokens, CSS components, a Tailwind v4 theme, icons and brand files.",
   "license": "MIT",
   "author": "Shades Media Group (https://shades.md)",
@@ -41,11 +41,21 @@
       "types": "./dist/magnetic.d.ts",
       "default": "./dist/magnetic.js"
     },
+    "./preferences": {
+      "types": "./dist/preferences.d.ts",
+      "default": "./dist/preferences.js"
+    },
+    "./consent": {
+      "types": "./dist/consent.d.ts",
+      "default": "./dist/consent.js"
+    },
+    "./preferences-boot.js": "./dist/preferences-boot.js",
     "./gradient.css": "./dist/gradient.css",
     "./tokens.css": "./dist/tokens.css",
     "./base.css": "./dist/base.css",
     "./components.css": "./dist/components.css",
     "./motion.css": "./dist/motion.css",
+    "./preferences.css": "./dist/preferences.css",
     "./theme.css": "./dist/theme.css",
     "./tokens.json": "./dist/tokens.json",
     "./icons.svg": "./dist/icons.svg",

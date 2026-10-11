@@ -9,5 +9,5 @@
     "rootDir": "src",
     "types": []
   },
-  "include": ["src/index.ts", "src/magnetic.ts", "src/svg.d.ts"]
+  "include": ["src/index.ts", "src/magnetic.ts", "src/preferences.ts", "src/consent.ts", "src/svg.d.ts"]
 }

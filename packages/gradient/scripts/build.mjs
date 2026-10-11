@@ -143,7 +143,7 @@ ${lines.join('\n')}
 
 rmSync(dist, { recursive: true, force: true })
 mkdirSync(dist)
-const sheets = ['base.css', 'components.css', 'motion.css']
+const sheets = ['base.css', 'components.css', 'motion.css', 'preferences.css']
 const tokenSheet = tokensCss()
 writeFileSync(join(dist, 'tokens.css'), tokenSheet)
 writeFileSync(join(dist, 'theme.css'), themeCss())
@@ -173,13 +173,27 @@ writeFileSync(
 )
 
 await build({
-  entryPoints: [join(src, 'index.ts'), join(src, 'magnetic.ts')],
+  entryPoints: [join(src, 'index.ts'), join(src, 'magnetic.ts'), join(src, 'preferences.ts'), join(src, 'consent.ts')],
   outdir: dist,
   bundle: true,
   format: 'esm',
+  // preferences.js and consent.js share one consent module, so one banner.
+  splitting: true,
+  chunkNames: 'chunks/[name]-[hash]',
   target: 'es2020',
   banner: { js: banner },
   loader: { '.svg': 'text' },
+  logLevel: 'warning',
+})
+// A classic script for <head>, so preferences apply before the first paint.
+await build({
+  entryPoints: [join(src, 'preferences-boot.ts')],
+  outfile: join(dist, 'preferences-boot.js'),
+  bundle: true,
+  format: 'iife',
+  minify: true,
+  target: 'es2017',
+  banner: { js: banner },
   logLevel: 'warning',
 })
 execFileSync('npx', ['tsc', '-p', join(root, 'tsconfig.build.json')], { stdio: 'inherit' })

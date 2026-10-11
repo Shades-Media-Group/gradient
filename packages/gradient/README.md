@@ -88,6 +88,32 @@ hero.innerHTML = family.sage // spectra, mera, sol, nova, sage, vio, sunny
 
 The files themselves are under `shades-gradient/brand/*`. They are trademarks of Shades Media Group, not MIT: read [TRADEMARKS.md](https://github.com/Shades-Media-Group/gradient/blob/main/TRADEMARKS.md) before using them.
 
+### Display and accessibility panel
+
+A 20 px dot in the bottom-right corner opens a panel. It offers light, dark or the system theme, plus larger text, more contrast, reduced motion, underlined links and easier reading. Choices stay in the reader's browser. A one-time notice says so, because the page sets no cookies.
+
+```html
+<!-- In <head>, before the stylesheets: applies the choices before the first paint -->
+<script src="/preferences-boot.js"></script>
+```
+
+Copy `shades-gradient/preferences-boot.js` next to your pages. Then:
+
+```js
+import 'shades-gradient/preferences.css' // already inside gradient.css
+import { preferences, reducedMotion } from 'shades-gradient/preferences'
+
+preferences({ labels: { open: 'Display and accessibility' /* … in the page's language */ } })
+if (!reducedMotion()) startTheAnimation()
+```
+
+The panel works on sites that don't use the rest of Gradient: its colours fall back to the Shades ink and paper. The switches set attributes on `<html>`:
+
+- `data-theme` for light or dark
+- `data-g-text`, `data-g-contrast`, `data-g-motion`, `data-g-links` and `data-g-reading` for the other options
+
+A site's own styles can respond to them too.
+
 ### Magnetic hover
 
 ```js
