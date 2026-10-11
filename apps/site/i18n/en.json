@@ -16,7 +16,8 @@
     "menu": "Menu",
     "onThisPage": "On this page",
     "email": "Email",
-    "accessibility": "Accessibility"
+    "accessibility": "Accessibility",
+    "docs": "Documentation"
   },
   "footer": {
     "label": "Site",
@@ -1002,6 +1003,88 @@
       "email": "Email support",
       "issue": "Open an issue",
       "note": "Say what you were trying to do, what got in the way, and which device, browser and assistive technology you used."
+    }
+  },
+  "docs": {
+    "title": "Documentation: install and use shades-gradient | Gradient",
+    "description": "How to install shades-gradient and use its tokens, themes, Tailwind theme, components, icons, display settings, consent, email and motion, with code for each.",
+    "heading": "Documentation",
+    "lead": "Install shades-gradient, read its tokens, theme it for a client and use each part in your stack.",
+    "start": {
+      "title": "Get started",
+      "text": "One package and one stylesheet. It carries the tokens, base styles, components and motion, about 6 KB compressed.",
+      "install": "Install the package.",
+      "css": "Import the stylesheet once, at the root of your app.",
+      "fonts": "Load the two brand faces. The package names them but does not ship them.",
+      "note": "No framework is needed: components are CSS classes, icons are SVG strings."
+    },
+    "files": {
+      "title": "What the package holds",
+      "text": "Take the whole stylesheet, or only the parts your stack needs.",
+      "path": "Import",
+      "holds": "What it gives you",
+      "gradient": "Everything below in one file: tokens, base, components, motion.",
+      "tokensCss": "The tokens as custom properties, light and dark.",
+      "components": "The component classes.",
+      "motion": "Keyframes and easing, all stopped under reduced motion.",
+      "theme": "A Tailwind v4 theme: every token as a utility.",
+      "json": "The tokens in the W3C design-token format, for Figma and other tools.",
+      "sprite": "The icon set as one SVG sprite for plain HTML.",
+      "index": "<code>renderIcon</code>, the logo and the Spectra characters as strings.",
+      "preferences": "The display dot and panel: theme, text size, contrast, motion, links, reading.",
+      "consent": "The cookie banner and <code>onConsent</code>, so trackers wait for a yes.",
+      "email": "Transactional email for every client, Outlook included.",
+      "magnetic": "The gentle pull on pill buttons."
+    },
+    "tokens": {
+      "title": "Tokens and roles",
+      "text": "Components read role tokens only, such as <code>--g-bg</code>, <code>--g-text</code> and <code>--g-accent</code>. Primitives such as <code>--g-red-500</code> belong to the brand, never to a component.",
+      "rule1": "Use a role for its job: text on <code>--g-text</code>, edges on <code>--g-line</code>.",
+      "rule2": "Never write a colour value in a component; add a role if one is missing.",
+      "rule3": "Every text role reaches 4.5 : 1 on its background, in both themes.",
+      "link": "Every token, with its value"
+    },
+    "theming": {
+      "title": "Light, dark and client themes",
+      "text": "Themes follow the system. Pin one on any element with data-theme.",
+      "client": "A client brand changes the roles in one stylesheet loaded after Gradient; the components follow.",
+      "note": "Check each text role you change at 4.5 : 1. The Shades mark and characters never appear in a client product."
+    },
+    "tailwind": {
+      "text": "The theme turns every token into a utility that follows light and dark: <code>bg-accent</code>, <code>text-text-2</code>, <code>rounded-pill</code>."
+    },
+    "components": {
+      "title": "Components",
+      "text": "Every component is a plain class. Copy the markup from the components page; it works the same in React, Preact or plain HTML.",
+      "link": "All components, live"
+    },
+    "icons": {
+      "title": "Icons",
+      "text": "<code>renderIcon</code> returns an SVG string in the Shades stroke, with a label when the icon stands alone. In plain HTML, use the sprite.",
+      "link": "The full set"
+    },
+    "settings": {
+      "title": "Display settings and consent",
+      "text": "One call adds the display dot, its panel and the consent banner. The boot script applies a reader’s choices before the first paint.",
+      "rule1": "Load <code>preferences-boot.js</code> in the head, or the page flashes in the wrong theme.",
+      "rule2": "Pass the labels in the page’s language; missing ones fall back to English.",
+      "rule3": "Start analytics or marketing only inside <code>onConsent</code>.",
+      "link": "What each setting does"
+    },
+    "email": {
+      "title": "Email",
+      "text": "<code>renderEmail</code> builds HTML that holds up in every inbox, with a plain-text twin. Each message centres on a pass: <code>code()</code>, <code>ticket()</code> or <code>pass()</code>.",
+      "link": "Live previews and client support"
+    },
+    "motion": {
+      "title": "Motion",
+      "text": "Motion explains, it never decorates. Check <code>reducedMotion()</code> before you animate anything yourself."
+    },
+    "versions": {
+      "title": "Versions",
+      "text": "Gradient follows semantic versioning: only a major version can break your code. The changelog lists every change.",
+      "current": "Current version",
+      "licence": "Licence"
     }
   }
 }

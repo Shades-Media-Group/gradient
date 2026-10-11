@@ -23,6 +23,7 @@ const PAGES = [
   'print/',
   'email/',
   'accessibility/',
+  'docs/',
   'projects/',
 ]
 // A small phone, a tablet, a small laptop and a desktop.

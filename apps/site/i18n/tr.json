@@ -16,7 +16,8 @@
     "menu": "Menü",
     "onThisPage": "Bu sayfada",
     "email": "E-posta",
-    "accessibility": "Erişilebilirlik"
+    "accessibility": "Erişilebilirlik",
+    "docs": "Dokümantasyon"
   },
   "footer": {
     "label": "Site",
@@ -1002,6 +1003,88 @@
       "email": "Desteğe e-posta gönder",
       "issue": "Sorun kaydı aç",
       "note": "Ne yapmaya çalıştığını, neyin engel olduğunu ve hangi cihazı, tarayıcıyı ve yardımcı teknolojiyi kullandığını yaz."
+    }
+  },
+  "docs": {
+    "title": "Dokümantasyon: shades-gradient'i kur ve kullan | Gradient",
+    "description": "shades-gradient nasıl kurulur; token'ları, temaları, Tailwind teması, bileşenleri, ikonları, görünüm ayarları, onay, e-posta ve hareket nasıl kullanılır, her biri için kodla.",
+    "heading": "Dokümantasyon",
+    "lead": "shades-gradient'i kur, token'larını oku, bir müşteri için temalandır ve her parçayı kendi stack'inde kullan.",
+    "start": {
+      "title": "Başlarken",
+      "text": "Tek paket ve tek stil dosyası. Token'ları, temel stilleri, bileşenleri ve hareketi taşır; sıkıştırılmış hâliyle yaklaşık 6 KB.",
+      "install": "Paketi kur.",
+      "css": "Stil dosyasını uygulamanın kökünde bir kez içe aktar.",
+      "fonts": "İki marka yazı tipini yükle. Paket onları adlandırır ama içermez.",
+      "note": "Framework gerekmez: bileşenler CSS sınıfları, ikonlar SVG dizeleridir."
+    },
+    "files": {
+      "title": "Pakette neler var",
+      "text": "Stil dosyasının tamamını ya da yalnızca stack'inin ihtiyaç duyduğu parçaları al.",
+      "path": "İçe aktar",
+      "holds": "Sana ne verir",
+      "gradient": "Aşağıdakilerin hepsi tek dosyada: token'lar, temel stiller, bileşenler, hareket.",
+      "tokensCss": "Özel özellikler olarak token'lar, açık ve koyu.",
+      "components": "Bileşen sınıfları.",
+      "motion": "Keyframe ve easing; azaltılmış harekette hepsi durur.",
+      "theme": "Bir Tailwind v4 teması: her token bir utility sınıfı olarak.",
+      "json": "Figma ve diğer araçlar için W3C tasarım token'ı biçiminde token'lar.",
+      "sprite": "Düz HTML için tek bir SVG sprite olarak ikon seti.",
+      "index": "Dize olarak <code>renderIcon</code>, logo ve Spectra karakterleri.",
+      "preferences": "Görünüm noktası ve paneli: tema, metin boyutu, kontrast, hareket, bağlantılar, okuma.",
+      "consent": "Çerez bandı ve <code>onConsent</code>; böylece izleyiciler bir evet bekler.",
+      "email": "Outlook dahil her istemci için işlemsel e-posta.",
+      "magnetic": "Hap butonlardaki hafif çekim."
+    },
+    "tokens": {
+      "title": "Token'lar ve roller",
+      "text": "Bileşenler yalnızca <code>--g-bg</code>, <code>--g-text</code> ve <code>--g-accent</code> gibi rol token'larını okur. <code>--g-red-500</code> gibi temel değerler markaya aittir, asla bir bileşene değil.",
+      "rule1": "Her rolü kendi işi için kullan: metin <code>--g-text</code> üzerinde, kenarlar <code>--g-line</code> üzerinde.",
+      "rule2": "Bir bileşene asla renk değeri yazma; eksik bir rol varsa ekle.",
+      "rule3": "Her metin rolü, iki temada da kendi arka planında 4.5 : 1 oranına ulaşır.",
+      "link": "Değeriyle birlikte her token"
+    },
+    "theming": {
+      "title": "Açık, koyu ve müşteri temaları",
+      "text": "Temalar sistemi izler. data-theme ile herhangi bir öğeye bir tema sabitle.",
+      "client": "Bir müşteri markası, rolleri Gradient'ten sonra yüklenen tek bir stil dosyasında değiştirir; bileşenler buna uyar.",
+      "note": "Değiştirdiğin her metin rolünü 4.5 : 1 oranında kontrol et. Shades işareti ve karakterleri bir müşteri ürününde asla yer almaz."
+    },
+    "tailwind": {
+      "text": "Tema her token'ı açık ve koyu temayı izleyen bir utility sınıfına dönüştürür: <code>bg-accent</code>, <code>text-text-2</code>, <code>rounded-pill</code>."
+    },
+    "components": {
+      "title": "Bileşenler",
+      "text": "Her bileşen sade bir sınıftır. İşaretlemeyi bileşenler sayfasından kopyala; React, Preact ya da düz HTML'de aynı şekilde çalışır.",
+      "link": "Tüm bileşenler, canlı"
+    },
+    "icons": {
+      "title": "İkonlar",
+      "text": "<code>renderIcon</code>, Shades çizgisinde bir SVG dizesi döndürür; ikon tek başına durduğunda bir etiketle. Düz HTML'de sprite'ı kullan.",
+      "link": "Setin tamamı"
+    },
+    "settings": {
+      "title": "Görünüm ayarları ve onay",
+      "text": "Tek bir çağrı görünüm noktasını, panelini ve onay bandını ekler. Başlatma betiği, okuyucunun seçimlerini ilk çizimden önce uygular.",
+      "rule1": "<code>preferences-boot.js</code>'i head içinde yükle, yoksa sayfa bir an yanlış temada görünür.",
+      "rule2": "Etiketleri sayfanın dilinde ver; eksik olanlar İngilizceye döner.",
+      "rule3": "Analiz veya pazarlamayı yalnızca <code>onConsent</code> içinde başlat.",
+      "link": "Her ayar ne yapar"
+    },
+    "email": {
+      "title": "E-posta",
+      "text": "<code>renderEmail</code>, her gelen kutusunda sağlam duran HTML'i düz metin eşiyle birlikte üretir. Her mesaj bir ana öğenin etrafında kurulur: <code>code()</code>, <code>ticket()</code> ya da <code>pass()</code>.",
+      "link": "Canlı önizlemeler ve istemci desteği"
+    },
+    "motion": {
+      "title": "Hareket",
+      "text": "Hareket açıklar, asla süslemez. Kendin bir şey canlandırmadan önce <code>reducedMotion()</code> ile kontrol et."
+    },
+    "versions": {
+      "title": "Sürümler",
+      "text": "Gradient anlamsal sürümlemeyi izler: kodunu yalnızca bir ana sürüm bozabilir. Değişiklik günlüğü her değişikliği listeler.",
+      "current": "Güncel sürüm",
+      "licence": "Lisans"
     }
   }
 }

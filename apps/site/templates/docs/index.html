@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="{{@lang}}">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    {{@head}}
+    <script type="module" src="/src/main.ts"></script>
+  </head>
+  <body>
+    {{@nav}}
+
+    <main id="main" class="docs">
+      <header class="page-head">
+        <h1>{{docs.heading}}</h1>
+        <p class="page-lead">{{docs.lead}}</p>
+        <div class="page-art tile tile--docs" aria-hidden="true">
+          <pre class="tile-code"><code><span>$</span> npm i shades-gradient
+
+<i>import</i> 'shades-gradient/gradient.css'
+<i>import</i> { renderIcon } <i>from</i> 'shades-gradient'</code></pre>
+        </div>
+      </header>
+      <nav class="page-toc" aria-label="{{nav.onThisPage}}">
+        <a href="#start">{{docs.start.title}}</a>
+        <a href="#files">{{docs.files.title}}</a>
+        <a href="#tokens">{{docs.tokens.title}}</a>
+        <a href="#theming">{{docs.theming.title}}</a>
+        <a href="#tailwind">Tailwind v4</a>
+        <a href="#components">{{docs.components.title}}</a>
+        <a href="#icons">{{docs.icons.title}}</a>
+        <a href="#settings">{{docs.settings.title}}</a>
+        <a href="#email">{{docs.email.title}}</a>
+        <a href="#motion">{{docs.motion.title}}</a>
+        <a href="#versions">{{docs.versions.title}}</a>
+      </nav>
+
+      <section class="doc" id="start">
+        <div class="doc-head">
+          <h2>{{docs.start.title}}</h2>
+          <p>{{docs.start.text}}</p>
+        </div>
+        <div class="doc-body">
+          <ol class="steps-code">
+            <li>
+              <p>{{docs.start.install}}</p>
+              <pre class="g-code"><code>npm i shades-gradient</code></pre>
+            </li>
+            <li>
+              <p>{{docs.start.css}}</p>
+              <pre class="g-code"><code>import 'shades-gradient/gradient.css'</code></pre>
+            </li>
+            <li>
+              <p>{{docs.start.fonts}}</p>
+              <pre class="g-code"><code>npm i @fontsource-variable/space-grotesk @fontsource-variable/hanken-grotesk
+
+import '@fontsource-variable/space-grotesk/wght.css'
+import '@fontsource-variable/hanken-grotesk/wght.css'</code></pre>
+            </li>
+          </ol>
+          <p class="doc-note">{{docs.start.note}}</p>
+        </div>
+      </section>
+
+      <section class="doc" id="files">
+        <div class="doc-head">
+          <h2>{{docs.files.title}}</h2>
+          <p>{{docs.files.text}}</p>
+        </div>
+        <div class="doc-body">
+          <div class="table-scroll">
+            <table class="g-table">
+              <thead><tr><th>{{docs.files.path}}</th><th>{{docs.files.holds}}</th></tr></thead>
+              <tbody>
+                <tr><td><code>gradient.css</code></td><td>{{docs.files.gradient}}</td></tr>
+                <tr><td><code>tokens.css</code></td><td>{{docs.files.tokensCss}}</td></tr>
+                <tr><td><code>components.css</code></td><td>{{docs.files.components}}</td></tr>
+                <tr><td><code>motion.css</code></td><td>{{docs.files.motion}}</td></tr>
+                <tr><td><code>theme.css</code></td><td>{{docs.files.theme}}</td></tr>
+                <tr><td><code>tokens.json</code></td><td>{{docs.files.json}}</td></tr>
+                <tr><td><code>icons.svg</code></td><td>{{docs.files.sprite}}</td></tr>
+                <tr><td><code>shades-gradient</code></td><td>{{docs.files.index}}</td></tr>
+                <tr><td><code>shades-gradient/preferences</code></td><td>{{docs.files.preferences}}</td></tr>
+                <tr><td><code>shades-gradient/consent</code></td><td>{{docs.files.consent}}</td></tr>
+                <tr><td><code>shades-gradient/email</code></td><td>{{docs.files.email}}</td></tr>
+                <tr><td><code>shades-gradient/magnetic</code></td><td>{{docs.files.magnetic}}</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section class="doc" id="tokens">
+        <div class="doc-head">
+          <h2>{{docs.tokens.title}}</h2>
+          <p>{{docs.tokens.text}}</p>
+        </div>
+        <div class="doc-body">
+          <pre class="g-code"><code>.card {
+  background: var(--g-surface);
+  color: var(--g-text);
+  border-radius: var(--g-radius-lg);
+  box-shadow: inset 0 0 0 1px var(--g-line);
+}
+
+.card a {
+  color: var(--g-accent-text);
+}</code></pre>
+          <ol class="rules">
+            <li><span>{{docs.tokens.rule1}}</span></li>
+            <li><span>{{docs.tokens.rule2}}</span></li>
+            <li><span>{{docs.tokens.rule3}}</span></li>
+          </ol>
+          <a class="g-link" href="{{@to:foundations}}">{{docs.tokens.link}}</a>
+        </div>
+      </section>
+
+      <section class="doc" id="theming">
+        <div class="doc-head">
+          <h2>{{docs.theming.title}}</h2>
+          <p>{{docs.theming.text}}</p>
+        </div>
+        <div class="doc-body">
+          <pre class="g-code"><code>&lt;html data-theme="dark"&gt;
+  &lt;section data-theme="light"&gt;…&lt;/section&gt;
+&lt;/html&gt;</code></pre>
+          <p>{{docs.theming.client}}</p>
+          <pre class="g-code"><code>:root {
+  --g-accent: #d4115f;
+  --g-accent-hover: #b80e52;
+  --g-accent-press: #9c0b45;
+  --g-accent-text: #b80e52;
+  --g-accent-soft: #fde7fc;
+  --g-font-display: 'Onest Variable', system-ui, sans-serif;
+}</code></pre>
+          <p class="doc-note">{{docs.theming.note}}</p>
+        </div>
+      </section>
+
+      <section class="doc" id="tailwind">
+        <div class="doc-head">
+          <h2>Tailwind v4</h2>
+          <p>{{docs.tailwind.text}}</p>
+        </div>
+        <div class="doc-body">
+          <pre class="g-code"><code>@import 'tailwindcss';
+@import 'shades-gradient/theme.css';
+@import 'shades-gradient/components.css';
+
+&lt;a class="bg-accent text-on-accent rounded-pill px-6 py-3"&gt;Book a call&lt;/a&gt;</code></pre>
+        </div>
+      </section>
+
+      <section class="doc" id="components">
+        <div class="doc-head">
+          <h2>{{docs.components.title}}</h2>
+          <p>{{docs.components.text}}</p>
+        </div>
+        <div class="doc-body">
+          <pre class="g-code"><code>&lt;button class="g-btn g-btn--primary"&gt;Save&lt;/button&gt;
+&lt;button class="g-btn"&gt;Cancel&lt;/button&gt;
+&lt;input class="g-switch" type="checkbox" role="switch" /&gt;</code></pre>
+          <pre class="g-code"><code>export function Button({ variant = 'primary', ...props }) {
+  return &lt;button className={`g-btn g-btn--${variant}`} {...props} /&gt;
+}</code></pre>
+          <a class="g-link" href="{{@to:components}}">{{docs.components.link}}</a>
+        </div>
+      </section>
+
+      <section class="doc" id="icons">
+        <div class="doc-head">
+          <h2>{{docs.icons.title}}</h2>
+          <p>{{docs.icons.text}}</p>
+        </div>
+        <div class="doc-body">
+          <pre class="g-code"><code>import { renderIcon } from 'shades-gradient'
+
+button.innerHTML = renderIcon('arrowRight', 20)
+// with a label for screen readers:
+link.innerHTML = renderIcon('download', 20, 'Download the logo')</code></pre>
+          <pre class="g-code"><code>&lt;svg width="24" height="24"&gt;&lt;use href="/icons.svg#g-arrow-right" /&gt;&lt;/svg&gt;</code></pre>
+          <a class="g-link" href="{{@to:icons}}">{{docs.icons.link}}</a>
+        </div>
+      </section>
+
+      <section class="doc" id="settings">
+        <div class="doc-head">
+          <h2>{{docs.settings.title}}</h2>
+          <p>{{docs.settings.text}}</p>
+        </div>
+        <div class="doc-body">
+          <pre class="g-code"><code>&lt;!-- in &lt;head&gt;, before anything paints --&gt;
+&lt;script src="/preferences-boot.js"&gt;&lt;/script&gt;
+
+import 'shades-gradient/preferences.css'
+import { preferences } from 'shades-gradient/preferences'
+import { onConsent } from 'shades-gradient/consent'
+
+// the display dot, its panel and the consent banner, in English by default
+preferences({ labels, consent: consentLabels })
+onConsent('analytics', () =&gt; startAnalytics())</code></pre>
+          <ol class="rules">
+            <li><span>{{docs.settings.rule1}}</span></li>
+            <li><span>{{docs.settings.rule2}}</span></li>
+            <li><span>{{docs.settings.rule3}}</span></li>
+          </ol>
+          <a class="g-link" href="{{@to:accessibility}}">{{docs.settings.link}}</a>
+        </div>
+      </section>
+
+      <section class="doc" id="email">
+        <div class="doc-head">
+          <h2>{{docs.email.title}}</h2>
+          <p>{{docs.email.text}}</p>
+        </div>
+        <div class="doc-body">
+          <pre class="g-code"><code>import { renderEmail, email } from 'shades-gradient/email'
+
+const message = renderEmail({
+  lang: 'en',
+  subject: 'Your Shades code: 418203',
+  preheader: 'It works for 10 minutes.',
+  heading: 'Confirm your email',
+  blocks: [email.code('Your code', '418203', 'Valid for 10 minutes')],
+})
+// message.html, message.text, message.attachments</code></pre>
+          <a class="g-link" href="{{@to:email}}">{{docs.email.link}}</a>
+        </div>
+      </section>
+
+      <section class="doc" id="motion">
+        <div class="doc-head">
+          <h2>{{docs.motion.title}}</h2>
+          <p>{{docs.motion.text}}</p>
+        </div>
+        <div class="doc-body">
+          <pre class="g-code"><code>import 'shades-gradient/motion.css'
+import { magnetic } from 'shades-gradient/magnetic'
+import { reducedMotion } from 'shades-gradient/preferences'
+
+magnetic('[data-magnetic]')
+if (!reducedMotion()) startTheIntro()</code></pre>
+        </div>
+      </section>
+
+      <section class="doc" id="versions">
+        <div class="doc-head">
+          <h2>{{docs.versions.title}}</h2>
+          <p>{{docs.versions.text}}</p>
+        </div>
+        <div class="doc-body">
+          <dl class="specs specs--row">
+            <div><dt>{{docs.versions.current}}</dt><dd class="g-num">{{@version}}</dd></div>
+            <div><dt>{{docs.versions.licence}}</dt><dd>MIT</dd></div>
+          </dl>
+          <p class="docs-links">
+            <a class="g-btn g-btn--primary" data-link="npm">npm</a>
+            <a class="g-btn" data-link="repo">{{@icon:github}}GitHub</a>
+            <a class="g-link" data-link="changelog">{{footer.changelog}}</a>
+          </p>
+        </div>
+      </section>
+    </main>
+
+    {{@footer}}
+  </body>
+</html>

@@ -1144,6 +1144,59 @@ body {
   }
 }
 
+/* Docs: the page head shows the first lines anyone writes. */
+.tile--docs {
+  background: #1c1c20;
+  color: #ececea;
+  box-shadow: none;
+}
+
+.tile-code {
+  place-self: center;
+  margin: 0;
+  font: 500 clamp(0.8125rem, 1.2vw, 1rem) / 1.7 var(--g-font-code);
+  white-space: pre;
+}
+
+.tile-code span,
+.tile-code i {
+  color: #ff8a9b;
+  font-style: normal;
+}
+
+.steps-code {
+  display: grid;
+  gap: 24px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: step;
+}
+
+.steps-code li {
+  display: grid;
+  gap: 10px;
+  counter-increment: step;
+}
+
+.steps-code p::before {
+  content: counter(step) '  ';
+  color: var(--g-text-3);
+  font-weight: 700;
+}
+
+.doc-body > .g-code + .g-code {
+  margin-top: -8px;
+}
+
+.docs-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 20px;
+  margin-top: 8px;
+}
+
 /* Projects ledger. */
 .ledger {
   margin: 0;
@@ -1394,6 +1447,13 @@ body {
 .doc-head p {
   margin-top: 14px;
   color: var(--g-text-2);
+}
+
+/* Names from the code read as code and never break mid-name. */
+.docs :not(pre) > code {
+  font-size: 0.9em;
+  color: var(--g-text);
+  white-space: nowrap;
 }
 
 .doc-links {

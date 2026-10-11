@@ -57,6 +57,7 @@ export const PAGES = [
   { id: 'print', path: 'print/' },
   { id: 'email', path: 'email/' },
   { id: 'accessibility', path: 'accessibility/' },
+  { id: 'docs', path: 'docs/' },
   { id: 'projects', path: 'projects/' },
 ] as const
 type Page = (typeof PAGES)[number]
@@ -439,12 +440,12 @@ function render(locale: Locale, page: Page): string {
         <summary><span class="g-visually-hidden">${t('language')}: </span>${icon('globe')}<span>${locale.short}</span></summary>
         <ul class="lang-menu">${langLinks}</ul>
       </details>
-      <a class="g-btn g-btn--inverse g-btn--sm nav-cta" href="${base}#install">${t('nav.cta')}</a>
+      <a class="g-btn g-btn--inverse g-btn--sm nav-cta" href="${to('docs')}">${t('nav.docs')}</a>
       <details class="nav-more">
         <summary aria-label="${html(t('nav.menu'))}"><span class="burger" aria-hidden="true"><i></i><i></i></span></summary>
         <div class="nav-sheet">
           <nav aria-label="${html(t('nav.label'))}">${sheetLinks}</nav>
-          <a class="g-btn g-btn--primary g-btn--lg nav-sheet-cta" href="${base}#install" style="--i: ${NAV.length}">${t('nav.cta')}${icon('arrowRight')}</a>
+          <a class="g-btn g-btn--primary g-btn--lg nav-sheet-cta" href="${to('docs')}" style="--i: ${NAV.length}">${t('nav.docs')}${icon('arrowRight')}</a>
           <p class="nav-sheet-credit" style="--i: ${NAV.length + 1}">${t('footer.credit')}</p>
         </div>
       </details>
@@ -467,6 +468,7 @@ function render(locale: Locale, page: Page): string {
             <li><a href="${SHADES}" rel="noopener">shades.md</a></li>
           </ul></div>
           <div><p class="footer-h">${t('footer.code')}</p><ul>
+            <li><a href="${to('docs')}">${t('nav.docs')}</a></li>
             <li><a href="${REPO}" rel="noopener">GitHub</a></li>
             <li><a href="${LINKS.npm}" rel="noopener">npm</a></li>
             <li><a href="${LINKS.changelog}" rel="noopener">${t('footer.changelog')}</a></li>

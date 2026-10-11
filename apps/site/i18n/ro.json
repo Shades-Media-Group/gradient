@@ -16,7 +16,8 @@
     "menu": "Meniu",
     "onThisPage": "Pe această pagină",
     "email": "Email",
-    "accessibility": "Accesibilitate"
+    "accessibility": "Accesibilitate",
+    "docs": "Documentație"
   },
   "footer": {
     "label": "Site",
@@ -1002,6 +1003,88 @@
       "email": "Scrie echipei de suport",
       "issue": "Deschide un tichet",
       "note": "Spune ce încercai să faci, ce te-a împiedicat și ce dispozitiv, browser și tehnologie asistivă ai folosit."
+    }
+  },
+  "docs": {
+    "title": "Documentație: instalează și folosește shades-gradient | Gradient",
+    "description": "Cum instalezi shades-gradient și cum folosești tokenurile, temele, tema Tailwind, componentele, iconițele, setările de afișare, consimțământul, emailul și mișcarea, cu cod pentru fiecare.",
+    "heading": "Documentație",
+    "lead": "Instalează shades-gradient, citește-i tokenurile, adaptează tema pentru un client și folosește fiecare parte în stackul tău.",
+    "start": {
+      "title": "Primii pași",
+      "text": "Un pachet și o foaie de stil. Ea conține tokenurile, stilurile de bază, componentele și mișcarea, cam 6 KB comprimat.",
+      "install": "Instalează pachetul.",
+      "css": "Importă foaia de stil o singură dată, la rădăcina aplicației.",
+      "fonts": "Încarcă cele două fonturi ale brandului. Pachetul le numește, dar nu le include.",
+      "note": "Nu ai nevoie de niciun framework: componentele sunt clase CSS, iconițele sunt șiruri SVG."
+    },
+    "files": {
+      "title": "Ce conține pachetul",
+      "text": "Ia toată foaia de stil sau doar părțile de care are nevoie stackul tău.",
+      "path": "Import",
+      "holds": "Ce îți oferă",
+      "gradient": "Tot ce urmează, într-un singur fișier: tokenuri, bază, componente, mișcare.",
+      "tokensCss": "Tokenurile ca proprietăți CSS personalizate, pentru tema luminoasă și cea întunecată.",
+      "components": "Clasele componentelor.",
+      "motion": "Keyframe-uri și curbe de accelerare, toate oprite când se cere mișcare redusă.",
+      "theme": "O temă Tailwind v4: fiecare token devine o clasă utilitară.",
+      "json": "Tokenurile în formatul W3C pentru design tokens, pentru Figma și alte instrumente.",
+      "sprite": "Setul de iconițe ca un singur sprite SVG, pentru HTML simplu.",
+      "index": "<code>renderIcon</code>, logoul și personajele Spectra, ca șiruri.",
+      "preferences": "Punctul de afișare și panoul lui: temă, mărimea textului, contrast, mișcare, linkuri, citire.",
+      "consent": "Bannerul de cookieuri și <code>onConsent</code>, ca trackerele să aștepte un da.",
+      "email": "Email tranzacțional pentru orice client, inclusiv Outlook.",
+      "magnetic": "Atracția discretă a butoanelor în formă de pastilă."
+    },
+    "tokens": {
+      "title": "Tokenuri și roluri",
+      "text": "Componentele citesc doar tokenuri de rol, ca <code>--g-bg</code>, <code>--g-text</code> și <code>--g-accent</code>. Primitivele ca <code>--g-red-500</code> țin de brand, niciodată de o componentă.",
+      "rule1": "Folosește fiecare rol pentru rostul lui: textul pe <code>--g-text</code>, marginile pe <code>--g-line</code>.",
+      "rule2": "Nu scrie niciodată o valoare de culoare într-o componentă; adaugă un rol dacă lipsește.",
+      "rule3": "Fiecare rol de text atinge 4.5 : 1 față de fundal, în ambele teme.",
+      "link": "Toate tokenurile, cu valorile lor"
+    },
+    "theming": {
+      "title": "Teme luminoasă, întunecată și pentru clienți",
+      "text": "Temele urmează sistemul. Fixează una pe orice element cu data-theme.",
+      "client": "Brandul unui client schimbă rolurile într-o singură foaie de stil, încărcată după Gradient; componentele le urmează.",
+      "note": "Verifică 4.5 : 1 pentru fiecare rol de text pe care îl schimbi. Simbolul și personajele Shades nu apar niciodată într-un produs al unui client."
+    },
+    "tailwind": {
+      "text": "Tema transformă fiecare token într-o clasă utilitară care urmează tema luminoasă și cea întunecată: <code>bg-accent</code>, <code>text-text-2</code>, <code>rounded-pill</code>."
+    },
+    "components": {
+      "title": "Componente",
+      "text": "Fiecare componentă e o clasă simplă. Copiază HTML-ul de pe pagina de componente; funcționează la fel în React, Preact sau HTML simplu.",
+      "link": "Toate componentele, live"
+    },
+    "icons": {
+      "title": "Iconițe",
+      "text": "<code>renderIcon</code> întoarce un șir SVG cu linia Shades, cu o etichetă când iconița stă singură. În HTML simplu, folosește sprite-ul.",
+      "link": "Setul complet"
+    },
+    "settings": {
+      "title": "Setări de afișare și consimțământ",
+      "text": "Un singur apel adaugă punctul de afișare, panoul lui și bannerul de consimțământ. Scriptul de pornire aplică alegerile cititorului înainte de prima randare.",
+      "rule1": "Încarcă <code>preferences-boot.js</code> în head, altfel pagina clipește în tema greșită.",
+      "rule2": "Transmite etichetele în limba paginii; cele care lipsesc revin la engleză.",
+      "rule3": "Pornește analiza sau marketingul doar în <code>onConsent</code>.",
+      "link": "Ce face fiecare setare"
+    },
+    "email": {
+      "title": "Email",
+      "text": "<code>renderEmail</code> construiește HTML care rezistă în orice inbox, cu o variantă în text simplu. Fiecare mesaj se construiește în jurul unei piese centrale: <code>code()</code>, <code>ticket()</code> sau <code>pass()</code>.",
+      "link": "Previzualizări live și suport pe clienți"
+    },
+    "motion": {
+      "title": "Mișcare",
+      "text": "Mișcarea explică, nu decorează niciodată. Verifică <code>reducedMotion()</code> înainte să animezi ceva singur."
+    },
+    "versions": {
+      "title": "Versiuni",
+      "text": "Gradient folosește versionarea semantică: doar o versiune majoră îți poate strica codul. Jurnalul de modificări listează fiecare schimbare.",
+      "current": "Versiunea curentă",
+      "licence": "Licență"
     }
   }
 }

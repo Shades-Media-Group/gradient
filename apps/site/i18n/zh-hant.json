@@ -16,7 +16,8 @@
     "menu": "選單",
     "onThisPage": "本頁內容",
     "email": "電子郵件",
-    "accessibility": "無障礙"
+    "accessibility": "無障礙",
+    "docs": "說明文件"
   },
   "footer": {
     "label": "網站",
@@ -1002,6 +1003,88 @@
       "email": "寄信給支援團隊",
       "issue": "回報問題",
       "note": "請說明你想做什麼、遇到什麼阻礙，以及使用的裝置、瀏覽器與輔助科技。"
+    }
+  },
+  "docs": {
+    "title": "說明文件：安裝與使用 shades-gradient | Gradient",
+    "description": "如何安裝 shades-gradient，並使用其中的設計 token、主題、Tailwind 主題、元件、圖示、顯示設定、Cookie 同意、電子郵件與動態，每個部分都附程式碼。",
+    "heading": "說明文件",
+    "lead": "安裝 shades-gradient，讀懂它的設計 token，為客戶換上主題，再在你的技術堆疊中用好每個部分。",
+    "start": {
+      "title": "快速開始",
+      "text": "一個套件，一份樣式表。設計 token、基礎樣式、元件與動態都在裡面，壓縮後約 6 KB。",
+      "install": "安裝套件。",
+      "css": "在應用程式的根層級匯入一次樣式表。",
+      "fonts": "載入兩款品牌字型。套件寫明了字型名稱，但不附帶字型檔。",
+      "note": "不需要任何框架：元件是 CSS class，圖示是 SVG 字串。"
+    },
+    "files": {
+      "title": "套件裡有什麼",
+      "text": "可以匯入整份樣式表，也可以只取你的技術堆疊需要的部分。",
+      "path": "匯入路徑",
+      "holds": "提供的內容",
+      "gradient": "以下全部合為一個檔案：設計 token、基礎樣式、元件、動態。",
+      "tokensCss": "以自訂屬性提供的設計 token，含淺色與深色。",
+      "components": "元件 class。",
+      "motion": "關鍵影格與緩動，在減少動態模式下全部停止。",
+      "theme": "Tailwind v4 主題：每個設計 token 都是一個工具類別。",
+      "json": "採用 W3C 設計 token 格式的 token，供 Figma 與其他工具使用。",
+      "sprite": "整套圖示合成一張 SVG sprite，用於純 HTML。",
+      "index": "<code>renderIcon</code>、標誌與 Spectra 角色，都以字串提供。",
+      "preferences": "顯示圓點與其面板：主題、文字大小、對比、動態、連結、閱讀。",
+      "consent": "Cookie 橫幅與 <code>onConsent</code>，讓追蹤工具等到讀者同意後才執行。",
+      "email": "適用所有用戶端的交易型郵件，包括 Outlook。",
+      "magnetic": "膠囊按鈕上輕柔的吸附效果。"
+    },
+    "tokens": {
+      "title": "設計 token 與角色",
+      "text": "元件只讀取角色 token，例如 <code>--g-bg</code>、<code>--g-text</code> 與 <code>--g-accent</code>。<code>--g-red-500</code> 這類原始值屬於品牌，從不屬於元件。",
+      "rule1": "每個角色只做它的本分：文字用 <code>--g-text</code>，邊線用 <code>--g-line</code>。",
+      "rule2": "元件裡絕不寫顏色值；缺少某個角色，就新增一個。",
+      "rule3": "每個文字角色在其背景上都達到 4.5 : 1，兩種主題皆然。",
+      "link": "所有設計 token 與其數值"
+    },
+    "theming": {
+      "title": "淺色、深色與客戶主題",
+      "text": "主題跟隨系統設定。用 data-theme 可以在任何元素上固定一種主題。",
+      "client": "客戶品牌只需在 Gradient 之後載入一份樣式表，在其中修改角色；元件隨之改變。",
+      "note": "修改過的每個文字角色都要確認達到 4.5 : 1。Shades 標誌與角色絕不出現在客戶產品中。"
+    },
+    "tailwind": {
+      "text": "這個主題把每個設計 token 都變成跟著淺色與深色切換的工具類別：<code>bg-accent</code>、<code>text-text-2</code>、<code>rounded-pill</code>。"
+    },
+    "components": {
+      "title": "元件",
+      "text": "每個元件都是一個一般的 class。從元件頁面複製標記即可；在 React、Preact 與純 HTML 中效果相同。",
+      "link": "所有元件，即時展示"
+    },
+    "icons": {
+      "title": "圖示",
+      "text": "<code>renderIcon</code> 回傳 Shades 線條風格的 SVG 字串，圖示單獨出現時附帶標籤。純 HTML 請使用 sprite。",
+      "link": "完整圖示集"
+    },
+    "settings": {
+      "title": "顯示設定與 Cookie 同意",
+      "text": "一次呼叫就能加入顯示圓點、它的面板與 Cookie 橫幅。啟動指令碼在首次繪製前就套用讀者的選擇。",
+      "rule1": "在 head 中載入 <code>preferences-boot.js</code>，否則頁面會先以錯誤的主題閃現。",
+      "rule2": "依頁面語言傳入標籤文字；缺少的會改用英文。",
+      "rule3": "分析或行銷工具只能在 <code>onConsent</code> 內啟動。",
+      "link": "每項設定的作用"
+    },
+    "email": {
+      "title": "電子郵件",
+      "text": "<code>renderEmail</code> 產生在每個收件匣都不走樣的 HTML，並附上一份純文字版本。每封郵件都圍繞一張憑證展開：<code>code()</code>、<code>ticket()</code> 或 <code>pass()</code>。",
+      "link": "即時預覽與用戶端支援"
+    },
+    "motion": {
+      "title": "動態",
+      "text": "動態用來說明，從不用來裝飾。自己製作動畫之前，先檢查 <code>reducedMotion()</code>。"
+    },
+    "versions": {
+      "title": "版本",
+      "text": "Gradient 遵循語意化版本：只有主要版本才可能破壞你的程式碼。更新紀錄列出每一項變更。",
+      "current": "目前版本",
+      "licence": "授權"
     }
   }
 }

@@ -16,7 +16,8 @@
     "menu": "菜单",
     "onThisPage": "本页内容",
     "email": "邮件",
-    "accessibility": "无障碍"
+    "accessibility": "无障碍",
+    "docs": "文档"
   },
   "footer": {
     "label": "网站",
@@ -1002,6 +1003,88 @@
       "email": "发邮件给支持团队",
       "issue": "提交问题",
       "note": "请说明你想做什么、遇到了什么阻碍，以及使用的设备、浏览器和辅助技术。"
+    }
+  },
+  "docs": {
+    "title": "文档：安装和使用 shades-gradient | Gradient",
+    "description": "如何安装 shades-gradient，并使用其中的设计令牌、主题、Tailwind 主题、组件、图标、显示设置、Cookie 同意、邮件和动效，每部分都附代码。",
+    "heading": "文档",
+    "lead": "安装 shades-gradient，读懂它的设计令牌，为客户换上主题，再在你的技术栈里用好每个部分。",
+    "start": {
+      "title": "快速开始",
+      "text": "一个包，一份样式表。设计令牌、基础样式、组件和动效都在其中，压缩后约 6 KB。",
+      "install": "安装这个包。",
+      "css": "在应用的根部引入一次样式表。",
+      "fonts": "加载两款品牌字体。包里写明了字体名称，但不附带字体文件。",
+      "note": "无需任何框架：组件是 CSS 类名，图标是 SVG 字符串。"
+    },
+    "files": {
+      "title": "包里有什么",
+      "text": "可以引入整份样式表，也可以只取你的技术栈需要的部分。",
+      "path": "引入路径",
+      "holds": "提供的内容",
+      "gradient": "下面的一切合为一个文件：设计令牌、基础样式、组件、动效。",
+      "tokensCss": "以自定义属性形式提供的设计令牌，含亮色与暗色。",
+      "components": "组件类名。",
+      "motion": "关键帧与缓动，在减少动效模式下全部停止。",
+      "theme": "Tailwind v4 主题：每个设计令牌都是一个工具类。",
+      "json": "采用 W3C 设计令牌格式的令牌，供 Figma 和其他工具使用。",
+      "sprite": "整套图标合成一张 SVG 雪碧图，用于纯 HTML。",
+      "index": "<code>renderIcon</code>、标志和 Spectra 角色，均以字符串形式提供。",
+      "preferences": "显示圆点及其面板：主题、文字大小、对比度、动效、链接、阅读。",
+      "consent": "Cookie 横幅和 <code>onConsent</code>，让跟踪工具等到读者同意后再运行。",
+      "email": "适用于所有客户端的事务邮件，包括 Outlook。",
+      "magnetic": "药丸按钮上轻柔的吸附效果。"
+    },
+    "tokens": {
+      "title": "设计令牌与角色",
+      "text": "组件只读取角色令牌，例如 <code>--g-bg</code>、<code>--g-text</code> 和 <code>--g-accent</code>。<code>--g-red-500</code> 这样的原始值属于品牌，从不属于组件。",
+      "rule1": "每个角色只做它的本职：文字用 <code>--g-text</code>，边线用 <code>--g-line</code>。",
+      "rule2": "组件里绝不写颜色值；缺少某个角色，就新增一个。",
+      "rule3": "每个文字角色在其背景上都达到 4.5 : 1，两种主题皆然。",
+      "link": "所有设计令牌及其取值"
+    },
+    "theming": {
+      "title": "亮色、暗色与客户主题",
+      "text": "主题跟随系统设置。用 data-theme 可以在任意元素上固定一种主题。",
+      "client": "客户品牌只需在 Gradient 之后加载一份样式表，在其中修改角色；组件随之改变。",
+      "note": "修改过的每个文字角色都要检查是否达到 4.5 : 1。Shades 标志和角色从不出现在客户产品中。"
+    },
+    "tailwind": {
+      "text": "这个主题把每个设计令牌都变成随亮色与暗色切换的工具类：<code>bg-accent</code>、<code>text-text-2</code>、<code>rounded-pill</code>。"
+    },
+    "components": {
+      "title": "组件",
+      "text": "每个组件都是一个普通类名。从组件页面复制标记即可；在 React、Preact 和纯 HTML 中效果一致。",
+      "link": "所有组件，实时演示"
+    },
+    "icons": {
+      "title": "图标",
+      "text": "<code>renderIcon</code> 返回 Shades 描边风格的 SVG 字符串，图标单独出现时附带标签。纯 HTML 中请使用雪碧图。",
+      "link": "完整图标集"
+    },
+    "settings": {
+      "title": "显示设置与 Cookie 同意",
+      "text": "一次调用即可加入显示圆点、它的面板和 Cookie 横幅。启动脚本在首次绘制前就应用读者的选择。",
+      "rule1": "在 head 中加载 <code>preferences-boot.js</code>，否则页面会先以错误的主题闪现。",
+      "rule2": "按页面语言传入标签文字；缺失的会回退为英语。",
+      "rule3": "分析或营销工具只能在 <code>onConsent</code> 内启动。",
+      "link": "每项设置的作用"
+    },
+    "email": {
+      "title": "邮件",
+      "text": "<code>renderEmail</code> 生成在每个收件箱里都不走样的 HTML，并附带一份纯文本版本。每封邮件都围绕一张凭证展开：<code>code()</code>、<code>ticket()</code> 或 <code>pass()</code>。",
+      "link": "实时预览与客户端支持"
+    },
+    "motion": {
+      "title": "动效",
+      "text": "动效用来说明，从不用来装饰。自己做动画之前，先检查 <code>reducedMotion()</code>。"
+    },
+    "versions": {
+      "title": "版本",
+      "text": "Gradient 遵循语义化版本：只有主版本才可能破坏你的代码。更新日志列出每一项改动。",
+      "current": "当前版本",
+      "licence": "许可"
     }
   }
 }

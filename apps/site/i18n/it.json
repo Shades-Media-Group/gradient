@@ -16,7 +16,8 @@
     "menu": "Menu",
     "onThisPage": "In questa pagina",
     "email": "Email",
-    "accessibility": "Accessibilità"
+    "accessibility": "Accessibilità",
+    "docs": "Documentazione"
   },
   "footer": {
     "label": "Sito",
@@ -1002,6 +1003,88 @@
       "email": "Scrivi al supporto",
       "issue": "Apri una segnalazione",
       "note": "Racconta cosa stavi cercando di fare, cosa ti ha ostacolato e quali dispositivo, browser e tecnologia assistiva usavi."
+    }
+  },
+  "docs": {
+    "title": "Documentazione: installa e usa shades-gradient | Gradient",
+    "description": "Come installare shades-gradient e usarne token, temi, tema Tailwind, componenti, icone, impostazioni di visualizzazione, consenso, email e movimento, con il codice per ognuno.",
+    "heading": "Documentazione",
+    "lead": "Installa shades-gradient, leggi i suoi token, adattalo al tema di un cliente e usa ogni parte nel tuo stack.",
+    "start": {
+      "title": "Per iniziare",
+      "text": "Un pacchetto e un foglio di stile. Contiene token, stili di base, componenti e movimento, circa 6 KB compresso.",
+      "install": "Installa il pacchetto.",
+      "css": "Importa il foglio di stile una sola volta, alla radice dell'app.",
+      "fonts": "Carica i due caratteri del brand. Il pacchetto li nomina ma non li include.",
+      "note": "Non serve alcun framework: i componenti sono classi CSS, le icone sono stringhe SVG."
+    },
+    "files": {
+      "title": "Cosa contiene il pacchetto",
+      "text": "Prendi il foglio di stile intero, o solo le parti che servono al tuo stack.",
+      "path": "Importa",
+      "holds": "Cosa ti dà",
+      "gradient": "Tutto quanto segue in un solo file: token, base, componenti, movimento.",
+      "tokensCss": "I token come proprietà personalizzate, in chiaro e scuro.",
+      "components": "Le classi dei componenti.",
+      "motion": "Keyframe ed easing, tutti fermi con il movimento ridotto.",
+      "theme": "Un tema Tailwind v4: ogni token come utility.",
+      "json": "I token nel formato W3C dei design token, per Figma e altri strumenti.",
+      "sprite": "Il set di icone come un unico sprite SVG per l'HTML puro.",
+      "index": "<code>renderIcon</code>, il logo e i personaggi Spectra come stringhe.",
+      "preferences": "Il punto e il pannello di visualizzazione: tema, dimensione del testo, contrasto, movimento, link, lettura.",
+      "consent": "Il banner dei cookie e <code>onConsent</code>, così i tracker aspettano un sì.",
+      "email": "Email transazionali per ogni client, Outlook compreso.",
+      "magnetic": "La leggera attrazione sui pulsanti a pillola."
+    },
+    "tokens": {
+      "title": "Token e ruoli",
+      "text": "I componenti leggono solo token di ruolo, come <code>--g-bg</code>, <code>--g-text</code> e <code>--g-accent</code>. Le primitive come <code>--g-red-500</code> appartengono al brand, mai a un componente.",
+      "rule1": "Usa ogni ruolo per il suo compito: il testo su <code>--g-text</code>, i bordi su <code>--g-line</code>.",
+      "rule2": "Mai scrivere un valore di colore in un componente; se manca un ruolo, aggiungilo.",
+      "rule3": "Ogni ruolo del testo raggiunge 4,5 : 1 sul proprio sfondo, in entrambi i temi.",
+      "link": "Ogni token, con il suo valore"
+    },
+    "theming": {
+      "title": "Temi chiaro, scuro e cliente",
+      "text": "I temi seguono il sistema. Fissane uno su qualsiasi elemento con data-theme.",
+      "client": "Un brand cliente cambia i ruoli in un solo foglio di stile caricato dopo Gradient; i componenti si adeguano.",
+      "note": "Controlla a 4,5 : 1 ogni ruolo del testo che modifichi. Il marchio e i personaggi Shades non compaiono mai in un prodotto cliente."
+    },
+    "tailwind": {
+      "text": "Il tema trasforma ogni token in una utility che segue il tema chiaro e scuro: <code>bg-accent</code>, <code>text-text-2</code>, <code>rounded-pill</code>."
+    },
+    "components": {
+      "title": "Componenti",
+      "text": "Ogni componente è una semplice classe. Copia il markup dalla pagina dei componenti; funziona allo stesso modo in React, Preact o HTML puro.",
+      "link": "Tutti i componenti, dal vivo"
+    },
+    "icons": {
+      "title": "Icone",
+      "text": "<code>renderIcon</code> restituisce una stringa SVG con il tratto Shades, con un'etichetta quando l'icona è da sola. Nell'HTML puro, usa lo sprite.",
+      "link": "Il set completo"
+    },
+    "settings": {
+      "title": "Impostazioni di visualizzazione e consenso",
+      "text": "Una sola chiamata aggiunge il punto di visualizzazione, il suo pannello e il banner del consenso. Lo script di avvio applica le scelte di chi legge prima del primo rendering.",
+      "rule1": "Carica <code>preferences-boot.js</code> nell'head, o la pagina lampeggia nel tema sbagliato.",
+      "rule2": "Passa le etichette nella lingua della pagina; quelle mancanti ripiegano sull'inglese.",
+      "rule3": "Avvia analisi o marketing solo dentro <code>onConsent</code>.",
+      "link": "Cosa fa ogni impostazione"
+    },
+    "email": {
+      "title": "Email",
+      "text": "<code>renderEmail</code> genera HTML che regge in ogni casella di posta, con una versione in testo semplice. Ogni messaggio ruota attorno a un elemento centrale: <code>code()</code>, <code>ticket()</code> o <code>pass()</code>.",
+      "link": "Anteprime dal vivo e supporto dei client"
+    },
+    "motion": {
+      "title": "Movimento",
+      "text": "Il movimento spiega, non decora mai. Controlla <code>reducedMotion()</code> prima di animare qualcosa da solo."
+    },
+    "versions": {
+      "title": "Versioni",
+      "text": "Gradient segue il versionamento semantico: solo una versione major può rompere il tuo codice. Il changelog elenca ogni modifica.",
+      "current": "Versione attuale",
+      "licence": "Licenza"
     }
   }
 }

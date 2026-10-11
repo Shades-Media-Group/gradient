@@ -16,7 +16,8 @@
     "menu": "Menu",
     "onThisPage": "Sur cette page",
     "email": "E-mail",
-    "accessibility": "Accessibilité"
+    "accessibility": "Accessibilité",
+    "docs": "Documentation"
   },
   "footer": {
     "label": "Site",
@@ -1002,6 +1003,88 @@
       "email": "Écrire au support",
       "issue": "Ouvrir un ticket",
       "note": "Précisez ce que vous essayiez de faire, ce qui vous a bloqué, et quels appareil, navigateur et technologie d'assistance vous utilisiez."
+    }
+  },
+  "docs": {
+    "title": "Documentation : installer et utiliser shades-gradient | Gradient",
+    "description": "Comment installer shades-gradient et utiliser ses tokens, ses thèmes, son thème Tailwind, ses composants, ses icônes, les réglages d’affichage, le consentement, l’e-mail et le mouvement, avec du code pour chacun.",
+    "heading": "Documentation",
+    "lead": "Installez shades-gradient, lisez ses tokens, adaptez son thème à un client et utilisez chaque partie dans votre stack.",
+    "start": {
+      "title": "Démarrer",
+      "text": "Un paquet et une feuille de style. Elle contient les tokens, les styles de base, les composants et le mouvement, environ 6 KB compressés.",
+      "install": "Installez le paquet.",
+      "css": "Importez la feuille de style une seule fois, à la racine de votre application.",
+      "fonts": "Chargez les deux polices de la marque. Le paquet les nomme mais ne les fournit pas.",
+      "note": "Aucun framework n’est nécessaire : les composants sont des classes CSS, les icônes des chaînes SVG."
+    },
+    "files": {
+      "title": "Ce que contient le paquet",
+      "text": "Prenez toute la feuille de style, ou seulement les parties dont votre stack a besoin.",
+      "path": "Import",
+      "holds": "Ce qu’il vous donne",
+      "gradient": "Tout ce qui suit dans un seul fichier : tokens, base, composants, mouvement.",
+      "tokensCss": "Les tokens en propriétés personnalisées, en clair et en sombre.",
+      "components": "Les classes des composants.",
+      "motion": "Images clés et courbes d’accélération, toutes arrêtées quand le mouvement est réduit.",
+      "theme": "Un thème Tailwind v4 : chaque token devient une classe utilitaire.",
+      "json": "Les tokens au format W3C des design tokens, pour Figma et d’autres outils.",
+      "sprite": "Le jeu d’icônes en un seul sprite SVG pour le HTML simple.",
+      "index": "<code>renderIcon</code>, le logo et les personnages Spectra sous forme de chaînes.",
+      "preferences": "Le point d’affichage et son panneau : thème, taille du texte, contraste, mouvement, liens, lecture.",
+      "consent": "Le bandeau cookies et <code>onConsent</code>, pour que les traceurs attendent un oui.",
+      "email": "L’e-mail transactionnel pour tous les clients, Outlook compris.",
+      "magnetic": "La légère attraction des boutons en pilule."
+    },
+    "tokens": {
+      "title": "Tokens et rôles",
+      "text": "Les composants ne lisent que des tokens de rôle, comme <code>--g-bg</code>, <code>--g-text</code> et <code>--g-accent</code>. Les primitives comme <code>--g-red-500</code> appartiennent à la marque, jamais à un composant.",
+      "rule1": "Utilisez chaque rôle pour sa fonction : le texte sur <code>--g-text</code>, les bords sur <code>--g-line</code>.",
+      "rule2": "N’écrivez jamais de valeur de couleur dans un composant ; ajoutez un rôle s’il en manque un.",
+      "rule3": "Chaque rôle de texte atteint 4.5 : 1 sur son fond, dans les deux thèmes.",
+      "link": "Tous les tokens, avec leur valeur"
+    },
+    "theming": {
+      "title": "Thèmes clair, sombre et client",
+      "text": "Les thèmes suivent le système. Fixez-en un sur n’importe quel élément avec data-theme.",
+      "client": "Une marque cliente modifie les rôles dans une seule feuille de style chargée après Gradient ; les composants suivent.",
+      "note": "Vérifiez 4.5 : 1 pour chaque rôle de texte que vous modifiez. Le symbole et les personnages Shades n’apparaissent jamais dans un produit client."
+    },
+    "tailwind": {
+      "text": "Le thème transforme chaque token en classe utilitaire qui suit le clair et le sombre : <code>bg-accent</code>, <code>text-text-2</code>, <code>rounded-pill</code>."
+    },
+    "components": {
+      "title": "Composants",
+      "text": "Chaque composant est une simple classe. Copiez le HTML depuis la page des composants ; il fonctionne de la même façon en React, en Preact ou en HTML simple.",
+      "link": "Tous les composants, en direct"
+    },
+    "icons": {
+      "title": "Icônes",
+      "text": "<code>renderIcon</code> renvoie une chaîne SVG au trait Shades, avec un libellé quand l’icône est seule. En HTML simple, utilisez le sprite.",
+      "link": "Le jeu complet"
+    },
+    "settings": {
+      "title": "Réglages d’affichage et consentement",
+      "text": "Un seul appel ajoute le point d’affichage, son panneau et le bandeau de consentement. Le script de démarrage applique les choix du lecteur avant le premier affichage.",
+      "rule1": "Chargez <code>preferences-boot.js</code> dans le head, sinon la page clignote dans le mauvais thème.",
+      "rule2": "Passez les libellés dans la langue de la page ; ceux qui manquent reviennent à l’anglais.",
+      "rule3": "Ne lancez la mesure d’audience ou le marketing que dans <code>onConsent</code>.",
+      "link": "Ce que fait chaque réglage"
+    },
+    "email": {
+      "title": "E-mail",
+      "text": "<code>renderEmail</code> produit un HTML qui tient dans toutes les boîtes de réception, avec sa version en texte brut. Chaque message s’organise autour d’une pièce centrale : <code>code()</code>, <code>ticket()</code> ou <code>pass()</code>.",
+      "link": "Aperçus en direct et compatibilité des clients"
+    },
+    "motion": {
+      "title": "Mouvement",
+      "text": "Le mouvement explique, il ne décore jamais. Vérifiez <code>reducedMotion()</code> avant d’animer quoi que ce soit vous-même."
+    },
+    "versions": {
+      "title": "Versions",
+      "text": "Gradient suit la gestion sémantique de version : seule une version majeure peut casser votre code. Le journal des modifications liste chaque changement.",
+      "current": "Version actuelle",
+      "licence": "Licence"
     }
   }
 }
