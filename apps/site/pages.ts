@@ -395,7 +395,7 @@ function emailSamples() {
 }
 const SAMPLES = emailSamples()
 
-const NAV: PageId[] = ['brand', 'foundations', 'components', 'icons', 'print', 'email', 'projects']
+const NAV: PageId[] = ['brand', 'foundations', 'components', 'icons', 'print', 'email', 'docs', 'projects']
 
 function render(locale: Locale, page: Page): string {
   const dict = dictionary(locale.code)
@@ -440,12 +440,12 @@ function render(locale: Locale, page: Page): string {
         <summary><span class="g-visually-hidden">${t('language')}: </span>${icon('globe')}<span>${locale.short}</span></summary>
         <ul class="lang-menu">${langLinks}</ul>
       </details>
-      <a class="g-btn g-btn--inverse g-btn--sm nav-cta" href="${to('docs')}">${t('nav.docs')}</a>
+      <a class="g-btn g-btn--inverse g-btn--sm nav-cta" href="${base}#install">${t('nav.cta')}</a>
       <details class="nav-more">
         <summary aria-label="${html(t('nav.menu'))}"><span class="burger" aria-hidden="true"><i></i><i></i></span></summary>
         <div class="nav-sheet">
           <nav aria-label="${html(t('nav.label'))}">${sheetLinks}</nav>
-          <a class="g-btn g-btn--primary g-btn--lg nav-sheet-cta" href="${to('docs')}" style="--i: ${NAV.length}">${t('nav.docs')}${icon('arrowRight')}</a>
+          <a class="g-btn g-btn--primary g-btn--lg nav-sheet-cta" href="${base}#install" style="--i: ${NAV.length}">${t('nav.cta')}${icon('arrowRight')}</a>
           <p class="nav-sheet-credit" style="--i: ${NAV.length + 1}">${t('footer.credit')}</p>
         </div>
       </details>
