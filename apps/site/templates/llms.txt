@@ -1,0 +1,25 @@
+# Gradient
+
+> Gradient is the design system of Shades Media Group (Shades), a creative and technology agency in Chișinău, Moldova. It holds the Shades brand (logo, colour, type, the Spectra mascot family, voice, print rules) and the code every Shades product installs: the shades-gradient npm package with design tokens, CSS components, a Tailwind v4 theme and the Shades icon set.
+
+## Facts
+
+- Website: https://gradient.shades.md (English, French, Romanian, Russian, Spanish, Chinese)
+- Repository: https://github.com/Shades-Media-Group/gradient
+- npm package: shades-gradient, version {{@version}}
+- Licence: the code is MIT. The Shades name, logo and Spectra characters are trademarks of Shades Media Group and are not covered by the MIT licence.
+- Logo: a sharp-cornered square in Shades Red #E40523 with three white bars at 100%, 75% and 50% opacity. The bars are the "shades"; together they make the gradient.
+- Colour: Shades Red #E40523, an ink scale from #FDFDFC (paper) to #0A0A0B (ink), and a four-shade spectrum #6364FF, #D212D6, #E40523, #FF5900 used once per layout.
+- Type: Space Grotesk for display, Hanken Grotesk for text, Inter for Cyrillic.
+- Spectra family: Spectra (founder, welcome), Mera (strategy), Sol (art direction), Nova (labs, new features), Sage (help, docs), Vio (community), Sunny (production, success).
+- Icons: 76 Shades interface icons on a 24 px grid with 2 px round strokes.
+- Products built with the system: PageRecast (https://pagerecast.shades.md), nails-by-alynna, lms. Next: ImageReframe and the shades.md rebuild.
+
+## Pages
+
+- [Brand](https://gradient.shades.md/brand/): the mark, the Spectra family, voice
+- [Foundations](https://gradient.shades.md/foundations/): colour, roles, type, space, motion
+- [Components](https://gradient.shades.md/components/): buttons, fields, choices, tags, disclosure
+- [Icons](https://gradient.shades.md/icons/): the Shades icon set
+- [Print](https://gradient.shades.md/print/): business card, badge, merchandise, email signature
+- [Projects](https://gradient.shades.md/projects/): how PageRecast was made and the lessons every project follows

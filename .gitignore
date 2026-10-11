@@ -42,6 +42,12 @@ graphify-out/
 
 # Website pages, generated from apps/site/templates and apps/site/i18n by apps/site/pages.ts
 apps/site/index.html
+apps/site/brand/
+apps/site/foundations/
+apps/site/components/
+apps/site/icons/
+apps/site/print/
+apps/site/projects/
 apps/site/fr/
 apps/site/ro/
 apps/site/ru/
