@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 200" fill="none" role="img" aria-label="Sage">
+  <style>
+    .g-blink { animation: g-blink var(--g-blink, 4.6s) ease-in-out var(--g-blink-delay, 0s) infinite; transform-box: fill-box; transform-origin: center; }
+    .g-twinkle { animation: g-twinkle 2.6s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+    @keyframes g-blink { 0%, 91%, 100% { transform: scaleY(1); } 95% { transform: scaleY(0.08); } }
+    @keyframes g-twinkle { 0%, 100% { opacity: 0.35; transform: scale(0.8) rotate(0deg); } 50% { opacity: 1; transform: scale(1.12) rotate(16deg); } }
+    @media (prefers-reduced-motion: reduce) { .g-blink, .g-twinkle { animation: none; } }
+  </style>
+  <ellipse cx="80" cy="187" rx="44" ry="8" fill="#000000" opacity="0.28"/>
+  <ellipse cx="60" cy="153" rx="12" ry="7" fill="#00754D"/>
+  <ellipse cx="100" cy="153" rx="12" ry="7" fill="#00754D"/>
+  <rect x="16" y="104" width="13" height="32" rx="6.5" fill="#00A96E" transform="rotate(16 22 120)"/>
+  <rect x="131" y="104" width="13" height="32" rx="6.5" fill="#00A96E" transform="rotate(-16 137 120)"/>
+  <rect x="64.5" y="10" width="9" height="26" rx="4.5" fill="#FFFFFF"/>
+  <rect x="75.5" y="0" width="9" height="36" rx="4.5" fill="#A8F0D6"/>
+  <rect x="86.5" y="10" width="9" height="26" rx="4.5" fill="#5FD9AC"/>
+  <path d="M30 141 C30 74 51 31 80 31 C109 31 130 74 130 141 C130 146 126 149 121 149 L39 149 C34 149 30 146 30 141 Z" fill="#00A96E"/>
+  <path d="M52 92 Q61 84 70 92" stroke="#0A0A0B" stroke-width="4.5" stroke-linecap="round" fill="none"/>
+  <path d="M90 92 Q99 84 108 92" stroke="#0A0A0B" stroke-width="4.5" stroke-linecap="round" fill="none"/>
+  <circle cx="47" cy="105" r="4" fill="#5FD9AC" opacity="0.5"/>
+  <circle cx="113" cy="105" r="4" fill="#5FD9AC" opacity="0.5"/>
+  <path d="M67 112 Q80 121 93 112" stroke="#0A0A0B" stroke-width="4" stroke-linecap="round" fill="none"/>
+</svg>

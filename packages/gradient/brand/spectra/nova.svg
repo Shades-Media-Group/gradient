@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 200" fill="none" role="img" aria-label="Nova">
+  <style>
+    .g-blink { animation: g-blink var(--g-blink, 4.6s) ease-in-out var(--g-blink-delay, 0s) infinite; transform-box: fill-box; transform-origin: center; }
+    .g-twinkle { animation: g-twinkle 2.6s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+    @keyframes g-blink { 0%, 91%, 100% { transform: scaleY(1); } 95% { transform: scaleY(0.08); } }
+    @keyframes g-twinkle { 0%, 100% { opacity: 0.35; transform: scale(0.8) rotate(0deg); } 50% { opacity: 1; transform: scale(1.12) rotate(16deg); } }
+    @media (prefers-reduced-motion: reduce) { .g-blink, .g-twinkle { animation: none; } }
+  </style>
+  <ellipse cx="80" cy="187" rx="36" ry="7" fill="#000000" opacity="0.28"/>
+  <ellipse cx="66" cy="153" rx="10" ry="6.5" fill="#B30E7B"/>
+  <ellipse cx="94" cy="153" rx="10" ry="6.5" fill="#B30E7B"/>
+  <rect x="30" y="100" width="12" height="28" rx="6" fill="#FF1CAE" transform="rotate(18 36 114)"/>
+  <rect x="118" y="100" width="12" height="28" rx="6" fill="#FF1CAE" transform="rotate(-18 124 114)"/>
+  <rect x="63" y="34" width="10" height="42" rx="5" fill="#FFFFFF"/>
+  <rect x="75" y="20" width="10" height="56" rx="5" fill="#FFC0EC"/>
+  <rect x="87" y="34" width="10" height="42" rx="5" fill="#FF7AD4"/>
+  <path d="M128 30 L131 38 L139 41 L131 44 L128 52 L125 44 L117 41 L125 38 Z" fill="#FFC0EC" class="g-twinkle"/>
+  <rect x="44" y="72" width="72" height="72" rx="24" fill="#FF1CAE"/>
+  <g class="g-blink" style="--g-blink:4.1s;--g-blink-delay:0.7s">
+    <circle cx="64" cy="102" r="11" fill="#FDFDFC"/>
+    <circle cx="96" cy="102" r="11" fill="#FDFDFC"/>
+    <circle cx="65" cy="103" r="4.8" fill="#0A0A0B"/>
+    <circle cx="95" cy="103" r="4.8" fill="#0A0A0B"/>
+    <circle cx="67.2" cy="100.6" r="1.5" fill="#FFFFFF"/>
+    <circle cx="97.2" cy="100.6" r="1.5" fill="#FFFFFF"/>
+  </g>
+  <circle cx="54" cy="115" r="4" fill="#FF7AD4" opacity="0.55"/>
+  <circle cx="106" cy="115" r="4" fill="#FF7AD4" opacity="0.55"/>
+  <circle cx="80" cy="124" r="5.5" fill="#0A0A0B"/>
+</svg>

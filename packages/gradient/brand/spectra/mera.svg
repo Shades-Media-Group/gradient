@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 200" fill="none" role="img" aria-label="Mera">
+  <style>
+    .g-blink { animation: g-blink var(--g-blink, 4.6s) ease-in-out var(--g-blink-delay, 0s) infinite; transform-box: fill-box; transform-origin: center; }
+    .g-twinkle { animation: g-twinkle 2.6s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+    @keyframes g-blink { 0%, 91%, 100% { transform: scaleY(1); } 95% { transform: scaleY(0.08); } }
+    @keyframes g-twinkle { 0%, 100% { opacity: 0.35; transform: scale(0.8) rotate(0deg); } 50% { opacity: 1; transform: scale(1.12) rotate(16deg); } }
+    @media (prefers-reduced-motion: reduce) { .g-blink, .g-twinkle { animation: none; } }
+  </style>
+  <ellipse cx="80" cy="187" rx="38" ry="8" fill="#000000" opacity="0.28"/>
+  <ellipse cx="66" cy="153" rx="11" ry="7" fill="#3F40C9"/>
+  <ellipse cx="94" cy="153" rx="11" ry="7" fill="#3F40C9"/>
+  <rect x="38" y="88" width="12" height="30" rx="6" fill="#6364FF" transform="rotate(12 44 103)"/>
+  <rect x="110" y="88" width="12" height="30" rx="6" fill="#6364FF" transform="rotate(-12 116 103)"/>
+  <rect x="64.5" y="12" width="9" height="26" rx="4.5" fill="#FFFFFF"/>
+  <rect x="75.5" y="2" width="9" height="36" rx="4.5" fill="#C9CAFF"/>
+  <rect x="86.5" y="12" width="9" height="26" rx="4.5" fill="#9FA0FF"/>
+  <rect x="50" y="34" width="60" height="114" rx="30" fill="#6364FF"/>
+  <g class="g-blink" style="--g-blink:5.2s;--g-blink-delay:1.2s">
+    <circle cx="68" cy="80" r="10" fill="#FDFDFC"/>
+    <circle cx="92" cy="80" r="10" fill="#FDFDFC"/>
+    <circle cx="69" cy="81.5" r="4.2" fill="#0A0A0B"/>
+    <circle cx="91" cy="81.5" r="4.2" fill="#0A0A0B"/>
+    <circle cx="70.8" cy="78.8" r="1.4" fill="#FFFFFF"/>
+    <circle cx="92.8" cy="78.8" r="1.4" fill="#FFFFFF"/>
+  </g>
+  <circle cx="59" cy="92" r="3.5" fill="#9FA0FF" opacity="0.5"/>
+  <circle cx="101" cy="92" r="3.5" fill="#9FA0FF" opacity="0.5"/>
+  <path d="M70 100 Q80 107 90 100" stroke="#0A0A0B" stroke-width="3.6" stroke-linecap="round" fill="none"/>
+</svg>

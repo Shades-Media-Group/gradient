@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 200" fill="none" role="img" aria-label="Vio">
+  <style>
+    .g-blink { animation: g-blink var(--g-blink, 4.6s) ease-in-out var(--g-blink-delay, 0s) infinite; transform-box: fill-box; transform-origin: center; }
+    .g-twinkle { animation: g-twinkle 2.6s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+    @keyframes g-blink { 0%, 91%, 100% { transform: scaleY(1); } 95% { transform: scaleY(0.08); } }
+    @keyframes g-twinkle { 0%, 100% { opacity: 0.35; transform: scale(0.8) rotate(0deg); } 50% { opacity: 1; transform: scale(1.12) rotate(16deg); } }
+    @media (prefers-reduced-motion: reduce) { .g-blink, .g-twinkle { animation: none; } }
+  </style>
+  <ellipse cx="80" cy="187" rx="42" ry="8" fill="#000000" opacity="0.28"/>
+  <ellipse cx="62" cy="153" rx="12" ry="7" fill="#8A0A8C"/>
+  <ellipse cx="98" cy="153" rx="12" ry="7" fill="#8A0A8C"/>
+  <rect x="20" y="90" width="13" height="32" rx="6.5" fill="#D212D6" transform="rotate(14 26 106)"/>
+  <rect x="126" y="48" width="13" height="38" rx="6.5" fill="#D212D6" transform="rotate(36 132 67)"/>
+  <rect x="64.5" y="14" width="9" height="26" rx="4.5" fill="#FFFFFF"/>
+  <rect x="75.5" y="4" width="9" height="36" rx="4.5" fill="#F3B8F4"/>
+  <rect x="86.5" y="14" width="9" height="26" rx="4.5" fill="#E96AE9"/>
+  <circle cx="80" cy="92" r="48" fill="#D212D6"/>
+  <g class="g-blink" style="--g-blink:4.9s;--g-blink-delay:1.6s">
+    <circle cx="62" cy="86" r="11.5" fill="#FDFDFC"/>
+    <circle cx="63" cy="87" r="4.8" fill="#0A0A0B"/>
+    <circle cx="65.2" cy="84.6" r="1.5" fill="#FFFFFF"/>
+  </g>
+  <path d="M84 86 Q93 79 102 86" stroke="#0A0A0B" stroke-width="4.5" stroke-linecap="round" fill="none"/>
+  <circle cx="48" cy="102" r="4" fill="#E96AE9" opacity="0.5"/>
+  <circle cx="112" cy="102" r="4" fill="#E96AE9" opacity="0.5"/>
+  <path d="M64 108 Q80 120 96 108" stroke="#0A0A0B" stroke-width="4" stroke-linecap="round" fill="none"/>
+</svg>
