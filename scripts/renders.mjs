@@ -3,7 +3,8 @@
  * sticker) as WebP into apps/site/public/renders/. The objects carry the
  * real print files: each face is laid out in HTML with the brand fonts and
  * the logo from packages/gradient/brand, then photographed in a Three.js
- * studio (scripts/renders/). Nothing is drawn by hand or generated.
+ * studio (scripts/renders/). The tee is composited onto a real photograph
+ * (scripts/renders/photos/). Nothing is drawn by hand or generated.
  *
  * Run with `yarn renders [name…]` on a machine with a GPU; the files are
  * committed, so CI never renders.
@@ -151,6 +152,7 @@ const assets = {
   ...(await faces(browser)),
   markMono: brand('shades-mark-mono.svg'),
   wordmark,
+  teePhoto: `data:image/jpeg;base64,${readFileSync(join(root, 'scripts/renders/photos/tees-md-salman.jpg')).toString('base64')}`,
   spectra: brand('spectra/spectra.svg')
     .replace(/<ellipse[^>]*opacity="0\.28"\/>/, '')
     .replace('viewBox="0 0 160 200"', 'viewBox="0 -2 160 166"'),

@@ -2,7 +2,6 @@
  * The product shots on gradient.shades.md, built from the real print files.
  * Each scene returns WebP data URLs at the widths the site serves.
  */
-import { NECK, drapeTee } from './garment.js'
 import { RoundedBoxGeometry } from 'three/examples/jsm/geometries/RoundedBoxGeometry.js'
 import {
   THREE,
@@ -790,154 +789,117 @@ async function sticker(assets) {
 }
 
 /**
- * The tee on a hanger, back to camera. The drape is simulated (garment.js);
- * the back carries the print file laid out in renders.mjs.
+ * The tee, from a real photograph (Md Salman, Unsplash licence): two blank
+ * black tees on wire hangers. The print goes on as a mockup's smart object
+ * would: warped by the folds, lit by the photo's own light, and broken by the
+ * cotton's grain, so it sits in the fabric instead of on the screen.
  */
 async function tee(assets) {
-  const { outer, inner } = drapeTee()
-  // Pattern-space textures: 800 × 760 mm at 3 px/mm.
-  const PX = 3
-  const [albedo, ctx] = canvas(800 * PX, 760 * PX)
-  const data = ctx.createImageData(albedo.width, albedo.height)
-  for (let y = 0; y < albedo.height; y++)
-    for (let x = 0; x < albedo.width; x++) {
-      const k =
-        31 + (noise(x / 1.1, y / 0.8, 6) - 0.5) * 7 + (fbm(x / 240, y / 240, 2, 9) - 0.5) * 5
-      const i = (y * albedo.width + x) * 4
-      data.data[i] = k - 2
-      data.data[i + 1] = k
-      data.data[i + 2] = k + 6
-      data.data[i + 3] = 255
+  const photo = await image(assets.teePhoto)
+  // Crop: the left tee centred, the right one cut by the edge; 4:5, worked at
+  // 2400 × 3000 so the halftone resolves, then shown at 1200 and 600.
+  const crop = { x: 520, y: 0, w: 960, h: 1200 }
+  const W = 2400
+  const H = 3000
+  const k = W / crop.w
+  const [out, ctx] = canvas(W, H)
+  ctx.imageSmoothingQuality = 'high'
+  ctx.drawImage(photo, crop.x, crop.y, crop.w, crop.h, 0, 0, W, H)
+  const base = ctx.getImageData(0, 0, W, H)
+  const lum = new Float32Array(W * H)
+  for (let i = 0; i < W * H; i++)
+    lum[i] =
+      (base.data[i * 4] * 0.2126 + base.data[i * 4 + 1] * 0.7152 + base.data[i * 4 + 2] * 0.0722) /
+      255
+  const blur = (src, r) => {
+    // Two box passes per axis: close enough to a Gaussian for light and folds.
+    let a = src
+    for (let pass = 0; pass < 2; pass++) {
+      const h = new Float32Array(W * H)
+      for (let y = 0; y < H; y++) {
+        let acc = 0
+        for (let x = -r; x <= r; x++) acc += a[y * W + Math.min(W - 1, Math.max(0, x))]
+        for (let x = 0; x < W; x++) {
+          h[y * W + x] = acc / (2 * r + 1)
+          acc += a[y * W + Math.min(W - 1, x + r + 1)] - a[y * W + Math.max(0, x - r)]
+        }
+      }
+      const v = new Float32Array(W * H)
+      for (let x = 0; x < W; x++) {
+        let acc = 0
+        for (let y = -r; y <= r; y++) acc += h[Math.min(H - 1, Math.max(0, y)) * W + x]
+        for (let y = 0; y < H; y++) {
+          v[y * W + x] = acc / (2 * r + 1)
+          acc += h[Math.min(H - 1, y + r + 1) * W + x] - h[Math.max(0, y - r) * W + x]
+        }
+      }
+      a = v
     }
-  ctx.putImageData(data, 0, 0)
-  const [plain, pctx] = canvas(albedo.width, albedo.height)
-  pctx.putImageData(data, 0, 0)
-  if (assets.teeBack) {
-    const art = await image(assets.teeBack)
-    // The print area: 300 × 420 mm, 70 mm below the collar.
-    ctx.drawImage(art, (400 - 150) * PX, (760 - (NECK - 70)) * PX, 300 * PX, 420 * PX)
+    return a
   }
-  const printed = ctx.getImageData(0, 0, albedo.width, albedo.height).data
-  const relief = normalMap(
-    albedo.width,
-    albedo.height,
-    (x, y) => {
-      const mmY = 760 - y / PX
-      const mmX = x / PX - 400
-      let v = noise(x / 1.1, y / 0.7, 3) * 0.3
-      const groove = (d) => Math.exp(-((d / 0.8) ** 2))
-      // Hem: two rows of stitches.
-      v -= 0.5 * (groove(mmY - 20) + groove(mmY - 26))
-      // Collar: a 16 mm rib band along the neckline, stitched on its lower edge.
-      const neck = NECK - 18 * Math.sin(Math.PI * Math.min(1, Math.max(0, (mmX + 92) / 184)))
-      if (Math.abs(mmX) < 96 && mmY > neck - 16 && mmY <= neck + 1)
-        v += 0.35 + 0.28 * Math.sin(mmX * 2.4)
-      if (Math.abs(mmX) < 96) v -= 0.6 * groove(mmY - (neck - 16))
-      // Shoulder seams, from the collar to the shoulder point.
-      const ax = Math.abs(mmX)
-      if (ax > 92 && ax < 246) v -= 0.5 * groove(mmY - (NECK - ((ax - 92) / 154) * 34))
-      // Sleeve hems: stitches 18 mm and 24 mm in from the cuff.
-      const cuff =
-        ((ax - 392) * (336 - 392) + (mmY - 576) * (480 - 576)) / Math.hypot(336 - 392, 480 - 576)
-      const across =
-        ((ax - 392) * (480 - 576) - (mmY - 576) * (336 - 392)) / Math.hypot(336 - 392, 480 - 576)
-      if (ax > 250 && cuff > -4 && cuff < 112)
-        v -= 0.5 * (groove(across + 18) + groove(across + 24))
-      if (printed[(y * albedo.width + x) * 4] > 110) v += 0.45
-      return v
-    },
-    2,
-  )
-  const [rough, rctx] = canvas(albedo.width, albedo.height)
-  const rd = rctx.createImageData(albedo.width, albedo.height)
-  for (let i = 0; i < rd.data.length; i += 4) {
-    rd.data[i] = rd.data[i + 1] = rd.data[i + 2] = printed[i] > 110 ? 135 : 240
-    rd.data[i + 3] = 255
+  const light = blur(lum, 36)
+  const folds = blur(lum, 12)
+  // The cotton's grain, without the photo's JPEG blocks: a light blur first.
+  const weave = blur(lum, 2)
+
+  // The print area on the left tee's chest, in crop pixels.
+  const print = await image(assets.teeBack)
+  const pw = 250 * k
+  const ph = (pw * 420) / 300
+  const px = (1002 - crop.x) * k - pw / 2
+  const py = (406 - crop.y) * k
+  const [art, actx] = canvas(Math.round(pw), Math.round(ph))
+  actx.drawImage(print, 0, 0, art.width, art.height)
+  const ink = actx.getImageData(0, 0, art.width, art.height)
+  // The fabric's average light under the print, so shading is relative to it.
+  let sum = 0
+  let n = 0
+  for (let y = Math.round(py); y < py + ph; y += 4)
+    for (let x = Math.round(px); x < px + pw; x += 4) {
+      sum += light[y * W + x]
+      n++
+    }
+  const mean = sum / n
+  const shift = 16 * k
+  // Bilinear, so a warped dot stays a dot.
+  const sample = (x, y) => {
+    const fx = Math.min(art.width - 1.001, Math.max(0, x))
+    const fy = Math.min(art.height - 1.001, Math.max(0, y))
+    const x0 = Math.floor(fx)
+    const y0 = Math.floor(fy)
+    const tx = fx - x0
+    const ty = fy - y0
+    const at = (xx, yy) => (yy * art.width + xx) * 4
+    const out = [0, 0, 0, 0]
+    for (const [xx, yy, w] of [
+      [x0, y0, (1 - tx) * (1 - ty)],
+      [x0 + 1, y0, tx * (1 - ty)],
+      [x0, y0 + 1, (1 - tx) * ty],
+      [x0 + 1, y0 + 1, tx * ty],
+    ])
+      for (let c = 0; c < 4; c++) out[c] += ink.data[at(xx, yy) + c] * w
+    return out
   }
-  rctx.putImageData(rd, 0, 0)
-
-  const s = studio({
-    width: 2400,
-    height: 3000,
-    fov: 24,
-    eye: [-480, 430, 2150],
-    target: [0, 380, 0],
-    exposure: 1.02,
-    env: 0.18,
-  })
-  const { scene, renderer } = s
-  const wall = new THREE.Mesh(
-    new THREE.PlaneGeometry(6000, 6000),
-    new THREE.MeshStandardMaterial({
-      color: 0xe0dcd5,
-      roughness: 0.96,
-      normalMap: paperNormal(renderer, { repeat: [90, 90], strength: 0.7, seed: 21 }),
-      normalScale: new THREE.Vector2(0.6, 0.6),
-    }),
-  )
-  wall.position.set(0, 2000, -90)
-  wall.receiveShadow = true
-  scene.add(wall)
-  const steel = new THREE.MeshPhysicalMaterial({ color: 0xb9bcc1, metalness: 1, roughness: 0.32 })
-  const rail = new THREE.Mesh(new THREE.CylinderGeometry(9, 9, 3000, 48), steel)
-  rail.rotation.z = Math.PI / 2
-  rail.position.set(0, NECK + 96, -4)
-  rail.castShadow = rail.receiveShadow = true
-  const hook = new THREE.Mesh(
-    new THREE.TubeGeometry(
-      new THREE.CatmullRomCurve3(
-        [
-          [0, NECK - 4, -2],
-          [0, NECK + 46, -2],
-          [0, NECK + 98, 12],
-          [0, NECK + 114, -4],
-          [0, NECK + 98, -20],
-          [0, NECK + 84, -16],
-        ].map((p) => new THREE.Vector3(...p)),
-      ),
-      90,
-      2.4,
-      16,
-    ),
-    steel,
-  )
-  rail.castShadow = hook.castShadow = true
-  scene.add(rail, hook)
-
-  const jersey = (map, roughnessMap) =>
-    new THREE.MeshPhysicalMaterial({
-      map,
-      roughness: 1,
-      roughnessMap,
-      normalMap: texture(relief, renderer),
-      normalScale: new THREE.Vector2(0.7, 0.7),
-      sheen: 1,
-      sheenRoughness: 0.5,
-      sheenColor: new THREE.Color(0x5c5f68),
-      side: THREE.DoubleSide,
-    })
-  const shirt = new THREE.Mesh(
-    outer,
-    jersey(texture(albedo, renderer, { color: true }), texture(rough, renderer)),
-  )
-  const lining = new THREE.Mesh(inner, jersey(texture(plain, renderer, { color: true }), null))
-  for (const m of [shirt, lining]) {
-    m.castShadow = m.receiveShadow = true
-    scene.add(m)
-  }
-
-  const sun = [-2300, 1500, 700]
-  s.light({
-    kind: 'area',
-    position: sun,
-    radius: 55,
-    illuminance: 4.2,
-    color: 0xfff0e2,
-    bounds: 620,
-  })
-  s.light({ kind: 'sky', intensity: 0.5, color: 0xe6ecff, bounds: 620 })
-  windowFrame(s, sun, [0, 380, 0], 0.3, [2600, 2600], [170, 210], 32, 4, 5)
-  return encode(s.shoot(256, 7, { aperture: 3, focus: [0, 520, 10] }), [1200, 600])
+  for (let y = Math.max(1, Math.floor(py)); y < Math.min(H - 1, py + ph); y++)
+    for (let x = Math.max(1, Math.floor(px)); x < Math.min(W - 1, px + pw); x++) {
+      const i = y * W + x
+      // Folds bend the print along their slope.
+      const gx = folds[i + 1] - folds[i - 1]
+      const gy = folds[i + W] - folds[i - W]
+      const s = sample(x - px + gx * shift, y - py + gy * shift)
+      const alpha = (s[3] / 255) * 0.94
+      if (alpha <= 0) continue
+      // Lit by the photo: brighter on the folds' crests, darker in their valleys.
+      const shade = Math.min(1.2, Math.max(0.72, light[i] / mean))
+      const grain = 0.94 + 0.12 * Math.min(1, Math.max(0, (weave[i] - folds[i]) * 6 + 0.5))
+      const o = i * 4
+      for (let c = 0; c < 3; c++) {
+        const printed = s[c] * shade * grain
+        base.data[o + c] = base.data[o + c] * (1 - alpha) + Math.min(255, printed) * alpha
+      }
+    }
+  ctx.putImageData(base, 0, 0)
+  return encode(out, [1200, 600])
 }
 
 /** The link preview (1200 × 630): the card stack on the right, room on the left for the name. */
