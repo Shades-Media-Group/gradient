@@ -87,7 +87,7 @@ if (split) {
 }
 
 // Radio-like segmented controls.
-for (const group of $$('[data-segmented], [data-theme-preview]')) {
+for (const group of $$('[data-segmented], [data-theme-preview], [data-email-switch]')) {
   const options = $$<HTMLButtonElement>('[role="radio"]', group)
   const choose = (chosen: HTMLButtonElement, focus = false) => {
     for (const option of options) {
@@ -108,6 +108,35 @@ for (const group of $$('[data-segmented], [data-theme-preview]')) {
     })
   })
 }
+
+// Tabs demo on the components page: arrow keys move, the selected tab is marked.
+for (const list of $$('[data-tabs]')) {
+  const tabs = $$<HTMLButtonElement>('[role="tab"]', list)
+  const select = (tab: HTMLButtonElement, focus = false) => {
+    for (const t of tabs) {
+      t.setAttribute('aria-selected', String(t === tab))
+      t.tabIndex = t === tab ? 0 : -1
+    }
+    if (focus) tab.focus()
+  }
+  tabs.forEach((tab, i) => {
+    tab.tabIndex = tab.getAttribute('aria-selected') === 'true' ? 0 : -1
+    tab.addEventListener('click', () => select(tab))
+    tab.addEventListener('keydown', (event) => {
+      const next = { ArrowRight: i + 1, ArrowLeft: i - 1, Home: 0, End: tabs.length - 1 }[event.key]
+      if (next === undefined) return
+      event.preventDefault()
+      select(tabs[(next + tabs.length) % tabs.length]!, true)
+    })
+  })
+}
+
+// The email page: one preview at a time.
+const emailSwitch = document.querySelector('[data-email-switch]')
+emailSwitch?.addEventListener('choose', (event) => {
+  for (const frame of $$<HTMLIFrameElement>('[data-email]'))
+    frame.hidden = frame.dataset.email !== (event as CustomEvent<string>).detail
+})
 
 // Theme preview on the foundations page.
 const preview = document.querySelector('[data-theme-preview]')
