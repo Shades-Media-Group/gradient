@@ -1,7 +1,7 @@
 /**
- * Opens every built page in every language at phone and desktop widths and
- * fails on horizontal overflow, console errors, failed requests and missing
- * fonts. Serves apps/site/dist itself, so run it after `yarn build:site`.
+ * Opens every built page in every language at four widths, from a small
+ * phone to a desktop, and fails on horizontal overflow, console errors,
+ * failed requests, missing fonts and wrapped text whose lines drift apart. Serves apps/site/dist itself, so run it after `yarn build:site`.
  * Set PW_CHROMIUM_PATH to use a Chromium other than Playwright's own.
  *
  * Usage: node scripts/audit-layout.mjs
@@ -25,7 +25,8 @@ const PAGES = [
   'accessibility/',
   'projects/',
 ]
-const WIDTHS = [375, 1440]
+// A small phone, a tablet, a small laptop and a desktop.
+const WIDTHS = [320, 768, 1024, 1440]
 const TYPES = {
   '.html': 'text/html',
   '.js': 'text/javascript',
@@ -78,7 +79,9 @@ for (const width of WIDTHS) {
             return (
               r.width > 0 &&
               r.right > root.clientWidth + 1 &&
-              !el.closest('.footer-word, .split-sticky, .g-code, .roles, .table-scroll, .g-tabs, pre')
+              !el.closest(
+                '.footer-word, .split-sticky, .g-code, .roles, .table-scroll, .g-tabs, pre',
+              )
             )
           })
           .slice(0, 3)
@@ -87,12 +90,34 @@ for (const width of WIDTHS) {
               `${el.tagName.toLowerCase()}.${[...el.classList].join('.')} "${el.textContent.trim().slice(0, 30)}"`,
           )
         const fonts = [...document.fonts].filter((f) => f.status === 'error').map((f) => f.family)
-        return { overflow: root.scrollWidth - root.clientWidth, wide, fonts }
+        // Wrapped inline text whose lines sit far apart: small text inside a block
+        // that keeps the page's larger line height.
+        const loose = []
+        for (const el of document.querySelectorAll('main *, footer *')) {
+          if (el.closest('svg, pre, iframe')) continue
+          const cs = getComputedStyle(el)
+          if (cs.display !== 'inline') continue
+          if (![...el.childNodes].some((n) => n.nodeType === 3 && n.textContent.trim())) continue
+          const rects = el.getClientRects()
+          if (rects.length < 2) continue
+          const pitch = rects[1].top - rects[0].top
+          if (pitch > parseFloat(cs.fontSize) * 1.65)
+            loose.push(
+              `${el.tagName.toLowerCase()}.${[...el.classList].join('.')} "${el.textContent.trim().slice(0, 30)}"`,
+            )
+        }
+        return {
+          overflow: root.scrollWidth - root.clientWidth,
+          wide,
+          fonts,
+          loose: loose.slice(0, 3),
+        }
       })
       if (result.overflow > 1)
         problems.push(`${path} @${width}: page is ${result.overflow}px too wide`)
       for (const el of result.wide) problems.push(`${path} @${width}: sticks out: ${el}`)
       for (const font of result.fonts) problems.push(`${path} @${width}: font failed: ${font}`)
+      for (const el of result.loose) problems.push(`${path} @${width}: lines too far apart: ${el}`)
       await tab.close()
     }
   await context.close()
@@ -106,5 +131,5 @@ if (problems.length) {
   process.exit(1)
 }
 console.log(
-  `Layout audit passed: ${LANGS.length * PAGES.length} pages at ${WIDTHS.join(' and ')} px, no overflow, no errors.`,
+  `Layout audit passed: ${LANGS.length * PAGES.length} pages at ${WIDTHS.join(', ')} px, no overflow, no errors.`,
 )
