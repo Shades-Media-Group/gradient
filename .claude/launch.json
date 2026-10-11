@@ -19,7 +19,7 @@
       "runtimeExecutable": "yarn",
       "runtimeArgs": [
         "--cwd",
-        "/Users/cristian/Documents/GitHub/PageRecast/apps/site",
+        "/Users/cristian/Documents/GitHub/shades/PageRecast/apps/site",
         "preview",
         "--port",
         "5181",
