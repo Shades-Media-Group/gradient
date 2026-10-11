@@ -25,8 +25,10 @@ export const tokens = JSON.parse(readFileSync(join(src, 'tokens.json'), 'utf8'))
 const GROUPS = [
   ['color.red', 'red'],
   ['color.ink', 'ink'],
+  ['color.secondary', 'secondary'],
   ['color.spectrum', 'spectrum'],
   ['color.family', 'family'],
+  ['gradient', 'gradient'],
   ['role', ''],
   ['font', 'font'],
   ['text', 'size'],
@@ -61,8 +63,14 @@ export function resolve(value) {
   return value
 }
 
-function css(value) {
+function css(value, token) {
   if (typeof value === 'string' && value.startsWith('{')) return refVar(value)
+  // A DTCG gradient: stops of { color, position }, the angle kept in an extension.
+  if (Array.isArray(value) && typeof value[0] === 'object') {
+    const angle = token?.$extensions?.['md.shades.gradient']?.angle ?? 180
+    const stops = value.map(({ color, position }) => `${css(color)} ${Math.round(position * 100)}%`)
+    return `linear-gradient(${angle}deg, ${stops.join(', ')})`
+  }
   if (Array.isArray(value))
     return typeof value[0] === 'number'
       ? `cubic-bezier(${value.join(', ')})`
@@ -78,7 +86,7 @@ function tokensCss() {
   const lightRoles = []
   for (const [group, prefix] of GROUPS) {
     for (const [name, token] of entries(group)) {
-      light.push(`  ${varName(prefix, name)}: ${css(token.$value)};`)
+      light.push(`  ${varName(prefix, name)}: ${css(token.$value, token)};`)
       if (darkOf(token)) {
         dark.push(`  ${varName(prefix, name)}: ${css(darkOf(token))};`)
         lightRoles.push(`  ${varName(prefix, name)}: ${css(token.$value)};`)
@@ -124,6 +132,7 @@ function themeCss() {
   }
   add('color-red', 'red', 'color.red')
   add('color-ink', 'ink', 'color.ink')
+  add('color-secondary', 'secondary', 'color.secondary')
   add('color-spectrum', 'spectrum', 'color.spectrum')
   add('color', '', 'role')
   add('font', 'font', 'font')
