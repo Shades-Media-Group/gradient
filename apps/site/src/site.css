@@ -2634,32 +2634,19 @@ body {
   place-items: center;
   aspect-ratio: 16 / 9;
   margin-bottom: 18px;
-  padding: 12%;
+  container-type: inline-size;
 }
 
 .product-plate--paper {
   background: #fdfdfc;
 }
 
+/* Every logo at one height, so a short name and a long one weigh the same. */
 .product-plate img {
-  width: 100%;
-  height: auto;
-}
-
-.product-lockup {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  color: #0a0a0b;
-  font: 700 clamp(2rem, 4.2vw, 3.5rem) / 1 var(--g-font-display);
-  letter-spacing: -0.035em;
-}
-
-.product-lockup .g-mark,
-.product-lockup img {
-  flex: none;
-  width: clamp(48px, 5.6vw, 76px);
-  height: auto;
+  width: auto;
+  height: 12.5cqi;
+  max-width: 82cqi;
+  object-fit: contain;
 }
 
 .product-meta {
