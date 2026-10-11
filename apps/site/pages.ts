@@ -315,22 +315,22 @@ function render(locale: Locale, page: Page): string {
           <p>${t('footer.about')}</p>
         </div>
         <nav class="footer-cols" aria-label="${html(t('footer.label'))}">
-          <div><h2>${t('footer.system')}</h2><ul>${NAV.slice(0, 4)
+          <div><p class="footer-h">${t('footer.system')}</p><ul>${NAV.slice(0, 4)
             .map((id) => `<li><a href="${to(id)}">${t(`nav.${id}`)}</a></li>`)
             .join('')}</ul></div>
-          <div><h2>${t('footer.work')}</h2><ul>
+          <div><p class="footer-h">${t('footer.work')}</p><ul>
             <li><a href="${to('print')}">${t('nav.print')}</a></li>
             <li><a href="${to('projects')}">${t('nav.projects')}</a></li>
             <li><a href="${LINKS.pagerecast}" rel="noopener">PageRecast</a></li>
             <li><a href="${SHADES}" rel="noopener">shades.md</a></li>
           </ul></div>
-          <div><h2>${t('footer.code')}</h2><ul>
+          <div><p class="footer-h">${t('footer.code')}</p><ul>
             <li><a href="${REPO}" rel="noopener">GitHub</a></li>
             <li><a href="${LINKS.npm}" rel="noopener">npm</a></li>
             <li><a href="${LINKS.changelog}" rel="noopener">${t('footer.changelog')}</a></li>
             <li><a href="${LINKS.issues}" rel="noopener">${t('footer.issues')}</a></li>
           </ul></div>
-          <div><h2>${t('footer.legal')}</h2><ul>
+          <div><p class="footer-h">${t('footer.legal')}</p><ul>
             <li><a href="${LINKS.license}" rel="noopener">${t('footer.license')}</a></li>
             <li><a href="${LINKS.trademarks}" rel="noopener">${t('footer.trademarks')}</a></li>
             <li><a href="${LINKS.security}" rel="noopener">${t('footer.security')}</a></li>
@@ -364,12 +364,15 @@ function render(locale: Locale, page: Page): string {
 
   return (
     template
-      .replace(/\{\{(@?)([\w.]+)(?::([\w-]+))?\}\}/g, (_, special: string, key: string, arg = '') => {
-        if (!special) return html(t(key))
-        const run = specials[key]
-        if (!run) throw new Error(`No generator "@${key}" (${page.id})`)
-        return run(arg)
-      })
+      .replace(
+        /\{\{(@?)([\w.]+)(?::([\w-]+))?\}\}/g,
+        (_, special: string, key: string, arg = '') => {
+          if (!special) return html(t(key))
+          const run = specials[key]
+          if (!run) throw new Error(`No generator "@${key}" (${page.id})`)
+          return run(arg)
+        },
+      )
       // Outbound links get their address at build time, so they work without script.
       .replace(/data-link=(["'])(\w+)\1/g, (_, _quote: string, key: string) => {
         const href = LINKS[key]
