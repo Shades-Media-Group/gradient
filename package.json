@@ -28,7 +28,7 @@
     "build:site": "yarn --cwd apps/site build",
     "deploy:site": "yarn --cwd apps/site deploy",
     "audit:site": "node scripts/audit-site.mjs",
-    "verify": "yarn typecheck && yarn lint && yarn test && yarn build && yarn build:site && yarn audit:site",
+    "verify": "yarn build && yarn typecheck && yarn lint && yarn test && yarn build:site && yarn audit:site",
     "format": "prettier --write .",
     "release": "node scripts/release.mjs",
     "assets": "node scripts/assets.mjs",
