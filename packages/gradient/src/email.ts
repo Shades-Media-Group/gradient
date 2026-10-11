@@ -168,7 +168,9 @@ export function blocks(brand: EmailBrand = SHADES) {
         `<td valign="top" width="50%" style="padding:0 12px 16px 0"><p class="g-e-muted" style="margin:0 0 2px;font-size:12px;line-height:1.4;color:${brand.muted}">${escapeHtml(f.label)}</p><p class="g-e-text" style="margin:0;font-size:15px;line-height:1.4;font-weight:700;color:${brand.ink}">${escapeHtml(f.value)}</p></td>`
       const rows: string[] = []
       for (let i = 0; i < present.length; i += 2)
-        rows.push(`<tr>${cell(present[i]!)}${present[i + 1] ? cell(present[i + 1]!) : '<td></td>'}</tr>`)
+        rows.push(
+          `<tr>${cell(present[i]!)}${present[i + 1] ? cell(present[i + 1]!) : '<td></td>'}</tr>`,
+        )
       return {
         html: `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="table-layout:fixed">${rows.join('')}</table>`,
         text: present.map((f) => `${f.label}: ${f.value}`).join('\n'),
@@ -327,9 +329,16 @@ export interface CalendarEvent {
   status?: 'CONFIRMED' | 'CANCELLED'
 }
 
-const icsDate = (date: Date) => date.toISOString().replace(/[-:]/g, '').replace(/\.\d{3}/, '')
+const icsDate = (date: Date) =>
+  date
+    .toISOString()
+    .replace(/[-:]/g, '')
+    .replace(/\.\d{3}/, '')
 const icsText = (value: string) =>
-  value.replace(/\\/g, '\\\\').replace(/\n/g, '\\n').replace(/([,;])/g, '\\$1')
+  value
+    .replace(/\\/g, '\\\\')
+    .replace(/\n/g, '\\n')
+    .replace(/([,;])/g, '\\$1')
 
 /** Folds a content line at 75 octets, as RFC 5545 asks. */
 function fold(line: string): string {
@@ -357,7 +366,10 @@ function fold(line: string): string {
  * (METHOD:REQUEST): Gmail and Outlook show it as an event card with Yes, No
  * and Maybe. Without them it is a plain calendar file the reader can add.
  */
-export function icsFile(event: CalendarEvent, prodId = '-//Shades Media Group//Gradient//EN'): Attachment {
+export function icsFile(
+  event: CalendarEvent,
+  prodId = '-//Shades Media Group//Gradient//EN',
+): Attachment {
   const invite = Boolean(event.organizer && event.attendee)
   const cancelled = event.status === 'CANCELLED'
   const method = cancelled ? 'CANCEL' : invite ? 'REQUEST' : 'PUBLISH'

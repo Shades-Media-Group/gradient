@@ -76,7 +76,9 @@ describe('calendar', () => {
     expect(ics.content).toContain('DTSTART:20270304T090000Z')
     expect(ics.content).toContain('SUMMARY:Brand workshop\\, Shades\\; room 2')
     expect(ics.content).toContain('DESCRIPTION:Bring the brief.\\nCoffee is on us.')
-    expect(ics.content.split('\r\n').every((line) => new TextEncoder().encode(line).length <= 75)).toBe(true)
+    expect(
+      ics.content.split('\r\n').every((line) => new TextEncoder().encode(line).length <= 75),
+    ).toBe(true)
     expect(ics.content.endsWith('\r\n')).toBe(true)
   })
 
