@@ -14,7 +14,8 @@
     "projects": "Progetti",
     "cta": "Installa",
     "menu": "Menu",
-    "onThisPage": "In questa pagina"
+    "onThisPage": "In questa pagina",
+    "email": "Email"
   },
   "footer": {
     "label": "Sito",
@@ -28,7 +29,8 @@
     "license": "Licenza MIT",
     "trademarks": "Marchi",
     "security": "Sicurezza",
-    "credit": "Gratis e open source. Realizzato da Shades Media Group."
+    "credit": "Gratis e open source. Realizzato da Shades Media Group.",
+    "preferred": "Aggiungi come fonte preferita"
   },
   "home": {
     "title": "Gradient: il design system di Shades Media Group",
@@ -123,7 +125,8 @@
       "tailwind": "Tailwind v4",
       "tailwindText": "Ogni token diventa una utility che segue il tema chiaro e scuro: bg-accent, text-text-2, rounded-pill.",
       "icons": "Icone ovunque",
-      "iconsText": "78 icone Shades come stringhe SVG, o un unico sprite per l'HTML puro."
+      "iconsText": "78 icone Shades come stringhe SVG, o un unico sprite per l'HTML puro.",
+      "preferred": "Trova Gradient più spesso nella Ricerca Google:"
     },
     "faq": {
       "title": "Domande",
@@ -186,31 +189,38 @@
       "text": "Sette personaggi, uno per ogni tipo di momento. Condividono gli stessi occhi, la cresta a tre barre del marchio e un sorriso discreto, e ognuno ha un solo colore piatto.",
       "spectra": {
         "role": "Fondatrice e benvenuto",
-        "text": "È uscita dal logo il giorno in cui è stato finito. Apre le presentazioni, accoglie i nuovi utenti e guida i lanci."
+        "text": "È uscita dal logo il giorno in cui è stato finito. Apre le presentazioni, accoglie i nuovi utenti e guida i lanci.",
+        "where": "Home page, onboarding, presentazioni di lancio, la prima slide"
       },
       "mera": {
         "role": "Strategia",
-        "text": "Misurata e precisa. Compare accanto a piani, tempistiche e tutto ciò che richiede una decisione."
+        "text": "Misurata e precisa. Compare accanto a piani, tempistiche e tutto ciò che richiede una decisione.",
+        "where": "Piani, roadmap, tempistiche, decisioni"
       },
       "sol": {
         "role": "Direzione artistica",
-        "text": "Il più rumoroso, con un braccio sempre alzato. Per il lavoro creativo, le revisioni e l'ispirazione."
+        "text": "Il più rumoroso, con un braccio sempre alzato. Per il lavoro creativo, le revisioni e l'ispirazione.",
+        "where": "Revisioni creative, portfolio, bacheche d'ispirazione"
       },
       "nova": {
         "role": "Labs e novità",
-        "text": "La più piccola, con una scintilla sopra la testa. Annuncia beta e nuove funzionalità."
+        "text": "La più piccola, con una scintilla sopra la testa. Annuncia beta e nuove funzionalità.",
+        "where": "Beta, nuove funzionalità, note di rilascio"
       },
       "sage": {
         "role": "Aiuto e documentazione",
-        "text": "Paziente e gentile, ascolta a occhi chiusi. Si occupa di tutorial, tooltip e centro assistenza."
+        "text": "Paziente e gentile, ascolta a occhi chiusi. Si occupa di tutorial, tooltip e centro assistenza.",
+        "where": "Centro assistenza, documentazione, tooltip, tutorial"
       },
       "vio": {
         "role": "Community",
-        "text": "Spiritoso e caloroso, sempre a metà di un occhiolino. Parla sui social, nelle campagne e alla community."
+        "text": "Spiritoso e caloroso, sempre a metà di un occhiolino. Parla sui social, nelle campagne e alla community.",
+        "where": "Post social, campagne, pagine della community"
       },
       "sunny": {
         "role": "Produzione e consegna",
-        "text": "Costante e concreto. Conferma avanzamenti, successi e consegne."
+        "text": "Costante e concreto. Conferma avanzamenti, successi e consegne.",
+        "where": "Avanzamenti, schermate di successo, email di consegna"
       },
       "rulesTitle": "Regole di famiglia",
       "rule1": "Gli stessi occhi per tutti: un disco bianco, una pupilla nera e un solo riflesso.",
@@ -219,7 +229,15 @@
       "rule4": "Un sorriso curvo e discreto. Niente denti, niente bocca spalancata.",
       "rule5": "Fluttuano sopra un'ombra morbida. Non stanno mai in piedi.",
       "rule6": "Un solo colore piatto ciascuno. Niente gradienti sui corpi.",
-      "motion": "Un personaggio per momento e al massimo due in una schermata. Mai al posto del logo. Le loro animazioni a riposo si fermano quando chi legge chiede di ridurre il movimento."
+      "motion": "Un personaggio per momento e al massimo due in una schermata. Mai al posto del logo. Le loro animazioni a riposo si fermano quando chi legge chiede di ridurre il movimento.",
+      "whereTitle": "Chi compare dove",
+      "who": "Personaggio",
+      "where": "Superfici",
+      "neverTitle": "Mai",
+      "never1": "Ricolorare un personaggio o scambiare due sagome.",
+      "never2": "Aggiungere denti, un sorriso aperto o un'espressione fuori dal set.",
+      "never3": "Mettere un personaggio al posto del logo o accanto, come secondo logo.",
+      "never4": "Mostrarne uno sotto i 48 px su schermo o i 15 mm in stampa."
     },
     "voice": {
       "title": "Come scrive Shades",
@@ -251,6 +269,133 @@
       "swap5b": "non lasciartelo sfuggire",
       "tagsTitle": "Hashtag",
       "tagsText": "Cos'è un progetto, detto come tag con un # rosso. Tre al massimo, mai come decorazione."
+    },
+    "lockups": {
+      "title": "Lockup e posizionamento",
+      "text": "Quattro composizioni coprono ogni uso. Nascono tutte dalla stessa geometria e sono disponibili come file.",
+      "horizontal": "Lockup",
+      "horizontalText": "Il marchio e SHADES affiancati. La scelta predefinita per siti, documenti e footer.",
+      "mark": "Solo marchio",
+      "markText": "Dove c'è spazio per un solo quadrato: favicon, icone di app, avatar e tutto ciò che è largo meno di 120 px.",
+      "reverse": "Negativo",
+      "reverseText": "Il logotipo in bianco per l'inchiostro, le foto scure e il tema scuro. Il marchio resta rosso.",
+      "mono": "Un colore",
+      "monoText": "Barre ritagliate dal quadrato per lamina, ricamo, incisione, timbri e stampa a un colore.",
+      "placementTitle": "Posizionamento",
+      "place1": "Nelle interfacce il logo sta in alto a sinistra e porta alla home. Non è mai centrato in una barra di navigazione.",
+      "place2": "Su copertine stampate e merchandising sta in alto a sinistra o esattamente al centro, mai inclinato in un angolo.",
+      "place3": "Lascia un'area di rispetto larga una barra su ogni lato, di più dove il layout lo permette.",
+      "place4": "Mai sopra immagini cariche. Mettici dietro un fondo pieno rosso, inchiostro o carta.",
+      "creditTitle": "Righe di credito",
+      "where": "Dove",
+      "line": "Riga",
+      "inProduct": "In un prodotto Shades",
+      "inReadme": "In un README",
+      "inClient": "Nei lavori per i clienti"
+    },
+    "sizes": {
+      "title": "Dimensioni",
+      "text": "Il marchio resta nitido da una favicon di 16 px fino all'insegna di un edificio. Sotto ogni minimo, usa solo il marchio.",
+      "ladder": "Il marchio da 16 a 96 pixel",
+      "use": "Uso",
+      "markCol": "Marchio",
+      "lockupCol": "Lockup",
+      "favicon": "Favicon",
+      "nav": "Barra di navigazione",
+      "app": "Icona dell'app",
+      "email": "Intestazione email",
+      "print": "Stampa, minimo",
+      "sign": "Insegne, minimo"
+    },
+    "colourUse": {
+      "title": "Il colore in uso",
+      "text": "Le proporzioni che fanno riconoscere un layout come Shades al primo sguardo. Carta e inchiostro reggono la pagina; il rosso è il segnale.",
+      "shareLabel": "Carta 60 per cento, inchiostro 25, rosso 12, spettro 3",
+      "paper": "Carta",
+      "ink": "Inchiostro",
+      "red": "Rosso",
+      "shareNote": "Una ripartizione indicativa di una pagina o di un poster tipico. Lo spettro è l'ultima striscia sottile, una volta sola.",
+      "pairsTitle": "Abbinamenti che passano",
+      "inkOnPaper": "Inchiostro su carta",
+      "paperOnInk": "Carta su inchiostro",
+      "whiteOnRed": "Bianco su Shades Red",
+      "redText": "Testo rosso su carta",
+      "inkOnRed": "Inchiostro su rosso",
+      "whiteOnBlue": "Bianco sul blu dello spettro",
+      "largeOnly": "solo testo grande",
+      "rule1": "Il testo corrente è inchiostro o bianco. Il testo rosso è per i link e per una parola in evidenza, mai per un paragrafo.",
+      "rule2": "Inchiostro su rosso e bianco sui colori dello spettro passano solo da 24 px in su, o a 19 px in grassetto.",
+      "rule3": "Le quattro tonalità dello spettro compaiono insieme, in ordine, come un'unica striscia. Mai una da sola come sfondo.",
+      "rule4": "I brand dei clienti portano il proprio colore d'accento. Shades Red non compare mai in un prodotto cliente."
+    },
+    "type": {
+      "title": "La tipografia nel brand",
+      "text": "Due famiglie, ognuna con un compito. Il logotipo è disegnato, non composto.",
+      "display": "Display: titoli, numeri in primo piano, il lockup. Pesi da 500 a 700, spaziatura stretta.",
+      "body": "Testo: tutto ciò che si legge a lungo, interfacce, didascalie. Pesi da 400 a 700, spaziatura normale.",
+      "rule1": "Titoli con la sola iniziale maiuscola. Solo il logotipo è tutto in maiuscolo.",
+      "rule2": "Due pesi per layout bastano; tre sono il massimo.",
+      "rule3": "Mai comporre la parola SHADES con un font al posto del logo. Usa il file.",
+      "rule4": "I numeri da confrontare si allineano: cifre tabellari nel carattere del testo.",
+      "rule5": "Il rumeno usa ș e ț con la virgola sotto, mai ş e ţ con la cediglia."
+    },
+    "imagery": {
+      "title": "Fotografia e immagini",
+      "text": "Le immagini mostrano lavoro vero e persone vere. Il brand mette il colore; la fotografia mette la verità.",
+      "yes": "Usa",
+      "no": "Evita",
+      "yes1": "Progetti veri, schermi veri, team veri al lavoro",
+      "yes2": "Luce naturale da un lato, colori onesti",
+      "yes3": "Tagli stretti, con spazio nella direzione dello sguardo",
+      "yes4": "Un'immagine forte invece di cinque deboli",
+      "no1": "Render di stock, scene generate con l'AI, blob 3D lucidi",
+      "no2": "Testo o gradienti impressi nella fotografia",
+      "no3": "Filtri che spingono l'immagine verso il rosso per intonarla al brand",
+      "no4": "Immagini che decorano e non spiegano nulla",
+      "alt": "Il testo alternativo si scrive come una didascalia: cosa mostra l'immagine e perché è lì."
+    },
+    "moments": {
+      "title": "Scrivere per momento",
+      "text": "La stessa voce, adattata a ciò che sta vivendo chi legge.",
+      "moment": "Momento",
+      "rule": "Regola",
+      "example": "Esempio",
+      "error": "Errore",
+      "errorRule": "Di' cosa è successo e come rimediare. Niente colpe, niente codici.",
+      "errorExample": "In questa email manca la parte dopo la @.",
+      "success": "Successo",
+      "successRule": "Conferma in una riga e di' cosa succede dopo.",
+      "successExample": "Inviato. Rispondiamo entro un giorno lavorativo.",
+      "empty": "Vuoto",
+      "emptyRule": "Di' cosa ci sarà qui e proponi il primo passo.",
+      "emptyExample": "Ancora nessun progetto. Inizia da un brief.",
+      "button": "Pulsante",
+      "buttonRule": "Un verbo e il suo oggetto, da due a quattro parole.",
+      "buttonExample": "Invia il brief",
+      "marketing": "Marketing",
+      "marketingRule": "Prima il risultato, poi la prova, poi un'azione.",
+      "marketingExample": "Brand che le persone riconoscono, siti che ti portano lavoro.",
+      "mechanicsTitle": "Convenzioni",
+      "mech1": "Solo l'iniziale maiuscola in titoli, pulsanti ed etichette.",
+      "mech2": "Numeri in cifre; unità separate da uno spazio: 24 px, 10 minuti.",
+      "mech3": "Date per esteso nella lingua di chi legge, con il mese minuscolo in italiano: 4 marzo 2027, 4 martie 2027, 4 March 2027.",
+      "mech4": "Orari nel formato 24 ore in rumeno e russo; altrove, come preferisce la lingua di chi legge.",
+      "mech5": "Niente punti esclamativi nelle interfacce. Uno per campagna, se meritato.",
+      "mech6": "L'italiano usa le «caporali» o le “virgolette alte”, il russo le «ёлочки», il rumeno le „ghilimele”, l'inglese le “curly quotes”."
+    },
+    "products": {
+      "title": "Prodotti e sotto-brand",
+      "text": "Quale marchio porta ogni prodotto e come cita Shades.",
+      "name": "Nome",
+      "mark": "Marchio",
+      "credit": "Credito",
+      "shadesMark": "Il marchio e il lockup Shades",
+      "gradientMark": "Il marchio Shades accanto alla parola Gradient",
+      "pagerecastMark": "Un marchio proprio: due pagine sovrapposte",
+      "imagereframeMark": "Un marchio proprio, ancora da disegnare",
+      "client": "Lavori per i clienti",
+      "clientMark": "Il brand del cliente, sui ruoli di Gradient",
+      "note": "Un prodotto può avere un marchio proprio. Usa comunque caratteri, ruoli, icone e regole di Gradient, e la sua riga di credito non cambia mai."
     }
   },
   "foundations": {
@@ -319,6 +464,41 @@
       "move": "Ciò che si sposta: pannelli, rivelazioni, la curva di casa.",
       "loop": "Solo le animazioni a riposo di Spectra e il loader.",
       "reduced": "Con prefers-reduced-motion ogni animazione si ferma e ogni transizione è istantanea. Nulla di importante dipende dal movimento."
+    },
+    "elevation": {
+      "title": "Elevazione",
+      "text": "Tre ombre neutre staccano gli elementi dalla pagina. Quella rossa sta solo sotto l'unica azione primaria.",
+      "sm": "Controlli su una superficie, il segmento in rilievo",
+      "md": "Pannelli, menu e il modulo del brief",
+      "lg": "Finestre di dialogo, popover e il pannello Visualizzazione",
+      "accent": "Il pulsante primario, solo nel tema chiaro",
+      "rule": "Le ombre hanno sempre uno spostamento e una sfocatura morbida. Niente bagliori, niente aloni colorati su fondi scuri."
+    },
+    "layout": {
+      "title": "Layout",
+      "text": "Una colonna sui telefoni, due dai tablet in su, tutto entro una larghezza di 1240 px.",
+      "name": "Fascia",
+      "width": "Larghezza",
+      "what": "Cosa cambia",
+      "phone": "Telefono",
+      "phoneWhat": "Una colonna, pulsanti a tutta larghezza, il marchio si scompone senza restare fisso",
+      "large": "Telefono grande",
+      "largeWhat": "Tornano le griglie a due colonne per gli elementi piccoli",
+      "tablet": "Tablet",
+      "tabletWhat": "Intestazioni dei capitoli e documenti passano a due colonne",
+      "desktop": "Desktop",
+      "desktopWhat": "La navigazione completa, le scene fisse, i campioni affiancati",
+      "measure": "Larghezza del contenuto",
+      "gutter": "Margine laterale",
+      "lineLength": "Lunghezza della riga",
+      "target": "Area di tocco",
+      "rule": "I layout si ridispongono, non si rimpiccioliscono mai. A ogni larghezza il testo resta leggibile senza zoom."
+    },
+    "contrast": {
+      "title": "Contrasto",
+      "text": "Ogni ruolo del testo contro lo sfondo su cui poggia, misurato dai token in fase di build.",
+      "pair": "Testo / sfondo",
+      "note": "AA richiede 4,5 : 1 per il testo corrente, AAA 7 : 1. La build fallisce se una di queste coppie scende sotto AA."
     }
   },
   "components": {
@@ -342,7 +522,23 @@
       "shareLabel": "Condividi",
       "rule1": "Dai all'azione un verbo: Invia, Salva, Inizia. Mai OK o Conferma.",
       "rule2": "Durante l'attesa l'etichetta mantiene la sua larghezza e le tre barre ne prendono il posto.",
-      "rule3": "Un pulsante con sola icona ha sempre un aria-label."
+      "rule3": "Un pulsante con sola icona ha sempre un aria-label.",
+      "statesTitle": "Stati",
+      "stateDefault": "Predefinito",
+      "stateHover": "Hover",
+      "stateFocus": "Focus",
+      "statePressed": "Premuto",
+      "stateDisabled": "Disattivato",
+      "stateBusy": "In attesa",
+      "specTitle": "Dimensioni",
+      "size": "Classe",
+      "height": "Altezza",
+      "padding": "Spaziatura laterale",
+      "textSize": "Testo",
+      "use": "Uso",
+      "useSm": "Barre degli strumenti, tabelle dense, azioni secondarie",
+      "useMd": "Moduli e la maggior parte delle azioni",
+      "useLg": "L'unica call to action di una pagina"
     },
     "fields": {
       "title": "Campi",
@@ -397,6 +593,57 @@
       "text": "I pezzi che ha solo Shades: il marchio che anima le sue barre, il loader fatto di quelle barre e la striscia dello spettro.",
       "loading": "Caricamento",
       "rule": "La striscia dello spettro compare una volta per layout. Il marchio animato è per le schermate di caricamento e per il primo momento in cui si apre una pagina, non per la navigazione."
+    },
+    "navigation": {
+      "title": "Navigazione",
+      "text": "Le schede passano da una vista all'altra della stessa cosa. Il percorso di navigazione dice dove si trova una pagina.",
+      "tabsLabel": "Viste del progetto",
+      "tabOverview": "Panoramica",
+      "tabFiles": "File",
+      "tabActivity": "Attività",
+      "tabSettings": "Impostazioni",
+      "crumbLabel": "Percorso di navigazione",
+      "rule1": "Usa le schede per le viste dello stesso oggetto, mai come seconda barra di navigazione.",
+      "rule2": "La scheda corrente è segnata da una linea rossa e da aria-selected; i tasti freccia spostano da una scheda all'altra."
+    },
+    "feedback": {
+      "title": "Feedback",
+      "text": "I messaggi spiegano, l'avanzamento rassicura, i toast confermano. Nessuno alza la voce.",
+      "successTitle": "Brief inviato",
+      "successText": "Rispondiamo entro un giorno lavorativo.",
+      "warningTitle": "La tua sessione scade tra 5 minuti",
+      "warningText": "Salva le modifiche per non perderle.",
+      "warningAction": "Resta connesso",
+      "dangerTitle": "Il file non è stato caricato",
+      "dangerText": "Supera i 25 MB. Comprimilo e riprova.",
+      "progress": "Caricamento dei file del brand",
+      "toast": "Link copiato",
+      "rule1": "Un messaggio nomina il problema e la via d'uscita, in quest'ordine.",
+      "rule2": "Gli errori usano role=\"alert\"; le conferme usano role=\"status\", così gli screen reader li annunciano una volta sola.",
+      "rule3": "Un toast dura circa due secondi e non contiene mai un'azione che qualcuno deve compiere."
+    },
+    "people": {
+      "title": "Persone",
+      "text": "Gli avatar mostrano chi c'è dietro un progetto: una foto quando c'è, le iniziali su un colore della famiglia quando manca.",
+      "role": "Brand designer",
+      "rule": "Le iniziali sono due lettere, nome e cognome. I colori vengono dalla famiglia Spectra, mai dal colore d'accento."
+    },
+    "access": {
+      "title": "Accessibilità",
+      "text": "Ogni componente funziona con tastiera e screen reader prima di essere pubblicato.",
+      "part": "Componente",
+      "keyboard": "Tastiera",
+      "reader": "Screen reader",
+      "btnKeys": "Tab per raggiungerlo, Invio o Spazio per premerlo",
+      "btnReader": "La sua etichetta; aria-busy mentre è in attesa",
+      "fieldKeys": "Tab tra i campi; gli errori portano il focus sul primo problema",
+      "fieldReader": "Etichetta, suggerimento ed errore letti in ordine tramite aria-describedby",
+      "choiceKeys": "Tasti freccia dentro un gruppo, Spazio per attivare un interruttore",
+      "choiceReader": "Ruolo radio o switch, con il suo stato di selezione",
+      "navKeys": "Tasti freccia tra le schede, Home e Fine per andare agli estremi",
+      "navReader": "Ruoli tablist e tab; il percorso di navigazione segna la pagina corrente",
+      "feedbackReader": "Ruoli status e alert, letti una volta senza spostare il focus",
+      "note": "Il focus è sempre visibile: un anello rosso di due pixel con uno stacco, in entrambi i temi."
     }
   },
   "icons": {
@@ -593,5 +840,58 @@
     "analyticsText": "Visite contate in forma anonima, per capire cosa aiuta. Oggi non in uso su questo sito.",
     "marketing": "Marketing",
     "marketingText": "Pubblicità e misurazione delle campagne. Oggi non in uso su questo sito."
+  },
+  "email": {
+    "title": "Email: template sicuri per Outlook e inviti calendario | Gradient",
+    "description": "Email transazionali nel sistema Shades che funzionano in Outlook, Gmail e Apple Mail, con codici copiabili, inviti di calendario e markup Gmail.",
+    "heading": "Email",
+    "lead": "Email transazionali che reggono in ogni casella, Outlook su Windows compreso, con codici che si copiano e inviti che finiscono nel calendario.",
+    "previews": {
+      "title": "Anteprime",
+      "text": "Tre email vere, generate dal pacchetto in fase di build.",
+      "code": "Codice di accesso",
+      "booking": "Prenotazione",
+      "update": "Conferma",
+      "note": "Persone e dati di esempio. Le email sono mostrate in inglese; funzionano in qualsiasi lingua."
+    },
+    "clients": {
+      "title": "Cosa funziona dove",
+      "text": "Funzioni testate client per client. Dove un client non arriva, l'email si legge comunque correttamente.",
+      "layout": "Layout e spaziature",
+      "buttons": "Pulsanti arrotondati",
+      "dark": "Modalità scura",
+      "inverted": "Inverte i colori da solo",
+      "font": "Font del brand",
+      "system": "Font di sistema",
+      "copy": "Copia o compila il codice",
+      "invite": "Scheda dell'invito di calendario",
+      "actions": "Pulsante di azione nella posta in arrivo",
+      "registered": "Mittenti registrati",
+      "note": "Outlook su Windows disegna le email con Microsoft Word, quindi lì i pulsanti sono forme VML e ogni font ripiega su Arial."
+    },
+    "codes": {
+      "title": "Codici che si copiano",
+      "text": "Gmail offre un pulsante Copia e Apple Mail offre AutoFill quando un codice è scritto nel modo giusto.",
+      "rule1": "Metti la parola “codice” accanto alle cifre, come testo semplice, mai in un'immagine.",
+      "rule2": "Tieni le cifre in un unico blocco: niente spazi, trattini o celle di tabella separate.",
+      "rule3": "Ripeti il codice nell'oggetto: “Il tuo codice Shades: 418203”.",
+      "rule4": "Di' per quanto tempo è valido e cosa fare se chi legge non l'ha richiesto."
+    },
+    "calendar": {
+      "title": "Inviti di calendario",
+      "text": "Le prenotazioni arrivano come invito, così l'orario finisce nel calendario di chi legge con un tocco.",
+      "rule1": "Allega un invito .ics con un organizzatore e un partecipante: Gmail e Outlook lo mostrano come scheda evento con Sì, No e Forse.",
+      "rule2": "Mantieni lo stesso UID per la stessa prenotazione e aumenta SEQUENCE a ogni modifica, così il nuovo orario sostituisce il vecchio.",
+      "rule3": "Invia METHOD:CANCEL con lo stesso UID per togliere dal calendario una prenotazione annullata.",
+      "rule4": "Sotto la prenotazione aggiungi i link a Google Calendar e Outlook per chi preferisce un link."
+    },
+    "build": {
+      "title": "Creane una",
+      "text": "Blocchi in entrata, HTML e testo semplice in uscita. Ogni valore passa per l'escape e sono ammessi solo i link http(s).",
+      "rule1": "Un titolo, un'introduzione, un pulsante primario. Il resto è dettaglio.",
+      "rule2": "Invia sempre la parte in testo semplice; alcuni lettori e filtri vedono solo quella.",
+      "rule3": "Il markup Gmail compare solo per i mittenti registrati presso Google che superano SPF e DKIM. Includerlo è comunque sicuro.",
+      "rule4": "I brand dei clienti passano colori, logo e font propri in brand; la struttura resta la stessa."
+    }
   }
 }

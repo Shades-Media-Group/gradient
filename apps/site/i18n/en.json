@@ -14,7 +14,8 @@
     "projects": "Projects",
     "cta": "Install",
     "menu": "Menu",
-    "onThisPage": "On this page"
+    "onThisPage": "On this page",
+    "email": "Email"
   },
   "footer": {
     "label": "Site",
@@ -28,7 +29,8 @@
     "license": "MIT licence",
     "trademarks": "Trademarks",
     "security": "Security",
-    "credit": "Free and open source. Built by Shades Media Group."
+    "credit": "Free and open source. Built by Shades Media Group.",
+    "preferred": "Add as a preferred source"
   },
   "home": {
     "title": "Gradient: the Shades Media Group design system",
@@ -123,7 +125,8 @@
       "tailwind": "Tailwind v4",
       "tailwindText": "Every token becomes a utility that follows light and dark: bg-accent, text-text-2, rounded-pill.",
       "icons": "Icons anywhere",
-      "iconsText": "78 Shades icons as SVG strings, or one sprite for plain HTML."
+      "iconsText": "78 Shades icons as SVG strings, or one sprite for plain HTML.",
+      "preferred": "Find Gradient more often in Google Search:"
     },
     "faq": {
       "title": "Questions",
@@ -186,31 +189,38 @@
       "text": "Seven characters, one per kind of moment. They share the same eyes, the three-bar crest from the mark and a quiet smile, and each has one flat colour.",
       "spectra": {
         "role": "Founder and welcome",
-        "text": "Walked out of the logo the day it was finished. Opens decks, greets new users and fronts launches."
+        "text": "Walked out of the logo the day it was finished. Opens decks, greets new users and fronts launches.",
+        "where": "Home pages, onboarding, launch decks, the first slide"
       },
       "mera": {
         "role": "Strategy",
-        "text": "Measured and precise. Appears next to plans, timelines and anything that needs a decision."
+        "text": "Measured and precise. Appears next to plans, timelines and anything that needs a decision.",
+        "where": "Plans, roadmaps, timelines, decisions"
       },
       "sol": {
         "role": "Art direction",
-        "text": "The loud one, with one arm always up. Used for creative work, reviews and inspiration."
+        "text": "The loud one, with one arm always up. Used for creative work, reviews and inspiration.",
+        "where": "Creative reviews, portfolios, inspiration boards"
       },
       "nova": {
         "role": "Labs and what's new",
-        "text": "The smallest, with a spark overhead. Announces betas and new features."
+        "text": "The smallest, with a spark overhead. Announces betas and new features.",
+        "where": "Betas, new features, release notes"
       },
       "sage": {
         "role": "Help and docs",
-        "text": "Patient and kind, eyes closed while listening. Owns tutorials, tooltips and the help centre."
+        "text": "Patient and kind, eyes closed while listening. Owns tutorials, tooltips and the help centre.",
+        "where": "Help centre, documentation, tooltips, tutorials"
       },
       "vio": {
         "role": "Community",
-        "text": "Witty and warm, always mid-wink. Speaks on social, in campaigns and to the community."
+        "text": "Witty and warm, always mid-wink. Speaks on social, in campaigns and to the community.",
+        "where": "Social posts, campaigns, community pages"
       },
       "sunny": {
         "role": "Production and done",
-        "text": "Steady and practical. Confirms progress, success and delivery."
+        "text": "Steady and practical. Confirms progress, success and delivery.",
+        "where": "Progress, success screens, delivery emails"
       },
       "rulesTitle": "Family rules",
       "rule1": "Same eyes on everyone: a white disc, a black pupil and one highlight.",
@@ -219,7 +229,15 @@
       "rule4": "One quiet curved smile. No teeth, no open grin.",
       "rule5": "They hover over a soft shadow. They never stand.",
       "rule6": "One flat colour each. No gradients on bodies.",
-      "motion": "One character per moment and at most two on a screen. Never in the logo's place. Their idle loops stop when the reader asks for reduced motion."
+      "motion": "One character per moment and at most two on a screen. Never in the logo's place. Their idle loops stop when the reader asks for reduced motion.",
+      "whereTitle": "Who appears where",
+      "who": "Character",
+      "where": "Surfaces",
+      "neverTitle": "Never",
+      "never1": "Recolour a character or swap two silhouettes.",
+      "never2": "Add teeth, an open grin or a new expression outside the set.",
+      "never3": "Put a character in the logo’s place or beside it as a second logo.",
+      "never4": "Show one smaller than 48 px on screen or 15 mm in print."
     },
     "voice": {
       "title": "How Shades writes",
@@ -251,6 +269,133 @@
       "swap5b": "don't miss out",
       "tagsTitle": "Hashtags",
       "tagsText": "What a project is, said as a tag with a red #. Three at most, never as decoration."
+    },
+    "lockups": {
+      "title": "Lockups and placement",
+      "text": "Four arrangements cover every use. Each comes from the same geometry and ships as a file.",
+      "horizontal": "Lockup",
+      "horizontalText": "The mark and SHADES side by side. The default for sites, documents and footers.",
+      "mark": "Mark alone",
+      "markText": "Where there is room for one square: favicons, app icons, avatars and anything under 120 px wide.",
+      "reverse": "Reverse",
+      "reverseText": "The wordmark in white for ink, dark photographs and the dark theme. The mark stays red.",
+      "mono": "One colour",
+      "monoText": "Bars cut out of the square for foil, embroidery, etching, stamps and single-colour print.",
+      "placementTitle": "Placement",
+      "place1": "In interfaces the logo sits top left and links home. It is never centred in a navigation bar.",
+      "place2": "On print covers and merchandise it sits top left or dead centre, never in a corner at an angle.",
+      "place3": "Keep one bar width of clear space on every side, more where the layout allows.",
+      "place4": "Never place it over busy imagery. Use a solid red, ink or paper ground behind it.",
+      "creditTitle": "Credit lines",
+      "where": "Where",
+      "line": "Line",
+      "inProduct": "Inside a Shades product",
+      "inReadme": "In a README",
+      "inClient": "In client work"
+    },
+    "sizes": {
+      "title": "Sizes",
+      "text": "The mark stays crisp from a 16 px favicon to a building sign. Below each minimum, use the mark alone.",
+      "ladder": "The mark from 16 to 96 pixels",
+      "use": "Use",
+      "markCol": "Mark",
+      "lockupCol": "Lockup",
+      "favicon": "Favicon",
+      "nav": "Navigation bar",
+      "app": "App icon",
+      "email": "Email header",
+      "print": "Print, smallest",
+      "sign": "Signage, smallest"
+    },
+    "colourUse": {
+      "title": "Colour in use",
+      "text": "The proportions that make a layout read as Shades at a glance. Paper and ink carry the page; red is the signal.",
+      "shareLabel": "Paper 60 per cent, ink 25, red 12, spectrum 3",
+      "paper": "Paper",
+      "ink": "Ink",
+      "red": "Red",
+      "shareNote": "A rough share of a typical page or poster. The spectrum is the last sliver, once.",
+      "pairsTitle": "Pairings that pass",
+      "inkOnPaper": "Ink on paper",
+      "paperOnInk": "Paper on ink",
+      "whiteOnRed": "White on Shades Red",
+      "redText": "Red text on paper",
+      "inkOnRed": "Ink on red",
+      "whiteOnBlue": "White on spectrum blue",
+      "largeOnly": "large text only",
+      "rule1": "Body text is ink or white. Red text is for links and one highlighted word, never a paragraph.",
+      "rule2": "Ink on red and white on the spectrum colours pass only at 24 px and up, or 19 px bold.",
+      "rule3": "The four spectrum shades appear together, in order, as one strip. Never one alone as a background.",
+      "rule4": "Client brands bring their own accent. Shades Red never appears in a client product."
+    },
+    "type": {
+      "title": "Type in the brand",
+      "text": "Two families, each with one job. The wordmark is drawn, not typed.",
+      "display": "Display: headlines, numbers that lead, the lockup. Weights 500 to 700, tight tracking.",
+      "body": "Text: everything read at length, interfaces, captions. Weights 400 to 700, normal tracking.",
+      "rule1": "Headlines in sentence case. Only the wordmark is set in capitals.",
+      "rule2": "Two weights per layout are enough; three is the most.",
+      "rule3": "Never set the word SHADES in a font to stand in for the logo. Use the file.",
+      "rule4": "Numbers that are compared line up: tabular figures in the text face.",
+      "rule5": "Romanian uses ș and ț with a comma below, never ş and ţ with a cedilla."
+    },
+    "imagery": {
+      "title": "Photography and imagery",
+      "text": "Images show real work and real people. The brand supplies the colour; the photograph supplies the truth.",
+      "yes": "Use",
+      "no": "Avoid",
+      "yes1": "Real projects, real screens, real teams at work",
+      "yes2": "Natural light from one side, honest colour",
+      "yes3": "Tight crops with room in the direction of the gaze",
+      "yes4": "One strong image rather than five weak ones",
+      "no1": "Stock renders, AI-generated scenes, glossy 3D blobs",
+      "no2": "Text or gradients baked into the photograph",
+      "no3": "Filters that push the image towards red to match the brand",
+      "no4": "Images that decorate and explain nothing",
+      "alt": "Alt text is written like a caption: what the picture shows and why it is there."
+    },
+    "moments": {
+      "title": "Writing by moment",
+      "text": "The same voice, adjusted to what the reader is going through.",
+      "moment": "Moment",
+      "rule": "Rule",
+      "example": "Example",
+      "error": "Error",
+      "errorRule": "Say what happened and how to fix it. No blame, no codes.",
+      "errorExample": "That email is missing the part after the @.",
+      "success": "Success",
+      "successRule": "Confirm in one line and say what happens next.",
+      "successExample": "Sent. We reply within one working day.",
+      "empty": "Empty",
+      "emptyRule": "Say what will be here and offer the first step.",
+      "emptyExample": "No projects yet. Start one with a brief.",
+      "button": "Button",
+      "buttonRule": "A verb and its object, two to four words.",
+      "buttonExample": "Send the brief",
+      "marketing": "Marketing",
+      "marketingRule": "Lead with the result, then the proof, then one action.",
+      "marketingExample": "Brands people recognise, sites that bring them work.",
+      "mechanicsTitle": "Mechanics",
+      "mech1": "Sentence case for headings, buttons and labels.",
+      "mech2": "Numbers as digits; units with a space: 24 px, 10 minutes.",
+      "mech3": "Dates written out in the reader’s language: 4 March 2027, 4 martie 2027.",
+      "mech4": "Times in 24 hours in Romanian and Russian, as the reader’s locale prefers elsewhere.",
+      "mech5": "No exclamation marks in interfaces. One per campaign, if earned.",
+      "mech6": "Russian uses «ёлочки», Romanian „ghilimele”, English “curly quotes”."
+    },
+    "products": {
+      "title": "Products and sub-brands",
+      "text": "Which mark each product wears, and how it credits Shades.",
+      "name": "Name",
+      "mark": "Mark",
+      "credit": "Credit",
+      "shadesMark": "The Shades mark and lockup",
+      "gradientMark": "The Shades mark beside the word Gradient",
+      "pagerecastMark": "Its own mark: two overlapping pages",
+      "imagereframeMark": "Its own mark, to be drawn",
+      "client": "Client work",
+      "clientMark": "The client’s own brand, on Gradient roles",
+      "note": "A product may have its own mark. It still uses Gradient’s type, roles, icons and rules, and its credit line never changes."
     }
   },
   "foundations": {
@@ -319,6 +464,41 @@
       "move": "Things that travel: panels, reveals, the house curve.",
       "loop": "Spectra idles and the loader only.",
       "reduced": "Under prefers-reduced-motion every animation stops and every transition is instant. Nothing important depends on motion."
+    },
+    "elevation": {
+      "title": "Elevation",
+      "text": "Three neutral shadows lift things off the page. The red one sits only under the one primary action.",
+      "sm": "Controls on a surface, the raised segment",
+      "md": "Panels, menus and the brief form",
+      "lg": "Dialogs, popovers and the display panel",
+      "accent": "The primary button, light theme only",
+      "rule": "Shadows always have an offset and a soft blur. No glows, no coloured halos on dark grounds."
+    },
+    "layout": {
+      "title": "Layout",
+      "text": "One column on phones, two from tablets up, all inside a 1240 px measure.",
+      "name": "Range",
+      "width": "Width",
+      "what": "What changes",
+      "phone": "Phone",
+      "phoneWhat": "One column, full-width buttons, the mark splits without pinning",
+      "large": "Large phone",
+      "largeWhat": "Two-column grids return for small items",
+      "tablet": "Tablet",
+      "tabletWhat": "Chapter heads and documents become two columns",
+      "desktop": "Desktop",
+      "desktopWhat": "The full navigation, pinned scenes, side-by-side specimens",
+      "measure": "Content width",
+      "gutter": "Side gutter",
+      "lineLength": "Line length",
+      "target": "Touch target",
+      "rule": "Layouts reflow; they never scale down. Text stays readable without zooming at every width."
+    },
+    "contrast": {
+      "title": "Contrast",
+      "text": "Every text role against the background it sits on, measured from the tokens at build time.",
+      "pair": "Text / background",
+      "note": "AA needs 4.5 : 1 for body text, AAA 7 : 1. The build fails if any of these drops below AA."
     }
   },
   "components": {
@@ -342,7 +522,23 @@
       "shareLabel": "Share",
       "rule1": "Label the action with a verb: Send, Save, Start. Never OK or Submit.",
       "rule2": "While busy, the label keeps its width and the three bars take its place.",
-      "rule3": "An icon-only button always has an aria-label."
+      "rule3": "An icon-only button always has an aria-label.",
+      "statesTitle": "States",
+      "stateDefault": "Default",
+      "stateHover": "Hover",
+      "stateFocus": "Focus",
+      "statePressed": "Pressed",
+      "stateDisabled": "Disabled",
+      "stateBusy": "Busy",
+      "specTitle": "Sizes",
+      "size": "Class",
+      "height": "Height",
+      "padding": "Side padding",
+      "textSize": "Text",
+      "use": "Use",
+      "useSm": "Toolbars, dense tables, secondary actions",
+      "useMd": "Forms and most actions",
+      "useLg": "The one call to action on a page"
     },
     "fields": {
       "title": "Fields",
@@ -397,6 +593,57 @@
       "text": "The pieces only Shades has: the mark that animates its bars, the loader made of those bars, and the spectrum strip.",
       "loading": "Loading",
       "rule": "The spectrum strip appears once per layout. The animated mark is for loading screens and the moment a page first opens, not for navigation."
+    },
+    "navigation": {
+      "title": "Navigation",
+      "text": "Tabs switch between views of one thing. Breadcrumbs say where a page sits.",
+      "tabsLabel": "Project views",
+      "tabOverview": "Overview",
+      "tabFiles": "Files",
+      "tabActivity": "Activity",
+      "tabSettings": "Settings",
+      "crumbLabel": "Breadcrumb",
+      "rule1": "Use tabs for views of the same object, never as a second navigation bar.",
+      "rule2": "The current tab is marked with a red line and aria-selected; arrow keys move between tabs."
+    },
+    "feedback": {
+      "title": "Feedback",
+      "text": "Messages explain, progress reassures, toasts confirm. None of them shouts.",
+      "successTitle": "Brief sent",
+      "successText": "We reply within one working day.",
+      "warningTitle": "Your session ends in 5 minutes",
+      "warningText": "Save your changes to keep them.",
+      "warningAction": "Stay signed in",
+      "dangerTitle": "The file did not upload",
+      "dangerText": "It is larger than 25 MB. Compress it and try again.",
+      "progress": "Uploading the brand files",
+      "toast": "Link copied",
+      "rule1": "A message names the problem and the way out, in that order.",
+      "rule2": "Errors use role=\"alert\"; confirmations use role=\"status\" so screen readers hear them once.",
+      "rule3": "A toast lasts about two seconds and never holds an action someone must take."
+    },
+    "people": {
+      "title": "People",
+      "text": "Avatars show who is behind a project: a photo when there is one, initials on a family colour when there is not.",
+      "role": "Brand designer",
+      "rule": "Initials are two letters, first and last name. Colours come from the Spectra family, never from the accent."
+    },
+    "access": {
+      "title": "Accessibility",
+      "text": "Every component works with a keyboard and a screen reader before it ships.",
+      "part": "Component",
+      "keyboard": "Keyboard",
+      "reader": "Screen reader",
+      "btnKeys": "Tab to reach, Enter or Space to press",
+      "btnReader": "Its label; aria-busy while it works",
+      "fieldKeys": "Tab between fields; errors move focus to the first problem",
+      "fieldReader": "Label, hint and error read in order through aria-describedby",
+      "choiceKeys": "Arrow keys inside a group, Space to toggle a switch",
+      "choiceReader": "Role radio or switch, with its checked state",
+      "navKeys": "Arrow keys between tabs, Home and End to the ends",
+      "navReader": "Tablist and tab roles; the breadcrumb marks the current page",
+      "feedbackReader": "Status and alert roles, read once without moving focus",
+      "note": "Focus is always visible: a two-pixel red ring with a gap, in both themes."
     }
   },
   "icons": {
@@ -593,5 +840,58 @@
     "analyticsText": "Anonymous visit counts, to learn what helps. Not in use on this site today.",
     "marketing": "Marketing",
     "marketingText": "Ads and campaign measurement. Not in use on this site today."
+  },
+  "email": {
+    "title": "Email: Outlook-safe templates with calendar invites | Gradient",
+    "description": "Transactional email in the Shades system that works in Outlook, Gmail and Apple Mail, with copyable codes, calendar invites and Gmail markup.",
+    "heading": "Email",
+    "lead": "Transactional email that holds up in every inbox, Outlook on Windows included, with codes people can copy and invites that land in their calendar.",
+    "previews": {
+      "title": "Previews",
+      "text": "Three real emails, rendered by the package at build time.",
+      "code": "Sign-in code",
+      "booking": "Booking",
+      "update": "Confirmation",
+      "note": "Sample people and details. The emails are shown in English; they take any language."
+    },
+    "clients": {
+      "title": "What works where",
+      "text": "Tested features per client. Where a client cannot do something, the email still reads correctly.",
+      "layout": "Layout and spacing",
+      "buttons": "Round buttons",
+      "dark": "Dark mode",
+      "inverted": "Inverts colours itself",
+      "font": "Brand font",
+      "system": "System font",
+      "copy": "Copy or fill the code",
+      "invite": "Calendar invite card",
+      "actions": "Inbox action button",
+      "registered": "Registered senders",
+      "note": "Outlook on Windows draws email with Microsoft Word, so buttons are VML shapes and every font falls back to Arial there."
+    },
+    "codes": {
+      "title": "Codes people can copy",
+      "text": "Gmail offers a Copy button and Apple Mail offers AutoFill when a code is written the right way.",
+      "rule1": "Put the word “code” and the digits next to each other, as plain text, never in an image.",
+      "rule2": "Keep the digits in one run: no spaces, dashes or separate table cells.",
+      "rule3": "Repeat the code in the subject: “Your Shades code: 418203”.",
+      "rule4": "Say how long it works and what to do if the reader did not ask for it."
+    },
+    "calendar": {
+      "title": "Calendar invites",
+      "text": "Bookings arrive as an invitation, so the time lands in the reader’s calendar in one tap.",
+      "rule1": "Attach an .ics invite with an organiser and an attendee: Gmail and Outlook show it as an event card with Yes, No and Maybe.",
+      "rule2": "Keep the same UID for the same booking and raise SEQUENCE on every change, so a new time replaces the old one.",
+      "rule3": "Send METHOD:CANCEL with the same UID to remove a cancelled booking from the calendar.",
+      "rule4": "Add Google Calendar and Outlook links under the booking for readers who prefer a link."
+    },
+    "build": {
+      "title": "Build one",
+      "text": "Blocks in, HTML and plain text out. Every value is escaped and only http(s) links get through.",
+      "rule1": "One heading, one lead, one primary button. The rest is detail.",
+      "rule2": "Always send the plain-text part; some readers and filters only see that.",
+      "rule3": "Gmail markup shows only for senders registered with Google that pass SPF and DKIM. It is safe to include either way.",
+      "rule4": "Client brands pass their own colours, logo and font in brand; the structure stays the same."
+    }
   }
 }

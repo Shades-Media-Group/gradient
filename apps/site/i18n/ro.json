@@ -14,7 +14,8 @@
     "projects": "Proiecte",
     "cta": "Instalează",
     "menu": "Meniu",
-    "onThisPage": "Pe această pagină"
+    "onThisPage": "Pe această pagină",
+    "email": "Email"
   },
   "footer": {
     "label": "Site",
@@ -28,7 +29,8 @@
     "license": "Licența MIT",
     "trademarks": "Mărci înregistrate",
     "security": "Securitate",
-    "credit": "Gratuit și open source. Creat de Shades Media Group."
+    "credit": "Gratuit și open source. Creat de Shades Media Group.",
+    "preferred": "Adaugă ca sursă preferată"
   },
   "home": {
     "title": "Gradient: sistemul de design al Shades Media Group",
@@ -123,7 +125,8 @@
       "tailwind": "Tailwind v4",
       "tailwindText": "Fiecare token devine o clasă utilitară care urmează tema luminoasă și pe cea întunecată: bg-accent, text-text-2, rounded-pill.",
       "icons": "Iconițe oriunde",
-      "iconsText": "78 de iconițe Shades ca șiruri SVG sau un singur sprite pentru HTML simplu."
+      "iconsText": "78 de iconițe Shades ca șiruri SVG sau un singur sprite pentru HTML simplu.",
+      "preferred": "Găsește Gradient mai des în căutarea Google:"
     },
     "faq": {
       "title": "Întrebări",
@@ -186,31 +189,38 @@
       "text": "Șapte personaje, câte unul pentru fiecare tip de moment. Au aceiași ochi, creasta cu trei bare din simbol și un zâmbet discret, iar fiecare are o singură culoare plată.",
       "spectra": {
         "role": "Fondator și bun-venit",
-        "text": "A ieșit din logo în ziua în care acesta a fost gata. Deschide prezentările, întâmpină utilizatorii noi și e fața lansărilor."
+        "text": "A ieșit din logo în ziua în care acesta a fost gata. Deschide prezentările, întâmpină utilizatorii noi și e fața lansărilor.",
+        "where": "Pagini principale, onboarding, prezentări de lansare, primul slide"
       },
       "mera": {
         "role": "Strategie",
-        "text": "Măsurat și precis. Apare lângă planuri, calendare și tot ce cere o decizie."
+        "text": "Măsurat și precis. Apare lângă planuri, calendare și tot ce cere o decizie.",
+        "where": "Planuri, foi de parcurs, calendare, decizii"
       },
       "sol": {
         "role": "Direcție artistică",
-        "text": "Cel gălăgios, mereu cu o mână ridicată. Apare la lucrări creative, evaluări și inspirație."
+        "text": "Cel gălăgios, mereu cu o mână ridicată. Apare la lucrări creative, evaluări și inspirație.",
+        "where": "Evaluări creative, portofolii, panouri de inspirație"
       },
       "nova": {
         "role": "Laborator și noutăți",
-        "text": "Cel mai mic, cu o scânteie deasupra. Anunță versiunile beta și funcțiile noi."
+        "text": "Cel mai mic, cu o scânteie deasupra. Anunță versiunile beta și funcțiile noi.",
+        "where": "Versiuni beta, funcții noi, note de lansare"
       },
       "sage": {
         "role": "Ajutor și documentație",
-        "text": "Răbdător și blând, cu ochii închiși când ascultă. Se ocupă de tutoriale, tooltipuri și centrul de ajutor."
+        "text": "Răbdător și blând, cu ochii închiși când ascultă. Se ocupă de tutoriale, tooltipuri și centrul de ajutor.",
+        "where": "Centrul de ajutor, documentație, tooltipuri, tutoriale"
       },
       "vio": {
         "role": "Comunitate",
-        "text": "Isteț și cald, mereu făcând cu ochiul. Vorbește pe rețelele sociale, în campanii și cu comunitatea."
+        "text": "Isteț și cald, mereu făcând cu ochiul. Vorbește pe rețelele sociale, în campanii și cu comunitatea.",
+        "where": "Postări sociale, campanii, pagini de comunitate"
       },
       "sunny": {
         "role": "Producție și finalizare",
-        "text": "Echilibrat și practic. Confirmă progresul, succesul și livrarea."
+        "text": "Echilibrat și practic. Confirmă progresul, succesul și livrarea.",
+        "where": "Progres, ecrane de succes, emailuri de livrare"
       },
       "rulesTitle": "Regulile familiei",
       "rule1": "Aceiași ochi pentru toți: un disc alb, o pupilă neagră și o singură sclipire.",
@@ -219,7 +229,15 @@
       "rule4": "Un singur zâmbet discret, curbat. Fără dinți, fără rânjet larg.",
       "rule5": "Plutesc deasupra unei umbre moi. Nu stau niciodată în picioare.",
       "rule6": "Câte o singură culoare plată. Fără gradienți pe corpuri.",
-      "motion": "Un personaj pe moment și cel mult două pe ecran. Niciodată în locul logo-ului. Animațiile lor în repaus se opresc când cititorul cere mișcare redusă."
+      "motion": "Un personaj pe moment și cel mult două pe ecran. Niciodată în locul logo-ului. Animațiile lor în repaus se opresc când cititorul cere mișcare redusă.",
+      "whereTitle": "Cine apare unde",
+      "who": "Personaj",
+      "where": "Suprafețe",
+      "neverTitle": "Niciodată",
+      "never1": "Nu recolora un personaj și nu schimba între ele două siluete.",
+      "never2": "Nu adăuga dinți, un rânjet larg sau o expresie nouă, din afara setului.",
+      "never3": "Nu pune un personaj în locul logo-ului sau lângă el, ca al doilea logo.",
+      "never4": "Nu afișa niciunul mai mic de 48 px pe ecran sau de 15 mm la tipar."
     },
     "voice": {
       "title": "Cum scrie Shades",
@@ -251,6 +269,133 @@
       "swap5b": "nu ratați",
       "tagsTitle": "Hashtaguri",
       "tagsText": "Ce este un proiect, spus ca etichetă cu # roșu. Cel mult trei, niciodată ca decor."
+    },
+    "lockups": {
+      "title": "Variante de logo și plasare",
+      "text": "Patru aranjamente acoperă orice utilizare. Fiecare pornește de la aceeași geometrie și vine ca fișier.",
+      "horizontal": "Logo complet",
+      "horizontalText": "Simbolul și SHADES unul lângă altul. Varianta implicită pentru site-uri, documente și subsoluri.",
+      "mark": "Doar simbolul",
+      "markText": "Acolo unde e loc pentru un singur pătrat: favicon, iconițe de aplicație, avatare și tot ce are sub 120 px lățime.",
+      "reverse": "Invers",
+      "reverseText": "Inscripția în alb, pentru cerneală, fotografii întunecate și tema întunecată. Simbolul rămâne roșu.",
+      "mono": "O culoare",
+      "monoText": "Barele decupate din pătrat, pentru folio, broderie, gravură, ștampile și tipar într-o singură culoare.",
+      "placementTitle": "Plasare",
+      "place1": "În interfețe, logo-ul stă sus, în stânga, și duce la pagina principală. Nu e niciodată centrat în bara de navigare.",
+      "place2": "Pe coperți tipărite și pe merch stă sus, în stânga, sau exact în centru, niciodată înclinat într-un colț.",
+      "place3": "Păstrează lățimea unei bare ca spațiu liber pe fiecare latură, mai mult acolo unde macheta permite.",
+      "place4": "Nu îl pune niciodată peste imagini încărcate. Folosește în spate un fundal plin, roșu, de cerneală sau de hârtie.",
+      "creditTitle": "Mențiuni de credit",
+      "where": "Unde",
+      "line": "Mențiune",
+      "inProduct": "Într-un produs Shades",
+      "inReadme": "Într-un README",
+      "inClient": "În proiecte pentru clienți"
+    },
+    "sizes": {
+      "title": "Dimensiuni",
+      "text": "Simbolul rămâne clar de la un favicon de 16 px până la firma de pe o clădire. Sub fiecare minim, folosește doar simbolul.",
+      "ladder": "Simbolul de la 16 la 96 de pixeli",
+      "use": "Utilizare",
+      "markCol": "Simbol",
+      "lockupCol": "Logo complet",
+      "favicon": "Favicon",
+      "nav": "Bara de navigare",
+      "app": "Iconiță de aplicație",
+      "email": "Antet de email",
+      "print": "Tipar, minim",
+      "sign": "Semnalistică, minim"
+    },
+    "colourUse": {
+      "title": "Culoarea în practică",
+      "text": "Proporțiile care fac o machetă să pară Shades dintr-o privire. Hârtia și cerneala duc pagina; roșul e semnalul.",
+      "shareLabel": "Hârtie 60 la sută, cerneală 25, roșu 12, spectru 3",
+      "paper": "Hârtie",
+      "ink": "Cerneală",
+      "red": "Roșu",
+      "shareNote": "O proporție aproximativă pentru o pagină sau un afiș obișnuit. Spectrul e ultima fâșie, o singură dată.",
+      "pairsTitle": "Combinații care trec",
+      "inkOnPaper": "Cerneală pe hârtie",
+      "paperOnInk": "Hârtie pe cerneală",
+      "whiteOnRed": "Alb pe Shades Red",
+      "redText": "Text roșu pe hârtie",
+      "inkOnRed": "Cerneală pe roșu",
+      "whiteOnBlue": "Alb pe albastrul spectrului",
+      "largeOnly": "doar text mare",
+      "rule1": "Textul curent e cerneală sau alb. Textul roșu e pentru linkuri și un singur cuvânt evidențiat, niciodată pentru un paragraf.",
+      "rule2": "Cerneala pe roșu și albul pe culorile spectrului trec doar de la 24 px în sus sau la 19 px bold.",
+      "rule3": "Cele patru nuanțe ale spectrului apar împreună, în ordine, ca o singură bandă. Niciodată una singură ca fundal.",
+      "rule4": "Brandurile clienților își aduc propriul accent. Shades Red nu apare niciodată în produsul unui client."
+    },
+    "type": {
+      "title": "Tipografia brandului",
+      "text": "Două familii, fiecare cu un singur rol. Inscripția din logo e desenată, nu tastată.",
+      "display": "Display: titluri, cifre care conduc, logo-ul complet. Grosimi de la 500 la 700, spațiere strânsă.",
+      "body": "Text: tot ce se citește pe îndelete, interfețe, legende. Grosimi de la 400 la 700, spațiere normală.",
+      "rule1": "Titlurile au majusculă doar la început. Numai inscripția din logo e scrisă cu majuscule.",
+      "rule2": "Două grosimi pe machetă sunt destule; trei sunt maximum.",
+      "rule3": "Nu scrie niciodată cuvântul SHADES într-un font ca să înlocuiești logo-ul. Folosește fișierul.",
+      "rule4": "Cifrele care se compară se aliniază: cifre tabulare în fontul de text.",
+      "rule5": "Româna folosește ș și ț cu virgulă dedesubt, niciodată ş și ţ cu sedilă."
+    },
+    "imagery": {
+      "title": "Fotografie și imagini",
+      "text": "Imaginile arată lucrări reale și oameni reali. Brandul aduce culoarea; fotografia aduce adevărul.",
+      "yes": "Folosește",
+      "no": "Evită",
+      "yes1": "Proiecte reale, ecrane reale, echipe reale la lucru",
+      "yes2": "Lumină naturală dintr-o parte, culori fidele",
+      "yes3": "Încadrări strânse, cu spațiu în direcția privirii",
+      "yes4": "O imagine puternică în loc de cinci slabe",
+      "no1": "Randări de stock, scene generate cu AI, forme 3D lucioase",
+      "no2": "Text sau gradienți incluși în fotografie",
+      "no3": "Filtre care împing imaginea spre roșu ca să se potrivească cu brandul",
+      "no4": "Imagini care decorează și nu explică nimic",
+      "alt": "Textul alternativ se scrie ca o legendă: ce arată imaginea și de ce e acolo."
+    },
+    "moments": {
+      "title": "Scrisul, pe momente",
+      "text": "Aceeași voce, ajustată la ce trăiește cititorul.",
+      "moment": "Moment",
+      "rule": "Regulă",
+      "example": "Exemplu",
+      "error": "Eroare",
+      "errorRule": "Spune ce s-a întâmplat și cum se repară. Fără vină, fără coduri.",
+      "errorExample": "Adresei de email îi lipsește partea de după @.",
+      "success": "Succes",
+      "successRule": "Confirmă într-un rând și spune ce urmează.",
+      "successExample": "Trimis. Răspundem în cel mult o zi lucrătoare.",
+      "empty": "Gol",
+      "emptyRule": "Spune ce va apărea aici și oferă primul pas.",
+      "emptyExample": "Încă niciun proiect. Începe unul cu un brief.",
+      "button": "Buton",
+      "buttonRule": "Un verb și obiectul lui, două până la patru cuvinte.",
+      "buttonExample": "Trimite brieful",
+      "marketing": "Marketing",
+      "marketingRule": "Începe cu rezultatul, apoi dovada, apoi o singură acțiune.",
+      "marketingExample": "Branduri pe care oamenii le recunosc, site-uri care le aduc comenzi.",
+      "mechanicsTitle": "Convenții",
+      "mech1": "Majusculă doar la începutul titlurilor, butoanelor și etichetelor.",
+      "mech2": "Numerele în cifre; unitățile după un spațiu: 24 px, 10 minute.",
+      "mech3": "Datele se scriu cu luna în litere, în limba cititorului: 4 martie 2027 în română, 4 March 2027 în engleză.",
+      "mech4": "Ora în format de 24 de ore în română și rusă; în rest, cum preferă limba cititorului.",
+      "mech5": "Fără semne de exclamare în interfețe. Unul pe campanie, dacă e meritat.",
+      "mech6": "Româna folosește „ghilimele”, rusa «ёлочки», engleza “curly quotes”."
+    },
+    "products": {
+      "title": "Produse și sub-branduri",
+      "text": "Ce simbol poartă fiecare produs și cum menționează Shades.",
+      "name": "Nume",
+      "mark": "Simbol",
+      "credit": "Mențiune",
+      "shadesMark": "Simbolul Shades și logo-ul complet",
+      "gradientMark": "Simbolul Shades lângă cuvântul Gradient",
+      "pagerecastMark": "Simbol propriu: două pagini suprapuse",
+      "imagereframeMark": "Simbol propriu, încă nedesenat",
+      "client": "Proiecte pentru clienți",
+      "clientMark": "Brandul propriu al clientului, pe rolurile Gradient",
+      "note": "Un produs poate avea propriul simbol. Folosește totuși tipografia, rolurile, iconițele și regulile Gradient, iar mențiunea lui de credit nu se schimbă niciodată."
     }
   },
   "foundations": {
@@ -319,6 +464,41 @@
       "move": "Elementele care se deplasează: panouri, dezvăluiri, curba noastră.",
       "loop": "Doar animațiile Spectra în repaus și indicatorul de încărcare.",
       "reduced": "Cu prefers-reduced-motion activ, fiecare animație se oprește și fiecare tranziție e instantanee. Nimic important nu depinde de mișcare."
+    },
+    "elevation": {
+      "title": "Elevație",
+      "text": "Trei umbre neutre ridică elementele de pe pagină. Cea roșie stă doar sub singura acțiune principală.",
+      "sm": "Controale pe o suprafață, segmentul ridicat",
+      "md": "Panouri, meniuri și formularul de brief",
+      "lg": "Dialoguri, popover-uri și panoul de afișare",
+      "accent": "Butonul principal, doar în tema luminoasă",
+      "rule": "Umbrele au mereu un decalaj și o estompare moale. Fără străluciri, fără aure colorate pe fundaluri închise."
+    },
+    "layout": {
+      "title": "Așezare în pagină",
+      "text": "O coloană pe telefoane, două de la tabletă în sus, totul într-o lățime de 1240 px.",
+      "name": "Interval",
+      "width": "Lățime",
+      "what": "Ce se schimbă",
+      "phone": "Telefon",
+      "phoneWhat": "O coloană, butoane pe toată lățimea, simbolul se desparte fără fixare",
+      "large": "Telefon mare",
+      "largeWhat": "Grilele cu două coloane revin pentru elementele mici",
+      "tablet": "Tabletă",
+      "tabletWhat": "Antetele de capitol și documentele trec pe două coloane",
+      "desktop": "Desktop",
+      "desktopWhat": "Navigarea completă, scenele fixate, mostrele una lângă alta",
+      "measure": "Lățimea conținutului",
+      "gutter": "Margine laterală",
+      "lineLength": "Lungimea rândului",
+      "target": "Zonă de atingere",
+      "rule": "Machetele se rearanjează; nu se micșorează niciodată. Textul rămâne lizibil fără zoom, la orice lățime."
+    },
+    "contrast": {
+      "title": "Contrast",
+      "text": "Fiecare rol de text pe fundalul pe care stă, măsurat din tokenuri la build.",
+      "pair": "Text / fundal",
+      "note": "AA cere 4.5 : 1 pentru textul curent, AAA 7 : 1. Buildul eșuează dacă vreuna dintre ele coboară sub AA."
     }
   },
   "components": {
@@ -342,7 +522,23 @@
       "shareLabel": "Distribuie",
       "rule1": "Numește acțiunea cu un verb: Trimite, Salvează, Începe. Niciodată OK sau Confirmă.",
       "rule2": "Cât timp se lucrează, eticheta își păstrează lățimea, iar cele trei bare îi iau locul.",
-      "rule3": "Un buton doar cu iconiță are întotdeauna aria-label."
+      "rule3": "Un buton doar cu iconiță are întotdeauna aria-label.",
+      "statesTitle": "Stări",
+      "stateDefault": "Implicit",
+      "stateHover": "Hover",
+      "stateFocus": "Focus",
+      "statePressed": "Apăsat",
+      "stateDisabled": "Dezactivat",
+      "stateBusy": "În lucru",
+      "specTitle": "Dimensiuni",
+      "size": "Clasă",
+      "height": "Înălțime",
+      "padding": "Spațiu lateral",
+      "textSize": "Text",
+      "use": "Utilizare",
+      "useSm": "Bare de instrumente, tabele dense, acțiuni secundare",
+      "useMd": "Formulare și majoritatea acțiunilor",
+      "useLg": "Singurul îndemn la acțiune de pe o pagină"
     },
     "fields": {
       "title": "Câmpuri",
@@ -397,6 +593,57 @@
       "text": "Piesele pe care le are doar Shades: simbolul care își animă barele, indicatorul de încărcare făcut din aceleași bare și banda de spectru.",
       "loading": "Se încarcă",
       "rule": "Banda de spectru apare o singură dată pe machetă. Simbolul animat e pentru ecranele de încărcare și pentru momentul în care o pagină se deschide prima dată, nu pentru navigare."
+    },
+    "navigation": {
+      "title": "Navigare",
+      "text": "Taburile comută între vizualizări ale aceluiași lucru. Calea de navigare arată unde se află o pagină.",
+      "tabsLabel": "Vizualizări proiect",
+      "tabOverview": "Prezentare generală",
+      "tabFiles": "Fișiere",
+      "tabActivity": "Activitate",
+      "tabSettings": "Setări",
+      "crumbLabel": "Cale de navigare",
+      "rule1": "Folosește taburi pentru vizualizări ale aceluiași obiect, niciodată ca a doua bară de navigare.",
+      "rule2": "Tabul curent e marcat cu o linie roșie și aria-selected; tastele săgeți trec de la un tab la altul."
+    },
+    "feedback": {
+      "title": "Feedback",
+      "text": "Mesajele explică, progresul liniștește, notificările confirmă. Niciunul nu strigă.",
+      "successTitle": "Brief trimis",
+      "successText": "Răspundem în cel mult o zi lucrătoare.",
+      "warningTitle": "Sesiunea ta se încheie în 5 minute",
+      "warningText": "Salvează modificările ca să le păstrezi.",
+      "warningAction": "Rămâi conectat",
+      "dangerTitle": "Fișierul nu s-a încărcat",
+      "dangerText": "Are peste 25 MB. Comprimă-l și încearcă din nou.",
+      "progress": "Se încarcă fișierele de brand",
+      "toast": "Link copiat",
+      "rule1": "Un mesaj numește problema și ieșirea din ea, în această ordine.",
+      "rule2": "Erorile folosesc role=\"alert\"; confirmările folosesc role=\"status\", ca cititoarele de ecran să le anunțe o singură dată.",
+      "rule3": "O notificare toast durează cam două secunde și nu conține niciodată o acțiune pe care cineva trebuie s-o facă."
+    },
+    "people": {
+      "title": "Oameni",
+      "text": "Avatarele arată cine e în spatele unui proiect: o fotografie când există, inițiale pe o culoare a familiei când nu.",
+      "role": "Designer de brand",
+      "rule": "Inițialele sunt două litere, din prenume și nume. Culorile vin din familia Spectra, niciodată din accent."
+    },
+    "access": {
+      "title": "Accesibilitate",
+      "text": "Fiecare componentă funcționează cu tastatura și cu un cititor de ecran înainte să fie lansată.",
+      "part": "Componentă",
+      "keyboard": "Tastatură",
+      "reader": "Cititor de ecran",
+      "btnKeys": "Tab ca să ajungi la el, Enter sau Space ca să-l apeși",
+      "btnReader": "Eticheta lui; aria-busy cât timp lucrează",
+      "fieldKeys": "Tab între câmpuri; la erori, focusul trece la prima problemă",
+      "fieldReader": "Eticheta, indiciul și eroarea, citite în ordine prin aria-describedby",
+      "choiceKeys": "Tastele săgeți într-un grup, Space pentru un comutator",
+      "choiceReader": "Rolul radio sau switch, cu starea de bifare",
+      "navKeys": "Tastele săgeți între taburi, Home și End spre capete",
+      "navReader": "Rolurile tablist și tab; calea de navigare marchează pagina curentă",
+      "feedbackReader": "Rolurile status și alert, citite o dată, fără a muta focusul",
+      "note": "Focusul e mereu vizibil: un inel roșu de doi pixeli, cu spațiu, în ambele teme."
     }
   },
   "icons": {
@@ -593,5 +840,58 @@
     "analyticsText": "Vizite numărate anonim, ca să aflăm ce ajută. Nefolosit pe acest site în prezent.",
     "marketing": "Marketing",
     "marketingText": "Reclame și măsurarea campaniilor. Nefolosit pe acest site în prezent."
+  },
+  "email": {
+    "title": "Email: șabloane sigure în Outlook, cu invitații | Gradient",
+    "description": "Emailuri tranzacționale Shades care merg în Outlook, Gmail și Apple Mail, cu coduri de copiat, invitații în calendar și markup Gmail.",
+    "heading": "Email",
+    "lead": "Emailuri tranzacționale care rezistă în orice inbox, inclusiv în Outlook pe Windows, cu coduri ușor de copiat și invitații care ajung direct în calendar.",
+    "previews": {
+      "title": "Previzualizări",
+      "text": "Trei emailuri reale, generate de pachet la build.",
+      "code": "Cod de autentificare",
+      "booking": "Rezervare",
+      "update": "Confirmare",
+      "note": "Persoane și detalii fictive. Emailurile sunt afișate în engleză; funcționează în orice limbă."
+    },
+    "clients": {
+      "title": "Ce merge și unde",
+      "text": "Funcții testate pe fiecare client. Unde un client nu poate face ceva, emailul se citește totuși corect.",
+      "layout": "Așezare și spațiere",
+      "buttons": "Butoane rotunjite",
+      "dark": "Mod întunecat",
+      "inverted": "Inversează singur culorile",
+      "font": "Fontul brandului",
+      "system": "Font de sistem",
+      "copy": "Copierea sau completarea codului",
+      "invite": "Card de invitație în calendar",
+      "actions": "Buton de acțiune în inbox",
+      "registered": "Expeditori înregistrați",
+      "note": "Outlook pe Windows randează emailul cu Microsoft Word, așa că acolo butoanele sunt forme VML și toate fonturile trec pe Arial."
+    },
+    "codes": {
+      "title": "Coduri ușor de copiat",
+      "text": "Gmail oferă un buton de copiere, iar Apple Mail oferă AutoFill, când codul e scris corect.",
+      "rule1": "Pune cuvântul „cod” și cifrele unul lângă altul, ca text simplu, niciodată într-o imagine.",
+      "rule2": "Păstrează cifrele împreună: fără spații, cratime sau celule de tabel separate.",
+      "rule3": "Repetă codul în subiect: „Codul tău Shades: 418203”.",
+      "rule4": "Spune cât timp e valabil și ce să facă cititorul dacă nu l-a cerut."
+    },
+    "calendar": {
+      "title": "Invitații în calendar",
+      "text": "Rezervările sosesc ca invitație, așa că ora ajunge în calendarul cititorului dintr-o singură atingere.",
+      "rule1": "Atașează o invitație .ics cu un organizator și un participant: Gmail și Outlook o afișează ca un card de eveniment cu Da, Nu și Poate.",
+      "rule2": "Păstrează același UID pentru aceeași rezervare și crește SEQUENCE la fiecare modificare, ca ora nouă s-o înlocuiască pe cea veche.",
+      "rule3": "Trimite METHOD:CANCEL cu același UID ca să scoți din calendar o rezervare anulată.",
+      "rule4": "Adaugă sub rezervare linkuri pentru Google Calendar și Outlook, pentru cititorii care preferă un link."
+    },
+    "build": {
+      "title": "Construiește unul",
+      "text": "Intră blocuri, ies HTML și text simplu. Fiecare valoare trece prin escaping și trec doar linkurile http(s).",
+      "rule1": "Un titlu, un paragraf introductiv, un buton principal. Restul sunt detalii.",
+      "rule2": "Trimite mereu și partea de text simplu; unii cititori și unele filtre văd doar atât.",
+      "rule3": "Markupul Gmail apare doar pentru expeditorii înregistrați la Google care trec de SPF și DKIM. Îl poți include fără risc în orice caz.",
+      "rule4": "Brandurile clienților își transmit culorile, logo-ul și fontul în brand; structura rămâne aceeași."
+    }
   }
 }

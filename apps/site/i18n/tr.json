@@ -14,7 +14,8 @@
     "projects": "Projeler",
     "cta": "Kur",
     "menu": "Menü",
-    "onThisPage": "Bu sayfada"
+    "onThisPage": "Bu sayfada",
+    "email": "E-posta"
   },
   "footer": {
     "label": "Site",
@@ -28,7 +29,8 @@
     "license": "MIT lisansı",
     "trademarks": "Ticari markalar",
     "security": "Güvenlik",
-    "credit": "Ücretsiz ve açık kaynak. Shades Media Group tarafından geliştirildi."
+    "credit": "Ücretsiz ve açık kaynak. Shades Media Group tarafından geliştirildi.",
+    "preferred": "Tercih edilen kaynak olarak ekle"
   },
   "home": {
     "title": "Gradient: Shades Media Group tasarım sistemi",
@@ -123,7 +125,8 @@
       "tailwind": "Tailwind v4",
       "tailwindText": "Her token, açık ve koyu temayı izleyen bir utility sınıfına dönüşür: bg-accent, text-text-2, rounded-pill.",
       "icons": "Her yerde ikonlar",
-      "iconsText": "SVG dizeleri olarak 78 Shades ikonu ya da düz HTML için tek bir sprite."
+      "iconsText": "SVG dizeleri olarak 78 Shades ikonu ya da düz HTML için tek bir sprite.",
+      "preferred": "Gradient'i Google Arama'da daha sık gör:"
     },
     "faq": {
       "title": "Sorular",
@@ -186,31 +189,38 @@
       "text": "Her tür an için bir tane, yedi karakter. Aynı gözleri, işaretten gelen üç çubuklu armayı ve sakin bir gülümsemeyi paylaşırlar; her birinin tek bir düz rengi vardır.",
       "spectra": {
         "role": "Kurucu ve karşılama",
-        "text": "Logo bittiği gün logodan çıkıp geldi. Sunumları açar, yeni kullanıcıları karşılar, lansmanların yüzü olur."
+        "text": "Logo bittiği gün logodan çıkıp geldi. Sunumları açar, yeni kullanıcıları karşılar, lansmanların yüzü olur.",
+        "where": "Ana sayfalar, karşılama akışları, lansman sunumları, ilk slayt"
       },
       "mera": {
         "role": "Strateji",
-        "text": "Ölçülü ve kesin. Planların, zaman çizelgelerinin ve karar gerektiren her şeyin yanında görünür."
+        "text": "Ölçülü ve kesin. Planların, zaman çizelgelerinin ve karar gerektiren her şeyin yanında görünür.",
+        "where": "Planlar, yol haritaları, zaman çizelgeleri, kararlar"
       },
       "sol": {
         "role": "Sanat yönetimi",
-        "text": "Ailenin gürültücüsü, bir kolu hep havada. Yaratıcı işlerde, değerlendirmelerde ve ilham için kullanılır."
+        "text": "Ailenin gürültücüsü, bir kolu hep havada. Yaratıcı işlerde, değerlendirmelerde ve ilham için kullanılır.",
+        "where": "Yaratıcı değerlendirmeler, portfolyolar, ilham panoları"
       },
       "nova": {
         "role": "Laboratuvar ve yenilikler",
-        "text": "En küçükleri, başının üstünde bir kıvılcım. Beta sürümleri ve yeni özellikleri duyurur."
+        "text": "En küçükleri, başının üstünde bir kıvılcım. Beta sürümleri ve yeni özellikleri duyurur.",
+        "where": "Beta sürümleri, yeni özellikler, sürüm notları"
       },
       "sage": {
         "role": "Yardım ve belgeler",
-        "text": "Sabırlı ve nazik, dinlerken gözleri kapalı. Eğitimler, araç ipuçları ve yardım merkezi ondan sorulur."
+        "text": "Sabırlı ve nazik, dinlerken gözleri kapalı. Eğitimler, araç ipuçları ve yardım merkezi ondan sorulur.",
+        "where": "Yardım merkezi, belgeler, araç ipuçları, eğitimler"
       },
       "vio": {
         "role": "Topluluk",
-        "text": "Esprili ve sıcak, hep göz kırparken yakalanır. Sosyal medyada, kampanyalarda ve toplulukla o konuşur."
+        "text": "Esprili ve sıcak, hep göz kırparken yakalanır. Sosyal medyada, kampanyalarda ve toplulukla o konuşur.",
+        "where": "Sosyal medya gönderileri, kampanyalar, topluluk sayfaları"
       },
       "sunny": {
         "role": "Üretim ve teslim",
-        "text": "İstikrarlı ve pratik. İlerlemeyi, başarıyı ve teslimi onaylar."
+        "text": "İstikrarlı ve pratik. İlerlemeyi, başarıyı ve teslimi onaylar.",
+        "where": "İlerleme, başarı ekranları, teslim e-postaları"
       },
       "rulesTitle": "Aile kuralları",
       "rule1": "Herkeste aynı gözler: beyaz bir disk, siyah bir göz bebeği ve tek bir parlama.",
@@ -219,7 +229,15 @@
       "rule4": "Tek bir sakin, kavisli gülümseme. Diş yok, kocaman sırıtış yok.",
       "rule5": "Yumuşak bir gölgenin üstünde süzülürler. Asla ayakta durmazlar.",
       "rule6": "Her birine tek düz renk. Gövdelerde gradyan yok.",
-      "motion": "Her an için bir karakter, bir ekranda en fazla iki. Asla logonun yerinde değil. Okuyucu azaltılmış hareket istediğinde bekleme animasyonları durur."
+      "motion": "Her an için bir karakter, bir ekranda en fazla iki. Asla logonun yerinde değil. Okuyucu azaltılmış hareket istediğinde bekleme animasyonları durur.",
+      "whereTitle": "Kim nerede görünür",
+      "who": "Karakter",
+      "where": "Yüzeyler",
+      "neverTitle": "Asla",
+      "never1": "Bir karakterin rengini değiştirme ya da iki silueti birbiriyle takas etme.",
+      "never2": "Diş, açık bir sırıtış ya da setin dışında yeni bir ifade ekleme.",
+      "never3": "Bir karakteri logonun yerine ya da yanına ikinci bir logo gibi koyma.",
+      "never4": "Hiçbirini ekranda 48 px'ten, baskıda 15 mm'den küçük gösterme."
     },
     "voice": {
       "title": "Shades nasıl yazar",
@@ -251,6 +269,133 @@
       "swap5b": "kaçırma",
       "tagsTitle": "Hashtag'ler",
       "tagsText": "Bir projenin ne olduğu, kırmızı bir # ile etiket olarak söylenir. En fazla üç tane, asla süs olarak değil."
+    },
+    "lockups": {
+      "title": "Logo kurguları ve yerleşim",
+      "text": "Dört düzen her kullanımı karşılar. Hepsi aynı geometriden gelir ve dosya olarak sunulur.",
+      "horizontal": "Logo kurgusu",
+      "horizontalText": "İşaret ve SHADES yan yana. Siteler, belgeler ve alt bilgiler için varsayılan.",
+      "mark": "Yalnızca işaret",
+      "markText": "Tek bir kareye yer olan her yer: favicon'lar, uygulama ikonları, avatarlar ve 120 px'ten dar her şey.",
+      "reverse": "Ters",
+      "reverseText": "Mürekkep zeminler, koyu fotoğraflar ve koyu tema için beyaz logo yazısı. İşaret kırmızı kalır.",
+      "mono": "Tek renk",
+      "monoText": "Yaldız, nakış, aşındırma, kaşe ve tek renk baskı için çubukları kareden oyulmuş hâli.",
+      "placementTitle": "Yerleşim",
+      "place1": "Arayüzlerde logo sol üstte durur ve ana sayfaya bağlanır. Gezinme çubuğunda asla ortalanmaz.",
+      "place2": "Basılı kapaklarda ve promosyon ürünlerinde sol üstte ya da tam ortada durur; asla bir köşede, eğik değil.",
+      "place3": "Her yanda en az bir çubuk genişliğinde boş alan bırak; düzen izin veriyorsa daha fazla.",
+      "place4": "Asla kalabalık görsellerin üstüne koyma. Arkasında düz kırmızı, mürekkep ya da kâğıt zemin kullan.",
+      "creditTitle": "Künye satırları",
+      "where": "Nerede",
+      "line": "Satır",
+      "inProduct": "Bir Shades ürününde",
+      "inReadme": "Bir README'de",
+      "inClient": "Müşteri işlerinde"
+    },
+    "sizes": {
+      "title": "Boyutlar",
+      "text": "İşaret 16 px'lik bir favicon'dan bina tabelasına kadar net kalır. Her en küçük boyutun altında yalnızca işareti kullan.",
+      "ladder": "16'dan 96 piksele işaret",
+      "use": "Kullanım",
+      "markCol": "İşaret",
+      "lockupCol": "Logo kurgusu",
+      "favicon": "Favicon",
+      "nav": "Gezinme çubuğu",
+      "app": "Uygulama ikonu",
+      "email": "E-posta başlığı",
+      "print": "Baskı, en küçük",
+      "sign": "Tabela, en küçük"
+    },
+    "colourUse": {
+      "title": "Kullanımda renk",
+      "text": "Bir düzenin ilk bakışta Shades olarak okunmasını sağlayan oranlar. Sayfayı kâğıt ve mürekkep taşır; kırmızı sinyaldir.",
+      "shareLabel": "Kâğıt yüzde 60, mürekkep 25, kırmızı 12, spektrum 3",
+      "paper": "Kâğıt",
+      "ink": "Mürekkep",
+      "red": "Kırmızı",
+      "shareNote": "Tipik bir sayfa ya da posterdeki yaklaşık pay. Spektrum en sondaki ince dilimdir ve yalnızca bir kez görünür.",
+      "pairsTitle": "Geçen eşleşmeler",
+      "inkOnPaper": "Kâğıt üzerinde mürekkep",
+      "paperOnInk": "Mürekkep üzerinde kâğıt",
+      "whiteOnRed": "Shades Red üzerinde beyaz",
+      "redText": "Kâğıt üzerinde kırmızı metin",
+      "inkOnRed": "Kırmızı üzerinde mürekkep",
+      "whiteOnBlue": "Spektrum mavisi üzerinde beyaz",
+      "largeOnly": "yalnızca büyük metin",
+      "rule1": "Gövde metni mürekkep ya da beyazdır. Kırmızı metin bağlantılar ve vurgulanan tek bir kelime içindir, asla bir paragraf için değil.",
+      "rule2": "Kırmızı üzerinde mürekkep ve spektrum renkleri üzerinde beyaz yalnızca 24 px ve üstünde ya da 19 px kalın yazıda geçer.",
+      "rule3": "Dört spektrum tonu birlikte, sırayla, tek bir şerit olarak görünür. Asla biri tek başına arka plan olarak değil.",
+      "rule4": "Müşteri markaları kendi vurgu rengini getirir. Shades Red bir müşteri ürününde asla görünmez."
+    },
+    "type": {
+      "title": "Markada tipografi",
+      "text": "İki aile, her birinin tek bir görevi var. Logo yazısı dizilmez, çizilir.",
+      "display": "Görüntü: başlıklar, öne çıkan rakamlar, logo kurgusu. 500 ile 700 arası ağırlıklar, sıkı harf aralığı.",
+      "body": "Metin: uzun okunan her şey, arayüzler, açıklamalar. 400 ile 700 arası ağırlıklar, normal harf aralığı.",
+      "rule1": "Başlıklarda yalnızca ilk harf büyük. Tamamı büyük harfle yalnızca logo yazısı dizilir.",
+      "rule2": "Bir düzende iki ağırlık yeter; üç en fazlasıdır.",
+      "rule3": "Logonun yerine geçsin diye SHADES kelimesini asla bir yazı tipiyle dizme. Dosyayı kullan.",
+      "rule4": "Karşılaştırılan rakamlar hizalanır: metin yazı tipinde tablo rakamları.",
+      "rule5": "Rumence alttan virgüllü ș ve ț kullanır; asla çengelli ş ve ţ değil."
+    },
+    "imagery": {
+      "title": "Fotoğraf ve görseller",
+      "text": "Görseller gerçek işi ve gerçek insanları gösterir. Rengi marka verir; gerçeği fotoğraf.",
+      "yes": "Kullan",
+      "no": "Kaçın",
+      "yes1": "Gerçek projeler, gerçek ekranlar, işbaşında gerçek ekipler",
+      "yes2": "Bir yandan gelen doğal ışık, dürüst renk",
+      "yes3": "Bakış yönünde boşluk bırakan sıkı kadrajlar",
+      "yes4": "Beş zayıf görsel yerine tek güçlü görsel",
+      "no1": "Hazır render'lar, yapay zekâyla üretilmiş sahneler, parlak 3B lekeler",
+      "no2": "Fotoğrafa gömülmüş metin ya da gradyanlar",
+      "no3": "Markaya uysun diye görseli kırmızıya çeken filtreler",
+      "no4": "Süsleyen ama hiçbir şey anlatmayan görseller",
+      "alt": "Alternatif metin bir açıklama gibi yazılır: görselin ne gösterdiği ve neden orada olduğu."
+    },
+    "moments": {
+      "title": "Ana göre yazmak",
+      "text": "Aynı ses, okuyucunun o an yaşadığına göre ayarlanır.",
+      "moment": "An",
+      "rule": "Kural",
+      "example": "Örnek",
+      "error": "Hata",
+      "errorRule": "Ne olduğunu ve nasıl düzeltileceğini söyle. Suçlama yok, kod yok.",
+      "errorExample": "Bu e-postada @ işaretinden sonraki kısım eksik.",
+      "success": "Başarı",
+      "successRule": "Tek satırda onayla ve sırada ne olduğunu söyle.",
+      "successExample": "Gönderildi. Bir iş günü içinde yanıt veriyoruz.",
+      "empty": "Boş",
+      "emptyRule": "Burada ne olacağını söyle ve ilk adımı öner.",
+      "emptyExample": "Henüz proje yok. Bir brief'le başla.",
+      "button": "Buton",
+      "buttonRule": "Nesnesiyle birlikte bir fiil, iki ile dört kelime.",
+      "buttonExample": "Brief'i gönder",
+      "marketing": "Pazarlama",
+      "marketingRule": "Önce sonuç, sonra kanıt, sonra tek bir eylem.",
+      "marketingExample": "İnsanların tanıdığı markalar, onlara iş getiren siteler.",
+      "mechanicsTitle": "Yazım kuralları",
+      "mech1": "Başlıklarda, butonlarda ve etiketlerde yalnızca ilk harf büyük.",
+      "mech2": "Sayılar rakamla; birimler bir boşlukla: 24 px, 10 dakika.",
+      "mech3": "Tarihler okuyucunun dilinde ve yazıyla; Türkçede tam tarihte ay adı büyük harfle başlar: 4 Mart 2027, 4 martie 2027, 4 March 2027.",
+      "mech4": "Saatler Rumence ve Rusçada 24 saat düzeninde, diğer dillerde okuyucunun yerel ayarına göre.",
+      "mech5": "Arayüzlerde ünlem işareti yok. Hak edilmişse kampanya başına bir tane.",
+      "mech6": "Türkçe “çift tırnak”, Rusça «ёлочки», Rumence „ghilimele”, İngilizce “curly quotes” kullanır."
+    },
+    "products": {
+      "title": "Ürünler ve alt markalar",
+      "text": "Her ürünün hangi işareti taşıdığı ve Shades'i nasıl andığı.",
+      "name": "Ad",
+      "mark": "İşaret",
+      "credit": "Künye",
+      "shadesMark": "Shades işareti ve logo kurgusu",
+      "gradientMark": "Gradient kelimesinin yanında Shades işareti",
+      "pagerecastMark": "Kendi işareti: üst üste binen iki sayfa",
+      "imagereframeMark": "Kendi işareti, henüz çizilecek",
+      "client": "Müşteri işleri",
+      "clientMark": "Müşterinin kendi markası, Gradient rolleri üzerinde",
+      "note": "Bir ürünün kendi işareti olabilir. Yine de Gradient'in tipografisini, rollerini, ikonlarını ve kurallarını kullanır; künye satırı ise hiç değişmez."
     }
   },
   "foundations": {
@@ -319,6 +464,41 @@
       "move": "Yol alan öğeler: paneller, açılışlar, imza eğrimiz.",
       "loop": "Yalnızca Spectra bekleme animasyonları ve yükleyici.",
       "reduced": "prefers-reduced-motion açıkken her animasyon durur ve her geçiş anında olur. Önemli hiçbir şey harekete bağlı değildir."
+    },
+    "elevation": {
+      "title": "Yükselti",
+      "text": "Üç nötr gölge öğeleri sayfadan kaldırır. Kırmızı olan yalnızca tek birincil eylemin altında durur.",
+      "sm": "Bir yüzey üzerindeki kontroller, yükseltilmiş segment",
+      "md": "Paneller, menüler ve brief formu",
+      "lg": "İletişim kutuları, açılır pencereler ve görünüm paneli",
+      "accent": "Birincil buton, yalnızca açık temada",
+      "rule": "Gölgelerin her zaman bir kayması ve yumuşak bir bulanıklığı vardır. Koyu zeminlerde parlama yok, renkli hale yok."
+    },
+    "layout": {
+      "title": "Düzen",
+      "text": "Telefonlarda tek sütun, tabletten itibaren iki; hepsi 1240 px'lik bir genişliğin içinde.",
+      "name": "Aralık",
+      "width": "Genişlik",
+      "what": "Ne değişir",
+      "phone": "Telefon",
+      "phoneWhat": "Tek sütun, tam genişlikte butonlar, işaret sabitlenmeden ayrışır",
+      "large": "Büyük telefon",
+      "largeWhat": "Küçük öğeler için iki sütunlu ızgaralar geri gelir",
+      "tablet": "Tablet",
+      "tabletWhat": "Bölüm başlıkları ve belgeler iki sütuna geçer",
+      "desktop": "Masaüstü",
+      "desktopWhat": "Tam gezinme, sabitlenmiş sahneler, yan yana örnekler",
+      "measure": "İçerik genişliği",
+      "gutter": "Yan boşluk",
+      "lineLength": "Satır uzunluğu",
+      "target": "Dokunma alanı",
+      "rule": "Düzenler yeniden akar; asla küçülerek ölçeklenmez. Metin her genişlikte yakınlaştırmadan okunur kalır."
+    },
+    "contrast": {
+      "title": "Kontrast",
+      "text": "Her metin rolü, üzerinde durduğu arka plana karşı; derleme sırasında token'lardan ölçülür.",
+      "pair": "Metin / arka plan",
+      "note": "AA, gövde metni için 4.5 : 1, AAA ise 7 : 1 ister. Bunlardan biri AA'nın altına düşerse derleme başarısız olur."
     }
   },
   "components": {
@@ -342,7 +522,23 @@
       "shareLabel": "Paylaş",
       "rule1": "Eylemi bir fiille adlandır: Gönder, Kaydet, Başla. Asla Tamam ya da Onayla değil.",
       "rule2": "Meşgulken etiket genişliğini korur ve yerini üç çubuk alır.",
-      "rule3": "Yalnızca ikondan oluşan bir butonun her zaman bir aria-label'ı olur."
+      "rule3": "Yalnızca ikondan oluşan bir butonun her zaman bir aria-label'ı olur.",
+      "statesTitle": "Durumlar",
+      "stateDefault": "Varsayılan",
+      "stateHover": "Üzerine gelme",
+      "stateFocus": "Odak",
+      "statePressed": "Basılı",
+      "stateDisabled": "Devre dışı",
+      "stateBusy": "Meşgul",
+      "specTitle": "Boyutlar",
+      "size": "Sınıf",
+      "height": "Yükseklik",
+      "padding": "Yan iç boşluk",
+      "textSize": "Metin",
+      "use": "Kullanım",
+      "useSm": "Araç çubukları, yoğun tablolar, ikincil eylemler",
+      "useMd": "Formlar ve çoğu eylem",
+      "useLg": "Bir sayfadaki tek eylem çağrısı"
     },
     "fields": {
       "title": "Alanlar",
@@ -397,6 +593,57 @@
       "text": "Yalnızca Shades'te olan parçalar: çubuklarını canlandıran işaret, o çubuklardan oluşan yükleyici ve spektrum şeridi.",
       "loading": "Yükleniyor",
       "rule": "Spektrum şeridi her düzende bir kez görünür. Animasyonlu işaret, yükleme ekranları ve sayfanın ilk açıldığı an içindir; gezinme için değil."
+    },
+    "navigation": {
+      "title": "Gezinme",
+      "text": "Sekmeler tek bir şeyin görünümleri arasında geçiş yapar. İçerik haritası bir sayfanın nerede durduğunu söyler.",
+      "tabsLabel": "Proje görünümleri",
+      "tabOverview": "Genel bakış",
+      "tabFiles": "Dosyalar",
+      "tabActivity": "Etkinlik",
+      "tabSettings": "Ayarlar",
+      "crumbLabel": "İçerik haritası",
+      "rule1": "Sekmeleri aynı nesnenin görünümleri için kullan, asla ikinci bir gezinme çubuğu olarak değil.",
+      "rule2": "Geçerli sekme kırmızı bir çizgi ve aria-selected ile işaretlenir; ok tuşları sekmeler arasında gezdirir."
+    },
+    "feedback": {
+      "title": "Geri bildirim",
+      "text": "Mesajlar açıklar, ilerleme güven verir, toast bildirimleri onaylar. Hiçbiri bağırmaz.",
+      "successTitle": "Brief gönderildi",
+      "successText": "Bir iş günü içinde yanıt veriyoruz.",
+      "warningTitle": "Oturumun 5 dakika içinde sona eriyor",
+      "warningText": "Değişikliklerini korumak için kaydet.",
+      "warningAction": "Oturumu açık tut",
+      "dangerTitle": "Dosya yüklenmedi",
+      "dangerText": "Dosya 25 MB'tan büyük. Sıkıştırıp yeniden dene.",
+      "progress": "Marka dosyaları yükleniyor",
+      "toast": "Bağlantı kopyalandı",
+      "rule1": "Bir mesaj önce sorunu, sonra çıkış yolunu söyler.",
+      "rule2": "Hatalar role=\"alert\", onaylar role=\"status\" kullanır; böylece ekran okuyucular onları bir kez duyurur.",
+      "rule3": "Bir toast bildirimi yaklaşık iki saniye sürer ve asla birinin yapması gereken bir eylemi taşımaz."
+    },
+    "people": {
+      "title": "Kişiler",
+      "text": "Avatarlar bir projenin arkasında kimin olduğunu gösterir: varsa fotoğraf, yoksa bir aile renginin üzerinde baş harfler.",
+      "role": "Marka tasarımcısı",
+      "rule": "Baş harfler iki harftir: ad ve soyad. Renkler Spectra ailesinden gelir, asla vurgu renginden değil."
+    },
+    "access": {
+      "title": "Erişilebilirlik",
+      "text": "Her bileşen, yayına çıkmadan önce klavyeyle ve ekran okuyucuyla çalışır.",
+      "part": "Bileşen",
+      "keyboard": "Klavye",
+      "reader": "Ekran okuyucu",
+      "btnKeys": "Ulaşmak için Tab, basmak için Enter ya da Boşluk",
+      "btnReader": "Etiketi; çalışırken aria-busy",
+      "fieldKeys": "Alanlar arasında Tab; hatalar odağı ilk soruna taşır",
+      "fieldReader": "Etiket, ipucu ve hata aria-describedby ile sırayla okunur",
+      "choiceKeys": "Grup içinde ok tuşları, anahtarı açıp kapamak için Boşluk",
+      "choiceReader": "Seçili durumuyla birlikte radio ya da switch rolü",
+      "navKeys": "Sekmeler arasında ok tuşları, uçlara gitmek için Home ve End",
+      "navReader": "Tablist ve tab rolleri; içerik haritası geçerli sayfayı işaretler",
+      "feedbackReader": "Status ve alert rolleri, odağı taşımadan bir kez okunur",
+      "note": "Odak her zaman görünür: iki temada da, arada boşluk bırakan iki piksellik kırmızı bir halka."
     }
   },
   "icons": {
@@ -593,5 +840,58 @@
     "analyticsText": "Neyin işe yaradığını görmek için anonim ziyaret sayımı. Şu an bu sitede kullanılmıyor.",
     "marketing": "Pazarlama",
     "marketingText": "Reklam ve kampanya ölçümü. Şu an bu sitede kullanılmıyor."
+  },
+  "email": {
+    "title": "E-posta: Outlook uyumlu şablonlar ve takvim davetleri | Gradient",
+    "description": "Shades sisteminde Outlook, Gmail ve Apple Mail'de çalışan işlemsel e-posta: kopyalanabilir kodlar, takvim davetleri ve Gmail işaretlemesi.",
+    "heading": "E-posta",
+    "lead": "Windows'taki Outlook dahil her gelen kutusunda sağlam duran işlemsel e-posta; kopyalanabilen kodlar ve takvime düşen davetlerle.",
+    "previews": {
+      "title": "Önizlemeler",
+      "text": "Paketin derleme sırasında oluşturduğu üç gerçek e-posta.",
+      "code": "Giriş kodu",
+      "booking": "Rezervasyon",
+      "update": "Onay",
+      "note": "Örnek kişiler ve bilgiler. E-postalar İngilizce gösteriliyor; her dilde çalışırlar."
+    },
+    "clients": {
+      "title": "Ne nerede çalışır",
+      "text": "İstemci başına test edilmiş özellikler. Bir istemci bir şeyi yapamadığında e-posta yine doğru okunur.",
+      "layout": "Düzen ve boşluklar",
+      "buttons": "Yuvarlak butonlar",
+      "dark": "Koyu mod",
+      "inverted": "Renkleri kendisi tersine çevirir",
+      "font": "Marka yazı tipi",
+      "system": "Sistem yazı tipi",
+      "copy": "Kodu kopyala ya da doldur",
+      "invite": "Takvim daveti kartı",
+      "actions": "Gelen kutusu eylem butonu",
+      "registered": "Kayıtlı göndericiler",
+      "note": "Windows'taki Outlook e-postayı Microsoft Word ile çizer; bu yüzden orada butonlar VML şekilleridir ve her yazı tipi Arial'a düşer."
+    },
+    "codes": {
+      "title": "Kopyalanabilen kodlar",
+      "text": "Kod doğru biçimde yazıldığında Gmail bir Kopyala butonu, Apple Mail ise AutoFill sunar.",
+      "rule1": "“Kod” kelimesini ve rakamları düz metin olarak yan yana yaz, asla bir görselin içinde değil.",
+      "rule2": "Rakamları tek parça tut: boşluk, tire ya da ayrı tablo hücreleri yok.",
+      "rule3": "Kodu konu satırında tekrarla: “Shades kodun: 418203”.",
+      "rule4": "Kodun ne kadar süre geçerli olduğunu ve okuyucu istemediyse ne yapması gerektiğini söyle."
+    },
+    "calendar": {
+      "title": "Takvim davetleri",
+      "text": "Rezervasyonlar davet olarak gelir; böylece saat tek dokunuşla okuyucunun takvimine düşer.",
+      "rule1": "Düzenleyici ve katılımcı içeren bir .ics daveti ekle: Gmail ve Outlook bunu Evet, Hayır ve Belki seçenekli bir etkinlik kartı olarak gösterir.",
+      "rule2": "Aynı rezervasyon için aynı UID değerini koru ve her değişiklikte SEQUENCE değerini artır; böylece yeni saat eskisinin yerini alır.",
+      "rule3": "İptal edilen bir rezervasyonu takvimden kaldırmak için aynı UID ile METHOD:CANCEL gönder.",
+      "rule4": "Bağlantıyı tercih eden okuyucular için rezervasyonun altına Google Calendar ve Outlook bağlantıları ekle."
+    },
+    "build": {
+      "title": "Bir tane oluştur",
+      "text": "Bloklar girer, HTML ve düz metin çıkar. Her değer kaçışlanır ve yalnızca http(s) bağlantıları geçer.",
+      "rule1": "Tek başlık, tek giriş, tek birincil buton. Gerisi ayrıntı.",
+      "rule2": "Düz metin bölümünü her zaman gönder; bazı okuyucular ve filtreler yalnızca onu görür.",
+      "rule3": "Gmail işaretlemesi yalnızca Google'a kayıtlı ve SPF ile DKIM denetiminden geçen göndericilerde görünür. Her durumda eklemek güvenlidir.",
+      "rule4": "Müşteri markaları kendi renklerini, logolarını ve yazı tiplerini brand içinde verir; yapı aynı kalır."
+    }
   }
 }
