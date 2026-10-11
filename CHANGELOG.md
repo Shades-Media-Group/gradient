@@ -4,6 +4,14 @@ Every notable change to Gradient and the `shades-gradient` package. The format f
 
 ## [Unreleased]
 
+### Added
+
+- **Tokens:** `color.secondary` (blue, orange, pink, green, amber) and five signature gradients, `gradient.spectrum`, `shade`, `dawn`, `rose` and `ink`, built to `--g-gradient-*`.
+- **Brand page:** Spectra's construction and four expressions (hello, idea, nice, hmm, also as SVG files in `brand/spectra/`), six brand devices, and "Keep Shades, Shades": ten rules in the page's red chapter.
+- **Foundations page:** the secondary colours and the signature gradients.
+- **Print page:** speaker, attendee and crew badges, shot beside the team and guest ones.
+- **Applications page:** the photography direction, eight social posts, stories and reel covers, and keynote slides, in every language.
+
 ## [0.4.0] - 2026-10-11
 
 ### Added
