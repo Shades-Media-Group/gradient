@@ -22,6 +22,7 @@ const PAGES = [
   'icons/',
   'print/',
   'email/',
+  'accessibility/',
   'projects/',
 ]
 const WIDTHS = [375, 1440]

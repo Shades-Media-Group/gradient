@@ -56,6 +56,7 @@ export const PAGES = [
   { id: 'icons', path: 'icons/' },
   { id: 'print', path: 'print/' },
   { id: 'email', path: 'email/' },
+  { id: 'accessibility', path: 'accessibility/' },
   { id: 'projects', path: 'projects/' },
 ] as const
 type Page = (typeof PAGES)[number]
@@ -449,6 +450,7 @@ function render(locale: Locale, page: Page): string {
           <div><p class="footer-h">${t('footer.legal')}</p><ul>
             <li><a href="${LINKS.license}" rel="noopener">${t('footer.license')}</a></li>
             <li><a href="${LINKS.trademarks}" rel="noopener">${t('footer.trademarks')}</a></li>
+            <li><a href="${to('accessibility')}">${t('nav.accessibility')}</a></li>
             <li><a href="${LINKS.security}" rel="noopener">${t('footer.security')}</a></li>
           </ul></div>
         </nav>

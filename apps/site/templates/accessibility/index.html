@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="{{@lang}}">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    {{@head}}
+    <script type="module" src="/src/main.ts"></script>
+  </head>
+  <body>
+    {{@nav}}
+
+    <main id="main">
+      <header class="page-head">
+        <h1>{{accessibility.heading}}</h1>
+        <p class="page-lead">{{accessibility.lead}}</p>
+        <nav class="page-toc" aria-label="{{nav.onThisPage}}">
+          <a href="#standard">{{accessibility.standard.title}}</a>
+          <a href="#promises">{{accessibility.promises.title}}</a>
+          <a href="#panel">{{accessibility.panel.title}}</a>
+          <a href="#products">{{accessibility.products.title}}</a>
+          <a href="#testing">{{accessibility.testing.title}}</a>
+          <a href="#report">{{accessibility.report.title}}</a>
+        </nav>
+      </header>
+
+      <section class="doc" id="standard">
+        <div class="doc-head">
+          <h2>{{accessibility.standard.title}}</h2>
+          <p>{{accessibility.standard.text}}</p>
+        </div>
+        <div class="doc-body">
+          <dl class="specs specs--row">
+            <div><dt>{{accessibility.standard.target}}</dt><dd>WCAG 2.2 AA</dd></div>
+            <div><dt>{{accessibility.standard.europe}}</dt><dd>EN 301 549</dd></div>
+            <div><dt>{{accessibility.standard.law}}</dt><dd>{{accessibility.standard.lawValue}}</dd></div>
+            <div><dt>{{accessibility.standard.languages}}</dt><dd class="g-num">11</dd></div>
+          </dl>
+          <p class="doc-note">{{accessibility.standard.note}}</p>
+        </div>
+      </section>
+
+      <section class="doc" id="promises">
+        <div class="doc-head">
+          <h2>{{accessibility.promises.title}}</h2>
+          <p>{{accessibility.promises.text}}</p>
+        </div>
+        <div class="doc-body">
+          <ul class="promises">
+            <li>{{@icon:contrast}}<div><h3>{{accessibility.promises.contrast}}</h3><p>{{accessibility.promises.contrastText}}</p></div></li>
+            <li>{{@icon:terminal}}<div><h3>{{accessibility.promises.keyboard}}</h3><p>{{accessibility.promises.keyboardText}}</p></div></li>
+            <li>{{@icon:visibility}}<div><h3>{{accessibility.promises.focus}}</h3><p>{{accessibility.promises.focusText}}</p></div></li>
+            <li>{{@icon:motion}}<div><h3>{{accessibility.promises.motion}}</h3><p>{{accessibility.promises.motionText}}</p></div></li>
+            <li>{{@icon:type}}<div><h3>{{accessibility.promises.resize}}</h3><p>{{accessibility.promises.resizeText}}</p></div></li>
+            <li>{{@icon:globe}}<div><h3>{{accessibility.promises.language}}</h3><p>{{accessibility.promises.languageText}}</p></div></li>
+            <li>{{@icon:image}}<div><h3>{{accessibility.promises.images}}</h3><p>{{accessibility.promises.imagesText}}</p></div></li>
+            <li>{{@icon:edit}}<div><h3>{{accessibility.promises.forms}}</h3><p>{{accessibility.promises.formsText}}</p></div></li>
+            <li>{{@icon:mobile}}<div><h3>{{accessibility.promises.targets}}</h3><p>{{accessibility.promises.targetsText}}</p></div></li>
+            <li>{{@icon:palette}}<div><h3>{{accessibility.promises.colour}}</h3><p>{{accessibility.promises.colourText}}</p></div></li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="doc doc--ink" data-theme="dark" id="panel">
+        <div class="doc-head">
+          <h2>{{accessibility.panel.title}}</h2>
+          <p>{{accessibility.panel.text}}</p>
+        </div>
+        <div class="doc-body">
+          <div class="table-scroll">
+            <table class="g-table">
+              <thead><tr><th>{{accessibility.panel.option}}</th><th>{{accessibility.panel.does}}</th><th>{{accessibility.panel.helps}}</th></tr></thead>
+              <tbody>
+                <tr><td>{{prefs.theme}}</td><td>{{accessibility.panel.themeDoes}}</td><td>{{accessibility.panel.themeHelps}}</td></tr>
+                <tr><td>{{prefs.text}}</td><td>{{accessibility.panel.textDoes}}</td><td>{{accessibility.panel.textHelps}}</td></tr>
+                <tr><td>{{prefs.contrast}}</td><td>{{accessibility.panel.contrastDoes}}</td><td>{{accessibility.panel.contrastHelps}}</td></tr>
+                <tr><td>{{prefs.motion}}</td><td>{{accessibility.panel.motionDoes}}</td><td>{{accessibility.panel.motionHelps}}</td></tr>
+                <tr><td>{{prefs.links}}</td><td>{{accessibility.panel.linksDoes}}</td><td>{{accessibility.panel.linksHelps}}</td></tr>
+                <tr><td>{{prefs.reading}}</td><td>{{accessibility.panel.readingDoes}}</td><td>{{accessibility.panel.readingHelps}}</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="doc-note">{{accessibility.panel.note}}</p>
+        </div>
+      </section>
+
+      <section class="doc" id="products">
+        <div class="doc-head">
+          <h2>{{accessibility.products.title}}</h2>
+          <p>{{accessibility.products.text}}</p>
+        </div>
+        <div class="doc-body">
+          <div class="table-scroll">
+            <table class="g-table">
+              <thead><tr><th>{{accessibility.products.product}}</th><th>{{accessibility.products.checked}}</th><th>{{accessibility.products.gaps}}</th></tr></thead>
+              <tbody>
+                <tr><td><b>gradient.shades.md</b></td><td>{{accessibility.products.gradientChecked}}</td><td>{{accessibility.products.gradientGaps}}</td></tr>
+                <tr><td><b>PageRecast</b></td><td>{{accessibility.products.pagerecastChecked}}</td><td>{{accessibility.products.pagerecastGaps}}</td></tr>
+                <tr><td><b>nails-by-alynna</b></td><td>{{accessibility.products.nailsChecked}}</td><td>{{accessibility.products.nailsGaps}}</td></tr>
+                <tr><td><b>lms</b></td><td>{{accessibility.products.lmsChecked}}</td><td>{{accessibility.products.lmsGaps}}</td></tr>
+                <tr><td><b>{{accessibility.products.email}}</b></td><td>{{accessibility.products.emailChecked}}</td><td>{{accessibility.products.emailGaps}}</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="doc-note">{{accessibility.products.note}}</p>
+        </div>
+      </section>
+
+      <section class="doc" id="testing">
+        <div class="doc-head">
+          <h2>{{accessibility.testing.title}}</h2>
+          <p>{{accessibility.testing.text}}</p>
+        </div>
+        <div class="doc-body">
+          <h3 class="doc-sub">{{accessibility.testing.autoTitle}}</h3>
+          <ol class="rules">
+            <li>{{accessibility.testing.auto1}}</li>
+            <li>{{accessibility.testing.auto2}}</li>
+            <li>{{accessibility.testing.auto3}}</li>
+            <li>{{accessibility.testing.auto4}}</li>
+          </ol>
+          <h3 class="doc-sub">{{accessibility.testing.manualTitle}}</h3>
+          <ol class="rules">
+            <li>{{accessibility.testing.manual1}}</li>
+            <li>{{accessibility.testing.manual2}}</li>
+            <li>{{accessibility.testing.manual3}}</li>
+            <li>{{accessibility.testing.manual4}}</li>
+            <li>{{accessibility.testing.manual5}}</li>
+            <li>{{accessibility.testing.manual6}}</li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="doc" id="report">
+        <div class="doc-head">
+          <h2>{{accessibility.report.title}}</h2>
+          <p>{{accessibility.report.text}}</p>
+        </div>
+        <div class="doc-body">
+          <div class="report-actions">
+            <a class="g-btn g-btn--primary" data-link="contact">{{@icon:mail}}{{accessibility.report.email}}</a>
+            <a class="g-btn" data-link="issues">{{@icon:github}}{{accessibility.report.issue}}</a>
+          </div>
+          <p class="doc-note">{{accessibility.report.note}}</p>
+        </div>
+      </section>
+    </main>
+
+    {{@footer}}
+  </body>
+</html>
