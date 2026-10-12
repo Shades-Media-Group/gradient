@@ -1,0 +1,1 @@
+../../../../docs/guides/tool-panels.md
