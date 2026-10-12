@@ -63,10 +63,12 @@ const reveal = new IntersectionObserver(
 for (const el of $$('[data-reveal]')) reveal.observe(el)
 
 // The split: the mark's three bars slide out of the square and become the
-// three layers of the system. Progress is 0 at the top of the section and 1
-// once it has scrolled its own extra height; reduced motion shows the end.
+// three layers of the system. Where CSS scroll-driven animations exist, the
+// stylesheet runs it on the compositor; otherwise progress is 0 at the top of
+// the section and 1 once it has scrolled its own extra height. Reduced motion
+// shows the end.
 const split = document.querySelector<HTMLElement>('[data-split]')
-if (split) {
+if (split && !CSS.supports('animation-timeline: view()')) {
   let frame = 0
   const update = () => {
     frame = 0
@@ -74,7 +76,6 @@ if (split) {
     const travel = Math.max(1, split.offsetHeight - innerHeight)
     const t = reducedMotion() ? 1 : Math.min(1, Math.max(0, -rect.top / travel))
     split.style.setProperty('--t', t.toFixed(4))
-    split.toggleAttribute('data-done', t > 0.82)
   }
   const schedule = () => (frame ||= requestAnimationFrame(update))
   addEventListener('scroll', schedule, { passive: true })

@@ -474,9 +474,9 @@ body {
     #fff calc(clamp(0, (0.62 - var(--t)) * 2.5, 1) * 100%),
     var(--g-red-500)
   );
+  --dx: calc((var(--i) - 1) * var(--spread));
   opacity: var(--o);
-  transform: translateX(calc(var(--t) * (var(--i) - 1) * var(--spread)))
-    scaleY(calc(1 + var(--t) * 0.5));
+  transform: translateX(calc(var(--t) * var(--dx))) scaleY(calc(1 + var(--t) * 0.5));
   transform-origin: 50% 100%;
 }
 
@@ -524,6 +524,129 @@ body {
   font-size: var(--g-size-small);
   text-align: center;
   opacity: clamp(0, calc((var(--t) - 0.75) * 4), 1);
+}
+
+/* Where the browser can, the split runs on the compositor, locked to the
+   scroll: only transform and opacity move, so phones keep up. Elsewhere the
+   script above drives --t. Reduced motion shows the end. */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    :root:not([data-g-motion]) .split {
+      view-timeline: --split block;
+    }
+
+    :root:not([data-g-motion]) :is(.split-square, .split-bar, .split-layers, .split-caption),
+    :root:not([data-g-motion]) .split-bar::after {
+      animation: auto linear both;
+      animation-timeline: --split;
+      animation-range: contain 0% contain 100%;
+    }
+
+    :root:not([data-g-motion]) .split-square {
+      animation-name: split-square;
+    }
+
+    :root:not([data-g-motion]) .split-bar {
+      background: #fff;
+      animation-name: split-bar;
+    }
+
+    /* White to red as a cross-fade, not a repaint. */
+    :root:not([data-g-motion]) .split-bar::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: var(--g-red-500);
+      opacity: 0;
+      animation-name: split-red;
+    }
+
+    :root:not([data-g-motion]) .split-layers {
+      animation-name: split-layers;
+    }
+
+    :root:not([data-g-motion]) .split-caption {
+      animation-name: split-caption;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .js .split {
+      --t: 1;
+    }
+  }
+
+  :root[data-g-motion] .split {
+    --t: 1;
+  }
+}
+
+@keyframes split-square {
+  from {
+    opacity: 1;
+    transform: none;
+  }
+
+  29% {
+    opacity: 1;
+  }
+
+  60% {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 0;
+    transform: scale(0.88);
+  }
+}
+
+@keyframes split-bar {
+  to {
+    transform: translateX(var(--dx)) scaleY(1.5);
+  }
+}
+
+@keyframes split-red {
+  22% {
+    opacity: 0;
+  }
+
+  62%,
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes split-layers {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  55% {
+    opacity: 0;
+  }
+
+  88% {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes split-caption {
+  from,
+  75% {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 /* Chapters ------------------------------------------------------------------ */
@@ -2732,8 +2855,7 @@ body {
 
   /* Each bar ends centred over its own column, whatever the screen. */
   .split-bar {
-    transform: translateX(calc(var(--t) * (var(--i) - 1) * (var(--spread) - var(--s) * 13 / 56)))
-      scaleY(calc(1 + var(--t) * 0.5));
+    --dx: calc((var(--i) - 1) * (var(--spread) - var(--s) * 13 / 56));
   }
 
   .split-layers li {
