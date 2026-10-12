@@ -777,6 +777,8 @@
       "teeText": "Üç çubuk önde uzun basılır; ikinci ve üçüncüsü raster, ayrıntılar altta küçük.",
       "sticker": "Sticker",
       "stickerText": "3 mm beyaz kenarlı, kontur kesimli bir Spectra karakteri.",
+      "box": "Ambalaj",
+      "boxText": "Soft-touch mürekkep renginde sert bir kutu: kapakta küçük işaret, birleşim yerinde tek bir spektrum şeridi.",
       "rule1": "Nakış, yaldız, aşındırma ve serigrafi için tek renk dosyaları kullan.",
       "rule2": "İşareti asla 8 mm'den küçük basma.",
       "rule3": "Her üründe tek karakter. Karakterler asla işaretin yerini almaz."
@@ -806,7 +808,8 @@
       "tote": "Shades Kırmızısı bir duvarın önünde doğal kanvas çanta; logo büyük basılmış, kenardan taşıyor.",
       "sticker": "Beyaz kenarlı kesim bir Spectra çıkartması, siyah bir defterin üzerinde.",
       "tee": "Askıda iki siyah tişört; birinin önünde üç çubuk, ikisi raster, altında küçük Shades Media Group yazısı.",
-      "roles": "Askılarında üç Shades Day yaka kartı: spektrum şeritli konuşmacı kartı, mavi şeritli mürekkep renkli katılımcı kartı ve kırmızı ekip kartı."
+      "roles": "Askılarında üç Shades Day yaka kartı: spektrum şeritli konuşmacı kartı, mavi şeritli mürekkep renkli katılımcı kartı ve kırmızı ekip kartı.",
+      "box": "Pencere ışığında siyah bir Shades hediye kutusu; kapağında küçük kırmızı işaret, birleşim yerinde ince bir spektrum şeridi."
     }
   },
   "applications": {

@@ -777,6 +777,8 @@
       "teeText": "Le tre barre stampate in verticale sul davanti, la seconda e la terza a retino, i dettagli in piccolo sotto.",
       "sticker": "Adesivo",
       "stickerText": "Un personaggio Spectra, fustellato con un bordo bianco di 3 mm.",
+      "box": "Packaging",
+      "boxText": "Una scatola rigida in inchiostro soft-touch: il marchio piccolo sul coperchio, lo spettro come un solo filo sulla giuntura.",
       "rule1": "Usa i file a un colore per ricamo, lamina, incisione e serigrafia.",
       "rule2": "Non stampare mai il marchio sotto gli 8 mm.",
       "rule3": "Un personaggio per articolo. I personaggi non sostituiscono mai il marchio."
@@ -806,7 +808,8 @@
       "tote": "Una shopper in tela naturale contro una parete rosso Shades, con il marchio stampato grande fino a uscire dal bordo.",
       "sticker": "Un adesivo di Spectra fustellato con bordo bianco, su un taccuino nero.",
       "tee": "Due t-shirt nere su grucce; il davanti di una porta le tre barre, due a retino, e Shades Media Group in piccolo sotto.",
-      "roles": "Tre badge Shades Day con il cordino: quello del relatore con una fascia spettro, quello del partecipante in inchiostro con una fascia blu e quello rosso dello staff."
+      "roles": "Tre badge Shades Day con il cordino: quello del relatore con una fascia spettro, quello del partecipante in inchiostro con una fascia blu e quello rosso dello staff.",
+      "box": "Una scatola regalo Shades nera alla luce di una finestra, con il marchio rosso piccolo sul coperchio e un sottile filo spettro sulla giuntura."
     }
   },
   "applications": {

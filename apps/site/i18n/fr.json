@@ -777,6 +777,8 @@
       "teeText": "Les trois barres imprimées en hauteur sur le devant, la deuxième et la troisième en trame, les détails en petit dessous.",
       "sticker": "Sticker",
       "stickerText": "Un personnage Spectra, découpé à la forme avec une bordure blanche de 3 mm.",
+      "box": "Emballage",
+      "boxText": "Une boîte rigide en encre toucher doux : la marque en petit sur le couvercle, le spectre en un seul liseré à la jointure.",
       "rule1": "Utilisez les fichiers une couleur pour la broderie, la dorure, la gravure et la sérigraphie.",
       "rule2": "N'imprimez jamais le symbole en dessous de 8 mm.",
       "rule3": "Un personnage par objet. Les personnages ne remplacent jamais le symbole."
@@ -806,7 +808,8 @@
       "tote": "Un tote en toile naturelle contre un mur rouge Shades, le logo imprimé en grand jusqu’à déborder du bord.",
       "sticker": "Un autocollant Spectra découpé avec un liseré blanc, sur un carnet noir.",
       "tee": "Deux t-shirts noirs sur cintre ; le devant de l’un porte les trois barres, deux en trame, et Shades Media Group en petit dessous.",
-      "roles": "Trois badges Shades Day sur leurs cordons : un badge intervenant avec un bandeau spectre, un badge participant encre avec un bandeau bleu et un badge équipe rouge."
+      "roles": "Trois badges Shades Day sur leurs cordons : un badge intervenant avec un bandeau spectre, un badge participant encre avec un bandeau bleu et un badge équipe rouge.",
+      "box": "Une boîte cadeau Shades noire dans la lumière d’une fenêtre, la marque rouge en petit sur le couvercle et un fin liseré spectre à la jointure."
     }
   },
   "applications": {

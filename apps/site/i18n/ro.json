@@ -777,6 +777,8 @@
       "teeText": "Cele trei bare imprimate înalt pe față, a doua și a treia în raster, detaliile mărunt dedesubt.",
       "sticker": "Autocolant",
       "stickerText": "Un personaj Spectra, decupat pe contur, cu margine albă de 3 mm.",
+      "box": "Ambalaj",
+      "boxText": "O cutie rigidă în cerneală soft-touch: marca mică pe capac, spectrul ca un singur fir la îmbinare.",
       "rule1": "Folosește fișierele într-o culoare pentru broderie, folio, gravură și serigrafie.",
       "rule2": "Nu tipări niciodată simbolul mai mic de 8 mm.",
       "rule3": "Un singur personaj pe obiect. Personajele nu înlocuiesc niciodată simbolul."
@@ -806,7 +808,8 @@
       "tote": "O sacoșă din pânză naturală pe un perete roșu Shades, cu marca imprimată mare, până dincolo de margine.",
       "sticker": "Un autocolant Spectra decupat cu margine albă, pe un carnet negru.",
       "tee": "Două tricouri negre pe umerașe; fața unuia poartă cele trei bare, două în raster, cu Shades Media Group scris mărunt dedesubt.",
-      "roles": "Trei ecusoane Shades Day pe șnururi: un ecuson de speaker cu bandă spectru, un ecuson de participant pe cerneală cu bandă albastră și un ecuson roșu pentru echipă."
+      "roles": "Trei ecusoane Shades Day pe șnururi: un ecuson de speaker cu bandă spectru, un ecuson de participant pe cerneală cu bandă albastră și un ecuson roșu pentru echipă.",
+      "box": "O cutie cadou Shades neagră în lumina ferestrei, cu marca roșie mică pe capac și un fir subțire de spectru la îmbinare."
     }
   },
   "applications": {

@@ -949,6 +949,104 @@ async function og(assets) {
   return encode(s.shoot(256, 7, { aperture: 2, focus: [10, 1, 20] }), [1200])
 }
 
-const SCENES = { cards, tote, badges, roles, sticker, tee, og }
+/** The Shades mark drawn into a canvas: the red square and its three bars. */
+function drawMark(ctx, x, y, size) {
+  const u = size / 56
+  ctx.fillStyle = '#E40523'
+  ctx.fillRect(x, y, size, size)
+  ;[1, 0.75, 0.5].forEach((alpha, i) => {
+    ctx.fillStyle = `rgba(255,255,255,${alpha})`
+    ctx.fillRect(x + (10 + i * 13) * u, y + 13 * u, 10 * u, 30 * u)
+  })
+}
+
+/**
+ * A rigid two-piece box in soft-touch ink: the mark small on the lid, the
+ * spectrum as one thin trim at the seam. Late sun through the window.
+ */
+async function box() {
+  const W = 220
+  const D = 160
+  const H = 72
+  const LID = 30
+  const s = studio({
+    width: 2400,
+    height: 3000,
+    fov: 21,
+    eye: [-470, 520, 760],
+    target: [14, 22, 0],
+    exposure: 1.0,
+    env: 0.22,
+  })
+  const { scene, renderer } = s
+  scene.add(floorPlane(renderer))
+
+  // Soft-touch board: near black, a faint tooth, the light rolling off its edges.
+  const tooth = paperNormal(renderer, { repeat: [6, 6], strength: 0.8, seed: 31 })
+  const board = new THREE.MeshPhysicalMaterial({
+    color: 0x17171b,
+    roughness: 0.62,
+    sheen: 0.3,
+    sheenRoughness: 0.6,
+    sheenColor: new THREE.Color(0x40404a),
+    normalMap: tooth,
+    normalScale: new THREE.Vector2(0.18, 0.18),
+  })
+
+  // The lid's top face carries the mark, printed small and deliberate near a corner.
+  const PX = 8
+  const [face, fctx] = canvas(W * PX, D * PX)
+  fctx.fillStyle = '#17171b'
+  fctx.fillRect(0, 0, face.width, face.height)
+  drawMark(fctx, face.width - 40 * PX, 18 * PX, 22 * PX)
+  const top = new THREE.MeshPhysicalMaterial({
+    map: texture(face, renderer, { color: true }),
+    roughness: 0.6,
+    sheen: 0.3,
+    sheenRoughness: 0.6,
+    sheenColor: new THREE.Color(0x40404a),
+    normalMap: tooth,
+    normalScale: new THREE.Vector2(0.18, 0.18),
+  })
+
+  const base = new THREE.Mesh(new RoundedBoxGeometry(W - 3, H - LID + 2, D - 3, 4, 1.2), board)
+  base.position.y = (H - LID + 2) / 2
+  // The trim: a 3 mm band of the spectrum round the base, just under the lid.
+  const [band, bctx] = canvas(1024, 8)
+  const grad = bctx.createLinearGradient(0, 0, 1024, 0)
+  // Printed ribbon, not a light: the spectrum a shade darker, matte.
+  ;['#4f50cc', '#a80fab', '#b6041c', '#cc4700'].forEach((c, i) => grad.addColorStop(i / 3, c))
+  bctx.fillStyle = grad
+  bctx.fillRect(0, 0, 1024, 8)
+  const trim = new THREE.Mesh(
+    new THREE.BoxGeometry(W - 2.4, 3, D - 2.4),
+    new THREE.MeshStandardMaterial({ map: texture(band, renderer, { color: true }), roughness: 0.8 }),
+  )
+  trim.position.y = H - LID + 0.2
+  const lid = new THREE.Mesh(new RoundedBoxGeometry(W, LID, D, 4, 1.4), [
+    board,
+    board,
+    top,
+    board,
+    board,
+    board,
+  ])
+  lid.position.y = H - LID / 2 + 1.2
+  const pack = new THREE.Group()
+  for (const m of [base, trim, lid]) {
+    m.castShadow = m.receiveShadow = true
+    pack.add(m)
+  }
+  pack.rotation.y = -0.38
+  scene.add(pack)
+
+  const sun = [-1200, 640, 260]
+  s.light({ kind: 'area', position: sun, radius: 40, illuminance: 6.5, color: 0xffebd6, bounds: 260 })
+  s.light({ kind: 'sky', intensity: 0.45, color: 0xe6ecff, bounds: 260 })
+  windowFrame(s, sun, [0, 0, 0], 0.35, [2200, 2200], [130, 160], 26, 4, 5)
+  return encode(s.shoot(256, 7, { aperture: 2.6, focus: [40, 72, 40] }), [1200, 600])
+}
+
+const SCENES = { cards, tote, badges, roles, box, sticker, tee, og }
 
 window.render = async (name, assets) => SCENES[name](assets)

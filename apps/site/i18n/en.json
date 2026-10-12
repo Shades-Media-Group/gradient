@@ -777,6 +777,8 @@
       "teeText": "The three bars printed tall on the front, the second and third as halftone, the details set small below.",
       "sticker": "Sticker",
       "stickerText": "A Spectra character, die cut with a 3 mm white border.",
+      "box": "Packaging",
+      "boxText": "A rigid box in soft-touch ink: the mark small on the lid, the spectrum as one trim at the seam.",
       "rule1": "Use the one-colour files for embroidery, foil, etching and screen print.",
       "rule2": "Never print the mark smaller than 8 mm.",
       "rule3": "One character per item. The characters never replace the mark."
@@ -806,7 +808,8 @@
       "tote": "A natural canvas tote against a Shades Red wall, the mark printed large so it runs off the edge.",
       "sticker": "A Spectra sticker, die cut with a white border, on a black notebook.",
       "tee": "Two black tees on hangers; the front of one carries the three bars, two in halftone, with Shades Media Group set small below.",
-      "roles": "Three Shades Day badges on lanyards: a speaker badge with a spectrum band, an ink attendee badge with a blue band, and a red crew badge."
+      "roles": "Three Shades Day badges on lanyards: a speaker badge with a spectrum band, an ink attendee badge with a blue band, and a red crew badge.",
+      "box": "A black Shades gift box in window light, the red mark small on its lid and a thin spectrum trim at the seam."
     }
   },
   "applications": {
