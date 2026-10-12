@@ -753,7 +753,8 @@
       "back": "Retro: nome, ruolo e contatti su carta",
       "role": "Brand designer",
       "stock": "Non patinata, 350 g/m² o più",
-      "sample": "Persona e dati di esempio. Il biglietto è disegnato nelle sue proporzioni reali."
+      "sample": "Persona e dati di esempio. Il biglietto è disegnato nelle sue proporzioni reali.",
+      "kit": "Con il manuale del brand: il logotipo tagliato dalla copertina, i biglietti accanto."
     },
     "badge": {
       "title": "Badge per eventi",
@@ -809,7 +810,8 @@
       "sticker": "Un adesivo di Spectra fustellato con bordo bianco, su un taccuino nero.",
       "tee": "Due t-shirt nere su grucce; il davanti di una porta le tre barre, due a retino, e Shades Media Group in piccolo sotto.",
       "roles": "Tre badge Shades Day con il cordino: quello del relatore con una fascia spettro, quello del partecipante in inchiostro con una fascia blu e quello rosso dello staff.",
-      "box": "Una scatola regalo Shades nera alla luce di una finestra, con il marchio rosso piccolo sul coperchio e un sottile filo spettro sulla giuntura."
+      "box": "Una scatola regalo Shades nera alla luce di una finestra, con il marchio rosso piccolo sul coperchio e un sottile filo spettro sulla giuntura.",
+      "kit": "Il manuale del brand Shades in inchiostro, il logotipo che esce dalla copertina, accanto a una pila di biglietti rossi alla luce di una finestra."
     }
   },
   "applications": {
@@ -888,7 +890,11 @@
       "b2": "Da dispersi a distinti.",
       "b2Label": "Schermo digitale nei trasporti, 16:9",
       "b3": "Dove la creatività incontra la <span>tecnologia.</span>",
-      "b3Label": "Poster, A1"
+      "b3Label": "Poster, A1",
+      "poster": "Affissione: i due manifesti alternati lungo un muro, nel sole del tardo pomeriggio.",
+      "posterAlt": "Manifesti Shades incollati in fila su un muro di cemento, inchiostro e carta alternati, con l’ombra di un edificio sopra.",
+      "sign": "Il logo come insegna: il marchio in un cassonetto rosso, le lettere distanziate dal muro.",
+      "signAlt": "L’insegna Shades su un muro intonacato: un cassonetto rosso con barre bianche e lettere nere che proiettano lunghe ombre nel sole basso."
     },
     "decks": {
       "title": "Presentazioni",

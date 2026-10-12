@@ -753,7 +753,8 @@
       "back": "Arka yüz: kâğıt üzerinde ad, unvan ve iletişim bilgileri",
       "role": "Marka tasarımcısı",
       "stock": "Kuşesiz, 350 g/m² veya daha ağır",
-      "sample": "Örnek kişi ve bilgiler. Kart gerçek oranlarıyla çizilmiştir."
+      "sample": "Örnek kişi ve bilgiler. Kart gerçek oranlarıyla çizilmiştir.",
+      "kit": "Marka kılavuzuyla: logotip kapağın kenarında kesiliyor, kartvizitler yanında."
     },
     "badge": {
       "title": "Etkinlik yaka kartı",
@@ -809,7 +810,8 @@
       "sticker": "Beyaz kenarlı kesim bir Spectra çıkartması, siyah bir defterin üzerinde.",
       "tee": "Askıda iki siyah tişört; birinin önünde üç çubuk, ikisi raster, altında küçük Shades Media Group yazısı.",
       "roles": "Askılarında üç Shades Day yaka kartı: spektrum şeritli konuşmacı kartı, mavi şeritli mürekkep renkli katılımcı kartı ve kırmızı ekip kartı.",
-      "box": "Pencere ışığında siyah bir Shades hediye kutusu; kapağında küçük kırmızı işaret, birleşim yerinde ince bir spektrum şeridi."
+      "box": "Pencere ışığında siyah bir Shades hediye kutusu; kapağında küçük kırmızı işaret, birleşim yerinde ince bir spektrum şeridi.",
+      "kit": "Mürekkep renginde Shades marka kılavuzu, logotip kapaktan taşıyor; yanında pencere ışığında kırmızı kartvizit destesi."
     }
   },
   "applications": {
@@ -888,7 +890,11 @@
       "b2": "Dağınıktan dikkat çekiciye.",
       "b2Label": "Toplu taşıma dijital ekranı, 16:9",
       "b3": "Yaratıcılığın <span>teknolojiyle</span> buluştuğu yer.",
-      "b3Label": "Afiş, A1"
+      "b3Label": "Afiş, A1",
+      "poster": "Duvar afişi: iki afiş sırayla bir duvar boyunca, akşam güneşinde.",
+      "posterAlt": "Beton bir duvara sıra hâlinde yapıştırılmış Shades afişleri; mürekkep ve kâğıt sırayla, üzerlerinde bir binanın gölgesi.",
+      "sign": "Logo tabela olarak: işaret kırmızı bir kutu, harfler duvardan ayrık.",
+      "signAlt": "Sıvalı bir duvarda Shades tabelası: beyaz çubuklu kırmızı bir kutu ve alçak güneşte uzun gölgeler düşüren siyah harfler."
     },
     "decks": {
       "title": "Sunumlar",

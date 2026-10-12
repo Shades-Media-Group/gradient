@@ -87,6 +87,50 @@ const badge = (first, last, role, band, { bg = '#FDFDFC', fg = '#0a0a0b', mark =
   )
 FACES.badgeTeam = badge('Ana', 'Popescu', 'Shades team', '#E40523')
 FACES.badgeGuest = badge('Ion', 'Rusu', 'Guest', '#0A0A0B')
+// The brand-guidelines book, A5: the wordmark large and cut by the cover's edge,
+// the title small and deliberate, white on ink.
+const coverWord = brand('shades-lockup-mono.svg')
+  .replace(/viewBox="[^"]*"/, 'viewBox="41 0 101 32"')
+  .replace(/ width="\d+" height="\d+"/, '')
+  .replace(/currentColor/g, '#FDFDFC')
+FACES.bookCover = face(
+  148,
+  210,
+  '#141416',
+  `<div style="position:relative; height:100%; color:#FDFDFC">
+    <div style="position:absolute; left:${12 * MM}px; top:${14 * MM}px; font:600 ${pt(9)}/1.35 Body">Brand guidelines<br><span style="opacity:0.6">Shades Media Group · 2026</span></div>
+    <div style="position:absolute; left:${-4 * MM}px; bottom:${-9 * MM}px; width:${230 * MM}px">${coverWord}</div>
+  </div>`,
+)
+// A backlit 6-sheet street poster, 118.5 × 175 cm. Here MM stands for a
+// centimetre, so the face stays a sensible size: one line, the mark, the address.
+const posterMark = brand('shades-mark.svg').replace(/ width="\d+" height="\d+"/, '')
+FACES.poster = face(
+  118.4,
+  175,
+  '#141416',
+  `<div style="display:grid; grid-template-rows:auto 1fr auto; height:100%; padding:${10 * MM}px ${9 * MM}px; color:#FDFDFC">
+    <div style="height:${1.2 * MM}px; background:linear-gradient(90deg,#6364FF,#D212D6 34%,#E40523 67%,#FF5900)"></div>
+    <div style="align-self:center; font:700 ${17 * MM}px/0.95 Display; letter-spacing:-0.04em">Reveal your true <span style="color:#F23D57">shade.</span></div>
+    <div style="display:flex; align-items:center; justify-content:space-between; font:600 ${3.6 * MM}px/1 Body">
+      <div style="width:${16 * MM}px">${posterMark}</div>shades.md
+    </div>
+  </div>`,
+)
+// Its paper twin for wild posting: the line on paper, the mark's bars running off the foot.
+FACES.posterB = face(
+  118.4,
+  175,
+  '#FDFDFC',
+  `<div style="display:grid; grid-template-rows:1fr auto; height:100%; padding:${10 * MM}px ${9 * MM}px 0; color:#0A0A0B; overflow:hidden">
+    <div style="font:700 ${15 * MM}px/0.95 Display; letter-spacing:-0.04em">Where creativity meets <span style="color:#C4041E">technology.</span></div>
+    <div style="display:flex; gap:${6 * MM}px; height:${62 * MM}px; margin-bottom:${-16 * MM}px">
+      <div style="width:${24 * MM}px; background:#E40523"></div>
+      <div style="width:${24 * MM}px; background:#E40523; opacity:0.75"></div>
+      <div style="width:${24 * MM}px; background:#E40523; opacity:0.5"></div>
+    </div>
+  </div>`,
+)
 // The roles of a conference: a speaker under the spectrum, an attendee on ink, the crew in red.
 FACES.badgeSpeaker = badge(
   'Maria',
@@ -165,6 +209,7 @@ const wordmark = brand('shades-lockup-mono.svg')
 const assets = {
   ...(await faces(browser)),
   markMono: brand('shades-mark-mono.svg'),
+  lockupMono: brand('shades-lockup-mono.svg'),
   wordmark,
   teePhoto: `data:image/jpeg;base64,${readFileSync(join(root, 'scripts/renders/photos/tees-md-salman.jpg')).toString('base64')}`,
   spectra: brand('spectra/spectra.svg')

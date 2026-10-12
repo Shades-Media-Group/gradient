@@ -753,7 +753,8 @@
       "back": "Verso : nom, fonction et coordonnées sur papier",
       "role": "Designer de marque",
       "stock": "Non couché, 350 g/m² ou plus",
-      "sample": "Personne et coordonnées fictives. La carte est dessinée à ses proportions réelles."
+      "sample": "Personne et coordonnées fictives. La carte est dessinée à ses proportions réelles.",
+      "kit": "Avec la charte graphique : le logotype coupé par la couverture, les cartes à côté."
     },
     "badge": {
       "title": "Badge d'événement",
@@ -809,7 +810,8 @@
       "sticker": "Un autocollant Spectra découpé avec un liseré blanc, sur un carnet noir.",
       "tee": "Deux t-shirts noirs sur cintre ; le devant de l’un porte les trois barres, deux en trame, et Shades Media Group en petit dessous.",
       "roles": "Trois badges Shades Day sur leurs cordons : un badge intervenant avec un bandeau spectre, un badge participant encre avec un bandeau bleu et un badge équipe rouge.",
-      "box": "Une boîte cadeau Shades noire dans la lumière d’une fenêtre, la marque rouge en petit sur le couvercle et un fin liseré spectre à la jointure."
+      "box": "Une boîte cadeau Shades noire dans la lumière d’une fenêtre, la marque rouge en petit sur le couvercle et un fin liseré spectre à la jointure.",
+      "kit": "La charte graphique Shades couleur encre, le logotype débordant de la couverture, à côté d’une pile de cartes de visite rouges dans la lumière d’une fenêtre."
     }
   },
   "applications": {
@@ -888,7 +890,11 @@
       "b2": "De l’éparpillé au remarquable.",
       "b2Label": "Écran de transport, 16:9",
       "b3": "Là où la créativité rencontre la <span>technologie.</span>",
-      "b3Label": "Affiche, A1"
+      "b3Label": "Affiche, A1",
+      "poster": "Affichage sauvage : les deux affiches en alternance le long d’un mur, au soleil couchant.",
+      "posterAlt": "Des affiches Shades collées en rang sur un mur de béton, encre et papier en alternance, l’ombre d’un immeuble par-dessus.",
+      "sign": "Le logo en enseigne : la marque en caisson rouge, les lettres décollées du mur.",
+      "signAlt": "L’enseigne Shades sur un mur enduit : un caisson rouge à barres blanches et des lettres noires qui projettent de longues ombres au soleil rasant."
     },
     "decks": {
       "title": "Présentations",

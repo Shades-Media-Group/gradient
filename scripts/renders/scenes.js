@@ -3,6 +3,7 @@
  * Each scene returns WebP data URLs at the widths the site serves.
  */
 import { RoundedBoxGeometry } from 'three/examples/jsm/geometries/RoundedBoxGeometry.js'
+import { SVGLoader } from 'three/examples/jsm/loaders/SVGLoader.js'
 import {
   THREE,
   canvas,
@@ -1047,6 +1048,237 @@ async function box() {
   return encode(s.shoot(256, 7, { aperture: 2.6, focus: [40, 72, 40] }), [1200, 600])
 }
 
-const SCENES = { cards, tote, badges, roles, box, sticker, tee, og }
+/** The brand-guidelines book with a stack of business cards, in window light. */
+async function kit(assets) {
+  const s = studio({
+    width: 3000,
+    height: 2400,
+    fov: 15,
+    eye: [-260, 620, 520],
+    target: [10, 0, -10],
+    exposure: 1.0,
+    env: 0.2,
+  })
+  const { scene, renderer } = s
+  scene.add(floorPlane(renderer))
+
+  // A5, 14 mm thick: ink cover boards over a cream page block with fine leaves.
+  const W = 148
+  const D = 210
+  const T = 14
+  const tooth = paperNormal(renderer, { repeat: [4, 6], strength: 1, seed: 41 })
+  const cover = new THREE.MeshPhysicalMaterial({
+    map: await printTexture(assets.bookCover, renderer),
+    roughness: 0.66,
+    sheen: 0.25,
+    sheenRoughness: 0.6,
+    sheenColor: new THREE.Color(0x404048),
+    normalMap: tooth,
+    normalScale: new THREE.Vector2(0.15, 0.15),
+  })
+  const board = new THREE.MeshStandardMaterial({ color: 0x141416, roughness: 0.7 })
+  const [leaves, lctx] = canvas(32, 512)
+  lctx.fillStyle = '#efeadf'
+  lctx.fillRect(0, 0, 32, 512)
+  for (let y = 0; y < 512; y += 2) {
+    lctx.fillStyle = `rgba(120,108,90,${0.05 + 0.08 * noise(0, y, 3)})`
+    lctx.fillRect(0, y, 32, 1)
+  }
+  const block = new THREE.MeshStandardMaterial({
+    map: texture(leaves, renderer, { color: true }),
+    roughness: 0.92,
+  })
+  // BoxGeometry faces: +x, -x, +y, -y, +z, -z. The spine is on -x.
+  const book = new THREE.Mesh(new RoundedBoxGeometry(W, T, D, 3, 1), [block, board, cover, board, block, block])
+  book.position.set(-36, T / 2, 0)
+  book.rotation.y = 0.12
+  book.castShadow = book.receiveShadow = true
+  scene.add(book)
+
+  const { stack } = await cardSet(assets, renderer)
+  stack.position.set(92, 0, 58)
+  stack.rotation.y = -0.34
+  scene.add(stack)
+
+  const sun = [-1100, 600, 300]
+  s.light({ kind: 'area', position: sun, radius: 40, illuminance: 5.6, color: 0xffebd6, bounds: 260 })
+  s.light({ kind: 'sky', intensity: 0.45, color: 0xe6ecff, bounds: 260 })
+  windowFrame(s, sun, [0, 0, 0], 0.35, [2200, 2200], [130, 160], 26, 4, 5)
+  return encode(s.shoot(256, 7, { aperture: 2.4, focus: [-36, T, 0] }), [1600, 800])
+}
+
+/**
+ * Wild posting: paper posters pasted along a concrete wall, two designs in
+ * turn, in raking late sun from the left. The paste leaves soft creases.
+ */
+async function poster(assets) {
+  const s = studio({
+    width: 3000,
+    height: 2400,
+    fov: 20,
+    eye: [-2600, 1300, 5200],
+    target: [700, 1250, 0],
+    exposure: 1.0,
+    env: 0.18,
+  })
+  const { scene, renderer } = s
+
+  const concrete = (color, repeat, seed, strength = 2.2) =>
+    new THREE.MeshStandardMaterial({
+      color,
+      roughness: 0.95,
+      normalMap: paperNormal(renderer, { repeat, strength, seed }),
+      normalScale: new THREE.Vector2(1, 1),
+    })
+  const wall = new THREE.Mesh(new THREE.PlaneGeometry(16000, 9000), concrete(0xa19e98, [36, 20], 51))
+  wall.position.set(0, 4500, 0)
+  wall.receiveShadow = true
+  const ground = new THREE.Mesh(new THREE.PlaneGeometry(16000, 9000), concrete(0x77746f, [48, 28], 52, 3))
+  ground.rotation.x = -Math.PI / 2
+  ground.position.z = 4500
+  ground.receiveShadow = true
+  scene.add(wall, ground)
+
+  // Pasted paper: a sheet with soft creases from the brush, a hair off the wall.
+  const W = 1184
+  const H = 1750
+  const sheet = (seed) => {
+    const g = new THREE.PlaneGeometry(W, H, 96, 140)
+    const p = g.attributes.position
+    for (let i = 0; i < p.count; i++) {
+      const x = p.getX(i) / W
+      const y = p.getY(i) / H
+      const crease = (fbm(x * 3 + seed, y * 9, 3, seed) - 0.5) * 18
+      p.setZ(i, 1.5 + Math.max(0, crease))
+    }
+    g.computeVertexNormals()
+    return g
+  }
+  const paper = async (face) =>
+    new THREE.MeshStandardMaterial({
+      map: await printTexture(face, renderer),
+      roughness: 0.82,
+      normalMap: paperNormal(renderer, { repeat: [3, 4], strength: 1.2, seed: 61 }),
+      normalScale: new THREE.Vector2(0.3, 0.3),
+    })
+  const ink = await paper(assets.poster)
+  const light = await paper(assets.posterB)
+  const run = [ink, light, ink, light]
+  run.forEach((material, i) => {
+    const m = new THREE.Mesh(sheet(i * 3.1), material)
+    m.position.set(-900 + i * (W + 14), 380 + H / 2, 0)
+    m.castShadow = m.receiveShadow = true
+    scene.add(m)
+  })
+
+  // The building opposite: one hard edge of shade falling across the run.
+  const building = new THREE.Mesh(new THREE.PlaneGeometry(6000, 9000))
+  building.position.set(-1500, 3600, 2600)
+  building.rotation.set(0, 0.95, 0.38)
+  s.flag(building)
+  scene.add(building)
+
+  const sun = [-6200, 3600, 3400]
+  s.light({ kind: 'area', position: sun, radius: 160, illuminance: 4.4, color: 0xffe2c0, bounds: 3600 })
+  s.light({ kind: 'sky', intensity: 0.5, color: 0xdfe6ff, bounds: 3600 })
+  return encode(s.shoot(256, 7, { aperture: 5, focus: [300, 1250, 0] }), [1600, 800])
+}
+
+/**
+ * The storefront: the mark as a red sign cabinet with raised white bars, and
+ * SHADES as letters cut from the real lockup, standing off a plaster wall.
+ */
+async function sign(assets) {
+  const s = studio({
+    width: 3000,
+    height: 2400,
+    fov: 19,
+    eye: [-4200, 1700, 9400],
+    target: [-80, 2330, 0],
+    exposure: 1.0,
+    env: 0.2,
+  })
+  const { scene, renderer } = s
+
+  const wall = new THREE.Mesh(
+    new THREE.PlaneGeometry(16000, 10000),
+    new THREE.MeshStandardMaterial({
+      color: 0xd8d3ca,
+      roughness: 0.95,
+      normalMap: paperNormal(renderer, { repeat: [40, 25], strength: 2, seed: 71 }),
+      normalScale: new THREE.Vector2(0.9, 0.9),
+    }),
+  )
+  wall.position.set(0, 5000, 0)
+  wall.receiveShadow = true
+  scene.add(wall)
+
+  // The lockup's own geometry, 34 mm to the unit: the mark is 32 units square,
+  // the letters start at 41. X0 is where the lockup begins on the wall.
+  const k = 34
+  const X0 = -2400
+  // The cabinet: 140 deep, red, the bars raised 12 mm in white acrylic.
+  const C = 32 * k
+  const u = C / 56
+  const cabinet = new THREE.Group()
+  const red = new THREE.MeshPhysicalMaterial({ color: 0xe40523, roughness: 0.45, clearcoat: 0.4 })
+  const body = new THREE.Mesh(new RoundedBoxGeometry(C, C, 140, 4, 6), red)
+  body.position.z = 70
+  cabinet.add(body)
+  ;[1, 0.75, 0.5].forEach((alpha, i) => {
+    const bar = new THREE.Mesh(
+      new RoundedBoxGeometry(10 * u, 30 * u, 12, 2, 2),
+      new THREE.MeshPhysicalMaterial({
+        color: new THREE.Color(0xe40523).lerp(new THREE.Color(0xffffff), alpha),
+        roughness: 0.3,
+        clearcoat: 0.6,
+      }),
+    )
+    bar.position.set((-28 + 15 + i * 13) * u, (28 - 28) * u, 146)
+    cabinet.add(bar)
+  })
+  cabinet.position.set(X0 + 16 * k, 2350, 0)
+  cabinet.traverse((m) => (m.castShadow = m.receiveShadow = true))
+  scene.add(cabinet)
+
+  // The letters: the lockup's own outline, 60 mm deep, held 40 mm off the wall.
+  const paths = new SVGLoader().parse(assets.lockupMono).paths
+  const shapes = SVGLoader.createShapes(paths[0])
+  // SVG runs y downwards: mirror the outline into the geometry, then turn each
+  // triangle back so its faces point out and it casts a proper shadow.
+  const shape = new THREE.ExtrudeGeometry(shapes, { depth: 60 / k, bevelEnabled: false, curveSegments: 12 })
+  shape.scale(k, -k, k)
+  const pos = shape.attributes.position
+  for (let i = 0; i < pos.count; i += 3) {
+    for (const axis of ['X', 'Y', 'Z']) {
+      const b = pos[`get${axis}`](i + 1)
+      pos[`set${axis}`](i + 1, pos[`get${axis}`](i + 2))
+      pos[`set${axis}`](i + 2, b)
+    }
+  }
+  shape.deleteAttribute('normal')
+  shape.deleteAttribute('uv')
+  shape.computeVertexNormals()
+  const letters = new THREE.Mesh(
+    shape,
+    new THREE.MeshStandardMaterial({
+      color: 0x17171b,
+      metalness: 0.4,
+      roughness: 0.55,
+      shadowSide: THREE.DoubleSide,
+    }),
+  )
+  letters.position.set(X0, 2350 + 16 * k, 50)
+  letters.castShadow = letters.receiveShadow = true
+  scene.add(letters)
+
+  // Raking: the sun nearly along the wall, so every letter throws its shadow.
+  const sun = [-8600, 4400, 1500]
+  s.light({ kind: 'area', position: sun, radius: 160, illuminance: 4.4, color: 0xffe2c0, bounds: 4200 })
+  s.light({ kind: 'sky', intensity: 0.5, color: 0xdfe6ff, bounds: 4200 })
+  return encode(s.shoot(256, 7, { aperture: 5, focus: [0, 2350, 100] }), [1600, 800])
+}
+
+const SCENES = { cards, tote, badges, roles, box, kit, poster, sign, sticker, tee, og }
 
 window.render = async (name, assets) => SCENES[name](assets)

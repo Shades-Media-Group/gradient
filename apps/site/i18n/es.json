@@ -753,7 +753,8 @@
       "back": "Reverso: nombre, cargo y contactos sobre papel",
       "role": "Diseñadora de marca",
       "stock": "Sin estucar, de 350 g/m² o más",
-      "sample": "Persona y datos de ejemplo. La tarjeta está dibujada en sus proporciones reales."
+      "sample": "Persona y datos de ejemplo. La tarjeta está dibujada en sus proporciones reales.",
+      "kit": "Con el manual de marca: el logotipo cortado por la portada, las tarjetas al lado."
     },
     "badge": {
       "title": "Credencial para eventos",
@@ -809,7 +810,8 @@
       "sticker": "Una pegatina de Spectra troquelada con borde blanco, sobre una libreta negra.",
       "tee": "Dos camisetas negras en perchas; el frente de una lleva las tres barras, dos en trama, y Shades Media Group en pequeño debajo.",
       "roles": "Tres acreditaciones de Shades Day con su cinta: la de ponente con una franja de espectro, la de asistente en tinta con franja azul y la roja del equipo.",
-      "box": "Una caja regalo Shades negra a la luz de una ventana, con la marca roja pequeña en la tapa y un fino ribete de espectro en la unión."
+      "box": "Una caja regalo Shades negra a la luz de una ventana, con la marca roja pequeña en la tapa y un fino ribete de espectro en la unión.",
+      "kit": "El manual de marca de Shades en tinta, con el logotipo saliéndose de la portada, junto a un montón de tarjetas rojas a la luz de una ventana."
     }
   },
   "applications": {
@@ -888,7 +890,11 @@
       "b2": "De disperso a destacado.",
       "b2Label": "Pantalla digital de transporte, 16:9",
       "b3": "Donde la creatividad se une a la <span>tecnología.</span>",
-      "b3Label": "Póster, A1"
+      "b3Label": "Póster, A1",
+      "poster": "Pegada de carteles: los dos carteles alternados a lo largo de un muro, con el sol de la tarde.",
+      "posterAlt": "Carteles de Shades pegados en fila en un muro de hormigón, tinta y papel alternados, con la sombra de un edificio encima.",
+      "sign": "El logo como rótulo: la marca en una caja roja, las letras separadas de la pared.",
+      "signAlt": "El rótulo de Shades en una pared enlucida: una caja roja con barras blancas y letras negras que proyectan sombras largas con el sol bajo."
     },
     "decks": {
       "title": "Presentaciones",

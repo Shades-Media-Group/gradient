@@ -753,7 +753,8 @@
       "back": "Back: name, role and contacts on paper",
       "role": "Brand designer",
       "stock": "Uncoated, 350 g/m² or heavier",
-      "sample": "Sample person and details. The card is drawn at its real proportions."
+      "sample": "Sample person and details. The card is drawn at its real proportions.",
+      "kit": "With the brand guidelines: the wordmark cut by the cover, the cards beside it."
     },
     "badge": {
       "title": "Event badge",
@@ -809,7 +810,8 @@
       "sticker": "A Spectra sticker, die cut with a white border, on a black notebook.",
       "tee": "Two black tees on hangers; the front of one carries the three bars, two in halftone, with Shades Media Group set small below.",
       "roles": "Three Shades Day badges on lanyards: a speaker badge with a spectrum band, an ink attendee badge with a blue band, and a red crew badge.",
-      "box": "A black Shades gift box in window light, the red mark small on its lid and a thin spectrum trim at the seam."
+      "box": "A black Shades gift box in window light, the red mark small on its lid and a thin spectrum trim at the seam.",
+      "kit": "The Shades brand guidelines book in ink, the wordmark running off its cover, beside a stack of red business cards in window light."
     }
   },
   "applications": {
@@ -888,7 +890,11 @@
       "b2": "From scattered to standout.",
       "b2Label": "Digital transit screen, 16:9",
       "b3": "Where creativity meets <span>technology.</span>",
-      "b3Label": "Poster, A1"
+      "b3Label": "Poster, A1",
+      "poster": "Wild posting: the two posters in turn along a wall, in late sun.",
+      "posterAlt": "Shades posters pasted in a row along a concrete wall, ink and paper designs in turn, a building's shadow across them.",
+      "sign": "The lockup as a sign: the mark a red cabinet, the letters standing off the wall.",
+      "signAlt": "The Shades sign on a plaster wall: a red cabinet with white bars and black letters, casting long shadows in low sun."
     },
     "decks": {
       "title": "Presentations",

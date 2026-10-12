@@ -753,7 +753,8 @@
       "back": "Verso: nume, rol și contacte pe hârtie",
       "role": "Designer de brand",
       "stock": "Hârtie necretată, de 350 g/m² sau mai grea",
-      "sample": "Persoană și date de exemplu. Cartea e desenată la proporțiile ei reale."
+      "sample": "Persoană și date de exemplu. Cartea e desenată la proporțiile ei reale.",
+      "kit": "Cu manualul de brand: logotipul tăiat de copertă, cărțile de vizită alături."
     },
     "badge": {
       "title": "Ecuson de eveniment",
@@ -809,7 +810,8 @@
       "sticker": "Un autocolant Spectra decupat cu margine albă, pe un carnet negru.",
       "tee": "Două tricouri negre pe umerașe; fața unuia poartă cele trei bare, două în raster, cu Shades Media Group scris mărunt dedesubt.",
       "roles": "Trei ecusoane Shades Day pe șnururi: un ecuson de speaker cu bandă spectru, un ecuson de participant pe cerneală cu bandă albastră și un ecuson roșu pentru echipă.",
-      "box": "O cutie cadou Shades neagră în lumina ferestrei, cu marca roșie mică pe capac și un fir subțire de spectru la îmbinare."
+      "box": "O cutie cadou Shades neagră în lumina ferestrei, cu marca roșie mică pe capac și un fir subțire de spectru la îmbinare.",
+      "kit": "Manualul de brand Shades în cerneală, cu logotipul ieșind de pe copertă, lângă un teanc de cărți de vizită roșii, în lumina ferestrei."
     }
   },
   "applications": {
@@ -888,7 +890,11 @@
       "b2": "De la risipit la remarcabil.",
       "b2Label": "Ecran digital în transport, 16:9",
       "b3": "Unde creativitatea întâlnește <span>tehnologia.</span>",
-      "b3Label": "Afiș, A1"
+      "b3Label": "Afiș, A1",
+      "poster": "Afișaj stradal: cele două afișe pe rând de-a lungul unui zid, în soarele de seară.",
+      "posterAlt": "Afișe Shades lipite în șir pe un zid de beton, în cerneală și hârtie pe rând, cu umbra unei clădiri peste ele.",
+      "sign": "Logoul ca firmă: marca o casetă roșie, literele distanțate de perete.",
+      "signAlt": "Firma Shades pe un perete tencuit: o casetă roșie cu bare albe și litere negre care aruncă umbre lungi în soarele jos."
     },
     "decks": {
       "title": "Prezentări",
