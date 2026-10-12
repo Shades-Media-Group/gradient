@@ -4,6 +4,10 @@ Every notable change to Gradient and the `shades-gradient` package. The format f
 
 ## [Unreleased]
 
+### Added
+
+- **Compact mode for work tools** (`shades-gradient/compact.css`): a second density for admin panels, CRMs and dashboards, opt-in with `data-density="compact"` and left out of `gradient.css`. 13 px text, 28 px controls, hairlines instead of shadows, black buttons with red kept for the one primary action and alerts. It adds `--gc-*` tokens for light and dark, the shell (`.g-shell`, `.g-rail`, `.g-navpanel`, `.g-nav`), `.g-pagehead`, `.g-card`, a 12-column `.g-layout`, the figures strip (`.g-kpis`, `.g-delta`), `.g-dtable`, `.g-menu`, the `.g-palette` command palette, the three-pane `.g-split` and `.g-attr`, and tightens the existing buttons, inputs, badges and keys inside it. See [docs/guides/compact.md](docs/guides/compact.md).
+
 ## [0.5.0] - 2026-10-12
 
 ### Added
