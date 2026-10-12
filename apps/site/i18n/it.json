@@ -386,7 +386,17 @@
       "no2": "Testo o gradienti impressi nella fotografia",
       "no3": "Filtri che spingono l'immagine verso il rosso per intonarla al brand",
       "no4": "Immagini che decorano e non spiegano nulla",
-      "alt": "Il testo alternativo si scrive come una didascalia: cosa mostra l'immagine e perché è lì."
+      "alt": "Il testo alternativo si scrive come una didascalia: cosa mostra l'immagine e perché è lì.",
+      "studioAlt": "Una designer sorride al telefono alla scrivania, tra un portatile e dei pennelli.",
+      "greenAlt": "Un ragazzo in t-shirt grigia ride guardando il telefono davanti a un muro verde.",
+      "handsAlt": "Due mani tengono un telefono da vicino, lo schermo appena illuminato.",
+      "windowAlt": "Un uomo con la barba e la camicia di jeans legge il telefono vicino a una finestra luminosa.",
+      "more": "Vedi post, storie e banner",
+      "badStudio": "Un sorriso in posa davanti al telefono: stock, non un momento.",
+      "badGreen": "Un muro spoglio e un telefono: del lavoro non si vede nulla.",
+      "badHands": "Un telefono in primo piano non dice nulla del brand.",
+      "badWindow": "In posa e generico: potrebbe essere di qualsiasi azienda.",
+      "source": "Queste fotografie sono riferimenti presi da Unsplash. Le campagne usano i nostri scatti di persone vere e lavoro vero."
     },
     "moments": {
       "title": "Scrivere per momento",
@@ -866,6 +876,16 @@
       "f2Label": "Copertina del carosello, 4:5",
       "f3": "Un rebrand in sessanta secondi",
       "f3Label": "Copertina del reel, 9:16"
+    },
+    "banners": {
+      "title": "Affissioni e banner",
+      "text": "Si legge a 80 km/h: una riga, il marchio, l’indirizzo. Nient’altro.",
+      "b1": "Rivela la tua vera <span>sfumatura.</span>",
+      "b1Label": "Cartellone, 6 × 3 m",
+      "b2": "Da dispersi a distinti.",
+      "b2Label": "Schermo digitale nei trasporti, 16:9",
+      "b3": "Dove la creatività incontra la <span>tecnologia.</span>",
+      "b3Label": "Poster, A1"
     },
     "decks": {
       "title": "Presentazioni",

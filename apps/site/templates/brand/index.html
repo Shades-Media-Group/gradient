@@ -235,6 +235,21 @@
           <p>{{brand.imagery.text}}</p>
         </div>
         <div class="doc-body">
+          <h3 class="doc-sub">{{brand.imagery.yes}}</h3>
+          <ul class="gallery">
+            <li><img src="/photos/wall-800.webp" srcset="/photos/wall-800.webp 800w, /photos/wall-1600.webp 1600w" sizes="(max-width: 760px) 62vw, 18vw" width="800" height="1131" alt="{{applications.photo.wallAlt}}" loading="lazy" decoding="async" /><span>{{applications.photo.wall}}</span></li>
+            <li><img src="/photos/umbrella-800.webp" srcset="/photos/umbrella-800.webp 800w, /photos/umbrella-1600.webp 1600w" sizes="(max-width: 760px) 62vw, 18vw" width="800" height="1200" alt="{{applications.photo.umbrellaAlt}}" loading="lazy" decoding="async" /><span>{{applications.photo.umbrella}}</span></li>
+            <li><img src="/photos/balloons-800.webp" srcset="/photos/balloons-800.webp 800w, /photos/balloons-1600.webp 1600w" sizes="(max-width: 760px) 62vw, 18vw" width="800" height="1199" alt="{{applications.photo.balloonsAlt}}" loading="lazy" decoding="async" /><span>{{applications.photo.balloons}}</span></li>
+            <li><img src="/photos/dusk-800.webp" srcset="/photos/dusk-800.webp 800w, /photos/dusk-1600.webp 1600w" sizes="(max-width: 760px) 62vw, 18vw" width="800" height="540" alt="{{applications.photo.duskAlt}}" loading="lazy" decoding="async" /><span>{{applications.photo.dusk}}</span></li>
+          </ul>
+          <h3 class="doc-sub">{{brand.imagery.no}}</h3>
+          <ul class="gallery gallery--avoid">
+            <li><img src="/photos/studio-800.webp" srcset="/photos/studio-800.webp 800w, /photos/studio-1600.webp 1600w" sizes="(max-width: 760px) 62vw, 18vw" width="800" height="534" alt="{{brand.imagery.studioAlt}}" loading="lazy" decoding="async" /><span>{{brand.imagery.badStudio}}</span></li>
+            <li><img src="/photos/wall-green-800.webp" srcset="/photos/wall-green-800.webp 800w, /photos/wall-green-1600.webp 1600w" sizes="(max-width: 760px) 62vw, 18vw" width="800" height="1000" alt="{{brand.imagery.greenAlt}}" loading="lazy" decoding="async" /><span>{{brand.imagery.badGreen}}</span></li>
+            <li><img src="/photos/hands-800.webp" srcset="/photos/hands-800.webp 800w, /photos/hands-1600.webp 1600w" sizes="(max-width: 760px) 62vw, 18vw" width="800" height="1200" alt="{{brand.imagery.handsAlt}}" loading="lazy" decoding="async" /><span>{{brand.imagery.badHands}}</span></li>
+            <li><img src="/photos/window-800.webp" srcset="/photos/window-800.webp 800w, /photos/window-1600.webp 1600w" sizes="(max-width: 760px) 62vw, 18vw" width="800" height="534" alt="{{brand.imagery.windowAlt}}" loading="lazy" decoding="async" /><span>{{brand.imagery.badWindow}}</span></li>
+          </ul>
+          <p class="doc-note">{{brand.imagery.source}} <a class="g-link" href="{{@to:applications}}">{{brand.imagery.more}}</a></p>
           <div class="pairs">
             <div class="pair pair--yes">
               <h3>{{@icon:check}}{{brand.imagery.yes}}</h3>

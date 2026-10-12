@@ -101,6 +101,55 @@
   }
 }
 
+/* The photography board on the brand page: real photographs, left clean. */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.gallery li {
+  display: grid;
+  align-content: start;
+  gap: 8px;
+}
+
+.gallery img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  border-radius: var(--g-radius-lg);
+  object-fit: cover;
+}
+
+.gallery span {
+  color: var(--g-text-2);
+  font-size: var(--g-size-small);
+}
+
+/* The examples to avoid stay recognisable, just quieter. */
+.gallery--avoid img {
+  filter: saturate(0.4);
+  opacity: 0.85;
+}
+
+@media (max-width: 760px) {
+  .gallery {
+    grid-template-columns: none;
+    grid-auto-flow: column;
+    grid-auto-columns: 62%;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+  }
+
+  .gallery li {
+    scroll-snap-align: start;
+  }
+}
+
 /* Brand devices: each one working, at the size it is used. */
 .devices {
   display: grid;
@@ -355,7 +404,8 @@
 .post,
 .story,
 .format,
-.slide {
+.slide,
+.ooh-board {
   position: relative;
   isolation: isolate;
   display: flex;
@@ -372,7 +422,8 @@
 .post b,
 .story b,
 .format b,
-.slide b {
+.slide b,
+.ooh-board b {
   font-weight: 700;
 }
 
@@ -698,6 +749,122 @@
   height: 9cqi;
 }
 
+/* Billboards and banners: one line, the mark, the address. */
+.ooh {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px 12px;
+  align-items: start;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ooh > li {
+  display: grid;
+  gap: 8px;
+}
+
+.ooh > li > span {
+  color: var(--g-text-2);
+  font-size: var(--g-size-small);
+}
+
+.ooh-wide {
+  grid-column: 1 / -1;
+}
+
+.ooh-board {
+  justify-content: space-between;
+  padding: 6% 7%;
+}
+
+.ooh-line {
+  max-width: 13ch;
+  letter-spacing: -0.035em;
+}
+
+.board--billboard {
+  flex-direction: row;
+  align-items: center;
+  aspect-ratio: 3;
+  padding: 4% 5%;
+  background: var(--g-ink-950);
+  box-shadow: inset 0 0 0 1px var(--g-line);
+}
+
+.board--billboard .ooh-line {
+  font-size: 8.6cqi;
+}
+
+.board--billboard .ooh-line span {
+  color: var(--g-red-400);
+}
+
+.ooh-sign {
+  display: grid;
+  justify-items: center;
+  gap: 1.2cqi;
+  font: 600 1.6cqi / 1 var(--g-font-body);
+  letter-spacing: 0;
+}
+
+.ooh-sign svg {
+  width: 13cqi;
+  height: auto;
+}
+
+.board--transit {
+  aspect-ratio: 16 / 9;
+  background: var(--g-accent);
+}
+
+.board--transit .ooh-line {
+  font-size: 9cqi;
+}
+
+.ooh-word svg {
+  width: 30cqi;
+  height: auto;
+}
+
+.board--poster {
+  aspect-ratio: 1 / 1.414;
+  padding-bottom: 0;
+  background: var(--g-ink-0);
+  color: var(--g-ink-950);
+  box-shadow: inset 0 0 0 1px var(--g-line);
+}
+
+.board--poster .ooh-line {
+  font-size: 12cqi;
+}
+
+.board--poster .ooh-line span {
+  color: var(--g-red-600);
+}
+
+/* The mark's bars, large, running off the foot of the poster. */
+.ooh-bars {
+  display: flex;
+  gap: 5.5cqi;
+  height: 78cqi;
+  margin-bottom: -22%;
+}
+
+.ooh-bars i {
+  width: 19cqi;
+  background: var(--g-accent);
+}
+
+.ooh-bars i:nth-child(2) {
+  opacity: 0.75;
+}
+
+.ooh-bars i:nth-child(3) {
+  opacity: 0.5;
+}
+
 /* Slides: 16:9, one idea each, set like a keynote. */
 .slides {
   display: grid;
@@ -860,6 +1027,10 @@
   .stories > li,
   .formats > li {
     scroll-snap-align: start;
+  }
+
+  .ooh {
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .slides {

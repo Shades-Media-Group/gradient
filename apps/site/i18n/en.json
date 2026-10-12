@@ -386,7 +386,17 @@
       "no2": "Text or gradients baked into the photograph",
       "no3": "Filters that push the image towards red to match the brand",
       "no4": "Images that decorate and explain nothing",
-      "alt": "Alt text is written like a caption: what the picture shows and why it is there."
+      "alt": "Alt text is written like a caption: what the picture shows and why it is there.",
+      "studioAlt": "A designer at her desk smiles at her phone, a laptop and brushes around her.",
+      "greenAlt": "A young man in a grey tee laughs at his phone against a green wall.",
+      "handsAlt": "Two hands hold a phone close, the screen softly lit.",
+      "windowAlt": "A bearded man in a denim shirt reads his phone by a bright window.",
+      "more": "See the posts, stories and banners",
+      "badStudio": "A staged smile at a phone: stock, not a moment.",
+      "badGreen": "A plain wall and a phone: nothing of the work shows.",
+      "badHands": "A phone in close-up says nothing about the brand.",
+      "badWindow": "Posed and generic: it could belong to any company.",
+      "source": "These photographs are references from Unsplash. Campaigns use our own shoots of real people and real work."
     },
     "moments": {
       "title": "Writing by moment",
@@ -866,6 +876,16 @@
       "f2Label": "Carousel cover, 4:5",
       "f3": "A rebrand in sixty seconds",
       "f3Label": "Reel cover, 9:16"
+    },
+    "banners": {
+      "title": "Billboards and banners",
+      "text": "Read at 80 km/h: one line, the mark, the address. Nothing else.",
+      "b1": "Reveal your true <span>shade.</span>",
+      "b1Label": "Billboard, 6 × 3 m",
+      "b2": "From scattered to standout.",
+      "b2Label": "Digital transit screen, 16:9",
+      "b3": "Where creativity meets <span>technology.</span>",
+      "b3Label": "Poster, A1"
     },
     "decks": {
       "title": "Presentations",

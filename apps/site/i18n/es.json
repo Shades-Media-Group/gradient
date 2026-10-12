@@ -386,7 +386,17 @@
       "no2": "Texto o degradados incrustados en la fotografía",
       "no3": "Filtros que tiñen la imagen de rojo para que combine con la marca",
       "no4": "Imágenes que decoran y no explican nada",
-      "alt": "El texto alternativo se escribe como un pie de foto: qué muestra la imagen y por qué está ahí."
+      "alt": "El texto alternativo se escribe como un pie de foto: qué muestra la imagen y por qué está ahí.",
+      "studioAlt": "Una diseñadora sonríe a su móvil en su mesa, entre un portátil y pinceles.",
+      "greenAlt": "Un joven con camiseta gris se ríe mirando el móvil junto a una pared verde.",
+      "handsAlt": "Dos manos sostienen un móvil de cerca, con la pantalla suavemente iluminada.",
+      "windowAlt": "Un hombre con barba y camisa vaquera lee el móvil junto a una ventana luminosa.",
+      "more": "Ver publicaciones, stories y banners",
+      "badStudio": "Una sonrisa posada al móvil: banco de imágenes, no un momento.",
+      "badGreen": "Una pared lisa y un móvil: no se ve nada del trabajo.",
+      "badHands": "Un móvil en primer plano no dice nada de la marca.",
+      "badWindow": "Posado y genérico: podría ser de cualquier empresa.",
+      "source": "Estas fotografías son referencias de Unsplash. Las campañas usan nuestras propias sesiones con personas y trabajo reales."
     },
     "moments": {
       "title": "Escribir según el momento",
@@ -866,6 +876,16 @@
       "f2Label": "Portada de carrusel, 4:5",
       "f3": "Un rebranding en sesenta segundos",
       "f3Label": "Portada de reel, 9:16"
+    },
+    "banners": {
+      "title": "Vallas y banners",
+      "text": "Se lee a 80 km/h: una frase, la marca, la dirección. Nada más.",
+      "b1": "Revela tu verdadero <span>matiz.</span>",
+      "b1Label": "Valla, 6 × 3 m",
+      "b2": "De disperso a destacado.",
+      "b2Label": "Pantalla digital de transporte, 16:9",
+      "b3": "Donde la creatividad se une a la <span>tecnología.</span>",
+      "b3Label": "Póster, A1"
     },
     "decks": {
       "title": "Presentaciones",

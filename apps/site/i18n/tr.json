@@ -386,7 +386,17 @@
       "no2": "Fotoğrafa gömülmüş metin ya da gradyanlar",
       "no3": "Markaya uysun diye görseli kırmızıya çeken filtreler",
       "no4": "Süsleyen ama hiçbir şey anlatmayan görseller",
-      "alt": "Alternatif metin bir açıklama gibi yazılır: görselin ne gösterdiği ve neden orada olduğu."
+      "alt": "Alternatif metin bir açıklama gibi yazılır: görselin ne gösterdiği ve neden orada olduğu.",
+      "studioAlt": "Masasındaki bir tasarımcı, dizüstü bilgisayar ve fırçaların arasında telefonuna gülümsüyor.",
+      "greenAlt": "Gri tişörtlü genç bir adam yeşil bir duvarın önünde telefonuna bakıp gülüyor.",
+      "handsAlt": "İki el bir telefonu yakından tutuyor, ekran hafifçe aydınlık.",
+      "windowAlt": "Kot gömlekli sakallı bir adam aydınlık bir pencerenin önünde telefonunu okuyor.",
+      "more": "Gönderileri, hikâyeleri ve bannerları gör",
+      "badStudio": "Telefona pozlu bir gülümseme: an değil, stok fotoğraf.",
+      "badGreen": "Düz bir duvar ve bir telefon: işten hiçbir şey görünmüyor.",
+      "badHands": "Yakın plan bir telefon marka hakkında hiçbir şey söylemez.",
+      "badWindow": "Pozlu ve sıradan: herhangi bir şirkete ait olabilir.",
+      "source": "Bu fotoğraflar Unsplash’ten alınmış referanslardır. Kampanyalarda gerçek insanların ve gerçek işlerin kendi çekimlerimizi kullanırız."
     },
     "moments": {
       "title": "Ana göre yazmak",
@@ -866,6 +876,16 @@
       "f2Label": "Karusel kapağı, 4:5",
       "f3": "Altmış saniyede yeniden markalaşma",
       "f3Label": "Reels kapağı, 9:16"
+    },
+    "banners": {
+      "title": "Billboardlar ve bannerlar",
+      "text": "80 km/s hızda okunur: tek satır, işaret, adres. Başka bir şey yok.",
+      "b1": "Gerçek <span>tonunu</span> ortaya çıkar.",
+      "b1Label": "Billboard, 6 × 3 m",
+      "b2": "Dağınıktan dikkat çekiciye.",
+      "b2Label": "Toplu taşıma dijital ekranı, 16:9",
+      "b3": "Yaratıcılığın <span>teknolojiyle</span> buluştuğu yer.",
+      "b3Label": "Afiş, A1"
     },
     "decks": {
       "title": "Sunumlar",

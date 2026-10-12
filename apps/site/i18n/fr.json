@@ -386,7 +386,17 @@
       "no2": "Du texte ou des dégradés incrustés dans la photo",
       "no3": "Des filtres qui tirent l'image vers le rouge pour coller à la marque",
       "no4": "Des images qui décorent sans rien expliquer",
-      "alt": "Le texte alternatif s'écrit comme une légende : ce que montre l'image et pourquoi elle est là."
+      "alt": "Le texte alternatif s'écrit comme une légende : ce que montre l'image et pourquoi elle est là.",
+      "studioAlt": "Une designer sourit à son téléphone à son bureau, entre un ordinateur portable et des pinceaux.",
+      "greenAlt": "Un jeune homme en t-shirt gris rit devant son téléphone, contre un mur vert.",
+      "handsAlt": "Deux mains tiennent un téléphone de près, l’écran doucement éclairé.",
+      "windowAlt": "Un homme barbu en chemise en jean lit son téléphone près d’une fenêtre lumineuse.",
+      "more": "Voir les publications, stories et bannières",
+      "badStudio": "Un sourire posé devant un téléphone : de la banque d’images, pas un moment.",
+      "badGreen": "Un mur nu et un téléphone : rien du travail n’apparaît.",
+      "badHands": "Un téléphone en gros plan ne dit rien de la marque.",
+      "badWindow": "Posé et générique : il pourrait appartenir à n’importe quelle entreprise.",
+      "source": "Ces photographies sont des références issues d’Unsplash. Les campagnes utilisent nos propres prises de vue de vraies personnes et de vrai travail."
     },
     "moments": {
       "title": "Écrire selon le moment",
@@ -866,6 +876,16 @@
       "f2Label": "Couverture de carrousel, 4:5",
       "f3": "Une refonte de marque en soixante secondes",
       "f3Label": "Couverture de reel, 9:16"
+    },
+    "banners": {
+      "title": "Panneaux et bannières",
+      "text": "Lu à 80 km/h : une phrase, la marque, l’adresse. Rien d’autre.",
+      "b1": "Révélez votre vraie <span>nuance.</span>",
+      "b1Label": "Panneau, 6 × 3 m",
+      "b2": "De l’éparpillé au remarquable.",
+      "b2Label": "Écran de transport, 16:9",
+      "b3": "Là où la créativité rencontre la <span>technologie.</span>",
+      "b3Label": "Affiche, A1"
     },
     "decks": {
       "title": "Présentations",

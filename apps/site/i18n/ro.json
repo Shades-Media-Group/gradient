@@ -386,7 +386,17 @@
       "no2": "Text sau gradienți incluși în fotografie",
       "no3": "Filtre care împing imaginea spre roșu ca să se potrivească cu brandul",
       "no4": "Imagini care decorează și nu explică nimic",
-      "alt": "Textul alternativ se scrie ca o legendă: ce arată imaginea și de ce e acolo."
+      "alt": "Textul alternativ se scrie ca o legendă: ce arată imaginea și de ce e acolo.",
+      "studioAlt": "O designeriță zâmbește la telefon la birou, între un laptop și pensule.",
+      "greenAlt": "Un tânăr în tricou gri râde la telefon, lângă un perete verde.",
+      "handsAlt": "Două mâini țin un telefon aproape, cu ecranul luminat discret.",
+      "windowAlt": "Un bărbat cu barbă, în cămașă de blugi, citește pe telefon lângă o fereastră luminoasă.",
+      "more": "Vezi postările, stories și bannerele",
+      "badStudio": "Un zâmbet pozat la telefon: imagine de stoc, nu un moment.",
+      "badGreen": "Un perete gol și un telefon: nu se vede nimic din muncă.",
+      "badHands": "Un telefon în prim-plan nu spune nimic despre brand.",
+      "badWindow": "Pozat și generic: ar putea fi al oricărei companii.",
+      "source": "Aceste fotografii sunt referințe de pe Unsplash. Campaniile folosesc ședințe foto proprii, cu oameni reali și muncă reală."
     },
     "moments": {
       "title": "Scrisul, pe momente",
@@ -866,6 +876,16 @@
       "f2Label": "Copertă de carusel, 4:5",
       "f3": "Un rebranding în șaizeci de secunde",
       "f3Label": "Copertă de reel, 9:16"
+    },
+    "banners": {
+      "title": "Panouri și bannere",
+      "text": "Citit la 80 km/h: un rând, marca, adresa. Nimic altceva.",
+      "b1": "Descoperă-ți adevărata <span>nuanță.</span>",
+      "b1Label": "Panou publicitar, 6 × 3 m",
+      "b2": "De la risipit la remarcabil.",
+      "b2Label": "Ecran digital în transport, 16:9",
+      "b3": "Unde creativitatea întâlnește <span>tehnologia.</span>",
+      "b3Label": "Afiș, A1"
     },
     "decks": {
       "title": "Prezentări",
