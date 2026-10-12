@@ -101,7 +101,9 @@
       "imagerefold": "Esportazione e importazione di immagini per Figma, gratis e open source. Il primo prodotto a nascere da Gradient.",
       "shades": "Il sito dell'agenzia, da ricostruire su Gradient.",
       "live": "Online",
-      "next": "In arrivo"
+      "next": "In arrivo",
+      "progress": "In corso",
+      "socialmonitor": "Social listening che gira sul tuo computer: una dashboard gratuita e open source, e un server MCP per Claude."
     },
     "install": {
       "title": "Tre modi per iniziare.",
@@ -153,7 +155,8 @@
       "pagerecast": "Qualsiasi pagina web in livelli Figma modificabili. Un'estensione per Chrome e un plugin per Figma, gratis.",
       "imagerefold": "Esportazione e importazione di immagini per Figma, gratis e open source. Il primo prodotto a nascere da Gradient.",
       "lms": "Life Management System: uno spazio privato per allenamento, alimentazione e le altre aree della vita, installabile sul telefono.",
-      "private": "Solo su invito."
+      "private": "Solo su invito.",
+      "socialmonitor": "Segui i brand su Instagram, Facebook e TikTok: ogni post e commento conservato sul tuo computer, diviso dall’IA in positivi e negativi."
     }
   },
   "brand": {
@@ -440,7 +443,8 @@
       "imagerefoldMark": "Il suo marchio, «Scale»: tre quadrati arrotondati con un angolo in comune",
       "client": "Lavori per i clienti",
       "clientMark": "Il brand del cliente, sui ruoli di Gradient",
-      "note": "Un prodotto può avere un marchio proprio. Usa comunque caratteri, ruoli, icone e regole di Gradient, e la sua riga di credito non cambia mai."
+      "note": "Un prodotto può avere un marchio proprio. Usa comunque caratteri, ruoli, icone e regole di Gradient, e la sua riga di credito non cambia mai.",
+      "socialmonitorMark": "Quota di voce: un fumetto tagliato come un grafico a torta, in rosso, rosa e inchiostro."
     },
     "keep": {
       "short": "Regole",
@@ -969,7 +973,8 @@
       "title": "Prossimi su Gradient",
       "text": "I prodotti che partiranno da questo sistema invece che da un template.",
       "shades": "Il sito dell'agenzia, ricostruito: tenere le idee migliori, eliminare l'aspetto da template.",
-      "planned": "In programma"
+      "planned": "In programma",
+      "socialmonitor": "Social listening che gira sul tuo computer, costruito su Gradient fin dalla prima schermata."
     },
     "start": {
       "title": "Avvia un nuovo progetto",

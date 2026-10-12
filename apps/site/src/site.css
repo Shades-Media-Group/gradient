@@ -3667,6 +3667,22 @@ body {
   list-style: none;
 }
 
+/* A product still in progress takes the whole row: its logo beside its line. */
+.product--wide {
+  display: grid;
+  grid-column: 1 / -1;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px;
+  align-items: center;
+}
+
+@media (max-width: 860px) {
+  .product--wide {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+  }
+}
+
 .product-plate {
   display: grid;
   place-items: center;

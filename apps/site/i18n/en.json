@@ -101,7 +101,9 @@
       "imagerefold": "Free, open image export and import for Figma. The first product to start from Gradient.",
       "shades": "The agency's own site, to be rebuilt on Gradient.",
       "live": "Live",
-      "next": "Next"
+      "next": "Next",
+      "progress": "In progress",
+      "socialmonitor": "Social listening that runs on your computer: a free, open-source dashboard and an MCP server for Claude."
     },
     "install": {
       "title": "Three ways in.",
@@ -153,7 +155,8 @@
       "pagerecast": "Any web page into editable Figma layers. A free Chrome extension and Figma plugin.",
       "imagerefold": "Image export and import for Figma, free and open source. The first product to start from Gradient.",
       "lms": "Life Management System: one private home for training, food and the other areas of a life, installable on a phone.",
-      "private": "Invite only."
+      "private": "Invite only.",
+      "socialmonitor": "Watch brands on Instagram, Facebook and TikTok: every post and comment kept on your computer, sorted into good and bad by AI."
     }
   },
   "brand": {
@@ -440,7 +443,8 @@
       "imagerefoldMark": "Its own mark, \"Scale\": three rounded squares sharing a corner",
       "client": "Client work",
       "clientMark": "The client’s own brand, on Gradient roles",
-      "note": "A product may have its own mark. It still uses Gradient’s type, roles, icons and rules, and its credit line never changes."
+      "note": "A product may have its own mark. It still uses Gradient’s type, roles, icons and rules, and its credit line never changes.",
+      "socialmonitorMark": "Share of voice: a speech bubble cut like a pie chart, in red, rose and ink."
     },
     "keep": {
       "short": "Rules to keep",
@@ -969,7 +973,8 @@
       "title": "Next on Gradient",
       "text": "The products that will start from this system instead of from a template.",
       "shades": "The agency site, rebuilt: keep its best ideas, drop the template look.",
-      "planned": "Planned"
+      "planned": "Planned",
+      "socialmonitor": "Social listening that runs on your computer, built on Gradient from its first screen."
     },
     "start": {
       "title": "Start a new project",

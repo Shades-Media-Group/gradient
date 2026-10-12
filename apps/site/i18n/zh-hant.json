@@ -101,7 +101,9 @@
       "imagerefold": "免費開源的 Figma 圖片匯出與匯入工具，第一個從 Gradient 起步的產品。",
       "shades": "公司官網，即將以 Gradient 重建。",
       "live": "已上線",
-      "next": "即將推出"
+      "next": "即將推出",
+      "progress": "進行中",
+      "socialmonitor": "在你電腦上執行的社群聆聽：免費開源的儀表板，以及給 Claude 用的 MCP 伺服器。"
     },
     "install": {
       "title": "三種導入方式。",
@@ -153,7 +155,8 @@
       "pagerecast": "把任何網頁變成可編輯的 Figma 圖層。免費的 Chrome 擴充功能與 Figma 外掛。",
       "imagerefold": "免費開源的 Figma 圖片匯出與匯入工具，第一個從 Gradient 起步的產品。",
       "lms": "Life Management System：集訓練、飲食等生活各面向於一處的私人空間，可安裝到手機上。",
-      "private": "僅限邀請。"
+      "private": "僅限邀請。",
+      "socialmonitor": "在 Instagram、Facebook 與 TikTok 上關注品牌：每則貼文與留言都保存在你的電腦上，由 AI 分為正面與負面。"
     }
   },
   "brand": {
@@ -440,7 +443,8 @@
       "imagerefoldMark": "自有標誌「Scale」：三個共用一角的圓角方形",
       "client": "客戶作品",
       "clientMark": "客戶自己的品牌，套用 Gradient 角色",
-      "note": "產品可以有自己的標誌，但仍使用 Gradient 的字型、角色、圖示與規則，署名行永遠不變。"
+      "note": "產品可以有自己的標誌，但仍使用 Gradient 的字型、角色、圖示與規則，署名行永遠不變。",
+      "socialmonitorMark": "聲量占比：一個像圓餅圖般切開的對話泡泡，紅、玫瑰紅與墨色。"
     },
     "keep": {
       "short": "規則",
@@ -969,7 +973,8 @@
       "title": "Gradient 的下一步",
       "text": "這些產品會從這套系統起步，而不是從範本開始。",
       "shades": "重建的公司官網：保留最好的點子，拋掉範本感。",
-      "planned": "規劃中"
+      "planned": "規劃中",
+      "socialmonitor": "在你電腦上執行的社群聆聽，從第一個畫面起就以 Gradient 打造。"
     },
     "start": {
       "title": "開始新專案",

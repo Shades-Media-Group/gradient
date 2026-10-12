@@ -172,7 +172,7 @@
           </a>
           <a class="tile tile--projects" href="{{@to:projects}}" style="--dx: 20; --dy: 90; --r: 2deg">
             <span class="tile-label">{{nav.projects}}{{@icon:arrowRight}}</span>
-            <span class="tile-art" aria-hidden="true"><img src="/products/pagerecast-mark.svg" alt="" width="48" height="48" /><img src="/products/imagerefold-mark.svg" alt="" width="48" height="48" /><img src="/products/lms-mark.svg" alt="" width="48" height="48" /></span>
+            <span class="tile-art" aria-hidden="true"><img src="/products/pagerecast-mark.svg" alt="" width="48" height="48" /><img src="/products/imagerefold-mark.svg" alt="" width="48" height="48" /><img src="/products/lms-mark.svg" alt="" width="48" height="48" /><img src="/products/socialmonitor-mark.svg" alt="" width="48" height="48" /></span>
           </a>
         </nav>
       </section>
@@ -230,6 +230,14 @@
             <p>{{home.products.lms}}</p>
             <p class="product-links"><span class="product-note">{{home.products.private}}</span> <a class="g-link" data-link="lmsRepo">GitHub</a></p>
           </li>
+          <li class="product--wide">
+            <div class="product-plate product-plate--paper"><img src="/products/socialmonitor-logo.svg" alt="SocialMonitor" width="400" height="66" loading="lazy" /></div>
+            <div>
+              <div class="product-meta"><h3>SocialMonitor</h3><span class="g-badge g-badge--accent">{{home.work.progress}}</span></div>
+              <p>{{home.products.socialmonitor}}</p>
+              <p class="product-links"><a class="g-link" data-link="socialmonitorRepo">GitHub</a></p>
+            </div>
+          </li>
         </ul>
       </section>
 
@@ -261,6 +269,11 @@
             <a data-link="imagerefold"><b>ImageRefold</b>{{@icon:arrowOutward}}</a>
             <p>{{home.work.imagerefold}}</p>
             <span class="g-badge g-badge--success">{{home.work.live}}</span>
+          </li>
+          <li>
+            <a data-link="socialmonitorRepo"><b>SocialMonitor</b>{{@icon:arrowOutward}}</a>
+            <p>{{home.work.socialmonitor}}</p>
+            <span class="g-badge g-badge--accent">{{home.work.progress}}</span>
           </li>
           <li>
             <a data-link="shades"><b>shades.md</b>{{@icon:arrowOutward}}</a>

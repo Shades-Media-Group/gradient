@@ -101,7 +101,9 @@
       "imagerefold": "Figma için ücretsiz ve açık görsel dışa ve içe aktarma. Gradient'ten başlayan ilk ürün.",
       "shades": "Ajansın kendi sitesi; Gradient üzerine yeniden kurulacak.",
       "live": "Yayında",
-      "next": "Sırada"
+      "next": "Sırada",
+      "progress": "Yapım aşamasında",
+      "socialmonitor": "Bilgisayarınızda çalışan sosyal dinleme: ücretsiz, açık kaynaklı bir pano ve Claude için bir MCP sunucusu."
     },
     "install": {
       "title": "Üç giriş yolu.",
@@ -153,7 +155,8 @@
       "pagerecast": "Her web sayfasını düzenlenebilir Figma katmanlarına dönüştürür. Ücretsiz bir Chrome uzantısı ve Figma eklentisi.",
       "imagerefold": "Figma için ücretsiz ve açık kaynak görsel dışa ve içe aktarma. Gradient'ten başlayan ilk ürün.",
       "lms": "Life Management System: antrenman, beslenme ve hayatın diğer alanları için telefona kurulabilen özel bir alan.",
-      "private": "Yalnızca davetle."
+      "private": "Yalnızca davetle.",
+      "socialmonitor": "Markaları Instagram, Facebook ve TikTok’ta izleyin: her gönderi ve yorum bilgisayarınızda saklanır, yapay zekâ iyi ve kötü diye ayırır."
     }
   },
   "brand": {
@@ -440,7 +443,8 @@
       "imagerefoldMark": "Kendi işareti \"Scale\": bir köşeyi paylaşan üç yuvarlatılmış kare",
       "client": "Müşteri işleri",
       "clientMark": "Müşterinin kendi markası, Gradient rolleri üzerinde",
-      "note": "Bir ürünün kendi işareti olabilir. Yine de Gradient'in tipografisini, rollerini, ikonlarını ve kurallarını kullanır; künye satırı ise hiç değişmez."
+      "note": "Bir ürünün kendi işareti olabilir. Yine de Gradient'in tipografisini, rollerini, ikonlarını ve kurallarını kullanır; künye satırı ise hiç değişmez.",
+      "socialmonitorMark": "Ses payı: pasta grafik gibi kesilmiş bir konuşma balonu; kırmızı, pembe ve mürekkep."
     },
     "keep": {
       "short": "Kurallar",
@@ -969,7 +973,8 @@
       "title": "Gradient'te sırada",
       "text": "Bir şablondan değil, bu sistemden başlayacak ürünler.",
       "shades": "Ajans sitesi, yeniden: en iyi fikirlerini koru, şablon görüntüsünü at.",
-      "planned": "Planlandı"
+      "planned": "Planlandı",
+      "socialmonitor": "Bilgisayarınızda çalışan sosyal dinleme, ilk ekranından itibaren Gradient üzerine kurulu."
     },
     "start": {
       "title": "Yeni bir proje başlat",

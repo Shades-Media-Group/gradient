@@ -101,7 +101,9 @@
       "imagerefold": "Export și import de imagini pentru Figma, gratuit și deschis. Primul produs care pornește de la Gradient.",
       "shades": "Site-ul agenției, care va fi refăcut pe Gradient.",
       "live": "Lansat",
-      "next": "Urmează"
+      "next": "Urmează",
+      "progress": "În lucru",
+      "socialmonitor": "Monitorizare socială care rulează pe calculatorul tău: un dashboard gratuit, open-source, și un server MCP pentru Claude."
     },
     "install": {
       "title": "Trei moduri de a începe.",
@@ -153,7 +155,8 @@
       "pagerecast": "Orice pagină web, transformată în straturi Figma editabile. O extensie Chrome și un plugin Figma, gratuite.",
       "imagerefold": "Export și import de imagini pentru Figma, gratuit și open source. Primul produs care pornește de la Gradient.",
       "lms": "Life Management System: un singur loc privat pentru antrenamente, mâncare și celelalte domenii ale vieții, instalabil pe telefon.",
-      "private": "Doar pe bază de invitație."
+      "private": "Doar pe bază de invitație.",
+      "socialmonitor": "Urmărește brandurile pe Instagram, Facebook și TikTok: fiecare postare și comentariu păstrate pe calculatorul tău, sortate de AI în bune și rele."
     }
   },
   "brand": {
@@ -440,7 +443,8 @@
       "imagerefoldMark": "Propriul simbol, „Scale”: trei pătrate rotunjite cu un colț comun",
       "client": "Proiecte pentru clienți",
       "clientMark": "Brandul propriu al clientului, pe rolurile Gradient",
-      "note": "Un produs poate avea propriul simbol. Folosește totuși tipografia, rolurile, iconițele și regulile Gradient, iar mențiunea lui de credit nu se schimbă niciodată."
+      "note": "Un produs poate avea propriul simbol. Folosește totuși tipografia, rolurile, iconițele și regulile Gradient, iar mențiunea lui de credit nu se schimbă niciodată.",
+      "socialmonitorMark": "Cota de voce: un balon de dialog tăiat ca o diagramă circulară, în roșu, roz și cerneală."
     },
     "keep": {
       "short": "Reguli",
@@ -969,7 +973,8 @@
       "title": "Urmează pe Gradient",
       "text": "Produsele care vor porni de la acest sistem, nu de la un șablon.",
       "shades": "Site-ul agenției, refăcut: păstrăm cele mai bune idei, renunțăm la aspectul de șablon.",
-      "planned": "Planificat"
+      "planned": "Planificat",
+      "socialmonitor": "Monitorizare socială care rulează pe calculatorul tău, construită pe Gradient de la primul ecran."
     },
     "start": {
       "title": "Începe un proiect nou",

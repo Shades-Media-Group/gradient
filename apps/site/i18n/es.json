@@ -101,7 +101,9 @@
       "imagerefold": "Exportación e importación de imágenes para Figma, libre y abierta. El primer producto que nace de Gradient.",
       "shades": "El sitio de la agencia, que se reconstruirá sobre Gradient.",
       "live": "En línea",
-      "next": "Próximo"
+      "next": "Próximo",
+      "progress": "En curso",
+      "socialmonitor": "Escucha social que funciona en tu ordenador: un panel gratuito y de código abierto, y un servidor MCP para Claude."
     },
     "install": {
       "title": "Tres formas de empezar.",
@@ -153,7 +155,8 @@
       "pagerecast": "Cualquier página web convertida en capas editables de Figma. Una extensión gratuita para Chrome y un plugin para Figma.",
       "imagerefold": "Exportación e importación de imágenes para Figma, libre y de código abierto. El primer producto que nace de Gradient.",
       "lms": "Life Management System: un espacio privado para el entrenamiento, la comida y las demás áreas de la vida, instalable en el móvil.",
-      "private": "Solo con invitación."
+      "private": "Solo con invitación.",
+      "socialmonitor": "Sigue marcas en Instagram, Facebook y TikTok: cada publicación y comentario guardados en tu ordenador, clasificados en buenos y malos por IA."
     }
   },
   "brand": {
@@ -440,7 +443,8 @@
       "imagerefoldMark": "Su propio símbolo, «Scale»: tres cuadrados redondeados que comparten una esquina",
       "client": "Trabajo para clientes",
       "clientMark": "La marca propia del cliente, sobre los roles de Gradient",
-      "note": "Un producto puede tener su propio símbolo. Aun así usa la tipografía, los roles, los iconos y las reglas de Gradient, y su línea de crédito nunca cambia."
+      "note": "Un producto puede tener su propio símbolo. Aun así usa la tipografía, los roles, los iconos y las reglas de Gradient, y su línea de crédito nunca cambia.",
+      "socialmonitorMark": "Cuota de voz: un bocadillo de diálogo cortado como un gráfico circular, en rojo, rosa y tinta."
     },
     "keep": {
       "short": "Reglas",
@@ -969,7 +973,8 @@
       "title": "Lo próximo en Gradient",
       "text": "Los productos que partirán de este sistema en lugar de una plantilla.",
       "shades": "El sitio de la agencia, reconstruido: conservar sus mejores ideas, quitar el aspecto de plantilla.",
-      "planned": "Planeado"
+      "planned": "Planeado",
+      "socialmonitor": "Escucha social que funciona en tu ordenador, construida sobre Gradient desde su primera pantalla."
     },
     "start": {
       "title": "Empieza un proyecto nuevo",
