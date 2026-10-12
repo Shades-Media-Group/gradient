@@ -472,6 +472,8 @@
       "spectrumRule": "Mavi, macenta, kırmızı ve turuncu, bu sırayla. Arayüzde sayfa başına bir kez, şerit ya da çizgi olarak; asla metin üzerinde değil.",
       "secondary": "İkincil renkler",
       "secondaryRule": "Mavi, turuncu ve pembe illüstrasyonlara ve Spectra ailesine vurgu katar. Yeşil ve kehribar durum işaretlerini doldurur; üzerlerindeki metin başarı ve uyarı rollerini kullanır.",
+      "complementary": "Tamamlayıcı renkler",
+      "complementaryRule": "Marka kitabından altı destek tonu, her biri on adım: grafikler, illüstrasyonlar, etiketler, bildirimler ve sakin arka planlar için. Ölçülü kullanın; tek sinyal yine kırmızıdır.",
       "gradients": "İmza gradyanlar",
       "gradientsRule": "Kapaklar, afişler ve sosyal medya gönderileri için. Sayfa başına bir tane; asla metin ya da arayüz üzerinde değil. Özelliğini kopyalamak için birine tıklayın.",
       "copy": "CSS değişkenini kopyalamak için bir renk örneğine tıkla.",
@@ -496,7 +498,8 @@
       "accentText": "Açık ya da koyu zeminde kırmızı metin",
       "inverse": "Ters butonlar ve mürekkep rengi bölümler",
       "status": "Başarı, uyarı ve tehlike metni",
-      "theming": "Bir müşteri markası rolleri tek bir stil dosyasında değiştirir. Hiçbiri ham bir renk okumadığı için her bileşen buna uyar."
+      "theming": "Bir müşteri markası rolleri tek bir stil dosyasında değiştirir. Hiçbiri ham bir renk okumadığı için her bileşen buna uyar.",
+      "statusMore": "Bilgi, ayrıca bildirimler, açılır pencereler ve düğmeler için sakin arka planlar ve düz dolgular"
     },
     "type": {
       "title": "Tipografi",

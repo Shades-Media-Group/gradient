@@ -472,6 +472,8 @@
       "spectrumRule": "Bleu, magenta, rouge et orange, dans cet ordre. Dans une interface, une fois par mise en page, en bandeau ou en filet, jamais sur du texte.",
       "secondary": "Couleurs secondaires",
       "secondaryRule": "Le bleu, l’orange et le rose rehaussent les illustrations et la famille Spectra. Le vert et l’ambre remplissent les marques d’état ; le texte posé dessus utilise les rôles succès et avertissement.",
+      "complementary": "Couleurs complémentaires",
+      "complementaryRule": "Six teintes d’appui issues de la charte, dix nuances chacune : pour les graphiques, les illustrations, les étiquettes, les notifications et les fonds discrets. À utiliser avec retenue ; le rouge reste le seul signal.",
       "gradients": "Dégradés signature",
       "gradientsRule": "Pour les couvertures, les affiches et les publications sociales. Un par mise en page, jamais sur du texte ni sur l’interface. Cliquez pour copier sa propriété.",
       "copy": "Cliquez sur une pastille pour copier sa propriété personnalisée.",
@@ -496,7 +498,8 @@
       "accentText": "Texte rouge sur fond clair ou sombre",
       "inverse": "Boutons inversés et sections encre",
       "status": "Texte de succès, d'avertissement et de danger",
-      "theming": "Une marque cliente modifie les rôles dans une seule feuille de style. Tous les composants suivent, car aucun ne lit une couleur brute."
+      "theming": "Une marque cliente modifie les rôles dans une seule feuille de style. Tous les composants suivent, car aucun ne lit une couleur brute.",
+      "statusMore": "Information, et fonds discrets ou aplats pleins pour les notifications, fenêtres et boutons"
     },
     "type": {
       "title": "Typographie",

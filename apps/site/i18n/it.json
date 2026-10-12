@@ -472,6 +472,8 @@
       "spectrumRule": "Blu, magenta, rosso e arancione, in quest’ordine. In un’interfaccia, una volta per layout come fascia o filetto, mai sul testo.",
       "secondary": "Secondari",
       "secondaryRule": "Blu, arancione e rosa danno accento alle illustrazioni e alla famiglia Spectra. Verde e ambra riempiono i segni di stato; il testo sopra usa i ruoli di successo e avviso.",
+      "complementary": "Colori complementari",
+      "complementaryRule": "Sei tinte di supporto dal manuale del brand, dieci gradi ciascuna: per grafici, illustrazioni, etichette, avvisi e sfondi discreti. Usale con misura; il rosso resta l’unico segnale.",
       "gradients": "Sfumature firma",
       "gradientsRule": "Per copertine, poster e post social. Una per layout, mai sul testo né sull’interfaccia. Fai clic su una per copiarne la proprietà.",
       "copy": "Fai clic su un campione per copiarne la custom property.",
@@ -496,7 +498,8 @@
       "accentText": "Testo rosso su fondo chiaro o scuro",
       "inverse": "Pulsanti invertiti e sezioni color inchiostro",
       "status": "Testo di successo, avviso e pericolo",
-      "theming": "Un brand cliente cambia i ruoli in un solo foglio di stile. Ogni componente si adegua, perché nessuno legge un colore grezzo."
+      "theming": "Un brand cliente cambia i ruoli in un solo foglio di stile. Ogni componente si adegua, perché nessuno legge un colore grezzo.",
+      "statusMore": "Informazione, più sfondi discreti e riempimenti pieni per avvisi, pop-up e pulsanti"
     },
     "type": {
       "title": "Tipografia",

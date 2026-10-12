@@ -472,6 +472,8 @@
       "spectrumRule": "Blue, magenta, red and orange, in that order. In an interface, once per layout as a strip or a rule, never on text.",
       "secondary": "Secondary",
       "secondaryRule": "Blue, orange and pink accent artwork and the Spectra family. Green and amber fill status marks; text on them uses the success and warning roles.",
+      "complementary": "Complementary colours",
+      "complementaryRule": "Six supporting hues from the brand book, ten steps each: for charts, illustrations, tags, notices and quiet backgrounds. Use them sparingly; red stays the one signal.",
       "gradients": "Signature gradients",
       "gradientsRule": "For covers, posters and social posts. One per layout, never on text or interface chrome. Click one to copy its custom property.",
       "copy": "Click a swatch to copy its custom property.",
@@ -496,7 +498,8 @@
       "accentText": "Red text on light or dark ground",
       "inverse": "Inverse buttons and ink sections",
       "status": "Success, warning and danger text",
-      "theming": "A client brand changes the roles in one stylesheet. Every component follows, because none of them reads a raw colour."
+      "theming": "A client brand changes the roles in one stylesheet. Every component follows, because none of them reads a raw colour.",
+      "statusMore": "Information, plus quiet backgrounds and solid fills for notices, pop-ups and buttons"
     },
     "type": {
       "title": "Type",

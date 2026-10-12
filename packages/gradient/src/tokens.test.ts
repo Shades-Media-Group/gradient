@@ -14,7 +14,10 @@ const resolve = (value: string): string =>
 const role = (name: string, theme: 'light' | 'dark') => {
   const token = at(`role.${name}`)
   return resolve(
-    theme === 'dark' ? token.$extensions!['md.shades.gradient']!.dark! : (token.$value as string),
+    // A role without a dark value (a solid fill) is the same in both themes.
+    theme === 'dark'
+      ? (token.$extensions?.['md.shades.gradient']?.dark ?? (token.$value as string))
+      : (token.$value as string),
   )
 }
 
@@ -51,6 +54,16 @@ const PAIRS: [string, string][] = [
   ['success', 'bg'],
   ['warning', 'bg'],
   ['danger', 'bg'],
+  ['info', 'bg'],
+  ['info', 'surface'],
+  ['info', 'info-soft'],
+  ['success', 'success-soft'],
+  ['warning', 'warning-soft'],
+  ['danger', 'danger-soft'],
+  ['on-info-fill', 'info-fill'],
+  ['on-success-fill', 'success-fill'],
+  ['on-warning-fill', 'warning-fill'],
+  ['on-danger-fill', 'danger-fill'],
 ]
 
 describe('role colours', () => {

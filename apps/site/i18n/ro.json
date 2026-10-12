@@ -472,6 +472,8 @@
       "spectrumRule": "Albastru, magenta, roșu și portocaliu, în această ordine. Într-o interfață, o dată pe pagină, ca bandă sau linie, niciodată pe text.",
       "secondary": "Culori secundare",
       "secondaryRule": "Albastrul, portocaliul și rozul accentuează ilustrațiile și familia Spectra. Verdele și chihlimbarul umplu marcajele de stare; textul de pe ele folosește rolurile de succes și avertizare.",
+      "complementary": "Culori complementare",
+      "complementaryRule": "Șase nuanțe de sprijin din manualul de brand, zece trepte fiecare: pentru grafice, ilustrații, etichete, notificări și fundaluri discrete. Folosește-le cu măsură; roșul rămâne singurul semnal.",
       "gradients": "Degradeuri de semnătură",
       "gradientsRule": "Pentru coperți, afișe și postări sociale. Unul pe pagină, niciodată pe text sau pe interfață. Apasă pe unul ca să-i copiezi proprietatea.",
       "copy": "Apasă pe o mostră ca să-i copiezi proprietatea CSS personalizată.",
@@ -496,7 +498,8 @@
       "accentText": "Text roșu pe fundal deschis sau închis",
       "inverse": "Butoane inverse și secțiuni de cerneală",
       "status": "Text de succes, avertizare și pericol",
-      "theming": "Brandul unui client schimbă rolurile într-o singură foaie de stil. Fiecare componentă le urmează, pentru că niciuna nu citește o culoare brută."
+      "theming": "Brandul unui client schimbă rolurile într-o singură foaie de stil. Fiecare componentă le urmează, pentru că niciuna nu citește o culoare brută.",
+      "statusMore": "Informare, plus fundaluri discrete și umpluri pline pentru notificări, ferestre și butoane"
     },
     "type": {
       "title": "Tipografie",

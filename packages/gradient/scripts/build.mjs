@@ -26,6 +26,12 @@ const GROUPS = [
   ['color.red', 'red'],
   ['color.ink', 'ink'],
   ['color.secondary', 'secondary'],
+  ['color.blue', 'blue'],
+  ['color.violet', 'violet'],
+  ['color.pink', 'pink'],
+  ['color.orange', 'orange'],
+  ['color.amber', 'amber'],
+  ['color.green', 'green'],
   ['color.spectrum', 'spectrum'],
   ['color.family', 'family'],
   ['gradient', 'gradient'],
@@ -133,6 +139,12 @@ function themeCss() {
   add('color-red', 'red', 'color.red')
   add('color-ink', 'ink', 'color.ink')
   add('color-secondary', 'secondary', 'color.secondary')
+  add('color-blue', 'blue', 'color.blue')
+  add('color-violet', 'violet', 'color.violet')
+  add('color-pink', 'pink', 'color.pink')
+  add('color-orange', 'orange', 'color.orange')
+  add('color-amber', 'amber', 'color.amber')
+  add('color-green', 'green', 'color.green')
   add('color-spectrum', 'spectrum', 'color.spectrum')
   add('color', '', 'role')
   add('font', 'font', 'font')

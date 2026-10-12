@@ -2016,6 +2016,21 @@ body {
   grid-template-columns: repeat(5, minmax(0, 1fr));
 }
 
+/* The complementary hues: the same grid as the main ramps, a little quieter. */
+.swatches--quiet + .swatches--quiet {
+  margin-top: 4px;
+}
+
+.swatches--quiet button {
+  aspect-ratio: 4 / 3;
+}
+
+.swatches--quiet li:nth-child(-n + 5) button,
+:is([data-swatches='pink'], [data-swatches='orange'], [data-swatches='green']) li:nth-child(6) button,
+[data-swatches='amber'] li:nth-child(-n + 7) button {
+  color: var(--g-ink-950);
+}
+
 @media (max-width: 560px) {
   .swatches--five {
     grid-template-columns: none;

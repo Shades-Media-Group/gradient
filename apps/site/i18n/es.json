@@ -472,6 +472,8 @@
       "spectrumRule": "Azul, magenta, rojo y naranja, en ese orden. En una interfaz, una vez por diseño como franja o línea, nunca sobre texto.",
       "secondary": "Secundarios",
       "secondaryRule": "El azul, el naranja y el rosa acentúan las ilustraciones y la familia Spectra. El verde y el ámbar rellenan las marcas de estado; el texto sobre ellos usa los roles de éxito y aviso.",
+      "complementary": "Colores complementarios",
+      "complementaryRule": "Seis tonos de apoyo del manual de marca, diez pasos cada uno: para gráficos, ilustraciones, etiquetas, avisos y fondos discretos. Úsalos con mesura; el rojo sigue siendo la única señal.",
       "gradients": "Degradados de firma",
       "gradientsRule": "Para portadas, carteles y publicaciones sociales. Uno por diseño, nunca sobre texto ni en la interfaz. Pulsa uno para copiar su propiedad.",
       "copy": "Haz clic en una muestra para copiar su propiedad personalizada.",
@@ -496,7 +498,8 @@
       "accentText": "Texto rojo sobre fondo claro u oscuro",
       "inverse": "Botones invertidos y secciones en tinta",
       "status": "Texto de éxito, advertencia y peligro",
-      "theming": "Una marca cliente cambia los roles en una sola hoja de estilos. Todos los componentes la siguen, porque ninguno lee un color en bruto."
+      "theming": "Una marca cliente cambia los roles en una sola hoja de estilos. Todos los componentes la siguen, porque ninguno lee un color en bruto.",
+      "statusMore": "Información, más fondos discretos y rellenos sólidos para avisos, ventanas emergentes y botones"
     },
     "type": {
       "title": "Tipografía",
