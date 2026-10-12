@@ -4,15 +4,22 @@ Every notable change to Gradient and the `shades-gradient` package. The format f
 
 ## [Unreleased]
 
+## [0.5.0] - 2026-10-12
+
 ### Added
 
 - **Complementary colours:** `color.blue`, `violet`, `pink`, `orange`, `amber` and `green`, each from 50 to 900 and anchored to the brand book's own tints, plus `--g-info` and quiet `--g-*-soft` backgrounds and solid `--g-*-fill` fills (with `--g-on-*-fill` text) for info, success, warning and danger. Nothing existing changed.
 - **Tokens:** `color.secondary` (blue, orange, pink, green, amber) and five signature gradients, `gradient.spectrum`, `shade`, `dawn`, `rose` and `ink`, built to `--g-gradient-*`.
-- **Brand page:** Spectra's construction and four expressions (hello, idea, nice, hmm, also as SVG files in `brand/spectra/`), six brand devices, and "Keep Shades, Shades": ten rules in the page's red chapter.
-- **Foundations page:** the secondary colours and the signature gradients.
-- **Print page:** speaker, attendee and crew badges, shot beside the team and guest ones.
-- **SocialMonitor:** the fourth product, listed as in progress on the home page, the projects page, the brand products table and the components table, with its own Share of voice logo.
-- **Applications page:** the photography direction, eight social posts, stories and reel covers, and keynote slides, in every language.
+- **Spectra:** four expressions as SVG files in `brand/spectra/` (hello, idea, nice, hmm).
+- **Brand page:** Spectra's construction and expressions, six brand devices, photographs to use and to avoid, and "Keep Shades, Shades": ten rules in the page's red chapter.
+- **Foundations page:** the secondary and complementary colours and the signature gradients.
+- **Print page:** speaker, attendee and crew badges, packaging, and the brand-guidelines book, all shot in the studio.
+- **Applications page:** the photography direction, eight social posts, stories and reel covers, billboards and banners with street renders, and keynote slides, in every language.
+- **SocialMonitor:** the fourth product, listed as in progress with its own Share of voice logo.
+
+### Changed
+
+- **The homepage split** runs on the compositor, locked to the scroll; on phones the row of names becomes a column with their descriptions.
 
 ## [0.4.0] - 2026-10-11
 
