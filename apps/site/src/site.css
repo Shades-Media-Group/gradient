@@ -526,6 +526,10 @@ body {
   opacity: clamp(0, calc((var(--t) - 0.75) * 4), 1);
 }
 
+.split-stack {
+  display: none;
+}
+
 /* Where the browser can, the split runs on the compositor, locked to the
    scroll: only transform and opacity move, so phones keep up. Elsewhere the
    script above drives --t. Reduced motion shows the end. */
@@ -635,6 +639,13 @@ body {
   to {
     opacity: 1;
     transform: none;
+  }
+}
+
+@keyframes stack-in {
+  from {
+    opacity: 0;
+    transform: translateX(var(--from, 0)) scale(0.55);
   }
 }
 
@@ -2848,9 +2859,65 @@ body {
     height: 220vh;
   }
 
+  /* The bars, names and caption sit together as one centred group; the
+     names rise into the square's empty foot once the square has gone. */
   .split-sticky {
+    grid-template-rows: none;
+    align-content: center;
     padding-block: 16px 28px;
     gap: 12px;
+  }
+
+  .split-stage {
+    align-self: auto;
+  }
+
+  .split-layers {
+    margin-top: calc(var(--s) * -9 / 56);
+  }
+
+  /* Scrolling on, the three columns settle into the old stacked list. */
+  .split-stack {
+    display: grid;
+    gap: 40px;
+    margin: 0;
+    padding: 0 var(--gutter) 72px;
+    overflow-x: clip;
+    list-style: none;
+    text-align: center;
+  }
+
+  .split-stack h3 {
+    font-size: var(--g-size-h1);
+    letter-spacing: var(--g-tracking-title);
+  }
+
+  .split-stack p {
+    max-width: 28ch;
+    margin: 10px auto 12px;
+    color: var(--g-text-2);
+  }
+
+  .split-stack .g-link {
+    font-weight: 600;
+  }
+
+  @supports (animation-timeline: view()) {
+    @media (prefers-reduced-motion: no-preference) {
+      :root:not([data-g-motion]) .split-stack li {
+        animation: stack-in linear both;
+        animation-timeline: view();
+        animation-range: entry 0% cover 35%;
+      }
+
+      .split-stack li:first-child {
+        --from: -30vw;
+      }
+
+      .split-stack li:last-child {
+        --from: 30vw;
+      }
+    }
   }
 
   /* Each bar ends centred over its own column, whatever the screen. */

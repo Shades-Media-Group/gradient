@@ -33,7 +33,7 @@ const LANGS = {
 const HREFLANGS = [...Object.values(LANGS), 'x-default'].sort()
 /** Compressed bytes a single page may cost, fonts excluded. */
 // css is the shared sheet every page loads; showcase is the brand-application sheet, on the pages that show it.
-const BUDGET = { html: 24_000, js: 12_000, css: 17_500, showcase: 8_000 }
+const BUDGET = { html: 24_000, js: 12_000, css: 18_000, showcase: 8_000 }
 
 const dist = process.argv[2] ?? fileURLToPath(new URL('../apps/site/dist', import.meta.url))
 if (!existsSync(dist)) {

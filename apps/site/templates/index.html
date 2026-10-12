@@ -57,6 +57,25 @@
         </div>
       </section>
 
+      <!-- Phones: the three columns settle into one, with their full descriptions. -->
+      <ol class="split-stack" aria-hidden="true">
+        <li>
+          <h3>{{home.split.brand.title}}</h3>
+          <p>{{home.split.brand.text}}</p>
+          <a class="g-link" href="{{@to:brand}}" tabindex="-1">{{home.split.brand.link}}</a>
+        </li>
+        <li>
+          <h3>{{home.split.foundations.title}}</h3>
+          <p>{{home.split.foundations.text}}</p>
+          <a class="g-link" href="{{@to:foundations}}" tabindex="-1">{{home.split.foundations.link}}</a>
+        </li>
+        <li>
+          <h3>{{home.split.code.title}}</h3>
+          <p>{{home.split.code.text}}</p>
+          <a class="g-link" href="{{@to:components}}" tabindex="-1">{{home.split.code.link}}</a>
+        </li>
+      </ol>
+
       <section class="chapter chapter--ink" data-theme="dark" id="colour">
         <div class="chapter-head" data-reveal>
           <h2>{{home.colour.title}}</h2>
