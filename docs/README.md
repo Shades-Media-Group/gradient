@@ -10,6 +10,7 @@ The website, [gradient.shades.md](https://gradient.shades.md), shows the system 
 - [Accessibility](accessibility.md): the standard, the promises, how it is checked and the open gaps
 - [Using the package](guides/using-the-package.md): React and Tailwind, Preact and Figma panels, plain HTML, client themes.
 - [Tool panels](guides/tool-panels.md): how a plugin, extension or small-app panel is laid out, and the redesign process behind it.
+- [Compact mode](guides/compact.md): the dense layer for admin panels, CRMs and dashboards: shell, tables, menus, palette, split view.
 
 ## Working on Gradient
 

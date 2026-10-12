@@ -60,6 +60,21 @@ Every token becomes a utility that follows light and dark: `bg-accent`, `text-on
 
 The components page lists every class and state: [gradient.shades.md/components](https://gradient.shades.md/components/).
 
+### Compact mode, for work tools
+
+Admin panels, CRMs and dashboards get a denser layer: 13 px text, 28 px controls, hairlines, a rail and a navigation panel, data tables, menus, a command palette and a three-pane split view. It is opt-in and not part of `gradient.css`:
+
+```js
+import 'shades-gradient/gradient.css'
+import 'shades-gradient/compact.css'
+```
+
+```html
+<html lang="en" data-density="compact">
+```
+
+See the [compact mode guide](https://github.com/Shades-Media-Group/gradient/blob/main/docs/guides/compact.md) for the classes and the rules that differ.
+
 ### Icons
 
 ```js
