@@ -84,6 +84,52 @@ if (split && !CSS.supports('animation-timeline: view()')) {
   update()
 }
 
+// On phones the row of names then becomes a column (site.css). Each name's
+// start is measured once: where it sits under its bar in the row, against
+// where the column puts it. The scroll timeline animates between the two.
+const phoneSplit = matchMedia('(max-width: 860px)')
+const flip = () => {
+  if (!split) return
+  const items = [...split.querySelectorAll<HTMLElement>('.split-layers li')]
+  const stage = split.querySelector<HTMLElement>('.split-stage')!
+  const sticky = stage.offsetParent
+  // Offsets measured up to the sticky frame, ignoring the animations' transforms.
+  const at = (el: HTMLElement) => {
+    let x = 0
+    let y = 0
+    for (let node: HTMLElement | null = el; node && node !== sticky; node = node.offsetParent as HTMLElement | null) {
+      x += node.offsetLeft
+      y += node.offsetTop
+    }
+    return { x, y }
+  }
+  const bars = [...stage.querySelectorAll<HTMLElement>('.split-bar')]
+  const on = phoneSplit.matches && CSS.supports('animation-timeline: view()')
+  const s = stage.offsetWidth
+  const spread = Math.min(innerWidth * 0.28, 220)
+  const rowSize = Math.min(Math.max(16, innerWidth * 0.046), 24)
+  const box = at(stage)
+  const rowY = box.y + stage.offsetHeight - (s * 9) / 56
+  // The caption waits just under the row, not under the column's full height.
+  const caption = split.querySelector<HTMLElement>('.split-caption')!
+  if (on) caption.style.setProperty('--cy', `${rowY + rowSize * 1.25 + 28 - at(caption).y}px`)
+  else caption.removeAttribute('style')
+  items.forEach((item, i) => {
+    if (!on) return void item.removeAttribute('style')
+    const bar = bars[i]!
+    const rowX = box.x + bar.offsetLeft + bar.offsetWidth / 2 + (i - 1) * (spread - (s * 13) / 56)
+    const size = parseFloat(getComputedStyle(item.querySelector('h3')!).fontSize)
+    const place = at(item)
+    item.style.setProperty('--fx', `${rowX - (place.x + item.offsetWidth / 2)}px`)
+    item.style.setProperty('--fy', `${rowY - place.y}px`)
+    item.style.setProperty('--fs', `${rowSize / size}`)
+  })
+}
+flip()
+addEventListener('resize', flip)
+phoneSplit.addEventListener('change', flip)
+document.fonts.ready.then(flip)
+
 // Radio-like segmented controls.
 for (const group of $$('[data-segmented], [data-theme-preview], [data-email-switch]')) {
   const options = $$<HTMLButtonElement>('[role="radio"]', group)

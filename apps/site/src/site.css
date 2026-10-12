@@ -526,10 +526,6 @@ body {
   opacity: clamp(0, calc((var(--t) - 0.75) * 4), 1);
 }
 
-.split-stack {
-  display: none;
-}
-
 /* Where the browser can, the split runs on the compositor, locked to the
    scroll: only transform and opacity move, so phones keep up. Elsewhere the
    script above drives --t. Reduced motion shows the end. */
@@ -642,10 +638,34 @@ body {
   }
 }
 
-@keyframes stack-in {
+@keyframes split-flip {
+  from {
+    transform: translate(var(--fx, 0), var(--fy, 0)) scale(var(--fs, 1));
+  }
+}
+
+@keyframes split-away {
+  to {
+    opacity: 0;
+    transform: translateY(-24px) scale(0.9);
+  }
+}
+
+@keyframes split-fade {
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes split-desc {
   from {
     opacity: 0;
-    transform: translateX(var(--from, 0)) scale(0.55);
+    visibility: hidden;
+  }
+
+  to {
+    opacity: 1;
+    visibility: visible;
   }
 }
 
@@ -2876,47 +2896,83 @@ body {
     margin-top: calc(var(--s) * -9 / 56);
   }
 
-  /* Scrolling on, the three columns settle into the old stacked list. */
-  .split-stack {
-    display: grid;
-    gap: 40px;
-    margin: 0;
-    padding: 0 var(--gutter) 72px;
-    overflow-x: clip;
-    list-style: none;
-    text-align: center;
-  }
 
-  .split-stack h3 {
-    font-size: var(--g-size-h1);
-    letter-spacing: var(--g-tracking-title);
-  }
-
-  .split-stack p {
-    max-width: 28ch;
-    margin: 10px auto 12px;
-    color: var(--g-text-2);
-  }
-
-  .split-stack .g-link {
-    font-weight: 600;
-  }
-
+  /* Then the row becomes the column: the bars lift away and the same three
+     names glide from their places under the bars into one centred list,
+     their descriptions arriving last. main.ts measures --fx, --fy and --fs. */
   @supports (animation-timeline: view()) {
     @media (prefers-reduced-motion: no-preference) {
-      :root:not([data-g-motion]) .split-stack li {
-        animation: stack-in linear both;
-        animation-timeline: view();
-        animation-range: entry 0% cover 35%;
+      :root:not([data-g-motion]) .split {
+        height: 340vh;
       }
 
-      .split-stack li:first-child {
-        --from: -30vw;
+      :root:not([data-g-motion]) :is(.split-square, .split-bar, .split-layers),
+      :root:not([data-g-motion]) .split-bar::after {
+        animation-range: contain 0% contain 50%;
       }
 
-      .split-stack li:last-child {
-        --from: 30vw;
+      :root:not([data-g-motion]) .split-caption {
+        animation-name: split-caption, split-fade;
+        animation-range:
+          contain 0% contain 50%,
+          contain 52% contain 62%;
       }
+
+      :root:not([data-g-motion]) .split-stage {
+        animation: split-away linear both;
+        animation-timeline: --split;
+        animation-range: contain 52% contain 72%;
+      }
+
+      :root:not([data-g-motion]) :is(.split-stage, .split-layers) {
+        grid-row: 1;
+        grid-column: 1;
+        align-self: center;
+      }
+
+      :root:not([data-g-motion]) .split-layers {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 24px;
+        width: 100%;
+        margin: 0;
+      }
+
+      :root:not([data-g-motion]) .split-layers li {
+        transform-origin: 50% 0;
+        animation: split-flip linear both;
+        animation-timeline: --split;
+        animation-range: contain 55% contain 88%;
+      }
+
+      :root:not([data-g-motion]) .split-layers h3 {
+        font-size: var(--g-size-h2);
+      }
+
+      :root:not([data-g-motion]) .split-layers p {
+        display: block;
+        margin: 6px auto 8px;
+        font-size: var(--g-size-small);
+      }
+
+      :root:not([data-g-motion]) .split-layers .g-link {
+        font-size: var(--g-size-small);
+      }
+
+      :root:not([data-g-motion]) .split-caption {
+        translate: 0 var(--cy, 0);
+      }
+
+      :root:not([data-g-motion]) .split-layers :is(p, .g-link) {
+        animation: split-desc linear both;
+        animation-timeline: --split;
+        animation-range: contain 82% contain 96%;
+      }
+    }
+  }
+
+  @media (max-height: 620px) {
+    :root:not([data-g-motion]) .split-layers p {
+      display: none;
     }
   }
 
