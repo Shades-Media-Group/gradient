@@ -103,7 +103,8 @@
       "live": "En línea",
       "next": "Próximo",
       "progress": "En curso",
-      "socialmonitor": "Escucha social que funciona en tu ordenador: un panel gratuito y de código abierto, y un servidor MCP para Claude."
+      "socialmonitor": "Escucha social que funciona en tu ordenador: un panel gratuito y de código abierto, y un servidor MCP para Claude.",
+      "crm": "Nuestro CRM interno, hecho con Gradient desde la página de inicio de sesión y servido desde nuestro propio servidor."
     },
     "install": {
       "title": "Tres formas de empezar.",
@@ -156,7 +157,9 @@
       "imagerefold": "Exportación e importación de imágenes para Figma, libre y de código abierto. El primer producto que nace de Gradient.",
       "lms": "Life Management System: un espacio privado para el entrenamiento, la comida y las demás áreas de la vida, instalable en el móvil.",
       "private": "Solo con invitación.",
-      "socialmonitor": "Sigue marcas en Instagram, Facebook y TikTok: cada publicación y comentario guardados en tu ordenador, clasificados en buenos y malos por IA."
+      "socialmonitor": "Sigue marcas en Instagram, Facebook y TikTok: cada publicación y comentario guardados en tu ordenador, clasificados en buenos y malos por IA.",
+      "crm": "El CRM propio de la empresa, para clientes y negocios. Funciona en el servidor propio de Shades.",
+      "staff": "Solo para el equipo."
     }
   },
   "brand": {
@@ -974,7 +977,8 @@
       "text": "Los productos que partirán de este sistema en lugar de una plantilla.",
       "shades": "El sitio de la agencia, reconstruido: conservar sus mejores ideas, quitar el aspecto de plantilla.",
       "planned": "Planeado",
-      "socialmonitor": "Escucha social que funciona en tu ordenador, construida sobre Gradient desde su primera pantalla."
+      "socialmonitor": "Escucha social que funciona en tu ordenador, construida sobre Gradient desde su primera pantalla.",
+      "crm": "El CRM de la empresa para clientes y negocios, hecho con Gradient desde su primera pantalla."
     },
     "start": {
       "title": "Empieza un proyecto nuevo",

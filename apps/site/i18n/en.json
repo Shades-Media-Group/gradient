@@ -103,7 +103,8 @@
       "live": "Live",
       "next": "Next",
       "progress": "In progress",
-      "socialmonitor": "Social listening that runs on your computer: a free, open-source dashboard and an MCP server for Claude."
+      "socialmonitor": "Social listening that runs on your computer: a free, open-source dashboard and an MCP server for Claude.",
+      "crm": "Our internal CRM, built on Gradient from its sign-in page and run from our own server."
     },
     "install": {
       "title": "Three ways in.",
@@ -156,7 +157,9 @@
       "imagerefold": "Image export and import for Figma, free and open source. The first product to start from Gradient.",
       "lms": "Life Management System: one private home for training, food and the other areas of a life, installable on a phone.",
       "private": "Invite only.",
-      "socialmonitor": "Watch brands on Instagram, Facebook and TikTok: every post and comment kept on your computer, sorted into good and bad by AI."
+      "socialmonitor": "Watch brands on Instagram, Facebook and TikTok: every post and comment kept on your computer, sorted into good and bad by AI.",
+      "crm": "The company's own CRM, for clients and deals. It runs on Shades' own server.",
+      "staff": "Staff only."
     }
   },
   "brand": {
@@ -974,7 +977,8 @@
       "text": "The products that will start from this system instead of from a template.",
       "shades": "The agency site, rebuilt: keep its best ideas, drop the template look.",
       "planned": "Planned",
-      "socialmonitor": "Social listening that runs on your computer, built on Gradient from its first screen."
+      "socialmonitor": "Social listening that runs on your computer, built on Gradient from its first screen.",
+      "crm": "The company CRM for clients and deals, built on Gradient from its first screen."
     },
     "start": {
       "title": "Start a new project",

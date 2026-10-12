@@ -103,7 +103,8 @@
       "live": "Yayında",
       "next": "Sırada",
       "progress": "Yapım aşamasında",
-      "socialmonitor": "Bilgisayarınızda çalışan sosyal dinleme: ücretsiz, açık kaynaklı bir pano ve Claude için bir MCP sunucusu."
+      "socialmonitor": "Bilgisayarınızda çalışan sosyal dinleme: ücretsiz, açık kaynaklı bir pano ve Claude için bir MCP sunucusu.",
+      "crm": "İç CRM'imiz: giriş sayfasından itibaren Gradient ile yapıldı ve kendi sunucumuzda çalışıyor."
     },
     "install": {
       "title": "Üç giriş yolu.",
@@ -156,7 +157,9 @@
       "imagerefold": "Figma için ücretsiz ve açık kaynak görsel dışa ve içe aktarma. Gradient'ten başlayan ilk ürün.",
       "lms": "Life Management System: antrenman, beslenme ve hayatın diğer alanları için telefona kurulabilen özel bir alan.",
       "private": "Yalnızca davetle.",
-      "socialmonitor": "Markaları Instagram, Facebook ve TikTok’ta izleyin: her gönderi ve yorum bilgisayarınızda saklanır, yapay zekâ iyi ve kötü diye ayırır."
+      "socialmonitor": "Markaları Instagram, Facebook ve TikTok’ta izleyin: her gönderi ve yorum bilgisayarınızda saklanır, yapay zekâ iyi ve kötü diye ayırır.",
+      "crm": "Şirketin kendi CRM'i; müşteriler ve anlaşmalar için. Shades'in kendi sunucusunda çalışır.",
+      "staff": "Yalnızca ekip için."
     }
   },
   "brand": {
@@ -974,7 +977,8 @@
       "text": "Bir şablondan değil, bu sistemden başlayacak ürünler.",
       "shades": "Ajans sitesi, yeniden: en iyi fikirlerini koru, şablon görüntüsünü at.",
       "planned": "Planlandı",
-      "socialmonitor": "Bilgisayarınızda çalışan sosyal dinleme, ilk ekranından itibaren Gradient üzerine kurulu."
+      "socialmonitor": "Bilgisayarınızda çalışan sosyal dinleme, ilk ekranından itibaren Gradient üzerine kurulu.",
+      "crm": "Müşteriler ve anlaşmalar için şirket CRM'i; ilk ekranından itibaren Gradient ile yapılıyor."
     },
     "start": {
       "title": "Yeni bir proje başlat",

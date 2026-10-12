@@ -103,7 +103,8 @@
       "live": "Online",
       "next": "In arrivo",
       "progress": "In corso",
-      "socialmonitor": "Social listening che gira sul tuo computer: una dashboard gratuita e open source, e un server MCP per Claude."
+      "socialmonitor": "Social listening che gira sul tuo computer: una dashboard gratuita e open source, e un server MCP per Claude.",
+      "crm": "Il nostro CRM interno, costruito su Gradient a partire dalla pagina di accesso e servito dal nostro server."
     },
     "install": {
       "title": "Tre modi per iniziare.",
@@ -156,7 +157,9 @@
       "imagerefold": "Esportazione e importazione di immagini per Figma, gratis e open source. Il primo prodotto a nascere da Gradient.",
       "lms": "Life Management System: uno spazio privato per allenamento, alimentazione e le altre aree della vita, installabile sul telefono.",
       "private": "Solo su invito.",
-      "socialmonitor": "Segui i brand su Instagram, Facebook e TikTok: ogni post e commento conservato sul tuo computer, diviso dall’IA in positivi e negativi."
+      "socialmonitor": "Segui i brand su Instagram, Facebook e TikTok: ogni post e commento conservato sul tuo computer, diviso dall’IA in positivi e negativi.",
+      "crm": "Il CRM dell'azienda, per clienti e trattative. Gira sul server di Shades.",
+      "staff": "Solo per il team."
     }
   },
   "brand": {
@@ -974,7 +977,8 @@
       "text": "I prodotti che partiranno da questo sistema invece che da un template.",
       "shades": "Il sito dell'agenzia, ricostruito: tenere le idee migliori, eliminare l'aspetto da template.",
       "planned": "In programma",
-      "socialmonitor": "Social listening che gira sul tuo computer, costruito su Gradient fin dalla prima schermata."
+      "socialmonitor": "Social listening che gira sul tuo computer, costruito su Gradient fin dalla prima schermata.",
+      "crm": "Il CRM aziendale per clienti e trattative, costruito su Gradient dalla prima schermata."
     },
     "start": {
       "title": "Avvia un nuovo progetto",

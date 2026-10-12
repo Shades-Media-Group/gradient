@@ -103,7 +103,8 @@
       "live": "已上线",
       "next": "即将推出",
       "progress": "进行中",
-      "socialmonitor": "在你电脑上运行的社交聆听：免费开源的仪表板，以及给 Claude 用的 MCP 服务器。"
+      "socialmonitor": "在你电脑上运行的社交聆听：免费开源的仪表板，以及给 Claude 用的 MCP 服务器。",
+      "crm": "我们的内部 CRM，从登录页开始就基于 Gradient 构建，运行在我们自己的服务器上。"
     },
     "install": {
       "title": "三种接入方式。",
@@ -156,7 +157,9 @@
       "imagerefold": "免费开源的 Figma 图片导出与导入工具，第一个从 Gradient 起步的产品。",
       "lms": "Life Management System：集训练、饮食等生活各方面于一体的私人空间，可安装到手机上。",
       "private": "仅限邀请。",
-      "socialmonitor": "在 Instagram、Facebook 和 TikTok 上关注品牌：每条帖子和评论都保存在你的电脑上，由 AI 分为正面和负面。"
+      "socialmonitor": "在 Instagram、Facebook 和 TikTok 上关注品牌：每条帖子和评论都保存在你的电脑上，由 AI 分为正面和负面。",
+      "crm": "公司自己的 CRM，用于管理客户和交易。运行在 Shades 自己的服务器上。",
+      "staff": "仅限团队成员。"
     }
   },
   "brand": {
@@ -974,7 +977,8 @@
       "text": "这些产品将从这套系统起步，而不是从模板起步。",
       "shades": "重建公司官网：保留最好的想法，去掉模板感。",
       "planned": "计划中",
-      "socialmonitor": "在你电脑上运行的社交聆听，从第一个界面起就基于 Gradient 构建。"
+      "socialmonitor": "在你电脑上运行的社交聆听，从第一个界面起就基于 Gradient 构建。",
+      "crm": "用于客户和交易的公司 CRM，从第一个界面起就基于 Gradient 构建。"
     },
     "start": {
       "title": "开始一个新项目",

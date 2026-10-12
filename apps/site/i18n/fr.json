@@ -103,7 +103,8 @@
       "live": "En ligne",
       "next": "À venir",
       "progress": "En cours",
-      "socialmonitor": "L’écoute sociale qui tourne sur votre ordinateur : un tableau de bord libre et gratuit, et un serveur MCP pour Claude."
+      "socialmonitor": "L’écoute sociale qui tourne sur votre ordinateur : un tableau de bord libre et gratuit, et un serveur MCP pour Claude.",
+      "crm": "Notre CRM interne, construit sur Gradient dès sa page de connexion et hébergé sur notre propre serveur."
     },
     "install": {
       "title": "Trois points d'entrée.",
@@ -156,7 +157,9 @@
       "imagerefold": "Export et import d'images pour Figma, gratuit et open source. Le premier produit né de Gradient.",
       "lms": "Life Management System : un espace privé pour l'entraînement, l'alimentation et les autres domaines de la vie, installable sur téléphone.",
       "private": "Sur invitation.",
-      "socialmonitor": "Suivez les marques sur Instagram, Facebook et TikTok : chaque publication et chaque commentaire gardés sur votre ordinateur, triés en positif et négatif par l’IA."
+      "socialmonitor": "Suivez les marques sur Instagram, Facebook et TikTok : chaque publication et chaque commentaire gardés sur votre ordinateur, triés en positif et négatif par l’IA.",
+      "crm": "Le CRM de l'entreprise, pour les clients et les affaires. Il tourne sur le propre serveur de Shades.",
+      "staff": "Réservé à l'équipe."
     }
   },
   "brand": {
@@ -974,7 +977,8 @@
       "text": "Les produits qui partiront de ce système plutôt que d'un template.",
       "shades": "Le site de l'agence, reconstruit : garder ses meilleures idées, abandonner l'allure de template.",
       "planned": "Prévu",
-      "socialmonitor": "L’écoute sociale qui tourne sur votre ordinateur, construite sur Gradient dès son premier écran."
+      "socialmonitor": "L’écoute sociale qui tourne sur votre ordinateur, construite sur Gradient dès son premier écran.",
+      "crm": "Le CRM de l'entreprise pour les clients et les affaires, construit sur Gradient dès son premier écran."
     },
     "start": {
       "title": "Lancer un nouveau projet",
