@@ -4,6 +4,10 @@ Every notable change to Gradient and the `shades-gradient` package. The format f
 
 ## [Unreleased]
 
+### Fixed
+
+- **Sign-in looks the same in every app:** `auth.css` is no longer in a cascade layer, so an app's unlayered resets (`h1`, `p`, `:focus-visible`, button shadows) can't shrink the title, move the statement, turn the focus red or bring back the glow.
+
 ## [0.7.0] - 2026-10-13
 
 ### Changed

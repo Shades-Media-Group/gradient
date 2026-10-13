@@ -1,7 +1,8 @@
 # Sign-in
 
 Every Shades app signs people in the same way, with the `g-auth` classes in `shades-gradient/auth.css`
-(opt-in: import it after `gradient.css`). A split
+(opt-in: import it after `gradient.css`). It is not in a cascade layer, so an app's own element
+resets (`h1`, `p`, `:focus-visible`) can't restyle it; don't style the `g-auth` classes in the app. A split
 screen: the product's brand panel on the inverse ground (logo, one plain line, the Shades credit),
 and the form in one centred column (a bold title, fields with labels inside, one full-width flat
 button). It takes ideas from the big social and media sign-ins without copying any of them.
@@ -23,7 +24,7 @@ button). It takes ideas from the big social and media sign-ins without copying a
       <button class="g-btn g-btn--primary">Next</button>
       <p class="g-hint">Staff only. An admin creates your account.</p>
     </form>
-    <footer class="g-auth-foot"><div class="g-segmented">…Light / Dark / System…</div></footer>
+    <footer class="g-auth-foot"><div class="g-segmented">…Light / Dark / Automatic…</div></footer>
   </main>
 </div>
 ```
