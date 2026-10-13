@@ -31,6 +31,15 @@ The concrete values (colours, type, spacing, logo) come from the Gradient design
 - Emails are built with `shades-gradient/email`, never plain text alone. One-time codes lead the subject with the code and sit on the copyable code pass; meetings attach an .ics invitation plus Google and Outlook links; bookings get a ticket pass and schema.org markup. Rules: `docs/guides/email.md` in the gradient repo.
 - Credits: "Built by Shades Media Group" in products, "Built by Cristian Brinza | Shades Media Group" in READMEs.
 
+## Skills to use with this one
+
+Every Shades design job runs these installed skills; Gradient wins every concrete value (colour, type, spacing, logo), and the skills supply method, taste and checks.
+
+1. **Before designing:** `awesome-design-md` to study how the best product teams solve the same screen, and `design-taste-frontend` for the direction. Take hierarchy, rhythm and density from them; never adopt another company's look, and never name it in anything public.
+2. **While building:** `impeccable` for the UI itself (layout, type, states, motion, copy).
+3. **Objects in 3D:** `img2threejs` to rebuild a real object from a reference photo as a procedural Three.js model, then shoot it in Gradient's studio (`scripts/renders/`). This builds code, not AI images.
+4. **Before calling it done:** `playwright-cli` for screenshots in light and dark at 375 and 1440 px, and `impeccable` (critique, audit, detect) as the review gate. Then the audit below.
+
 ## Before you design
 
 1. Name the one idea the section or screen must get across, in a sentence.

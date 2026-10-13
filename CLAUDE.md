@@ -6,7 +6,7 @@ Gradient is the design system of Shades Media Group. It holds:
 - the `shades-gradient` npm package that every Shades product installs
 - the website at gradient.shades.md, in eleven languages
 
-Product truth lives in [PRODUCT.md](PRODUCT.md); the rejected patterns live in [docs/lessons.md](docs/lessons.md); the quality bar and the audit live in [docs/design-philosophy.md](docs/design-philosophy.md) and the `shades-craft` skill. Read them before any visual work.
+Product truth lives in [PRODUCT.md](PRODUCT.md); the rejected patterns live in [docs/lessons.md](docs/lessons.md); the quality bar and the audit live in [docs/design-philosophy.md](docs/design-philosophy.md) and the `shades-craft` skill. Read them before any visual work, and use the skills the `shades-craft` skill lists: `awesome-design-md`, `design-taste-frontend`, `impeccable`, `img2threejs` and `playwright-cli`.
 
 ## Commands
 
