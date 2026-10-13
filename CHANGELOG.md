@@ -4,6 +4,8 @@ Every notable change to Gradient and the `shades-gradient` package. The format f
 
 ## [Unreleased]
 
+## [0.7.0] - 2026-10-13
+
 ### Changed
 
 - **Breaking:** primary buttons are flat. The red glow moved to an opt-in `g-btn--glow`, for at most one action per marketing page. Add it where a page's main call to action needs it.
