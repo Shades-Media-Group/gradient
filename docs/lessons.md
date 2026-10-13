@@ -55,3 +55,13 @@ From ImageRefold's first Figma panel, which he called AI slop. The full layout i
 27. **One column, not a grid.** "Grid looks AI slop." Settings stack as rows in one column.
 28. **Light by default, the theme in Settings.** "Make the default always white… settings icon to toggle dark." The panel opens light whatever the host's theme; Light, Dark and Automatic sit behind the gear.
 29. **Remember the user's setup, and let them reset it.** "Make sure the plugin will remember last user setup… a reset all preferences." Every choice persists between runs, and Settings ends with Reset all preferences.
+
+## Interface
+
+From the shared sign-in, which he called AI-made next to Google's.
+
+30. **Glow is a feature, not a default.** "Remove the glow for most of the buttons… just a feature in the design system, not to use it always." Primary buttons are flat; `g-btn--glow` is opt-in, at most once per page.
+31. **The AI feel comes from the font and the text colour.** Brand grotesks and grey text on a cream ground made the sign-in look generated. Sign-in and tools use the system face and neutral near-black text.
+32. **Don't waste space.** "Not so much space wasting." A sign-in is one compact card in the proportions of large account pages, with no empty column and no oversized controls.
+33. **No border on a filled button.** "Never have a border different for the colour of the button background; the border should be only if the background is transparent or the same as the background under it."
+34. **Inspired by the giants, not copied.** "Maybe not copy so much Google, only inspire from it, but make better." The Shades sign-in keeps the account-page proportions and adds its own: the credit and mark in the card, the spectrum as the busy bar, a remembered email, a Caps Lock warning.

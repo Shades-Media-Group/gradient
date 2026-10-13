@@ -3320,7 +3320,7 @@ body {
 }
 
 .states .is-focus {
-  box-shadow: var(--g-shadow-accent), var(--g-focus);
+  box-shadow: var(--g-focus);
 }
 
 .states .is-active {

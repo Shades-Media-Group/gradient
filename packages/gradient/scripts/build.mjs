@@ -5,7 +5,7 @@
  * tokens.css (custom properties, light and dark), theme.css (a Tailwind v4
  * theme over those properties) and tokens.json. The hand-written stylesheets
  * are copied as they are and also joined into gradient.css, except the
- * opt-in compact.css, which ships on its own; the scripts are
+ * opt-in compact.css and auth.css, which ship on their own; the scripts are
  * bundled with esbuild and typed with tsc.
  */
 import { execFileSync } from 'node:child_process'
@@ -178,6 +178,7 @@ writeFileSync(
 )
 // Compact mode is opt-in: shipped on its own, left out of gradient.css.
 writeFileSync(join(dist, 'compact.css'), banner + readFileSync(join(src, 'compact.css'), 'utf8'))
+writeFileSync(join(dist, 'auth.css'), banner + readFileSync(join(src, 'auth.css'), 'utf8'))
 
 // A sprite for plain HTML: <svg><use href="/icons.svg#g-arrow-right"/></svg>
 const { icons } = await import(

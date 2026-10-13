@@ -61,6 +61,7 @@
     "./motion.css": "./dist/motion.css",
     "./preferences.css": "./dist/preferences.css",
     "./compact.css": "./dist/compact.css",
+    "./auth.css": "./dist/auth.css",
     "./theme.css": "./dist/theme.css",
     "./tokens.json": "./dist/tokens.json",
     "./icons.svg": "./dist/icons.svg",

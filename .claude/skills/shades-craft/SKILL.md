@@ -23,7 +23,8 @@ The concrete values (colours, type, spacing, logo) come from the Gradient design
 - Components read role tokens (`--g-accent`, `--g-text`, …), never raw colours.
 - Light is the default theme; dark and system stay choices.
 - Monospace is for code only; numbers use tabular figures in the body face.
-- No eyebrow labels, cards inside cards, icons on every row, gradient text, glass, glow or decorative blur.
+- No eyebrow labels, cards inside cards, icons on every row, gradient text, glass, glow or decorative blur. Buttons are flat; the red glow (`g-btn--glow`) is opt-in, at most once per marketing page, never in forms or tools.
+- Sign-in and work tools use the system face (`--g-font-system`) and neutral near-black text, never brand grotesks with grey on cream.
 - Never invent proof: no made-up numbers, clients, quotes or testimonials.
 - Never name or compare competitors in anything public.
 - No AI-generated images. Real objects are rendered or photographed; downloading a photo needs the owner's yes.

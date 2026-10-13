@@ -49,6 +49,13 @@ A page reads as generated when it is the average of everything else. Anthropic c
 13. **Thumb reach.** Primary actions are full-width and low on the screen; nothing important hides behind a banner.
 14. **Swipe, don't stack.** Sets of related items (merchandise, products) become a horizontal row to swipe on a phone, with the next item peeking.
 
+### Interface
+
+15. **Effects are seasoning.** The red glow under a button (`g-btn--glow`) is for the single most important action on a marketing page, and most pages don't need it. Forms, dialogs, panels, tools and sign-in use flat buttons. A glow, a shadow or a gradient on every button is what makes an interface read as generated.
+16. **Work screens look like the operating system.** Sign-in and tools set type in the system face (`--g-font-system`: SF Pro, Segoe UI, Roboto) with neutral near-black text, the way large account pages do. The brand faces carry the wordmark and marketing pages. Grey text on a cream ground in a fashionable grotesk is the look of a template.
+17. **Labels inside fields, focus in the text colour.** A field's label sits in its box and moves up when it is used. Focus is a dark outline: red on a field reads as an error.
+18. **A border only where the fill disappears.** A button whose fill differs from what sits under it (the red primary, the ink inverse) has no outline. Only a button whose fill is transparent or matches its ground gets a hairline, so its edge still shows.
+
 ## The audit, before anything ships
 
 Run it on every render, chapter and page, and write the flaws down before deciding.

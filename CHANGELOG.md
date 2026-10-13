@@ -4,6 +4,16 @@ Every notable change to Gradient and the `shades-gradient` package. The format f
 
 ## [Unreleased]
 
+### Changed
+
+- **Breaking:** primary buttons are flat. The red glow moved to an opt-in `g-btn--glow`, for at most one action per marketing page. Add it where a page's main call to action needs it.
+- **Sign-in** moved out of `gradient.css` into the opt-in `shades-gradient/auth.css`, like compact mode, and was redrawn as a split screen. The brand panel on the inverse ground has the logo, one line and the Shades credit. The form is one centred column in the system face: a bold title, labels inside the fields (`g-auth-field`), a dark focus outline, one full-width flat button, the spectrum as the busy bar, and the theme choice as plain words. It supports one-screen and stepped flows. `g-auth-card`, `g-auth-head`, `g-auth-lead`, `g-auth-body`, `g-auth-actions` and `g-auth-reveal` are gone; use `g-auth-brand`, `g-auth-main` and `g-auth-form`.
+
+### Added
+
+- `--g-font-system`: the operating system's own face, for sign-in and work tools.
+- Interface rules in the design philosophy and the lessons: effects are seasoning, work screens look like the operating system, labels inside fields.
+
 ## [0.6.0] - 2026-10-12
 
 ### Added
