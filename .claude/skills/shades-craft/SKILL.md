@@ -28,6 +28,7 @@ The concrete values (colours, type, spacing, logo) come from the Gradient design
 - Never invent proof: no made-up numbers, clients, quotes or testimonials.
 - Never name or compare competitors in anything public.
 - No AI-generated images. Real objects are rendered or photographed; downloading a photo needs the owner's yes.
+- Emails are built with `shades-gradient/email`, never plain text alone. One-time codes lead the subject with the code and sit on the copyable code pass; meetings attach an .ics invitation plus Google and Outlook links; bookings get a ticket pass and schema.org markup. Rules: `docs/guides/email.md` in the gradient repo.
 - Credits: "Built by Shades Media Group" in products, "Built by Cristian Brinza | Shades Media Group" in READMEs.
 
 ## Before you design
