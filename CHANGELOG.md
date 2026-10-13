@@ -4,6 +4,8 @@ Every notable change to Gradient and the `shades-gradient` package. The format f
 
 ## [Unreleased]
 
+## [0.7.2] - 2026-10-13
+
 ### Added
 
 - **Email logo for dark mode:** `EmailBrand.logoDark`, a light-text PNG that mail apps in dark mode (Apple Mail, Outlook) show in place of the logo. Shades' own lockup ships one.
