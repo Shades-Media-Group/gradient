@@ -6,6 +6,7 @@
  *   apps/site/public/apple-touch-icon.png 180 × 180
  *   apps/site/public/shades-mark.png      512 × 512, for structured data
  *   apps/site/public/email/shades-lockup.png 284 × 64, the email header
+ *   apps/site/public/email/shades-lockup-dark.png 284 × 64, the same for dark mail apps
  *   assets/readme-banner-light.png        1600 × 560, README header
  *   assets/readme-banner-dark.png         1600 × 560
  *
@@ -96,6 +97,15 @@ const JOBS = [
     284,
     64,
     page(284, 64, brand('shades-lockup.svg')).replace(
+      'body { background: #fdfdfc;',
+      'body { background: transparent;',
+    ),
+  ],
+  [
+    'apps/site/public/email/shades-lockup-dark.png',
+    284,
+    64,
+    page(284, 64, brand('shades-lockup-reverse.svg')).replace(
       'body { background: #fdfdfc;',
       'body { background: transparent;',
     ),

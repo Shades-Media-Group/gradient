@@ -34,6 +34,8 @@ export interface EmailBrand {
   name: string
   /** A PNG at twice the display size. */
   logo: { src: string; width: number; height: number }
+  /** The same logo with light text, shown by mail apps in dark mode (Apple Mail, Outlook). */
+  logoDark?: string
   home: string
   /** One line under the footer rule: the legal name and town. */
   address: string
@@ -65,6 +67,7 @@ const TONES: Record<PassTone, { field: string; text: string; deep: string; perf:
 export const SHADES: EmailBrand = {
   name: 'Shades Media Group',
   logo: { src: 'https://gradient.shades.md/email/shades-lockup.png', width: 142, height: 32 },
+  logoDark: 'https://gradient.shades.md/email/shades-lockup-dark.png',
   mark: 'https://gradient.shades.md/shades-mark.png',
   home: 'https://shades.md',
   address: 'Shades Media Group · Chișinău, Moldova',
@@ -348,6 +351,10 @@ export function renderEmail(opts: RenderOptions): RenderedEmail {
     ? `<script type="application/ld+json">${JSON.stringify(opts.schema).replace(/</g, '\\u003c')}</script>`
     : ''
   const home = safeUrl(brand.home) ?? ''
+  // Dark mail apps swap in the light-text logo; everywhere else it stays hidden.
+  const darkLogo = brand.logoDark
+    ? `<!--[if !mso]><!--><img class="g-e-logo-dark" src="${escapeHtml(brand.logoDark)}" width="${brand.logo.width}" height="${brand.logo.height}" alt="${escapeHtml(brand.name)}" style="display:none;max-height:0;overflow:hidden;border:0;outline:none;width:${brand.logo.width}px;height:auto"><!--<![endif]-->`
+    : ''
 
   const html = `<!doctype html>
 <html lang="${escapeHtml(opts.lang)}" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
@@ -369,6 +376,7 @@ a[x-apple-data-detectors]{color:inherit !important;text-decoration:none !importa
 @media (max-width:600px){.g-e-col{padding-left:20px !important;padding-right:20px !important}}
 @media (prefers-color-scheme:dark){
 .g-e-page{background:#141416 !important}
+.g-e-logo-dark{display:block !important;max-height:none !important}.g-e-logo:not(:only-child){display:none !important}
 .g-e-text,.g-e-on-ink{color:#ECECEA !important}
 .g-e-muted,.g-e-deep-paper{color:#BDBDC3 !important}
 .g-e-rule{border-color:#2A2A31 !important}
@@ -378,6 +386,7 @@ a[x-apple-data-detectors]{color:inherit !important;text-decoration:none !importa
 .g-e-pass-paper{background:#1E1E22 !important}.g-e-perf-paper{border-color:#3A3A40 !important}
 }
 [data-ogsc] .g-e-text{color:#ECECEA !important}
+[data-ogsc] .g-e-logo-dark{display:block !important;max-height:none !important}[data-ogsc] .g-e-logo:not(:only-child){display:none !important}
 [data-ogsc] .g-e-muted{color:#BDBDC3 !important}
 [data-ogsb] .g-e-pass-paper{background:#1E1E22 !important}
 </style>
@@ -389,7 +398,7 @@ ${schema}
 <tr><td align="center" style="padding:32px 12px 40px">
 <!--[if mso]><table role="presentation" width="520" align="center" cellpadding="0" cellspacing="0" border="0"><tr><td><![endif]-->
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width:520px;font-family:${brand.font}">
-<tr><td class="g-e-col" style="padding:0 24px 28px"><a href="${escapeHtml(home)}" style="text-decoration:none"><img src="${escapeHtml(brand.logo.src)}" width="${brand.logo.width}" height="${brand.logo.height}" alt="${escapeHtml(brand.name)}" style="display:block;border:0;outline:none;width:${brand.logo.width}px;height:auto;font-family:${MSO_FONT};font-size:18px;font-weight:bold;color:${brand.accent}"></a></td></tr>
+<tr><td class="g-e-col" style="padding:0 24px 28px"><a href="${escapeHtml(home)}" style="text-decoration:none"><img class="g-e-logo" src="${escapeHtml(brand.logo.src)}" width="${brand.logo.width}" height="${brand.logo.height}" alt="${escapeHtml(brand.name)}" style="display:block;border:0;outline:none;width:${brand.logo.width}px;height:auto;font-family:${MSO_FONT};font-size:18px;font-weight:bold;color:${brand.accent}">${darkLogo}</a></td></tr>
 <tr><td class="g-e-col" style="padding:0 24px;font-family:${brand.font};color:${brand.ink}">
 <h1 class="g-e-text" style="margin:0 0 10px;font-size:30px;line-height:1.12;font-weight:700;letter-spacing:-0.025em;color:${brand.ink};mso-line-height-rule:exactly">${escapeHtml(opts.heading)}</h1>
 ${body.map((x) => x.html).join('\n')}
