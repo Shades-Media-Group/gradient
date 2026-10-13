@@ -56,6 +56,10 @@ A page reads as generated when it is the average of everything else. Anthropic c
 17. **Labels inside fields, focus in the text colour.** A field's label sits in its box and moves up when it is used. Focus is a dark outline: red on a field reads as an error.
 18. **A border only where the fill disappears.** A button whose fill differs from what sits under it (the red primary, the ink inverse) has no outline. Only a button whose fill is transparent or matches its ground gets a hairline, so its edge still shows.
 
+### Method
+
+19. **Build with the best tools, keep our values.** Every Shades product is designed and built with the skills in [Skills](guides/skills.md): taste and direction skills before designing, `impeccable` while building, motion, 3D and video skills where they fit, `playwright-cli` and a review gate before it ships. They supply method and references; Gradient supplies every value.
+
 ## The audit, before anything ships
 
 Run it on every render, chapter and page, and write the flaws down before deciding.

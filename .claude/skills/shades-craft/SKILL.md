@@ -33,7 +33,7 @@ The concrete values (colours, type, spacing, logo) come from the Gradient design
 
 ## Skills to use with this one
 
-Every Shades design job runs these installed skills; Gradient wins every concrete value (colour, type, spacing, logo), and the skills supply method, taste and checks.
+Every Shades design job runs these installed skills; Gradient wins every concrete value (colour, type, spacing, logo), and the skills supply method, taste and checks. The full routing (motion, 3D, video, store listings, new products with the `replica-*` pack, brand boards) and the guardrails are in `docs/guides/skills.md` in the gradient repo.
 
 1. **Before designing:** `awesome-design-md` to study how the best product teams solve the same screen, and `design-taste-frontend` for the direction. Take hierarchy, rhythm and density from them; never adopt another company's look, and never name it in anything public.
 2. **While building:** `impeccable` for the UI itself (layout, type, states, motion, copy).
