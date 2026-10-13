@@ -290,9 +290,10 @@ export function blocks(brand: EmailBrand = SHADES) {
     /**
      * A one-time code. Gmail offers "Copy" and Apple Mail offers AutoFill when the
      * digits sit next to the word "code" as plain text, so the label is real text
-     * and the digits are not split into separate cells. Use a subject that leads
-     * with the code too: "418 203 is your Shades code" reads badly, "Your Shades
-     * code: 418203" works.
+     * and the digits are not split into separate cells. Lead the subject with the
+     * code, unspaced, the way the large account senders do: "418203 is your Shades
+     * sign-in code". Gmail's "Copy code" card is its own decision, and it favours
+     * senders with SPF, DKIM and DMARC all passing.
      */
     code(label: string, code: string, valid: string, stub?: string): Block {
       return pass({
