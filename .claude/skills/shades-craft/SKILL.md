@@ -40,6 +40,10 @@ Every Shades design job runs these installed skills; Gradient wins every concret
 3. **Objects in 3D:** `img2threejs` to rebuild a real object from a reference photo as a procedural Three.js model, then shoot it in Gradient's studio (`scripts/renders/`). This builds code, not AI images.
 4. **Before calling it done:** `playwright-cli` for screenshots in light and dark at 375 and 1440 px, and `impeccable` (critique, audit, detect) as the review gate. Then the audit below.
 
+## How the work moves
+
+Live first on the server PC (each app's "[Server]" chat edits `~/shades/<repo>`, runs `live.sh`, then commits signed and pushes at the end of every prompt; data only through the app), and parallel by default (independent parts run as background agents at the same time). Details: `docs/guides/workflow.md` in the gradient repo.
+
 ## Before you design
 
 1. Name the one idea the section or screen must get across, in a sentence.
