@@ -1,7 +1,8 @@
 # Skills
 
 Every product built on Gradient is designed and built with these installed Claude skills, so each
-one starts at the bar the best teams set rather than at the model's average. The `shades-craft`
+one starts at the bar the best teams set rather than at the model's average. How the work moves (live first, parallel by default) is in
+[How Shades projects are built](workflow.md). The `shades-craft`
 skill is always loaded first: it carries Shades' own lessons and the audit. The skills below supply
 method, references and checks. **Gradient wins every concrete value:** colour, type, spacing,
 radius, logo and voice come from the tokens and the brand, never from a skill's defaults.

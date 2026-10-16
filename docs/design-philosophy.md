@@ -59,6 +59,7 @@ A page reads as generated when it is the average of everything else. Anthropic c
 ### Method
 
 19. **Build with the best tools, keep our values.** Every Shades product is designed and built with the skills in [Skills](guides/skills.md): taste and direction skills before designing, `impeccable` while building, motion, 3D and video skills where they fit, `playwright-cli` and a review gate before it ships. They supply method and references; Gradient supplies every value.
+20. **Live first, parallel by default.** Server apps are built by their "[Server]" chat straight in the production checkout and made live at once with `live.sh`, then committed and pushed at the end of every prompt. Independent parts of a request run at the same time as background agents. See [How Shades projects are built](guides/workflow.md).
 
 ## The audit, before anything ships
 
