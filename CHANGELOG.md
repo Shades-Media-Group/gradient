@@ -4,6 +4,12 @@ Every notable change to Gradient and the `shades-gradient` package. The format f
 
 ## [Unreleased]
 
+## [0.8.0] - 2026-10-16
+
+### Added
+
+- **Shades login** in `auth.css`, for one Shades account (Shades ID) across the products. `g-auth--shades` is the Shades ID page: the brand panel turns Shades red with the white lockup, and the form's one action turns ink. `g-auth-sso` is the "Shades login" link on a product's sign-in, a hairline pill with the red mark, placed under "Forgot password" after a `g-auth-or` divider. `g-auth-text` holds the words of a state screen. The sign-in guide covers the page, the second step, the states (not a Shades address, locked, no role yet) and the link.
+
 ## [0.7.2] - 2026-10-13
 
 ### Added
