@@ -264,6 +264,91 @@
   font-weight: 700;
 }
 
+/* Shades login ---------------------------------------------------------- */
+
+/* One Shades account for every Shades product (Shades ID). The same layout, with the company
+   instead of a product: the brand panel turns Shades red with the white lockup, and the form's
+   one action turns ink, so the red stays the panel's. */
+.g-auth--shades .g-auth-brand {
+  --g-text: var(--g-on-accent);
+  background: var(--g-red-500);
+  color: var(--g-on-accent);
+}
+
+.g-auth--shades .g-auth-credit {
+  color: color-mix(in srgb, var(--g-on-accent) 82%, transparent);
+}
+
+.g-auth--shades .g-auth-form .g-btn--primary {
+  background: var(--g-inverse);
+  color: var(--g-on-inverse);
+}
+
+.g-auth--shades .g-auth-form .g-btn--primary:hover {
+  background: color-mix(in srgb, var(--g-inverse) 88%, var(--g-surface));
+}
+
+/* A paragraph of plain text inside the form: what a state screen says (no access yet, locked). */
+.g-auth-text {
+  margin: 0;
+  color: var(--g-text-2);
+  font-size: 0.9375rem;
+  line-height: 1.5;
+}
+
+/* "or" between two ways in: a hairline each side. */
+.g-auth-or {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 4px 0;
+  color: var(--g-text-3);
+  font-size: 0.8125rem;
+}
+
+.g-auth-or::before,
+.g-auth-or::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--g-line);
+}
+
+/* "Shades login" on a product's own sign-in, under "Forgot password": transparent with a hairline,
+   the Shades mark before the words. */
+.g-auth-form .g-auth-sso {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  min-height: 48px;
+  padding: 0 1.25rem;
+  border: 0;
+  border-radius: var(--g-radius-pill);
+  background: transparent;
+  box-shadow: inset 0 0 0 1px var(--g-line-strong);
+  color: var(--g-text);
+  font: 600 1rem / 1 var(--g-font-system);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.g-auth-form .g-auth-sso:hover {
+  background: var(--g-sunken);
+}
+
+.g-auth-form .g-auth-sso:focus-visible {
+  outline: none;
+  box-shadow: inset 0 0 0 2px var(--g-text);
+}
+
+.g-auth-sso > svg {
+  width: 20px;
+  height: 20px;
+  flex: none;
+}
+
 /* Phone: the brand panel becomes the top of the screen, with its line still there, and the
    form rises over it as a sheet with rounded top corners. */
 @media (max-width: 820px) {

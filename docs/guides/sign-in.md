@@ -70,3 +70,47 @@ field gets `aria-invalid`.
 - **No** marketing, illustrations or sign-up pitch on the page. Staff-only apps say so in a
   `g-hint` under the email ("Staff only. An admin creates your account.").
 - Light by default; the theme switch changes it right there.
+
+## Shades login
+
+One Shades account (Shades ID, at id.shades.md) signs a person in to every Shades product except
+LMS. It is for `@shades.md` accounts only.
+
+### The Shades ID page
+
+The same layout, with the company instead of a product: `class="g-auth g-auth--shades"`.
+
+- **Brand panel:** Shades red, the white lockup (`brand/shades-lockup-mono.svg`, which takes
+  `currentColor`), the line "One account for every Shades product." and the credit "Shades ID ·
+  for @shades.md accounts".
+- **Form:** the title "Sign in with Shades", then "Shades username or email" and "Password"
+  together, "Keep me signed in", Sign in and "Forgot password". The one action is ink, not red:
+  the panel already holds the red.
+- **Second step:** "Confirm it's you" over the account chip, a "Use a passkey" plain `g-btn`,
+  `g-auth-or`, one code field (`inputmode="numeric"`, `autocomplete="one-time-code"`) and Verify.
+
+### States
+
+Each state is one screen. Errors sit under their field as a `g-error`, and the field gets
+`aria-invalid`. Explanations are a `g-auth-text` under the account chip.
+
+| State | Title | What it says | Actions |
+| --- | --- | --- | --- |
+| Not a Shades address | Sign in with Shades | under the field: "Shades login is for @shades.md accounts. Use your product sign-in instead." | Sign in |
+| Locked | Account locked for now | "Too many wrong passwords. Try again in 15 minutes, or reset your password to get in now." | Reset password, then "Use another account" as `g-btn--ghost` |
+| No role yet | You're in, but not set up yet | "Your Shades account works, but it has no access to <product> yet. Ask a super admin to give you a role, then sign in again." | Sign in again, then "Sign out" as `g-btn--ghost` |
+
+### The link on a product's sign-in
+
+Under "Forgot password", a `g-auth-or` and then the link:
+
+```html
+<p class="g-auth-or">or</p>
+<a class="g-auth-sso" href="https://id.shades.md/…">
+  <svg><!-- brand/shades-mark.svg --></svg>
+  Shades login
+</a>
+```
+
+`g-auth-sso` is a full-width hairline pill with the red Shades mark: a second way in, quieter than
+the product's own Sign in. Products whose people have no Shades accounts leave it out.
