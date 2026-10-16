@@ -60,6 +60,11 @@ describe('renderEmail', () => {
     expect(message.text).toContain('Your code: 418203')
   })
 
+  it('opens the plain text with the preheader, not the brand', () => {
+    expect(message.text.split('\n')[0]).toBe('It works for 10 minutes.')
+    expect(message.text).toContain('--\nShades Media Group')
+  })
+
   it('carries Gmail markup that cannot break out of its script', () => {
     const html = renderEmail({
       lang: 'en',

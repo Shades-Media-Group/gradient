@@ -292,7 +292,8 @@ export function blocks(brand: EmailBrand = SHADES) {
      * digits sit next to the word "code" as plain text, so the label is real text
      * and the digits are not split into separate cells. Lead the subject with the
      * code, unspaced, the way the large account senders do: "418203 is your Shades
-     * sign-in code". Gmail's "Copy code" card is its own decision, and it favours
+     * sign-in code", and start the preheader with "Your Shades code is 418203" (it is
+     * also the plain text's first line). Gmail's "Copy code" card is its own decision, and it favours
      * senders with SPF, DKIM and DMARC all passing.
      */
     code(label: string, code: string, valid: string, stub?: string): Block {
@@ -416,14 +417,17 @@ ${footer.map((x) => x.html.replace('margin:0 0 16px', 'margin:0 0 6px')).join('\
 </body>
 </html>`
 
+  // The preheader leads the plain text too: for a code email it is "Your <product> code is
+  // 418203", the line mail apps read when they offer to copy or fill the code.
   const text = [
-    brand.name,
+    opts.preheader,
     '',
     opts.heading,
     ...(opts.lead ? ['', opts.lead] : []),
     '',
     ...opts.blocks.filter((x) => x.text).flatMap((x) => [x.text, '']),
     '--',
+    brand.name,
     ...footer.map((x) => x.text),
     '',
   ].join('\n')

@@ -17,7 +17,7 @@ matching extras, and a test that checks them.
   AutoFill.
 - **The subject leads with the code:** "418203 is your Shades sign-in code". Never "Your code:
   418203".
-- **The preheader** says how long the code works.
+- **The preheader** starts with "Your <product> code is 418203" and says how long it works: "Your Shades ID code is 418203 · works for 10 minutes". It is also the first line of the plain text, the line mail apps read when they offer to copy the code.
 - **The stub** says what to do if it wasn't you.
 - **The sign-in field** that receives it has `autocomplete="one-time-code"` and
   `inputmode="numeric"`.
