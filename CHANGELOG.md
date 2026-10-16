@@ -4,6 +4,12 @@ Every notable change to Gradient and the `shades-gradient` package. The format f
 
 ## [Unreleased]
 
+## [0.8.1] - 2026-10-16
+
+### Fixed
+
+- **Email plain text opens with the preheader:** a code email's text part now starts with "Your <product> code is 418203", where mail apps look when they offer to copy the code, instead of the brand name. The brand name moves under the `--` line. Start a code email's preheader with that sentence (see the email guide).
+
 ## [0.8.0] - 2026-10-16
 
 ### Added
