@@ -4,6 +4,12 @@ Every notable change to Gradient and the `shades-gradient` package. The format f
 
 ## [Unreleased]
 
+## [0.9.2] - 2026-10-17
+
+### Fixed
+
+- **Consent:** when the sentence wraps to two or three lines (long languages, narrow windows), the choices stay on the same line as the dot instead of rising above it.
+
 ## [0.9.1] - 2026-10-17
 
 ### Fixed
