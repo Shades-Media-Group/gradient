@@ -422,9 +422,11 @@
   cursor: not-allowed;
 }
 
+/* The choices sit on the dot's line even when the sentence takes two. */
 .g-consent-actions {
   display: flex;
   flex: none;
+  align-self: flex-end;
   align-items: center;
   gap: 6px;
 }
