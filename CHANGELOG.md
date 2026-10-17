@@ -4,6 +4,12 @@ Every notable change to Gradient and the `shades-gradient` package. The format f
 
 ## [Unreleased]
 
+## [0.9.1] - 2026-10-17
+
+### Fixed
+
+- **Consent fits the style budget:** two phone rules the desktop already covers are gone, so every site page stays under 19 KB of styles. 0.9.0 was tagged but its release failed this check and was never published; use 0.9.1.
+
 ## [0.9.0] - 2026-10-17
 
 ### Changed
