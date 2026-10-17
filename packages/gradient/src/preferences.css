@@ -605,8 +605,7 @@
     animation: g-consent-down 320ms var(--p-ease) both;
   }
 
-  .g-consent-title,
-  .g-consent[data-choosing] .g-consent-title {
+  .g-consent-title {
     position: static;
     width: auto;
     height: auto;
@@ -649,9 +648,6 @@
     margin: 0;
   }
 
-  .g-consent-save {
-    grid-column: 1 / -1;
-  }
 }
 
 @keyframes g-consent-up {
