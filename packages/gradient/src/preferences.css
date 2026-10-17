@@ -295,41 +295,95 @@
 }
 
 /*
- * The consent banner: small, bottom left, out of the way of the dot. "Only
- * necessary" weighs exactly what "Accept all" weighs; nobody is nudged.
+ * The consent notice grows out of the dot, because that is where the answer
+ * lives afterwards: one slim bar ending in the dot, a sentence and three
+ * choices. Answering folds it back into the dot. "Only necessary" weighs
+ * exactly what "Accept all" weighs; nobody is nudged.
  */
 .g-consent {
   position: fixed;
-  left: 12px;
-  bottom: 12px;
+  right: 6px;
+  bottom: 6px;
   z-index: 79;
-  width: min(420px, calc(100vw - 68px));
-  max-height: calc(100vh - 24px);
-  overflow-y: auto;
-  padding: 16px;
-  border-radius: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 16px;
+  width: max-content;
+  max-width: min(980px, calc(100vw - 12px));
+  min-height: 44px;
+  padding: 6px 50px 6px 20px;
+  border-radius: 22px;
   background: var(--p-surface);
   box-shadow:
     inset 0 0 0 1px var(--p-line),
     var(--p-shadow);
-  animation: g-prefs-in 400ms 500ms var(--p-ease) both;
+  animation: g-consent-in 520ms 600ms var(--p-ease) both;
 }
 
+/* Without the dot (consent used on its own) the bar keeps an even edge. */
+.g-consent--solo {
+  padding-right: 6px;
+}
+
+/* Grows leftward out of the dot, and folds back into it. */
+@keyframes g-consent-in {
+  from {
+    clip-path: inset(0 0 0 calc(100% - 44px) round 22px);
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+  to {
+    clip-path: inset(0 0 0 0 round 22px);
+  }
+}
+
+.g-consent--leaving {
+  animation: g-consent-out 360ms var(--p-ease) both;
+}
+
+@keyframes g-consent-out {
+  to {
+    clip-path: inset(0 0 0 calc(100% - 44px) round 22px);
+    opacity: 0;
+  }
+}
+
+/* The dot answers back once the notice has folded into it. */
+.g-prefs-dot--nudge span {
+  animation: g-prefs-nudge 520ms var(--p-ease);
+}
+
+@keyframes g-prefs-nudge {
+  40% {
+    transform: scale(1.45);
+  }
+}
+
+/* The title names the dialog for screen readers; the bar itself is one sentence. */
 .g-consent-title {
-  margin: 0 0 6px;
-  font: inherit;
-  font-size: 16px;
-  font-weight: 700;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
 }
 
 .g-consent p {
+  flex: 1 1 260px;
   margin: 0;
   color: var(--p-text-2);
   font-size: 14px;
+  line-height: 1.4;
+  text-wrap: pretty;
 }
 
 .g-consent-list {
-  margin: 12px 0 0;
+  flex: 1 1 100%;
+  margin: 4px 0 0;
   padding: 0;
   list-style: none;
 }
@@ -343,7 +397,8 @@
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  padding: 10px 0;
+  min-height: 52px;
+  padding: 8px 0;
   border-top: 1px solid var(--p-line);
   cursor: pointer;
 }
@@ -355,63 +410,115 @@
 
 .g-consent-list small {
   display: block;
+  margin-top: 1px;
   color: var(--p-text-2);
   font-size: 13px;
+  line-height: 1.35;
 }
 
+/* Always on reads as locked, not as a faded red. */
 .g-consent-list input:disabled {
-  opacity: 0.55;
+  background: color-mix(in srgb, var(--p-text) 34%, transparent);
   cursor: not-allowed;
 }
 
 .g-consent-actions {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 8px;
-  margin-top: 14px;
+  display: flex;
+  flex: none;
+  align-items: center;
+  gap: 6px;
 }
 
 .g-consent-actions button {
-  min-height: 40px;
+  min-height: 32px;
   padding: 0 14px;
   border: 0;
   border-radius: 999px;
   font-size: 14px;
   font-weight: 600;
+  white-space: nowrap;
+  transition: background-color 160ms;
 }
 
 .g-consent-actions button[hidden] {
   display: none;
 }
 
-.g-consent-customize,
-.g-consent-save {
-  grid-column: 1 / -1;
+/* Customise is the quiet way in: plain words, no box. */
+.g-consent-customize {
+  margin-right: 4px;
   background: transparent;
-  box-shadow: inset 0 0 0 1.5px var(--p-line);
+  color: var(--p-text-2) !important;
 }
 
-.g-consent-customize:hover {
-  background: var(--p-sunken);
-}
+@media (hover: hover) {
+  .g-consent-customize:hover {
+    background: var(--p-sunken);
+    color: var(--p-text) !important;
+  }
 
-.g-consent-save {
-  order: 3;
-  background: var(--p-text);
-  box-shadow: none;
-  color: var(--p-surface) !important;
+  .g-consent-necessary:hover,
+  .g-consent-all:hover,
+  .g-consent-save:hover {
+    background: color-mix(in srgb, var(--p-text) 84%, var(--p-surface));
+  }
 }
 
 .g-consent-necessary,
-.g-consent-all {
+.g-consent-all,
+.g-consent-save {
   background: var(--p-text);
   color: var(--p-surface) !important;
 }
 
-.g-consent-necessary:hover,
-.g-consent-all:hover,
-.g-consent-save:hover {
-  opacity: 0.88;
+/* Choosing: the bar opens into a panel above the dot, like the display panel. */
+.g-consent[data-choosing] {
+  right: 12px;
+  bottom: 56px;
+  display: block;
+  width: min(380px, calc(100vw - 24px));
+  max-height: calc(100vh - 80px);
+  overflow-y: auto;
+  padding: 16px 16px 14px;
+  border-radius: 16px;
+  animation: g-prefs-in 260ms var(--p-ease) both;
+  transform-origin: bottom right;
+}
+
+.g-consent[data-choosing] .g-consent-title {
+  position: static;
+  width: auto;
+  height: auto;
+  margin: 0 0 4px;
+  overflow: visible;
+  clip-path: none;
+  font: inherit;
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.g-consent[data-choosing] .g-consent-list {
+  margin-top: 12px;
+}
+
+.g-consent[data-choosing] .g-consent-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 6px;
+}
+
+.g-consent[data-choosing] .g-consent-actions button {
+  min-height: 40px;
+}
+
+/* While choosing, the switches say it all: one action saves them. */
+.g-consent[data-choosing] .g-consent-save {
+  grid-column: 1 / -1;
+}
+
+.g-consent[data-choosing] :is(.g-consent-necessary, .g-consent-all) {
+  display: none;
 }
 
 /* What the switches do ------------------------------------------------------ */
@@ -464,45 +571,106 @@
   line-height: 1.8 !important;
 }
 
-/* On a phone the banner is a compact sheet above the home indicator: the
-   title and Customise share a row, the two equal choices sit side by side,
-   so it covers a fifth of the screen instead of half. */
+/* On a phone the notice is a sheet on the bottom edge, where the thumb is:
+   the sentence, then the two equal choices at full width, with Customise as
+   plain words under them. It covers the dot while it is open, slides away
+   when answered, and the dot answers back. */
 @media (max-width: 560px) {
-  .g-consent {
-    left: 8px;
-    right: 52px;
-    bottom: calc(8px + env(safe-area-inset-bottom));
+  .g-consent,
+  .g-consent[data-choosing] {
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 82;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
     width: auto;
-    padding: 12px 14px 14px;
-    border-radius: 14px;
+    max-width: none;
+    max-height: 88vh;
+    overflow-y: auto;
+    padding: 20px 20px calc(12px + env(safe-area-inset-bottom));
+    border-radius: 22px 22px 0 0;
+    box-shadow:
+      0 -1px 0 var(--p-line),
+      0 -16px 48px -20px rgb(10 10 11 / 0.4);
+    animation: g-consent-up 420ms 600ms var(--p-ease) both;
   }
 
-  .g-consent-title {
-    min-height: 36px;
-    margin: -6px 96px 2px 0;
-    display: flex;
-    align-items: center;
-    font-size: 15px;
+  .g-consent[data-choosing] {
+    animation: none;
+  }
+
+  .g-consent--leaving {
+    animation: g-consent-down 320ms var(--p-ease) both;
+  }
+
+  .g-consent-title,
+  .g-consent[data-choosing] .g-consent-title {
+    position: static;
+    width: auto;
+    height: auto;
+    margin: 0 0 6px;
+    overflow: visible;
+    clip-path: none;
+    font: inherit;
+    font-size: 17px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
   }
 
   .g-consent p {
-    font-size: 13px;
-    line-height: 1.4;
+    font-size: 15px;
+    line-height: 1.45;
   }
 
-  .g-consent-actions {
-    margin-top: 10px;
+  .g-consent-actions,
+  .g-consent[data-choosing] .g-consent-actions {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+    margin-top: 16px;
+  }
+
+  /* Long words in some languages wrap inside the button instead of pushing it out. */
+  .g-consent-actions button,
+  .g-consent[data-choosing] .g-consent-actions button {
+    min-height: 48px;
+    padding: 8px 12px;
+    font-size: 15px;
+    line-height: 1.2;
+    white-space: normal;
   }
 
   .g-consent-customize {
-    position: absolute;
-    top: 6px;
-    right: 6px;
-    min-height: 36px !important;
-    font-size: 13px !important;
+    order: 3;
+    grid-column: 1 / -1;
+    min-height: 44px !important;
+    margin: 0;
   }
 
-  .g-consent-actions button {
-    min-height: 44px;
+  .g-consent-save {
+    grid-column: 1 / -1;
+  }
+}
+
+@keyframes g-consent-up {
+  from {
+    transform: translateY(100%);
+  }
+}
+
+@keyframes g-consent-down {
+  to {
+    transform: translateY(100%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .g-consent,
+  .g-consent[data-choosing],
+  .g-consent--leaving,
+  .g-prefs-dot--nudge span {
+    animation: none;
   }
 }

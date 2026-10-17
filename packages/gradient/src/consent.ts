@@ -1,8 +1,10 @@
 /**
  * Cookie and storage consent, the same on every Shades site.
  *
- * A small banner offers three equal choices: accept all, only necessary, or
- * customise by category. Necessary storage (the reader's display and privacy
+ * A slim bar grows out of the preferences dot (a sheet on the bottom edge on a
+ * phone) and offers three choices: accept all and only necessary, which weigh
+ * the same, or customise by category. Answering folds it back into the dot,
+ * where "Privacy choices" reopens it. Necessary storage (the reader's display and privacy
  * choices) is always on; every other category stays off until the reader says
  * yes. The answer is kept in this browser and can be changed at any time.
  *
@@ -40,7 +42,7 @@ export interface ConsentLabels {
 
 export const CONSENT_ENGLISH: ConsentLabels = {
   title: 'Your privacy',
-  text: 'This site keeps only what it needs to work, like your display settings. Analytics or marketing tools would run only with your yes.',
+  text: 'This site keeps only what it needs to work. Anything else waits for your yes.',
   acceptAll: 'Accept all',
   necessaryOnly: 'Only necessary',
   customize: 'Customise',
@@ -114,7 +116,7 @@ export function consentBanner(
       <input class="g-prefs-switch" type="checkbox" role="switch" ${id ? `data-category="${id}"` : ''} ${checked ? 'checked' : ''} ${disabled ? 'disabled' : ''} /></label></li>`
 
   banner = document.createElement('section')
-  banner.className = 'g-consent'
+  banner.className = document.querySelector('.g-prefs-dot') ? 'g-consent' : 'g-consent g-consent--solo'
   banner.setAttribute('aria-labelledby', 'g-consent-title')
   banner.innerHTML = `
     <h2 class="g-consent-title" id="g-consent-title">${escape(t.title)}</h2>
@@ -137,9 +139,24 @@ export function consentBanner(
   const save = banner.querySelector<HTMLButtonElement>('.g-consent-save')!
   const close = (choice: Record<Category, boolean>) => {
     setConsent(choice)
-    banner?.remove()
+    const leaving = banner!
     banner = null
-    document.querySelector<HTMLElement>('.g-prefs-dot')?.focus()
+    const dot = document.querySelector<HTMLElement>('.g-prefs-dot')
+    dot?.focus()
+    // Folds into the dot, then the dot answers back; at once when motion is off.
+    const done = () => {
+      if (!leaving.isConnected) return
+      leaving.remove()
+      dot?.classList.add('g-prefs-dot--nudge')
+      setTimeout(() => dot?.classList.remove('g-prefs-dot--nudge'), 600)
+    }
+    const still =
+      matchMedia('(prefers-reduced-motion: reduce)').matches ||
+      document.documentElement.hasAttribute('data-g-motion')
+    if (still) return done()
+    leaving.classList.add('g-consent--leaving')
+    leaving.addEventListener('animationend', done, { once: true })
+    setTimeout(done, 500)
   }
   const all = (value: boolean) =>
     Object.fromEntries(CATEGORIES.map((c) => [c, value])) as Record<Category, boolean>
@@ -147,6 +164,7 @@ export function consentBanner(
   banner.querySelector('.g-consent-all')!.addEventListener('click', () => close(all(true)))
   banner.querySelector('.g-consent-necessary')!.addEventListener('click', () => close(all(false)))
   customize.addEventListener('click', () => {
+    banner?.setAttribute('data-choosing', '')
     list.hidden = false
     save.hidden = false
     customize.hidden = true
