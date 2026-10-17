@@ -387,12 +387,15 @@ body {
   text-align: center;
 }
 
+/* Two balanced lines on a desktop, three on a phone. The display leading is
+   opened up here: at 0.92 the descenders of one line touched the next. */
 .hero h1 {
-  max-width: 13ch;
+  max-width: 17ch;
   margin-inline: auto;
-  font-size: var(--g-size-display);
-  line-height: var(--g-leading-display);
-  letter-spacing: var(--g-tracking-display);
+  font-size: clamp(2.625rem, 1.4rem + 5.4vw, 6.75rem);
+  line-height: 1.02;
+  letter-spacing: -0.032em;
+  text-wrap: balance;
   animation: g-rise 900ms var(--g-ease-move) both;
 }
 
@@ -3828,7 +3831,8 @@ h3,
 
 @media (max-width: 400px) {
   .hero h1 {
-    font-size: clamp(2.5rem, 12.5vw, 3.5rem);
+    font-size: clamp(2.5rem, 11.5vw, 3.25rem);
+    line-height: 1.04;
   }
 
   .family-row {
