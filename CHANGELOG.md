@@ -4,6 +4,16 @@ Every notable change to Gradient and the `shades-gradient` package. The format f
 
 ## [Unreleased]
 
+## [0.9.0] - 2026-10-17
+
+### Changed
+
+- **Consent, redrawn:** on a desktop the notice grows out of the preferences dot as one slim bar: the sentence, Customise as plain words, and "Only necessary" and "Accept all" at equal weight. Answering folds the bar back into the dot, where "Privacy choices" reopens it. On a phone it is a sheet on the bottom edge with the two equal choices at full width in the thumb zone. Customising opens a panel with one Save action, and the always-on switch reads as locked. The title is now announced to screen readers only on desktop. No class or API changed; products pick it up with the bump.
+
+### Fixed
+
+- **Site:** the home headline sets in two balanced lines with open leading, so descenders no longer touch the line below.
+
 ## [0.8.1] - 2026-10-16
 
 ### Fixed
