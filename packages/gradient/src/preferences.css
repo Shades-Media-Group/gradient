@@ -309,8 +309,10 @@
   flex-wrap: wrap;
   align-items: center;
   gap: 6px 16px;
+  /* As wide as its own line, up to what the longest language needs (about
+     1120 px in Russian), so every language reads in one line on a desktop. */
   width: max-content;
-  max-width: min(980px, calc(100vw - 12px));
+  max-width: min(1160px, calc(100vw - 12px));
   min-height: 44px;
   padding: 6px 50px 6px 20px;
   border-radius: 22px;
