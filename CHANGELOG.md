@@ -4,6 +4,13 @@ Every notable change to Gradient and the `shades-gradient` package. The format f
 
 ## [Unreleased]
 
+## [0.9.3] - 2026-10-18
+
+### Fixed
+
+- **Consent:** the bar can grow to 1160 px, what the longest language needs, so every language reads in one line from 1280 px up. It stays as narrow as its own line, and narrower windows still wrap with the choices on the dot's line.
+- Shorten the consent sentence in every language (site)
+
 ## [0.9.2] - 2026-10-17
 
 ### Fixed
