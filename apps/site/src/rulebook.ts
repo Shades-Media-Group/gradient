@@ -3,13 +3,13 @@
 // applies: preferences-boot.js sets it before paint.
 import './rulebook.css'
 
-// On a phone the contents start folded, so the text is the first thing seen.
-if (matchMedia('(max-width: 900px)').matches) document.querySelector('.rb-toc details')?.removeAttribute('open')
+// On a phone the topic list starts folded, so the page itself is seen first.
+if (matchMedia('(max-width: 860px)').matches)
+  document.querySelector('.rb-nav-all')?.removeAttribute('open')
 
-// Find a rule: hides every section that doesn't contain all the words typed.
+// Find on this page: hides every section that doesn't contain all the words typed.
 const input = document.querySelector<HTMLInputElement>('.rb-find input')!
 const sections = [...document.querySelectorAll<HTMLElement>('.rb-section')]
-const chapters = [...document.querySelectorAll<HTMLElement>('.rb-chapter')]
 const empty = document.querySelector<HTMLElement>('.rb-empty')!
 const text = new Map(sections.map((s) => [s, s.textContent!.toLowerCase()]))
 
@@ -21,12 +21,10 @@ input.addEventListener('input', () => {
     section.hidden = !hit
     if (hit) shown++
   }
-  for (const chapter of chapters)
-    chapter.hidden = words.length > 0 && !chapter.querySelector('.rb-section:not([hidden])')
-  empty.hidden = shown > 0
+  empty.hidden = shown > 0 || words.length === 0
 })
 
-// "/" jumps to the search field, as in most docs.
+// "/" jumps to the find field, as in most docs.
 document.addEventListener('keydown', (event) => {
   if (event.key !== '/' || event.target instanceof HTMLInputElement) return
   event.preventDefault()

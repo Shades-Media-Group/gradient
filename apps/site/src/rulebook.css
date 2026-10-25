@@ -4,9 +4,10 @@
 @import 'shades-gradient/theme.css';
 
 /*
- * The rulebook: a long reference read in Read mode. One column of text at a
- * comfortable measure, the contents beside it on a desktop and folded above it
- * on a phone, and a find field that is always one keystroke away.
+ * The rulebook: a reference read in Read mode, built like a platform guideline.
+ * All topics on the left, the page in the middle at a reading measure, the
+ * page's own topics on the right. Rules come in labelled groups (Do, Avoid,
+ * For developers) set apart by a hairline and a label, never by a tinted box.
  */
 
 .rb {
@@ -14,7 +15,7 @@
   background: var(--g-surface);
   color: var(--g-text);
   font-family: var(--g-font-body);
-  font-size: 1rem;
+  font-size: 1.0625rem;
   line-height: 1.6;
 }
 
@@ -36,29 +37,18 @@
   align-items: center;
   gap: 14px;
   min-height: 60px;
-  padding: 8px clamp(16px, 4vw, 40px);
+  padding: 8px clamp(16px, 3vw, 32px);
   border-bottom: 1px solid var(--g-line);
   background: var(--g-surface);
 }
 
-.rb-home {
-  color: var(--g-text-2);
-  font-weight: 600;
-  text-decoration: none;
-}
-
-.rb-home::after {
-  content: '/';
-  margin-left: 14px;
-  color: var(--g-text-3);
-  font-weight: 400;
-}
-
 .rb-name {
+  color: var(--g-text);
   font-family: var(--g-font-display);
   font-size: 1.125rem;
   font-weight: 700;
   letter-spacing: -0.01em;
+  text-decoration: none;
 }
 
 .rb-note {
@@ -72,7 +62,7 @@
 }
 
 .rb-find input {
-  width: min(320px, 42vw);
+  width: min(300px, 40vw);
   min-height: 40px;
   padding: 0 16px;
   border: 0;
@@ -93,13 +83,18 @@
 
 .rb-layout {
   display: grid;
-  grid-template-columns: 280px minmax(0, 1fr);
-  gap: clamp(32px, 5vw, 72px);
-  max-width: 1280px;
+  grid-template-columns: 248px minmax(0, 1fr);
+  gap: clamp(32px, 4vw, 64px);
+  max-width: 1440px;
   margin: 0 auto;
-  padding: 40px clamp(16px, 4vw, 40px) 120px;
+  padding: 40px clamp(16px, 3vw, 32px) 120px;
 }
 
+.rb-layout--toc {
+  grid-template-columns: 248px minmax(0, 1fr) 200px;
+}
+
+.rb-nav,
 .rb-toc {
   position: sticky;
   top: 84px;
@@ -107,65 +102,119 @@
   max-height: calc(100vh - 108px);
   overflow-y: auto;
   font-size: 0.875rem;
-  line-height: 1.4;
+  line-height: 1.35;
 }
 
-.rb-toc summary {
-  margin-bottom: 12px;
-  color: var(--g-text-3);
-  font-size: 0.8125rem;
+.rb-nav-all > summary {
+  display: none;
+}
+
+/* One fold per group: the title, then its pages when open. */
+.rb-nav-fold {
+  border-bottom: 1px solid var(--g-line);
+}
+
+.rb-nav-fold > summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 11px 0;
+  color: var(--g-text);
+  font-size: 0.9375rem;
   font-weight: 600;
   cursor: pointer;
   list-style: none;
 }
 
-.rb-toc summary::-webkit-details-marker {
+.rb-nav-fold > summary::-webkit-details-marker {
   display: none;
 }
 
-.rb-toc ol {
+.rb-nav-fold > summary::after {
+  content: '';
+  width: 8px;
+  height: 8px;
+  margin-right: 4px;
+  border-right: 1.5px solid var(--g-text-3);
+  border-bottom: 1.5px solid var(--g-text-3);
+  transform: translateY(-2px) rotate(45deg);
+  transition: transform 160ms;
+}
+
+.rb-nav-fold[open] > summary::after {
+  transform: translateY(2px) rotate(-135deg);
+}
+
+.rb-nav-fold ul {
+  padding-bottom: 10px !important;
+}
+
+.rb-nav-group,
+.rb-toc p {
+  margin: 22px 0 6px;
+  color: var(--g-text-3);
+  font-size: 0.8125rem;
+  font-weight: 600;
+}
+
+.rb-nav-group:first-of-type {
+  margin-top: 0;
+}
+
+.rb-nav ul,
+.rb-toc ul {
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-.rb-toc > details > ol > li {
-  margin-bottom: 14px;
-}
-
-.rb-toc > details > ol > li > a {
-  color: var(--g-text);
-  font-weight: 600;
-}
-
-.rb-toc li li a {
-  display: block;
-  padding: 3px 0 3px 12px;
-  color: var(--g-text-2);
-}
-
+.rb-nav a,
 .rb-toc a {
+  display: block;
+  padding: 5px 10px;
+  margin-left: -10px;
+  border-radius: 8px;
+  color: var(--g-text-2);
   text-decoration: none;
 }
 
+.rb-nav a:hover,
 .rb-toc a:hover {
   color: var(--g-text);
-  text-decoration: underline;
-  text-underline-offset: 0.2em;
+  background: var(--g-sunken);
+}
+
+.rb-nav a[aria-current='page'] {
+  color: var(--g-text);
+  background: var(--g-sunken);
+  font-weight: 600;
+}
+
+.rb-toc p {
+  margin-top: 0;
 }
 
 /* Text ------------------------------------------------------------------ */
 
 .rb-main {
-  max-width: 76ch;
+  min-width: 0;
+  max-width: 880px;
+}
+
+.rb-crumb {
+  margin: 0 0 8px;
+  color: var(--g-text-3);
+  font-size: 0.9375rem;
+  font-weight: 600;
 }
 
 .rb-head h1 {
   margin: 0 0 16px;
   font-family: var(--g-font-display);
-  font-size: clamp(2.25rem, 1.6rem + 2.6vw, 3.5rem);
+  font-size: clamp(2.25rem, 1.6rem + 2.4vw, 3.25rem);
   line-height: 1.04;
   letter-spacing: -0.03em;
+  text-wrap: balance;
 }
 
 .rb-head > p:first-of-type {
@@ -174,59 +223,45 @@
   line-height: 1.5;
 }
 
-.rb-chapter {
-  margin-top: 88px;
-  scroll-margin-top: 80px;
-}
-
-.rb-chapter > h2 {
-  margin: 0 0 12px;
-  padding-top: 24px;
-  border-top: 2px solid var(--g-text);
-  font-family: var(--g-font-display);
-  font-size: clamp(1.75rem, 1.3rem + 1.6vw, 2.5rem);
-  line-height: 1.08;
-  letter-spacing: -0.025em;
-}
-
 .rb-section {
-  margin-top: 40px;
+  margin-top: 56px;
   scroll-margin-top: 80px;
 }
 
-.rb-section > h3 {
-  margin: 0 0 8px;
+.rb-section > h2,
+.rb-main h2 {
+  margin: 0 0 10px;
   font-family: var(--g-font-display);
-  font-size: 1.3125rem;
-  line-height: 1.25;
-  letter-spacing: -0.01em;
+  font-size: 1.625rem;
+  line-height: 1.2;
+  letter-spacing: -0.015em;
 }
 
-.rb-section > h3 a {
+.rb-section > h2 a {
   color: inherit;
   text-decoration: none;
 }
 
-.rb-section > h3 a:hover {
+.rb-section > h2 a:hover {
   text-decoration: underline;
-  text-underline-offset: 0.18em;
+  text-underline-offset: 0.16em;
 }
 
-.rb-main h4 {
-  margin: 28px 0 6px;
-  font-size: 1rem;
+.rb-main h3 {
+  margin: 28px 0 8px;
+  font-size: 1.125rem;
 }
 
-.rb-main :is(p, ul, ol, table, blockquote, pre, figure) {
+.rb-main :is(p, ul, ol, table, blockquote, pre) {
   margin: 0 0 14px;
 }
 
 .rb-main :is(ul, ol) {
-  padding-left: 1.25em;
+  padding-left: 1.2em;
 }
 
 .rb-main li {
-  margin-bottom: 6px;
+  margin-bottom: 7px;
 }
 
 .rb-main li::marker {
@@ -243,12 +278,10 @@
   text-decoration-color: currentColor;
 }
 
-/* His own words, quoted: set apart by voice, not by a box. */
 .rb-main blockquote {
   margin-left: 0;
-  padding-left: 1.25em;
+  padding-left: 1.2em;
   color: var(--g-text-2);
-  font-style: italic;
 }
 
 .rb-main code {
@@ -256,7 +289,7 @@
   border-radius: 5px;
   background: var(--g-sunken);
   font-family: var(--g-font-code);
-  font-size: 0.875em;
+  font-size: 0.85em;
   overflow-wrap: anywhere;
 }
 
@@ -266,24 +299,75 @@
   border-radius: 12px;
   background: var(--g-sunken);
   font-size: 0.875rem;
-  line-height: 1.5;
+  line-height: 1.55;
 }
 
 .rb-main pre code {
   padding: 0;
   background: none;
+  overflow-wrap: normal;
 }
 
+/* The sentence under a section title: what the section is about. */
+.rb-sub {
+  margin: 0 0 18px !important;
+  color: var(--g-text-2);
+  font-size: 1.125rem;
+  line-height: 1.5;
+}
+
+/* A colour written as a hex gets its swatch. */
+.rb-hex {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+}
+
+.rb-swatch {
+  width: 0.95em;
+  height: 0.95em;
+  border-radius: 4px;
+  box-shadow: inset 0 0 0 1px rgb(0 0 0 / 0.12);
+}
+
+/* Galleries: images with their verdict under each. */
+.rb-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 16px;
+  margin: 8px 0 18px;
+}
+
+.rb-gallery figure {
+  margin: 0;
+}
+
+.rb-gallery img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.rb-gallery figcaption {
+  margin-top: 8px;
+  color: var(--g-text-2);
+  font-size: 0.875rem;
+  line-height: 1.45;
+}
+
+/* Tables: only short ones, and never cramped. */
 .rb-main table {
   display: block;
   overflow-x: auto;
-  width: 100%;
   border-collapse: collapse;
   font-size: 0.9375rem;
 }
 
 .rb-main :is(th, td) {
-  padding: 10px 16px 10px 0;
+  min-width: 14ch;
+  padding: 10px 20px 10px 0;
   border-bottom: 1px solid var(--g-line);
   text-align: left;
   vertical-align: top;
@@ -302,10 +386,104 @@
   border-radius: 12px;
 }
 
-.rb-main hr {
-  margin: 40px 0;
-  border: 0;
+/* Rule groups: a hairline, a label with its sign, then the list. */
+.rb-rule {
+  margin: 18px 0;
+  padding-top: 12px;
   border-top: 1px solid var(--g-line);
+}
+
+.rb-rule-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 8px !important;
+  font-size: 0.9375rem;
+  font-weight: 700;
+}
+
+.rb-rule ul {
+  margin-bottom: 0 !important;
+}
+
+.rb-rule--do .rb-rule-label svg {
+  color: var(--g-success, #00a96e);
+}
+
+.rb-rule--avoid .rb-rule-label svg {
+  color: var(--g-danger, #e40523);
+}
+
+.rb-rule--dev .rb-rule-label svg,
+.rb-rule--example .rb-rule-label svg {
+  color: var(--g-text-2);
+}
+
+.rb-rule--dev {
+  font-size: 0.9375rem;
+}
+
+/* Home: each group's topics as a list on hairlines. */
+.rb-cards {
+  margin: 0 !important;
+  padding: 0 !important;
+  list-style: none;
+  border-top: 1px solid var(--g-line);
+}
+
+.rb-cards li {
+  margin: 0 !important;
+  border-bottom: 1px solid var(--g-line);
+}
+
+.rb-cards a {
+  display: grid;
+  grid-template-columns: 220px minmax(0, 1fr);
+  gap: 24px;
+  padding: 16px 0;
+  text-decoration: none !important;
+}
+
+.rb-cards strong {
+  font-size: 1.0625rem;
+}
+
+.rb-cards span {
+  color: var(--g-text-2);
+  font-size: 0.9375rem;
+  line-height: 1.5;
+}
+
+.rb-cards a:hover strong {
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+/* Previous and next. */
+.rb-pager {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 88px;
+  padding-top: 20px;
+  border-top: 1px solid var(--g-line);
+}
+
+.rb-pager a {
+  display: grid;
+  gap: 2px;
+  font-weight: 600;
+  text-decoration: none !important;
+}
+
+.rb-pager span {
+  color: var(--g-text-3);
+  font-size: 0.8125rem;
+  font-weight: 400;
+}
+
+.rb-pager .rb-next {
+  text-align: right;
 }
 
 .rb-empty {
@@ -317,14 +495,26 @@
   display: none !important;
 }
 
-/* Phone: the contents fold above the text, the find field takes the row. */
-@media (max-width: 900px) {
-  .rb-layout {
-    grid-template-columns: minmax(0, 1fr);
-    padding-top: 20px;
+/* Medium widths: the page's own topics fold away. */
+@media (max-width: 1180px) {
+  .rb-layout--toc {
+    grid-template-columns: 228px minmax(0, 1fr);
   }
 
   .rb-toc {
+    display: none;
+  }
+}
+
+/* Phone: all topics fold above the page; the find field takes its own row. */
+@media (max-width: 860px) {
+  .rb-layout,
+  .rb-layout--toc {
+    grid-template-columns: minmax(0, 1fr);
+    padding-top: 16px;
+  }
+
+  .rb-nav {
     position: static;
     max-height: none;
     padding: 14px 16px;
@@ -332,14 +522,14 @@
     background: var(--g-sunken);
   }
 
-  .rb-toc summary {
-    margin: 0;
-    color: var(--g-text);
-    font-size: 0.9375rem;
+  .rb-nav-all > summary {
+    display: block;
+    font-weight: 600;
+    cursor: pointer;
   }
 
-  .rb-toc details[open] summary {
-    margin-bottom: 12px;
+  .rb-nav-all[open] > summary {
+    margin-bottom: 8px;
   }
 
   .rb-bar {
@@ -359,7 +549,8 @@
     width: 100%;
   }
 
-  .rb-chapter {
-    margin-top: 64px;
+  .rb-cards a {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 4px;
   }
 }

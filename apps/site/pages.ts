@@ -16,7 +16,7 @@ import { mkdirSync, readFileSync, writeFileSync } from 'node:fs'
 import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import type { Plugin } from 'vite'
-import { rulebookAssets, rulebookPage } from './rulebook-page'
+import { rulebookAssets, rulebookPages } from './rulebook-page'
 import {
   calendarLinks,
   email,
@@ -649,12 +649,11 @@ function generate(): Record<string, string> {
     }
   }
   // The internal rulebook, when its private source is on this machine.
-  const book = rulebookPage(version)
-  if (book) {
-    const file = join(root, 'rulebook', 'index.html')
+  for (const { path, html } of rulebookPages(version)) {
+    const file = join(root, 'rulebook', path, 'index.html')
     mkdirSync(dirname(file), { recursive: true })
-    writeFileSync(file, book)
-    inputs.rulebook = file
+    writeFileSync(file, html)
+    inputs[`rulebook-${path || 'home'}`] = file
   }
   return inputs
 }
