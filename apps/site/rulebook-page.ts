@@ -175,7 +175,14 @@ function chapters(): Chapter[] {
   const numbered = readdirSync(RULEBOOK)
     .filter((file) => /^\d\d-.+\.md$/.test(file))
     .sort()
-    .map((file) => chapter(file, file.slice(3, -3), GROUPS[file[0]!] ?? 'Reference'))
+    .map((file) => {
+      const n = Number(file.slice(0, 2))
+      return chapter(file, file.slice(3, -3), n >= 75 && n < 80 ? 'Inspiration' : (GROUPS[file[0]!] ?? 'Reference'))
+    })
+  // The library's gallery is a page of its own in the Inspiration group, after its chapter.
+  const at = numbered.map((c) => c.group).lastIndexOf('Inspiration')
+  if (at >= 0 && libraryEntries().length)
+    numbered.splice(at + 1, 0, { file: '', slug: 'inspiration', group: 'Inspiration', title: 'All pieces', lead: 'Every piece in the library, filtered by format, industry, idea and colour.', intro: '', sections: [] })
   return [...numbered, chapter('STYLE.md', 'style', 'Reference')]
 }
 
@@ -218,6 +225,82 @@ const page = (o: {
   </body>
 </html>
 `
+
+// ── The inspiration library ──────────────────────────────────────────────────
+
+interface Swatch { hex: string; pct: number; family: string }
+interface Entry {
+  id: string
+  title: string
+  source: { name: string; url: string; kind: string; seen: string }
+  format: string
+  industry: string
+  ideas: string[]
+  tags: string[]
+  summary: string
+  why: string
+  borrow: string
+  leave: string
+  caption?: string
+  study?: string
+  palette?: Swatch[]
+  images: { src: string; alt: string; palette?: Swatch[] }[]
+}
+
+/** Entries from library/entries/*.json, newest first; [] when the library is missing. */
+function libraryEntries(): Entry[] {
+  const dir = join(RULEBOOK, 'library/entries')
+  if (!existsSync(dir)) return []
+  return readdirSync(dir)
+    .filter((f) => f.endsWith('.json'))
+    .map((f) => JSON.parse(readFileSync(join(dir, f), 'utf8')) as Entry)
+    .sort((a, b) => b.id.localeCompare(a.id))
+}
+
+const asset = (src: string) => `/rulebook/${src}`
+const label = (path: string) => path.replace('/', ' · ').replace(/-/g, ' ')
+const paletteBar = (p: Swatch[] = []) =>
+  `<span class="rb-pal">${p.map((c) => `<span style="background:${c.hex};flex:${c.pct}" title="${escape(c.family)} ${c.pct}%"></span>`).join('')}</span>`
+
+/** The gallery: every piece as a card, with filters for format, industry, idea and colour. */
+function libraryGallery(entries: Entry[]) {
+  const facet = (name: string, values: string[]) => {
+    const unique = [...new Set(values)].sort()
+    return `<fieldset class="rb-facet" data-facet="${name}"><legend>${name}</legend>${unique
+      .map((v) => `<button type="button" class="rb-chip" data-value="${escape(v)}" aria-pressed="false">${escape(label(v))}</button>`)
+      .join('')}</fieldset>`
+  }
+  const filters = [
+    facet('format', entries.map((e) => e.format)),
+    facet('industry', entries.map((e) => e.industry)),
+    facet('idea', entries.flatMap((e) => e.ideas)),
+    facet('colour', entries.flatMap((e) => (e.palette ?? []).filter((c) => c.pct >= 10).map((c) => c.family))),
+  ].join('')
+  const cards = entries
+    .map((e) => {
+      const data = `data-format="${escape(e.format)}" data-industry="${escape(e.industry)}" data-idea="${escape(e.ideas.join(' '))}" data-colour="${escape((e.palette ?? []).filter((c) => c.pct >= 10).map((c) => c.family).join(' '))}"`
+      return `<li class="rb-piece" ${data}><a href="/rulebook/inspiration/${e.id}/"><img src="${asset(e.images[0]!.src)}" alt="" loading="lazy" decoding="async" /><strong>${escape(e.title)}</strong><span>${escape(e.source.name)} · ${escape(label(e.format))} · ${escape(label(e.industry))}</span>${paletteBar(e.palette)}</a></li>`
+    })
+    .join('')
+  return `<div class="rb-filters">${filters}</div><p class="rb-count"><span>${entries.length}</span> pieces</p><ul class="rb-pieces">${cards}</ul>`
+}
+
+/** One piece: its images, what it is, why it works, what to borrow and leave, its colours. */
+function libraryEntryMain(e: Entry) {
+  const rows = [
+    ['Source', `<a href="${escape(e.source.url)}">${escape(e.source.name)}</a>, ${escape(e.source.kind)}, seen ${escape(e.source.seen)}`],
+    ['Format', escape(label(e.format))],
+    ['Industry', escape(label(e.industry))],
+    ['Ideas', e.ideas.map((i) => escape(label(i))).join(', ')],
+    ['Tags', e.tags.map(escape).join(', ')],
+  ]
+  const palette = (e.palette ?? []).map((c) => `<li><span class="rb-swatch" style="background:${c.hex}"></span>${escape(c.family)} <span class="rb-num">${c.pct}%</span> <code>${c.hex}</code></li>`).join('')
+  return `<header class="rb-head"><p class="rb-crumb"><a href="/rulebook/inspiration/">Inspiration</a></p><h1>${escape(e.title)}</h1>${tiers(`<p>${escape(e.summary)}</p>`)}</header>
+  <section class="rb-section"><div class="rb-gallery rb-gallery--diagram rb-gallery--library">${e.images.map((i) => `<figure><img src="${asset(i.src)}" alt="" loading="lazy" decoding="async" /><figcaption>${escape(i.alt)}</figcaption></figure>`).join('')}</div></section>
+  <section class="rb-section"><h2>Why it works</h2>${tiers(`<p>${escape(e.why)}</p>`)}<h3>Borrow</h3><p>${escape(e.borrow)}</p><h3>Leave</h3><p>${escape(e.leave)}</p>${e.caption ? `<h3>Original caption</h3><p class="rb-more">${escape(e.caption)}</p>` : ''}</section>
+  <section class="rb-section"><h2>Colours</h2><ul class="rb-palette-list">${palette}</ul></section>
+  <section class="rb-section"><h2>Details</h2><dl class="rb-facts">${rows.map(([k, v]) => `<dt>${k}</dt><dd>${v}</dd>`).join('')}</dl></section>`
+}
 
 /** The side menu: one fold per group, only the current one open. */
 const navFor = (book: Chapter[], current?: string) => {
@@ -269,6 +352,7 @@ export function rulebookPages(version: string): { path: string; html: string }[]
     <section class="rb-section">${render(readme.slice(readmeHead!.length).replace(/^/, ''))}</section>`,
   })
 
+  const entries = libraryEntries()
   const pages = book.map((c, i) => {
     const prev = book[i - 1]
     const next = book[i + 1]
@@ -279,7 +363,12 @@ export function rulebookPages(version: string): { path: string; html: string }[]
       : ''
     return {
       path: c.slug,
-      html: page({
+      html: c.slug === 'inspiration' ? page({
+        title: c.title,
+        version,
+        nav: navFor(book, c.slug),
+        main: `<header class="rb-head"><p class="rb-crumb">Inspiration</p><h1>All pieces</h1><p>Work the Owner liked, with why it works and the idea to borrow. Pick filters to narrow it; open a piece for its colours and notes.</p></header>${libraryGallery(entries)}`,
+      }) : page({
         title: c.title,
         version,
         nav: navFor(book, c.slug),
@@ -301,7 +390,11 @@ export function rulebookPages(version: string): { path: string; html: string }[]
       }),
     }
   })
-  return [{ path: '', html: home }, ...pages]
+  const entryPages = entries.map((e) => ({
+    path: `inspiration/${e.id}`,
+    html: page({ title: e.title, version, nav: navFor(book, 'inspiration'), main: libraryEntryMain(e) }),
+  }))
+  return [{ path: '', html: home }, ...pages, ...entryPages]
 }
 
 /** Images and files the chapters link to, served under /rulebook/assets/. */
