@@ -66,7 +66,7 @@ const relink = (md: string) =>
     .replace(/\]\(\.?\/?\d\d-([^)#]+)\.md(#[^)]+)?\)/g, (_, name: string, hash = '') => `](/rulebook/${name}/${hash})`)
     .replace(/\]\(\.?\/?README\.md(#[^)]*)?\)/g, '](/rulebook/)')
     .replace(/\]\(\.?\/?STYLE\.md(#[^)]*)?\)/g, '](/rulebook/style/)')
-    .replace(/\]\(\.?\/?(assets|proposals|sources)\//g, (_, dir: string) =>
+    .replace(/\]\(\.?\/?(assets|proposals|sources|checks)\//g, (_, dir: string) =>
       dir === 'assets' ? '](/rulebook/assets/' : `](https://github.com/Shades-Media-Group/shades-workspace/blob/main/rulebook/${dir}/`,
     )
 
