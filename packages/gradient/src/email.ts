@@ -432,7 +432,7 @@ export function renderEmail(opts: RenderOptions): RenderedEmail {
 
   const headingHtml = `<h1 class="g-e-text" style="margin:0 0 10px;font-size:30px;line-height:1.12;font-weight:700;letter-spacing:-0.025em;color:${brand.ink};mso-line-height-rule:exactly">${escapeHtml(opts.heading)}</h1>`
   const topline = opts.topline
-    ? `<tr><td style="padding:0 0 24px"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td align="center" style="background:${brand.accent};padding:10px 16px;font-family:${brand.font};font-size:14px;line-height:1.4;font-weight:600;color:${brand.onAccent}">${escapeHtml(opts.topline)}</td></tr></table></td></tr>`
+    ? `<tr><td style="padding:0 0 24px"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td align="center" style="background:${brand.accent};padding:10px 16px;font-family:${brand.font};font-size:19px;line-height:1.3;font-weight:700;color:${brand.ink}">${escapeHtml(opts.topline)}</td></tr></table></td></tr>`
     : ''
   // The hero: a band of the brand's figures, the white card, a second band. Images and a
   // flat ground only, so every client (Outlook included) shows it the same.

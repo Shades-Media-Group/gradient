@@ -72,7 +72,7 @@ Mail goes out over the shared `SMTP_*` keys from a no-reply alias (for example
 
 For offers, launches and project news to clients, the kit adds a richer frame around the same blocks.
 
-- **Top line** (`topline`): one short sentence on a square band of the brand colour, the full width of the column, above everything: the offer, the deadline, the code.
+- **Top line** (`topline`): one short sentence in ink, 19px bold, on a square band of the brand colour the full width of the column, above everything (ink on the red is 3.8:1, so the text stays large and bold to pass): the offer, the deadline, the code.
 - **Hero card** (`hero: { meta, button }`): the heading, lead, one line of facts and one button on a white card, between two bands of the brand's figures (`brand.hero.top` and `brand.hero.bottom`). Images and a flat ground only, so Outlook shows it the same.
 - **Features** (`email.feature(image, title, body, link)`): a picture across the column, a title, a line or two and a link. Real photographs or renders, or generated images that pass the imagery rules.
 - **Fine print** (`email.fine(text)`): terms, last before the footer.
