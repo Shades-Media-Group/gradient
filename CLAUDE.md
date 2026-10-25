@@ -8,6 +8,10 @@ Gradient is the design system of Shades Media Group. It holds:
 
 Product truth lives in [PRODUCT.md](PRODUCT.md); the rejected patterns live in [docs/lessons.md](docs/lessons.md); the quality bar and the audit live in [docs/design-philosophy.md](docs/design-philosophy.md) and the `shades-craft` skill. Read them before any visual work, and use the skills in [docs/guides/skills.md](docs/guides/skills.md), led by `shades-craft`.
 
+## The rulebook
+
+The Shades rulebook (all rules, by category, plus which skills to load per task) lives in the private workspace repo at `../rulebook/`. Read the chapters that match the task before starting. This site renders it at `/rulebook` when that folder is present (noindex, outside the sitemap, linked from nowhere); public CI builds skip it.
+
 ## Commands
 
 ```bash

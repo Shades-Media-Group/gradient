@@ -48,7 +48,10 @@ const walk = (dir) =>
     entry.isDirectory() ? walk(join(dir, entry.name)) : [join(dir, entry.name)],
   )
 const files = walk(dist)
-const pages = files.filter((file) => file.endsWith(`${sep}index.html`))
+// The internal rulebook is noindex and outside the sitemap, so the public checks skip it.
+const pages = files.filter(
+  (file) => file.endsWith(`${sep}index.html`) && !file.includes(`${sep}rulebook${sep}`),
+)
 
 /** Path of a dist file on the site: dist/fr/brand/index.html → /fr/brand/. */
 const pathOf = (file) =>

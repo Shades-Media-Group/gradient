@@ -8,5 +8,8 @@
     "build": "vite build",
     "preview": "vite preview",
     "deploy": "vite build && node ../../scripts/audit-site.mjs && wrangler deploy"
+  },
+  "devDependencies": {
+    "marked": "15.0.12"
   }
 }

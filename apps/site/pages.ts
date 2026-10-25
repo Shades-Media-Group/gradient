@@ -16,6 +16,7 @@ import { mkdirSync, readFileSync, writeFileSync } from 'node:fs'
 import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import type { Plugin } from 'vite'
+import { rulebookAssets, rulebookPage } from './rulebook-page'
 import {
   calendarLinks,
   email,
@@ -647,6 +648,14 @@ function generate(): Record<string, string> {
       inputs[`${page.id}-${locale.code}`] = file
     }
   }
+  // The internal rulebook, when its private source is on this machine.
+  const book = rulebookPage(version)
+  if (book) {
+    const file = join(root, 'rulebook', 'index.html')
+    mkdirSync(dirname(file), { recursive: true })
+    writeFileSync(file, book)
+    inputs.rulebook = file
+  }
   return inputs
 }
 
@@ -660,6 +669,8 @@ export function pages(): Plugin {
         fileName: 'preferences-boot.js',
         source: readFileSync(join(root, '../../packages/gradient/dist/preferences-boot.js')),
       })
+      for (const { name, source } of rulebookAssets())
+        this.emitFile({ type: 'asset', fileName: `rulebook/assets/${name}`, source })
       const { summary, full } = llms()
       this.emitFile({ type: 'asset', fileName: 'sitemap.xml', source: sitemap() })
       this.emitFile({ type: 'asset', fileName: 'llms.txt', source: summary })

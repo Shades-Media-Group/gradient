@@ -1242,6 +1242,11 @@ magic-string@^1.2.3:
   dependencies:
     "@jridgewell/sourcemap-codec" "^1.6.0"
 
+marked@15.0.12:
+  version "15.0.12"
+  resolved "https://registry.yarnpkg.com/marked/-/marked-15.0.12.tgz#30722c7346e12d0a2d0207ab9b0c4f0102d86c4e"
+  integrity sha512-8dD6FusOQSrpv9Z1rdNMdlSgQOIP880DHqnohobOmYLElGEqAL/JvxvuxZO16r4HtjTlfPRDC1hbvxC9dPN2nA==
+
 miniflare@5.20261006.1-alpha:
   version "5.20261006.1-alpha"
   resolved "https://registry.yarnpkg.com/miniflare/-/miniflare-5.20261006.1-alpha.tgz#88f259b55a6ff0750f19f38c8c1477bb3347a38f"
