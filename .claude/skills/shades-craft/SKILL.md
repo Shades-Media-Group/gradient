@@ -61,7 +61,7 @@ Live first on the server PC (each app's "[Server]" chat edits `~/shades/<repo>`,
 
 One idea per sentence, 20 words at most, concrete nouns, leads of one or two sentences. No "seamless", "elevate", "empower", "unlock", no rule of three for rhythm, no rhetorical questions. A Shades site string goes into every language file the site has.
 
-The voice lives in the small messages too: notifications, buttons, errors and email subjects. Shades is calm and expert; a client brand has its own one register. Cover the logo: if the message could come from any company, rewrite it. Notifications say what changed and offer one action, and ignored reminders back off instead of nagging. Never guilt, shame or fake urgency as personality.
+The logo gets a brand recognised; the words get it remembered. The voice lives in the small messages too: notifications, buttons, errors and email subjects. Shades is calm and expert; a client brand has its own one register. Cover the logo: if the message could come from any company, rewrite it. Notifications say what changed and offer one action, and ignored reminders back off instead of nagging. Never guilt, shame or fake urgency as personality.
 
 Apps and anything moved by the hand: start from Apple's guidelines (`hig-project-context`, then the matching `hig-*` skill; `apple-design` for gestures on the web). Elements move in the first frame, follow the finger, settle with a spring and can be caught mid-move. A product with a sign-in or user data passes `security-audit` before launch.
 
