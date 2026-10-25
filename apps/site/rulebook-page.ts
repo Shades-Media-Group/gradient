@@ -77,13 +77,16 @@ const swatches = (html: string) =>
     '<code class="rb-hex"><span class="rb-swatch" style="background:$1"></span>$1</code>',
   )
 
-/** A paragraph of images only becomes a captioned gallery; the alt text is the caption. */
+/** A paragraph of images only becomes a captioned gallery; the alt text is the caption.
+ *  Diagrams (SVG) are shown whole, never cropped like photographs. */
 const galleries = (html: string) =>
   html.replace(/<p>((?:\s*<img [^>]+>\s*)+)<\/p>/g, (_, imgs: string) => {
-    const figures = [...imgs.matchAll(/<img [^>]*src="([^"]+)"[^>]*alt="([^"]*)"[^>]*>/g)].map(
+    const found = [...imgs.matchAll(/<img [^>]*src="([^"]+)"[^>]*alt="([^"]*)"[^>]*>/g)]
+    const figures = found.map(
       ([, src, alt]) => `<figure><img src="${src}" alt="" loading="lazy" decoding="async" /><figcaption>${alt}</figcaption></figure>`,
     )
-    return `<div class="rb-gallery">${figures.join('')}</div>`
+    const diagram = found.every(([, src]) => src?.endsWith('.svg'))
+    return `<div class="rb-gallery${diagram ? ' rb-gallery--diagram' : ''}">${figures.join('')}</div>`
   })
 
 const render = (md: string) =>

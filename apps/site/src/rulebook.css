@@ -350,6 +350,18 @@
   border-radius: 12px;
 }
 
+/* Diagrams: whole, at their own proportions; a single one takes the full measure. */
+.rb-gallery--diagram {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+}
+
+.rb-gallery--diagram img {
+  height: auto;
+  aspect-ratio: auto;
+  object-fit: contain;
+  border: 1px solid var(--g-line);
+}
+
 .rb-gallery figcaption {
   margin-top: 8px;
   color: var(--g-text-2);
