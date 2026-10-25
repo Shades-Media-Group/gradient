@@ -37,7 +37,7 @@ export interface EmailBrand {
   /** The same logo with light text, shown by mail apps in dark mode (Apple Mail, Outlook). */
   logoDark?: string
   home: string
-  /** One line under the footer rule: the legal name and town. */
+  /** Lines in the ink footer above the home link: the legal name. */
   address: string
   accent: string
   onAccent: string
@@ -109,7 +109,7 @@ export const SHADES: EmailBrand = {
     { label: 'Instagram', href: 'https://www.instagram.com/shades.media.group/', icon: 'https://gradient.shades.md/email/social-instagram.png' },
     { label: 'TikTok', href: 'https://www.tiktok.com/@shades.media.group', icon: 'https://gradient.shades.md/email/social-tiktok.png' },
   ],
-  legal: ['Shades Media Group', 'Chișinău, Moldova'],
+  legal: ['Shades Media Group'],
   aiNote: 'Images or text may have been created or edited with AI.',
 }
 
@@ -432,7 +432,7 @@ export function renderEmail(opts: RenderOptions): RenderedEmail {
 
   const headingHtml = `<h1 class="g-e-text" style="margin:0 0 10px;font-size:30px;line-height:1.12;font-weight:700;letter-spacing:-0.025em;color:${brand.ink};mso-line-height-rule:exactly">${escapeHtml(opts.heading)}</h1>`
   const topline = opts.topline
-    ? `<tr><td style="padding:0 0 24px"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td align="center" style="background:${brand.accent};border-radius:12px;padding:10px 16px;font-family:${brand.font};font-size:14px;line-height:1.4;font-weight:600;color:${brand.onAccent}">${escapeHtml(opts.topline)}</td></tr></table></td></tr>`
+    ? `<tr><td style="padding:0 0 24px"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td align="center" style="background:${brand.accent};padding:10px 16px;font-family:${brand.font};font-size:14px;line-height:1.4;font-weight:600;color:${brand.onAccent}">${escapeHtml(opts.topline)}</td></tr></table></td></tr>`
     : ''
   // The hero: a band of the brand's figures, the white card, a second band. Images and a
   // flat ground only, so every client (Outlook included) shows it the same.
@@ -478,7 +478,7 @@ ${footer.map((x) => x.html.replace('margin:0 0 16px', 'margin:0 0 6px')).join('\
 <tr><td bgcolor="#141416" style="background:#141416;border-radius:0 0 20px 20px;padding:8px 24px 32px;font-family:${brand.font}">
 ${links.length ? `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:0 0 20px"><tr><td width="50%" valign="top">${column(links.slice(0, half))}</td><td width="50%" valign="top">${column(links.slice(half))}</td></tr></table>` : ''}
 ${footer.filter((x) => x.text !== brand.address).map((x) => x.html.replace(/color:#[0-9A-Fa-f]{6}/, 'color:#9A9AA2').replace('margin:0 0 16px', 'margin:0 0 6px')).join('\n')}
-${brand.aiNote ? `<p style="margin:0 0 18px;font-size:12px;line-height:1.5;color:#9A9AA2">${escapeHtml(brand.aiNote)}</p>` : ''}
+${brand.aiNote ? `<p style="margin:0 0 42px;font-size:10px;line-height:1.5;color:#9A9AA2">${escapeHtml(brand.aiNote)}</p>` : ''}
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
 <td valign="bottom">${(brand.legal ?? [brand.address]).map(small).join('')}${home ? `<p style="margin:0;font-size:12px;line-height:1.5"><a href="${escapeHtml(home)}" style="color:#ECECEA;text-decoration:none">${escapeHtml(homeLabel)}</a></p>` : ''}</td>
 <td valign="bottom" align="right" style="white-space:nowrap">${socials}</td>
