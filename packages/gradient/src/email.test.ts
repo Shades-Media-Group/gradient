@@ -116,3 +116,42 @@ describe('calendar', () => {
     expect(data.reservationFor.startDate).toBe('2027-03-04T09:00:00.000Z')
   })
 })
+
+describe('campaign and update emails', () => {
+  const message = renderEmail({
+    lang: 'en',
+    subject: 'Workshops are open',
+    preheader: 'Two days with our designers.',
+    topline: 'Workshops are open for November',
+    heading: 'A brand your whole team can use.',
+    lead: 'Logo, colour and type as one system.',
+    hero: { meta: 'Starts in November', button: { label: 'Book a workshop', href: 'https://shades.md/workshops' } },
+    blocks: [
+      email.feature({ src: 'https://shades.md/kit.png', width: 1600, height: 1000, alt: 'A brand kit' }, 'One kit', 'Cards and files.', { label: 'See it', href: 'https://shades.md/kit' }),
+      email.fine('Places are confirmed in order.'),
+    ],
+    inkFooter: true,
+  })
+
+  it('puts the heading on the hero card, between the two bands', () => {
+    const top = message.html.indexOf('shades-hero-top.png')
+    const heading = message.html.indexOf('A brand your whole team can use.')
+    const bottom = message.html.indexOf('shades-hero-bottom.png')
+    expect(top).toBeGreaterThan(-1)
+    expect(top).toBeLessThan(heading)
+    expect(heading).toBeLessThan(bottom)
+  })
+
+  it('shows the top line, the feature and the ink footer links', () => {
+    expect(message.html).toContain('Workshops are open for November')
+    expect(message.html).toContain('shades-edge.png')
+    expect(message.html).toContain('Email preferences')
+    expect(message.text).toContain('One kit')
+  })
+
+  it('closes every table it opens', () => {
+    const count = (tag: string) => message.html.split(tag).length - 1
+    expect(count('<table')).toBe(count('</table>'))
+  })
+})
+

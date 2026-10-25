@@ -52,6 +52,18 @@ export interface EmailBrand {
   fontCss?: string
   /** The square mark as a PNG at twice its size, for the corner of a pass. */
   mark?: string
+  /** Two PNG bands (1040 × 240 and 1040 × 220) above and below the hero card. */
+  hero?: { top: string; bottom: string; ground: string }
+  /** A transparent PNG (1040 × 320) where the page breaks into the ink footer. */
+  edge?: string
+  /** Links for the ink footer, set in two columns, first column first. */
+  footerLinks?: { label: string; href: string }[]
+  /** Social profiles for the ink footer, each with a white transparent PNG icon at 2×. */
+  social?: { label: string; href: string; icon: string }[]
+  /** The ink footer's closing lines: the company, the town, then the site. */
+  legal?: string[]
+  /** A notice about generated content, shown in the ink footer. */
+  aiNote?: string
 }
 
 export type PassTone = 'ink' | 'red' | 'paper'
@@ -80,6 +92,25 @@ export const SHADES: EmailBrand = {
   panel: '#EFEEEA',
   font: "'Hanken Grotesk',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif",
   fontCss: 'https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700&display=swap',
+  hero: {
+    top: 'https://gradient.shades.md/email/shades-hero-top.png',
+    bottom: 'https://gradient.shades.md/email/shades-hero-bottom.png',
+    ground: '#FFF0F2',
+  },
+  edge: 'https://gradient.shades.md/email/shades-edge.png',
+  footerLinks: [
+    { label: 'Help Center', href: 'https://shades.md/contact' },
+    { label: 'Terms', href: 'https://shades.md/terms' },
+    { label: 'Unsubscribe', href: 'https://shades.md/email-preferences' },
+    { label: 'Privacy', href: 'https://shades.md/privacy' },
+    { label: 'Email preferences', href: 'https://shades.md/email-preferences' },
+  ],
+  social: [
+    { label: 'Instagram', href: 'https://www.instagram.com/shades.media.group/', icon: 'https://gradient.shades.md/email/social-instagram.png' },
+    { label: 'TikTok', href: 'https://www.tiktok.com/@shades.media.group', icon: 'https://gradient.shades.md/email/social-tiktok.png' },
+  ],
+  legal: ['Shades Media Group', 'Chișinău, Moldova'],
+  aiNote: 'Images or text may have been created or edited with AI.',
 }
 
 export interface Block {
@@ -310,6 +341,35 @@ export function blocks(brand: EmailBrand = SHADES) {
       })
     },
 
+    /**
+     * A feature: a picture across the column, then a title, a line or two and an
+     * optional link. For updates and campaigns; real photographs or renders only.
+     */
+    feature(
+      image: { src: string; width: number; height: number; alt: string },
+      title: string,
+      body: string,
+      link?: { label: string; href: string },
+    ): Block {
+      const src = safeUrl(image.src)
+      const href = link && safeUrl(link.href)
+      const w = 472
+      const h = Math.round((w * image.height) / image.width)
+      return {
+        html:
+          `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:8px 0 28px"><tr><td>` +
+          (src ? `<img src="${escapeHtml(src)}" width="${w}" height="${h}" alt="${escapeHtml(image.alt)}" style="display:block;width:100%;max-width:${w}px;height:auto;border:0;border-radius:16px;margin:0 0 16px">` : '') +
+          `<h2 class="g-e-text" style="margin:0 0 6px;font-size:20px;line-height:1.25;font-weight:700;letter-spacing:-0.01em;color:${brand.ink}">${escapeHtml(title)}</h2>` +
+          `<p class="g-e-muted" style="margin:0 0 10px;font-size:16px;line-height:1.55;color:${brand.muted}">${escapeHtml(body)}</p>` +
+          (href ? `<a class="g-e-text" href="${escapeHtml(href)}" style="font-size:15px;font-weight:600;color:${brand.ink};text-decoration:underline">${escapeHtml(link!.label)} →</a>` : '') +
+          `</td></tr></table>`,
+        text: [title, body, href ? `${link!.label}: ${href}` : ''].filter(Boolean).join('\n'),
+      }
+    },
+
+    /** Terms and conditions: small, quiet, last before the footer. */
+    fine: (value: string) => p(value, 12, brand.muted, 'g-e-muted'),
+
     divider(): Block {
       return {
         html: `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td class="g-e-rule" style="padding:8px 0 16px;border-top:1px solid ${brand.line};font-size:0;line-height:0">&nbsp;</td></tr></table>`,
@@ -332,6 +392,17 @@ export interface RenderOptions {
   blocks: Block[]
   footer?: Block[]
   brand?: EmailBrand
+  /** One short line on the brand colour above everything: the code, the deadline, the offer. */
+  topline?: string
+  /**
+   * Campaign and update emails: the heading, lead and button sit on a white card
+   * over the brand's hero pattern, with one short line (a date, a deadline) under the lead.
+   */
+  hero?: { meta?: string; button?: { label: string; href: string } }
+  /** Ends the email on the ink footer: the curved edge, the brand's links and the address. */
+  inkFooter?: boolean
+  /** This message's own unsubscribe link; replaces the brand's Unsubscribe link. */
+  unsubscribe?: string
   /** schema.org JSON-LD for Gmail: see viewAction() and eventReservation(). */
   schema?: object | object[]
   attachments?: Attachment[]
@@ -347,7 +418,8 @@ export function renderEmail(opts: RenderOptions): RenderedEmail {
         text: opts.lead,
       }
     : NONE
-  const body = [lead, ...opts.blocks].filter((x) => x.html)
+  const hero = opts.hero && brand.hero ? opts.hero : undefined
+  const body = [hero ? NONE : lead, ...opts.blocks].filter((x) => x.html)
   const footer = [...(opts.footer ?? []), b.note(brand.address)].filter((x) => x.html)
   const schema = opts.schema
     ? `<script type="application/ld+json">${JSON.stringify(opts.schema).replace(/</g, '\\u003c')}</script>`
@@ -357,6 +429,61 @@ export function renderEmail(opts: RenderOptions): RenderedEmail {
   const darkLogo = brand.logoDark
     ? `<!--[if !mso]><!--><img class="g-e-logo-dark" src="${escapeHtml(brand.logoDark)}" width="${brand.logo.width}" height="${brand.logo.height}" alt="${escapeHtml(brand.name)}" style="display:none;max-height:0;overflow:hidden;border:0;outline:none;width:${brand.logo.width}px;height:auto"><!--<![endif]-->`
     : ''
+
+  const headingHtml = `<h1 class="g-e-text" style="margin:0 0 10px;font-size:30px;line-height:1.12;font-weight:700;letter-spacing:-0.025em;color:${brand.ink};mso-line-height-rule:exactly">${escapeHtml(opts.heading)}</h1>`
+  const topline = opts.topline
+    ? `<tr><td style="padding:0 0 24px"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td align="center" style="background:${brand.accent};border-radius:12px;padding:10px 16px;font-family:${brand.font};font-size:14px;line-height:1.4;font-weight:600;color:${brand.onAccent}">${escapeHtml(opts.topline)}</td></tr></table></td></tr>`
+    : ''
+  // The hero: a band of the brand's figures, the white card, a second band. Images and a
+  // flat ground only, so every client (Outlook included) shows it the same.
+  const art = brand.hero
+  const heroButton = hero?.button ? b.button(hero.button.label, hero.button.href).html.replace('style="margin:0 0 12px"', 'align="center" style="margin:8px auto 0"') : ''
+  const heroRow = hero && art
+    ? `<tr><td bgcolor="${art.ground}" style="background:${art.ground};border-radius:20px;padding:0">
+<img src="${escapeHtml(art.top)}" width="520" height="120" alt="" style="display:block;width:100%;max-width:520px;height:auto;border:0;border-radius:20px 20px 0 0">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding:0 28px">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#FFFFFF;border-radius:16px;border-collapse:separate"><tr><td align="center" style="padding:36px 28px 32px;font-family:${brand.font};text-align:center">
+<h1 style="margin:0 0 12px;font-size:32px;line-height:1.1;font-weight:700;letter-spacing:-0.025em;color:#1C1C20;text-wrap:balance;mso-line-height-rule:exactly">${escapeHtml(opts.heading)}</h1>
+${opts.lead ? `<p style="margin:0 0 12px;font-size:17px;line-height:1.5;color:#56565E">${escapeHtml(opts.lead)}</p>` : ''}
+${hero.meta ? `<p style="margin:0 0 20px;font-size:15px;line-height:1.4;font-weight:600;color:#1C1C20">${escapeHtml(hero.meta)}</p>` : ''}
+${heroButton}
+</td></tr></table>
+</td></tr></table>
+<img src="${escapeHtml(art.bottom)}" width="520" height="110" alt="" style="display:block;width:100%;max-width:520px;height:auto;border:0;border-radius:0 0 20px 20px">
+</td></tr>
+<tr><td style="height:28px;line-height:28px;font-size:0">&nbsp;</td></tr>`
+    : ''
+  const plainFooter = `<tr><td class="g-e-col" style="padding:8px 24px 0;font-family:${brand.font}">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td class="g-e-rule" style="padding:20px 0 0;border-top:1px solid ${brand.line}">
+${footer.map((x) => x.html.replace('margin:0 0 16px', 'margin:0 0 6px')).join('\n')}
+</td></tr></table>
+</td></tr>`
+  // The ink footer: the page breaks into ink, then the links in two columns, the notes,
+  // the company lines with the site, and the social icons.
+  const links = (brand.footerLinks ?? [])
+    .map((l) => (l.label === 'Unsubscribe' && opts.unsubscribe ? { ...l, href: opts.unsubscribe } : l))
+    .filter((l) => safeUrl(l.href))
+  const half = Math.ceil(links.length / 2)
+  const column = (items: typeof links) =>
+    items
+      .map((l) => `<p style="margin:0 0 10px;font-size:14px;line-height:1.4"><a href="${escapeHtml(safeUrl(l.href)!)}" style="color:#ECECEA;text-decoration:none">${escapeHtml(l.label)}</a></p>`)
+      .join('')
+  const small = (value: string) => `<p style="margin:0 0 4px;font-size:12px;line-height:1.5;color:#9A9AA2">${escapeHtml(value)}</p>`
+  const socials = (brand.social ?? [])
+    .filter((x) => safeUrl(x.href))
+    .map((x) => `<a href="${escapeHtml(safeUrl(x.href)!)}" style="display:inline-block;margin-left:14px;text-decoration:none"><img src="${escapeHtml(x.icon)}" width="22" height="22" alt="${escapeHtml(x.label)}" style="display:block;border:0"></a>`)
+    .join('')
+  const homeLabel = home.replace(/^https?:\/\//, '').replace(/\/$/, '')
+  const inkFooter = `<tr><td style="padding:24px 0 0;line-height:0">${brand.edge ? `<img src="${escapeHtml(brand.edge)}" width="520" height="160" alt="" style="display:block;width:100%;max-width:520px;height:auto;border:0">` : ''}</td></tr>
+<tr><td bgcolor="#141416" style="background:#141416;border-radius:0 0 20px 20px;padding:8px 24px 32px;font-family:${brand.font}">
+${links.length ? `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:0 0 20px"><tr><td width="50%" valign="top">${column(links.slice(0, half))}</td><td width="50%" valign="top">${column(links.slice(half))}</td></tr></table>` : ''}
+${footer.filter((x) => x.text !== brand.address).map((x) => x.html.replace(/color:#[0-9A-Fa-f]{6}/, 'color:#9A9AA2').replace('margin:0 0 16px', 'margin:0 0 6px')).join('\n')}
+${brand.aiNote ? `<p style="margin:0 0 18px;font-size:12px;line-height:1.5;color:#9A9AA2">${escapeHtml(brand.aiNote)}</p>` : ''}
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
+<td valign="bottom">${(brand.legal ?? [brand.address]).map(small).join('')}${home ? `<p style="margin:0;font-size:12px;line-height:1.5"><a href="${escapeHtml(home)}" style="color:#ECECEA;text-decoration:none">${escapeHtml(homeLabel)}</a></p>` : ''}</td>
+<td valign="bottom" align="right" style="white-space:nowrap">${socials}</td>
+</tr></table>
+</td></tr>`
 
   const html = `<!doctype html>
 <html lang="${escapeHtml(opts.lang)}" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
@@ -400,16 +527,14 @@ ${schema}
 <tr><td align="center" style="padding:32px 12px 40px">
 <!--[if mso]><table role="presentation" width="520" align="center" cellpadding="0" cellspacing="0" border="0"><tr><td><![endif]-->
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width:520px;font-family:${brand.font}">
+${topline}
 <tr><td class="g-e-col" style="padding:0 24px 28px"><a href="${escapeHtml(home)}" style="text-decoration:none"><img class="g-e-logo" src="${escapeHtml(brand.logo.src)}" width="${brand.logo.width}" height="${brand.logo.height}" alt="${escapeHtml(brand.name)}" style="display:block;border:0;outline:none;width:${brand.logo.width}px;height:auto;font-family:${MSO_FONT};font-size:18px;font-weight:bold;color:${brand.accent}">${darkLogo}</a></td></tr>
+${heroRow}
 <tr><td class="g-e-col" style="padding:0 24px;font-family:${brand.font};color:${brand.ink}">
-<h1 class="g-e-text" style="margin:0 0 10px;font-size:30px;line-height:1.12;font-weight:700;letter-spacing:-0.025em;color:${brand.ink};mso-line-height-rule:exactly">${escapeHtml(opts.heading)}</h1>
+${hero ? '' : headingHtml}
 ${body.map((x) => x.html).join('\n')}
 </td></tr>
-<tr><td class="g-e-col" style="padding:8px 24px 0;font-family:${brand.font}">
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td class="g-e-rule" style="padding:20px 0 0;border-top:1px solid ${brand.line}">
-${footer.map((x) => x.html.replace('margin:0 0 16px', 'margin:0 0 6px')).join('\n')}
-</td></tr></table>
-</td></tr>
+${opts.inkFooter ? inkFooter : plainFooter}
 </table>
 <!--[if mso]></td></tr></table><![endif]-->
 </td></tr>

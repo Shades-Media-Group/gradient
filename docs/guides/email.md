@@ -67,3 +67,15 @@ Mail goes out over the shared `SMTP_*` keys from a no-reply alias (for example
 2. Render the HTML and look at it in light and dark, at phone and desktop widths.
 3. Send one real email to a Gmail inbox and to Apple Mail before calling it done. For codes,
    confirm "Copy code" or AutoFill appears; for meetings, that the event card appears.
+
+## Campaign and update emails
+
+For offers, launches and project news to clients, the kit adds a richer frame around the same blocks.
+
+- **Top line** (`topline`): one short sentence on the brand colour above everything: the offer, the deadline, the code.
+- **Hero card** (`hero: { meta, button }`): the heading, lead, one line of facts and one button on a white card, between two bands of the brand's figures (`brand.hero.top` and `brand.hero.bottom`). Images and a flat ground only, so Outlook shows it the same.
+- **Features** (`email.feature(image, title, body, link)`): a picture across the column, a title, a line or two and a link. Real photographs or renders, or generated images that pass the imagery rules.
+- **Fine print** (`email.fine(text)`): terms, last before the footer.
+- **Ink footer** (`inkFooter: true`): the page breaks into ink through layered waves with the brand's figures (`brand.edge`, transparent above the waves), then the links in two columns (Unsubscribe is replaced by `unsubscribe` when the message has its own), the AI notice, the company lines with the site, and the social icons.
+
+Shades ships all of these in `SHADES`; a client brand passes its own `hero`, `edge`, `footerLinks`, `social`, `legal` and `aiNote`.

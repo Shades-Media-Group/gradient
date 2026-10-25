@@ -85,6 +85,73 @@ const square = (size, pad) =>
     `<div style="width:${size}px; height:${size}px; padding:${pad}px; background:#e40523">${mark.replace('<rect width="56" height="56" fill="#E40523"/>', '')}</div>`,
   )
 
+// Email hero: two bands of the Spectra family and the mark on a soft red ground,
+// one above and one below the white card, every figure whole.
+const band = (height, items) =>
+  page(
+    1040,
+    height,
+    `<div style="position:absolute; inset:0; background:#FFF0F2"></div>
+    ${items
+      .map(
+        ([x, y, w, r, what]) =>
+          `<div style="position:absolute; left:${x}px; top:${y}px; width:${w}px; transform:rotate(${r}deg)">${what === 'mark' ? mark : family[what]}</div>`,
+      )
+      .join('')}`,
+  )
+// [left, top, width, rotation, what]: what is a family index or 'mark'
+const heroTop = band(240, [
+  [64, 44, 112, -8, 0], [238, 96, 64, 14, 'mark'], [372, 30, 104, 6, 1],
+  [560, 112, 58, -12, 'mark'], [676, 40, 96, -5, 2], [858, 70, 110, 9, 3],
+])
+const heroBottom = band(220, [
+  [92, 34, 100, 7, 4], [282, 96, 60, -10, 'mark'], [430, 40, 104, -6, 5],
+  [640, 104, 56, 12, 'mark'], [760, 30, 108, 5, 6], [930, 120, 52, -14, 'mark'],
+])
+
+// Email edge: the page breaks into the ink footer in layered waves, the spectrum
+// riding the top wave and the Spectra family travelling along it, with sparkles.
+// Transparent above the waves, so it sits on the light page and the dark one alike.
+const sparkle = (x, y, r, c) => `<circle cx="${x}" cy="${y}" r="${r}" fill="${c}"/>`
+const star = (x, y, s, c) =>
+  `<path d="M${x} ${y - s} L${x + s * 0.28} ${y - s * 0.28} L${x + s} ${y} L${x + s * 0.28} ${y + s * 0.28} L${x} ${y + s} L${x - s * 0.28} ${y + s * 0.28} L${x - s} ${y} L${x - s * 0.28} ${y - s * 0.28} Z" fill="${c}"/>`
+const riders = [
+  [50, 104, 104, 8, 0], [236, 96, 66, -10, 'mark'], [380, 52, 98, -6, 1],
+  [574, 70, 60, 12, 'mark'], [688, 96, 102, 6, 2], [868, 112, 96, -8, 3],
+]
+const edge = page(
+  1040,
+  320,
+  `<svg viewBox="0 0 1040 320" width="1040" height="320" style="position:absolute; inset:0">
+    <defs><linearGradient id="s" x1="0" x2="1"><stop offset="0" stop-color="#6364ff"/><stop offset=".34" stop-color="#d212d6"/><stop offset=".67" stop-color="#e40523"/><stop offset="1" stop-color="#ff5900"/></linearGradient></defs>
+    <path d="M0 190 C 220 110, 420 110, 620 160 S 900 230, 1040 150 L1040 320 L0 320 Z" fill="#FFF0F2"/>
+    <path d="M0 214 C 230 140, 430 140, 630 186 S 905 250, 1040 176 L1040 320 L0 320 Z" fill="#FFC4CF"/>
+    <path d="M0 236 C 240 166, 440 166, 640 210 S 910 270, 1040 200 L1040 320 L0 320 Z" fill="#141416"/>
+    <path d="M0 214 C 230 140, 430 140, 630 186 S 905 250, 1040 176" fill="none" stroke="url(#s)" stroke-width="5"/>
+    ${[[150, 120, 4, '#FFC24D'], [330, 96, 3, '#FFC24D'], [520, 120, 5, '#FFC24D'], [810, 150, 3, '#FFC24D'], [980, 120, 4, '#FFC24D'], [610, 250, 3, '#FFC24D'], [300, 250, 2.5, '#FFC24D'], [880, 268, 3, '#FFC24D']].map((d) => sparkle(...d)).join('')}
+    ${[[200, 160, 9, '#FFFFFF'], [560, 92, 7, '#FFC24D'], [960, 220, 10, '#FFFFFF'], [460, 250, 8, '#FFFFFF']].map((d) => star(...d)).join('')}
+  </svg>
+  ${riders
+    .map(
+      ([x, y, w, r, what]) =>
+        `<div style="position:absolute; left:${x}px; top:${y}px; width:${w}px; transform:rotate(${r}deg)">${what === 'mark' ? mark : family[what]}</div>`,
+    )
+    .join('')}`,
+).replace('body { background: #fdfdfc;', 'body { background: transparent;')
+
+// Social icons for the ink footer: white glyphs on transparent, at twice their size.
+const glyph = (paths) =>
+  page(
+    64,
+    64,
+    `<svg viewBox="0 0 24 24" width="64" height="64" fill="none" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">${paths}</svg>`,
+  ).replace('body { background: #fdfdfc;', 'body { background: transparent;')
+const SOCIAL = {
+  instagram: glyph('<rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.3" cy="6.7" r="1.1" fill="#FFFFFF" stroke="none"/>'),
+  tiktok: glyph('<path d="M15.5 3c.3 2.4 1.8 4 4.2 4.2V10a7.3 7.3 0 0 1-4.2-1.4v6.6a5.3 5.3 0 1 1-5.3-5.3c.3 0 .6 0 .9.1v2.9a2.5 2.5 0 1 0 1.7 2.3V3h2.7z" fill="#FFFFFF" stroke="none"/>'),
+  facebook: glyph('<path d="M13.5 21v-7.3h2.6l.4-3h-3V8.8c0-.9.3-1.5 1.5-1.5h1.6V4.6c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4v2.2H7.8v3h2.6V21h3.1z" fill="#FFFFFF" stroke="none"/>'),
+}
+
 const JOBS = [
   ['apps/site/public/social-card.png', 1200, 630, preview],
   ['assets/readme-banner-light.png', 1600, 560, card(1600, 560, false)],
@@ -111,6 +178,13 @@ const JOBS = [
     ),
   ],
 ]
+
+JOBS.push(
+  ['apps/site/public/email/shades-hero-top.png', 1040, 240, heroTop],
+  ['apps/site/public/email/shades-hero-bottom.png', 1040, 220, heroBottom],
+  ['apps/site/public/email/shades-edge.png', 1040, 320, edge],
+  ...Object.entries(SOCIAL).map(([name, html]) => [`apps/site/public/email/social-${name}.png`, 64, 64, html]),
+)
 
 const browser = await chromium.launch(
   process.env.PW_CHROMIUM_PATH ? { executablePath: process.env.PW_CHROMIUM_PATH } : {},
