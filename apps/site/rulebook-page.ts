@@ -85,7 +85,8 @@ const galleries = (html: string) =>
     const figures = found.map(
       ([, src, alt]) => `<figure><img src="${src}" alt="" loading="lazy" decoding="async" /><figcaption>${alt}</figcaption></figure>`,
     )
-    const diagram = found.every(([, src]) => src?.endsWith('.svg'))
+    // Diagrams and pattern art show whole; only photographs are cropped to one shape.
+    const diagram = found.every(([, src]) => src?.endsWith('.svg') || src?.includes('/patterns/'))
     return `<div class="rb-gallery${diagram ? ' rb-gallery--diagram' : ''}">${figures.join('')}</div>`
   })
 
