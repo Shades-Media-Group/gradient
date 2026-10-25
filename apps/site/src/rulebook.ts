@@ -51,3 +51,14 @@ for (const chip of document.querySelectorAll<HTMLButtonElement>('.rb-chip')) {
     if (count) count.textContent = String(shown)
   })
 }
+
+// A piece's thumbnails swap its big preview.
+for (const thumb of document.querySelectorAll<HTMLButtonElement>('.rb-thumb')) {
+  thumb.addEventListener('click', () => {
+    const piece = thumb.closest('.rb-piece')!
+    const main = piece.querySelector<HTMLImageElement>('.rb-piece-main')!
+    main.src = thumb.dataset.src!
+    main.alt = thumb.getAttribute('aria-label') ?? ''
+    for (const t of piece.querySelectorAll('.rb-thumb')) t.setAttribute('aria-pressed', String(t === thumb))
+  })
+}

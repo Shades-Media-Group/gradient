@@ -276,13 +276,29 @@ function libraryGallery(entries: Entry[]) {
     facet('idea', entries.flatMap((e) => e.ideas)),
     facet('colour', entries.flatMap((e) => (e.palette ?? []).filter((c) => c.pct >= 10).map((c) => c.family))),
   ].join('')
-  const cards = entries
+  const rows = entries
     .map((e) => {
       const data = `data-format="${escape(e.format)}" data-industry="${escape(e.industry)}" data-idea="${escape(e.ideas.join(' '))}" data-colour="${escape((e.palette ?? []).filter((c) => c.pct >= 10).map((c) => c.family).join(' '))}"`
-      return `<li class="rb-piece" ${data}><a href="/rulebook/inspiration/${e.id}/"><img src="${asset(e.images[0]!.src)}" alt="" loading="lazy" decoding="async" /><strong>${escape(e.title)}</strong><span>${escape(e.source.name)} · ${escape(label(e.format))} · ${escape(label(e.industry))}</span>${paletteBar(e.palette)}</a></li>`
+      const thumbs = e.images.length > 1
+        ? `<div class="rb-thumbs">${e.images.map((i, n) => `<button type="button" class="rb-thumb" data-src="${asset(i.src)}" aria-label="${escape(i.alt)}" aria-pressed="${n === 0}"><img src="${asset(i.src)}" alt="" loading="lazy" decoding="async" /></button>`).join('')}</div>`
+        : ''
+      const tags = [e.format, e.industry, ...e.ideas].map((t) => `<li>${escape(label(t))}</li>`).join('')
+      const colours = (e.palette ?? []).filter((c) => c.pct >= 3).map((c) => `<li><span class="rb-swatch" style="background:${c.hex}"></span>${escape(c.family)} <span class="rb-num">${c.pct}%</span></li>`).join('')
+      return `<li class="rb-piece" ${data}>
+        <div class="rb-piece-media"><img class="rb-piece-main" src="${asset(e.images[0]!.src)}" alt="${escape(e.images[0]!.alt)}" loading="lazy" decoding="async" />${thumbs}</div>
+        <div class="rb-piece-text">
+          <ul class="rb-tags">${tags}</ul>
+          <h2><a href="/rulebook/inspiration/${e.id}/">${escape(e.title)}</a></h2>
+          <p class="rb-piece-source"><a href="${escape(e.source.url)}">${escape(e.source.name)}</a>, ${escape(e.source.kind)}, seen ${escape(e.source.seen)}</p>
+          ${tiers(`<p>${escape(e.summary)}</p>`)}
+          <dl class="rb-facts"><dt>Why it works</dt><dd>${escape(e.why)}</dd><dt>Borrow</dt><dd>${escape(e.borrow)}</dd><dt>Leave</dt><dd>${escape(e.leave)}</dd></dl>
+          ${paletteBar(e.palette)}<ul class="rb-palette-list rb-palette-inline">${colours}</ul>
+          ${e.tags.length ? `<p class="rb-piece-notes">${e.tags.map(escape).join(' · ')}</p>` : ''}
+        </div>
+      </li>`
     })
     .join('')
-  return `<div class="rb-filters">${filters}</div><p class="rb-count"><span>${entries.length}</span> pieces</p><ul class="rb-pieces">${cards}</ul>`
+  return `<div class="rb-filters">${filters}</div><p class="rb-count"><span>${entries.length}</span> pieces</p><ul class="rb-pieces">${rows}</ul>`
 }
 
 /** One piece: its images, what it is, why it works, what to borrow and leave, its colours. */
