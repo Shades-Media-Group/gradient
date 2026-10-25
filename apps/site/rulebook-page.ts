@@ -285,6 +285,9 @@ interface Entry {
   palette?: Swatch[]
   images: { src: string; alt: string; palette?: Swatch[] }[]
   added?: string
+  brand?: string
+  platform?: string
+  collection?: string
 }
 
 /** Entries from library/entries/*.json, newest first; [] when the library is missing. */
@@ -308,25 +311,38 @@ const paletteBar = (p: Swatch[] = []) =>
 
 /** The gallery: every piece as a card, with filters for format, industry, idea and colour. */
 function libraryGallery(entries: Entry[]) {
-  const facet = (name: string, values: string[]) => {
-    const unique = [...new Set(values)].sort()
-    return `<fieldset class="rb-facet" data-facet="${name}"><legend>${name}</legend>${unique
-      .map((v) => `<button type="button" class="rb-chip" data-value="${escape(v)}" aria-pressed="false">${escape(label(v))}</button>`)
-      .join('')}</fieldset>`
-  }
-  const filters = [
-    facet('format', entries.map((e) => e.format)),
-    facet('industry', entries.map((e) => e.industry)),
-    facet('idea', entries.flatMap((e) => e.ideas)),
-    facet('colour', entries.flatMap((e) => (e.palette ?? []).filter((c) => c.pct >= 10).map((c) => c.family))),
-  ].join('')
+  // Each facet lists its values with how many pieces carry them; '|' separates values in the data.
+  const colours = (e: Entry) => (e.palette ?? []).filter((c) => c.pct >= 10).map((c) => c.family)
+  const facets: [string, string, (e: Entry) => string[]][] = [
+    ['brand', 'Brand', (e) => (e.brand ? [e.brand] : [])],
+    ['collection', 'Collection', (e) => (e.collection ? [e.collection] : [])],
+    ['source', 'Source', (e) => [e.platform ?? e.source.kind]],
+    ['format', 'Format', (e) => [e.format]],
+    ['industry', 'Industry', (e) => [e.industry]],
+    ['idea', 'Idea', (e) => e.ideas],
+    ['colour', 'Colour', colours],
+  ]
+  const filters = facets
+    .map(([key, name, of]) => {
+      const counts = new Map<string, number>()
+      for (const e of entries) for (const v of new Set(of(e))) counts.set(v, (counts.get(v) ?? 0) + 1)
+      if (!counts.size) return ''
+      return `<fieldset class="rb-facet" data-facet="${key}"><legend>${name}</legend>${[...counts]
+        .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
+        .map(([v, n]) => `<button type="button" class="rb-chip" data-value="${escape(v)}" aria-pressed="false">${escape(key === 'brand' || key === 'collection' || key === 'source' ? v : label(v))} <span class="rb-chip-n">${n}</span></button>`)
+        .join('')}</fieldset>`
+    })
+    .join('')
+  const dataOf = (e: Entry) =>
+    facets.map(([key, , of]) => `data-${key}="${escape(of(e).join('|'))}"`).join(' ') +
+    ` data-text="${escape([e.title, e.summary, e.brand, e.collection, e.platform, e.tags.join(' '), e.source.name].join(' ').toLowerCase())}"`
   const rows = entries
     .map((e) => {
-      const data = `data-format="${escape(e.format)}" data-industry="${escape(e.industry)}" data-idea="${escape(e.ideas.join(' '))}" data-colour="${escape((e.palette ?? []).filter((c) => c.pct >= 10).map((c) => c.family).join(' '))}"`
+      const data = dataOf(e)
       const thumbs = e.images.length > 1
         ? `<div class="rb-thumbs">${e.images.map((i, n) => `<button type="button" class="rb-thumb" data-src="${asset(i.src)}" aria-label="${escape(i.alt)}" aria-pressed="${n === 0}"><img src="${asset(i.src)}" alt="" loading="lazy" decoding="async" /></button>`).join('')}</div>`
         : ''
-      const tags = [e.format, e.industry, ...e.ideas].map((t) => `<li>${escape(label(t))}</li>`).join('')
+      const tags = [e.brand ? `<li class="rb-tag-brand">${escape(e.brand)}</li>` : '', e.collection ? `<li class="rb-tag-collection">${escape(e.collection)}</li>` : '', ...[e.format, e.industry, ...e.ideas].map((t) => `<li>${escape(label(t))}</li>`)].join('')
       const colours = (e.palette ?? []).filter((c) => c.pct >= 3).map((c) => `<li><span class="rb-swatch" style="background:${c.hex}"></span>${escape(c.family)} <span class="rb-num">${c.pct}%</span></li>`).join('')
       return `<li class="rb-piece" ${data}>
         <div class="rb-piece-media"><img class="rb-piece-main" src="${asset(e.images[0]!.src)}" alt="${escape(e.images[0]!.alt)}" loading="lazy" decoding="async" />${thumbs}</div>
@@ -346,7 +362,15 @@ function libraryGallery(entries: Entry[]) {
       </li>`
     })
     .join('')
-  return `<div class="rb-filters">${filters}</div><div class="rb-gallery-bar"><p class="rb-count"><span>${entries.length}</span> pieces</p><label class="rb-view">View <select><option value="rows">Images and notes</option><option value="grid">Images only</option></select></label></div><ul class="rb-pieces">${rows}</ul><dialog class="rb-dialog" aria-label="Piece"><button type="button" class="rb-dialog-close" aria-label="Close">${icon('close')}</button><div class="rb-dialog-body"></div></dialog>`
+  return `<div class="rb-lib-bar">
+    <label class="rb-lib-search">${icon('search')}<input type="search" placeholder="Search the library: a brand, an idea, a word" autocomplete="off" aria-label="Search the inspiration library" /></label>
+    <button type="button" class="rb-lib-filters-open" aria-haspopup="dialog">${icon('filter')}Filters <span class="rb-lib-filter-count" hidden></span></button>
+    <label class="rb-view">View <select><option value="rows">Images and notes</option><option value="grid">Images only</option></select></label>
+  </div>
+  <div class="rb-lib-active" hidden></div>
+  <p class="rb-count"><span>${entries.length}</span> of ${entries.length} pieces</p>
+  <dialog class="rb-lib-filters" aria-label="Filters"><div class="rb-versions-head"><h2>Filters</h2><button type="button" class="rb-dialog-close" aria-label="Close">${icon('close')}</button></div><div class="rb-filters">${filters}</div><div class="rb-lib-filters-foot"><button type="button" class="rb-lib-clear">Clear all</button><button type="button" class="rb-lib-show">Show <span>${entries.length}</span> pieces</button></div></dialog>
+  <ul class="rb-pieces">${rows}</ul><dialog class="rb-dialog" aria-label="Piece"><button type="button" class="rb-dialog-close" aria-label="Close">${icon('close')}</button><div class="rb-dialog-body"></div></dialog>`
 }
 
 /** One piece: its images, what it is, why it works, what to borrow and leave, its colours. */

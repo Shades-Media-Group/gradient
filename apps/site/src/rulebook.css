@@ -1609,3 +1609,175 @@ body.rb-toc-sheet .g-prefs {
     font-size: 0.8125rem;
   }
 }
+
+/* Library bar: its own search, the filter window, the view; chosen filters as removable chips. */
+.rb-lib-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 12px;
+}
+
+.rb-lib-search {
+  display: flex;
+  flex: 1 1 260px;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 0 14px;
+  border-radius: 999px;
+  background: var(--g-sunken);
+  box-shadow: inset 0 0 0 1px var(--g-line);
+}
+
+.rb-lib-search .rb-ico {
+  margin: 0;
+  color: var(--g-text-3);
+}
+
+.rb-lib-search input {
+  flex: 1;
+  min-width: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  outline: none;
+}
+
+.rb-lib-filters-open,
+.rb-lib-clear,
+.rb-lib-show,
+.rb-active-chip,
+.rb-active-clear {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 44px;
+  padding: 0 16px;
+  border: 1px solid var(--g-line);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--g-text);
+  font: inherit;
+  font-size: 0.9375rem;
+  cursor: pointer;
+}
+
+.rb-lib-filters-open .rb-ico {
+  margin: 0;
+}
+
+.rb-lib-filter-count {
+  min-width: 20px;
+  padding: 0 6px;
+  border-radius: 999px;
+  background: var(--g-text);
+  color: var(--g-bg);
+  font-size: 0.75rem;
+  text-align: center;
+}
+
+.rb-lib-active {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 0 0 10px;
+}
+
+.rb-lib-active[hidden] {
+  display: none;
+}
+
+.rb-active-chip,
+.rb-active-clear {
+  min-height: 32px;
+  padding: 0 12px;
+  font-size: 0.8125rem;
+}
+
+.rb-active-chip {
+  border-color: var(--g-text);
+  background: var(--g-text);
+  color: var(--g-bg);
+}
+
+.rb-lib-filters {
+  width: min(720px, calc(100vw - 24px));
+  max-height: calc(100vh - 48px);
+  padding: 20px 24px 0;
+  border: 0;
+  border-radius: 16px;
+  background: var(--g-bg);
+  color: var(--g-text);
+}
+
+.rb-lib-filters::backdrop {
+  background: color-mix(in srgb, #0a0a0b 50%, transparent);
+}
+
+.rb-lib-filters .rb-filters {
+  margin: 16px 0;
+}
+
+.rb-lib-filters-foot {
+  position: sticky;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 14px 0 20px;
+  border-top: 1px solid var(--g-line);
+  background: var(--g-bg);
+}
+
+.rb-lib-show {
+  border-color: var(--g-text);
+  background: var(--g-text);
+  color: var(--g-bg);
+  font-weight: 600;
+}
+
+.rb-chip-n {
+  margin-left: 4px;
+  color: var(--g-text-3);
+  font-size: 0.75rem;
+}
+
+.rb-chip[aria-pressed='true'] .rb-chip-n {
+  color: inherit;
+  opacity: 0.7;
+}
+
+.rb-chip:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.rb-tags .rb-tag-brand,
+.rb-tags .rb-tag-collection {
+  border-color: var(--g-text);
+  color: var(--g-text);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.rb-tags .rb-tag-collection {
+  font-weight: 500;
+}
+
+@media (max-width: 860px) {
+  .rb-lib-filters {
+    width: 100vw;
+    max-width: 100vw;
+    max-height: 86vh;
+    margin: auto 0 0;
+    border-radius: 20px 20px 0 0;
+  }
+
+  .rb-view {
+    flex: 1;
+    justify-content: flex-end;
+  }
+}

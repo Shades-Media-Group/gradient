@@ -96,26 +96,77 @@ document.addEventListener('keydown', (e) => {
   if ((e.key === 'k' && (e.metaKey || e.ctrlKey)) || (e.key === '/' && !typing)) { e.preventDefault(); openSearch() }
 })
 
-// The inspiration gallery: chips filter the pieces; within a facet any chip matches,
-// across facets every facet must match.
+// The inspiration gallery: a search for the library alone and a filter window. Within a facet any
+// chosen value matches; across facets every facet must match. Active filters show as chips.
 const pieces = [...document.querySelectorAll<HTMLElement>('.rb-piece')]
-const count = document.querySelector('.rb-count span')
-for (const chip of document.querySelectorAll<HTMLButtonElement>('.rb-chip')) {
-  chip.addEventListener('click', () => {
-    chip.setAttribute('aria-pressed', String(chip.getAttribute('aria-pressed') !== 'true'))
-    const active = [...document.querySelectorAll<HTMLElement>('.rb-facet')].map((f) => ({
-      facet: f.dataset.facet!,
-      values: [...f.querySelectorAll('.rb-chip[aria-pressed="true"]')].map((c) => (c as HTMLElement).dataset.value!),
-    }))
-    let shown = 0
-    for (const piece of pieces) {
-      const ok = active.every(({ facet, values }) => !values.length || values.some((v) => (piece.dataset[facet] ?? '').split(' ').includes(v)))
-      piece.hidden = !ok
-      if (ok) shown++
-    }
-    if (count) count.textContent = String(shown)
-  })
+const libSearch = document.querySelector<HTMLInputElement>('.rb-lib-search input')
+const filterBox = document.querySelector<HTMLDialogElement>('.rb-lib-filters')
+const activeRow = document.querySelector<HTMLElement>('.rb-lib-active')
+const chosen = new Map<string, Set<string>>()
+const matches = (piece: HTMLElement, skip?: string) => {
+  const q = (libSearch?.value ?? '').toLowerCase().split(/\s+/).filter(Boolean)
+  if (!q.every((w) => (piece.dataset.text ?? '').includes(w))) return false
+  for (const [facet, values] of chosen) {
+    if (facet === skip || !values.size) continue
+    const have = (piece.dataset[facet] ?? '').split('|')
+    if (![...values].some((v) => have.includes(v))) return false
+  }
+  return true
 }
+function applyFilters() {
+  let shown = 0
+  for (const piece of pieces) {
+    const ok = matches(piece)
+    piece.hidden = !ok
+    if (ok) shown++
+  }
+  document.querySelector('.rb-count span')!.textContent = String(shown)
+  const show = document.querySelector('.rb-lib-show span')
+  if (show) show.textContent = String(shown)
+  // Each chip shows how many pieces it would leave, given the other facets.
+  for (const chip of document.querySelectorAll<HTMLButtonElement>('.rb-chip')) {
+    const facet = chip.closest<HTMLElement>('.rb-facet')!.dataset.facet!
+    const n = pieces.filter((p) => matches(p, facet) && (p.dataset[facet] ?? '').split('|').includes(chip.dataset.value!)).length
+    chip.querySelector('.rb-chip-n')!.textContent = String(n)
+    chip.disabled = n === 0 && chip.getAttribute('aria-pressed') !== 'true'
+  }
+  const all = [...chosen].flatMap(([facet, values]) => [...values].map((v) => ({ facet, v })))
+  const badge = document.querySelector<HTMLElement>('.rb-lib-filter-count')
+  if (badge) { badge.hidden = !all.length; badge.textContent = String(all.length) }
+  if (activeRow) {
+    activeRow.hidden = !all.length
+    activeRow.innerHTML = all.map(({ facet, v }) => `<button type="button" class="rb-active-chip" data-facet="${facet}" data-value="${v.replace(/"/g, '&quot;')}">${v.replace(/[<>&]/g, '')} <span aria-hidden="true">×</span></button>`).join('') + (all.length ? '<button type="button" class="rb-active-clear">Clear all</button>' : '')
+  }
+}
+function toggle(facet: string, value: string, on?: boolean) {
+  const set = chosen.get(facet) ?? new Set<string>()
+  const next = on ?? !set.has(value)
+  if (next) set.add(value); else set.delete(value)
+  chosen.set(facet, set)
+  const chip = document.querySelector<HTMLButtonElement>(`.rb-facet[data-facet="${facet}"] .rb-chip[data-value="${CSS.escape(value)}"]`)
+  chip?.setAttribute('aria-pressed', String(next))
+  applyFilters()
+}
+for (const chip of document.querySelectorAll<HTMLButtonElement>('.rb-chip'))
+  chip.addEventListener('click', () => toggle(chip.closest<HTMLElement>('.rb-facet')!.dataset.facet!, chip.dataset.value!))
+activeRow?.addEventListener('click', (e) => {
+  const t = (e.target as HTMLElement).closest<HTMLElement>('button')
+  if (!t) return
+  if (t.classList.contains('rb-active-clear')) { for (const [f, vs] of chosen) for (const v of [...vs]) toggle(f, v, false); return }
+  toggle(t.dataset.facet!, t.dataset.value!, false)
+})
+libSearch?.addEventListener('input', applyFilters)
+document.querySelector('.rb-lib-filters-open')?.addEventListener('click', () => filterBox?.showModal())
+filterBox?.querySelector('.rb-dialog-close')?.addEventListener('click', () => filterBox.close())
+filterBox?.querySelector('.rb-lib-show')?.addEventListener('click', () => filterBox.close())
+filterBox?.querySelector('.rb-lib-clear')?.addEventListener('click', () => { for (const [f, vs] of chosen) for (const v of [...vs]) toggle(f, v, false) })
+filterBox?.addEventListener('click', (e) => { if (e.target === filterBox) filterBox.close() })
+// A brand or collection tag on a piece filters to it.
+document.querySelector('.rb-pieces')?.addEventListener('click', (e) => {
+  const tag = (e.target as HTMLElement).closest<HTMLElement>('.rb-tag-brand, .rb-tag-collection')
+  if (!tag) return
+  toggle(tag.classList.contains('rb-tag-brand') ? 'brand' : 'collection', tag.textContent!.trim(), true)
+})
 
 // A piece's thumbnails swap its big preview.
 for (const thumb of document.querySelectorAll<HTMLButtonElement>('.rb-thumb')) {
