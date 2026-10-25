@@ -183,9 +183,19 @@ function chapter(file: string, slugName: string, group: string, text?: string): 
     title,
     lead,
     intro: render(introMd),
-    sections: parts.map((part) => {
+    // "At a glance" is the page in short; its skills list becomes a section of its own after it.
+    sections: parts.flatMap((part) => {
       const [line, ...rest] = part.split('\n')
-      return { id: slug(line!), title: plain(line!), body: subtitle(render(rest.join('\n'))) }
+      const body = subtitle(render(rest.join('\n')))
+      const marker = '<p><strong>Skills for this chapter</strong></p>'
+      if (slug(line!) === 'at-a-glance' && body.includes(marker)) {
+        const [glance, skills] = body.split(marker)
+        return [
+          { id: 'at-a-glance', title: plain(line!), body: glance! },
+          { id: 'skills-for-this-chapter', title: 'Skills for this chapter', body: skills! },
+        ]
+      }
+      return [{ id: slug(line!), title: plain(line!), body }]
     }),
   }
 }

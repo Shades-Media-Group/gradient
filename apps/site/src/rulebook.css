@@ -1781,3 +1781,31 @@ body.rb-toc-sheet .g-prefs {
     justify-content: flex-end;
   }
 }
+
+/* "At a glance": the page in short, set apart as a square grey block. */
+.rb-section#at-a-glance {
+  padding: 22px 26px 18px;
+  border-radius: 0;
+  background: color-mix(in srgb, var(--g-text) 6%, transparent);
+}
+
+.rb-section#at-a-glance > h2 {
+  margin-top: 0;
+  font-size: 1rem;
+  letter-spacing: 0.01em;
+}
+
+.rb-section#at-a-glance ul {
+  margin-bottom: 0;
+}
+
+.rb-section#at-a-glance li {
+  margin-bottom: 6px;
+}
+
+@media (max-width: 860px) {
+  .rb-section#at-a-glance {
+    margin-inline: -16px;
+    padding: 18px 16px 14px;
+  }
+}
