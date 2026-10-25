@@ -17,12 +17,12 @@ export const RULEBOOK = join(import.meta.dirname, '../../../rulebook')
 /** The first digit of a chapter's number picks its group. */
 const GROUPS: Record<string, string> = {
   '0': 'Start here',
-  '1': 'Foundations',
+  '1': 'Craft',
   '2': 'Writing',
-  '3': 'Patterns',
-  '4': 'Working together',
+  '3': 'Systems',
+  '4': 'Engineering',
   '5': 'Brands',
-  '6': 'AI and tools',
+  '6': 'Tools',
   '7': 'Library',
   '8': 'Review',
   '9': 'Reference',
