@@ -1809,3 +1809,64 @@ body.rb-toc-sheet .g-prefs {
     padding: 18px 16px 14px;
   }
 }
+
+/* Inspiration is a different kind of place from the rules: its menu fold is light yellow. */
+.rb-nav-fold--inspiration {
+  margin: 6px 0;
+  padding: 0 10px;
+  border-radius: 10px;
+  background: #fff3c4;
+  border-bottom-color: transparent;
+}
+
+.rb-nav-fold--inspiration > summary {
+  color: #5c3b00;
+}
+
+.rb-nav-fold--inspiration a {
+  color: #6e4602;
+}
+
+.rb-nav-fold--inspiration a[aria-current='page'] {
+  background: #ffe28a;
+  color: #3a2500;
+}
+
+:root[data-theme='dark'] .rb-nav-fold--inspiration {
+  background: #3a2e0c;
+}
+
+:root[data-theme='dark'] .rb-nav-fold--inspiration > summary,
+:root[data-theme='dark'] .rb-nav-fold--inspiration a {
+  color: #ffd58e;
+}
+
+:root[data-theme='dark'] .rb-nav-fold--inspiration a[aria-current='page'] {
+  background: #5a4510;
+  color: #fff3c4;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) .rb-nav-fold--inspiration {
+    background: #3a2e0c;
+  }
+
+  :root:not([data-theme='light']) .rb-nav-fold--inspiration > summary,
+  :root:not([data-theme='light']) .rb-nav-fold--inspiration a {
+    color: #ffd58e;
+  }
+}
+
+/* The View menu: its own chevron, clear of the edge. */
+.rb-view select {
+  appearance: none;
+  min-height: 40px;
+  padding: 4px 38px 4px 14px;
+  border-radius: 999px;
+  background: var(--g-bg) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2356565e' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E") no-repeat right 12px center / 16px;
+  cursor: pointer;
+}
+
+.rb-piece-source {
+  display: block;
+}

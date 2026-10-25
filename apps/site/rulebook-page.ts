@@ -516,7 +516,7 @@ const navFor = (book: Chapter[], current?: string, marks?: Marks) => {
     .map((g) => {
       const items = book.filter((c) => c.group === g)
       const open = items.some((c) => c.slug === current) || (marks && items.some((c) => marks.slugs.has(c.slug)))
-      return `<details class="rb-nav-fold"${open ? ' open' : ''}><summary>${escape(g)}${marks && items.some((c) => marks.slugs.has(c.slug)) ? '<span class="rb-dot rb-dot--chg"></span>' : ''}</summary><ul>${items
+      return `<details class="rb-nav-fold${g === 'Inspiration' ? ' rb-nav-fold--inspiration' : ''}"${open ? ' open' : ''}><summary>${escape(g)}${marks && items.some((c) => marks.slugs.has(c.slug)) ? '<span class="rb-dot rb-dot--chg"></span>' : ''}</summary><ul>${items
         .map((c) => {
           const mark = marks?.slugs.get(c.slug)
           const href = mark ? `${marks!.base}${c.slug}/` : `/rulebook/${c.slug}/`
