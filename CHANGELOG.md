@@ -4,6 +4,16 @@ Every notable change to Gradient and the `shades-gradient` package. The format f
 
 ## [Unreleased]
 
+## [0.11.0] - 2026-10-25
+
+### Changed
+
+- **Consent:** a veil now sits under the notice and holds the page until the reader answers. It fades in with the notice and out with the choice; the page behind is inert and does not scroll, and focus starts on "Only necessary". "Only necessary" and "Accept all" stay equally one click. Reduced motion skips the fades. The veil's styles are inline, so the shared stylesheet does not grow.
+
+### Added
+
+- **Site:** the internal rulebook gained versions with changes marked in place, search, a phone layout, an inspiration library with filters, a lightbox and reading tiers.
+
 ## [0.10.0] - 2026-10-25
 
 ### Added
