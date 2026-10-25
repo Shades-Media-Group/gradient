@@ -359,6 +359,12 @@
   color: var(--g-text-3);
 }
 
+/* The inspiration library: a dense contact sheet, each piece whole. */
+.rb-gallery.rb-gallery--library {
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 200px), 1fr));
+  align-items: start;
+}
+
 /* Diagrams: whole, at their own proportions; a single one takes the full measure. */
 .rb-gallery--diagram {
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));

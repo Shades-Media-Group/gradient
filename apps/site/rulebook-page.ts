@@ -86,8 +86,9 @@ const galleries = (html: string) =>
       ([, src, alt]) => `<figure><img src="${src}" alt="" loading="lazy" decoding="async" /><figcaption>${alt}</figcaption></figure>`,
     )
     // Diagrams and pattern art show whole; only photographs are cropped to one shape.
-    const diagram = found.every(([, src]) => src?.endsWith('.svg') || src?.includes('/patterns/'))
-    return `<div class="rb-gallery${diagram ? ' rb-gallery--diagram' : ''}">${figures.join('')}</div>`
+    const diagram = found.every(([, src]) => src?.endsWith('.svg') || src?.includes('/patterns/') || src?.includes('/library/'))
+    const library = found.every(([, src]) => src?.includes('/library/'))
+    return `<div class="rb-gallery${diagram ? ' rb-gallery--diagram' : ''}${library ? ' rb-gallery--library' : ''}">${figures.join('')}</div>`
   })
 
 /** Index just past the first sentence of a paragraph's HTML, outside tags and code; -1 if none. */
