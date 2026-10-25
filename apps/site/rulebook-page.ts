@@ -90,8 +90,40 @@ const galleries = (html: string) =>
     return `<div class="rb-gallery${diagram ? ' rb-gallery--diagram' : ''}">${figures.join('')}</div>`
   })
 
+/** Index just past the first sentence of a paragraph's HTML, outside tags and code; -1 if none. */
+function leadEnd(html: string) {
+  let depth = 0
+  for (let i = 0; i < html.length; i++) {
+    const c = html[i]!
+    if (c === '<') {
+      const end = html.indexOf('>', i)
+      const tag = html.slice(i, end + 1)
+      if (tag.startsWith('</')) depth--
+      else if (!tag.endsWith('/>') && !/^<(br|img|wbr)\b/.test(tag)) depth++
+      i = end
+      continue
+    }
+    if (depth === 0 && /[.?!:]/.test(c) && html[i + 1] === ' ' && /[A-Z0-9("“`<]/.test(html[i + 2] ?? '')) {
+      if (/\b(e\.g|i\.e|etc|vs)$/i.test(html.slice(Math.max(0, i - 4), i))) continue
+      return i + 1
+    }
+  }
+  return -1
+}
+
+/** Reading tiers: a paragraph's first sentence carries the rule in the text colour; what follows
+ *  explains it in the second tier, and asides in brackets drop to the third. A reader who gets the
+ *  point can skip the rest. */
+const tiers = (html: string) =>
+  html.replace(/<p>([\s\S]*?)<\/p>/g, (whole, inner: string) => {
+    const at = leadEnd(inner)
+    if (at < 0 || inner.length - at < 24) return whole
+    const rest = inner.slice(at).replace(/ \(([^()<>]{3,})\)/g, ' <span class="rb-aside">($1)</span>')
+    return `<p>${inner.slice(0, at)}<span class="rb-more">${rest}</span></p>`
+  })
+
 const render = (md: string) =>
-  galleries(swatches(ruleBlocks(marked.parse(relink(md), { async: false }))))
+  tiers(galleries(swatches(ruleBlocks(marked.parse(relink(md), { async: false })))))
 
 /** The sentence that opens a section reads as its subtitle. */
 const subtitle = (html: string) => html.replace(/^\s*<p>/, '<p class="rb-sub">')

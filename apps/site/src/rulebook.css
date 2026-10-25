@@ -311,7 +311,7 @@
 /* The sentence under a section title: what the section is about. */
 .rb-sub {
   margin: 0 0 18px !important;
-  color: var(--g-text-2);
+  color: var(--g-text);
   font-size: 1.125rem;
   line-height: 1.5;
 }
@@ -348,6 +348,15 @@
   aspect-ratio: 4 / 5;
   object-fit: cover;
   border-radius: 12px;
+}
+
+/* Reading tiers: the first sentence in the text colour, the explanation lighter, asides lightest. */
+.rb-more {
+  color: var(--g-text-2);
+}
+
+.rb-aside {
+  color: var(--g-text-3);
 }
 
 /* Diagrams: whole, at their own proportions; a single one takes the full measure. */
