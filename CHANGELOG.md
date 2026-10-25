@@ -4,6 +4,17 @@ Every notable change to Gradient and the `shades-gradient` package. The format f
 
 ## [Unreleased]
 
+## [0.10.0] - 2026-10-25
+
+### Added
+
+- **Email:** campaign and update templates. A top line on the brand colour, a hero card between two bands of the brand's figures, features with a picture, fine print, and an ink footer reached through layered waves, with link columns, an AI notice, the company line, the site and social icons (`topline`, `hero`, `inkFooter`, `email.feature`, `email.fine`; brand fields `hero`, `edge`, `footerLinks`, `social`, `legal`, `aiNote`).
+- **Email:** the plain footer ends with the product's site on its own line, from `brand.home`; the plain-text twin ends with it too.
+
+### Changed
+
+- **Email:** the top line is a square band with ink text, 19px bold (ink on the red passes as large text). The ink footer's AI notice is 10px with room below it, and Shades' company line is the name alone.
+
 ## [0.9.3] - 2026-10-18
 
 ### Fixed
