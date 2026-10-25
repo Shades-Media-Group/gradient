@@ -211,6 +211,18 @@
       "crop": "Decupaj supradimensionat",
       "cropText": "Logotipul care iese din cadru, pentru afișe și coperți."
     },
+    "halftone": {
+      "short": "Raster",
+      "title": "Raster în trepte",
+      "text": "Singurul model al mărcii: o rețea de puncte care se micșorează în trei trepte, apoi se oprește. Barele semnului, desenate în puncte.",
+      "slide": "Slide-manifest, 1920 × 1080",
+      "slideAlt": "Slide-ul: titlu alb pe negru, puncte roșii din colțul din dreapta jos.",
+      "post": "Postare pătrată",
+      "postAlt": "Puncte roșii pe negru, în trepte din colțul din dreapta jos.",
+      "header": "Copertă pentru rețele sociale, 1500 × 500",
+      "headerAlt": "Shades Media Group pe negru, puncte roșii în treimea din dreapta.",
+      "where": "Pentru coperte sociale, slide-uri-manifest, ecrane de eveniment și versoul afișelor. Niciodată sub text, un formular sau un ecran de produs."
+    },
     "family": {
       "title": "Familia Spectra",
       "text": "Șapte personaje, câte unul pentru fiecare tip de moment. Au aceiași ochi, creasta cu trei bare din simbol și un zâmbet discret, iar fiecare are o singură culoare plată.",

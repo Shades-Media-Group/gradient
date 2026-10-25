@@ -211,6 +211,18 @@
       "crop": "Recorte gigante",
       "cropText": "El logotipo que se sale del borde, para carteles y portadas."
     },
+    "halftone": {
+      "short": "Semitono",
+      "title": "Semitono en escalones",
+      "text": "El único patrón de la marca: una trama de puntos que se reduce en tres pasos y luego se detiene. Las barras del símbolo, dibujadas en puntos.",
+      "slide": "Diapositiva de declaración, 1920 × 1080",
+      "slideAlt": "La diapositiva: titular blanco sobre negro, puntos rojos desde la esquina inferior derecha.",
+      "post": "Publicación cuadrada",
+      "postAlt": "Puntos rojos sobre negro que bajan de tamaño desde la esquina inferior derecha.",
+      "header": "Cabecera social, 1500 × 500",
+      "headerAlt": "Shades Media Group sobre negro, puntos rojos en el tercio derecho.",
+      "where": "Para cabeceras sociales, diapositivas de declaración, pantallas de eventos y dorsos de pósters. Nunca bajo texto corrido, un formulario o una pantalla de producto."
+    },
     "family": {
       "title": "La familia Spectra",
       "text": "Siete personajes, uno para cada tipo de momento. Comparten los mismos ojos, la cresta de tres barras del símbolo y una sonrisa discreta, y cada uno tiene un color plano.",

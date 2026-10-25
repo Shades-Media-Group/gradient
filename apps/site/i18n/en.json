@@ -211,6 +211,18 @@
       "crop": "Oversized crop",
       "cropText": "The wordmark blown past the edge, for posters and covers."
     },
+    "halftone": {
+      "short": "Halftone",
+      "title": "Halftone steps",
+      "text": "The brand's one pattern: a dot screen that shrinks in three steps, then stops. The mark's bars, drawn in dots.",
+      "slide": "Statement slide, 1920 × 1080",
+      "slideAlt": "The statement slide: white headline on ink, red dots from the bottom-right corner.",
+      "post": "Square post",
+      "postAlt": "Red dots on ink, stepping down from the bottom-right corner.",
+      "header": "Social header, 1500 × 500",
+      "headerAlt": "Shades Media Group on ink, red dots in the right third.",
+      "where": "For social headers, statement slides, event screens and poster backs. Never under body text, a form or a product screen."
+    },
     "family": {
       "title": "The Spectra family",
       "text": "Seven characters, one per kind of moment. They share the same eyes, the three-bar crest from the mark and a quiet smile, and each has one flat colour.",

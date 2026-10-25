@@ -211,6 +211,18 @@
       "crop": "Recadrage XXL",
       "cropText": "Le logotype qui déborde du cadre, pour les affiches et les couvertures."
     },
+    "halftone": {
+      "short": "Trame",
+      "title": "Trame en paliers",
+      "text": "Le seul motif de la marque : une trame de points qui rétrécit en trois paliers, puis s’arrête. Les barres du symbole, dessinées en points.",
+      "slide": "Diapositive manifeste, 1920 × 1080",
+      "slideAlt": "La diapositive : titre blanc sur noir, points rouges depuis le coin inférieur droit.",
+      "post": "Publication carrée",
+      "postAlt": "Points rouges sur noir, en paliers depuis le coin inférieur droit.",
+      "header": "Bannière de réseau social, 1500 × 500",
+      "headerAlt": "Shades Media Group sur noir, points rouges sur le tiers droit.",
+      "where": "Pour les bannières, les diapositives manifestes, les écrans d’événement et les dos d’affiche. Jamais sous un texte courant, un formulaire ou un écran de produit."
+    },
     "family": {
       "title": "La famille Spectra",
       "text": "Sept personnages, un par type de moment. Ils partagent les mêmes yeux, la crête à trois barres du symbole et un sourire discret, et chacun a sa couleur unie.",

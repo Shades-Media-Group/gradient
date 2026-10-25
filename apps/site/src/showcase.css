@@ -1046,3 +1046,46 @@
     scroll-snap-align: start;
   }
 }
+
+/* The halftone: the approved boards at the sizes they ship, then the three rules on hairlines. */
+.halftone {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.6fr);
+  gap: 28px 16px;
+  align-items: start;
+}
+
+.halftone figure {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+}
+
+.halftone figure:first-child {
+  grid-column: 1 / -1;
+}
+
+.halftone img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--g-radius-lg);
+  background: var(--g-ink-950);
+}
+
+.halftone figcaption {
+  color: var(--g-text-2);
+  font-size: var(--g-size-small);
+}
+
+.halftone-where {
+  margin: 24px 0 0;
+  padding-top: 14px;
+  border-top: 1px solid var(--g-line);
+  color: var(--g-text-2);
+}
+
+@media (max-width: 560px) {
+  .halftone {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

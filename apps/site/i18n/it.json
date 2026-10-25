@@ -211,6 +211,18 @@
       "crop": "Taglio fuori scala",
       "cropText": "Il logotipo che esce dal bordo, per poster e copertine."
     },
+    "halftone": {
+      "short": "Retino",
+      "title": "Retino a gradini",
+      "text": "L’unico motivo del marchio: una trama di punti che si riduce in tre passi, poi si ferma. Le barre del simbolo, disegnate a punti.",
+      "slide": "Slide manifesto, 1920 × 1080",
+      "slideAlt": "La slide: titolo bianco su nero, punti rossi dall’angolo in basso a destra.",
+      "post": "Post quadrato",
+      "postAlt": "Punti rossi su nero, a gradini dall’angolo in basso a destra.",
+      "header": "Copertina social, 1500 × 500",
+      "headerAlt": "Shades Media Group su nero, punti rossi nel terzo destro.",
+      "where": "Per copertine social, slide manifesto, schermi per eventi e retro dei poster. Mai sotto il testo, un modulo o una schermata di prodotto."
+    },
     "family": {
       "title": "La famiglia Spectra",
       "text": "Sette personaggi, uno per ogni tipo di momento. Condividono gli stessi occhi, la cresta a tre barre del marchio e un sorriso discreto, e ognuno ha un solo colore piatto.",

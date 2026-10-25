@@ -211,6 +211,18 @@
       "crop": "Büyük kırpma",
       "cropText": "Kenardan taşan logotip, afişler ve kapaklar için."
     },
+    "halftone": {
+      "short": "Yarım ton",
+      "title": "Basamaklı yarım ton",
+      "text": "Markanın tek deseni: üç basamakta küçülüp sonra biten bir nokta tramı. İşaretin çubukları, noktalarla çizilmiş hâli.",
+      "slide": "Bildiri slaytı, 1920 × 1080",
+      "slideAlt": "Slayt: siyah üzerinde beyaz başlık, sağ alt köşeden kırmızı noktalar.",
+      "post": "Kare gönderi",
+      "postAlt": "Siyah üzerinde, sağ alt köşeden basamaklanan kırmızı noktalar.",
+      "header": "Sosyal medya kapağı, 1500 × 500",
+      "headerAlt": "Siyah üzerinde Shades Media Group, sağda kırmızı noktalar.",
+      "where": "Sosyal medya kapakları, bildiri slaytları, etkinlik ekranları ve afiş arkaları için. Gövde metninin, bir formun ya da ürün ekranının altında asla."
+    },
     "family": {
       "title": "Spectra ailesi",
       "text": "Her tür an için bir tane, yedi karakter. Aynı gözleri, işaretten gelen üç çubuklu armayı ve sakin bir gülümsemeyi paylaşırlar; her birinin tek bir düz rengi vardır.",

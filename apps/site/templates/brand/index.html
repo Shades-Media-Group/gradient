@@ -24,6 +24,7 @@
           <a href="#type">{{brand.type.title}}</a>
           <a href="#imagery">{{brand.imagery.title}}</a>
           <a href="#devices">{{brand.devices.short}}</a>
+          <a href="#halftone">{{brand.halftone.short}}</a>
           <a href="#family">{{brand.family.title}}</a>
           <a href="#voice">{{brand.voice.title}}</a>
           <a href="#moments">{{brand.moments.title}}</a>
@@ -306,6 +307,21 @@
               <b>{{brand.devices.crop}}</b><span>{{brand.devices.cropText}}</span>
             </li>
           </ul>
+        </div>
+      </section>
+
+      <section class="doc" id="halftone">
+        <div class="doc-head">
+          <h2>{{brand.halftone.title}}</h2>
+          <p>{{brand.halftone.text}}</p>
+        </div>
+        <div class="doc-body">
+          <div class="halftone">
+            <figure><img src="/patterns/halftone-slide.webp" width="1920" height="1080" alt="{{brand.halftone.slideAlt}}" loading="lazy"><figcaption>{{brand.halftone.slide}}</figcaption></figure>
+            <figure><img src="/patterns/halftone-post.webp" width="1200" height="1200" alt="{{brand.halftone.postAlt}}" loading="lazy"><figcaption>{{brand.halftone.post}}</figcaption></figure>
+            <figure><img src="/patterns/halftone-header.webp" width="1500" height="500" alt="{{brand.halftone.headerAlt}}" loading="lazy"><figcaption>{{brand.halftone.header}}</figcaption></figure>
+          </div>
+          <p class="halftone-where">{{brand.halftone.where}}</p>
         </div>
       </section>
 
