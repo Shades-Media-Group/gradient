@@ -113,13 +113,47 @@ const matches = (piece: HTMLElement, skip?: string) => {
   }
   return true
 }
-function applyFilters() {
-  let shown = 0
-  for (const piece of pieces) {
-    const ok = matches(piece)
-    piece.hidden = !ok
-    if (ok) shown++
-  }
+// Pages: 12 pieces with notes or 24 images at a time; hidden pieces load nothing.
+const pager = document.querySelector<HTMLElement>('.rb-pages')
+let page = Math.max(1, Number(new URLSearchParams(location.search).get('page')) || 1)
+const perPage = () => {
+  const list = document.querySelector<HTMLElement>('.rb-pieces')
+  return Number(list?.dataset.perPage) || (list?.classList.contains('is-grid') ? 24 : 12)
+}
+function paginate(found: HTMLElement[]) {
+  const pages = Math.max(1, Math.ceil(found.length / perPage()))
+  page = Math.min(page, pages)
+  const from = (page - 1) * perPage()
+  for (const piece of pieces) piece.hidden = true
+  found.slice(from, from + perPage()).forEach((p) => (p.hidden = false))
+  const url = new URL(location.href)
+  if (page > 1) url.searchParams.set('page', String(page))
+  else url.searchParams.delete('page')
+  history.replaceState(null, '', url)
+  if (!pager) return
+  pager.hidden = pages < 2
+  const btn = (n: number, text: string, label: string, disabled = false) =>
+    `<button type="button" data-page="${n}" aria-label="${label}"${n === page && text === String(n) ? ' aria-current="page"' : ''}${disabled ? ' disabled' : ''}>${text}</button>`
+  pager.innerHTML =
+    btn(page - 1, '←', 'Previous page', page === 1) +
+    Array.from({ length: pages }, (_, i) => i + 1)
+      .filter((n) => n === 1 || n === pages || Math.abs(n - page) <= 1)
+      .map((n, i, all) => (i && n - all[i - 1]! > 1 ? '<span>…</span>' : '') + btn(n, String(n), `Page ${n}`))
+      .join('') +
+    btn(page + 1, '→', 'Next page', page === pages)
+}
+pager?.addEventListener('click', (e) => {
+  const b = (e.target as HTMLElement).closest<HTMLButtonElement>('button[data-page]')
+  if (!b || b.disabled) return
+  page = Number(b.dataset.page)
+  applyFilters(true)
+  document.querySelector('.rb-lib-bar')?.scrollIntoView({ block: 'start' })
+})
+function applyFilters(keepPage = false) {
+  if (!keepPage) page = 1
+  const found = pieces.filter((p) => matches(p))
+  const shown = found.length
+  paginate(found)
   document.querySelector('.rb-count span')!.textContent = String(shown)
   const show = document.querySelector('.rb-lib-show span')
   if (show) show.textContent = String(shown)
@@ -155,7 +189,8 @@ activeRow?.addEventListener('click', (e) => {
   if (t.classList.contains('rb-active-clear')) { for (const [f, vs] of chosen) for (const v of [...vs]) toggle(f, v, false); return }
   toggle(t.dataset.facet!, t.dataset.value!, false)
 })
-libSearch?.addEventListener('input', applyFilters)
+libSearch?.addEventListener('input', () => applyFilters())
+if (pieces.length) applyFilters(true)
 document.querySelector('.rb-lib-filters-open')?.addEventListener('click', () => filterBox?.showModal())
 filterBox?.querySelector('.rb-dialog-close')?.addEventListener('click', () => filterBox.close())
 filterBox?.querySelector('.rb-lib-show')?.addEventListener('click', () => filterBox.close())
@@ -173,7 +208,10 @@ for (const thumb of document.querySelectorAll<HTMLButtonElement>('.rb-thumb')) {
   thumb.addEventListener('click', () => {
     const piece = thumb.closest('.rb-piece')!
     const main = piece.querySelector<HTMLImageElement>('.rb-piece-main')!
+    main.removeAttribute('width')
+    main.removeAttribute('height')
     main.src = thumb.dataset.src!
+    main.dataset.full = thumb.dataset.full!
     main.alt = thumb.getAttribute('aria-label') ?? ''
     for (const t of piece.querySelectorAll('.rb-thumb')) t.setAttribute('aria-pressed', String(t === thumb))
   })
@@ -192,7 +230,7 @@ if (list && view && dialog) {
   let saved = 'rows'
   try { saved = localStorage.getItem('rb-view') ?? 'rows' } catch { /* default */ }
   set(saved)
-  view.addEventListener('change', () => set(view.value))
+  view.addEventListener('change', () => { set(view.value); if (typeof applyFilters === 'function') applyFilters() })
 
   const body = dialog.querySelector<HTMLElement>('.rb-dialog-body')!
   list.addEventListener('click', (event) => {
@@ -203,7 +241,10 @@ if (list && view && dialog) {
     for (const thumb of body.querySelectorAll<HTMLButtonElement>('.rb-thumb')) {
       thumb.addEventListener('click', () => {
         const main = body.querySelector<HTMLImageElement>('.rb-piece-main')!
+        main.removeAttribute('width')
+        main.removeAttribute('height')
         main.src = thumb.dataset.src!
+        main.dataset.full = thumb.dataset.full!
         for (const t of body.querySelectorAll('.rb-thumb')) t.setAttribute('aria-pressed', String(t === thumb))
       })
     }
@@ -240,9 +281,10 @@ document.addEventListener('click', (event) => {
   const piece = img.closest('.rb-piece')
   const thumbs = piece ? [...piece.querySelectorAll<HTMLButtonElement>('.rb-thumb')] : []
   slides = thumbs.length
-    ? thumbs.map((t) => ({ src: t.dataset.src!, alt: t.getAttribute('aria-label') ?? '' }))
-    : [...(img.closest('.rb-gallery')?.querySelectorAll('img') ?? [img])].map((i) => ({ src: i.currentSrc || i.src, alt: i.closest('figure')?.querySelector('figcaption')?.textContent ?? i.alt }))
-  const current = slides.findIndex((s) => img.src.endsWith(s.src) || s.src === img.currentSrc)
+    ? thumbs.map((t) => ({ src: t.dataset.full ?? t.dataset.src!, alt: t.getAttribute('aria-label') ?? '' }))
+    : [...(img.closest('.rb-gallery')?.querySelectorAll('img') ?? [img])].map((i) => ({ src: i.dataset.full ?? (i.currentSrc || i.src), alt: i.closest('figure')?.querySelector('figcaption')?.textContent ?? i.alt }))
+  const full = img.dataset.full ?? img.src
+  const current = slides.findIndex((s) => full.endsWith(s.src) || s.src === full)
   showSlide(Math.max(0, current))
   lightbox.showModal()
 })

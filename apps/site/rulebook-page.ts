@@ -293,7 +293,7 @@ interface Entry {
   caption?: string
   study?: string
   palette?: Swatch[]
-  images: { src: string; alt: string; palette?: Swatch[] }[]
+  images: { src: string; alt: string; palette?: Swatch[]; w?: number; h?: number; card?: string; thumb?: string }[]
   added?: string
   brand?: string
   platform?: string
@@ -350,15 +350,16 @@ function libraryGallery(entries: Entry[]) {
     facets.map(([key, , of]) => `data-${key}="${escape(of(e).join('|'))}"`).join(' ') +
     ` data-text="${escape([e.title, e.summary, e.brand, e.collection, e.platform, e.tags.join(' '), e.source.name].join(' ').toLowerCase())}"`
   const rows = entries
-    .map((e) => {
+    .map((e, index) => {
+      const first = e.images[0]!
       const data = dataOf(e)
       const thumbs = e.images.length > 1
-        ? `<div class="rb-thumbs">${e.images.map((i, n) => `<button type="button" class="rb-thumb" data-src="${asset(i.src)}" aria-label="${escape(i.alt)}" aria-pressed="${n === 0}"><img src="${asset(i.src)}" alt="" loading="lazy" decoding="async" /></button>`).join('')}</div>`
+        ? `<div class="rb-thumbs">${e.images.map((i, n) => `<button type="button" class="rb-thumb" data-src="${asset(i.card ?? i.src)}" data-full="${asset(i.src)}" aria-label="${escape(i.alt)}" aria-pressed="${n === 0}"><img src="${asset(i.thumb ?? i.src)}" alt="" width="80" height="80" loading="lazy" decoding="async" /></button>`).join('')}</div>`
         : ''
       const tags = [e.brand ? `<li class="rb-tag-brand">${escape(e.brand)}</li>` : '', e.collection ? `<li class="rb-tag-collection">${escape(e.collection)}</li>` : '', ...[e.format, e.industry, ...e.ideas].map((t) => `<li>${escape(label(t))}</li>`)].join('')
       const colours = (e.palette ?? []).filter((c) => c.pct >= 3).map((c) => `<li><span class="rb-swatch" style="background:${c.hex}"></span>${escape(c.family)} <span class="rb-num">${c.pct}%</span></li>`).join('')
       return `<li class="rb-piece" ${data}>
-        <div class="rb-piece-media"><img class="rb-piece-main" src="${asset(e.images[0]!.src)}" alt="${escape(e.images[0]!.alt)}" loading="lazy" decoding="async" />${thumbs}</div>
+        <div class="rb-piece-media"><img class="rb-piece-main" src="${asset(first.card ?? first.src)}" data-full="${asset(first.src)}" alt="${escape(first.alt)}"${first.w ? ` width="${first.w}" height="${first.h}"` : ''} ${index === 0 ? 'fetchpriority="high"' : 'loading="lazy"'} decoding="async" />${thumbs}</div>
         <div class="rb-piece-text">
           <ul class="rb-tags">${tags}</ul>
           <h2><a href="/rulebook/inspiration/${e.id}/">${escape(e.title)}</a></h2>
@@ -383,7 +384,7 @@ function libraryGallery(entries: Entry[]) {
   <div class="rb-lib-active" hidden></div>
   <p class="rb-count"><span>${entries.length}</span> of ${entries.length} pieces</p>
   <dialog class="rb-lib-filters" aria-label="Filters"><div class="rb-versions-head"><h2>Filters</h2><button type="button" class="rb-dialog-close" aria-label="Close">${icon('close')}</button></div><div class="rb-filters">${filters}</div><div class="rb-lib-filters-foot"><button type="button" class="rb-lib-clear">Clear all</button><button type="button" class="rb-lib-show">Show <span>${entries.length}</span> pieces</button></div></dialog>
-  <ul class="rb-pieces">${rows}</ul>${RIGHTS}<dialog class="rb-dialog" aria-label="Piece"><button type="button" class="rb-dialog-close" aria-label="Close">${icon('close')}</button><div class="rb-dialog-body"></div></dialog>`
+  <ul class="rb-pieces">${rows}</ul><nav class="rb-pages" aria-label="Pages" hidden></nav>${RIGHTS}<dialog class="rb-dialog" aria-label="Piece"><button type="button" class="rb-dialog-close" aria-label="Close">${icon('close')}</button><div class="rb-dialog-body"></div></dialog>`
 }
 
 /** One piece: its images, what it is, why it works, what to borrow and leave, its colours. */
@@ -512,9 +513,12 @@ function annotate(oldMd: string, newMd: string) {
 }
 
 /** The side menu: one fold per group, only the current one open. */
+/** Inspiration is a different kind of place from the rules, so it closes the list. */
+const lastInspiration = (groups: string[]) => [...groups.filter((g) => g !== 'Inspiration'), ...groups.filter((g) => g === 'Inspiration')]
+
 interface Marks { base: string; slugs: Map<string, 'add' | 'chg'> }
 const navFor = (book: Chapter[], current?: string, marks?: Marks) => {
-  const groups = [...new Set(book.map((c) => c.group))]
+  const groups = lastInspiration([...new Set(book.map((c) => c.group))])
   return groups
     .map((g) => {
       const items = book.filter((c) => c.group === g)
@@ -546,7 +550,7 @@ export function rulebookPages(version: string): { path: string; html: string }[]
     : { button: '', dialog: '' }
   const readme = readFileSync(join(RULEBOOK, 'README.md'), 'utf8')
   const [readmeHead] = splitSections(readme)
-  const groups = [...new Set(book.map((c) => c.group))]
+  const groups = lastInspiration([...new Set(book.map((c) => c.group))])
 
   const home = page({
     title: 'Home',

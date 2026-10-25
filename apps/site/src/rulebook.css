@@ -1905,3 +1905,50 @@ body.rb-toc-sheet .g-prefs {
   color: var(--g-text-2);
   font-size: 0.875rem;
 }
+
+/* Library pages. */
+.rb-pages {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin: 28px 0 0;
+}
+
+.rb-pages[hidden] {
+  display: none;
+}
+
+.rb-pages button {
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0 12px;
+  border: 1px solid var(--g-line);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--g-text);
+  font: inherit;
+  cursor: pointer;
+}
+
+.rb-pages button[aria-current='page'] {
+  border-color: var(--g-text);
+  background: var(--g-text);
+  color: var(--g-bg);
+  font-weight: 600;
+}
+
+.rb-pages button:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.rb-pages span {
+  color: var(--g-text-3);
+}
+
+.rb-piece-main {
+  height: auto;
+  background: color-mix(in srgb, var(--g-text) 5%, transparent);
+}
