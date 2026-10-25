@@ -34,9 +34,10 @@ These override what any skill suggests:
 - **Learn from others, never copy them.** References set hierarchy, rhythm and density. No other
   company's look, assets, code or copy, and no competitor named in anything public. The `replica-*`
   skills study a category to make something better, never a clone of one app.
-- **No AI-generated images ship.** `imagegen-frontend-web` and `imagegen-frontend-mobile` are for
-  private moodboards only. What ships is real: photographs, renders from the studio pipeline, or
-  `img2threejs` models built in code.
+- **Generated images ship only at professional quality.** A generated image is judged like a
+  photograph: believable light and detail, no artefacts, the brand's palette, rights clear. AI slop
+  and generated fake proof never ship. Real photographs, studio renders and `img2threejs` models
+  stay the first choice for real work.
 - **One generator, one review gate.** Pick one direction skill, build, then run one review gate.
   Don't stack generators.
 - **Effects are seasoning.** Motion explains something, buttons are flat, glow is opt-in

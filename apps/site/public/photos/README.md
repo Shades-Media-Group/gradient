@@ -13,4 +13,4 @@ Direction references (all eight from the brand-system export) for the brand's ph
 | `wall-green` | https://images.unsplash.com/photo-1622556498246-755f44ca76f3     |
 | `hands`    | https://images.unsplash.com/photo-1554672408-17407e0322ce          |
 
-No AI-generated images. Add a photo only with the owner's yes.
+Generated images only at professional quality, never AI slop. Add a photo only with the owner's yes.
