@@ -132,13 +132,41 @@ export function consentBanner(
       <button type="button" class="g-consent-necessary">${escape(t.necessaryOnly)}</button>
       <button type="button" class="g-consent-all">${escape(t.acceptAll)}</button>
     </div>`
-  ;(options.root ?? document.body).append(banner)
+  // A veil under the notice: it fades in with it and holds the page (no scroll, no clicks, no
+  // focus behind it) until the reader answers. "Only necessary" stays one click, as heavy as
+  // "Accept all", so the choice is required but never pushed.
+  const host = options.root ?? document.body
+  const veil = document.createElement('div')
+  veil.className = 'g-consent-veil'
+  // Inline, so the shared stylesheet stays within its budget.
+  veil.style.cssText = 'position:fixed;inset:0;z-index:78;background:rgb(10 10 11/.42)'
+  const still = () =>
+    matchMedia('(prefers-reduced-motion: reduce)').matches || document.documentElement.hasAttribute('data-g-motion')
+  const fade = (from: number, to: number, ms: number, delay = 0) =>
+    still() ? null : veil.animate([{ opacity: from }, { opacity: to }], { duration: ms, delay, easing: 'cubic-bezier(.2,.8,.2,1)', fill: 'both' })
+  fade(0, 1, 520, 600)
+  const held = [...host.children].filter((el) => !el.matches('.g-prefs, script, style')) as HTMLElement[]
+  for (const el of held) el.inert = true
+  const overflow = document.documentElement.style.overflow
+  document.documentElement.style.overflow = 'hidden'
+  banner.setAttribute('role', 'dialog')
+  banner.setAttribute('aria-modal', 'true')
+  host.append(veil, banner)
+  const release = () => {
+    for (const el of held) el.inert = false
+    document.documentElement.style.overflow = overflow
+    const out = fade(1, 0, 360)
+    if (out) out.onfinish = () => veil.remove()
+    else veil.remove()
+  }
+  setTimeout(() => banner?.querySelector<HTMLButtonElement>('.g-consent-necessary')?.focus({ preventScroll: true }), 650)
 
   const list = banner.querySelector<HTMLElement>('.g-consent-list')!
   const customize = banner.querySelector<HTMLButtonElement>('.g-consent-customize')!
   const save = banner.querySelector<HTMLButtonElement>('.g-consent-save')!
   const close = (choice: Record<Category, boolean>) => {
     setConsent(choice)
+    release()
     const leaving = banner!
     banner = null
     const dot = document.querySelector<HTMLElement>('.g-prefs-dot')
