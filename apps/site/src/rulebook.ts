@@ -96,3 +96,9 @@ if (list && view && dialog) {
   dialog.querySelector('.rb-dialog-close')!.addEventListener('click', () => dialog.close())
   dialog.addEventListener('click', (event) => { if (event.target === dialog) dialog.close() })
 }
+
+// The version button opens the list of rulebook versions.
+const versions = document.querySelector<HTMLDialogElement>('.rb-versions')
+document.querySelector('.rb-version')?.addEventListener('click', () => versions?.showModal())
+versions?.querySelector('.rb-dialog-close')?.addEventListener('click', () => versions.close())
+versions?.addEventListener('click', (event) => { if (event.target === versions) versions.close() })

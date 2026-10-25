@@ -8,6 +8,7 @@
  * sitemap, linked from nowhere. Where the folder is missing (a public CI run),
  * the site builds without it.
  */
+import { execFileSync } from 'node:child_process'
 import { existsSync, readFileSync, readdirSync } from 'node:fs'
 import { join } from 'node:path'
 import { marked } from 'marked'
@@ -169,8 +170,8 @@ function splitSections(source: string): string[] {
   return out
 }
 
-function chapter(file: string, slugName: string, group: string): Chapter {
-  const source = readFileSync(join(RULEBOOK, file), 'utf8')
+function chapter(file: string, slugName: string, group: string, text?: string): Chapter {
+  const source = text ?? readFileSync(join(RULEBOOK, file), 'utf8')
   const [head, ...parts] = splitSections(source)
   const title = plain(head!.match(/^# (.+)$/m)?.[1] ?? file)
   const introMd = head!.replace(/^# .+$/m, '').trim()
@@ -189,14 +190,19 @@ function chapter(file: string, slugName: string, group: string): Chapter {
   }
 }
 
+/** A chapter file's group: its number's tens, with 75–79 as Inspiration. */
+const groupOf = (file: string) => {
+  if (!/^\d\d-/.test(file)) return 'Reference'
+  const n = Number(file.slice(0, 2))
+  return n >= 75 && n < 80 ? 'Inspiration' : (GROUPS[file[0]!] ?? 'Reference')
+}
+const slugOf = (file: string) => (file === 'STYLE.md' ? 'style' : file.slice(3, -3))
+
 function chapters(): Chapter[] {
   const numbered = readdirSync(RULEBOOK)
     .filter((file) => /^\d\d-.+\.md$/.test(file))
     .sort()
-    .map((file) => {
-      const n = Number(file.slice(0, 2))
-      return chapter(file, file.slice(3, -3), n >= 75 && n < 80 ? 'Inspiration' : (GROUPS[file[0]!] ?? 'Reference'))
-    })
+    .map((file) => chapter(file, file.slice(3, -3), groupOf(file)))
   // The library's gallery is a page of its own in the Inspiration group, after its chapter.
   const at = numbered.map((c) => c.group).lastIndexOf('Inspiration')
   if (at >= 0 && libraryEntries().length)
@@ -204,12 +210,17 @@ function chapters(): Chapter[] {
   return [...numbered, chapter('STYLE.md', 'style', 'Reference')]
 }
 
+/** The version button in the bar and its list, filled once per build. */
+let VERSION_UI = { button: '', dialog: '' }
+const when = (iso: string) => iso.replace('T', ' ').replace(/([+-]\d\d:\d\d|Z)$/, '')
+
 const page = (o: {
   title: string
   version: string
   nav: string
   main: string
   toc?: string
+  banner?: string
 }) => `<!doctype html>
 <html lang="en" data-theme-default="light">
   <head>
@@ -225,7 +236,8 @@ const page = (o: {
   <body class="rb">
     <header class="rb-bar">
       <a class="rb-name" href="/rulebook/">Shades rulebook</a>
-      <span class="rb-note">Internal · ${escape(o.version)}</span>
+      <span class="rb-note">Internal · Gradient ${escape(o.version)}</span>
+      ${VERSION_UI.button}
       <label class="rb-find"><span class="rb-hidden">Find on this page</span>
         <input type="search" placeholder="Find on this page" autocomplete="off" spellcheck="false" />
       </label>
@@ -235,11 +247,13 @@ const page = (o: {
         <details class="rb-nav-all" open><summary>All topics</summary>${o.nav}</details>
       </nav>
       <main class="rb-main" id="main">
+        ${o.banner ?? ''}
         ${o.main}
         <p class="rb-empty" hidden>Nothing on this page matches.</p>
       </main>
       ${o.toc ?? ''}
     </div>
+    ${VERSION_UI.dialog}
   </body>
 </html>
 `
@@ -263,6 +277,7 @@ interface Entry {
   study?: string
   palette?: Swatch[]
   images: { src: string; alt: string; palette?: Swatch[] }[]
+  added?: string
 }
 
 /** Entries from library/entries/*.json, newest first; [] when the library is missing. */
@@ -311,7 +326,7 @@ function libraryGallery(entries: Entry[]) {
         <div class="rb-piece-text">
           <ul class="rb-tags">${tags}</ul>
           <h2><a href="/rulebook/inspiration/${e.id}/">${escape(e.title)}</a></h2>
-          <p class="rb-piece-source">${icon('link')}<a href="${escape(e.source.url)}">${escape(e.source.name)}</a> · ${escape(e.source.kind)} · ${escape(e.source.seen)}</p>
+          <p class="rb-piece-source">${icon('link')}<a href="${escape(e.source.url)}">${escape(e.source.name)}</a> · ${escape(e.source.kind)} · added <time datetime="${escape(e.added ?? '')}">${escape(e.added ? when(e.added) : e.source.seen)}</time></p>
           ${tiers(`<p class="rb-piece-summary">${escape(e.summary)}</p>`.replace('<p class="rb-piece-summary">', '<p>')).replace('<p>', '<p class="rb-piece-summary">')}
           <div class="rb-takes">
             <div class="rb-take rb-take--why"><p class="rb-take-label">${icon('sparkle')}Why it works</p>${tiers(`<p>${escape(e.why)}</p>`)}</div>
@@ -344,18 +359,128 @@ function libraryEntryMain(e: Entry) {
   <section class="rb-section"><h2>Details</h2><dl class="rb-facts">${rows.map(([k, v]) => `<dt>${k}</dt><dd>${v}</dd>`).join('')}</dl></section>`
 }
 
+
+// ── Versions of the rulebook ─────────────────────────────────────────────────
+// Every update the Owner asks for is a version in rulebook/versions.json, pinned to a commit of
+// the workspace repo. A version's pages show its chapters with what changed against the version
+// before: blue added, green altered, red removed.
+
+interface BookVersion { version: string; commit: string; date: string; title: string; notes: string }
+
+const REPO = join(RULEBOOK, '..')
+const git = (...args: string[]) => {
+  try { return execFileSync('git', ['-C', REPO, ...args], { encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'], maxBuffer: 32 << 20 }) } catch { return null }
+}
+
+function bookVersions(): BookVersion[] {
+  const f = join(RULEBOOK, 'versions.json')
+  if (!existsSync(f) || git('rev-parse', '--git-dir') === null) return []
+  return JSON.parse(readFileSync(f, 'utf8')) as BookVersion[]
+}
+
+const fileAt = (commit: string, file: string) => git('show', `${commit}:rulebook/${file}`)
+const changedFiles = (from: string, to: string) =>
+  (git('diff', '--name-status', from, to, '--', 'rulebook') ?? '')
+    .split('\n').filter(Boolean)
+    .map((l) => l.split('\t'))
+    .map(([st, a, b]) => ({ status: st![0]!, file: (b ?? a!).replace(/^rulebook\//, ''), from: a!.replace(/^rulebook\//, '') }))
+    .filter((c) => /^(\d\d-[^/]+|STYLE)\.md$/.test(c.file))
+
+/** Longest common subsequence diff of two token lists. */
+function lcs<T>(a: T[], b: T[], eq: (x: T, y: T) => boolean) {
+  const n = a.length, m = b.length
+  const t = Array.from({ length: n + 1 }, () => new Uint16Array(m + 1))
+  for (let i = n - 1; i >= 0; i--) for (let j = m - 1; j >= 0; j--) t[i]![j] = eq(a[i]!, b[j]!) ? t[i + 1]![j + 1]! + 1 : Math.max(t[i + 1]![j]!, t[i]![j + 1]!)
+  const ops: { op: 'same' | 'add' | 'del'; a?: T; b?: T }[] = []
+  let i = 0, j = 0
+  while (i < n && j < m) {
+    if (eq(a[i]!, b[j]!)) ops.push({ op: 'same', a: a[i++], b: b[j++] })
+    else if (t[i + 1]![j]! >= t[i]![j + 1]!) ops.push({ op: 'del', a: a[i++] })
+    else ops.push({ op: 'add', b: b[j++] })
+  }
+  while (i < n) ops.push({ op: 'del', a: a[i++] })
+  while (j < m) ops.push({ op: 'add', b: b[j++] })
+  return ops
+}
+
+const PREFIX = /^(\s*(?:[-*]|\d+\.)\s+|#{1,6}\s+|>\s*)?(.*)$/
+const plainLine = (l: string) => !l.trim() || /^\s*(\||!\[|```|<)/.test(l)
+
+/** Words changed inside one line: new words green, old words struck through in red. */
+function wordDiff(oldText: string, newText: string) {
+  const ops = lcs(oldText.split(/(\s+)/), newText.split(/(\s+)/), (x, y) => x === y)
+  let out = '', run: 'add' | 'del' | null = null, buf = ''
+  const flush = () => {
+    if (run && buf.trim()) out += run === 'add' ? `<ins class="rb-chg">${buf}</ins>` : `<del class="rb-del">${buf}</del>`
+    else out += buf
+    buf = ''; run = null
+  }
+  for (const o of ops) {
+    const kind = o.op === 'same' ? null : o.op
+    if (kind !== run) flush()
+    run = kind
+    buf += (o.op === 'del' ? o.a : o.b) ?? ''
+  }
+  flush()
+  return out
+}
+
+/** The new markdown with the changes marked in place, and the headings of sections that changed. */
+function annotate(oldMd: string, newMd: string) {
+  const ops = lcs(oldMd.split('\n'), newMd.split('\n'), (x, y) => x === y)
+  const out: string[] = []
+  const touched = new Set<string>()
+  const stats = { added: 0, changed: 0, removed: 0 }
+  let section = '', fence = false
+  const wrap = (line: string, cls: string, tag: 'ins' | 'del') => {
+    const [, pre = '', body = ''] = line.match(PREFIX)!
+    if (/^#{1,6}\s/.test(pre)) return line
+    return `${pre}<${tag} class="${cls}">${body}</${tag}>`
+  }
+  for (let k = 0; k < ops.length; k++) {
+    const o = ops[k]!
+    const line = o.op === 'del' ? o.a! : o.b!
+    if (o.op !== 'del' && /^```/.test(line)) fence = !fence
+    if (o.op !== 'del' && /^## /.test(line)) section = line
+    if (o.op === 'same') { out.push(line); continue }
+    if (!line.trim()) { if (o.op === 'add') out.push(line); continue }
+    touched.add(section)
+    // A removed line followed by an added one is the same line, altered.
+    const next = ops[k + 1]
+    if (o.op === 'del' && next?.op === 'add' && !plainLine(o.a!) && !plainLine(next.b!) && !fence) {
+      const [, preA = ''] = o.a!.match(PREFIX)!, [, preB = '', bodyB = ''] = next.b!.match(PREFIX)!
+      if (preA.trim() === preB.trim() && !/^#/.test(preB)) {
+        const [, , bodyA = ''] = o.a!.match(PREFIX)!
+        out.push(`${preB}${wordDiff(bodyA, bodyB)}`); stats.changed++; k++; continue
+      }
+    }
+    if (o.op === 'add') {
+      stats.added++
+      out.push(fence || plainLine(line) ? line : wrap(line, 'rb-add', 'ins'))
+    } else {
+      stats.removed++
+      if (fence || plainLine(line)) continue
+      if (/^#{1,6}\s/.test(line)) out.push(`<p><del class="rb-del">Removed section: ${line.replace(/^#+\s*/, '')}</del></p>`)
+      else out.push(wrap(line, 'rb-del', 'del'))
+    }
+  }
+  return { md: out.join('\n'), touched, stats }
+}
+
 /** The side menu: one fold per group, only the current one open. */
-const navFor = (book: Chapter[], current?: string) => {
+interface Marks { base: string; slugs: Map<string, 'add' | 'chg'> }
+const navFor = (book: Chapter[], current?: string, marks?: Marks) => {
   const groups = [...new Set(book.map((c) => c.group))]
   return groups
     .map((g) => {
       const items = book.filter((c) => c.group === g)
-      const open = items.some((c) => c.slug === current)
-      return `<details class="rb-nav-fold"${open ? ' open' : ''}><summary>${escape(g)}</summary><ul>${items
-        .map(
-          (c) =>
-            `<li><a href="/rulebook/${c.slug}/"${c.slug === current ? ' aria-current="page"' : ''}>${escape(c.title)}</a></li>`,
-        )
+      const open = items.some((c) => c.slug === current) || (marks && items.some((c) => marks.slugs.has(c.slug)))
+      return `<details class="rb-nav-fold"${open ? ' open' : ''}><summary>${escape(g)}${marks && items.some((c) => marks.slugs.has(c.slug)) ? '<span class="rb-dot rb-dot--chg"></span>' : ''}</summary><ul>${items
+        .map((c) => {
+          const mark = marks?.slugs.get(c.slug)
+          const href = mark ? `${marks!.base}${c.slug}/` : `/rulebook/${c.slug}/`
+          return `<li><a href="${href}"${c.slug === current ? ' aria-current="page"' : ''}>${escape(c.title)}${mark ? `<span class="rb-dot rb-dot--${mark}" title="${mark === 'add' ? 'New in this version' : 'Changed in this version'}"></span>` : ''}</a></li>`
+        })
         .join('')}</ul></details>`
     })
     .join('')
@@ -365,6 +490,16 @@ const navFor = (book: Chapter[], current?: string) => {
 export function rulebookPages(version: string): { path: string; html: string }[] {
   if (!existsSync(join(RULEBOOK, 'README.md'))) return []
   const book = chapters()
+  const versions = bookVersions()
+  const latest = versions[0]
+  VERSION_UI = latest
+    ? {
+        button: `<button type="button" class="rb-version" aria-haspopup="dialog">Rulebook v${escape(latest.version)}</button>`,
+        dialog: `<dialog class="rb-versions" aria-label="Rulebook versions"><div class="rb-versions-head"><h2>Rulebook versions</h2><button type="button" class="rb-dialog-close" aria-label="Close">${icon('close')}</button></div><p class="rb-legend"><span class="rb-add">Added</span><span class="rb-chg">Changed</span><span class="rb-del">Removed</span></p><ol class="rb-version-list">${versions
+          .map((v, i) => `<li><a href="/rulebook/versions/${v.version}/"><span class="rb-version-num">v${escape(v.version)}${i === 0 ? ' · current' : ''}</span><strong>${escape(v.title)}</strong><span>${escape(v.notes)}</span><time datetime="${v.date}">${when(v.date)}</time></a></li>`)
+          .join('')}</ol><p><a href="/rulebook/versions/">All versions</a></p></dialog>`,
+      }
+    : { button: '', dialog: '' }
   const readme = readFileSync(join(RULEBOOK, 'README.md'), 'utf8')
   const [readmeHead] = splitSections(readme)
   const groups = [...new Set(book.map((c) => c.group))]
@@ -432,11 +567,60 @@ export function rulebookPages(version: string): { path: string; html: string }[]
       }),
     }
   })
+  // A page per version (what changed, why, which chapters), and each changed chapter with its marks.
+  const versionPages: { path: string; html: string }[] = []
+  const legend = `<p class="rb-legend"><span class="rb-add">Added</span><span class="rb-chg">Changed</span><span class="rb-del">Removed</span></p>`
+  versions.forEach((v, i) => {
+    const prev = versions[i + 1]
+    const base = `/rulebook/versions/${v.version}/`
+    const changes = prev ? changedFiles(prev.commit, v.commit) : []
+    const marks: Marks = { base, slugs: new Map() }
+    const rows: string[] = []
+    for (const c of changes) {
+      const sl = slugOf(c.file)
+      if (c.status === 'D') { rows.push(`<li><del class="rb-del">${escape(c.from)}</del> removed</li>`); continue }
+      const newMd = fileAt(v.commit, c.file) ?? ''
+      const oldMd = c.status === 'A' ? '' : (fileAt(prev!.commit, c.from) ?? '')
+      const { md, touched, stats } = annotate(oldMd, newMd)
+      const mark = c.status === 'A' || !oldMd ? 'add' : 'chg'
+      marks.slugs.set(sl, mark)
+      const ch = chapter(c.file, sl, groupOf(c.file), md)
+      const ids = new Set([...touched].filter(Boolean).map((h) => slug(h.replace(/^## /, ''))))
+      const toc = ch.sections.length
+        ? `<nav class="rb-toc" aria-label="On this page"><p>On this page</p><ul>${ch.sections.map((x) => `<li${ids.has(x.id) ? ' class="rb-toc-changed"' : ''}><a href="#${x.id}">${escape(x.title)}</a></li>`).join('')}</ul></nav>`
+        : ''
+      const banner = `<aside class="rb-change-banner"><p><strong>v${escape(v.version)}</strong> · ${when(v.date)} · ${escape(v.title)}</p><p>${escape(v.notes)}</p>${legend}<p><a href="${base}">All changes in v${escape(v.version)}</a> · <a href="/rulebook/${sl}/">Current version of this page</a></p></aside>`
+      versionPages.push({
+        path: `versions/${v.version}/${sl}`,
+        html: page({
+          title: `${ch.title} · v${v.version}`, version, nav: navFor(book, sl, marks), toc, banner,
+          main: `<header class="rb-head"><p class="rb-crumb">${escape(ch.group)}</p><h1>${escape(ch.title)}</h1>${ch.intro}</header>${ch.sections.map((x) => `<section class="rb-section${ids.has(x.id) ? ' rb-section--changed' : ''}" id="${x.id}"><h2><a href="#${x.id}">${escape(x.title)}</a></h2>${x.body}</section>`).join('\n')}`,
+        }),
+      })
+      rows.push(`<li><a href="${base}${sl}/">${escape(ch.title)}</a> <span class="rb-dot rb-dot--${mark}"></span> <span class="rb-stats"><span class="rb-add">+${stats.added}</span> <span class="rb-chg">~${stats.changed}</span> <span class="rb-del">−${stats.removed}</span></span></li>`)
+    }
+    versionPages.push({
+      path: `versions/${v.version}`,
+      html: page({
+        title: `Version ${v.version}`, version, nav: navFor(book, undefined, marks),
+        main: `<header class="rb-head"><p class="rb-crumb"><a href="/rulebook/versions/">Versions</a></p><h1>v${escape(v.version)}: ${escape(v.title)}</h1><p>${escape(v.notes)}</p><p class="rb-version-meta"><time datetime="${v.date}">${when(v.date)}</time> · commit <code>${v.commit.slice(0, 7)}</code>${prev ? ` · compared with v${escape(prev.version)}` : ' · the first version'}</p>${legend}</header><section class="rb-section"><h2>Chapters that changed</h2>${rows.length ? `<ul class="rb-change-list">${rows.join('')}</ul>` : '<p>No chapter text changed; the update was to files around the chapters.</p>'}</section>`,
+      }),
+    })
+  })
+  if (versions.length)
+    versionPages.push({
+      path: 'versions',
+      html: page({
+        title: 'Versions', version, nav: navFor(book),
+        main: `<header class="rb-head"><h1>Rulebook versions</h1><p>Every update the Owner asked for, newest first. Open one to see what changed, marked in place.</p>${legend}</header><section class="rb-section"><ol class="rb-version-list">${versions.map((v) => `<li><a href="/rulebook/versions/${v.version}/"><span class="rb-version-num">v${escape(v.version)}</span><strong>${escape(v.title)}</strong><span>${escape(v.notes)}</span><time datetime="${v.date}">${when(v.date)}</time></a></li>`).join('')}</ol></section>`,
+      }),
+    })
+
   const entryPages = entries.map((e) => ({
     path: `inspiration/${e.id}`,
     html: page({ title: e.title, version, nav: navFor(book, 'inspiration'), main: libraryEntryMain(e) }),
   }))
-  return [{ path: '', html: home }, ...pages, ...entryPages]
+  return [{ path: '', html: home }, ...pages, ...entryPages, ...versionPages]
 }
 
 /** Images and files the chapters link to, served under /rulebook/assets/. */
