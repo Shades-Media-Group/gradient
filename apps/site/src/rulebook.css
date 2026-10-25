@@ -1870,3 +1870,38 @@ body.rb-toc-sheet .g-prefs {
 .rb-piece-source {
   display: block;
 }
+
+/* Rights notice on every library page. */
+.rb-rights {
+  display: flex;
+  gap: 12px;
+  margin: 40px 0 0;
+  padding: 18px 20px;
+  border: 1px solid var(--g-line);
+  background: color-mix(in srgb, var(--g-text) 3%, transparent);
+  color: var(--g-text-2);
+  font-size: 0.875rem;
+  line-height: 1.55;
+}
+
+.rb-rights .rb-ico {
+  margin: 2px 0 0;
+  color: var(--g-text);
+}
+
+.rb-rights p {
+  margin: 0 0 8px;
+}
+
+.rb-rights p:last-child {
+  margin: 0;
+}
+
+.rb-rights strong {
+  color: var(--g-text);
+}
+
+.rb-rights-short {
+  color: var(--g-text-2);
+  font-size: 0.875rem;
+}

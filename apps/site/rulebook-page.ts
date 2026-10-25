@@ -319,6 +319,9 @@ const label = (path: string) => path.replace('/', ' · ').replace(/-/g, ' ')
 const paletteBar = (p: Swatch[] = []) =>
   `<span class="rb-pal">${p.map((c) => `<span style="background:${c.hex};flex:${c.pct}" title="${escape(c.family)} ${c.pct}%"></span>`).join('')}</span>`
 
+/** Who owns what in the library, said plainly on every library page. */
+const RIGHTS = `<aside class="rb-rights" id="rights" role="note">${icon('info')}<div><p><strong>Not Shades' work.</strong> Every image and text in this library belongs to its owner and is shown with its source. Shades Media Group holds no copyright, licence or other right to use these works.</p><p>They were collected from public sources for internal study and inspiration only. They are not published, sold, used in client or commercial work, or presented as ours, and nothing here is a claim of affiliation with or endorsement by their owners. An owner who wants a piece removed can ask Shades Media Group through shades.md, and it will be taken down.</p></div></aside>`
+
 /** The gallery: every piece as a card, with filters for format, industry, idea and colour. */
 function libraryGallery(entries: Entry[]) {
   // Each facet lists its values with how many pieces carry them; '|' separates values in the data.
@@ -380,7 +383,7 @@ function libraryGallery(entries: Entry[]) {
   <div class="rb-lib-active" hidden></div>
   <p class="rb-count"><span>${entries.length}</span> of ${entries.length} pieces</p>
   <dialog class="rb-lib-filters" aria-label="Filters"><div class="rb-versions-head"><h2>Filters</h2><button type="button" class="rb-dialog-close" aria-label="Close">${icon('close')}</button></div><div class="rb-filters">${filters}</div><div class="rb-lib-filters-foot"><button type="button" class="rb-lib-clear">Clear all</button><button type="button" class="rb-lib-show">Show <span>${entries.length}</span> pieces</button></div></dialog>
-  <ul class="rb-pieces">${rows}</ul><dialog class="rb-dialog" aria-label="Piece"><button type="button" class="rb-dialog-close" aria-label="Close">${icon('close')}</button><div class="rb-dialog-body"></div></dialog>`
+  <ul class="rb-pieces">${rows}</ul>${RIGHTS}<dialog class="rb-dialog" aria-label="Piece"><button type="button" class="rb-dialog-close" aria-label="Close">${icon('close')}</button><div class="rb-dialog-body"></div></dialog>`
 }
 
 /** One piece: its images, what it is, why it works, what to borrow and leave, its colours. */
@@ -397,7 +400,7 @@ function libraryEntryMain(e: Entry) {
   <section class="rb-section"><div class="rb-gallery rb-gallery--diagram rb-gallery--library">${e.images.map((i) => `<figure><img src="${asset(i.src)}" alt="" loading="lazy" decoding="async" /><figcaption>${escape(i.alt)}</figcaption></figure>`).join('')}</div></section>
   <section class="rb-section"><h2>Why it works</h2>${tiers(`<p>${escape(e.why)}</p>`)}<h3>Borrow</h3><p>${escape(e.borrow)}</p><h3>Leave</h3><p>${escape(e.leave)}</p>${e.caption ? `<h3>Original caption</h3><p class="rb-more">${escape(e.caption)}</p>` : ''}</section>
   <section class="rb-section"><h2>Colours</h2><ul class="rb-palette-list">${palette}</ul></section>
-  <section class="rb-section"><h2>Details</h2><dl class="rb-facts">${rows.map(([k, v]) => `<dt>${k}</dt><dd>${v}</dd>`).join('')}</dl></section>`
+  <section class="rb-section"><h2>Details</h2><dl class="rb-facts">${rows.map(([k, v]) => `<dt>${k}</dt><dd>${v}</dd>`).join('')}</dl></section>${RIGHTS}`
 }
 
 
@@ -585,7 +588,7 @@ export function rulebookPages(version: string): { path: string; html: string }[]
         title: c.title,
         version,
         nav: navFor(book, c.slug),
-        main: `<header class="rb-head"><p class="rb-crumb">Inspiration</p><h1>All pieces</h1><p>Work the Owner liked, with why it works and the idea to borrow. Pick filters to narrow it; open a piece for its colours and notes.</p></header>${libraryGallery(entries)}`,
+        main: `<header class="rb-head"><p class="rb-crumb">Inspiration</p><h1>All pieces</h1><p>Work the Owner liked, with why it works and the idea to borrow. Pick filters to narrow it; open a piece for its colours and notes.</p><p class="rb-rights-short">${icon('info')}None of these works belong to Shades; each is shown with its source, for study only. <a href="#rights">Rights</a></p></header>${libraryGallery(entries)}`,
       }) : page({
         title: c.title,
         version,
