@@ -918,3 +918,105 @@
 .rb-piece-colours .rb-palette-inline {
   min-width: 0;
 }
+
+/* Gallery view switch and the images-only wall. */
+.rb-gallery-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.rb-view {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--g-text-2);
+  font-size: 0.875rem;
+}
+
+.rb-view select {
+  min-height: 36px;
+  padding: 4px 10px;
+  border: 1px solid var(--g-line);
+  border-radius: 8px;
+  background: var(--g-bg);
+  color: var(--g-text);
+  font: inherit;
+}
+
+.rb-pieces.is-grid {
+  display: block;
+  columns: 4 180px;
+  column-gap: 16px;
+}
+
+.rb-pieces.is-grid .rb-piece {
+  display: block;
+  margin: 0 0 16px;
+  padding: 0;
+  border: 0;
+  break-inside: avoid;
+  cursor: zoom-in;
+}
+
+.rb-pieces.is-grid .rb-piece-text,
+.rb-pieces.is-grid .rb-thumbs {
+  display: none;
+}
+
+.rb-pieces.is-grid .rb-piece-main {
+  transition: transform 160ms ease-out;
+}
+
+.rb-pieces.is-grid .rb-piece:hover .rb-piece-main {
+  transform: translateY(-2px);
+}
+
+.rb-dialog {
+  width: min(1100px, calc(100vw - 32px));
+  max-height: calc(100vh - 48px);
+  padding: 24px;
+  border: 0;
+  border-radius: 16px;
+  background: var(--g-bg);
+  color: var(--g-text);
+}
+
+.rb-dialog::backdrop {
+  background: color-mix(in srgb, #0a0a0b 55%, transparent);
+}
+
+.rb-dialog .rb-piece {
+  border-top: 0;
+  padding: 0;
+}
+
+.rb-dialog-close {
+  position: sticky;
+  top: 0;
+  float: right;
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--g-line);
+  border-radius: 999px;
+  background: var(--g-bg);
+  color: var(--g-text);
+  cursor: pointer;
+}
+
+.rb-dialog-close .rb-ico {
+  margin: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rb-pieces.is-grid .rb-piece-main {
+    transition: none;
+  }
+}
+
+.rb-dialog .rb-piece-text {
+  padding-right: 48px;
+}

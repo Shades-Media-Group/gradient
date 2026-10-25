@@ -324,7 +324,7 @@ function libraryGallery(entries: Entry[]) {
       </li>`
     })
     .join('')
-  return `<div class="rb-filters">${filters}</div><p class="rb-count"><span>${entries.length}</span> pieces</p><ul class="rb-pieces">${rows}</ul>`
+  return `<div class="rb-filters">${filters}</div><div class="rb-gallery-bar"><p class="rb-count"><span>${entries.length}</span> pieces</p><label class="rb-view">View <select><option value="rows">Images and notes</option><option value="grid">Images only</option></select></label></div><ul class="rb-pieces">${rows}</ul><dialog class="rb-dialog" aria-label="Piece"><button type="button" class="rb-dialog-close" aria-label="Close">${icon('close')}</button><div class="rb-dialog-body"></div></dialog>`
 }
 
 /** One piece: its images, what it is, why it works, what to borrow and leave, its colours. */

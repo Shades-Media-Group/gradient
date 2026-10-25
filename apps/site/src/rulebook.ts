@@ -62,3 +62,37 @@ for (const thumb of document.querySelectorAll<HTMLButtonElement>('.rb-thumb')) {
     for (const t of piece.querySelectorAll('.rb-thumb')) t.setAttribute('aria-pressed', String(t === thumb))
   })
 }
+
+// The gallery's view: rows with notes, or images only (a wall to browse; a click opens the piece).
+const list = document.querySelector<HTMLElement>('.rb-pieces')
+const view = document.querySelector<HTMLSelectElement>('.rb-view select')
+const dialog = document.querySelector<HTMLDialogElement>('.rb-dialog')
+if (list && view && dialog) {
+  const set = (mode: string) => {
+    list.classList.toggle('is-grid', mode === 'grid')
+    view.value = mode
+    try { localStorage.setItem('rb-view', mode) } catch { /* private window: keep the default */ }
+  }
+  let saved = 'rows'
+  try { saved = localStorage.getItem('rb-view') ?? 'rows' } catch { /* default */ }
+  set(saved)
+  view.addEventListener('change', () => set(view.value))
+
+  const body = dialog.querySelector<HTMLElement>('.rb-dialog-body')!
+  list.addEventListener('click', (event) => {
+    if (!list.classList.contains('is-grid')) return
+    const piece = (event.target as HTMLElement).closest<HTMLElement>('.rb-piece')
+    if (!piece || (event.target as HTMLElement).closest('a')) return
+    body.replaceChildren(piece.cloneNode(true))
+    for (const thumb of body.querySelectorAll<HTMLButtonElement>('.rb-thumb')) {
+      thumb.addEventListener('click', () => {
+        const main = body.querySelector<HTMLImageElement>('.rb-piece-main')!
+        main.src = thumb.dataset.src!
+        for (const t of body.querySelectorAll('.rb-thumb')) t.setAttribute('aria-pressed', String(t === thumb))
+      })
+    }
+    dialog.showModal()
+  })
+  dialog.querySelector('.rb-dialog-close')!.addEventListener('click', () => dialog.close())
+  dialog.addEventListener('click', (event) => { if (event.target === dialog) dialog.close() })
+}
