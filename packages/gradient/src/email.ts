@@ -425,6 +425,11 @@ export function renderEmail(opts: RenderOptions): RenderedEmail {
     ? `<script type="application/ld+json">${JSON.stringify(opts.schema).replace(/</g, '\\u003c')}</script>`
     : ''
   const home = safeUrl(brand.home) ?? ''
+  const homeLabel = home.replace(/^https?:\/\//, '').replace(/\/$/, '')
+  // The plain footer ends with the product's site on its own line.
+  const site = home
+    ? { html: `<p class="g-e-text" style="margin:0 0 6px;font-size:13px;line-height:1.5"><a href="${escapeHtml(home)}" style="color:${brand.ink};font-weight:600;text-decoration:none">${escapeHtml(homeLabel)}</a></p>`, text: home }
+    : NONE
   // Dark mail apps swap in the light-text logo; everywhere else it stays hidden.
   const darkLogo = brand.logoDark
     ? `<!--[if !mso]><!--><img class="g-e-logo-dark" src="${escapeHtml(brand.logoDark)}" width="${brand.logo.width}" height="${brand.logo.height}" alt="${escapeHtml(brand.name)}" style="display:none;max-height:0;overflow:hidden;border:0;outline:none;width:${brand.logo.width}px;height:auto"><!--<![endif]-->`
@@ -456,6 +461,7 @@ ${heroButton}
   const plainFooter = `<tr><td class="g-e-col" style="padding:8px 24px 0;font-family:${brand.font}">
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td class="g-e-rule" style="padding:20px 0 0;border-top:1px solid ${brand.line}">
 ${footer.map((x) => x.html.replace('margin:0 0 16px', 'margin:0 0 6px')).join('\n')}
+${site.html}
 </td></tr></table>
 </td></tr>`
   // The ink footer: the page breaks into ink, then the links in two columns, the notes,
@@ -473,7 +479,6 @@ ${footer.map((x) => x.html.replace('margin:0 0 16px', 'margin:0 0 6px')).join('\
     .filter((x) => safeUrl(x.href))
     .map((x) => `<a href="${escapeHtml(safeUrl(x.href)!)}" style="display:inline-block;margin-left:14px;text-decoration:none"><img src="${escapeHtml(x.icon)}" width="22" height="22" alt="${escapeHtml(x.label)}" style="display:block;border:0"></a>`)
     .join('')
-  const homeLabel = home.replace(/^https?:\/\//, '').replace(/\/$/, '')
   const inkFooter = `<tr><td style="padding:24px 0 0;line-height:0">${brand.edge ? `<img src="${escapeHtml(brand.edge)}" width="520" height="160" alt="" style="display:block;width:100%;max-width:520px;height:auto;border:0">` : ''}</td></tr>
 <tr><td bgcolor="#141416" style="background:#141416;border-radius:0 0 20px 20px;padding:8px 24px 32px;font-family:${brand.font}">
 ${links.length ? `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:0 0 20px"><tr><td width="50%" valign="top">${column(links.slice(0, half))}</td><td width="50%" valign="top">${column(links.slice(half))}</td></tr></table>` : ''}
@@ -554,6 +559,7 @@ ${opts.inkFooter ? inkFooter : plainFooter}
     '--',
     brand.name,
     ...footer.map((x) => x.text),
+    ...(site.text ? [site.text] : []),
     '',
   ].join('\n')
 

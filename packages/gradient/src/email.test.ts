@@ -155,3 +155,10 @@ describe('campaign and update emails', () => {
   })
 })
 
+describe('footer site line', () => {
+  it('ends the plain footer and the plain text with the product site', () => {
+    const m = renderEmail({ lang: 'en', subject: 'S', preheader: 'P', heading: 'H', blocks: [] })
+    expect(m.html).toMatch(/border-top:1px solid[\s\S]*href="https:\/\/shades\.md\/"[^>]*>shades\.md<\/a>/)
+    expect(m.text.trim().split('\n').at(-1)).toBe('https://shades.md/')
+  })
+})
