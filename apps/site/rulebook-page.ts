@@ -91,10 +91,10 @@ const galleries = (html: string) =>
     return `<div class="rb-gallery${diagram ? ' rb-gallery--diagram' : ''}${library ? ' rb-gallery--library' : ''}">${figures.join('')}</div>`
   })
 
-/** Index just past the first sentence of a paragraph's HTML, outside tags and code; -1 if none. */
-function leadEnd(html: string) {
+/** Index just past the sentence that starts at `from` in a paragraph's HTML, outside tags; -1 if none. */
+function sentenceEnd(html: string, from = 0) {
   let depth = 0
-  for (let i = 0; i < html.length; i++) {
+  for (let i = from; i < html.length; i++) {
     const c = html[i]!
     if (c === '<') {
       const end = html.indexOf('>', i)
@@ -112,15 +112,33 @@ function leadEnd(html: string) {
   return -1
 }
 
-/** Reading tiers: a paragraph's first sentence carries the rule in the text colour; what follows
- *  explains it in the second tier, and asides in brackets drop to the third. A reader who gets the
- *  point can skip the rest. */
+const textOf = (html: string) => html.replace(/<[^>]+>/g, '')
+
+/** Where the dark lead of a block ends: after its first sentence, or after the second when the
+ *  first is a short lead-in (a bold label, a three-word opener). -1 when it has one sentence. */
+function leadEnd(html: string) {
+  const first = sentenceEnd(html)
+  if (first < 0) return -1
+  if (textOf(html.slice(0, first)).length < 70) {
+    const second = sentenceEnd(html, first + 1)
+    if (second > 0) return second
+  }
+  return first
+}
+
+/** Reading tiers, everywhere text runs: the lead carries the point in the text colour; what
+ *  follows explains it in the second tier, and asides in brackets drop to the third. A reader
+ *  who gets the point can skip the rest. */
+const tier = (inner: string) => {
+  const at = leadEnd(inner)
+  if (at < 0 || textOf(inner.slice(at)).length < 24) return null
+  const rest = inner.slice(at).replace(/ \(([^()<>]{3,})\)/g, ' <span class="rb-aside">($1)</span>')
+  return `${inner.slice(0, at)}<span class="rb-more">${rest}</span>`
+}
 const tiers = (html: string) =>
-  html.replace(/<p>([\s\S]*?)<\/p>/g, (whole, inner: string) => {
-    const at = leadEnd(inner)
-    if (at < 0 || inner.length - at < 24) return whole
-    const rest = inner.slice(at).replace(/ \(([^()<>]{3,})\)/g, ' <span class="rb-aside">($1)</span>')
-    return `<p>${inner.slice(0, at)}<span class="rb-more">${rest}</span></p>`
+  html.replace(/<(p|li|dd)>((?:(?!<\/?(?:ul|ol|p|li|dd)\b)[\s\S])*?)<\/\1>/g, (whole, tag: string, inner: string) => {
+    const t = tier(inner)
+    return t ? `<${tag}>${t}</${tag}>` : whole
   })
 
 const render = (md: string) =>
@@ -258,6 +276,10 @@ function libraryEntries(): Entry[] {
 }
 
 const asset = (src: string) => `/rulebook/${src}`
+/** An icon from the design system's own set, inline so it takes the text colour. */
+const icon = (name: string) =>
+  readFileSync(join(import.meta.dirname, '../../packages/gradient/icons', `${name}.svg`), 'utf8')
+    .replace('<svg ', '<svg class="rb-ico" aria-hidden="true" width="16" height="16" ')
 const label = (path: string) => path.replace('/', ' · ').replace(/-/g, ' ')
 const paletteBar = (p: Swatch[] = []) =>
   `<span class="rb-pal">${p.map((c) => `<span style="background:${c.hex};flex:${c.pct}" title="${escape(c.family)} ${c.pct}%"></span>`).join('')}</span>`
@@ -289,10 +311,14 @@ function libraryGallery(entries: Entry[]) {
         <div class="rb-piece-text">
           <ul class="rb-tags">${tags}</ul>
           <h2><a href="/rulebook/inspiration/${e.id}/">${escape(e.title)}</a></h2>
-          <p class="rb-piece-source"><a href="${escape(e.source.url)}">${escape(e.source.name)}</a>, ${escape(e.source.kind)}, seen ${escape(e.source.seen)}</p>
-          ${tiers(`<p>${escape(e.summary)}</p>`)}
-          <dl class="rb-facts"><dt>Why it works</dt><dd>${escape(e.why)}</dd><dt>Borrow</dt><dd>${escape(e.borrow)}</dd><dt>Leave</dt><dd>${escape(e.leave)}</dd></dl>
-          ${paletteBar(e.palette)}<ul class="rb-palette-list rb-palette-inline">${colours}</ul>
+          <p class="rb-piece-source">${icon('link')}<a href="${escape(e.source.url)}">${escape(e.source.name)}</a> · ${escape(e.source.kind)} · ${escape(e.source.seen)}</p>
+          ${tiers(`<p class="rb-piece-summary">${escape(e.summary)}</p>`.replace('<p class="rb-piece-summary">', '<p>')).replace('<p>', '<p class="rb-piece-summary">')}
+          <div class="rb-takes">
+            <div class="rb-take rb-take--why"><p class="rb-take-label">${icon('sparkle')}Why it works</p>${tiers(`<p>${escape(e.why)}</p>`)}</div>
+            <div class="rb-take rb-take--borrow"><p class="rb-take-label">${icon('check')}Borrow</p>${tiers(`<p>${escape(e.borrow)}</p>`)}</div>
+            <div class="rb-take rb-take--leave"><p class="rb-take-label">${icon('close')}Leave</p>${tiers(`<p>${escape(e.leave)}</p>`)}</div>
+          </div>
+          <div class="rb-piece-colours">${icon('palette')}${paletteBar(e.palette)}<ul class="rb-palette-inline">${colours}</ul></div>
           ${e.tags.length ? `<p class="rb-piece-notes">${e.tags.map(escape).join(' · ')}</p>` : ''}
         </div>
       </li>`

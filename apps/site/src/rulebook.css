@@ -806,3 +806,115 @@
     margin-bottom: 10px;
   }
 }
+
+/* Inspiration rows: smaller, tighter type and the notes in tinted blocks, so a narrow column
+   reads at a glance. */
+.rb-piece-text {
+  font-size: 0.9375rem;
+  line-height: 1.5;
+}
+
+.rb-piece-text h2 {
+  font-size: 1.5rem;
+}
+
+.rb-piece-text p {
+  margin: 0 0 8px;
+}
+
+.rb-ico {
+  flex: none;
+  vertical-align: -3px;
+  margin-right: 6px;
+}
+
+.rb-piece-source {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.rb-takes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin: 14px 0;
+}
+
+.rb-take {
+  padding: 12px 14px;
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--g-text) 4%, transparent);
+  font-size: 0.875rem;
+  line-height: 1.45;
+}
+
+.rb-take--why {
+  grid-column: 1 / -1;
+}
+
+.rb-take p {
+  margin: 0;
+}
+
+.rb-take .rb-take-label {
+  display: flex;
+  align-items: center;
+  margin: 0 0 4px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.rb-take--why .rb-take-label {
+  color: var(--g-text);
+}
+
+.rb-take--borrow .rb-take-label {
+  color: var(--g-success);
+}
+
+.rb-take--leave .rb-take-label {
+  color: var(--g-danger);
+}
+
+.rb-piece-colours {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.rb-piece-colours .rb-pal {
+  flex: 0 0 120px;
+}
+
+.rb-main .rb-piece-colours .rb-palette-inline {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 14px;
+  margin: 0;
+  overflow-x: auto;
+  font-size: 0.8125rem;
+  white-space: nowrap;
+}
+
+.rb-piece-notes {
+  font-size: 0.8125rem;
+}
+
+@media (max-width: 860px) {
+  .rb-takes {
+    grid-template-columns: 1fr;
+  }
+
+  .rb-piece-colours .rb-pal {
+    flex-basis: 64px;
+  }
+}
+
+.rb-piece-text,
+.rb-piece-media,
+.rb-piece-colours .rb-palette-inline {
+  min-width: 0;
+}
