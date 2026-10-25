@@ -167,3 +167,39 @@ const versions = document.querySelector<HTMLDialogElement>('.rb-versions')
 document.querySelector('.rb-version')?.addEventListener('click', () => versions?.showModal())
 versions?.querySelector('.rb-dialog-close')?.addEventListener('click', () => versions.close())
 versions?.addEventListener('click', (event) => { if (event.target === versions) versions.close() })
+
+// A click on a visual opens it alone over a grey overlay; arrows step through the piece's slides.
+const lightbox = document.querySelector<HTMLDialogElement>('.rb-lightbox')!
+const lbImg = lightbox.querySelector('img')!
+const lbCaption = lightbox.querySelector<HTMLElement>('.rb-lightbox-caption')!
+let slides: { src: string; alt: string }[] = []
+let at = 0
+const showSlide = (i: number) => {
+  at = (i + slides.length) % slides.length
+  lbImg.src = slides[at]!.src
+  lbImg.alt = slides[at]!.alt
+  lbCaption.textContent = slides.length > 1 ? `${at + 1} / ${slides.length}  ${slides[at]!.alt}` : slides[at]!.alt
+  lightbox.classList.toggle('is-single', slides.length < 2)
+}
+document.addEventListener('click', (event) => {
+  const img = (event.target as HTMLElement).closest<HTMLImageElement>('.rb-piece-main, .rb-gallery img')
+  if (!img || img.closest('.rb-lightbox')) return
+  // In the images-only wall a click opens the piece's notes instead.
+  if (img.closest('.rb-pieces.is-grid') && !img.closest('.rb-dialog')) return
+  const piece = img.closest('.rb-piece')
+  const thumbs = piece ? [...piece.querySelectorAll<HTMLButtonElement>('.rb-thumb')] : []
+  slides = thumbs.length
+    ? thumbs.map((t) => ({ src: t.dataset.src!, alt: t.getAttribute('aria-label') ?? '' }))
+    : [...(img.closest('.rb-gallery')?.querySelectorAll('img') ?? [img])].map((i) => ({ src: i.currentSrc || i.src, alt: i.closest('figure')?.querySelector('figcaption')?.textContent ?? i.alt }))
+  const current = slides.findIndex((s) => img.src.endsWith(s.src) || s.src === img.currentSrc)
+  showSlide(Math.max(0, current))
+  lightbox.showModal()
+})
+lightbox.querySelector('.rb-lightbox-close')!.addEventListener('click', () => lightbox.close())
+lightbox.querySelector('.rb-lightbox-prev')!.addEventListener('click', () => showSlide(at - 1))
+lightbox.querySelector('.rb-lightbox-next')!.addEventListener('click', () => showSlide(at + 1))
+lightbox.addEventListener('click', (event) => { if (event.target === lightbox) lightbox.close() })
+lightbox.addEventListener('keydown', (event) => {
+  if (event.key === 'ArrowLeft') showSlide(at - 1)
+  if (event.key === 'ArrowRight') showSlide(at + 1)
+})

@@ -1495,3 +1495,117 @@ body.rb-toc-sheet .g-prefs {
     font-weight: 600;
   }
 }
+
+/* The lightbox: the visual alone on a grey overlay, an X at the top right. */
+.rb-piece-main,
+.rb-gallery img {
+  cursor: zoom-in;
+}
+
+.rb-lightbox {
+  width: 100vw;
+  max-width: 100vw;
+  height: 100vh;
+  max-height: 100vh;
+  margin: 0;
+  padding: 56px 72px 48px;
+  border: 0;
+  background: transparent;
+}
+
+.rb-lightbox[open] {
+  display: grid;
+  place-items: center;
+}
+
+.rb-lightbox::backdrop {
+  background: color-mix(in srgb, #3a3a40 82%, transparent);
+}
+
+.rb-lightbox img {
+  max-width: 100%;
+  max-height: calc(100vh - 120px);
+  border-radius: 12px;
+  box-shadow: 0 24px 60px rgb(0 0 0 / 0.35);
+  object-fit: contain;
+  cursor: default;
+}
+
+.rb-lightbox-close,
+.rb-lightbox-prev,
+.rb-lightbox-next {
+  position: fixed;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: 0;
+  border-radius: 999px;
+  background: rgb(253 253 252 / 0.92);
+  color: #1c1c20;
+  cursor: pointer;
+}
+
+.rb-lightbox-close {
+  top: 16px;
+  right: 16px;
+}
+
+.rb-lightbox-prev {
+  left: 16px;
+  top: 50%;
+}
+
+.rb-lightbox-next {
+  right: 16px;
+  top: 50%;
+}
+
+.rb-lightbox.is-single .rb-lightbox-prev,
+.rb-lightbox.is-single .rb-lightbox-next {
+  display: none;
+}
+
+.rb-lightbox .rb-ico {
+  margin: 0;
+}
+
+.rb-lightbox-caption {
+  position: fixed;
+  bottom: 14px;
+  left: 50%;
+  margin: 0;
+  max-width: min(720px, 90vw);
+  transform: translateX(-50%);
+  color: #fdfdfc;
+  font-size: 0.875rem;
+  text-align: center;
+}
+
+@media (max-width: 860px) {
+  .rb-lightbox {
+    padding: 64px 12px 56px;
+  }
+
+  .rb-lightbox-prev,
+  .rb-lightbox-next {
+    top: auto;
+    bottom: 48px;
+  }
+}
+
+.rb-lightbox {
+  box-sizing: border-box;
+}
+
+.rb-lightbox::backdrop {
+  background: color-mix(in srgb, #26262e 94%, transparent);
+}
+
+@media (max-width: 860px) {
+  .rb-lightbox-caption {
+    bottom: 58px;
+    max-width: 56vw;
+    font-size: 0.8125rem;
+  }
+}

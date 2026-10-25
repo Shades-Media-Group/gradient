@@ -255,6 +255,7 @@ const page = (o: {
     ${VERSION_UI.dialog}
     ${o.toc ? `<button type="button" class="rb-toc-open" aria-expanded="false">${icon('menu')}On this page</button>` : ''}
     <div class="rb-backdrop" hidden></div>
+    <dialog class="rb-lightbox" aria-label="Image preview"><button type="button" class="rb-lightbox-close" aria-label="Close preview">${icon('close')}</button><button type="button" class="rb-lightbox-prev" aria-label="Previous image">${icon('chevron-left')}</button><img alt="" /><button type="button" class="rb-lightbox-next" aria-label="Next image">${icon('chevron-right')}</button><p class="rb-lightbox-caption"></p></dialog>
     <dialog class="rb-search" aria-label="Search the rulebook">
       <div class="rb-search-box">${icon('search')}<input type="search" placeholder="Search rules, skills, pieces, versions" autocomplete="off" spellcheck="false" aria-label="Search" /><kbd>Esc</kbd></div>
       <ul class="rb-search-results" role="listbox"></ul>
