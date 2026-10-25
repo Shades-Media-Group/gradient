@@ -238,13 +238,12 @@ const page = (o: {
       <a class="rb-name" href="/rulebook/">Shades rulebook</a>
       <span class="rb-note">Internal · Gradient ${escape(o.version)}</span>
       ${VERSION_UI.button}
-      <label class="rb-find"><span class="rb-hidden">Find on this page</span>
-        <input type="search" placeholder="Find on this page" autocomplete="off" spellcheck="false" />
-      </label>
+      <button type="button" class="rb-search-open" aria-haspopup="dialog">${icon('search')}<span>Search the rulebook</span><kbd>⌘K</kbd></button>
+      <button type="button" class="rb-menu-open" aria-label="Topics" aria-expanded="false">${icon('menu')}</button>
     </header>
     <div class="rb-layout${o.toc ? ' rb-layout--toc' : ''}">
       <nav class="rb-nav" aria-label="Rulebook">
-        <details class="rb-nav-all" open><summary>All topics</summary>${o.nav}</details>
+        ${VERSION_UI.button ? `<a class="rb-nav-versions" href="/rulebook/versions/">${VERSION_UI.button.replace(/<[^>]+>/g, '')} · all versions</a>` : ''}<details class="rb-nav-all" open><summary>All topics</summary>${o.nav}</details>
       </nav>
       <main class="rb-main" id="main">
         ${o.banner ?? ''}
@@ -254,6 +253,13 @@ const page = (o: {
       ${o.toc ?? ''}
     </div>
     ${VERSION_UI.dialog}
+    ${o.toc ? `<button type="button" class="rb-toc-open" aria-expanded="false">${icon('menu')}On this page</button>` : ''}
+    <div class="rb-backdrop" hidden></div>
+    <dialog class="rb-search" aria-label="Search the rulebook">
+      <div class="rb-search-box">${icon('search')}<input type="search" placeholder="Search rules, skills, pieces, versions" autocomplete="off" spellcheck="false" aria-label="Search" /><kbd>Esc</kbd></div>
+      <ul class="rb-search-results" role="listbox"></ul>
+      <p class="rb-search-hint">Type to search every chapter, section, inspiration piece and version. ↑ ↓ to move, Enter to open.</p>
+    </dialog>
   </body>
 </html>
 `
@@ -623,6 +629,21 @@ export function rulebookPages(version: string): { path: string; html: string }[]
   return [{ path: '', html: home }, ...pages, ...entryPages, ...versionPages]
 }
 
+/** One record per chapter, section, inspiration piece and version, for the search window. */
+function searchIndex() {
+  const text = (html: string) => html.replace(/<[^>]+>/g, ' ').replace(/&[a-z#0-9]+;/g, ' ').replace(/\s+/g, ' ').trim()
+  const rows: { k: string; t: string; c: string; u: string; x: string }[] = []
+  for (const ch of chapters()) {
+    if (!ch.file) continue
+    rows.push({ k: 'Chapter', t: ch.title, c: ch.group, u: `/rulebook/${ch.slug}/`, x: ch.lead })
+    for (const sec of ch.sections) rows.push({ k: 'Section', t: sec.title, c: ch.title, u: `/rulebook/${ch.slug}/#${sec.id}`, x: text(sec.body).slice(0, 700) })
+  }
+  for (const e of libraryEntries())
+    rows.push({ k: 'Inspiration', t: e.title, c: `${label(e.format)} · ${label(e.industry)}`, u: `/rulebook/inspiration/${e.id}/`, x: [e.summary, e.why, e.tags.join(' '), e.ideas.map(label).join(' '), (e.palette ?? []).map((c) => c.family).join(' ')].join(' ') })
+  for (const v of bookVersions()) rows.push({ k: 'Version', t: `v${v.version}: ${v.title}`, c: when(v.date), u: `/rulebook/versions/${v.version}/`, x: v.notes })
+  return JSON.stringify(rows)
+}
+
 /** Images and files the chapters link to, served under /rulebook/assets/. */
 export function rulebookAssets(): { name: string; source: Buffer }[] {
   const dir = join(RULEBOOK, 'assets')
@@ -631,5 +652,5 @@ export function rulebookAssets(): { name: string; source: Buffer }[] {
     readdirSync(join(dir, sub), { withFileTypes: true }).flatMap((e) =>
       e.isDirectory() ? walk(join(sub, e.name)) : [join(sub, e.name)],
     )
-  return walk('').map((name) => ({ name, source: readFileSync(join(dir, name)) }))
+  return [...walk('').map((name) => ({ name, source: readFileSync(join(dir, name)) })), { name: 'search.json', source: Buffer.from(searchIndex()) }]
 }

@@ -2,6 +2,7 @@
 @import '@fontsource-variable/hanken-grotesk/wght.css';
 @import 'shades-gradient/tokens.css';
 @import 'shades-gradient/theme.css';
+@import 'shades-gradient/preferences.css';
 
 /*
  * The rulebook: a reference read in Read mode, built like a platform guideline.
@@ -1209,4 +1210,288 @@ del.rb-del {
 
 .rb-stats {
   font-size: 0.8125rem;
+}
+
+/* Search: a button in the bar, a window over the page. */
+.rb-search-open {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: auto;
+  min-height: 40px;
+  width: min(320px, 40vw);
+  padding: 0 14px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--g-sunken);
+  box-shadow: inset 0 0 0 1px var(--g-line);
+  color: var(--g-text-2);
+  font: inherit;
+  font-size: 0.9375rem;
+  cursor: pointer;
+}
+
+.rb-search-open .rb-ico {
+  margin: 0;
+}
+
+.rb-search-open kbd,
+.rb-search-box kbd {
+  margin-left: auto;
+  padding: 1px 6px;
+  border: 1px solid var(--g-line);
+  border-radius: 6px;
+  font: inherit;
+  font-size: 0.75rem;
+  color: var(--g-text-3);
+}
+
+.rb-menu-open,
+.rb-toc-open {
+  display: none;
+}
+
+.rb-search {
+  width: min(680px, calc(100vw - 24px));
+  max-height: min(640px, calc(100vh - 48px));
+  margin-top: 10vh;
+  padding: 0;
+  border: 0;
+  border-radius: 16px;
+  background: var(--g-bg);
+  color: var(--g-text);
+  box-shadow: 0 24px 60px rgb(0 0 0 / 0.25);
+}
+
+.rb-search::backdrop {
+  background: color-mix(in srgb, #0a0a0b 45%, transparent);
+}
+
+.rb-search-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--g-line);
+}
+
+.rb-search-box input {
+  flex: 1;
+  min-width: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  font-size: 1.0625rem;
+  outline: none;
+}
+
+.rb-search-results {
+  max-height: min(480px, calc(100vh - 220px));
+  margin: 0;
+  padding: 6px;
+  overflow-y: auto;
+  list-style: none;
+}
+
+.rb-search-results a {
+  display: grid;
+  gap: 2px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  color: inherit;
+  text-decoration: none;
+}
+
+.rb-search-results [aria-selected='true'] a,
+.rb-search-results a:hover {
+  background: color-mix(in srgb, var(--g-text) 6%, transparent);
+}
+
+.rb-hit-kind {
+  color: var(--g-text-3);
+  font-size: 0.75rem;
+}
+
+.rb-hit-text {
+  color: var(--g-text-2);
+  font-size: 0.875rem;
+  line-height: 1.4;
+}
+
+.rb-search-results mark {
+  border-radius: 3px;
+  background: color-mix(in srgb, #ffaf33 45%, transparent);
+  color: inherit;
+}
+
+.rb-search-none,
+.rb-search-hint {
+  margin: 0;
+  padding: 12px 18px;
+  color: var(--g-text-3);
+  font-size: 0.8125rem;
+}
+
+.rb-search-hint {
+  border-top: 1px solid var(--g-line);
+}
+
+.rb-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  background: color-mix(in srgb, #0a0a0b 40%, transparent);
+}
+
+/* Narrow screens: "On this page" moves to a sheet that opens from a button at the bottom. */
+@media (max-width: 1180px) {
+  .rb-toc-open {
+    position: fixed;
+    bottom: 18px;
+    left: 16px;
+    z-index: 30;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 44px;
+    padding: 0 16px;
+    border: 1px solid var(--g-line);
+    border-radius: 999px;
+    background: var(--g-bg);
+    color: var(--g-text);
+    box-shadow: 0 6px 20px rgb(0 0 0 / 0.12);
+    font: inherit;
+    font-size: 0.875rem;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  .rb-toc-open .rb-ico {
+    margin: 0;
+  }
+
+  body.rb-toc-sheet .rb-toc {
+    position: fixed;
+    inset: auto 0 0;
+    z-index: 50;
+    display: block;
+    max-height: 70vh;
+    padding: 8px 20px 28px;
+    border-radius: 20px 20px 0 0;
+    background: var(--g-bg);
+    box-shadow: 0 -12px 40px rgb(0 0 0 / 0.18);
+    font-size: 1rem;
+  }
+
+  body.rb-toc-sheet .rb-toc a {
+    display: block;
+    padding: 10px 0;
+  }
+}
+
+/* Phone: the bar keeps the name, search and the topics button; the topics open as a drawer. */
+@media (max-width: 860px) {
+  .rb-bar {
+    flex-wrap: nowrap;
+    gap: 8px;
+  }
+
+  .rb-bar .rb-note,
+  .rb-version {
+    display: none;
+  }
+
+  .rb-search-open {
+    width: 44px;
+    min-width: 44px;
+    padding: 0;
+    justify-content: center;
+  }
+
+  .rb-search-open span,
+  .rb-search-open kbd {
+    display: none;
+  }
+
+  .rb-menu-open {
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    border: 1px solid var(--g-line);
+    border-radius: 999px;
+    background: transparent;
+    color: var(--g-text);
+    cursor: pointer;
+  }
+
+  .rb-menu-open .rb-ico {
+    margin: 0;
+  }
+
+  .rb-layout .rb-nav {
+    position: fixed;
+    inset: 0 auto 0 0;
+    z-index: 50;
+    width: min(86vw, 340px);
+    max-height: none;
+    padding: 20px;
+    border-radius: 0 20px 20px 0;
+    background: var(--g-bg);
+    box-shadow: 12px 0 40px rgb(0 0 0 / 0.18);
+    overflow-y: auto;
+    transform: translateX(-104%);
+    transition: transform 220ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+
+  body.rb-nav-open .rb-layout .rb-nav {
+    transform: none;
+  }
+
+  .rb-nav-all > summary {
+    display: none;
+  }
+
+  .rb-nav a {
+    padding-block: 8px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rb-layout .rb-nav {
+    transition: none;
+  }
+}
+
+@media (max-width: 860px) {
+  .rb-layout .rb-nav {
+    visibility: hidden;
+    transition: transform 220ms cubic-bezier(0.2, 0.8, 0.2, 1), visibility 0s linear 220ms;
+  }
+
+  body.rb-nav-open .rb-layout .rb-nav {
+    visibility: visible;
+    transition: transform 220ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+}
+
+body.rb-nav-open .g-prefs,
+body.rb-toc-sheet .g-prefs {
+  display: none;
+}
+
+.rb-nav-versions {
+  display: none;
+}
+
+@media (max-width: 860px) {
+  .rb-nav .rb-nav-versions {
+    display: block;
+    margin: 0 0 14px;
+    padding: 10px 12px;
+    border-radius: 10px;
+    background: color-mix(in srgb, var(--g-text) 5%, transparent);
+    font-weight: 600;
+  }
 }

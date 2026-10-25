@@ -3,32 +3,97 @@
 // applies: preferences-boot.js sets it before paint.
 import './rulebook.css'
 
-// On a phone the topic list starts folded, so the page itself is seen first.
-if (matchMedia('(max-width: 860px)').matches)
-  document.querySelector('.rb-nav-all')?.removeAttribute('open')
+import { preferences } from 'shades-gradient/preferences'
 
-// Find on this page: hides every section that doesn't contain all the words typed.
-const input = document.querySelector<HTMLInputElement>('.rb-find input')!
-const sections = [...document.querySelectorAll<HTMLElement>('.rb-section')]
-const empty = document.querySelector<HTMLElement>('.rb-empty')!
-const text = new Map(sections.map((s) => [s, s.textContent!.toLowerCase()]))
+// The theme menu in the corner, as on every Gradient page; no consent banner (nothing is tracked here).
+preferences({ consent: false })
 
-input.addEventListener('input', () => {
-  const words = input.value.toLowerCase().split(/\s+/).filter(Boolean)
-  let shown = 0
-  for (const section of sections) {
-    const hit = words.every((w) => text.get(section)!.includes(w))
-    section.hidden = !hit
-    if (hit) shown++
-  }
-  empty.hidden = shown > 0 || words.length === 0
+// Phone: the topics open as a drawer from the left; "On this page" opens as a sheet from the bottom.
+const backdrop = document.querySelector<HTMLElement>('.rb-backdrop')!
+const menuButton = document.querySelector<HTMLButtonElement>('.rb-menu-open')
+const tocButton = document.querySelector<HTMLButtonElement>('.rb-toc-open')
+const closePanels = () => {
+  document.body.classList.remove('rb-nav-open', 'rb-toc-sheet')
+  menuButton?.setAttribute('aria-expanded', 'false')
+  tocButton?.setAttribute('aria-expanded', 'false')
+  backdrop.hidden = true
+}
+menuButton?.addEventListener('click', () => {
+  const open = !document.body.classList.contains('rb-nav-open')
+  closePanels()
+  if (!open) return
+  document.body.classList.add('rb-nav-open')
+  menuButton.setAttribute('aria-expanded', 'true')
+  backdrop.hidden = false
 })
+tocButton?.addEventListener('click', () => {
+  const open = !document.body.classList.contains('rb-toc-sheet')
+  closePanels()
+  if (!open) return
+  document.body.classList.add('rb-toc-sheet')
+  tocButton.setAttribute('aria-expanded', 'true')
+  backdrop.hidden = false
+})
+backdrop.addEventListener('click', closePanels)
+document.querySelector('.rb-toc')?.addEventListener('click', (e) => { if ((e.target as HTMLElement).closest('a')) closePanels() })
+document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closePanels() })
 
-// "/" jumps to the find field, as in most docs.
-document.addEventListener('keydown', (event) => {
-  if (event.key !== '/' || event.target instanceof HTMLInputElement) return
-  event.preventDefault()
-  input.focus()
+// Search: every chapter, section, inspiration piece and version, in a window like the CRM's.
+interface Hit { k: string; t: string; c: string; u: string; x: string }
+const search = document.querySelector<HTMLDialogElement>('.rb-search')!
+const field = search.querySelector<HTMLInputElement>('input')!
+const results = search.querySelector<HTMLUListElement>('.rb-search-results')!
+let index: Hit[] | null = null
+let active = 0
+const esc = (t: string) => t.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]!)
+const mark = (t: string, words: string[]) => words.reduce((h, w) => h.replace(new RegExp(`(${w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi'), '<mark>$1</mark>'), esc(t))
+const snippet = (x: string, w: string) => {
+  const i = x.toLowerCase().indexOf(w)
+  return i < 0 ? x.slice(0, 140) : (i > 50 ? '…' : '') + x.slice(Math.max(0, i - 50), i + 110) + '…'
+}
+async function openSearch() {
+  search.showModal()
+  field.select()
+  if (!index) index = await fetch('/rulebook/assets/search.json').then((r) => r.json()).catch(() => [])
+  run()
+}
+function run() {
+  const words = field.value.toLowerCase().split(/\s+/).filter((w) => w.length > 1)
+  if (!index || !words.length) { results.innerHTML = ''; return }
+  const scored = index
+    .map((h) => {
+      const t = h.t.toLowerCase(), c = h.c.toLowerCase(), x = h.x.toLowerCase()
+      if (!words.every((w) => t.includes(w) || c.includes(w) || x.includes(w))) return null
+      const score = words.reduce((s, w) => s + (t.startsWith(w) ? 12 : t.includes(w) ? 8 : 0) + (c.includes(w) ? 3 : 0) + (x.includes(w) ? 1 : 0), 0) + (h.k === 'Chapter' ? 2 : 0)
+      return { h, score }
+    })
+    .filter((r): r is { h: Hit; score: number } => r !== null)
+    .sort((a, b) => b.score - a.score)
+    .slice(0, 40)
+  active = 0
+  results.innerHTML = scored.length
+    ? scored.map(({ h }, i) => `<li role="option" aria-selected="${i === 0}"><a href="${h.u}"><span class="rb-hit-kind">${esc(h.k)} · ${esc(h.c)}</span><strong>${mark(h.t, words)}</strong><span class="rb-hit-text">${mark(snippet(h.x, words[0]!), words)}</span></a></li>`).join('')
+    : '<li class="rb-search-none">Nothing matches. Try fewer or other words.</li>'
+}
+function move(step: number) {
+  const items = [...results.querySelectorAll<HTMLElement>('[role="option"]')]
+  if (!items.length) return
+  items[active]?.setAttribute('aria-selected', 'false')
+  active = (active + step + items.length) % items.length
+  items[active]!.setAttribute('aria-selected', 'true')
+  items[active]!.scrollIntoView({ block: 'nearest' })
+}
+field.addEventListener('input', run)
+field.addEventListener('keydown', (e) => {
+  if (e.key === 'ArrowDown') { e.preventDefault(); move(1) }
+  if (e.key === 'ArrowUp') { e.preventDefault(); move(-1) }
+  if (e.key === 'Enter') results.querySelectorAll<HTMLAnchorElement>('[role="option"] a')[active]?.click()
+})
+search.addEventListener('click', (e) => { if (e.target === search) search.close() })
+document.querySelector('.rb-search-open')!.addEventListener('click', openSearch)
+document.addEventListener('keydown', (e) => {
+  const typing = e.target instanceof HTMLInputElement || e.target instanceof HTMLTextAreaElement
+  if ((e.key === 'k' && (e.metaKey || e.ctrlKey)) || (e.key === '/' && !typing)) { e.preventDefault(); openSearch() }
 })
 
 // The inspiration gallery: chips filter the pieces; within a facet any chip matches,
