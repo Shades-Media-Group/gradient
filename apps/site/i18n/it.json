@@ -922,7 +922,9 @@
       "signAlt": "L’insegna Shades su un muro intonacato: un cassonetto rosso con barre bianche e lettere nere che proiettano lunghe ombre nel sole basso.",
       "campaignTitle": "La campagna su una tavola",
       "campaign": "Il marchio su stampa, affissioni, schermi e oggetti.",
-      "campaignAlt": "Shades in uso: biglietti da visita, manifesti in metro, un cartellone, il logo su blocchi rossi a ventaglio, adesivi su un portatile, un manifesto in stazione, uno schermo e una borsa rossa."
+      "campaignAlt": "Shades in uso: biglietti da visita, manifesti in metro, un cartellone, il logo su blocchi rossi a ventaglio, adesivi su un portatile, un manifesto in stazione, uno schermo e una borsa rossa.",
+      "metro": "Tre cassonetti luminosi in metro, una campagna: ogni manifesto ha un titolo, una foto vera e il marchio.",
+      "metroAlt": "Un corridoio della metro con tre manifesti Shades illuminati: un team per brand e sito, ogni pagina somiglia al tuo brand, somiglia al brand che sei già."
     },
     "decks": {
       "title": "Presentazioni",

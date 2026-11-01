@@ -922,7 +922,9 @@
       "signAlt": "L’enseigne Shades sur un mur enduit : un caisson rouge à barres blanches et des lettres noires qui projettent de longues ombres au soleil rasant.",
       "campaignTitle": "La campagne sur une planche",
       "campaign": "La marque en impression, en affichage, sur écran et en objets.",
-      "campaignAlt": "Shades en usage : cartes de visite, affiches de métro, un panneau, le logo sur des blocs rouges en éventail, des autocollants sur un portable, une affiche en gare, un écran et un tote rouge."
+      "campaignAlt": "Shades en usage : cartes de visite, affiches de métro, un panneau, le logo sur des blocs rouges en éventail, des autocollants sur un portable, une affiche en gare, un écran et un tote rouge.",
+      "metro": "Trois caissons lumineux dans le métro, une campagne : chaque affiche porte un titre, une vraie photo et la marque.",
+      "metroAlt": "Un couloir de métro avec trois affiches Shades éclairées : une équipe pour la marque et le site, chaque page ressemble à votre marque, ressemblez à la marque que vous êtes déjà."
     },
     "decks": {
       "title": "Présentations",

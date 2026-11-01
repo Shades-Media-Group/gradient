@@ -922,7 +922,9 @@
       "signAlt": "El rótulo de Shades en una pared enlucida: una caja roja con barras blancas y letras negras que proyectan sombras largas con el sol bajo.",
       "campaignTitle": "La campaña en un solo tablero",
       "campaign": "La marca en impresos, exteriores, pantallas y objetos.",
-      "campaignAlt": "Shades en uso: tarjetas de visita, carteles de metro, una valla, el logotipo sobre bloques rojos en abanico, pegatinas en un portátil, un cartel de estación, una pantalla y una bolsa roja."
+      "campaignAlt": "Shades en uso: tarjetas de visita, carteles de metro, una valla, el logotipo sobre bloques rojos en abanico, pegatinas en un portátil, un cartel de estación, una pantalla y una bolsa roja.",
+      "metro": "Tres cajas de luz en el metro, una campaña: cada cartel lleva un titular, una foto real y la marca.",
+      "metroAlt": "Un pasillo de metro con tres carteles iluminados de Shades: un equipo para la marca y la web, cada página se parece a tu marca, parécete a la marca que ya eres."
     },
     "decks": {
       "title": "Presentaciones",

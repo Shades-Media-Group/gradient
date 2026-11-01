@@ -922,7 +922,9 @@
       "signAlt": "Firma Shades pe un perete tencuit: o casetă roșie cu bare albe și litere negre care aruncă umbre lungi în soarele jos.",
       "campaignTitle": "Campania pe o singură planșă",
       "campaign": "Semnul pe tipar, afișaj stradal, ecrane și obiecte de brand.",
-      "campaignAlt": "Shades în uz: cărți de vizită, afișe la metrou, un panou publicitar, logoul pe blocuri roșii în evantai, autocolante pe laptop, un afiș în gară, un ecran și o sacoșă roșie."
+      "campaignAlt": "Shades în uz: cărți de vizită, afișe la metrou, un panou publicitar, logoul pe blocuri roșii în evantai, autocolante pe laptop, un afiș în gară, un ecran și o sacoșă roșie.",
+      "metro": "Trei casete luminoase la metrou, o singură campanie: fiecare afiș cu un titlu, o fotografie reală și semnul.",
+      "metroAlt": "Un coridor de metrou cu trei afișe Shades iluminate: o echipă pentru brand și site, fiecare pagină arată ca brandul tău, arată ca brandul care deja ești."
     },
     "decks": {
       "title": "Prezentări",

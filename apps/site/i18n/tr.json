@@ -922,7 +922,9 @@
       "signAlt": "Sıvalı bir duvarda Shades tabelası: beyaz çubuklu kırmızı bir kutu ve alçak güneşte uzun gölgeler düşüren siyah harfler.",
       "campaignTitle": "Kampanya tek panoda",
       "campaign": "İşaret baskıda, açık havada, ekranlarda ve ürünlerde.",
-      "campaignAlt": "Kullanımda Shades: kartvizitler, metro afişleri, bir reklam panosu, yelpaze gibi kırmızı blokların üstünde logo, dizüstü çıkartmaları, istasyon afişi, bir ekran ve kırmızı bez çanta."
+      "campaignAlt": "Kullanımda Shades: kartvizitler, metro afişleri, bir reklam panosu, yelpaze gibi kırmızı blokların üstünde logo, dizüstü çıkartmaları, istasyon afişi, bir ekran ve kırmızı bez çanta.",
+      "metro": "Metroda üç ışıklı pano, tek kampanya: her afişte bir başlık, gerçek bir fotoğraf ve işaret.",
+      "metroAlt": "Üç ışıklı Shades afişli bir metro koridoru: marka ve site için tek ekip, her sayfa markana benzer, zaten olduğun markaya benze."
     },
     "decks": {
       "title": "Sunumlar",
