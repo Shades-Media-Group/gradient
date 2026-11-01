@@ -190,7 +190,10 @@
       "dlLockup": "Firma",
       "dlReverse": "Firma para fondos oscuros",
       "dlMono": "Símbolo, un color",
-      "dlLockupMono": "Firma, un color"
+      "dlLockupMono": "Firma, un color",
+      "inUseTitle": "En uso",
+      "board": "La marca como icono de app, sobre oscuro y claro, y en una notificación.",
+      "boardAlt": "Cuatro paneles: el icono de Shades en dos teléfonos, la marca sobre tinta, la marca sobre blanco y una notificación de Shades sobre arcos naranja, rojo, rosa y violeta."
     },
     "devices": {
       "short": "Recursos",
@@ -916,7 +919,10 @@
       "poster": "Pegada de carteles: los dos carteles alternados a lo largo de un muro, con el sol de la tarde.",
       "posterAlt": "Carteles de Shades pegados en fila en un muro de hormigón, tinta y papel alternados, con la sombra de un edificio encima.",
       "sign": "El logo como rótulo: la marca en una caja roja, las letras separadas de la pared.",
-      "signAlt": "El rótulo de Shades en una pared enlucida: una caja roja con barras blancas y letras negras que proyectan sombras largas con el sol bajo."
+      "signAlt": "El rótulo de Shades en una pared enlucida: una caja roja con barras blancas y letras negras que proyectan sombras largas con el sol bajo.",
+      "campaignTitle": "La campaña en un solo tablero",
+      "campaign": "La marca en impresos, exteriores, pantallas y objetos.",
+      "campaignAlt": "Shades en uso: tarjetas de visita, carteles de metro, una valla, el logotipo sobre bloques rojos en abanico, pegatinas en un portátil, un cartel de estación, una pantalla y una bolsa roja."
     },
     "decks": {
       "title": "Presentaciones",
@@ -931,7 +937,14 @@
       "fig1": "idiomas, un sistema",
       "fig2": "iconos, dibujados en casa",
       "photo": "Hecho para la calle, no para la sala de juntas.",
-      "note": "16:9 a 1920 × 1080. Una idea por diapositiva; si necesita otra, necesita otra diapositiva."
+      "note": "16:9 a 1920 × 1080. Una idea por diapositiva; si necesita otra, necesita otra diapositiva.",
+      "guideTitle": "Presentación del manual de marca",
+      "guideCover": "Portada: las barras de la marca como bloques rojos verticales, en abanico.",
+      "guideCoverAlt": "Portada del manual: bloques rojos en abanico como las barras de la marca, con el logotipo de Shades y el título sobre un panel esmerilado.",
+      "guideChapter": "Apertura de capítulo, líneas rectas",
+      "guideChapterAlt": "Capítulo 01, Diseño del logotipo: el índice sobre papel junto a un panel rojo cruzado por líneas negras.",
+      "guideChapterCurved": "Apertura de capítulo, líneas curvas",
+      "guideChapterCurvedAlt": "Capítulo 01, Diseño del logotipo: el índice sobre blanco junto a un panel rojo con líneas negras curvas."
     }
   },
   "projects": {

@@ -190,7 +190,10 @@
       "dlLockup": "Lockup",
       "dlReverse": "Lockup per sfondi scuri",
       "dlMono": "Marchio, un colore",
-      "dlLockupMono": "Lockup, un colore"
+      "dlLockupMono": "Lockup, un colore",
+      "inUseTitle": "In uso",
+      "board": "Il marchio come icona d'app, su scuro e chiaro, e in una notifica.",
+      "boardAlt": "Quattro pannelli: l'icona Shades su due telefoni, il marchio su nero, il marchio su bianco e una notifica Shades su archi arancio, rossi, rosa e viola."
     },
     "devices": {
       "short": "Segni",
@@ -916,7 +919,10 @@
       "poster": "Affissione: i due manifesti alternati lungo un muro, nel sole del tardo pomeriggio.",
       "posterAlt": "Manifesti Shades incollati in fila su un muro di cemento, inchiostro e carta alternati, con l’ombra di un edificio sopra.",
       "sign": "Il logo come insegna: il marchio in un cassonetto rosso, le lettere distanziate dal muro.",
-      "signAlt": "L’insegna Shades su un muro intonacato: un cassonetto rosso con barre bianche e lettere nere che proiettano lunghe ombre nel sole basso."
+      "signAlt": "L’insegna Shades su un muro intonacato: un cassonetto rosso con barre bianche e lettere nere che proiettano lunghe ombre nel sole basso.",
+      "campaignTitle": "La campagna su una tavola",
+      "campaign": "Il marchio su stampa, affissioni, schermi e oggetti.",
+      "campaignAlt": "Shades in uso: biglietti da visita, manifesti in metro, un cartellone, il logo su blocchi rossi a ventaglio, adesivi su un portatile, un manifesto in stazione, uno schermo e una borsa rossa."
     },
     "decks": {
       "title": "Presentazioni",
@@ -931,7 +937,14 @@
       "fig1": "lingue, un solo sistema",
       "fig2": "icone, disegnate in casa",
       "photo": "Fatto per la strada, non per la sala riunioni.",
-      "note": "16:9 a 1920 × 1080. Un'idea per slide: se ne serve una seconda, serve una seconda slide."
+      "note": "16:9 a 1920 × 1080. Un'idea per slide: se ne serve una seconda, serve una seconda slide.",
+      "guideTitle": "Presentazione delle linee guida",
+      "guideCover": "Copertina: le barre del marchio come blocchi rossi verticali, a ventaglio.",
+      "guideCoverAlt": "Copertina delle linee guida: blocchi rossi a ventaglio come le barre del marchio, con il logo Shades e il titolo su un pannello satinato.",
+      "guideChapter": "Apertura di capitolo, linee dritte",
+      "guideChapterAlt": "Capitolo 01, Design del logo: l'indice su carta accanto a un pannello rosso attraversato da linee nere.",
+      "guideChapterCurved": "Apertura di capitolo, linee curve",
+      "guideChapterCurvedAlt": "Capitolo 01, Design del logo: l'indice su bianco accanto a un pannello rosso con linee nere curve."
     }
   },
   "projects": {

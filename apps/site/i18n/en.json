@@ -190,7 +190,10 @@
       "dlLockup": "Lockup",
       "dlReverse": "Lockup for dark backgrounds",
       "dlMono": "Mark, one colour",
-      "dlLockupMono": "Lockup, one colour"
+      "dlLockupMono": "Lockup, one colour",
+      "inUseTitle": "In use",
+      "board": "The mark as an app icon, on dark and light, and in a notification.",
+      "boardAlt": "Four panels: the Shades app icon on two phones, the mark on ink, the mark on white, and a Shades notification over orange, red, pink and violet arcs."
     },
     "devices": {
       "short": "Devices",
@@ -916,7 +919,10 @@
       "poster": "Wild posting: the two posters in turn along a wall, in late sun.",
       "posterAlt": "Shades posters pasted in a row along a concrete wall, ink and paper designs in turn, a building's shadow across them.",
       "sign": "The lockup as a sign: the mark a red cabinet, the letters standing off the wall.",
-      "signAlt": "The Shades sign on a plaster wall: a red cabinet with white bars and black letters, casting long shadows in low sun."
+      "signAlt": "The Shades sign on a plaster wall: a red cabinet with white bars and black letters, casting long shadows in low sun.",
+      "campaignTitle": "The campaign on one board",
+      "campaign": "The mark across print, outdoor, screens and merchandise.",
+      "campaignAlt": "Shades in use: business cards, metro posters, a billboard, the red lockup over fanned red blocks, laptop stickers, a station poster, a desktop screen and a red tote bag."
     },
     "decks": {
       "title": "Presentations",
@@ -931,7 +937,14 @@
       "fig1": "languages, one system",
       "fig2": "icons, drawn in house",
       "photo": "Made for the street, not the boardroom.",
-      "note": "16:9 at 1920 × 1080. One idea a slide; if it needs a second, it needs a second slide."
+      "note": "16:9 at 1920 × 1080. One idea a slide; if it needs a second, it needs a second slide.",
+      "guideTitle": "Brand guidelines deck",
+      "guideCover": "Cover: the mark's bars as upright red blocks, fanned.",
+      "guideCoverAlt": "Brand guidelines cover: red blocks fanned like the bars of the mark, with the Shades lockup and the title on a frosted panel.",
+      "guideChapter": "Chapter opener, straight lines",
+      "guideChapterAlt": "Chapter 01, Logo design: the contents on paper beside a red panel crossed by black lines.",
+      "guideChapterCurved": "Chapter opener, curved lines",
+      "guideChapterCurvedAlt": "Chapter 01, Logo design: the contents on white beside a red panel with curved black lines."
     }
   },
   "projects": {

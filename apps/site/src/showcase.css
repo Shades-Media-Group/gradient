@@ -1084,8 +1084,29 @@
   color: var(--g-text-2);
 }
 
+.halftone--even {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
 @media (max-width: 560px) {
   .halftone {
     grid-template-columns: minmax(0, 1fr);
   }
+}
+
+.inuse {
+  display: grid;
+  gap: 10px;
+  margin: 0 0 8px;
+}
+
+.inuse img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--g-radius-lg);
+}
+
+.inuse figcaption {
+  color: var(--g-text-2);
+  font-size: var(--g-size-small);
 }

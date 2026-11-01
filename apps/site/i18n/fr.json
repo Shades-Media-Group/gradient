@@ -190,7 +190,10 @@
       "dlLockup": "Bloc-marque",
       "dlReverse": "Bloc-marque pour fonds sombres",
       "dlMono": "Symbole, une couleur",
-      "dlLockupMono": "Bloc-marque, une couleur"
+      "dlLockupMono": "Bloc-marque, une couleur",
+      "inUseTitle": "En usage",
+      "board": "La marque en icône d'application, sur fond sombre et clair, et dans une notification.",
+      "boardAlt": "Quatre panneaux : l'icône Shades sur deux téléphones, la marque sur encre, la marque sur blanc et une notification Shades sur des arcs orange, rouges, roses et violets."
     },
     "devices": {
       "short": "Signes",
@@ -916,7 +919,10 @@
       "poster": "Affichage sauvage : les deux affiches en alternance le long d’un mur, au soleil couchant.",
       "posterAlt": "Des affiches Shades collées en rang sur un mur de béton, encre et papier en alternance, l’ombre d’un immeuble par-dessus.",
       "sign": "Le logo en enseigne : la marque en caisson rouge, les lettres décollées du mur.",
-      "signAlt": "L’enseigne Shades sur un mur enduit : un caisson rouge à barres blanches et des lettres noires qui projettent de longues ombres au soleil rasant."
+      "signAlt": "L’enseigne Shades sur un mur enduit : un caisson rouge à barres blanches et des lettres noires qui projettent de longues ombres au soleil rasant.",
+      "campaignTitle": "La campagne sur une planche",
+      "campaign": "La marque en impression, en affichage, sur écran et en objets.",
+      "campaignAlt": "Shades en usage : cartes de visite, affiches de métro, un panneau, le logo sur des blocs rouges en éventail, des autocollants sur un portable, une affiche en gare, un écran et un tote rouge."
     },
     "decks": {
       "title": "Présentations",
@@ -931,7 +937,14 @@
       "fig1": "langues, un seul système",
       "fig2": "icônes, dessinées en interne",
       "photo": "Fait pour la rue, pas pour la salle du conseil.",
-      "note": "16:9 en 1920 × 1080. Une idée par diapositive ; s'il en faut une deuxième, il faut une deuxième diapositive."
+      "note": "16:9 en 1920 × 1080. Une idée par diapositive ; s'il en faut une deuxième, il faut une deuxième diapositive.",
+      "guideTitle": "Présentation de la charte",
+      "guideCover": "Couverture : les barres de la marque en blocs rouges dressés, en éventail.",
+      "guideCoverAlt": "Couverture de la charte : des blocs rouges en éventail comme les barres de la marque, avec le logo Shades et le titre sur un panneau dépoli.",
+      "guideChapter": "Ouverture de chapitre, lignes droites",
+      "guideChapterAlt": "Chapitre 01, Design du logo : le sommaire sur papier à côté d'un panneau rouge traversé de lignes noires.",
+      "guideChapterCurved": "Ouverture de chapitre, lignes courbes",
+      "guideChapterCurvedAlt": "Chapitre 01, Design du logo : le sommaire sur blanc à côté d'un panneau rouge aux lignes noires courbes."
     }
   },
   "projects": {

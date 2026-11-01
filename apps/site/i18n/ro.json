@@ -190,7 +190,10 @@
       "dlLockup": "Logo complet",
       "dlReverse": "Logo complet pentru fundaluri închise",
       "dlMono": "Simbol, o culoare",
-      "dlLockupMono": "Logo complet, o culoare"
+      "dlLockupMono": "Logo complet, o culoare",
+      "inUseTitle": "În uz",
+      "board": "Semnul ca iconiță de aplicație, pe fond închis și deschis, și într-o notificare.",
+      "boardAlt": "Patru panouri: iconița Shades pe două telefoane, semnul pe negru, semnul pe alb și o notificare Shades peste arcuri portocalii, roșii, roz și violet."
     },
     "devices": {
       "short": "Elemente",
@@ -916,7 +919,10 @@
       "poster": "Afișaj stradal: cele două afișe pe rând de-a lungul unui zid, în soarele de seară.",
       "posterAlt": "Afișe Shades lipite în șir pe un zid de beton, în cerneală și hârtie pe rând, cu umbra unei clădiri peste ele.",
       "sign": "Logoul ca firmă: marca o casetă roșie, literele distanțate de perete.",
-      "signAlt": "Firma Shades pe un perete tencuit: o casetă roșie cu bare albe și litere negre care aruncă umbre lungi în soarele jos."
+      "signAlt": "Firma Shades pe un perete tencuit: o casetă roșie cu bare albe și litere negre care aruncă umbre lungi în soarele jos.",
+      "campaignTitle": "Campania pe o singură planșă",
+      "campaign": "Semnul pe tipar, afișaj stradal, ecrane și obiecte de brand.",
+      "campaignAlt": "Shades în uz: cărți de vizită, afișe la metrou, un panou publicitar, logoul pe blocuri roșii în evantai, autocolante pe laptop, un afiș în gară, un ecran și o sacoșă roșie."
     },
     "decks": {
       "title": "Prezentări",
@@ -931,7 +937,14 @@
       "fig1": "limbi, un singur sistem",
       "fig2": "iconițe, desenate de noi",
       "photo": "Făcut pentru stradă, nu pentru sala de consiliu.",
-      "note": "16:9 la 1920 × 1080. O idee pe slide; dacă îi trebuie a doua, îi trebuie un al doilea slide."
+      "note": "16:9 la 1920 × 1080. O idee pe slide; dacă îi trebuie a doua, îi trebuie un al doilea slide.",
+      "guideTitle": "Prezentarea ghidului de brand",
+      "guideCover": "Copertă: barele semnului ca blocuri roșii verticale, în evantai.",
+      "guideCoverAlt": "Coperta ghidului de brand: blocuri roșii în evantai ca barele semnului, cu logoul Shades și titlul pe un panou mat.",
+      "guideChapter": "Început de capitol, linii drepte",
+      "guideChapterAlt": "Capitolul 01, Designul logoului: cuprinsul pe hârtie lângă un panou roșu traversat de linii negre.",
+      "guideChapterCurved": "Început de capitol, linii curbe",
+      "guideChapterCurvedAlt": "Capitolul 01, Designul logoului: cuprinsul pe alb lângă un panou roșu cu linii negre curbe."
     }
   },
   "projects": {
