@@ -1813,7 +1813,7 @@ body.rb-toc-sheet .g-prefs {
 /* Inspiration is a different kind of place from the rules: its menu fold is light yellow. */
 .rb-nav-fold--inspiration {
   margin: 6px 0;
-  padding: 0 10px;
+  padding: 0 14px;
   border-radius: 10px;
   background: #fff3c4;
   border-bottom-color: transparent;
@@ -1824,6 +1824,7 @@ body.rb-toc-sheet .g-prefs {
 }
 
 .rb-nav-fold--inspiration a {
+  margin-inline: -10px;
   color: #6e4602;
 }
 
