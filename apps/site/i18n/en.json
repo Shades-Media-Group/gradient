@@ -779,7 +779,8 @@
       "role": "Brand designer",
       "stock": "Uncoated, 350 g/m² or heavier",
       "sample": "Sample person and details. The card is drawn at its real proportions.",
-      "kit": "With the brand guidelines: the wordmark cut by the cover, the cards beside it."
+      "kit": "With the brand guidelines: the wordmark cut by the cover, the cards beside it.",
+      "cardsAlt": "Shades business cards scattered on ink: black, red and paper cards with the bars and red line arcs."
     },
     "badge": {
       "title": "Event badge",
@@ -807,7 +808,9 @@
       "boxText": "A rigid box in soft-touch ink: the mark small on the lid, the spectrum as one trim at the seam.",
       "rule1": "Use the one-colour files for embroidery, foil, etching and screen print.",
       "rule2": "Never print the mark smaller than 8 mm.",
-      "rule3": "One character per item. The characters never replace the mark."
+      "rule3": "One character per item. The characters never replace the mark.",
+      "toteAlt": "A person carries a red Shades tote bag with black and red line arcs, against a sunlit concrete wall.",
+      "stickersAlt": "A silver laptop lid with Shades stickers: the mark in red, black and faded shades."
     },
     "signature": {
       "title": "Email signature",
@@ -918,13 +921,15 @@
       "b3Label": "Poster, A1",
       "poster": "Wild posting: the two posters in turn along a wall, in late sun.",
       "posterAlt": "Shades posters pasted in a row along a concrete wall, ink and paper designs in turn, a building's shadow across them.",
-      "sign": "The lockup as a sign: the mark a red cabinet, the letters standing off the wall.",
-      "signAlt": "The Shades sign on a plaster wall: a red cabinet with white bars and black letters, casting long shadows in low sun.",
       "campaignTitle": "The campaign on one board",
       "campaign": "The mark across print, outdoor, screens and merchandise.",
       "campaignAlt": "Shades in use: business cards, metro posters, a billboard, the red lockup over fanned red blocks, laptop stickers, a station poster, a desktop screen and a red tote bag.",
       "metro": "Three metro lightboxes, one campaign: each poster a headline, a real photo and the mark.",
-      "metroAlt": "A metro corridor with three lit Shades posters: one team for brand and website, every page looks like your brand, look like the brand you already are."
+      "metroAlt": "A metro corridor with three lit Shades posters: one team for brand and website, every page looks like your brand, look like the brand you already are.",
+      "billboardAlt": "A billboard: the red headline panel beside a photo of a designer at work, the Shades lockup below.",
+      "shelterAlt": "A bus shelter at dusk with three Shades posters lit from inside.",
+      "screensTitle": "Screens",
+      "monitorAlt": "The Shades website on a desktop monitor: the headline on ink, two buttons, the red arcs below."
     },
     "decks": {
       "title": "Presentations",

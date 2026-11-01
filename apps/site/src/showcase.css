@@ -1086,6 +1086,11 @@
 
 .halftone--even {
   grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-block: 20px;
+}
+
+.halftone--pair figure:first-child {
+  grid-column: auto;
 }
 
 @media (max-width: 560px) {
@@ -1109,4 +1114,9 @@
 .inuse figcaption {
   color: var(--g-text-2);
   font-size: var(--g-size-small);
+}
+
+.inuse--crop img {
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
 }

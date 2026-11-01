@@ -779,7 +779,8 @@
       "role": "Brand designer",
       "stock": "Non patinata, 350 g/m² o più",
       "sample": "Persona e dati di esempio. Il biglietto è disegnato nelle sue proporzioni reali.",
-      "kit": "Con il manuale del brand: il logotipo tagliato dalla copertina, i biglietti accanto."
+      "kit": "Con il manuale del brand: il logotipo tagliato dalla copertina, i biglietti accanto.",
+      "cardsAlt": "Biglietti da visita Shades sul nero: neri, rossi e carta, con le barre e gli archi rossi."
     },
     "badge": {
       "title": "Badge per eventi",
@@ -807,7 +808,9 @@
       "boxText": "Una scatola rigida in inchiostro soft-touch: il marchio piccolo sul coperchio, lo spettro come un solo filo sulla giuntura.",
       "rule1": "Usa i file a un colore per ricamo, lamina, incisione e serigrafia.",
       "rule2": "Non stampare mai il marchio sotto gli 8 mm.",
-      "rule3": "Un personaggio per articolo. I personaggi non sostituiscono mai il marchio."
+      "rule3": "Un personaggio per articolo. I personaggi non sostituiscono mai il marchio.",
+      "toteAlt": "Una persona porta una borsa rossa Shades con archi neri e rossi, davanti a un muro di cemento al sole.",
+      "stickersAlt": "Il coperchio di un portatile argento con adesivi Shades: il marchio in rosso, nero e toni sbiaditi."
     },
     "signature": {
       "title": "Firma email",
@@ -918,13 +921,15 @@
       "b3Label": "Poster, A1",
       "poster": "Affissione: i due manifesti alternati lungo un muro, nel sole del tardo pomeriggio.",
       "posterAlt": "Manifesti Shades incollati in fila su un muro di cemento, inchiostro e carta alternati, con l’ombra di un edificio sopra.",
-      "sign": "Il logo come insegna: il marchio in un cassonetto rosso, le lettere distanziate dal muro.",
-      "signAlt": "L’insegna Shades su un muro intonacato: un cassonetto rosso con barre bianche e lettere nere che proiettano lunghe ombre nel sole basso.",
       "campaignTitle": "La campagna su una tavola",
       "campaign": "Il marchio su stampa, affissioni, schermi e oggetti.",
       "campaignAlt": "Shades in uso: biglietti da visita, manifesti in metro, un cartellone, il logo su blocchi rossi a ventaglio, adesivi su un portatile, un manifesto in stazione, uno schermo e una borsa rossa.",
       "metro": "Tre cassonetti luminosi in metro, una campagna: ogni manifesto ha un titolo, una foto vera e il marchio.",
-      "metroAlt": "Un corridoio della metro con tre manifesti Shades illuminati: un team per brand e sito, ogni pagina somiglia al tuo brand, somiglia al brand che sei già."
+      "metroAlt": "Un corridoio della metro con tre manifesti Shades illuminati: un team per brand e sito, ogni pagina somiglia al tuo brand, somiglia al brand che sei già.",
+      "billboardAlt": "Un cartellone: il titolo sul rosso accanto alla foto di una designer al lavoro, il logo Shades sotto.",
+      "shelterAlt": "Una pensilina al tramonto con tre manifesti Shades illuminati da dentro.",
+      "screensTitle": "Schermi",
+      "monitorAlt": "Il sito Shades su un monitor: il titolo sul nero, due pulsanti, gli archi rossi sotto."
     },
     "decks": {
       "title": "Presentazioni",

@@ -779,7 +779,8 @@
       "role": "Designer de brand",
       "stock": "Hârtie necretată, de 350 g/m² sau mai grea",
       "sample": "Persoană și date de exemplu. Cartea e desenată la proporțiile ei reale.",
-      "kit": "Cu manualul de brand: logotipul tăiat de copertă, cărțile de vizită alături."
+      "kit": "Cu manualul de brand: logotipul tăiat de copertă, cărțile de vizită alături.",
+      "cardsAlt": "Cărți de vizită Shades împrăștiate pe negru: negre, roșii și albe, cu barele și arcele roșii."
     },
     "badge": {
       "title": "Ecuson de eveniment",
@@ -807,7 +808,9 @@
       "boxText": "O cutie rigidă în cerneală soft-touch: marca mică pe capac, spectrul ca un singur fir la îmbinare.",
       "rule1": "Folosește fișierele într-o culoare pentru broderie, folio, gravură și serigrafie.",
       "rule2": "Nu tipări niciodată simbolul mai mic de 8 mm.",
-      "rule3": "Un singur personaj pe obiect. Personajele nu înlocuiesc niciodată simbolul."
+      "rule3": "Un singur personaj pe obiect. Personajele nu înlocuiesc niciodată simbolul.",
+      "toteAlt": "O persoană poartă o sacoșă roșie Shades cu arce negre și roșii, lângă un zid de beton în soare.",
+      "stickersAlt": "Capacul unui laptop argintiu cu autocolante Shades: semnul în roșu, negru și nuanțe estompate."
     },
     "signature": {
       "title": "Semnătura de email",
@@ -918,13 +921,15 @@
       "b3Label": "Afiș, A1",
       "poster": "Afișaj stradal: cele două afișe pe rând de-a lungul unui zid, în soarele de seară.",
       "posterAlt": "Afișe Shades lipite în șir pe un zid de beton, în cerneală și hârtie pe rând, cu umbra unei clădiri peste ele.",
-      "sign": "Logoul ca firmă: marca o casetă roșie, literele distanțate de perete.",
-      "signAlt": "Firma Shades pe un perete tencuit: o casetă roșie cu bare albe și litere negre care aruncă umbre lungi în soarele jos.",
       "campaignTitle": "Campania pe o singură planșă",
       "campaign": "Semnul pe tipar, afișaj stradal, ecrane și obiecte de brand.",
       "campaignAlt": "Shades în uz: cărți de vizită, afișe la metrou, un panou publicitar, logoul pe blocuri roșii în evantai, autocolante pe laptop, un afiș în gară, un ecran și o sacoșă roșie.",
       "metro": "Trei casete luminoase la metrou, o singură campanie: fiecare afiș cu un titlu, o fotografie reală și semnul.",
-      "metroAlt": "Un coridor de metrou cu trei afișe Shades iluminate: o echipă pentru brand și site, fiecare pagină arată ca brandul tău, arată ca brandul care deja ești."
+      "metroAlt": "Un coridor de metrou cu trei afișe Shades iluminate: o echipă pentru brand și site, fiecare pagină arată ca brandul tău, arată ca brandul care deja ești.",
+      "billboardAlt": "Un panou publicitar: titlul pe roșu lângă fotografia unei designere la lucru, logoul Shades dedesubt.",
+      "shelterAlt": "O stație de autobuz în amurg cu trei afișe Shades iluminate din interior.",
+      "screensTitle": "Ecrane",
+      "monitorAlt": "Site-ul Shades pe un monitor: titlul pe negru, două butoane, arcele roșii dedesubt."
     },
     "decks": {
       "title": "Prezentări",

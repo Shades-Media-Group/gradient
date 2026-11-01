@@ -779,7 +779,8 @@
       "role": "Diseñadora de marca",
       "stock": "Sin estucar, de 350 g/m² o más",
       "sample": "Persona y datos de ejemplo. La tarjeta está dibujada en sus proporciones reales.",
-      "kit": "Con el manual de marca: el logotipo cortado por la portada, las tarjetas al lado."
+      "kit": "Con el manual de marca: el logotipo cortado por la portada, las tarjetas al lado.",
+      "cardsAlt": "Tarjetas de visita de Shades sobre tinta: negras, rojas y de papel, con las barras y los arcos rojos."
     },
     "badge": {
       "title": "Credencial para eventos",
@@ -807,7 +808,9 @@
       "boxText": "Una caja rígida en tinta soft-touch: la marca pequeña en la tapa, el espectro como un solo ribete en la unión.",
       "rule1": "Usa los archivos a un color para bordado, foil, grabado y serigrafía.",
       "rule2": "Nunca imprimas el símbolo a menos de 8 mm.",
-      "rule3": "Un personaje por artículo. Los personajes nunca reemplazan al símbolo."
+      "rule3": "Un personaje por artículo. Los personajes nunca reemplazan al símbolo.",
+      "toteAlt": "Una persona lleva una bolsa roja de Shades con arcos negros y rojos, junto a un muro de hormigón al sol.",
+      "stickersAlt": "La tapa de un portátil plateado con pegatinas de Shades: la marca en rojo, negro y tonos pálidos."
     },
     "signature": {
       "title": "Firma de correo",
@@ -918,13 +921,15 @@
       "b3Label": "Póster, A1",
       "poster": "Pegada de carteles: los dos carteles alternados a lo largo de un muro, con el sol de la tarde.",
       "posterAlt": "Carteles de Shades pegados en fila en un muro de hormigón, tinta y papel alternados, con la sombra de un edificio encima.",
-      "sign": "El logo como rótulo: la marca en una caja roja, las letras separadas de la pared.",
-      "signAlt": "El rótulo de Shades en una pared enlucida: una caja roja con barras blancas y letras negras que proyectan sombras largas con el sol bajo.",
       "campaignTitle": "La campaña en un solo tablero",
       "campaign": "La marca en impresos, exteriores, pantallas y objetos.",
       "campaignAlt": "Shades en uso: tarjetas de visita, carteles de metro, una valla, el logotipo sobre bloques rojos en abanico, pegatinas en un portátil, un cartel de estación, una pantalla y una bolsa roja.",
       "metro": "Tres cajas de luz en el metro, una campaña: cada cartel lleva un titular, una foto real y la marca.",
-      "metroAlt": "Un pasillo de metro con tres carteles iluminados de Shades: un equipo para la marca y la web, cada página se parece a tu marca, parécete a la marca que ya eres."
+      "metroAlt": "Un pasillo de metro con tres carteles iluminados de Shades: un equipo para la marca y la web, cada página se parece a tu marca, parécete a la marca que ya eres.",
+      "billboardAlt": "Una valla: el titular en rojo junto a la foto de una diseñadora trabajando, el logotipo de Shades debajo.",
+      "shelterAlt": "Una marquesina al anochecer con tres carteles de Shades iluminados por dentro.",
+      "screensTitle": "Pantallas",
+      "monitorAlt": "La web de Shades en un monitor: el titular sobre tinta, dos botones, los arcos rojos debajo."
     },
     "decks": {
       "title": "Presentaciones",

@@ -779,7 +779,8 @@
       "role": "Designer de marque",
       "stock": "Non couché, 350 g/m² ou plus",
       "sample": "Personne et coordonnées fictives. La carte est dessinée à ses proportions réelles.",
-      "kit": "Avec la charte graphique : le logotype coupé par la couverture, les cartes à côté."
+      "kit": "Avec la charte graphique : le logotype coupé par la couverture, les cartes à côté.",
+      "cardsAlt": "Cartes de visite Shades sur fond encre : noires, rouges et papier, avec les barres et les arcs rouges."
     },
     "badge": {
       "title": "Badge d'événement",
@@ -807,7 +808,9 @@
       "boxText": "Une boîte rigide en encre toucher doux : la marque en petit sur le couvercle, le spectre en un seul liseré à la jointure.",
       "rule1": "Utilisez les fichiers une couleur pour la broderie, la dorure, la gravure et la sérigraphie.",
       "rule2": "N'imprimez jamais le symbole en dessous de 8 mm.",
-      "rule3": "Un personnage par objet. Les personnages ne remplacent jamais le symbole."
+      "rule3": "Un personnage par objet. Les personnages ne remplacent jamais le symbole.",
+      "toteAlt": "Une personne porte un tote rouge Shades aux arcs noirs et rouges, devant un mur de béton au soleil.",
+      "stickersAlt": "Le capot d'un portable argenté avec des autocollants Shades : la marque en rouge, en noir et en teintes pâles."
     },
     "signature": {
       "title": "Signature e-mail",
@@ -918,13 +921,15 @@
       "b3Label": "Affiche, A1",
       "poster": "Affichage sauvage : les deux affiches en alternance le long d’un mur, au soleil couchant.",
       "posterAlt": "Des affiches Shades collées en rang sur un mur de béton, encre et papier en alternance, l’ombre d’un immeuble par-dessus.",
-      "sign": "Le logo en enseigne : la marque en caisson rouge, les lettres décollées du mur.",
-      "signAlt": "L’enseigne Shades sur un mur enduit : un caisson rouge à barres blanches et des lettres noires qui projettent de longues ombres au soleil rasant.",
       "campaignTitle": "La campagne sur une planche",
       "campaign": "La marque en impression, en affichage, sur écran et en objets.",
       "campaignAlt": "Shades en usage : cartes de visite, affiches de métro, un panneau, le logo sur des blocs rouges en éventail, des autocollants sur un portable, une affiche en gare, un écran et un tote rouge.",
       "metro": "Trois caissons lumineux dans le métro, une campagne : chaque affiche porte un titre, une vraie photo et la marque.",
-      "metroAlt": "Un couloir de métro avec trois affiches Shades éclairées : une équipe pour la marque et le site, chaque page ressemble à votre marque, ressemblez à la marque que vous êtes déjà."
+      "metroAlt": "Un couloir de métro avec trois affiches Shades éclairées : une équipe pour la marque et le site, chaque page ressemble à votre marque, ressemblez à la marque que vous êtes déjà.",
+      "billboardAlt": "Un panneau : le titre sur rouge à côté de la photo d'une designer au travail, le logo Shades dessous.",
+      "shelterAlt": "Un abribus au crépuscule avec trois affiches Shades éclairées de l'intérieur.",
+      "screensTitle": "Écrans",
+      "monitorAlt": "Le site Shades sur un écran : le titre sur encre, deux boutons, les arcs rouges dessous."
     },
     "decks": {
       "title": "Présentations",
