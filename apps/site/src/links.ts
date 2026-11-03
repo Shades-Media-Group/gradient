@@ -18,6 +18,7 @@ export const LINKS: Record<string, string> = {
   imagerefold: 'https://imagerefold.shades.md',
   lmsRepo: 'https://github.com/CristianBrinza/lms',
   imagerefoldRepo: 'https://github.com/Shades-Media-Group/ImageRefold',
+  socialmonitor: 'https://socialmonitor.shades.md',
   socialmonitorRepo: 'https://github.com/Shades-Media-Group/SocialMonitor',
   newProject: `${REPO}/blob/main/docs/guides/start-a-project.md`,
   contact: 'mailto:support@shades.md',
