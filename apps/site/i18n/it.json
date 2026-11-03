@@ -104,7 +104,8 @@
       "next": "In arrivo",
       "progress": "In corso",
       "socialmonitor": "Social listening che gira sul tuo computer: una dashboard gratuita e open source, e un server MCP per Claude.",
-      "crm": "Il nostro CRM interno, costruito su Gradient a partire dalla pagina di accesso e servito dal nostro server."
+      "crm": "Il nostro CRM interno, costruito su Gradient a partire dalla pagina di accesso e servito dal nostro server.",
+      "popfox": "Un media server di casa e un'app TV. Ci insegna come si legge Gradient dal divano, con il telecomando."
     },
     "install": {
       "title": "Tre modi per iniziare.",
@@ -159,6 +160,7 @@
       "private": "Solo su invito.",
       "socialmonitor": "Segui i brand su Instagram, Facebook e TikTok: ogni post e commento conservato sul tuo computer, diviso dall’IA in positivi e negativi.",
       "crm": "Il CRM dell'azienda, per clienti e trattative. Gira sul server di Shades.",
+      "popfox": "I tuoi film e le tue serie sulla TV, dal tuo computer, senza abbonamento. Un media server di casa e un'app per TV Samsung.",
       "staff": "Solo per il team."
     }
   },
@@ -1009,8 +1011,7 @@
       "text": "I prodotti che partiranno da questo sistema invece che da un template.",
       "shades": "Il sito dell'agenzia, ricostruito: tenere le idee migliori, eliminare l'aspetto da template.",
       "planned": "In programma",
-      "socialmonitor": "Social listening che gira sul tuo computer, costruito su Gradient fin dalla prima schermata.",
-      "crm": "Il CRM aziendale per clienti e trattative, costruito su Gradient dalla prima schermata."
+      "popfox": "Un media server di casa con un'app per TV Samsung: Gradient su un televisore, guidato dal telecomando."
     },
     "start": {
       "title": "Avvia un nuovo progetto",

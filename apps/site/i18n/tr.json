@@ -104,7 +104,8 @@
       "next": "Sırada",
       "progress": "Yapım aşamasında",
       "socialmonitor": "Bilgisayarınızda çalışan sosyal dinleme: ücretsiz, açık kaynaklı bir pano ve Claude için bir MCP sunucusu.",
-      "crm": "İç CRM'imiz: giriş sayfasından itibaren Gradient ile yapıldı ve kendi sunucumuzda çalışıyor."
+      "crm": "İç CRM'imiz: giriş sayfasından itibaren Gradient ile yapıldı ve kendi sunucumuzda çalışıyor.",
+      "popfox": "Bir ev medya sunucusu ve TV uygulaması. Gradient'in kanepeden, kumandayla nasıl okunduğunu bize öğretiyor."
     },
     "install": {
       "title": "Üç giriş yolu.",
@@ -159,6 +160,7 @@
       "private": "Yalnızca davetle.",
       "socialmonitor": "Markaları Instagram, Facebook ve TikTok’ta izleyin: her gönderi ve yorum bilgisayarınızda saklanır, yapay zekâ iyi ve kötü diye ayırır.",
       "crm": "Şirketin kendi CRM'i; müşteriler ve anlaşmalar için. Shades'in kendi sunucusunda çalışır.",
+      "popfox": "Kendi film ve dizileriniz televizyonunuzda, kendi bilgisayarınızdan, abonelik olmadan. Bir ev medya sunucusu ve Samsung TV uygulaması.",
       "staff": "Yalnızca ekip için."
     }
   },
@@ -1009,8 +1011,7 @@
       "text": "Bir şablondan değil, bu sistemden başlayacak ürünler.",
       "shades": "Ajans sitesi, yeniden: en iyi fikirlerini koru, şablon görüntüsünü at.",
       "planned": "Planlandı",
-      "socialmonitor": "Bilgisayarınızda çalışan sosyal dinleme, ilk ekranından itibaren Gradient üzerine kurulu.",
-      "crm": "Müşteriler ve anlaşmalar için şirket CRM'i; ilk ekranından itibaren Gradient ile yapılıyor."
+      "popfox": "Samsung TV uygulamalı bir ev medya sunucusu: televizyonda, kumandayla kullanılan Gradient."
     },
     "start": {
       "title": "Yeni bir proje başlat",

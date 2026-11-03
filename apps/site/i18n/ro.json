@@ -104,7 +104,8 @@
       "next": "Urmează",
       "progress": "În lucru",
       "socialmonitor": "Monitorizare socială care rulează pe calculatorul tău: un dashboard gratuit, open-source, și un server MCP pentru Claude.",
-      "crm": "CRM-ul nostru intern, construit pe Gradient de la pagina de autentificare și rulat de pe propriul server."
+      "crm": "CRM-ul nostru intern, construit pe Gradient de la pagina de autentificare și rulat de pe propriul server.",
+      "popfox": "Un server media de acasă și o aplicație TV. Ne învață cum se citește Gradient de pe canapea, cu telecomanda."
     },
     "install": {
       "title": "Trei moduri de a începe.",
@@ -159,6 +160,7 @@
       "private": "Doar pe bază de invitație.",
       "socialmonitor": "Urmărește brandurile pe Instagram, Facebook și TikTok: fiecare postare și comentariu păstrate pe calculatorul tău, sortate de AI în bune și rele.",
       "crm": "CRM-ul companiei, pentru clienți și oferte. Rulează pe serverul propriu Shades.",
+      "popfox": "Filmele și serialele tale pe televizor, de pe propriul calculator, fără abonament. Un server media de acasă și o aplicație pentru televizoarele Samsung.",
       "staff": "Doar pentru echipă."
     }
   },
@@ -1009,8 +1011,7 @@
       "text": "Produsele care vor porni de la acest sistem, nu de la un șablon.",
       "shades": "Site-ul agenției, refăcut: păstrăm cele mai bune idei, renunțăm la aspectul de șablon.",
       "planned": "Planificat",
-      "socialmonitor": "Monitorizare socială care rulează pe calculatorul tău, construită pe Gradient de la primul ecran.",
-      "crm": "CRM-ul companiei pentru clienți și oferte, construit pe Gradient de la primul ecran."
+      "popfox": "Un server media de acasă cu o aplicație pentru televizoarele Samsung: Gradient pe televizor, condus cu telecomanda."
     },
     "start": {
       "title": "Începe un proiect nou",
