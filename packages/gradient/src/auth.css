@@ -264,7 +264,7 @@
   font-weight: 700;
 }
 
-/* Shades login ---------------------------------------------------------- */
+/* Shades ID ------------------------------------------------------------- */
 
 /* One Shades account for every Shades product (Shades ID). The same layout, with the company
    instead of a product: the brand panel turns Shades red with the white lockup, and the form's
@@ -314,7 +314,7 @@
   background: var(--g-line);
 }
 
-/* "Shades login" on a product's own sign-in, under "Forgot password": transparent with a hairline,
+/* "Continue with Shades ID" on a product's own sign-in, under "Forgot password": transparent with a hairline,
    the Shades mark before the words. */
 .g-auth-form .g-auth-sso {
   display: inline-flex;

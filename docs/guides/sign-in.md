@@ -71,7 +71,7 @@ field gets `aria-invalid`.
   `g-hint` under the email ("Staff only. An admin creates your account.").
 - Light by default; the theme switch changes it right there.
 
-## Shades login
+## Shades ID
 
 One Shades account (Shades ID, at id.shades.md) signs a person in to every Shades product except
 LMS. It is for `@shades.md` accounts only.
@@ -96,7 +96,7 @@ Each state is one screen. Errors sit under their field as a `g-error`, and the f
 
 | State | Title | What it says | Actions |
 | --- | --- | --- | --- |
-| Not a Shades address | Sign in with Shades | under the field: "Shades login is for @shades.md accounts. Use your product sign-in instead." | Sign in |
+| Not a Shades address | Sign in with Shades | under the field: "Shades ID is for @shades.md accounts. Use your product sign-in instead." | Sign in |
 | Locked | Account locked for now | "Too many wrong passwords. Try again in 15 minutes, or reset your password to get in now." | Reset password, then "Use another account" as `g-btn--ghost` |
 | No role yet | You're in, but not set up yet | "Your Shades account works, but it has no access to <product> yet. Ask a super admin to give you a role, then sign in again." | Sign in again, then "Sign out" as `g-btn--ghost` |
 
@@ -108,7 +108,7 @@ Under "Forgot password", a `g-auth-or` and then the link:
 <p class="g-auth-or">or</p>
 <a class="g-auth-sso" href="https://id.shades.md/…">
   <svg><!-- brand/shades-mark.svg --></svg>
-  Shades login
+  Continue with Shades ID
 </a>
 ```
 
