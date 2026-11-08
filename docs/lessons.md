@@ -30,7 +30,7 @@ If a rule seems to be in the way, raise it in an issue. Don't quietly break it.
 13. **Flat marks.** Logos are flat and two-dimensional, like Google's and Apple's. No shadows, no glossy 3D app-icon renders. Twenty-plus logo rounds on PageRecast ended on a flat overlap.
 14. **Products can have their own mark.** PageRecast has its own identity and relies less on Shades visuals. A product uses Gradient's type, roles and rules, not necessarily the Shades mark.
 15. **The logo comes from shades.md.** The Claude Design explorations draw it wrong (rounded corners, pink bars). Gradient generates it from the site's own files.
-16. **No gradient text, glass, glow or decorative blur.** The old shades.md hero used rainbow gradient words, a blurred aurora image, a glowing cursor trail and a mouse "scroll" cue. All four are out.
+16. **No gradient text, glass, glow or decorative blur.** The old shades.md hero used rainbow gradient words, a blurred aurora image, a glowing cursor trail and a mouse "scroll" cue. All four are out. One exception since 2026-11-08: a single line of a product site's hero headline may carry the product's own colours, drifting slowly.
 
 ## Craft
 
