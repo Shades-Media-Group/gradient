@@ -423,7 +423,21 @@ function bookVersions(): BookVersion[] {
   return JSON.parse(readFileSync(f, 'utf8')) as BookVersion[]
 }
 
-const fileAt = (commit: string, file: string) => git('show', `${commit}:rulebook/${file}`)
+// A removed library entry leaves no trace in old versions: lines that point to an entry id
+// no longer in library/entries/ are dropped from every historical chapter.
+const entryIds = () => {
+  const dir = join(RULEBOOK, 'library/entries')
+  return new Set(existsSync(dir) ? readdirSync(dir).map((f) => f.replace(/\.json$/, '')) : [])
+}
+let liveEntries: Set<string> | undefined
+const dropRemovedEntries = (md: string) => {
+  liveEntries ??= entryIds()
+  return md.split('\n').filter((l) => !/75-inspiration-library\.md/.test(l) || [...l.matchAll(/`([a-z0-9-]+)`/g)].every((m) => liveEntries!.has(m[1]!))).join('\n')
+}
+const fileAt = (commit: string, file: string) => {
+  const md = git('show', `${commit}:rulebook/${file}`)
+  return md === null ? null : dropRemovedEntries(md)
+}
 const changedFiles = (from: string, to: string) =>
   (git('diff', '--name-status', from, to, '--', 'rulebook') ?? '')
     .split('\n').filter(Boolean)
