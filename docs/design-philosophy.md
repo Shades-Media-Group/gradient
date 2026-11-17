@@ -47,7 +47,7 @@ A page reads as generated when it is the average of everything else. Anthropic c
 
 12. **Design the phone, not a shrunken desktop.** Most visitors are on a phone: decide per breakpoint what to add, remove or reshape.
 13. **Thumb reach.** Primary actions are full-width and low on the screen; nothing important hides behind a banner.
-14. **Swipe, don't stack.** Sets of related items (merchandise, products) become a horizontal row to swipe on a phone, with the next item peeking.
+14. **Same language, reflowed.** Tablet and phone keep the desktop's design language (hairlines, type, order, colour). Sets reflow into a grid, 2 across on tablet and stacked on phone, never bordered cards or swipe carousels the desktop doesn't have. Swipe rows stay only for long collections: galleries, media rows, product lists, TV apps.
 
 ### Interface
 
