@@ -48,7 +48,7 @@ Live first on the server PC (each app's "[Server]" chat edits `~/shades/<repo>`,
 
 1. Name the one idea the section or screen must get across, in a sentence.
 2. Pick a device that the previous section did not use.
-3. Decide the phone layout first: what is added, removed or reshaped below 560 px. Sets of related items swipe on a phone; they don't stack.
+3. Decide the phone layout first: what is added, removed or reshaped below 560 px. Tablet and phone keep the desktop's design language (hairlines, type, order, colour), reflowed: sets go 2 across on tablet and stack on phone, never bordered cards or swipe carousels the desktop doesn't have; swipe rows only for long collections (galleries, media, product lists, TV apps). Content is never hidden waiting for scroll: no fade-up or slide-up reveals.
 
 ## Graphics
 
