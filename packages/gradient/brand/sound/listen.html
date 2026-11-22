@@ -285,8 +285,8 @@ async function save(id, patch) {
   paint(id); refilter();
   const msg = list.querySelector(`[data-rate="${id}"] .saved`);
   try {
+    localStorage.setItem(KEY, JSON.stringify(ratings));
     if (db) await db.collection("ratings").doc(id).set(r);
-    else localStorage.setItem(KEY, JSON.stringify(ratings));
     msg.textContent = db ? "Saved" : "Saved here";
   } catch (e) { msg.textContent = "Not saved"; console.error(e); }
 }
@@ -309,6 +309,7 @@ window.claude?.use?.("db").then(store => {
   db = store;
   db.collection("ratings").onSnapshot(snap => {
     snap.docs.forEach(doc => { ratings[doc.id] = doc.data(); paint(doc.id); });
+    localStorage.setItem(KEY, JSON.stringify(ratings));
     applyFilter();
   }, err => console.error(err));
 });
