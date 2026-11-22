@@ -1,4 +1,4 @@
-"""Shades sonic logo: three directions, synthesised from code.
+"""Shades sonic logo: the Spectrum versions, synthesised from code.
 
 Every sound is rebuilt exactly from this file: no samples, no generated audio.
 The motif is three notes at the mark's three strengths (100 / 75 / 50 %).
@@ -44,49 +44,37 @@ def fade(sig, ms_in=2, ms_out=30):
 
 # ---- voices -----------------------------------------------------------------
 
-def glass(f, dur, vel):
-    """Struck glass bar: inharmonic bar modes, the high ones die fast."""
-    t = t_axis(dur)
-    modes = [(1.0, 1.0, 1.6), (2.756, 0.32, 0.55), (5.404, 0.12, 0.22), (8.933, 0.05, 0.1)]
-    sig = sum(a * np.exp(-t / d) * np.sin(2 * np.pi * f * r * t) for r, a, d in modes)
-    contact = sosfilt(butter(2, [800, 5000], "bandpass", fs=SR, output="sos"), RNG.standard_normal(t.size))
-    sig += 0.35 * np.exp(-t / 0.004) * contact * vel  # mallet contact
-    return fade(sig * vel)
+def warm(f, dur, vel, attack=0.012, decay=2.2, cut=(1.6, 6.6), open_at=0.0, open_time=1.0,
+         detunes=(-0.0025, 0.0, 0.0025)):
+    """The Spectrum voice, general form: a warm saw-like tone whose filter opens, dark blue to warm orange.
 
-
-def spectrum(f, dur, vel, open_at=0.0, open_time=1.0):
-    """Warm saw-like voice whose filter opens over time: blue to orange."""
+    f is a frequency in Hz or an array per sample (for a glide). cut is the filter's start and end,
+    in multiples of the note.
+    """
     t = t_axis(dur)
-    env = (1 - np.exp(-t / 0.012)) * np.exp(-t / 2.2)
-    cutoff = f * (1.6 + 5.0 * np.clip((t - open_at) / open_time, 0, 1) ** 1.5)
+    f = np.broadcast_to(np.asarray(f, float), t.shape)
+    env = (1 - np.exp(-t / attack)) * np.exp(-t / decay)
+    cutoff = f * (cut[0] + (cut[1] - cut[0]) * np.clip((t - open_at) / open_time, 0, 1) ** 1.5)
     sig = np.zeros_like(t)
-    for detune in (-0.0025, 0.0, 0.0025):
-        fk = f * (1 + detune)
-        for k in range(1, 24):
-            if fk * k > 16_000:
+    for d in detunes:
+        phase = 2 * np.pi * np.cumsum(f * (1 + d)) / SR
+        for k in range(1, 32):
+            if f.max() * (1 + d) * k > 16_000:
                 break
-            lp = 1 / np.sqrt(1 + (k * fk / cutoff) ** 4)
-            sig += lp / k * np.sin(2 * np.pi * fk * k * t + k * detune * 900)
-    return fade(sig / 3 * env * vel)
+            sig += 1 / np.sqrt(1 + (k * f / cutoff) ** 4) / k * np.sin(k * phase + k * d * 900)
+    return fade(sig / len(detunes) * env * vel)
 
 
-def pluck(f, dur, vel):
-    """Plucked string: harmonics decay faster the higher they sit."""
+def glide(steps, dur, ms=45):
+    """Frequency curve through (time, note) steps, each change gliding over `ms`."""
     t = t_axis(dur)
-    sig = np.zeros_like(t)
-    for k in range(1, 18):
-        if f * k > 15_000:
-            break
-        a = (1 / k ** 1.3) * (1 if k % 5 else 0.3)  # plucked a fifth along the string
-        sig += a * np.exp(-t * (1.1 + 0.9 * k ** 1.25)) * np.sin(2 * np.pi * f * k * t * (1 + 0.0004 * k * k))
-    return fade(sig * vel)
-
-
-def paper(vel):
-    """A short dry tick of paper: band-passed noise, 25 ms."""
-    t = t_axis(0.025)
-    sos = butter(2, [2500, 7000], btype="band", fs=SR, output="sos")
-    return fade(sosfilt(sos, RNG.standard_normal(t.size)) * np.exp(-t / 0.006) * vel * 0.6, 0.5, 8)
+    curve = np.full(t.size, np.log(hz(steps[0][1])))
+    for at, note in steps[1:]:
+        target = np.log(hz(note))
+        k = np.clip((t - at) / (ms / 1000), 0, 1)
+        k = k * k * (3 - 2 * k)  # smoothstep
+        curve = curve + (target - curve) * k
+    return np.exp(curve)
 
 
 def sine(f, dur, vel, attack=0.05):
@@ -146,41 +134,88 @@ def master(x):
         if true_peak_db(x) <= CEILING_DBTP:
             break
         x = limit(x, CEILING_DBTP - 0.3)
-    n = int(0.05 * SR)
+    n = int(0.3 * SR)  # held tones: a long fade, so the tail settles instead of stopping
     x[-n:] *= np.linspace(1, 0, n)[:, None] ** 2
     return x
 
 
-# ---- the three directions ---------------------------------------------------
+# ---- the versions -----------------------------------------------------------
+# Round 1 kept only B; struck glass (A) and plucked string (C) were rejected by the Owner.
+# Round 2: five new versions of B. Notes stay in B major's colour: F#, B, C#.
 
-def direction_a():
-    """Steps: three rising fifths on glass, each a lighter shade."""
-    track = np.zeros((int(2.6 * SR), 2))
-    for n, at, s, p in zip(("E5", "B5", "F#6"), (0.0, 0.18, 0.36), STRENGTH, (-0.25, 0.0, 0.25)):
-        place(track, glass(hz(n), 2.6 - at, s), at, p)
-    return mix(track, 0.35, 2.0, 6000)
+NOTES_B = ("F#4", "B4", "C#5")
+WIDE = (-0.006, -0.003, 0.0, 0.003, 0.006)
 
 
-def direction_b():
-    """Spectrum: the three notes rise, then hold together while the colour opens."""
+def spectrum_b():
+    """Round 1 B, unchanged: short, short, long, then the colour opens."""
     track = np.zeros((int(2.9 * SR), 2))
-    for n, at, s, p in zip(("F#4", "B4", "C#5"), (0.0, 0.14, 0.34), STRENGTH, (-0.3, 0.3, 0.0)):
-        place(track, spectrum(hz(n), 2.9 - at, s, open_at=0.4 - at, open_time=1.1), at, p)
+    for n, at, s, p in zip(NOTES_B, (0.0, 0.14, 0.34), STRENGTH, (-0.3, 0.3, 0.0)):
+        place(track, warm(hz(n), 2.9 - at, s, open_at=0.4 - at, open_time=1.1), at, p)
     place(track, sine(hz("B2"), 2.5, 0.35, attack=0.2), 0.34)
     return mix(track, 0.3, 2.4, 5000)
 
 
-def direction_c():
-    """Ink and paper: a plucked fall and a settling step, each with a paper tick."""
-    track = np.zeros((int(2.4 * SR), 2))
-    for n, at, s in zip(("C#5", "G#4", "A4"), (0.0, 0.2, 0.4), STRENGTH):
-        place(track, pluck(hz(n), 2.4 - at, s), at)
-        place(track, paper(s), at, 0.15)
-    place(track, sine(hz("A2"), 1.9, 0.3, attack=0.03), 0.4)
-    return mix(track, 0.22, 1.6, 4000)
+def wide():
+    """B with a fuller voice: five detuned strings of light, a slower bloom, a deeper floor."""
+    track = np.zeros((int(3.2 * SR), 2))
+    for n, at, s, p in zip(NOTES_B, (0.0, 0.14, 0.34), STRENGTH, (-0.35, 0.35, 0.0)):
+        place(track, warm(hz(n), 3.2 - at, s, attack=0.03, decay=2.6, cut=(1.3, 8.0),
+                          open_at=0.35 - at, open_time=1.3, detunes=WIDE), at, p)
+    place(track, sine(hz("B2"), 2.8, 0.4, attack=0.25), 0.34)
+    place(track, sine(hz("B1"), 2.8, 0.25, attack=0.4), 0.34)
+    return mix(track, 0.35, 2.8, 5000)
 
 
-DIRECTIONS = {"a-steps": direction_a, "b-spectrum": direction_b, "c-ink": direction_c}
+def arc():
+    """Up a fifth, then a step down to rest: F#, C#, B. Ends at home instead of leaning on."""
+    track = np.zeros((int(3.0 * SR), 2))
+    for n, at, s, p in zip(("F#4", "C#5", "B4"), (0.0, 0.16, 0.38), STRENGTH, (-0.3, 0.3, 0.0)):
+        place(track, warm(hz(n), 3.0 - at, s, attack=0.02, decay=2.4, cut=(1.5, 7.0),
+                          open_at=0.42 - at, open_time=1.2, detunes=WIDE), at, p)
+    place(track, sine(hz("B2"), 2.6, 0.38, attack=0.2), 0.38)
+    return mix(track, 0.32, 2.6, 5000)
+
+
+def bloom():
+    """No attack at all: three notes swell in one after another and open as a single chord."""
+    track = np.zeros((int(3.4 * SR), 2))
+    for n, at, s, p in zip(("B3", "F#4", "C#5"), (0.0, 0.22, 0.44), STRENGTH, (0.0, -0.35, 0.35)):
+        place(track, warm(hz(n), 3.4 - at, s, attack=0.16, decay=2.8, cut=(1.3, 9.0),
+                          open_at=0.5 - at, open_time=1.6, detunes=WIDE), at, p)
+    place(track, sine(hz("B2"), 3.2, 0.18, attack=0.4), 0.0)
+    return mix(track, 0.4, 3.0, 4500)
+
+
+def stroke():
+    """One voice glides F#, B, C# like a single stroke; each note it passes stays behind, fading like the bars."""
+    dur = 3.1
+    track = np.zeros((int(dur * SR), 2))
+    times = (0.0, 0.18, 0.4)
+    lead = warm(glide(list(zip(times, NOTES_B)), dur), dur, 0.7, attack=0.015, decay=2.4,
+                cut=(1.5, 7.5), open_at=0.45, open_time=1.2, detunes=WIDE)
+    place(track, lead, 0.0)
+    for n, at, s, p in zip(NOTES_B, times, STRENGTH, (-0.4, 0.4, 0.0)):
+        place(track, warm(hz(n), dur - at, s * 0.55, attack=0.08, decay=2.2, cut=(1.2, 5.0),
+                          open_at=0.45 - at, open_time=1.2), at, p)
+    place(track, sine(hz("B2"), 2.6, 0.35, attack=0.2), 0.4)
+    return mix(track, 0.32, 2.6, 5000)
+
+
+def cinema():
+    """For the TV open: B's notes over a slow low swell, the colour opening further and longer."""
+    dur = 3.8
+    track = np.zeros((int(dur * SR), 2))
+    for n, at, s, p in zip(NOTES_B, (0.25, 0.42, 0.66), STRENGTH, (-0.35, 0.35, 0.0)):
+        place(track, warm(hz(n), dur - at, s, attack=0.025, decay=3.0, cut=(1.2, 10.0),
+                          open_at=0.7 - at, open_time=2.0, detunes=WIDE), at, p)
+    place(track, sine(hz("B1"), dur, 0.45, attack=0.5), 0.0)
+    place(track, sine(hz("B2"), dur - 0.2, 0.3, attack=0.5), 0.2)
+    return mix(track, 0.45, 3.4, 4500)
+
+
+DIRECTIONS = {"b-spectrum": spectrum_b, "b2-wide": wide, "b3-arc": arc, "b4-bloom": bloom,
+              "b5-stroke": stroke, "b6-cinema": cinema}
 
 
 # ---- audit ------------------------------------------------------------------
