@@ -213,7 +213,7 @@ def glue(x, ratio=2.2, below_peak_db=12):
     over = np.maximum(level / thresh, 1)
     gain = over ** (1 / ratio - 1)
     a = np.exp(-1 / (0.12 * SR))
-    gain = lfilter([1 - a], [1, -a], gain)  # 120 ms release
+    gain = lfilter([1 - a], [1, -a], gain, zi=[a * gain[0]])[0]  # 120 ms release, starting at the first gain, not at silence
     return x * gain[:, None]
 
 
