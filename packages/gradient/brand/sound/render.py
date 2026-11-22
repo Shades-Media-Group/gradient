@@ -97,9 +97,15 @@ def sine(f, dur, vel, attack=0.05, decay=1.2, end=None, rel=1.2):
 # ---- space ------------------------------------------------------------------
 
 def room(seconds=2.2, damp=4500):
-    """Our own stereo impulse response: decorrelated decaying noise."""
+    """Our own stereo impulse response. Random phase, so it sounds like a space, but a smoothed
+    magnitude, so no single pitch is boosted or lost by chance; a fixed seed per room size."""
+    rng = np.random.default_rng(int(seconds * 1000) + damp)
     t = t_axis(seconds)
-    ir = RNG.standard_normal((t.size, 2)) * np.exp(-t / (seconds / 6.9))[:, None]
+    decay = np.exp(-t / (seconds / 6.9))[:, None]
+    spec = np.fft.rfft(rng.standard_normal((t.size, 2)) * decay, axis=0)
+    mag = np.abs(spec)
+    spec *= uniform_filter1d(mag, 400, axis=0) / (mag + 1e-12)
+    ir = np.fft.irfft(spec, t.size, axis=0) * decay ** 0.15
     ir = sosfilt(butter(1, damp, fs=SR, output="sos"), ir, axis=0)
     ir[: int(0.012 * SR)] = 0  # pre-delay
     return ir / np.sqrt((ir ** 2).sum(axis=0))
