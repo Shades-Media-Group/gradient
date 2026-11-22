@@ -48,6 +48,23 @@ The Owner asked for sounds that feel produced, not raw, and for ideas as far apa
 
 **The finish chain**, the same for every idea: human timing and pitch drift, tape saturation with a little wow, EQ (55 Hz high-pass, a dip at 280 Hz, presence at 3.2 kHz, air at 9 kHz), glue compression at 2.2:1, a close room and a hall. Every file has a designed start and a tail that fades out; none stops dead.
 
+### Round 4: one sound you could name
+
+Round 4 follows what makes the best-known product sounds stick. Each one opens on a single physical sound you could name with your eyes shut. The chord blooms out of it after a short rest. Each uses few parts, one timbre that stays in the ear, and a real ending. More takes were made than are shown; weak ones were dropped.
+
+| | Made from | Seconds |
+| --- | --- | --- |
+| **Knock** (r1) | Two knocks on a wooden door; the chord swells up backwards out of the wood and lands on a felt piano | 4.1 |
+| **Three taps** (r2) | Three wood taps at the bars' strengths, a rest, then felt piano and a hummed fifth | 4.2 |
+| **Tuning in** (r3) | Radio hiss narrows through resonators until it becomes a choir on the chord | 4.3 |
+| **Heartbeat** (r4) | Two low heartbeats, then the Spectrum pad opens note by note | 4.3 |
+| **Match** (r5) | A match strikes and catches; strings swell with the flame | 4.2 |
+| **Shutter** (r6) | A camera shutter, then the three notes on an electric piano over a low B | 4.0 |
+
+A marimba roll was tried and dropped: it sat 4 dB quieter on a phone speaker and was mostly low end.
+
+The glue compressor now starts at the first gain instead of at silence; before, it muffled the first 120 ms of a take. The round 3 files were rendered before this fix.
+
 ### The orchestra round
 
 Five ensemble versions (e1 to e5) from the Csound physical models: bowed strings, horn, flute, electric piano, an analog pad and a sine floor, in one hall. Spectrum (b) stays as the reference.
@@ -63,6 +80,7 @@ python3 -m venv .venv && .venv/bin/pip install numpy scipy pyloudnorm
 brew install csound   # 7.x, for orchestra.orc
 .venv/bin/python render.py   # Spectrum versions and the orchestra round
 .venv/bin/python ideas.py    # round 3; or name some: ideas.py i1-hum i5-glass
+.venv/bin/python round4.py   # round 4; or name some: round4.py r1-knock
 ```
 
 Levels: −16 LUFS integrated, true peak under −1 dBTP, checked by the script and by `ffmpeg -i <file> -af ebur128=peak=true -f null -`.
