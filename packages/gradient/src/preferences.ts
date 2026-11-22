@@ -3,7 +3,7 @@
  *
  * A 20 px dot in the bottom-right corner opens a small panel: theme (light,
  * dark, or the system's), larger text, more contrast, less motion, underlined
- * links and easier reading. Choices live in this browser's localStorage and
+ * links, easier reading and colour-blindness correction. Choices live in this browser's localStorage and
  * nowhere else; preferences-boot.js applies them before the first paint.
  * The consent banner (consent.ts) comes with it, and "Privacy choices" in
  * the panel reopens it.
@@ -23,6 +23,7 @@ const ICONS = {
 }
 
 export type Theme = 'light' | 'dark' | 'system'
+export type VisionType = 'protan' | 'deutan' | 'tritan'
 export interface Preferences {
   theme: Theme
   text: boolean
@@ -30,6 +31,9 @@ export interface Preferences {
   motion: boolean
   links: boolean
   reading: boolean
+  /** Colour-vision correction, with the kind of colour blindness it corrects for. */
+  vision: boolean
+  visionType: VisionType
 }
 
 export interface PreferenceLabels {
@@ -45,6 +49,11 @@ export interface PreferenceLabels {
   motion: string
   links: string
   reading: string
+  vision: string
+  visionType: string
+  protan: string
+  deutan: string
+  tritan: string
   saved: string
   reset: string
   privacy: string
@@ -64,6 +73,11 @@ export const ENGLISH: PreferenceLabels = {
   motion: 'Reduce motion',
   links: 'Underline links',
   reading: 'Easier reading',
+  vision: 'Colour blindness',
+  visionType: 'Colours hard to tell apart',
+  protan: 'Red',
+  deutan: 'Green',
+  tritan: 'Blue',
   saved: 'Saved in this browser only.',
   reset: 'Reset',
   privacy: 'Privacy choices',
@@ -78,6 +92,8 @@ const DEFAULTS: Preferences = {
   motion: false,
   links: false,
   reading: false,
+  vision: false,
+  visionType: 'deutan',
 }
 
 /** The attribute each switch sets on <html>. */
@@ -89,6 +105,33 @@ const FLAGS = {
   reading: 'data-g-reading',
 } as const
 type Flag = keyof typeof FLAGS
+
+/**
+ * Daltonisation matrices: colour differences a reader cannot see (Machado 2009
+ * simulation, full severity) are shifted into channels they can (Fidaner).
+ * Applied to <html> as an SVG filter, in linearRGB like the simulation.
+ */
+export const VISION: Record<VisionType, string> = {
+  protan: '1 0 0 0 0 0.479 0.477 0.044 0 0 0.597 -0.689 1.091 0 0 0 0 0 1 0',
+  deutan: '1 0 0 0 0 0.163 0.725 0.112 0 0 0.455 -0.645 1.191 0 0 0 0 0 1 0',
+  tritan: '0.997 -0.484 0.487 0 0 -0.003 0.516 0.487 0 0 0 0 1 0 0 0 0 0 1 0',
+}
+const VISION_TYPES = Object.keys(VISION) as VisionType[]
+
+/** The hidden SVG holding the three correction filters, added once per page. */
+function visionFilters() {
+  if (document.getElementById('g-vision')) return
+  const ns = 'http://www.w3.org/2000/svg'
+  const el = document.createElementNS(ns, 'svg')
+  el.id = 'g-vision'
+  el.setAttribute('aria-hidden', 'true')
+  el.setAttribute('style', 'position:absolute;width:0;height:0;overflow:hidden')
+  el.innerHTML = VISION_TYPES.map(
+    (type) =>
+      `<filter id="g-vision-${type}"><feColorMatrix type="matrix" values="${VISION[type]}"/></filter>`,
+  ).join('')
+  document.body.append(el)
+}
 
 const store = {
   get(key: string) {
@@ -127,7 +170,10 @@ const defaults = (): Preferences => ({ ...DEFAULTS, theme: defaultTheme() })
 
 export function readPreferences(): Preferences {
   try {
-    return { ...defaults(), ...(JSON.parse(store.get(STORAGE_KEY) ?? '{}') as Partial<Preferences>) }
+    return {
+      ...defaults(),
+      ...(JSON.parse(store.get(STORAGE_KEY) ?? '{}') as Partial<Preferences>),
+    }
   } catch {
     return defaults()
   }
@@ -138,6 +184,16 @@ export function applyPreferences(prefs: Preferences, root = document.documentEle
   if (prefs.theme === 'system') root.removeAttribute('data-theme')
   else root.setAttribute('data-theme', prefs.theme)
   for (const flag of Object.keys(FLAGS) as Flag[]) root.toggleAttribute(FLAGS[flag], prefs[flag])
+  const type = VISION_TYPES.includes(prefs.visionType) ? prefs.visionType : DEFAULTS.visionType
+  if (prefs.vision) {
+    visionFilters()
+    root.setAttribute('data-g-vision', type)
+    // On <html> a filter does not change how fixed elements are placed.
+    root.style.filter = `url(#g-vision-${type})`
+  } else if (root.hasAttribute('data-g-vision')) {
+    root.removeAttribute('data-g-vision')
+    root.style.filter = ''
+  }
 }
 
 /** True when the reader asked for less motion, here or in their system. */
@@ -202,6 +258,15 @@ export function preferences(options: PreferencesOptions = {}): () => void {
               `<li><label><span>${escape(label)}</span><input class="g-prefs-switch" type="checkbox" role="switch" data-flag="${flag}" /></label></li>`,
           )
           .join('')}
+        <li><label><span>${escape(t.vision)}</span><input class="g-prefs-switch" type="checkbox" role="switch" data-vision /></label></li>
+        <li class="g-prefs-vision" style="padding: 2px 0 10px" hidden>
+          <div class="g-prefs-themes" role="radiogroup" aria-label="${escape(t.visionType)}">
+            ${VISION_TYPES.map(
+              (type) =>
+                `<button type="button" role="radio" data-vision-choice="${type}"><span>${escape(t[type])}</span></button>`,
+            ).join('')}
+          </div>
+        </li>
       </ul>
       <div class="g-prefs-foot">
         <p>${escape(t.saved)}</p>
@@ -218,6 +283,9 @@ export function preferences(options: PreferencesOptions = {}): () => void {
   const panel = wrap.querySelector<HTMLElement>('.g-prefs-panel')!
   const radios = [...wrap.querySelectorAll<HTMLButtonElement>('[data-theme-choice]')]
   const switches = [...wrap.querySelectorAll<HTMLInputElement>('[data-flag]')]
+  const vision = wrap.querySelector<HTMLInputElement>('[data-vision]')!
+  const visionRow = wrap.querySelector<HTMLElement>('.g-prefs-vision')!
+  const kinds = [...wrap.querySelectorAll<HTMLButtonElement>('[data-vision-choice]')]
 
   const render = () => {
     for (const radio of radios) {
@@ -226,6 +294,13 @@ export function preferences(options: PreferencesOptions = {}): () => void {
       radio.tabIndex = on ? 0 : -1
     }
     for (const input of switches) input.checked = prefs[input.dataset.flag as Flag]
+    vision.checked = prefs.vision
+    visionRow.hidden = !prefs.vision
+    for (const kind of kinds) {
+      const on = kind.dataset.visionChoice === prefs.visionType
+      kind.setAttribute('aria-checked', String(on))
+      kind.tabIndex = on ? 0 : -1
+    }
   }
   const save = (next: Preferences) => {
     prefs = next
@@ -266,6 +341,20 @@ export function preferences(options: PreferencesOptions = {}): () => void {
     input.addEventListener('change', () =>
       save({ ...prefs, [input.dataset.flag as Flag]: input.checked }),
     )
+  vision.addEventListener('change', () => save({ ...prefs, vision: vision.checked }))
+  kinds.forEach((kind, i) => {
+    kind.addEventListener('click', () =>
+      save({ ...prefs, visionType: kind.dataset.visionChoice as VisionType }),
+    )
+    kind.addEventListener('keydown', (event) => {
+      const step = { ArrowRight: 1, ArrowDown: 1, ArrowLeft: -1, ArrowUp: -1 }[event.key]
+      if (!step) return
+      event.preventDefault()
+      const next = kinds[(i + step + kinds.length) % kinds.length]!
+      save({ ...prefs, visionType: next.dataset.visionChoice as VisionType })
+      next.focus()
+    })
+  })
   wrap.querySelector('.g-prefs-reset')!.addEventListener('click', () => {
     store.remove(STORAGE_KEY)
     save(defaults())

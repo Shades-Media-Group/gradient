@@ -11,6 +11,11 @@ try {
   if (theme === 'light' || theme === 'dark') root.setAttribute('data-theme', theme)
   for (const flag of ['text', 'contrast', 'motion', 'links', 'reading'])
     if (prefs[flag]) root.setAttribute(`data-g-${flag}`, '')
+  const vision = prefs.visionType || 'deutan'
+  if (prefs.vision && ['protan', 'deutan', 'tritan'].includes(vision)) {
+    root.setAttribute('data-g-vision', vision)
+    root.style.filter = `url(#g-vision-${vision})`
+  }
 } catch {
   // No storage: the page keeps the system's settings.
 }

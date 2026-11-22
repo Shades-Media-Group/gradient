@@ -105,7 +105,7 @@ The files themselves are under `shades-gradient/brand/*`. They are trademarks of
 
 ### Display and accessibility panel
 
-A 20 px dot in the bottom-right corner opens a panel. It offers light, dark or the system theme, plus larger text, more contrast, reduced motion, underlined links and easier reading. Choices stay in the reader's browser. A one-time notice says so, because the page sets no cookies.
+A 20 px dot in the bottom-right corner opens a panel. It offers light, dark or the system theme, plus larger text, more contrast, reduced motion, underlined links, easier reading and colour-blindness correction for red, green or blue. Choices stay in the reader's browser. A one-time notice says so, because the page sets no cookies.
 
 ```html
 <!-- In <head>, before the stylesheets: applies the choices before the first paint -->
@@ -132,6 +132,7 @@ The panel works on sites that don't use the rest of Gradient: its colours fall b
 
 - `data-theme` for light or dark
 - `data-g-text`, `data-g-contrast`, `data-g-motion`, `data-g-links` and `data-g-reading` for the other options
+- `data-g-vision="protan" | "deutan" | "tritan"` while colour-blindness correction is on; the page then carries an SVG colour filter on `<html>`
 
 A site's own styles can respond to them too.
 
