@@ -69,6 +69,22 @@ The glue compressor now starts at the first gain instead of at silence; before, 
 
 Five ensemble versions (e1 to e5) from the Csound physical models: bowed strings, horn, flute, electric piano, an analog pad and a sine floor, in one hall. Spectrum (b) stays as the reference.
 
+### Round 5: new instruments
+
+Every earlier take shared the same three notes (F♯, B, C♯), the B chord ending, the felt piano and the same hall. Round 5 drops all four. Each idea has its own instrument, key and room. Three stay close to Mouth and Ink and paper; four go somewhere new. Mouth (i7) and Ink and paper (i6) stay as they are.
+
+| | Made from | Seconds |
+| --- | --- | --- |
+| **Mm-hm** (s1) | Three tongue clocks, then a hummed "mm-hm" that falls; key of D | 3.9 |
+| **Typewriter** (s2) | Three keys, the carriage return, then a clarinet slurring A4 to E5 | 4.1 |
+| **Water** (s3) | Three drops, a plunge, then rising bubbles; E major | 3.7 |
+| **Talking drum** (s4) | A drum bending up, a tap, a long bend down, with a shaker; D | 3.7 |
+| **Handpan** (s5) | A low D ding, then a roll up the D minor scale | 4.3 |
+| **Harmonica** (s6) | Blow, draw, then a held C chord | 3.9 |
+| **Snap, clap, stomp** (s7) | The body alone: a snap, four hands clapping, a foot on a wooden floor | 3.3 |
+
+A drum machine take was dropped: it sat at −26 LUFS on a phone speaker.
+
 ## Files
 
 `directions/shades-logo-<version>-<seconds>s.{wav,m4a,mp3}`: 48 kHz, 24-bit WAV master, AAC 256 kb/s, MP3 256 kb/s. `directions/audit.json` holds each file's measurements.
@@ -81,6 +97,7 @@ brew install csound   # 7.x, for orchestra.orc
 .venv/bin/python render.py   # Spectrum versions and the orchestra round
 .venv/bin/python ideas.py    # round 3; or name some: ideas.py i1-hum i5-glass
 .venv/bin/python round4.py   # round 4; or name some: round4.py r1-knock
+.venv/bin/python round5.py   # round 5; or name some: round5.py s3-water
 ```
 
 Levels: −16 LUFS integrated, true peak under −1 dBTP, checked by the script and by `ffmpeg -i <file> -af ebur128=peak=true -f null -`.
