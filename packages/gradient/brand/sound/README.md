@@ -119,6 +119,23 @@ The Owner scored Heart, opening (t8) 10 of 10. The sound logos people remember s
 | **Pops, opening** (u9) | Three cheek pops on the tune, then the chord | 4.5 |
 | **Heart, wide** (u10) | The chord opens slowly and travels left to right over a low floor | 4.9 |
 
+### Round 8: ten different worlds
+
+The Owner liked round 7 only because it was the only option: every take kept the same core and sounded alike. Round 8 drops the core. Each take comes from its own sound world, with its own instrument family, key, mode and length.
+
+| | Made from | Seconds |
+| --- | --- | --- |
+| **Stamp** (v1) | A rubber stamp pressed twice on paper, then a piano on an open fifth; A | 3.7 |
+| **Split** (v2) | One pure note splits into a wide chord, the voices gliding apart; F♯ | 4.3 |
+| **Low hit** (v3) | One low hit of saws, the floor dropping under it, a minor chord on top; C minor | 4.2 |
+| **Amen** (v4) | A drawbar organ through a spinning speaker, the four-to-one cadence; G | 4.3 |
+| **Plain piano** (v5) | Three sung notes on a piano, a step down then up a fourth, and the chord; C | 4.1 |
+| **Beatbox** (v6) | The mouth as a band: kick, pop, a "pf", and a hum that lands the bar; D | 2.9 |
+| **Horns** (v7) | Two pickup notes on the horn, then an open fifth held by the section; B♭ | 4.1 |
+| **Tape stop** (v8) | An electric piano chord, then the tape stops and the pitch sinks; E♭ | 3.3 |
+| **Bass slide** (v9) | A synth bass slides up an octave, a snap, a chord on the off-beat; E | 3.3 |
+| **Cello** (v10) | One bowed cello, two long notes a sixth apart; D | 4.9 |
+
 ## Files
 
 `directions/shades-logo-<version>-<seconds>s.{wav,m4a,mp3}`: 48 kHz, 24-bit WAV master, AAC 256 kb/s, MP3 256 kb/s. `directions/audit.json` holds each file's measurements.
@@ -134,6 +151,7 @@ brew install csound   # 7.x, for orchestra.orc
 .venv/bin/python round5.py   # round 5; or name some: round5.py s3-water
 .venv/bin/python round6.py   # round 6; or name some: round6.py t3-thumb
 .venv/bin/python round7.py   # round 7; or name some: round7.py u3
+.venv/bin/python round8.py   # round 8; or name some: round8.py v3
 ```
 
 Levels: −16 LUFS integrated, true peak under −1 dBTP, checked by the script and by `ffmpeg -i <file> -af ebur128=peak=true -f null -`.
