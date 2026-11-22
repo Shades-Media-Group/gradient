@@ -11,11 +11,13 @@ Needs ffmpeg with libmp3lame on PATH.
 
 import json
 import subprocess
+import tempfile
 from pathlib import Path
 
 import numpy as np
 import pyloudnorm as pyln
 from scipy.ndimage import maximum_filter1d, uniform_filter1d
+from scipy.io import wavfile
 from scipy.signal import butter, fftconvolve, resample_poly, sosfilt
 
 SR = 48_000
@@ -226,6 +228,94 @@ def cinema():
     return track + mix(low, 0.3, 3.0, 3000)
 
 
+# ---- the ensemble (Csound) ----------------------------------------------------
+# Round 3: the same Start, Bloom and Outro, played by synthesised instruments in orchestra.orc:
+# bowed strings, a soft horn, flute, electric piano, the analog pad, a sine floor.
+
+ORC = Path(__file__).parent / "orchestra.orc"
+STRINGS, HORN, FLUTE, KEYS, PAD, FLOOR = 1, 2, 3, 4, 5, 6
+
+
+def csound(notes, dur, room=(0.55, 0.88, 7000)):
+    """Render a list of notes through the orchestra. A note is
+    (instrument, start, length, note name, amplitude, pan, outro start, outro length, open at, open time, attack);
+    outro and opening times are absolute here and made relative to each note."""
+    lines = []
+    for ins, at, length, n, amp, pan, end, rel, op, opt, att in notes:
+        f = hz(n[0]) * 2 ** (n[1] / 1200) if isinstance(n, tuple) else hz(n)  # (note, cents) detunes
+        lines.append(f"i {ins} {at:.4f} {length:.4f} {f:.4f} {amp} {pan} "
+                     f"{end - at:.4f} {rel} {op - at:.4f} {opt} {att}")
+    lines.append(f"i 99 0 {dur + 0.05} {room[0]} {room[1]} {room[2]}")
+    with tempfile.TemporaryDirectory() as tmp:
+        sco, wav = Path(tmp) / "s.sco", Path(tmp) / "o.wav"
+        sco.write_text("\n".join(lines) + "\ne\n")
+        subprocess.run(["csound", "-d", "-m0", "--nodisplays", "-f", "-W", "-o", str(wav), str(ORC), str(sco)],
+                       check=True, capture_output=True)
+        _, x = wavfile.read(wav)
+    x = x[: int(dur * SR)].astype(float)
+    return np.pad(x, ((0, int(dur * SR) - x.shape[0]), (0, 0)))
+
+
+def section(ins, n, at, amp, pan, end, rel, op, opt, att, dur, players=3):
+    """A section: several players on one note, slightly apart in pitch, time and place."""
+    out = []
+    for i in range(players):
+        cents = (i - (players - 1) / 2) * 5
+        out.append((ins, at + 0.012 * i, dur - at, (n, cents), amp / players ** 0.5,
+                    min(1, max(0, pan + (i - 1) * 0.12)), end, rel, op, opt, att))
+    return out
+
+
+def ensemble(parts, times=(0.0, 0.14, 0.34), notes=NOTES_B, end=1.9, rel=1.2, tail=0.7,
+             open_at=0.4, open_time=1.2, room=(0.55, 0.88, 7000)):
+    """Start, Bloom, Outro, played by several instruments.
+
+    parts: (instrument, octave shift, level, attack, players). Every part plays the three notes
+    at the mark's strengths. Home (a low B floor and a B3 that settles in at the outro) is added
+    to every version.
+    """
+    dur = end + rel + tail
+    score = []
+    for ins, octave, level, att, players in parts:
+        for n, at, s, pan in zip(notes, times, STRENGTH, (0.3, 0.7, 0.5)):
+            name = n[:-1] + str(int(n[-1]) + octave)
+            score += section(ins, name, at, level * s, pan, end, rel, open_at, open_time, att, dur, players)
+    score.append((FLOOR, times[-1], dur - times[-1], "B2", 0.3, 0.5, end, rel, open_at, open_time, 0.25))
+    land = end - 0.15
+    score += section(STRINGS, "B3", land, 0.28, 0.5, end + 0.25, rel, open_at, open_time, 0.2, dur, 3)
+    return csound(score, dur, room)
+
+
+def strings():
+    """A string section holds the three notes and brightens as the bow presses in."""
+    return ensemble([(STRINGS, 0, 0.5, 0.12, 3), (STRINGS, -1, 0.3, 0.2, 3)])
+
+
+def horns():
+    """Strings with a soft horn doubling them: the most cinematic."""
+    return ensemble([(STRINGS, 0, 0.45, 0.12, 3), (HORN, 0, 0.22, 0.15, 2)], end=2.0, rel=1.3,
+                    room=(0.6, 0.9, 6500))
+
+
+def keys():
+    """An electric piano strikes the three notes; the analog pad holds them and opens."""
+    return ensemble([(KEYS, 0, 0.5, 0.004, 1), (PAD, 0, 0.3, 0.06, 1), (PAD, -1, 0.18, 0.1, 1)])
+
+
+def air():
+    """A flute plays the three notes over held strings."""
+    return ensemble([(FLUTE, 0, 0.45, 0.05, 1), (STRINGS, -1, 0.3, 0.2, 3)])
+
+
+def score_open():
+    """For the TV open: everything together, a low swell first, longer bloom and outro."""
+    return ensemble([(PAD, 0, 0.25, 0.06, 1), (STRINGS, 0, 0.4, 0.12, 3), (HORN, 0, 0.18, 0.15, 2),
+                     (KEYS, 1, 0.2, 0.004, 1)], times=(0.25, 0.42, 0.66), end=2.6, rel=1.4, tail=0.8,
+                    open_at=0.7, open_time=1.6, room=(0.6, 0.9, 6500))
+
+
+ENSEMBLE = {"e1-strings": strings, "e2-horns": horns, "e3-keys": keys, "e4-air": air, "e5-score": score_open}
+
 DIRECTIONS = {"b-spectrum": spectrum_b, "b2-wide": wide, "b3-arc": arc, "b4-bloom": bloom,
               "b5-stroke": stroke, "b6-cinema": cinema}
 
@@ -268,11 +358,17 @@ def write(name, x):
 
 if __name__ == "__main__":
     report = {}
-    for name, build in DIRECTIONS.items():
+    import sys
+    todo = {**DIRECTIONS, **ENSEMBLE}
+    if len(sys.argv) > 1:
+        todo = {k: v for k, v in todo.items() if any(a in k for a in sys.argv[1:])}
+    old = json.loads((OUT / "audit.json").read_text()) if (OUT / "audit.json").exists() else {}
+    report.update({k: v for k, v in old.items() if not any(k.startswith(f"shades-logo-{n}-") for n in todo)})
+    for name, build in todo.items():
         x = master(build())
         stem = write(name, x)
         report[stem.name] = audit(x)
         assert report[stem.name]["true_peak_dbtp"] <= -1.0, stem.name
         assert abs(report[stem.name]["lufs"] - TARGET_LUFS) < 0.5, stem.name
-    (OUT / "audit.json").write_text(json.dumps(report, indent=2) + "\n")
-    print(json.dumps(report, indent=2))
+    (OUT / "audit.json").write_text(json.dumps(dict(sorted(report.items())), indent=2) + "\n")
+    print(json.dumps({k: v for k, v in report.items() if any(k.startswith(f"shades-logo-{n}-") for n in todo)}, indent=2))
