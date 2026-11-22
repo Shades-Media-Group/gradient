@@ -134,7 +134,7 @@ for (const d of DIRS) {
     list.append(h, p, ol);
   }
   const li = document.createElement("li");
-  li.dataset.id = d.id; d.li = li; d.heads = [ol.previousElementSibling.previousElementSibling, ol.previousElementSibling, ol];
+  d.li = li; d.heads = [ol.previousElementSibling.previousElementSibling, ol.previousElementSibling, ol];
   li.innerHTML = `
     <div><h3>${d.name}</h3><p class="desc">${d.desc}</p></div>
     <svg class="score" viewBox="0 0 600 120" preserveAspectRatio="none" aria-hidden="true"></svg>
