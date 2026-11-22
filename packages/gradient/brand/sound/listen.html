@@ -1,0 +1,167 @@
+<title>Shades Sonic Logo</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap">
+<style>
+/* Layout: one column of listening rows on hairlines; each row draws its three notes as the mark's three bars. */
+:root {
+  --paper: #F7F6F3; --surface: #FDFDFC; --ink: #141416; --muted: #56565E; --line: #E6E6E4;
+  --red: #E40523; --red-ink: #C4041E; --note: #141416;
+  --display: "Space Grotesk", "Inter", system-ui, sans-serif;
+  --body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --paper: #0A0A0B; --surface: #141416; --ink: #F3F3F1; --muted: #9A9AA2; --line: #26262E;
+  --red: #F23D57; --red-ink: #FF8299; --note: #F3F3F1; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --paper: #0A0A0B; --surface: #141416; --ink: #F3F3F1; --muted: #9A9AA2; --line: #26262E;
+  --red: #F23D57; --red-ink: #FF8299; --note: #F3F3F1; color-scheme: dark }
+
+body { background: var(--paper); color: var(--ink); font: 400 16px/1.55 var(--body); }
+.wrap { max-width: 980px; margin: 0 auto; padding-block: 56px 72px;
+  padding-left: max(20px, env(safe-area-inset-left, 0px)); padding-right: max(20px, env(safe-area-inset-right, 0px)); }
+header { display: grid; grid-template-columns: auto 1fr; gap: 20px 28px; align-items: start; }
+.mark { width: 56px; height: 56px; display: block; }
+h1 { font: 700 clamp(2rem, 1.4rem + 2.6vw, 3.25rem)/1.05 var(--display); letter-spacing: -0.02em; margin: 0; text-wrap: balance; }
+.lead { grid-column: 2; margin: 0; max-width: 60ch; color: var(--muted); }
+.controls { display: flex; flex-wrap: wrap; gap: 12px 20px; align-items: center; margin: 40px 0 8px; }
+button { font: 500 15px/1 var(--body); cursor: pointer; border-radius: 999px; white-space: nowrap; }
+.primary { background: var(--red); color: #fff; border: 0; padding: 13px 22px; }
+.primary:hover { background: var(--red-ink); }
+.ghost { background: transparent; color: var(--ink); border: 1px solid var(--line); padding: 12px 20px; }
+.ghost:hover { border-color: var(--muted); }
+.ghost[aria-pressed="true"] { border-color: var(--ink); }
+button:focus-visible { outline: 2px solid var(--red); outline-offset: 3px; }
+.switch { display: inline-flex; gap: 10px; align-items: center; color: var(--muted); font-size: 15px; white-space: nowrap; }
+.switch input { width: 18px; height: 18px; accent-color: var(--ink); }
+
+ol { list-style: none; margin: 24px 0 0; padding: 0; border-top: 1px solid var(--ink); }
+li { display: grid; grid-template-columns: 220px minmax(0, 1fr) 180px; gap: 20px 32px; padding: 32px 0; border-bottom: 1px solid var(--line); align-items: center; }
+h2 { font: 600 1.6rem/1.1 var(--display); margin: 0 0 6px; letter-spacing: -0.01em; }
+.desc { margin: 0; color: var(--muted); font-size: 15px; max-width: 46ch; }
+.notes { margin: 10px 0 0; font-size: 14px; color: var(--ink); white-space: nowrap; }
+.score { width: 100%; height: 120px; display: block; }
+.score .bar { fill: var(--note); }
+.score .head { stroke: var(--red); stroke-width: 2; }
+.score .base { stroke: var(--line); }
+.meta { display: grid; gap: 4px; font-size: 14px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.meta b { color: var(--ink); font-weight: 500; }
+.row-play { margin-bottom: 14px; justify-self: start; }
+
+footer { margin-top: 40px; color: var(--muted); font-size: 14px; max-width: 70ch; }
+@media (max-width: 760px) {
+  header { grid-template-columns: 1fr; }
+  .lead { grid-column: 1; }
+  li { grid-template-columns: 1fr; gap: 16px; }
+}
+</style>
+
+<div class="wrap">
+  <header>
+    <svg class="mark" viewBox="0 0 56 56" role="img" aria-label="Shades">
+      <rect width="56" height="56" fill="#E40523"/>
+      <rect x="10" y="13" width="10" height="30" fill="#fff"/>
+      <rect x="23" y="13" width="10" height="30" fill="#fff" fill-opacity=".75"/>
+      <rect x="36" y="13" width="10" height="30" fill="#fff" fill-opacity=".5"/>
+    </svg>
+    <h1>Three directions for the Shades sound</h1>
+    <p class="lead">Each logo is three notes at the mark's three strengths: full, three-quarter, half. They share that idea and differ in tune and voice. Pick one, and the long intro and the product sounds are built from it.</p>
+  </header>
+
+  <div class="controls">
+    <button class="primary" id="all" type="button">Play A, B, C in a row</button>
+    <label class="switch"><input type="checkbox" id="phone"> Hear it through a phone speaker</label>
+  </div>
+
+  <ol id="list"></ol>
+
+  <footer>
+    Every file is synthesised from code in the gradient repo (<span>packages/gradient/brand/sound/render.py</span>), so we own every note. Levelled to −16 LUFS with true peak under −1 dBTP. The bars show each note: height is pitch, shade is strength, position is time.
+  </footer>
+</div>
+
+<script>
+const MIDI = n => { const m = n.match(/^([A-G]#?)(\d)$/); return "C C# D D# E F F# G G# A A# B".split(" ").indexOf(m[1]) + 12 * (+m[2] + 1); };
+const DIRS = [
+  { id: "a", name: "A. Steps", file: "shades-logo-a-steps-2.6s.mp3", notes: ["E5","B5","F#6"], times: [0, .18, .36],
+    desc: "Three rising fifths on struck glass. Precise and open; each note a lighter shade, climbing, ending on a forward lean.",
+    voice: "Struck glass", sec: 2.6, phone: -16.0, tp: -6.0 },
+  { id: "b", name: "B. Spectrum", file: "shades-logo-b-spectrum-2.9s.mp3", notes: ["F#4","B4","C#5"], times: [0, .14, .34], hold: true,
+    desc: "Short, short, long, then the three notes hold while the tone opens from dark blue to warm orange. The most cinematic; made for the TV open.",
+    voice: "Warm synth, opening filter", sec: 2.9, phone: -17.5, tp: -5.1 },
+  { id: "c", name: "C. Ink", file: "shades-logo-c-ink-2.4s.mp3", notes: ["C#5","G#4","A4"], times: [0, .2, .4],
+    desc: "A plucked fall of a fourth, then a half-step home, each note with a dry tick of paper. Human and warm; it lands like a full stop.",
+    voice: "Plucked string, paper tick", sec: 2.4, phone: -16.2, tp: -4.9 },
+];
+const STRENGTH = [1, .75, .5];
+const list = document.getElementById("list");
+const svgNS = "http://www.w3.org/2000/svg";
+
+for (const d of DIRS) {
+  const li = document.createElement("li");
+  li.innerHTML = `
+    <div><h2>${d.name}</h2><p class="desc">${d.desc}</p><p class="notes">${d.notes.join(" · ").replaceAll("#", "♯")}</p></div>
+    <svg class="score" viewBox="0 0 600 120" preserveAspectRatio="none" aria-hidden="true"></svg>
+    <div class="meta"><button class="ghost row-play" type="button" data-id="${d.id}">Play ${d.name[0]}</button>
+      <span>Length <b>${d.sec.toFixed(1)} s</b></span><span>Loudness <b>−16.0 LUFS</b></span>
+      <span>True peak <b>${d.tp.toFixed(1).replace("-", "−")} dBTP</b></span><span>Voice <b>${d.voice}</b></span></div>`;
+  const svg = li.querySelector(".score");
+  const lo = 64, hi = 92, px = t => 8 + t / 3 * 584;
+  const base = document.createElementNS(svgNS, "line");
+  Object.entries({ x1: 0, x2: 600, y1: 119, y2: 119, class: "base" }).forEach(([k, v]) => base.setAttribute(k, v));
+  svg.append(base);
+  d.notes.forEach((n, i) => {
+    const h = 24 + (MIDI(n) - lo) / (hi - lo) * 92;
+    const end = d.hold ? 2.2 : (d.times[i + 1] ?? d.times[i] + .16) - .02;
+    const r = document.createElementNS(svgNS, "rect");
+    const w = d.hold ? px(end) - px(d.times[i]) : 34;
+    Object.entries({ x: px(d.times[i]), y: 119 - h, width: w, height: h, class: "bar", "fill-opacity": STRENGTH[i] })
+      .forEach(([k, v]) => r.setAttribute(k, v));
+    svg.append(r);
+  });
+  const head = document.createElementNS(svgNS, "line");
+  Object.entries({ x1: 0, x2: 0, y1: 0, y2: 120, class: "head", visibility: "hidden" }).forEach(([k, v]) => head.setAttribute(k, v));
+  svg.append(head);
+  d.head = head; d.px = px;
+  list.append(li);
+}
+
+let ctx, current, raf;
+const buffers = {};
+async function load(d) {
+  if (!buffers[d.id]) buffers[d.id] = fetch(d.file).then(r => r.arrayBuffer()).then(b => ctx.decodeAudioData(b));
+  return buffers[d.id];
+}
+function stop() {
+  if (current) { try { current.src.stop(); } catch {} current.d.head.setAttribute("visibility", "hidden"); current = null; }
+  cancelAnimationFrame(raf);
+}
+async function play(d) {
+  ctx ??= new AudioContext();
+  await ctx.resume();
+  stop();
+  const buf = await load(d);
+  const src = ctx.createBufferSource(); src.buffer = buf;
+  let node = src;
+  if (document.getElementById("phone").checked) {
+    const hp = ctx.createBiquadFilter(); hp.type = "highpass"; hp.frequency.value = 400; hp.Q.value = .9;
+    const lp = ctx.createBiquadFilter(); lp.type = "lowpass"; lp.frequency.value = 7000;
+    const mono = ctx.createGain(); mono.channelCount = 1; mono.channelCountMode = "explicit";
+    node.connect(hp); hp.connect(lp); lp.connect(mono); node = mono;
+  }
+  node.connect(ctx.destination);
+  const t0 = ctx.currentTime; src.start();
+  current = { src, d };
+  const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const tick = () => {
+    const t = ctx.currentTime - t0;
+    if (!reduce) { const x = d.px(Math.min(t, 3)); d.head.setAttribute("x1", x); d.head.setAttribute("x2", x); d.head.setAttribute("visibility", "visible"); }
+    if (t < buf.duration) raf = requestAnimationFrame(tick); else d.head.setAttribute("visibility", "hidden");
+  };
+  tick();
+  return new Promise(res => { src.onended = res; });
+}
+list.addEventListener("click", e => { const b = e.target.closest("[data-id]"); if (b) play(DIRS.find(d => d.id === b.dataset.id)); });
+document.getElementById("all").addEventListener("click", async () => {
+  for (const d of DIRS) { await play(d); await new Promise(r => setTimeout(r, 700)); }
+});
+</script>
