@@ -102,6 +102,23 @@ Built from the takes the Owner liked: a knock, wood, a heartbeat, a hum, the mou
 | **Fingers on the table** (t9) | Four fingertips roll on a desk, then piano and hum land together; E | 4.2 |
 | **Breath and hum** (t10) | A breath in, two hummed notes rising a sixth, piano under them; B-flat | 4.3 |
 
+### Round 7: what makes a sound logo iconic
+
+The Owner scored Heart, opening (t8) 10 of 10. The sound logos people remember share a few habits: one sound you can name with your eyes shut, then a bloom; a tune short enough to hum, on open intervals; weight underneath; one signature trick; about three seconds before the tail. Round 7 keeps t8's core, a heartbeat and the warm chord opening in D-flat, and tests one habit per take.
+
+| | Made from | Seconds |
+| --- | --- | --- |
+| **Three beats** (u1) | Three heartbeats at the bars' strengths, then the chord opens | 4.5 |
+| **Heart, sung** (u2) | A hummed three-note tune over the heartbeat and chord: up a fifth, down a third | 4.6 |
+| **Heart, short** (u3) | The sting: the same idea in two and a half seconds | 3.3 |
+| **Knock, opening** (u4) | Two knocks on a door instead of the heartbeat; E-flat | 4.5 |
+| **Fingers, opening** (u5) | Fingertips roll on a desk, then the chord; E | 4.5 |
+| **Heart and piano** (u6) | The felt piano plays the tune over the chord | 4.6 |
+| **One strike** (u7) | One beat and the whole chord struck together, like one note | 3.8 |
+| **Drawn in** (u8) | The chord's echo reversed draws in to the heartbeat | 4.7 |
+| **Pops, opening** (u9) | Three cheek pops on the tune, then the chord | 4.5 |
+| **Heart, wide** (u10) | The chord opens slowly and travels left to right over a low floor | 4.9 |
+
 ## Files
 
 `directions/shades-logo-<version>-<seconds>s.{wav,m4a,mp3}`: 48 kHz, 24-bit WAV master, AAC 256 kb/s, MP3 256 kb/s. `directions/audit.json` holds each file's measurements.
@@ -116,6 +133,7 @@ brew install csound   # 7.x, for orchestra.orc
 .venv/bin/python round4.py   # round 4; or name some: round4.py r1-knock
 .venv/bin/python round5.py   # round 5; or name some: round5.py s3-water
 .venv/bin/python round6.py   # round 6; or name some: round6.py t3-thumb
+.venv/bin/python round7.py   # round 7; or name some: round7.py u3
 ```
 
 Levels: −16 LUFS integrated, true peak under −1 dBTP, checked by the script and by `ffmpeg -i <file> -af ebur128=peak=true -f null -`.
