@@ -44,17 +44,25 @@ def fade(sig, ms_in=2, ms_out=30):
 
 # ---- voices -----------------------------------------------------------------
 
+def release(t, at, length):
+    """0 before `at`, rising to 1 over `length`: the outro's progress."""
+    return np.clip((t - at) / length, 0, 1)
+
+
 def warm(f, dur, vel, attack=0.012, decay=2.2, cut=(1.6, 6.6), open_at=0.0, open_time=1.0,
-         detunes=(-0.0025, 0.0, 0.0025)):
+         detunes=(-0.0025, 0.0, 0.0025), end=None, rel=1.2):
     """The Spectrum voice, general form: a warm saw-like tone whose filter opens, dark blue to warm orange.
 
     f is a frequency in Hz or an array per sample (for a glide). cut is the filter's start and end,
-    in multiples of the note.
+    in multiples of the note. From `end` the outro runs for `rel` seconds: the tone dims to silence
+    and its colour closes back from orange to blue.
     """
     t = t_axis(dur)
     f = np.broadcast_to(np.asarray(f, float), t.shape)
-    env = (1 - np.exp(-t / attack)) * np.exp(-t / decay)
-    cutoff = f * (cut[0] + (cut[1] - cut[0]) * np.clip((t - open_at) / open_time, 0, 1) ** 1.5)
+    r = release(t, end if end is not None else dur, rel)
+    env = (1 - np.exp(-t / attack)) * np.exp(-t / decay) * 0.5 * (1 + np.cos(np.pi * r))
+    opening = np.clip((t - open_at) / open_time, 0, 1) ** 1.5 * (1 - 0.8 * r)
+    cutoff = f * (cut[0] + (cut[1] - cut[0]) * opening)
     sig = np.zeros_like(t)
     for d in detunes:
         phase = 2 * np.pi * np.cumsum(f * (1 + d)) / SR
@@ -77,9 +85,11 @@ def glide(steps, dur, ms=45):
     return np.exp(curve)
 
 
-def sine(f, dur, vel, attack=0.05):
+def sine(f, dur, vel, attack=0.05, decay=1.2, end=None, rel=1.2):
     t = t_axis(dur)
-    return fade(np.sin(2 * np.pi * f * t) * (1 - np.exp(-t / attack)) * np.exp(-t / 1.2) * vel)
+    r = release(t, end if end is not None else dur, rel)
+    env = (1 - np.exp(-t / attack)) * np.exp(-t / decay) * 0.5 * (1 + np.cos(np.pi * r))
+    return fade(np.sin(2 * np.pi * f * t) * env * vel)
 
 
 # ---- space ------------------------------------------------------------------
@@ -134,7 +144,7 @@ def master(x):
         if true_peak_db(x) <= CEILING_DBTP:
             break
         x = limit(x, CEILING_DBTP - 0.3)
-    n = int(0.3 * SR)  # held tones: a long fade, so the tail settles instead of stopping
+    n = int(0.1 * SR)  # safety only: every version already ends in silence
     x[-n:] *= np.linspace(1, 0, n)[:, None] ** 2
     return x
 
@@ -145,73 +155,75 @@ def master(x):
 
 NOTES_B = ("F#4", "B4", "C#5")
 WIDE = (-0.006, -0.003, 0.0, 0.003, 0.006)
+TAIL = 0.6  # after the outro, the room rings out to silence
+
+
+def shape(notes, times, pans, end, rel=1.2, sub_at=None, wet=(0.32, 2.4, 5000), **voice):
+    """Every version has the same three parts.
+
+    Start: the three notes enter at the mark's strengths.
+    Bloom: the colour opens, dark blue to warm orange.
+    Outro: from `end`, the colour closes back to blue and the sound dims over `rel` seconds,
+    while home (a soft low B) settles under it; then the room rings out to silence.
+    """
+    dur = end + rel + TAIL
+    track = np.zeros((int(dur * SR), 2))
+    for n, at, s, p in zip(notes, times, STRENGTH, pans):
+        kw = dict(voice, open_at=voice.get("open_at", 0.4) - at)
+        place(track, warm(hz(n), dur - at, s, end=end - at, rel=rel, **kw), at, p)
+    sub_at = times[-1] if sub_at is None else sub_at
+    place(track, sine(hz("B2"), dur - sub_at, 0.35, attack=0.25, decay=4.0, end=end - sub_at, rel=rel), sub_at)
+    land = end - 0.15  # home settles in as the outro starts
+    place(track, warm(hz("B3"), dur - land, 0.22, attack=0.18, decay=4.0, cut=(1.2, 1.2),
+                      end=0.35, rel=rel, detunes=WIDE), land)
+    return mix(track, *wet)
 
 
 def spectrum_b():
-    """Round 1 B, unchanged: short, short, long, then the colour opens."""
-    track = np.zeros((int(2.9 * SR), 2))
-    for n, at, s, p in zip(NOTES_B, (0.0, 0.14, 0.34), STRENGTH, (-0.3, 0.3, 0.0)):
-        place(track, warm(hz(n), 2.9 - at, s, open_at=0.4 - at, open_time=1.1), at, p)
-    place(track, sine(hz("B2"), 2.5, 0.35, attack=0.2), 0.34)
-    return mix(track, 0.3, 2.4, 5000)
+    """Round 1 B: short, short, long, the colour opens, then closes and settles home."""
+    return shape(NOTES_B, (0.0, 0.14, 0.34), (-0.3, 0.3, 0.0), end=1.9, open_time=1.1, cut=(1.6, 6.6))
 
 
 def wide():
-    """B with a fuller voice: five detuned strings of light, a slower bloom, a deeper floor."""
-    track = np.zeros((int(3.2 * SR), 2))
-    for n, at, s, p in zip(NOTES_B, (0.0, 0.14, 0.34), STRENGTH, (-0.35, 0.35, 0.0)):
-        place(track, warm(hz(n), 3.2 - at, s, attack=0.03, decay=2.6, cut=(1.3, 8.0),
-                          open_at=0.35 - at, open_time=1.3, detunes=WIDE), at, p)
-    place(track, sine(hz("B2"), 2.8, 0.4, attack=0.25), 0.34)
-    place(track, sine(hz("B1"), 2.8, 0.25, attack=0.4), 0.34)
-    return mix(track, 0.35, 2.8, 5000)
+    """B with a fuller voice: five detuned strings, a slower bloom."""
+    return shape(NOTES_B, (0.0, 0.14, 0.34), (-0.35, 0.35, 0.0), end=2.0, rel=1.3, wet=(0.35, 2.8, 5000),
+                 attack=0.03, decay=2.6, cut=(1.3, 8.0), open_at=0.35, open_time=1.3, detunes=WIDE)
 
 
 def arc():
-    """Up a fifth, then a step down to rest: F#, C#, B. Ends at home instead of leaning on."""
-    track = np.zeros((int(3.0 * SR), 2))
-    for n, at, s, p in zip(("F#4", "C#5", "B4"), (0.0, 0.16, 0.38), STRENGTH, (-0.3, 0.3, 0.0)):
-        place(track, warm(hz(n), 3.0 - at, s, attack=0.02, decay=2.4, cut=(1.5, 7.0),
-                          open_at=0.42 - at, open_time=1.2, detunes=WIDE), at, p)
-    place(track, sine(hz("B2"), 2.6, 0.38, attack=0.2), 0.38)
-    return mix(track, 0.32, 2.6, 5000)
+    """Up a fifth, then a step down to rest: F#, C#, B. Ends at home."""
+    return shape(("F#4", "C#5", "B4"), (0.0, 0.16, 0.38), (-0.3, 0.3, 0.0), end=1.9,
+                 attack=0.02, decay=2.4, cut=(1.5, 7.0), open_at=0.42, open_time=1.2, detunes=WIDE)
 
 
 def bloom():
-    """No attack at all: three notes swell in one after another and open as a single chord."""
-    track = np.zeros((int(3.4 * SR), 2))
-    for n, at, s, p in zip(("B3", "F#4", "C#5"), (0.0, 0.22, 0.44), STRENGTH, (0.0, -0.35, 0.35)):
-        place(track, warm(hz(n), 3.4 - at, s, attack=0.16, decay=2.8, cut=(1.3, 9.0),
-                          open_at=0.5 - at, open_time=1.6, detunes=WIDE), at, p)
-    place(track, sine(hz("B2"), 3.2, 0.18, attack=0.4), 0.0)
-    return mix(track, 0.4, 3.0, 4500)
+    """No attack at all: three notes swell in and open as a single chord."""
+    return shape(("B3", "F#4", "C#5"), (0.0, 0.22, 0.44), (0.0, -0.35, 0.35), end=2.2, rel=1.2,
+                 sub_at=0.0, wet=(0.4, 3.0, 4500), attack=0.16, decay=2.8, cut=(1.3, 9.0),
+                 open_at=0.5, open_time=1.5, detunes=WIDE)
 
 
 def stroke():
     """One voice glides F#, B, C# like a single stroke; each note it passes stays behind, fading like the bars."""
-    dur = 3.1
-    track = np.zeros((int(dur * SR), 2))
-    times = (0.0, 0.18, 0.4)
-    lead = warm(glide(list(zip(times, NOTES_B)), dur), dur, 0.7, attack=0.015, decay=2.4,
-                cut=(1.5, 7.5), open_at=0.45, open_time=1.2, detunes=WIDE)
-    place(track, lead, 0.0)
-    for n, at, s, p in zip(NOTES_B, times, STRENGTH, (-0.4, 0.4, 0.0)):
-        place(track, warm(hz(n), dur - at, s * 0.55, attack=0.08, decay=2.2, cut=(1.2, 5.0),
-                          open_at=0.45 - at, open_time=1.2), at, p)
-    place(track, sine(hz("B2"), 2.6, 0.35, attack=0.2), 0.4)
-    return mix(track, 0.32, 2.6, 5000)
+    times, end, rel = (0.0, 0.18, 0.4), 2.0, 1.2
+    track = shape(NOTES_B, times, (-0.4, 0.4, 0.0), end=end, rel=rel,
+                  attack=0.08, decay=2.2, cut=(1.2, 5.0), open_at=0.45, open_time=1.2)
+    dur = track.shape[0] / SR
+    dry = np.zeros_like(track)
+    place(dry, warm(glide(list(zip(times, NOTES_B)), dur), dur, 0.7, attack=0.015, decay=2.4,
+                    cut=(1.5, 7.5), open_at=0.45, open_time=1.2, detunes=WIDE, end=end, rel=rel), 0.0)
+    return track + mix(dry, 0.32, 2.6, 5000)
 
 
 def cinema():
-    """For the TV open: B's notes over a slow low swell, the colour opening further and longer."""
-    dur = 3.8
-    track = np.zeros((int(dur * SR), 2))
-    for n, at, s, p in zip(NOTES_B, (0.25, 0.42, 0.66), STRENGTH, (-0.35, 0.35, 0.0)):
-        place(track, warm(hz(n), dur - at, s, attack=0.025, decay=3.0, cut=(1.2, 10.0),
-                          open_at=0.7 - at, open_time=2.0, detunes=WIDE), at, p)
-    place(track, sine(hz("B1"), dur, 0.45, attack=0.5), 0.0)
-    place(track, sine(hz("B2"), dur - 0.2, 0.3, attack=0.5), 0.2)
-    return mix(track, 0.45, 3.4, 4500)
+    """For the TV open: a slow low swell first, then the notes; the colour opens further and longer."""
+    track = shape(NOTES_B, (0.25, 0.42, 0.66), (-0.35, 0.35, 0.0), end=2.4, rel=1.3, sub_at=0.0,
+                  wet=(0.45, 3.4, 4500), attack=0.025, decay=3.0, cut=(1.2, 10.0), open_at=0.7,
+                  open_time=1.6, detunes=WIDE)
+    dur = track.shape[0] / SR
+    low = np.zeros_like(track)
+    place(low, sine(hz("B1"), dur, 0.45, attack=0.5, decay=5.0, end=2.4, rel=1.3), 0.0)
+    return track + mix(low, 0.3, 3.0, 3000)
 
 
 DIRECTIONS = {"b-spectrum": spectrum_b, "b2-wide": wide, "b3-arc": arc, "b4-bloom": bloom,
@@ -236,6 +248,7 @@ def audit(x):
         "band_energy_pct": {k: round(100 * spec[(freqs >= lo) & (freqs < hi)].sum() / spec.sum(), 1)
                             for k, (lo, hi) in bands.items()},
         "phone_speaker_lufs": round(meter.integrated_loudness(phone), 2),
+        "last_500ms_peak_db": round(20 * np.log10(np.abs(x[-int(0.5 * SR):]).max() + 1e-12), 1),
         "last_50ms_peak_db": round(20 * np.log10(np.abs(x[-int(0.05 * SR):]).max() + 1e-12), 1),
     }
 

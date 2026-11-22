@@ -69,7 +69,7 @@ footer { margin-top: 40px; color: var(--muted); font-size: 14px; max-width: 70ch
       <rect x="36" y="13" width="10" height="30" fill="#fff" fill-opacity=".5"/>
     </svg>
     <h1>Spectrum, six ways</h1>
-    <p class="lead">Every version keeps Spectrum's idea: three notes at the mark's strengths, held while the tone opens from blue to orange. They differ in voice, tune and pace. Pick one, and the long intro and the product sounds are built from it.</p>
+    <p class="lead">Every version keeps Spectrum's idea: three notes at the mark's strengths, held while the tone opens from blue to orange, then closes back and settles on a low B, home. They differ in voice, tune and pace. Pick one, and the long intro and the product sounds are built from it.</p>
   </header>
 
   <div class="controls">
@@ -87,24 +87,24 @@ footer { margin-top: 40px; color: var(--muted); font-size: 14px; max-width: 70ch
 <script>
 const MIDI = n => { const m = n.match(/^([A-G]#?)(\d)$/); return "C C# D D# E F F# G G# A A# B".split(" ").indexOf(m[1]) + 12 * (+m[2] + 1); };
 const DIRS = [
-  { id: "b", name: "Spectrum", file: "shades-logo-b-spectrum-2.9s.mp3", notes: ["F#4","B4","C#5"], times: [0, .14, .34], hold: true,
+  { id: "b", name: "Spectrum", file: "shades-logo-b-spectrum-3.7s.mp3", notes: ["F#4","B4","C#5"], times: [0, .14, .34], hold: true,
     desc: "The first round's B, for reference. Short, short, long, then the tone opens from dark blue to warm orange.",
-    voice: "Warm synth, three strings", sec: 2.9, tp: -4.6 },
-  { id: "b2", name: "Wide", file: "shades-logo-b2-wide-3.2s.mp3", notes: ["F#4","B4","C#5"], times: [0, .14, .34], hold: true,
+    voice: "Warm synth, three strings", sec: 3.7, tp: -4.7 },
+  { id: "b2", name: "Wide", file: "shades-logo-b2-wide-3.9s.mp3", notes: ["F#4","B4","C#5"], times: [0, .14, .34], hold: true,
     desc: "Same notes, a fuller voice: five detuned strings, a slower bloom and a deeper floor under it.",
-    voice: "Warm synth, five strings", sec: 3.2, tp: -4.2 },
-  { id: "b3", name: "Arc", file: "shades-logo-b3-arc-3.0s.mp3", notes: ["F#4","C#5","B4"], times: [0, .16, .38], hold: true,
+    voice: "Warm synth, five strings", sec: 3.9, tp: -4.1 },
+  { id: "b3", name: "Arc", file: "shades-logo-b3-arc-3.7s.mp3", notes: ["F#4","C#5","B4"], times: [0, .16, .38], hold: true,
     desc: "Up a fifth, then a step down to rest on B. It ends at home instead of leaning forward.",
-    voice: "Warm synth, five strings", sec: 3.0, tp: -4.1 },
-  { id: "b4", name: "Bloom", file: "shades-logo-b4-bloom-3.4s.mp3", notes: ["B3","F#4","C#5"], times: [0, .22, .44], hold: true,
+    voice: "Warm synth, five strings", sec: 3.7, tp: -4.5 },
+  { id: "b4", name: "Bloom", file: "shades-logo-b4-bloom-4.0s.mp3", notes: ["B3","F#4","C#5"], times: [0, .22, .44], hold: true,
     desc: "No attack at all. Three notes swell in one after another and open as one chord. The calmest; quietest on a phone.",
-    voice: "Slow swells", sec: 3.4, tp: -5.1 },
-  { id: "b5", name: "Stroke", file: "shades-logo-b5-stroke-3.1s.mp3", notes: ["F#4","B4","C#5"], times: [0, .18, .4], hold: true,
+    voice: "Slow swells", sec: 4.0, tp: -5.3 },
+  { id: "b5", name: "Stroke", file: "shades-logo-b5-stroke-3.8s.mp3", notes: ["F#4","B4","C#5"], times: [0, .18, .4], hold: true,
     desc: "One voice glides through the three notes like a single stroke, and each note it passes stays behind, fading like the bars.",
-    voice: "Gliding lead, held trail", sec: 3.1, tp: -3.9 },
-  { id: "b6", name: "Cinema", file: "shades-logo-b6-cinema-3.8s.mp3", notes: ["F#4","B4","C#5"], times: [.25, .42, .66], hold: true,
-    desc: "For the TV open. A slow low swell first, then the notes, and the colour opens further and longer.",
-    voice: "Warm synth over a low swell", sec: 3.8, tp: -5.2 },
+    voice: "Gliding lead, held trail", sec: 3.8, tp: -3.9 },
+  { id: "b6", name: "Cinema", file: "shades-logo-b6-cinema-4.3s.mp3", notes: ["F#4","B4","C#5"], times: [.25, .42, .66], hold: true,
+    desc: "For the TV app open (4.3 s, a start-up sound). A slow low swell first, then the notes, and the colour opens further and longer.",
+    voice: "Warm synth over a low swell", sec: 4.3, tp: -4.3 },
 ];
 const STRENGTH = [1, .75, .5];
 const list = document.getElementById("list");
@@ -119,13 +119,13 @@ for (const d of DIRS) {
       <span>Length <b>${d.sec.toFixed(1)} s</b></span><span>Loudness <b>−16.0 LUFS</b></span>
       <span>True peak <b>${d.tp.toFixed(1).replace("-", "−")} dBTP</b></span><span>Voice <b>${d.voice}</b></span></div>`;
   const svg = li.querySelector(".score");
-  const lo = 58, hi = 76, px = t => 8 + t / 3.8 * 584;
+  const lo = 58, hi = 76, px = t => 8 + t / 4.3 * 584;
   const base = document.createElementNS(svgNS, "line");
   Object.entries({ x1: 0, x2: 600, y1: 119, y2: 119, class: "base" }).forEach(([k, v]) => base.setAttribute(k, v));
   svg.append(base);
   d.notes.forEach((n, i) => {
     const h = 24 + (MIDI(n) - lo) / (hi - lo) * 92;
-    const end = d.hold ? d.sec - .5 : (d.times[i + 1] ?? d.times[i] + .16) - .02;
+    const end = d.hold ? d.sec - 1.6 : (d.times[i + 1] ?? d.times[i] + .16) - .02;
     const r = document.createElementNS(svgNS, "rect");
     const w = d.hold ? px(end) - px(d.times[i]) : 34;
     Object.entries({ x: px(d.times[i]), y: 119 - h, width: w, height: 14, class: "bar", "fill-opacity": STRENGTH[i] })
@@ -190,7 +190,7 @@ function play(d) {
       const t = a.currentTime, p = Math.min(100, t / (a.duration || d.sec) * 100);
       btn.style.setProperty("--p", p + "%");
       if (allRun) allBtn.style.setProperty("--p", ((DIRS.indexOf(d) + p / 100) / DIRS.length * 100) + "%");
-      if (!reduce) { const x = d.px(Math.min(t, 3.8)); d.head.setAttribute("x1", x); d.head.setAttribute("x2", x); d.head.setAttribute("visibility", "visible"); }
+      if (!reduce) { const x = d.px(Math.min(t, 4.3)); d.head.setAttribute("x1", x); d.head.setAttribute("x2", x); d.head.setAttribute("visibility", "visible"); }
       raf = requestAnimationFrame(tick);
     };
     tick();
