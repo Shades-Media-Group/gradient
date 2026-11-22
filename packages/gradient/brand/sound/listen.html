@@ -53,6 +53,16 @@ ol { list-style: none; margin: 0; padding: 0; }
 .meta { display: grid; gap: 4px; font-size: 14px; color: var(--muted); font-variant-numeric: tabular-nums; }
 .meta b { color: var(--ink); font-weight: 500; }
 .row-play { margin-bottom: 14px; justify-self: start; }
+/* Verdict: a full-width line under each row. Selected choices fill with ink; red stays for the one primary action. */
+.rate { grid-column: 1 / -1; display: flex; flex-wrap: wrap; align-items: center; gap: 10px 18px; font-size: 14px; color: var(--muted); }
+.rate .set { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.rate button { background: transparent; color: var(--ink); border: 1px solid var(--line); padding: 8px 14px; font-size: 14px; }
+.rate .n button { width: 34px; padding: 8px 0; text-align: center; font-variant-numeric: tabular-nums; }
+.rate button:hover { border-color: var(--muted); }
+.rate button[aria-pressed="true"] { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+.rate input { flex: 1 1 220px; min-width: 0; font: 400 14px/1.4 var(--body); color: var(--ink); background: transparent; border: 0; border-bottom: 1px solid var(--line); padding: 8px 2px; }
+.rate input:focus { outline: none; border-bottom-color: var(--ink); }
+.rate .saved { min-width: 9ch; }
 
 footer { margin-top: 40px; color: var(--muted); font-size: 14px; max-width: 70ch; }
 @media (max-width: 760px) {
@@ -110,7 +120,18 @@ for (const d of DIRS) {
     <svg class="score" viewBox="0 0 600 120" preserveAspectRatio="none" aria-hidden="true"></svg>
     <div class="meta"><button class="ghost row-play" type="button" data-id="${d.id}">Play ${d.name}</button>
       <span>Length <b>${d.sec.toFixed(1)} s</b></span><span>Loudness <b>−16.0 LUFS</b></span>
-      <span>True peak <b>${d.tp.toFixed(1).replace("-", "−")} dBTP</b></span><span>Made from <b>${d.voice}</b></span></div>`;
+      <span>True peak <b>${d.tp.toFixed(1).replace("-", "−")} dBTP</b></span><span>Made from <b>${d.voice}</b></span></div>
+    <div class="rate" data-rate="${d.id}">
+      <div class="set" role="group" aria-label="Verdict on ${d.name}">
+        <button type="button" data-verdict="like" aria-pressed="false">Like</button>
+        <button type="button" data-verdict="dislike" aria-pressed="false">Don't like</button>
+      </div>
+      <div class="set n" role="group" aria-label="Score for ${d.name}, 1 to 10">
+        ${Array.from({ length: 10 }, (_, i) => `<button type="button" data-score="${i + 1}" aria-pressed="false">${i + 1}</button>`).join("")}
+      </div>
+      <input type="text" data-note placeholder="What would make it better?" aria-label="Note on ${d.name}">
+      <span class="saved" aria-live="polite"></span>
+    </div>`;
   const svg = li.querySelector(".score");
   const n = d.peaks.length, x = i => i / (n - 1) * 600;
   const top = d.peaks.map((v, i) => `${x(i).toFixed(1)},${(60 - v * 54).toFixed(1)}`);
@@ -200,5 +221,48 @@ allBtn.addEventListener("click", async () => {
     if (allRun !== run) return;
   }
   stopAll();
+});
+
+// Verdicts: saved to the page's store on claude.ai (Claude reads them), else kept in this browser only.
+const ratings = {};
+let db = null;
+const KEY = "shades-sound-ratings";
+function paint(id) {
+  const r = ratings[id] || {}, box = list.querySelector(`[data-rate="${id}"]`);
+  if (!box) return;
+  box.querySelectorAll("[data-verdict]").forEach(b => b.setAttribute("aria-pressed", b.dataset.verdict === r.verdict));
+  box.querySelectorAll("[data-score]").forEach(b => b.setAttribute("aria-pressed", +b.dataset.score === r.score));
+  const note = box.querySelector("[data-note]");
+  if (document.activeElement !== note) note.value = r.note || "";
+}
+async function save(id, patch) {
+  const r = ratings[id] = { ...ratings[id], ...patch, at: new Date().toISOString() };
+  paint(id);
+  const msg = list.querySelector(`[data-rate="${id}"] .saved`);
+  try {
+    if (db) await db.collection("ratings").doc(id).set(r);
+    else localStorage.setItem(KEY, JSON.stringify(ratings));
+    msg.textContent = db ? "Saved" : "Saved here";
+  } catch (e) { msg.textContent = "Not saved"; console.error(e); }
+}
+list.addEventListener("click", e => {
+  const b = e.target.closest("[data-verdict],[data-score]"); if (!b) return;
+  const id = b.closest("[data-rate]").dataset.rate, r = ratings[id] || {};
+  if (b.dataset.verdict) save(id, { verdict: r.verdict === b.dataset.verdict ? null : b.dataset.verdict });
+  else save(id, { score: r.score === +b.dataset.score ? null : +b.dataset.score });
+});
+list.addEventListener("change", e => {
+  if (!e.target.matches("[data-note]")) return;
+  const id = e.target.closest("[data-rate]").dataset.rate;
+  if ((ratings[id]?.note || "") !== e.target.value.trim()) save(id, { note: e.target.value.trim() });
+});
+try { Object.assign(ratings, JSON.parse(localStorage.getItem(KEY) || "{}")); } catch {}
+DIRS.forEach(d => paint(d.id));
+window.claude?.use?.("db").then(store => {
+  if (!store) return;
+  db = store;
+  db.collection("ratings").onSnapshot(snap => {
+    snap.docs.forEach(doc => { ratings[doc.id] = doc.data(); paint(doc.id); });
+  }, err => console.error(err));
 });
 </script>
