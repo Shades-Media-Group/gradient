@@ -75,7 +75,7 @@ footer { margin-top: 40px; color: var(--muted); font-size: 14px; max-width: 70ch
   <ol id="list"></ol>
 
   <footer>
-    Every file is synthesised from code in the gradient repo (<span>packages/gradient/brand/sound/render.py</span>), so we own every note. Levelled to −16 LUFS with true peak under −1 dBTP. The bars show each note: height is pitch, shade is strength, position is time.
+    Every file is synthesised from code in the gradient repo (<span>packages/gradient/brand/sound/render.py</span>), so we own every note. Levelled to −16 LUFS with true peak under −1 dBTP. Each band is a note: height is pitch, shade is strength, length is how long it holds.
   </footer>
 </div>
 
@@ -123,7 +123,7 @@ for (const d of DIRS) {
     const end = d.hold ? d.sec - .5 : (d.times[i + 1] ?? d.times[i] + .16) - .02;
     const r = document.createElementNS(svgNS, "rect");
     const w = d.hold ? px(end) - px(d.times[i]) : 34;
-    Object.entries({ x: px(d.times[i]), y: 119 - h, width: w, height: h, class: "bar", "fill-opacity": STRENGTH[i] })
+    Object.entries({ x: px(d.times[i]), y: 119 - h, width: w, height: 14, class: "bar", "fill-opacity": STRENGTH[i] })
       .forEach(([k, v]) => r.setAttribute(k, v));
     svg.append(r);
   });
