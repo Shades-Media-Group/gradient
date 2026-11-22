@@ -288,8 +288,8 @@ async function save(id, patch) {
   try {
     localStorage.setItem(KEY, JSON.stringify(ratings));
     if (db) await db.collection("ratings").doc(id).set(r);
-    msg.textContent = db ? "Saved" : "Saved here";
-  } catch (e) { msg.textContent = "Not saved"; console.error(e); }
+    if (msg) msg.textContent = db ? "Saved" : "Saved here";
+  } catch (e) { if (msg) msg.textContent = "Not saved"; console.error(e); }
 }
 list.addEventListener("click", e => {
   const b = e.target.closest("[data-verdict],[data-score]"); if (!b) return;
