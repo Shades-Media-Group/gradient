@@ -85,6 +85,23 @@ Every earlier take shared the same three notes (F♯, B, C♯), the B chord endi
 
 A drum machine take was dropped: it sat at −26 LUFS on a phone speaker.
 
+### Round 6: the liked family
+
+Built from the takes the Owner liked: a knock, wood, a heartbeat, a hum, the mouth, a handpan and the felt piano. Nothing from the disliked side (hiss, water, flame, machines, reeds, choirs, busy percussion). Each idea has its own key; three use new instruments from the same family.
+
+| | Made from | Seconds |
+| --- | --- | --- |
+| **Knock and answer** (t1) | Two knocks on a door, and someone inside hums back; E-flat | 4.3 |
+| **Heart and steel** (t2) | One heartbeat, then a handpan answers; F | 4.4 |
+| **Thumb piano** (t3) | Three tines plucked upward, the box humming under the last; G | 4.2 |
+| **Tongue drum** (t4) | A felt mallet walks up A minor, then the low A rings | 4.5 |
+| **Piano lid** (t5) | Two knuckle taps on the wood, then a wide felt piano chord; A-flat | 4.1 |
+| **Mouth and steel** (t6) | Two cheek pops, and a handpan picks up their pitch; C | 4.2 |
+| **Log drum** (t7) | Two slit drum tones, then a hummed fifth; A | 4.2 |
+| **Heart, opening** (t8) | A slower heartbeat, then the warm synth opens; D-flat | 4.6 |
+| **Fingers on the table** (t9) | Four fingertips roll on a desk, then piano and hum land together; E | 4.2 |
+| **Breath and hum** (t10) | A breath in, two hummed notes rising a sixth, piano under them; B-flat | 4.3 |
+
 ## Files
 
 `directions/shades-logo-<version>-<seconds>s.{wav,m4a,mp3}`: 48 kHz, 24-bit WAV master, AAC 256 kb/s, MP3 256 kb/s. `directions/audit.json` holds each file's measurements.
@@ -98,6 +115,7 @@ brew install csound   # 7.x, for orchestra.orc
 .venv/bin/python ideas.py    # round 3; or name some: ideas.py i1-hum i5-glass
 .venv/bin/python round4.py   # round 4; or name some: round4.py r1-knock
 .venv/bin/python round5.py   # round 5; or name some: round5.py s3-water
+.venv/bin/python round6.py   # round 6; or name some: round6.py t3-thumb
 ```
 
 Levels: −16 LUFS integrated, true peak under −1 dBTP, checked by the script and by `ffmpeg -i <file> -af ebur128=peak=true -f null -`.
