@@ -1,3 +1,4 @@
+<meta charset="utf-8">
 <title>Shades Sonic Logo</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap">
@@ -30,6 +31,10 @@ button { font: 500 15px/1 var(--body); cursor: pointer; border-radius: 999px; wh
 .ghost { background: transparent; color: var(--ink); border: 1px solid var(--line); padding: 12px 20px; }
 .ghost:hover { border-color: var(--muted); }
 .ghost[aria-pressed="true"] { border-color: var(--ink); }
+/* Playing: the label turns to Stop and the button fills left to right as the sound plays. */
+button.playing { background-image: linear-gradient(90deg, color-mix(in srgb, currentColor 16%, transparent) var(--p, 0%), transparent 0); }
+button.playing::before { content: ""; display: inline-block; width: 9px; height: 9px; margin-right: 9px; background: currentColor; vertical-align: 0; }
+.row-play { min-width: 128px; }
 button:focus-visible { outline: 2px solid var(--red); outline-offset: 3px; }
 .switch { display: inline-flex; gap: 10px; align-items: center; color: var(--muted); font-size: 15px; white-space: nowrap; }
 .switch input { width: 18px; height: 18px; accent-color: var(--ink); }
@@ -134,43 +139,81 @@ for (const d of DIRS) {
   list.append(li);
 }
 
-let ctx, current, raf;
-const buffers = {};
-async function load(d) {
-  if (!buffers[d.id]) buffers[d.id] = fetch(d.file).then(r => r.arrayBuffer()).then(b => ctx.decodeAudioData(b));
-  return buffers[d.id];
+let ctx, current, raf, allRun = 0;
+const allBtn = document.getElementById("all");
+const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+function audio(d) {
+  if (!d.audio) { d.audio = new Audio(d.file); d.audio.preload = "auto"; }
+  return d.audio;
+}
+// The phone filter needs Web Audio; plain playback does not, so it never depends on it.
+function route(d) {
+  const phone = document.getElementById("phone").checked;
+  if (!phone && !d.node) return;
+  ctx ??= new AudioContext();
+  ctx.resume();
+  d.node ??= ctx.createMediaElementSource(audio(d));
+  d.node.disconnect();
+  if (!phone) { d.node.connect(ctx.destination); return; }
+  const hp = ctx.createBiquadFilter(); hp.type = "highpass"; hp.frequency.value = 400; hp.Q.value = .9;
+  const lp = ctx.createBiquadFilter(); lp.type = "lowpass"; lp.frequency.value = 7000;
+  const mono = ctx.createGain(); mono.channelCount = 1; mono.channelCountMode = "explicit";
+  d.node.connect(hp); hp.connect(lp); lp.connect(mono); mono.connect(ctx.destination);
+}
+function setBtn(btn, on, label) {
+  btn.classList.toggle("playing", on);
+  btn.setAttribute("aria-pressed", on);
+  btn.textContent = on ? "Stop" : label;
+  if (!on) btn.style.removeProperty("--p");
 }
 function stop() {
-  if (current) { try { current.src.stop(); } catch {} current.d.head.setAttribute("visibility", "hidden"); current = null; }
   cancelAnimationFrame(raf);
+  if (!current) return;
+  const { d, a, btn, done } = current;
+  a.pause(); a.currentTime = 0;
+  d.head.setAttribute("visibility", "hidden");
+  setBtn(btn, false, `Play ${d.name}`);
+  current = null;
+  done();
 }
-async function play(d) {
-  ctx ??= new AudioContext();
-  await ctx.resume();
+function play(d) {
   stop();
-  const buf = await load(d);
-  const src = ctx.createBufferSource(); src.buffer = buf;
-  let node = src;
-  if (document.getElementById("phone").checked) {
-    const hp = ctx.createBiquadFilter(); hp.type = "highpass"; hp.frequency.value = 400; hp.Q.value = .9;
-    const lp = ctx.createBiquadFilter(); lp.type = "lowpass"; lp.frequency.value = 7000;
-    const mono = ctx.createGain(); mono.channelCount = 1; mono.channelCountMode = "explicit";
-    node.connect(hp); hp.connect(lp); lp.connect(mono); node = mono;
-  }
-  node.connect(ctx.destination);
-  const t0 = ctx.currentTime; src.start();
-  current = { src, d };
-  const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
-  const tick = () => {
-    const t = ctx.currentTime - t0;
-    if (!reduce) { const x = d.px(Math.min(t, 3.8)); d.head.setAttribute("x1", x); d.head.setAttribute("x2", x); d.head.setAttribute("visibility", "visible"); }
-    if (t < buf.duration) raf = requestAnimationFrame(tick); else d.head.setAttribute("visibility", "hidden");
-  };
-  tick();
-  return new Promise(res => { src.onended = res; });
+  const a = audio(d), btn = list.querySelector(`[data-id="${d.id}"]`);
+  route(d);
+  return new Promise(done => {
+    current = { d, a, btn, done };
+    setBtn(btn, true);
+    a.onended = () => { if (current?.a === a) stop(); };
+    a.play().catch(err => { stop(); btn.textContent = "Can't play here"; console.error(err); });
+    const tick = () => {
+      if (current?.a !== a) return;
+      const t = a.currentTime, p = Math.min(100, t / (a.duration || d.sec) * 100);
+      btn.style.setProperty("--p", p + "%");
+      if (allRun) allBtn.style.setProperty("--p", ((DIRS.indexOf(d) + p / 100) / DIRS.length * 100) + "%");
+      if (!reduce) { const x = d.px(Math.min(t, 3.8)); d.head.setAttribute("x1", x); d.head.setAttribute("x2", x); d.head.setAttribute("visibility", "visible"); }
+      raf = requestAnimationFrame(tick);
+    };
+    tick();
+  });
 }
-list.addEventListener("click", e => { const b = e.target.closest("[data-id]"); if (b) play(DIRS.find(d => d.id === b.dataset.id)); });
-document.getElementById("all").addEventListener("click", async () => {
-  for (const d of DIRS) { await play(d); await new Promise(r => setTimeout(r, 700)); }
+function stopAll() { allRun = 0; setBtn(allBtn, false, "Play all six in a row"); stop(); }
+list.addEventListener("click", e => {
+  const b = e.target.closest("[data-id]"); if (!b) return;
+  const d = DIRS.find(x => x.id === b.dataset.id);
+  if (current?.d === d) { stopAll(); return; }
+  stopAll(); play(d);
+});
+allBtn.addEventListener("click", async () => {
+  if (allRun) { stopAll(); return; }
+  stop();
+  const run = allRun = Date.now();
+  setBtn(allBtn, true);
+  for (const d of DIRS) {
+    await play(d);
+    if (allRun !== run) return;
+    await new Promise(r => setTimeout(r, 700));
+    if (allRun !== run) return;
+  }
+  stopAll();
 });
 </script>
