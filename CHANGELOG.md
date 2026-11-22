@@ -4,6 +4,29 @@ Every notable change to Gradient and the `shades-gradient` package. The format f
 
 ## [Unreleased]
 
+## [0.12.0] - 2026-11-22
+
+### Added
+
+- Colour-blindness labels in all 11 languages (site)
+- Colour-blindness correction with a choice of red, green or blue (preferences)
+- Link Popfox to popfox.shades.md (site)
+- Popfox joins the product family and the projects page (site)
+- SocialMonitor and Shades CRM marked live, with the SocialMonitor site linked (site)
+- Campaign board first, sign render out, campaign mockups on the applications and print pages (site)
+- Metro corridor mockup under the campaign board on the applications page (site)
+- Brand boards and guidelines slides from Figma on the brand and applications pages (site)
+
+### Fixed
+
+- Drop removed library entries from old rulebook versions (site)
+- Patch high-severity transitive packages (deps)
+- Inset the inspiration menu's current-page pill evenly (rulebook)
+
+### Changed
+
+- Load the brand page's paper lockups from the SVG file instead of inlining them (site)
+
 ## [0.11.0] - 2026-10-25
 
 ### Changed
