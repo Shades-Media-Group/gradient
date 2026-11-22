@@ -332,8 +332,9 @@ IDEAS = {"i1-hum": hum, "i2-choir": choir, "i3-whistle": whistled, "i4-bottles":
          "i5-glass": glass, "i6-paper": paper, "i7-mouth": mouth, "i8-spectrum-tape": spectrum_tape}
 
 
-if __name__ == "__main__":
-    todo = {k: v for k, v in IDEAS.items() if len(sys.argv) < 2 or any(a in k for a in sys.argv[1:])}
+def run(table):
+    """Render the ideas named on the command line (all when none), audit and record each one."""
+    todo = {k: v for k, v in table.items() if len(sys.argv) < 2 or any(a in k for a in sys.argv[1:])}
     path = OUT / "audit.json"
     report = json.loads(path.read_text()) if path.exists() else {}
     for name, build in todo.items():
@@ -347,3 +348,7 @@ if __name__ == "__main__":
               f"sub {b['sub <120']:4} low {b['low 120-400']:4} mid {b['mid 400-2k']:4} pres {b['presence 2k-6k']:4} "
               f"air {b['air >6k']:4} last50 {a['last_50ms_peak_db']}")
     path.write_text(json.dumps(dict(sorted(report.items())), indent=2) + "\n")
+
+
+if __name__ == "__main__":
+    run(IDEAS)
