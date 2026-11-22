@@ -1,9 +1,9 @@
 <meta charset="utf-8">
-<title>Shades Sonic Logo</title>
+<title>Shades sound: eight ideas</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap">
 <style>
-/* Layout: one column of listening rows on hairlines; each row draws its three notes as the mark's three bars. */
+/* Layout: one column of listening rows on hairlines; each row draws its waveform. */
 :root {
   --paper: #F7F6F3; --surface: #FDFDFC; --ink: #141416; --muted: #56565E; --line: #E6E6E4;
   --red: #E40523; --red-ink: #C4041E; --note: #141416;
@@ -41,11 +41,13 @@ button:focus-visible { outline: 2px solid var(--red); outline-offset: 3px; }
 
 ol { list-style: none; margin: 24px 0 0; padding: 0; border-top: 1px solid var(--ink); }
 li { display: grid; grid-template-columns: 220px minmax(0, 1fr) 180px; gap: 20px 32px; padding: 32px 0; border-bottom: 1px solid var(--line); align-items: center; }
-h2 { font: 600 1.6rem/1.1 var(--display); margin: 0 0 6px; letter-spacing: -0.01em; }
+li h3 { font: 600 1.6rem/1.1 var(--display); margin: 0 0 6px; letter-spacing: -0.01em; }
+h2.group { font: 600 2.2rem/1.1 var(--display); margin: 72px 0 4px; letter-spacing: -0.015em; }
+p.group-lead { margin: 0 0 8px; max-width: 60ch; color: var(--muted, inherit); }
+ol { list-style: none; margin: 0; padding: 0; }
 .desc { margin: 0; color: var(--muted); font-size: 15px; max-width: 46ch; }
-.notes { margin: 10px 0 0; font-size: 14px; color: var(--ink); white-space: nowrap; }
 .score { width: 100%; height: 120px; display: block; }
-.score .bar { fill: var(--note); }
+.score .wave { fill: var(--note); }
 .score .head { stroke: var(--red); stroke-width: 2; }
 .score .base { stroke: var(--line); }
 .meta { display: grid; gap: 4px; font-size: 14px; color: var(--muted); font-variant-numeric: tabular-nums; }
@@ -68,75 +70,58 @@ footer { margin-top: 40px; color: var(--muted); font-size: 14px; max-width: 70ch
       <rect x="23" y="13" width="10" height="30" fill="#fff" fill-opacity=".75"/>
       <rect x="36" y="13" width="10" height="30" fill="#fff" fill-opacity=".5"/>
     </svg>
-    <h1>Spectrum, six ways</h1>
-    <p class="lead">Every version keeps Spectrum's idea: three notes at the mark's strengths, held while the tone opens from blue to orange, then closes back and settles on a low B, home. They differ in voice, tune and pace. Pick one, and the long intro and the product sounds are built from it.</p>
+    <h1>Eight ideas</h1>
+    <p class="lead">Eight different ways to say Shades in sound, made the way a foley artist works: a voice, a breath, the mouth, paper, glass, bottles, a felt piano. Each keeps the three notes at the mark's strengths, then is finished like a studio take: human timing, tape warmth, EQ, a real-sized room. Pick one, and the long intro and the product sounds are built from it.</p>
   </header>
 
   <div class="controls">
-    <button class="primary" id="all" type="button">Play all six in a row</button>
+    <button class="primary" id="all" type="button">Play all in a row</button>
     <label class="switch"><input type="checkbox" id="phone"> Hear it through a phone speaker</label>
   </div>
 
-  <ol id="list"></ol>
+  <div id="list"></div>
 
   <footer>
-    Every file is synthesised from code in the gradient repo (<span>packages/gradient/brand/sound/render.py</span>), so we own every note. Levelled to −16 LUFS with true peak under −1 dBTP. Each band is a note: height is pitch, shade is strength, length is how long it holds.
+    Every sound, the voices and objects included, is synthesised from code in the gradient repo (<span>packages/gradient/brand/sound/ideas.py</span> and <span>render.py</span>), so we own all of it. Levelled to −16 LUFS with true peak under −1 dBTP. The shape beside each is its waveform.
   </footer>
 </div>
 
 <script>
-const MIDI = n => { const m = n.match(/^([A-G]#?)(\d)$/); return "C C# D D# E F F# G G# A A# B".split(" ").indexOf(m[1]) + 12 * (+m[2] + 1); };
-const DIRS = [
-  { id: "b", name: "Spectrum", file: "shades-logo-b-spectrum-3.7s.mp3", notes: ["F#4","B4","C#5"], times: [0, .14, .34], hold: true,
-    desc: "The first round's B, for reference. Short, short, long, then the tone opens from dark blue to warm orange.",
-    voice: "Warm synth, three strings", sec: 3.7, tp: -4.7 },
-  { id: "b2", name: "Wide", file: "shades-logo-b2-wide-3.9s.mp3", notes: ["F#4","B4","C#5"], times: [0, .14, .34], hold: true,
-    desc: "Same notes, a fuller voice: five detuned strings, a slower bloom and a deeper floor under it.",
-    voice: "Warm synth, five strings", sec: 3.9, tp: -4.1 },
-  { id: "b3", name: "Arc", file: "shades-logo-b3-arc-3.7s.mp3", notes: ["F#4","C#5","B4"], times: [0, .16, .38], hold: true,
-    desc: "Up a fifth, then a step down to rest on B. It ends at home instead of leaning forward.",
-    voice: "Warm synth, five strings", sec: 3.7, tp: -4.5 },
-  { id: "b4", name: "Bloom", file: "shades-logo-b4-bloom-4.0s.mp3", notes: ["B3","F#4","C#5"], times: [0, .22, .44], hold: true,
-    desc: "No attack at all. Three notes swell in one after another and open as one chord. The calmest; quietest on a phone.",
-    voice: "Slow swells", sec: 4.0, tp: -5.3 },
-  { id: "b5", name: "Stroke", file: "shades-logo-b5-stroke-3.8s.mp3", notes: ["F#4","B4","C#5"], times: [0, .18, .4], hold: true,
-    desc: "One voice glides through the three notes like a single stroke, and each note it passes stays behind, fading like the bars.",
-    voice: "Gliding lead, held trail", sec: 3.8, tp: -3.9 },
-  { id: "b6", name: "Cinema", file: "shades-logo-b6-cinema-4.3s.mp3", notes: ["F#4","B4","C#5"], times: [.25, .42, .66], hold: true,
-    desc: "For the TV app open (4.3 s, a start-up sound). A slow low swell first, then the notes, and the colour opens further and longer.",
-    voice: "Warm synth over a low swell", sec: 4.3, tp: -4.3 },
-];
-const STRENGTH = [1, .75, .5];
+const DIRS = [{"id": "i1", "name": "Hum", "group": 1, "file": "shades-logo-i1-hum-4.3s.mp3", "desc": "One person hums the three notes after a breath in, recorded twice and layered. The lips part as it opens: mm, then oo.", "voice": "Two hummed takes", "sec": 4.3, "tp": -7.64, "peaks": [0.01, 0.02, 0.05, 0.06, 0.1, 0.13, 0.12, 0.14, 0.15, 0.23, 0.47, 0.56, 0.58, 0.6, 0.63, 0.52, 0.61, 0.7, 0.68, 0.71, 0.65, 0.43, 0.46, 0.54, 0.54, 0.44, 0.39, 0.48, 0.6, 0.7, 0.75, 0.8, 0.84, 0.86, 0.68, 0.77, 0.75, 0.7, 0.79, 0.87, 0.89, 0.91, 0.9, 0.93, 0.92, 0.83, 0.64, 0.74, 0.76, 0.76, 0.93, 0.94, 0.76, 0.57, 0.65, 0.75, 0.83, 0.81, 0.72, 0.74, 0.74, 0.75, 0.78, 0.81, 0.82, 0.75, 0.66, 0.68, 0.8, 0.92, 0.99, 0.76, 0.6, 0.72, 0.65, 0.55, 0.74, 0.84, 0.92, 0.85, 0.82, 0.78, 0.92, 1.0, 0.97, 0.78, 0.64, 0.7, 0.74, 0.72, 0.84, 0.87, 0.65, 0.6, 0.59, 0.47, 0.57, 0.6, 0.55, 0.41, 0.32, 0.4, 0.37, 0.43, 0.39, 0.3, 0.32, 0.32, 0.21, 0.17, 0.15, 0.12, 0.11, 0.12, 0.08, 0.07, 0.07, 0.08, 0.06, 0.07, 0.08, 0.1, 0.1, 0.09, 0.12, 0.13, 0.12, 0.11, 0.11, 0.12, 0.12, 0.08, 0.08, 0.1, 0.09, 0.09, 0.08, 0.08, 0.07, 0.07, 0.08, 0.09, 0.09, 0.07, 0.05, 0.05, 0.06, 0.05, 0.02, 0.0]}, {"id": "i2", "name": "Choir", "group": 1, "file": "shades-logo-i2-choir-4.6s.mp3", "desc": "Sixteen voices swell on a wide B chord, from oo to ah, and settle. The biggest; for the TV open.", "voice": "Formant choir", "sec": 4.6, "tp": -5.95, "peaks": [0.0, 0.0, 0.01, 0.02, 0.04, 0.05, 0.08, 0.11, 0.14, 0.18, 0.19, 0.21, 0.25, 0.27, 0.28, 0.31, 0.34, 0.33, 0.35, 0.37, 0.39, 0.34, 0.33, 0.37, 0.39, 0.41, 0.37, 0.34, 0.34, 0.42, 0.44, 0.45, 0.44, 0.4, 0.34, 0.34, 0.46, 0.55, 0.53, 0.48, 0.53, 0.73, 0.97, 0.94, 0.75, 0.65, 0.62, 0.7, 0.93, 0.92, 0.76, 0.86, 0.83, 0.84, 0.72, 0.71, 0.79, 0.89, 0.92, 0.74, 0.94, 0.84, 0.84, 0.85, 0.88, 0.9, 1.0, 0.87, 0.83, 0.87, 0.6, 0.76, 0.94, 0.72, 0.61, 0.61, 0.53, 0.66, 0.7, 0.66, 0.8, 0.68, 0.82, 0.84, 0.7, 0.64, 0.74, 0.63, 0.51, 0.58, 0.56, 0.7, 0.71, 0.75, 0.73, 0.65, 0.68, 0.6, 0.5, 0.46, 0.52, 0.57, 0.43, 0.22, 0.27, 0.29, 0.32, 0.29, 0.2, 0.18, 0.19, 0.2, 0.19, 0.15, 0.16, 0.15, 0.13, 0.13, 0.11, 0.12, 0.1, 0.1, 0.08, 0.1, 0.12, 0.14, 0.14, 0.13, 0.09, 0.08, 0.09, 0.09, 0.07, 0.09, 0.08, 0.08, 0.08, 0.1, 0.1, 0.11, 0.11, 0.11, 0.1, 0.12, 0.11, 0.1, 0.08, 0.05, 0.02, 0.0]}, {"id": "i3", "name": "Whistle", "group": 1, "file": "shades-logo-i3-whistle-3.4s.mp3", "desc": "A finger snap, then the three notes whistled, short-short-long, with the slides and wobble of a real whistle.", "voice": "Snap and whistle", "sec": 3.4, "tp": -8.58, "peaks": [0.01, 0.01, 0.0, 0.0, 0.0, 0.16, 0.29, 0.52, 0.77, 0.89, 1.0, 0.89, 0.76, 0.66, 0.53, 0.65, 0.93, 0.75, 0.66, 0.76, 0.88, 0.74, 0.76, 0.85, 0.83, 0.8, 0.78, 0.82, 0.75, 0.71, 0.72, 0.65, 0.6, 0.59, 0.67, 0.67, 0.72, 0.74, 0.76, 0.63, 0.36, 0.63, 0.68, 0.59, 0.55, 0.71, 0.69, 0.42, 0.53, 0.75, 0.75, 0.48, 0.6, 0.78, 0.78, 0.45, 0.58, 0.72, 0.68, 0.41, 0.65, 0.78, 0.71, 0.39, 0.57, 0.7, 0.68, 0.42, 0.61, 0.77, 0.75, 0.48, 0.57, 0.62, 0.48, 0.61, 0.61, 0.61, 0.56, 0.5, 0.46, 0.29, 0.41, 0.44, 0.32, 0.22, 0.32, 0.35, 0.26, 0.15, 0.2, 0.13, 0.16, 0.17, 0.13, 0.05, 0.06, 0.06, 0.06, 0.1, 0.12, 0.08, 0.08, 0.08, 0.07, 0.06, 0.06, 0.04, 0.05, 0.06, 0.05, 0.04, 0.03, 0.05, 0.07, 0.07, 0.06, 0.06, 0.03, 0.04, 0.03, 0.04, 0.04, 0.03, 0.04, 0.05, 0.05, 0.05, 0.04, 0.03, 0.03, 0.03, 0.03, 0.03, 0.02, 0.01, 0.01, 0.01, 0.01, 0.02, 0.02, 0.01, 0.01, 0.01, 0.01, 0.01, 0.0, 0.0, 0.0, 0.0]}, {"id": "i4", "name": "Bottles", "group": 1, "file": "shades-logo-i4-bottles-4.3s.mp3", "desc": "Three bottles blown one after another. Each is a breath you can hear, held together as a chord.", "voice": "Blown bottles", "sec": 4.3, "tp": -5.45, "peaks": [0.06, 0.15, 0.24, 0.34, 0.28, 0.3, 0.33, 0.43, 0.46, 0.41, 0.34, 0.32, 0.48, 0.56, 0.76, 0.77, 0.65, 0.54, 0.59, 0.75, 0.74, 0.61, 0.69, 0.81, 0.68, 0.51, 0.5, 0.73, 0.94, 0.71, 0.72, 0.72, 0.77, 0.72, 0.61, 0.71, 0.53, 0.59, 0.51, 0.49, 0.52, 0.43, 0.54, 0.54, 0.65, 0.69, 0.81, 0.93, 1.0, 0.84, 0.71, 0.49, 0.63, 0.71, 0.63, 0.83, 0.72, 0.62, 0.71, 0.59, 0.45, 0.58, 0.54, 0.66, 0.43, 0.42, 0.66, 0.82, 0.58, 0.56, 0.5, 0.5, 0.51, 0.69, 0.66, 0.61, 0.59, 0.53, 0.65, 0.75, 0.59, 0.71, 0.79, 0.82, 0.77, 0.89, 0.88, 0.7, 0.56, 0.66, 0.64, 0.54, 0.47, 0.41, 0.42, 0.37, 0.36, 0.37, 0.37, 0.35, 0.39, 0.31, 0.35, 0.37, 0.27, 0.29, 0.23, 0.17, 0.16, 0.12, 0.18, 0.15, 0.12, 0.1, 0.13, 0.11, 0.1, 0.06, 0.07, 0.07, 0.06, 0.06, 0.05, 0.04, 0.03, 0.06, 0.05, 0.05, 0.04, 0.05, 0.05, 0.04, 0.03, 0.04, 0.03, 0.03, 0.04, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.02, 0.02, 0.02, 0.01, 0.01, 0.0, 0.0]}, {"id": "i5", "name": "Glass", "group": 1, "file": "shades-logo-i5-glass-4.7s.mp3", "desc": "Three wine glasses rubbed with a wet finger, joining one by one, beating gently. Held tones, no strike.", "voice": "Rubbed glasses", "sec": 4.7, "tp": -7.74, "peaks": [0.01, 0.05, 0.08, 0.11, 0.14, 0.16, 0.18, 0.21, 0.22, 0.24, 0.28, 0.32, 0.36, 0.37, 0.4, 0.47, 0.51, 0.56, 0.61, 0.64, 0.64, 0.61, 0.64, 0.65, 0.65, 0.62, 0.68, 0.69, 0.7, 0.74, 0.74, 0.78, 0.8, 0.85, 0.89, 0.87, 0.86, 0.9, 0.92, 0.91, 0.85, 0.93, 0.95, 0.96, 0.91, 0.9, 0.93, 0.97, 0.93, 0.92, 0.89, 0.96, 0.99, 0.99, 0.91, 0.88, 0.88, 0.9, 0.88, 0.88, 0.89, 0.87, 0.9, 0.95, 0.96, 0.93, 0.93, 0.95, 0.98, 0.96, 1.0, 0.96, 0.87, 0.87, 0.86, 0.89, 0.79, 0.76, 0.77, 0.73, 0.69, 0.67, 0.68, 0.63, 0.58, 0.59, 0.61, 0.56, 0.52, 0.51, 0.55, 0.55, 0.54, 0.53, 0.51, 0.53, 0.51, 0.52, 0.5, 0.46, 0.45, 0.43, 0.4, 0.37, 0.36, 0.33, 0.32, 0.3, 0.3, 0.28, 0.27, 0.25, 0.23, 0.21, 0.2, 0.19, 0.18, 0.17, 0.16, 0.16, 0.16, 0.16, 0.15, 0.14, 0.14, 0.14, 0.14, 0.14, 0.14, 0.14, 0.14, 0.14, 0.14, 0.14, 0.14, 0.15, 0.15, 0.14, 0.15, 0.14, 0.14, 0.14, 0.14, 0.14, 0.13, 0.13, 0.13, 0.1, 0.05, 0.01]}, {"id": "i6", "name": "Ink and paper", "group": 1, "file": "shades-logo-i6-paper-3.9s.mp3", "desc": "A sheet slides across a desk, a pen clicks, and a felt piano rolls the three notes over a low B.", "voice": "Paper, pen, felt piano", "sec": 3.9, "tp": -3.09, "peaks": [0.0, 0.01, 0.04, 0.06, 0.11, 0.14, 0.17, 0.19, 0.21, 0.22, 0.23, 0.2, 0.15, 0.14, 0.11, 0.09, 0.09, 0.08, 0.07, 0.26, 0.68, 0.83, 1.0, 0.99, 0.72, 0.76, 0.84, 0.67, 0.65, 0.7, 0.65, 0.63, 0.64, 0.55, 0.54, 0.54, 0.55, 0.6, 0.57, 0.59, 0.61, 0.6, 0.6, 0.6, 0.57, 0.53, 0.49, 0.46, 0.47, 0.46, 0.43, 0.42, 0.41, 0.4, 0.41, 0.42, 0.42, 0.39, 0.42, 0.43, 0.36, 0.35, 0.4, 0.44, 0.45, 0.44, 0.43, 0.41, 0.38, 0.41, 0.33, 0.35, 0.33, 0.32, 0.32, 0.33, 0.38, 0.35, 0.36, 0.36, 0.37, 0.33, 0.28, 0.29, 0.27, 0.28, 0.25, 0.24, 0.21, 0.2, 0.18, 0.15, 0.14, 0.13, 0.12, 0.1, 0.1, 0.09, 0.08, 0.07, 0.06, 0.05, 0.05, 0.04, 0.05, 0.05, 0.04, 0.04, 0.04, 0.04, 0.04, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.04, 0.03, 0.03, 0.03, 0.03, 0.02, 0.02, 0.02, 0.02, 0.02, 0.02, 0.02, 0.02, 0.02, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]}, {"id": "i7", "name": "Mouth", "group": 1, "file": "shades-logo-i7-mouth-3.9s.mp3", "desc": "Three cheek pops at the three notes, then a hummed low B holds and fades.", "voice": "Cheek pops and hum", "sec": 3.9, "tp": -1.27, "peaks": [0.2, 0.3, 0.3, 0.35, 1.0, 1.0, 1.0, 0.72, 0.58, 0.45, 0.3, 0.87, 1.0, 0.82, 1.0, 0.76, 0.49, 0.48, 0.47, 0.44, 0.44, 0.4, 0.38, 0.24, 0.27, 0.27, 0.34, 0.29, 0.24, 0.28, 0.3, 0.27, 0.26, 0.25, 0.26, 0.27, 0.28, 0.23, 0.21, 0.21, 0.23, 0.21, 0.22, 0.21, 0.19, 0.15, 0.17, 0.19, 0.19, 0.18, 0.19, 0.2, 0.19, 0.18, 0.14, 0.2, 0.22, 0.22, 0.24, 0.26, 0.23, 0.18, 0.16, 0.2, 0.23, 0.23, 0.23, 0.22, 0.19, 0.19, 0.18, 0.19, 0.2, 0.2, 0.19, 0.15, 0.16, 0.23, 0.23, 0.17, 0.14, 0.19, 0.19, 0.21, 0.23, 0.23, 0.21, 0.16, 0.17, 0.16, 0.12, 0.12, 0.16, 0.16, 0.15, 0.12, 0.13, 0.14, 0.13, 0.13, 0.13, 0.12, 0.1, 0.1, 0.11, 0.1, 0.09, 0.07, 0.07, 0.06, 0.05, 0.05, 0.04, 0.04, 0.02, 0.03, 0.03, 0.02, 0.02, 0.02, 0.03, 0.03, 0.03, 0.02, 0.03, 0.03, 0.02, 0.02, 0.02, 0.02, 0.02, 0.02, 0.02, 0.02, 0.02, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.0, 0.0, 0.0]}, {"id": "i8", "name": "Spectrum, produced", "group": 1, "file": "shades-logo-i8-spectrum-tape-4.4s.mp3", "desc": "Your favourite, Spectrum, with a soft felt piano under each note, printed to tape: warmer, slightly moving.", "voice": "Warm synth, piano, tape", "sec": 4.4, "tp": -5.95, "peaks": [0.03, 0.09, 0.16, 0.23, 0.3, 0.39, 0.48, 0.57, 0.59, 0.6, 0.56, 0.55, 0.62, 0.61, 0.63, 0.7, 0.72, 0.73, 0.73, 0.91, 0.97, 0.98, 1.0, 0.98, 0.93, 0.85, 0.84, 0.88, 0.93, 0.93, 0.9, 0.83, 0.81, 0.82, 0.84, 0.88, 0.8, 0.7, 0.62, 0.64, 0.65, 0.61, 0.63, 0.63, 0.65, 0.64, 0.6, 0.64, 0.74, 0.76, 0.73, 0.68, 0.71, 0.7, 0.66, 0.76, 0.73, 0.78, 0.84, 0.91, 0.98, 0.97, 0.87, 0.8, 0.74, 0.69, 0.63, 0.63, 0.66, 0.67, 0.65, 0.62, 0.6, 0.6, 0.55, 0.52, 0.57, 0.56, 0.59, 0.61, 0.64, 0.56, 0.5, 0.5, 0.5, 0.46, 0.43, 0.51, 0.52, 0.48, 0.45, 0.4, 0.4, 0.35, 0.36, 0.33, 0.29, 0.3, 0.35, 0.35, 0.32, 0.31, 0.28, 0.27, 0.27, 0.27, 0.24, 0.22, 0.17, 0.17, 0.15, 0.13, 0.16, 0.17, 0.16, 0.15, 0.14, 0.15, 0.15, 0.14, 0.13, 0.11, 0.12, 0.13, 0.13, 0.13, 0.13, 0.05, 0.05, 0.06, 0.05, 0.04, 0.04, 0.03, 0.03, 0.03, 0.03, 0.03, 0.02, 0.03, 0.03, 0.02, 0.02, 0.02, 0.02, 0.02, 0.02, 0.01, 0.0, 0.0]}, {"id": "e1", "name": "Strings", "group": 2, "file": "shades-logo-e1-strings-3.8s.mp3", "desc": "A string section holds the three notes and brightens as the bows press in.", "voice": "Bowed strings", "sec": 3.8, "tp": -3.22, "peaks": [0.0, 0.01, 0.02, 0.02, 0.02, 0.02, 0.02, 0.03, 0.05, 0.06, 0.09, 0.11, 0.12, 0.16, 0.19, 0.22, 0.25, 0.27, 0.31, 0.33, 0.33, 0.31, 0.27, 0.27, 0.25, 0.22, 0.26, 0.26, 0.39, 0.56, 0.64, 0.7, 0.66, 0.68, 0.6, 0.61, 0.47, 0.43, 0.4, 0.46, 0.48, 0.5, 0.53, 0.61, 0.59, 0.52, 0.44, 0.51, 0.5, 0.46, 0.48, 0.46, 0.62, 0.74, 0.93, 0.91, 0.9, 0.92, 0.94, 0.86, 0.67, 0.72, 0.63, 0.56, 0.5, 0.46, 0.7, 0.69, 0.54, 0.48, 0.56, 0.6, 0.71, 0.73, 0.77, 0.51, 0.5, 0.68, 0.83, 0.72, 0.76, 0.53, 0.41, 0.57, 0.66, 0.68, 0.76, 0.86, 0.95, 0.93, 1.0, 0.96, 0.92, 0.69, 0.56, 0.46, 0.5, 0.5, 0.48, 0.51, 0.43, 0.42, 0.4, 0.49, 0.56, 0.51, 0.46, 0.52, 0.5, 0.39, 0.37, 0.35, 0.33, 0.34, 0.33, 0.35, 0.23, 0.27, 0.27, 0.23, 0.17, 0.16, 0.18, 0.19, 0.16, 0.19, 0.16, 0.14, 0.13, 0.1, 0.11, 0.14, 0.11, 0.14, 0.11, 0.09, 0.07, 0.09, 0.09, 0.07, 0.09, 0.09, 0.09, 0.05, 0.06, 0.05, 0.04, 0.02, 0.01, 0.0]}, {"id": "e2", "name": "Horns", "group": 2, "file": "shades-logo-e2-horns-4.0s.mp3", "desc": "Strings with a soft horn doubling them.", "voice": "Strings and horn", "sec": 4.0, "tp": -3.68, "peaks": [0.0, 0.01, 0.02, 0.02, 0.02, 0.01, 0.02, 0.04, 0.06, 0.07, 0.09, 0.1, 0.13, 0.17, 0.21, 0.25, 0.3, 0.32, 0.35, 0.36, 0.36, 0.36, 0.31, 0.25, 0.24, 0.25, 0.34, 0.55, 0.65, 0.8, 0.82, 0.76, 0.67, 0.62, 0.57, 0.51, 0.42, 0.45, 0.52, 0.53, 0.64, 0.67, 0.66, 0.62, 0.55, 0.59, 0.57, 0.56, 0.54, 0.53, 0.81, 0.93, 0.99, 0.83, 0.85, 0.98, 1.0, 0.77, 0.76, 0.53, 0.58, 0.64, 0.51, 0.57, 0.61, 0.54, 0.54, 0.58, 0.63, 0.75, 0.73, 0.58, 0.62, 0.77, 0.83, 0.72, 0.63, 0.58, 0.61, 0.72, 0.77, 0.83, 0.99, 0.94, 0.92, 1.0, 0.98, 0.82, 0.66, 0.62, 0.61, 0.53, 0.54, 0.52, 0.47, 0.53, 0.51, 0.53, 0.61, 0.63, 0.59, 0.59, 0.56, 0.55, 0.45, 0.41, 0.52, 0.53, 0.53, 0.51, 0.42, 0.39, 0.4, 0.34, 0.36, 0.36, 0.35, 0.32, 0.33, 0.34, 0.36, 0.39, 0.29, 0.26, 0.25, 0.23, 0.23, 0.21, 0.22, 0.2, 0.21, 0.19, 0.16, 0.13, 0.14, 0.16, 0.12, 0.15, 0.09, 0.09, 0.14, 0.14, 0.13, 0.13, 0.13, 0.13, 0.11, 0.06, 0.02, 0.0]}, {"id": "e3", "name": "Keys", "group": 2, "file": "shades-logo-e3-keys-3.8s.mp3", "desc": "An electric piano strikes the notes; an analog pad holds them and opens.", "voice": "E-piano and pad", "sec": 3.8, "tp": -4.02, "peaks": [0.68, 0.63, 0.64, 0.69, 0.69, 0.92, 0.96, 0.85, 0.96, 0.82, 0.87, 0.97, 0.8, 0.79, 0.95, 0.98, 1.0, 0.84, 0.83, 0.95, 0.89, 0.81, 0.92, 0.82, 0.59, 0.69, 0.62, 0.68, 0.62, 0.54, 0.65, 0.59, 0.61, 0.52, 0.59, 0.53, 0.47, 0.36, 0.37, 0.32, 0.47, 0.38, 0.33, 0.48, 0.36, 0.37, 0.33, 0.37, 0.29, 0.3, 0.37, 0.37, 0.33, 0.4, 0.33, 0.31, 0.31, 0.33, 0.41, 0.4, 0.43, 0.49, 0.44, 0.4, 0.41, 0.35, 0.3, 0.3, 0.33, 0.33, 0.24, 0.32, 0.34, 0.39, 0.38, 0.39, 0.37, 0.29, 0.27, 0.28, 0.28, 0.26, 0.27, 0.25, 0.3, 0.28, 0.32, 0.31, 0.31, 0.35, 0.33, 0.31, 0.27, 0.32, 0.33, 0.3, 0.36, 0.33, 0.32, 0.3, 0.3, 0.27, 0.27, 0.26, 0.21, 0.19, 0.2, 0.21, 0.23, 0.25, 0.18, 0.18, 0.18, 0.17, 0.18, 0.18, 0.15, 0.17, 0.17, 0.15, 0.13, 0.13, 0.11, 0.1, 0.11, 0.09, 0.09, 0.1, 0.08, 0.06, 0.08, 0.08, 0.08, 0.08, 0.07, 0.07, 0.05, 0.03, 0.04, 0.04, 0.04, 0.05, 0.04, 0.04, 0.03, 0.04, 0.02, 0.01, 0.01, 0.0]}, {"id": "e4", "name": "Air", "group": 2, "file": "shades-logo-e4-air-3.8s.mp3", "desc": "A flute plays the three notes over held low strings.", "voice": "Flute and strings", "sec": 3.8, "tp": -4.31, "peaks": [0.0, 0.0, 0.07, 0.11, 0.11, 0.11, 0.11, 0.12, 0.18, 0.23, 0.19, 0.18, 0.2, 0.2, 0.2, 0.23, 0.36, 0.34, 0.31, 0.35, 0.37, 0.31, 0.33, 0.37, 0.37, 0.42, 0.4, 0.41, 0.46, 0.43, 0.58, 0.48, 0.54, 0.55, 0.76, 0.68, 0.56, 0.68, 0.56, 0.63, 0.69, 0.58, 0.59, 0.71, 0.7, 0.66, 0.67, 0.59, 0.65, 0.73, 0.76, 0.79, 0.73, 0.83, 0.83, 0.86, 0.6, 0.73, 0.71, 0.77, 0.66, 0.77, 0.76, 0.75, 0.62, 0.7, 0.62, 0.75, 0.87, 0.97, 0.79, 0.9, 0.67, 0.67, 0.61, 0.7, 0.72, 0.65, 0.68, 0.66, 0.7, 0.66, 0.72, 0.58, 0.66, 0.67, 0.63, 0.64, 0.6, 0.83, 1.0, 0.63, 0.65, 0.57, 0.56, 0.58, 0.6, 0.59, 0.66, 0.64, 0.46, 0.6, 0.55, 0.6, 0.43, 0.52, 0.44, 0.43, 0.43, 0.34, 0.46, 0.36, 0.31, 0.28, 0.34, 0.35, 0.39, 0.3, 0.21, 0.25, 0.25, 0.23, 0.23, 0.17, 0.15, 0.19, 0.17, 0.14, 0.15, 0.14, 0.12, 0.1, 0.14, 0.11, 0.1, 0.11, 0.13, 0.09, 0.08, 0.07, 0.06, 0.09, 0.06, 0.07, 0.06, 0.06, 0.06, 0.03, 0.01, 0.0]}, {"id": "e5", "name": "Score", "group": 2, "file": "shades-logo-e5-score-4.8s.mp3", "desc": "Everything together after a low swell, for the TV open.", "voice": "Pad, strings, horn, keys", "sec": 4.8, "tp": -6.06, "peaks": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.32, 0.58, 0.59, 0.64, 0.64, 0.65, 0.7, 0.73, 0.81, 0.79, 0.76, 0.83, 0.54, 0.68, 0.77, 0.93, 0.86, 0.77, 0.62, 0.72, 0.72, 0.77, 0.78, 0.64, 0.71, 0.64, 0.72, 0.77, 0.86, 0.74, 0.64, 0.57, 0.6, 0.61, 0.55, 0.52, 0.56, 0.64, 0.53, 0.6, 0.62, 0.62, 0.66, 0.77, 0.78, 0.68, 0.72, 0.69, 0.82, 0.8, 0.73, 0.7, 0.86, 0.76, 0.82, 0.75, 1.0, 0.94, 0.92, 0.83, 0.81, 0.76, 0.83, 0.66, 0.7, 0.73, 0.67, 0.63, 0.76, 0.94, 0.79, 0.92, 0.76, 0.75, 0.75, 0.73, 0.8, 0.97, 0.78, 0.83, 0.76, 0.66, 0.68, 0.86, 0.69, 0.75, 0.67, 0.6, 0.63, 0.61, 0.6, 0.73, 0.64, 0.63, 0.67, 0.66, 0.62, 0.54, 0.42, 0.58, 0.68, 0.7, 0.64, 0.67, 0.54, 0.55, 0.55, 0.46, 0.47, 0.37, 0.43, 0.44, 0.41, 0.42, 0.4, 0.39, 0.34, 0.25, 0.29, 0.26, 0.24, 0.2, 0.23, 0.28, 0.23, 0.16, 0.17, 0.16, 0.15, 0.15, 0.13, 0.16, 0.13, 0.13, 0.13, 0.12, 0.1, 0.09, 0.09, 0.07, 0.06, 0.03, 0.01]}, {"id": "b", "name": "Spectrum", "group": 2, "file": "shades-logo-b-spectrum-3.7s.mp3", "desc": "Round 2's reference, unchanged.", "voice": "Warm synth", "sec": 3.7, "tp": -4.73, "peaks": [0.09, 0.13, 0.17, 0.2, 0.22, 0.27, 0.32, 0.33, 0.35, 0.35, 0.35, 0.33, 0.29, 0.23, 0.23, 0.25, 0.29, 0.33, 0.37, 0.39, 0.46, 0.53, 0.58, 0.64, 0.77, 0.84, 0.95, 0.97, 0.99, 1.0, 0.99, 0.97, 0.97, 0.95, 0.91, 0.86, 0.85, 0.84, 0.83, 0.83, 0.83, 0.78, 0.75, 0.64, 0.57, 0.55, 0.58, 0.6, 0.5, 0.52, 0.54, 0.56, 0.53, 0.51, 0.53, 0.5, 0.46, 0.5, 0.59, 0.69, 0.71, 0.73, 0.67, 0.67, 0.7, 0.69, 0.73, 0.74, 0.71, 0.68, 0.73, 0.76, 0.75, 0.7, 0.63, 0.61, 0.6, 0.49, 0.49, 0.59, 0.61, 0.58, 0.54, 0.49, 0.44, 0.44, 0.43, 0.43, 0.34, 0.34, 0.36, 0.38, 0.39, 0.39, 0.38, 0.34, 0.32, 0.32, 0.34, 0.34, 0.34, 0.3, 0.28, 0.27, 0.26, 0.22, 0.22, 0.2, 0.2, 0.19, 0.18, 0.17, 0.15, 0.13, 0.12, 0.12, 0.1, 0.09, 0.09, 0.08, 0.07, 0.07, 0.07, 0.07, 0.07, 0.06, 0.06, 0.06, 0.06, 0.06, 0.05, 0.05, 0.04, 0.04, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.02, 0.02, 0.02, 0.02, 0.01, 0.0, 0.0]}];
 const list = document.getElementById("list");
 const svgNS = "http://www.w3.org/2000/svg";
 
+const GROUPS = {
+  1: ["Round 3", "As far apart as we could make them: voice, mouth, objects, paper."],
+  2: ["The orchestra round", "Spectrum played by synthesised instruments, plus Spectrum itself for reference."],
+};
+let ol;
 for (const d of DIRS) {
+  if (!ol || ol.dataset.group != d.group) {
+    const [title, lead] = GROUPS[d.group];
+    const h = document.createElement("h2"); h.className = "group"; h.textContent = title;
+    const p = document.createElement("p"); p.className = "group-lead"; p.textContent = lead;
+    ol = document.createElement("ol"); ol.dataset.group = d.group;
+    list.append(h, p, ol);
+  }
   const li = document.createElement("li");
   li.innerHTML = `
-    <div><h2>${d.name}</h2><p class="desc">${d.desc}</p><p class="notes">${d.notes.join(" · ").replaceAll("#", "♯")}</p></div>
+    <div><h3>${d.name}</h3><p class="desc">${d.desc}</p></div>
     <svg class="score" viewBox="0 0 600 120" preserveAspectRatio="none" aria-hidden="true"></svg>
     <div class="meta"><button class="ghost row-play" type="button" data-id="${d.id}">Play ${d.name}</button>
       <span>Length <b>${d.sec.toFixed(1)} s</b></span><span>Loudness <b>−16.0 LUFS</b></span>
-      <span>True peak <b>${d.tp.toFixed(1).replace("-", "−")} dBTP</b></span><span>Voice <b>${d.voice}</b></span></div>`;
+      <span>True peak <b>${d.tp.toFixed(1).replace("-", "−")} dBTP</b></span><span>Made from <b>${d.voice}</b></span></div>`;
   const svg = li.querySelector(".score");
-  const lo = 58, hi = 76, px = t => 8 + t / 4.3 * 584;
-  const base = document.createElementNS(svgNS, "line");
-  Object.entries({ x1: 0, x2: 600, y1: 119, y2: 119, class: "base" }).forEach(([k, v]) => base.setAttribute(k, v));
-  svg.append(base);
-  d.notes.forEach((n, i) => {
-    const h = 24 + (MIDI(n) - lo) / (hi - lo) * 92;
-    const end = d.hold ? d.sec - 1.6 : (d.times[i + 1] ?? d.times[i] + .16) - .02;
-    const r = document.createElementNS(svgNS, "rect");
-    const w = d.hold ? px(end) - px(d.times[i]) : 34;
-    Object.entries({ x: px(d.times[i]), y: 119 - h, width: w, height: 14, class: "bar", "fill-opacity": STRENGTH[i] })
-      .forEach(([k, v]) => r.setAttribute(k, v));
-    svg.append(r);
-  });
+  const n = d.peaks.length, x = i => i / (n - 1) * 600;
+  const top = d.peaks.map((v, i) => `${x(i).toFixed(1)},${(60 - v * 54).toFixed(1)}`);
+  const bottom = d.peaks.map((v, i) => `${x(i).toFixed(1)},${(60 + v * 54).toFixed(1)}`).reverse();
+  const wave = document.createElementNS(svgNS, "polygon");
+  wave.setAttribute("points", top.concat(bottom).join(" ")); wave.setAttribute("class", "wave");
   const head = document.createElementNS(svgNS, "line");
   Object.entries({ x1: 0, x2: 0, y1: 0, y2: 120, class: "head", visibility: "hidden" }).forEach(([k, v]) => head.setAttribute(k, v));
-  svg.append(head);
-  d.head = head; d.px = px;
-  list.append(li);
+  svg.append(wave, head);
+  d.head = head; d.px = t => t / d.sec * 600;
+  ol.append(li);
 }
 
 let ctx, current, raf, allRun = 0;
@@ -190,13 +175,13 @@ function play(d) {
       const t = a.currentTime, p = Math.min(100, t / (a.duration || d.sec) * 100);
       btn.style.setProperty("--p", p + "%");
       if (allRun) allBtn.style.setProperty("--p", ((DIRS.indexOf(d) + p / 100) / DIRS.length * 100) + "%");
-      if (!reduce) { const x = d.px(Math.min(t, 4.3)); d.head.setAttribute("x1", x); d.head.setAttribute("x2", x); d.head.setAttribute("visibility", "visible"); }
+      if (!reduce) { const x = d.px(Math.min(t, d.sec)); d.head.setAttribute("x1", x); d.head.setAttribute("x2", x); d.head.setAttribute("visibility", "visible"); }
       raf = requestAnimationFrame(tick);
     };
     tick();
   });
 }
-function stopAll() { allRun = 0; setBtn(allBtn, false, "Play all six in a row"); stop(); }
+function stopAll() { allRun = 0; setBtn(allBtn, false, "Play all in a row"); stop(); }
 list.addEventListener("click", e => {
   const b = e.target.closest("[data-id]"); if (!b) return;
   const d = DIRS.find(x => x.id === b.dataset.id);

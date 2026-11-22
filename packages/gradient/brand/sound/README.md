@@ -1,6 +1,6 @@
 # Shades sound
 
-The sonic logo of Shades Media Group and, once a direction is chosen, the sounds every Shades product plays. All of it is synthesised by [render.py](render.py): no samples, no generated audio, so we own every note. Rules: the rulebook's Sound chapter.
+The sonic logo of Shades Media Group and, once a direction is chosen, the sounds every Shades product plays. All of it is synthesised by [render.py](render.py), [ideas.py](ideas.py) and [orchestra.orc](orchestra.orc) (Csound): no samples, no generated audio, so we own every note. Rules: the rulebook's Sound chapter.
 
 ## The brief
 
@@ -31,6 +31,27 @@ Every version is a warm tone held while its filter opens, dark blue to warm oran
 | **Stroke** | F♯4, B4, C♯5 | One voice glides through the notes; each note it passes stays behind, fading like the bars. |
 | **Cinema** | F♯4, B4, C♯5 over a low B swell | 3.8 s, for the TV open: the colour opens further and longer. |
 
+### Round 3: eight ideas
+
+The Owner asked for sounds that feel produced, not raw, and for ideas as far apart as possible. Round 3 works like a foley artist: each idea is built from a voice, the mouth or an object, then finished like a studio take.
+
+| | Made from | Seconds |
+| --- | --- | --- |
+| **Hum** (i1) | A breath in, two hummed takes layered; the lips open from mm to oo | 4.3 |
+| **Choir** (i2) | Sixteen formant voices on a wide B chord, oo opening to ah | 4.6 |
+| **Whistle** (i3) | A finger snap, then the three notes whistled with slides and wobble | 3.4 |
+| **Bottles** (i4) | Three blown bottles, one after another, held as a chord | 4.3 |
+| **Glass** (i5) | Three rubbed wine glasses, beating gently | 4.7 |
+| **Ink and paper** (i6) | A sheet slides, a pen clicks, a felt piano rolls the notes over a low B | 3.9 |
+| **Mouth** (i7) | Three cheek pops at the three notes, then a hummed low B | 3.9 |
+| **Spectrum, produced** (i8) | Spectrum with a felt piano under each note, printed to tape | 4.4 |
+
+**The finish chain**, the same for every idea: human timing and pitch drift, tape saturation with a little wow, EQ (55 Hz high-pass, a dip at 280 Hz, presence at 3.2 kHz, air at 9 kHz), glue compression at 2.2:1, a close room and a hall. Every file has a designed start and a tail that fades out; none stops dead.
+
+### The orchestra round
+
+Five ensemble versions (e1 to e5) from the Csound physical models: bowed strings, horn, flute, electric piano, an analog pad and a sine floor, in one hall. Spectrum (b) stays as the reference.
+
 ## Files
 
 `directions/shades-logo-<version>-<seconds>s.{wav,m4a,mp3}`: 48 kHz, 24-bit WAV master, AAC 256 kb/s, MP3 256 kb/s. `directions/audit.json` holds each file's measurements.
@@ -39,7 +60,9 @@ Every version is a warm tone held while its filter opens, dark blue to warm oran
 
 ```bash
 python3 -m venv .venv && .venv/bin/pip install numpy scipy pyloudnorm
-.venv/bin/python render.py
+brew install csound   # 7.x, for orchestra.orc
+.venv/bin/python render.py   # Spectrum versions and the orchestra round
+.venv/bin/python ideas.py    # round 3; or name some: ideas.py i1-hum i5-glass
 ```
 
 Levels: −16 LUFS integrated, true peak under −1 dBTP, checked by the script and by `ffmpeg -i <file> -af ebur128=peak=true -f null -`.
