@@ -1,0 +1,47 @@
+{
+  "shades-logo-a-steps-2.6s": {
+    "seconds": 2.6,
+    "lufs": -16.0,
+    "true_peak_dbtp": -6.01,
+    "clipped_samples": 0,
+    "band_energy_pct": {
+      "sub <120": 0.0,
+      "low 120-400": 0.0,
+      "mid 400-2k": 98.1,
+      "presence 2k-6k": 1.8,
+      "air >6k": 0.0
+    },
+    "phone_speaker_lufs": -16.01,
+    "last_50ms_peak_db": -19.1
+  },
+  "shades-logo-b-spectrum-2.9s": {
+    "seconds": 2.9,
+    "lufs": -16.0,
+    "true_peak_dbtp": -5.1,
+    "clipped_samples": 0,
+    "band_energy_pct": {
+      "sub <120": 0.0,
+      "low 120-400": 39.6,
+      "mid 400-2k": 59.2,
+      "presence 2k-6k": 1.2,
+      "air >6k": 0.0
+    },
+    "phone_speaker_lufs": -17.53,
+    "last_50ms_peak_db": -16.7
+  },
+  "shades-logo-c-ink-2.4s": {
+    "seconds": 2.4,
+    "lufs": -16.0,
+    "true_peak_dbtp": -4.92,
+    "clipped_samples": 0,
+    "band_energy_pct": {
+      "sub <120": 1.9,
+      "low 120-400": 0.1,
+      "mid 400-2k": 97.7,
+      "presence 2k-6k": 0.3,
+      "air >6k": 0.0
+    },
+    "phone_speaker_lufs": -16.24,
+    "last_50ms_peak_db": -35.7
+  }
+}
