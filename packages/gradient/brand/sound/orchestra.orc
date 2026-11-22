@@ -15,6 +15,7 @@ nchnls = 2
 seed 23
 
 giSine ftgen 0, 0, 65536, 10, 1
+giSig ftgen 0, 0, 1024, 19, 0.5, 0.5, 270, 0.5  ; rise shape of each voice grain
 gaRevL init 0
 gaRevR init 0
 
@@ -106,6 +107,35 @@ instr 6
   outs aL, aR
   gaRevL += aL * 0.5
   gaRevR += aR * 0.5
+endin
+
+; 7. Human voice (FOF formant synthesis). p12: how far the vowel opens, 0 = hum (oo, closed lips)
+;    .. 1 = ah. It opens with the colour. The pitch scoops in from below, wanders like a real
+;    singer's and gains a late vibrato; breath noise rides on top.
+instr 7
+  kamp, kcol Shape p11, p7, p8, p9, p10, p3, 0
+  kv = kcol * p12
+  kscoop expseg 0.968, 0.08, 1, 1, 1
+  kjit randi 0.0035, 6.5, 0.3
+  kdrift randi 0.003, 1.1, 0.7
+  kvd linseg 0, 0.35, 0, 0.6, 1
+  kvib poscil 0.0055 * kvd, 5.1 + kjit * 100
+  kf = p4 * kscoop * (1 + kjit + kdrift + kvib)
+  a1 fof 1,                         kf, 350 + 450 * kv, 0, 50 + 30 * kv, 0.003, 0.02, 0.007, 120, giSine, giSig, p3
+  a2 fof ampdb(-20 + 16 * kv),      kf, 600 + 550 * kv, 0, 60 + 30 * kv, 0.003, 0.02, 0.007, 120, giSine, giSig, p3
+  a3 fof ampdb(-32 + 12 * kv),      kf, 2700 + 100 * kv, 0, 170 - 50 * kv, 0.003, 0.02, 0.007, 120, giSine, giSig, p3
+  a4 fof ampdb(-30 - 6 * kv),       kf, 2900 + 600 * kv, 0, 180 - 50 * kv, 0.003, 0.02, 0.007, 120, giSine, giSig, p3
+  a5 fof ampdb(-38 - 20 * kv),      kf, 3300 + 1650 * kv, 0, 200 - 60 * kv, 0.003, 0.02, 0.007, 120, giSine, giSig, p3
+  asig = (a1 + a2 + a3 + a4 + a5) * 0.12
+  asig moogladder asig, limit(p4 * (2.2 + 10 * kcol), 80, 16000), 0
+  anz rand 1, 0.5
+  abr butbp anz, 1400 + 1200 * kv, 2200
+  asig = asig + abr * 0.012 * (0.5 + kv)
+  asig dcblock2 asig
+  aL, aR pan2 asig * kamp * p5, p6
+  outs aL, aR
+  gaRevL += aL
+  gaRevR += aR
 endin
 
 ; 99. The room: one hall for the whole ensemble. p4 send level, p5 feedback, p6 damping Hz.

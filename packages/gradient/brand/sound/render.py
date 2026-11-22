@@ -239,7 +239,7 @@ def cinema():
 # bowed strings, a soft horn, flute, electric piano, the analog pad, a sine floor.
 
 ORC = Path(__file__).parent / "orchestra.orc"
-STRINGS, HORN, FLUTE, KEYS, PAD, FLOOR = 1, 2, 3, 4, 5, 6
+STRINGS, HORN, FLUTE, KEYS, PAD, FLOOR, VOICE = 1, 2, 3, 4, 5, 6, 7
 
 
 def csound(notes, dur, room=(0.55, 0.88, 7000)):
@@ -247,10 +247,10 @@ def csound(notes, dur, room=(0.55, 0.88, 7000)):
     (instrument, start, length, note name, amplitude, pan, outro start, outro length, open at, open time, attack);
     outro and opening times are absolute here and made relative to each note."""
     lines = []
-    for ins, at, length, n, amp, pan, end, rel, op, opt, att in notes:
+    for ins, at, length, n, amp, pan, end, rel, op, opt, att, *extra in notes:
         f = hz(n[0]) * 2 ** (n[1] / 1200) if isinstance(n, tuple) else hz(n)  # (note, cents) detunes
         lines.append(f"i {ins} {at:.4f} {length:.4f} {f:.4f} {amp} {pan} "
-                     f"{end - at:.4f} {rel} {op - at:.4f} {opt} {att}")
+                     f"{end - at:.4f} {rel} {op - at:.4f} {opt} {att}" + "".join(f" {e}" for e in extra))
     lines.append(f"i 99 0 {dur + 0.05} {room[0]} {room[1]} {room[2]}")
     with tempfile.TemporaryDirectory() as tmp:
         sco, wav = Path(tmp) / "s.sco", Path(tmp) / "o.wav"
