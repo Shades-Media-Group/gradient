@@ -38,6 +38,14 @@ button.playing::before { content: ""; display: inline-block; width: 9px; height:
 button:focus-visible { outline: 2px solid var(--red); outline-offset: 3px; }
 .switch { display: inline-flex; gap: 10px; align-items: center; color: var(--muted); font-size: 15px; white-space: nowrap; }
 .switch input { width: 18px; height: 18px; accent-color: var(--ink); }
+/* Filter: one row of choices; the chosen one fills with ink, like a verdict. */
+.filter { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; margin: 0 0 8px; font-size: 14px; color: var(--muted); }
+.filter span { margin-right: 6px; }
+.filter button { background: transparent; color: var(--ink); border: 1px solid var(--line); padding: 8px 14px; font-size: 14px; font-variant-numeric: tabular-nums; }
+.filter button:hover { border-color: var(--muted); }
+.filter button[aria-pressed="true"] { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+.filter button b { font-weight: 400; opacity: .6; margin-left: 6px; }
+.empty { margin: 40px 0 0; color: var(--muted); }
 
 ol { list-style: none; margin: 24px 0 0; padding: 0; border-top: 1px solid var(--ink); }
 li { display: grid; grid-template-columns: 220px minmax(0, 1fr) 180px; gap: 20px 32px; padding: 32px 0; border-bottom: 1px solid var(--line); align-items: center; }
@@ -89,7 +97,16 @@ footer { margin-top: 40px; color: var(--muted); font-size: 14px; max-width: 70ch
     <label class="switch"><input type="checkbox" id="phone"> Hear it through a phone speaker</label>
   </div>
 
+  <div class="filter" role="group" aria-label="Show">
+    <span>Show</span>
+    <button type="button" data-filter="all" aria-pressed="true">All<b></b></button>
+    <button type="button" data-filter="like" aria-pressed="false">Liked<b></b></button>
+    <button type="button" data-filter="dislike" aria-pressed="false">Not liked<b></b></button>
+    <button type="button" data-filter="none" aria-pressed="false">Not rated<b></b></button>
+  </div>
+
   <div id="list"></div>
+  <p class="empty" id="empty" hidden>Nothing here with this filter.</p>
 
   <footer>
     Every sound, the voices and objects included, is synthesised from code in the gradient repo (<span>packages/gradient/brand/sound/round4.py</span>, <span>ideas.py</span> and <span>render.py</span>), so we own all of it. Levelled to −16 LUFS with true peak under −1 dBTP. The shape beside each is its waveform.
@@ -116,6 +133,7 @@ for (const d of DIRS) {
     list.append(h, p, ol);
   }
   const li = document.createElement("li");
+  li.dataset.id = d.id; d.li = li; d.heads = [ol.previousElementSibling.previousElementSibling, ol.previousElementSibling, ol];
   li.innerHTML = `
     <div><h3>${d.name}</h3><p class="desc">${d.desc}</p></div>
     <svg class="score" viewBox="0 0 600 120" preserveAspectRatio="none" aria-hidden="true"></svg>
@@ -215,7 +233,7 @@ allBtn.addEventListener("click", async () => {
   stop();
   const run = allRun = Date.now();
   setBtn(allBtn, true);
-  for (const d of DIRS) {
+  for (const d of DIRS.filter(x => !x.li.hidden)) {
     await play(d);
     if (allRun !== run) return;
     await new Promise(r => setTimeout(r, 700));
@@ -228,6 +246,31 @@ allBtn.addEventListener("click", async () => {
 const ratings = {};
 let db = null;
 const KEY = "shades-sound-ratings";
+// Filter: rows that leave the chosen set after a verdict slip out a moment later, so the press is seen first.
+let filter = localStorage.getItem("shades-sound-filter") || "all", hideTimer;
+const state = id => { const r = ratings[id] || {}; return r.verdict || (r.score ? "scored" : "none"); };
+const fits = (id, f) => f === "all" || state(id) === f;
+function applyFilter() {
+  document.querySelectorAll("[data-filter]").forEach(b => {
+    b.setAttribute("aria-pressed", b.dataset.filter === filter);
+    b.querySelector("b").textContent = DIRS.filter(d => fits(d.id, b.dataset.filter)).length;
+  });
+  for (const d of DIRS) {
+    if (d.li.hidden !== !fits(d.id, filter) && current?.d === d) stopAll();
+    d.li.hidden = !fits(d.id, filter);
+  }
+  for (const ol of list.querySelectorAll("ol")) {
+    const empty = ![...ol.children].some(li => !li.hidden);
+    ol.hidden = ol.previousElementSibling.hidden = ol.previousElementSibling.previousElementSibling.hidden = empty;
+  }
+  document.getElementById("empty").hidden = DIRS.some(d => !d.li.hidden);
+}
+document.querySelector(".filter").addEventListener("click", e => {
+  const b = e.target.closest("[data-filter]"); if (!b) return;
+  filter = b.dataset.filter; localStorage.setItem("shades-sound-filter", filter);
+  clearTimeout(hideTimer); applyFilter();
+});
+function refilter() { clearTimeout(hideTimer); hideTimer = setTimeout(applyFilter, 650); }
 function paint(id) {
   const r = ratings[id] || {}, box = list.querySelector(`[data-rate="${id}"]`);
   if (!box) return;
@@ -238,7 +281,7 @@ function paint(id) {
 }
 async function save(id, patch) {
   const r = ratings[id] = { ...ratings[id], ...patch, at: new Date().toISOString() };
-  paint(id);
+  paint(id); refilter();
   const msg = list.querySelector(`[data-rate="${id}"] .saved`);
   try {
     if (db) await db.collection("ratings").doc(id).set(r);
@@ -259,11 +302,13 @@ list.addEventListener("change", e => {
 });
 try { Object.assign(ratings, JSON.parse(localStorage.getItem(KEY) || "{}")); } catch {}
 DIRS.forEach(d => paint(d.id));
+applyFilter();
 window.claude?.use?.("db").then(store => {
   if (!store) return;
   db = store;
   db.collection("ratings").onSnapshot(snap => {
     snap.docs.forEach(doc => { ratings[doc.id] = doc.data(); paint(doc.id); });
+    applyFilter();
   }, err => console.error(err));
 });
 </script>
