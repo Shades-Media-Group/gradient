@@ -136,6 +136,23 @@ The Owner liked round 7 only because it was the only option: every take kept the
 | **Bass slide** (v9) | A synth bass slides up an octave, a snap, a chord on the off-beat; E | 3.3 |
 | **Cello** (v10) | One bowed cello, two long notes a sixth apart; D | 4.9 |
 
+### Round 9: the desk, up close
+
+The four takes scored 10 of 10 share one shape: a small sound a hand makes on a desk, then the felt piano or the warm chord. Round 8's ten far-apart worlds were all turned down. Round 9 joins Three beats and Ink and paper (w1), then makes nine new takes from that shape, each from a different object.
+
+| Take | What you hear | Key |
+| --- | --- | --- |
+| w1 Ink and beats | The sheet slides, three heartbeats, the pen clicks, then the felt piano and the warm chord | B |
+| w2 Three strokes | A pencil signs in three strokes; each leaves a piano note | E-flat |
+| w3 Book closed | A hardback shuts; a low piano chord answers | F |
+| w4 Wood tune | Three tuned taps on wood, then a hum sings them back | A |
+| w5 Page turn | A page turns straight into the warm chord | B-flat |
+| w6 Piano heartbeat | The lowest piano note plays the heartbeat, then the chord | D |
+| w7 Lid wakes | A knuckle on the lid; the strings swell in sympathy | G |
+| w8 Parcel | Two taps on cardboard, the warm chord, a high piano note | E |
+| w9 Knock, room | Two knocks; a room opens around a held chord | F-sharp |
+| w10 Riffle | Pages riffled to a stop; the piano lands there | C |
+
 ## Files
 
 `directions/shades-logo-<version>-<seconds>s.{wav,m4a,mp3}`: 48 kHz, 24-bit WAV master, AAC 256 kb/s, MP3 256 kb/s. `directions/audit.json` holds each file's measurements.
@@ -152,6 +169,7 @@ brew install csound   # 7.x, for orchestra.orc
 .venv/bin/python round6.py   # round 6; or name some: round6.py t3-thumb
 .venv/bin/python round7.py   # round 7; or name some: round7.py u3
 .venv/bin/python round8.py   # round 8; or name some: round8.py v3
+.venv/bin/python round9.py   # round 9; or name some: round9.py w3
 ```
 
 Levels: −16 LUFS integrated, true peak under −1 dBTP, checked by the script and by `ffmpeg -i <file> -af ebur128=peak=true -f null -`.
