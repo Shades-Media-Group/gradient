@@ -788,6 +788,75 @@
       var(--g-shadow-sm);
   }
 
+  /* Tinted panel: the light shade of a brand colour, no edge, no shadow. For a feature, a summary
+     or one call to act, never for a warning (that is .g-message). Red, the brand's own, first;
+     at most two tints side by side, and never one inside another. */
+  .g-panel--tint {
+    --g-panel-tone: var(--g-panel-red);
+    padding: clamp(1.5rem, 1rem + 1.6vw, 2.25rem);
+    background: var(--g-panel-tone);
+    box-shadow: none;
+    color: var(--g-text);
+  }
+
+  .g-panel--red {
+    --g-panel-tone: var(--g-panel-red);
+  }
+
+  .g-panel--violet {
+    --g-panel-tone: var(--g-panel-violet);
+  }
+
+  .g-panel--green {
+    --g-panel-tone: var(--g-panel-green);
+  }
+
+  .g-panel--amber {
+    --g-panel-tone: var(--g-panel-amber);
+  }
+
+  .g-panel--blue {
+    --g-panel-tone: var(--g-panel-blue);
+  }
+
+  .g-panel__title {
+    margin: 0 0 0.5rem;
+    color: var(--g-text);
+    font: 600 var(--g-size-h3) / 1.2 var(--g-font-display);
+    letter-spacing: var(--g-tracking-heading);
+    text-wrap: balance;
+  }
+
+  .g-panel__text {
+    max-width: 56ch;
+    margin: 0;
+    color: var(--g-text-2);
+  }
+
+  .g-panel__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1.25rem;
+  }
+
+  /* Centred: a title, one sentence and one action, nothing else. */
+  .g-panel--center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-block: clamp(2rem, 1.4rem + 2.4vw, 3.25rem);
+    text-align: center;
+  }
+
+  .g-panel--center .g-panel__text {
+    max-width: 44ch;
+  }
+
+  .g-panel--center .g-panel__actions {
+    justify-content: center;
+  }
+
   /* Tabs: views of one thing, a red underline on the current one. ---------- */
 
   .g-tabs {

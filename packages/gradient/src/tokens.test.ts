@@ -80,6 +80,14 @@ const FILLED: [string, string, ('light' | 'dark')[]][] = [
   ['text-2', 'well', ['light', 'dark']],
   ['text', 'well-hover', ['light', 'dark']],
   ['on-tint', 'tint', ['light']],
+  // Tinted panels: the dark tints are color-mixes too, checked by eye.
+  ...(['red', 'violet', 'green', 'amber', 'blue'] as const).flatMap((hue) =>
+    (['text', 'text-2'] as const).map((fg): [string, string, ('light' | 'dark')[]] => [
+      fg,
+      `panel-${hue}`,
+      ['light'],
+    ]),
+  ),
 ]
 
 describe('filled roles', () => {
