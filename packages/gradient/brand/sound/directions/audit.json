@@ -1166,5 +1166,85 @@
     "phone_speaker_lufs": -17.27,
     "last_500ms_peak_db": -28.7,
     "last_50ms_peak_db": -47.4
+  },
+  "shades-logo-x1-soft-fade-4.4s": {
+    "seconds": 4.4,
+    "lufs": -16.0,
+    "true_peak_dbtp": -3.87,
+    "clipped_samples": 0,
+    "band_energy_pct": {
+      "sub <120": 28.2,
+      "low 120-400": 49.6,
+      "mid 400-2k": 21.2,
+      "presence 2k-6k": 1.0,
+      "air >6k": 0.0
+    },
+    "phone_speaker_lufs": -19.46,
+    "last_500ms_peak_db": -33.0,
+    "last_50ms_peak_db": -51.9
+  },
+  "shades-logo-x2-soft-short-3.9s": {
+    "seconds": 3.9,
+    "lufs": -16.0,
+    "true_peak_dbtp": -3.46,
+    "clipped_samples": 0,
+    "band_energy_pct": {
+      "sub <120": 31.8,
+      "low 120-400": 48.6,
+      "mid 400-2k": 18.5,
+      "presence 2k-6k": 1.0,
+      "air >6k": 0.0
+    },
+    "phone_speaker_lufs": -19.79,
+    "last_500ms_peak_db": -30.6,
+    "last_50ms_peak_db": -47.5
+  },
+  "shades-logo-x3-warm-fade-4.4s": {
+    "seconds": 4.4,
+    "lufs": -16.0,
+    "true_peak_dbtp": -3.26,
+    "clipped_samples": 0,
+    "band_energy_pct": {
+      "sub <120": 29.7,
+      "low 120-400": 52.1,
+      "mid 400-2k": 17.4,
+      "presence 2k-6k": 0.8,
+      "air >6k": 0.0
+    },
+    "phone_speaker_lufs": -20.13,
+    "last_500ms_peak_db": -30.9,
+    "last_50ms_peak_db": -48.2
+  },
+  "shades-logo-x4-piano-fade-4.2s": {
+    "seconds": 4.2,
+    "lufs": -16.0,
+    "true_peak_dbtp": -3.82,
+    "clipped_samples": 0,
+    "band_energy_pct": {
+      "sub <120": 35.1,
+      "low 120-400": 42.4,
+      "mid 400-2k": 21.2,
+      "presence 2k-6k": 1.2,
+      "air >6k": 0.0
+    },
+    "phone_speaker_lufs": -19.48,
+    "last_500ms_peak_db": -35.0,
+    "last_50ms_peak_db": -58.9
+  },
+  "shades-logo-x5-slow-roll-4.5s": {
+    "seconds": 4.5,
+    "lufs": -16.0,
+    "true_peak_dbtp": -4.04,
+    "clipped_samples": 0,
+    "band_energy_pct": {
+      "sub <120": 28.1,
+      "low 120-400": 51.3,
+      "mid 400-2k": 19.6,
+      "presence 2k-6k": 1.0,
+      "air >6k": 0.0
+    },
+    "phone_speaker_lufs": -19.65,
+    "last_500ms_peak_db": -31.9,
+    "last_50ms_peak_db": -56.3
   }
 }
