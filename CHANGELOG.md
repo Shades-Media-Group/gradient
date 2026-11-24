@@ -4,6 +4,14 @@ Every notable change to Gradient and the `shades-gradient` package. The format f
 
 ## [Unreleased]
 
+## [0.14.1] - 2026-11-24
+
+### Fixed
+
+- Keep code in doc notes on one line (site)
+- Let the search bar shrink in a narrow grid (css)
+- Give the light panel tints a visible step from the page (tokens)
+
 ## [0.14.0] - 2026-11-24
 
 ### Added
