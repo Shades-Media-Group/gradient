@@ -136,6 +136,18 @@ The Owner liked round 7 only because it was the only option: every take kept the
 | **Bass slide** (v9) | A synth bass slides up an octave, a snap, a chord on the off-beat; E | 3.3 |
 | **Cello** (v10) | One bowed cello, two long notes a sixth apart; D | 4.9 |
 
+### Round 9.1: Ink and beats, softer
+
+Every take opens exactly like w1, note for note: the sheet, three heartbeats, the pen. After the pen the chord is gentler (D-sharp in place of the bright C-sharp ninth) and fades out slowly instead of stopping.
+
+| Take | What you hear | Key |
+| --- | --- | --- |
+| x1 Soft fade | The gentler chord, faded over 1.6 seconds (4.4 s) | B |
+| x2 Soft and short | The gentler chord, eased out over 1.2 seconds (3.9 s) | B |
+| x3 Warm fade | The warm synth chord leads, the piano quiet under it (4.4 s) | B |
+| x4 Piano fade | Only the felt piano answers; its notes ring out (4.2 s) | B |
+| x5 Slow roll | The piano chord rolls up slower, then fades (4.5 s) | B |
+
 ### Round 9: the desk, up close
 
 The four takes scored 10 of 10 share one shape: a small sound a hand makes on a desk, then the felt piano or the warm chord. Round 8's ten far-apart worlds were all turned down. Round 9 joins Three beats and Ink and paper (w1), then makes nine new takes from that shape, each from a different object.
@@ -170,7 +182,7 @@ brew install csound   # 7.x, for orchestra.orc
 .venv/bin/python round6.py   # round 6; or name some: round6.py t3-thumb
 .venv/bin/python round7.py   # round 7; or name some: round7.py u3
 .venv/bin/python round8.py   # round 8; or name some: round8.py v3
-.venv/bin/python round9.py   # round 9; or name some: round9.py w3
+.venv/bin/python round9.py   # rounds 9 and 9.1; or name some: round9.py w3 x1
 ```
 
 Levels: −16 LUFS integrated, true peak under −1 dBTP, checked by the script and by `ffmpeg -i <file> -af ebur128=peak=true -f null -`.
