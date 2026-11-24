@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 180" fill="none" aria-hidden="true">
+  <circle cx="104" cy="96" r="58" fill="var(--g-ill-violet-soft,#FAE0FA)"/>
+  <rect x="70" y="38" width="60" height="112" rx="14" fill="var(--g-ill-dark,#26262E)"/>
+  <rect x="74" y="34" width="60" height="112" rx="14" stroke="var(--g-ill-line,#1C1C20)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="80" y="48" width="44" height="80" rx="6" fill="var(--g-ill-paper,#FFFFFF)"/>
+  <circle cx="102" cy="74" r="11" fill="var(--g-ill-red,#E40523)"/>
+  <path d="M97 74.5c0-1.3 1-2 2-2l1.6 2.4-1 1.2c.8 1.4 1.8 2.4 3.2 3.2l1.2-1 2.4 1.6c0 1-.7 2-2 2-4 0-7.4-3.4-7.4-7.4z" fill="var(--g-ill-paper,#FFFFFF)"/>
+  <path d="M90 96h24M94 104h16" stroke="var(--g-ill-line,#1C1C20)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="90" y="112" width="24" height="8" rx="4" fill="var(--g-ill-green,#00A96E)"/>
+  <g transform="rotate(10 168 66)">
+    <rect x="140" y="46" width="58" height="40" rx="8" fill="var(--g-ill-paper,#FFFFFF)" stroke="var(--g-ill-line,#1C1C20)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="156" cy="62" r="8" fill="var(--g-ill-violet,#D212D6)"/>
+    <path d="M170 58h20M170 66h14M150 76h38" stroke="var(--g-ill-line,#1C1C20)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <path d="M134 84c6-2 10-6 12-12" stroke="var(--g-ill-line,#1C1C20)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="2 5"/>
+  <path d="M60 52c-5 4-7 10-6 16M50 44c-8 6-11 15-9 24" stroke="var(--g-ill-red,#E40523)" stroke-width="2.2" stroke-linecap="round"/>
+  <path d="M196 22C196.672 27.759999999999998 198.24 29.328 204 30C198.24 30.672 196.672 32.24 196 38C195.328 32.24 193.76 30.672 188 30C193.76 29.328 195.328 27.759999999999998 196 22z" fill="var(--g-ill-amber,#FFAF33)" stroke="var(--g-ill-line,#1C1C20)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M46 122C46.504 126.32 47.68 127.496 52 128C47.68 128.504 46.504 129.68 46 134C45.496 129.68 44.32 128.504 40 128C44.32 127.496 45.496 126.32 46 122z" fill="var(--g-ill-red,#E40523)" stroke="var(--g-ill-line,#1C1C20)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M206 111C206.42 114.6 207.4 115.58 211 116C207.4 116.42 206.42 117.4 206 121C205.58 117.4 204.6 116.42 201 116C204.6 115.58 205.58 114.6 206 111z" fill="var(--g-ill-violet-soft,#FAE0FA)" stroke="var(--g-ill-line,#1C1C20)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="176" cy="140" r="5" fill="var(--g-ill-green,#00A96E)"/>
+</svg>

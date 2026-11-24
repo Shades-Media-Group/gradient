@@ -27,6 +27,7 @@
     "dist",
     "brand",
     "icons",
+    "illustrations",
     "README.md",
     "LICENSE"
   ],
@@ -66,6 +67,7 @@
     "./tokens.json": "./dist/tokens.json",
     "./icons.svg": "./dist/icons.svg",
     "./icons/*": "./icons/*",
+    "./illustrations/*": "./illustrations/*",
     "./brand/*": "./brand/*",
     "./package.json": "./package.json"
   },

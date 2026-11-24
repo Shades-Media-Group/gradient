@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 180" fill="none" aria-hidden="true">
+  <circle cx="178" cy="50" r="24" fill="var(--g-ill-violet-soft,#FAE0FA)"/>
+  <path d="M54 60a8 8 0 0 1 8-8h30l10 10h62a8 8 0 0 1 8 8v70H54z" fill="var(--g-ill-red-soft,#FFDDE2)" stroke="var(--g-ill-line,#1C1C20)" stroke-width="1.5" stroke-linejoin="round"/>
+  <g transform="rotate(-10 104 72)">
+    <rect x="78" y="38" width="54" height="66" rx="6" fill="var(--g-ill-paper,#FFFFFF)" stroke="var(--g-ill-line,#1C1C20)" stroke-width="1.5"/>
+    <path d="M89 56h30M89 66h22M89 76h28" stroke="var(--g-ill-line,#1C1C20)" stroke-width="1.5" stroke-linecap="round"/>
+  </g>
+  <g transform="rotate(12 144 74)">
+    <rect x="124" y="50" width="40" height="48" rx="6" fill="var(--g-ill-green,#00A96E)" stroke="var(--g-ill-line,#1C1C20)" stroke-width="1.5"/>
+    <path d="M134 64h20M140 64v22" stroke="var(--g-ill-paper,#FFFFFF)" stroke-width="3" stroke-linecap="round"/>
+  </g>
+  <path d="M48 84a8 8 0 0 1 8-8h132a8 8 0 0 1 8 8l-6 58a8 8 0 0 1-8 7H62a8 8 0 0 1-8-7z" fill="var(--g-ill-red,#E40523)"/>
+  <path d="M54 80a8 8 0 0 1 8-8h128a8 8 0 0 1 8 8l-6 58a8 8 0 0 1-8 7H68a8 8 0 0 1-8-7z" stroke="var(--g-ill-line,#1C1C20)" stroke-width="1.5"/>
+  <path d="M122 128v-26M111 112l11-11 11 11" stroke="var(--g-ill-paper,#FFFFFF)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="40" cy="40" r="6" fill="var(--g-ill-amber,#FFAF33)"/>
+</svg>

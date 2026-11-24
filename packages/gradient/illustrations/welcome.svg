@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 180" fill="none" aria-hidden="true">
+  <ellipse cx="120" cy="154" rx="70" ry="8" fill="var(--g-ill-red-wash,#FFF0F2)"/>
+  <g transform="rotate(-10 104 104)"><rect x="66" y="74" width="80" height="58" rx="10" fill="var(--g-ill-violet-soft,#FAE0FA)" stroke="var(--g-ill-line,#1C1C20)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></g>
+  <g transform="rotate(5 116 98)"><rect x="76" y="66" width="80" height="58" rx="10" fill="var(--g-ill-paper,#FFFFFF)" stroke="var(--g-ill-line,#1C1C20)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="96" cy="86" r="8" fill="var(--g-ill-amber,#FFAF33)"/>
+    <path d="M110 82h32M110 90h22M88 106h54M88 114h36" stroke="var(--g-ill-line,#1C1C20)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></g>
+  <g transform="translate(160 64)">
+    <circle r="17" fill="var(--g-ill-red,#E40523)" stroke="var(--g-ill-line,#1C1C20)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M0-7v14M-7 0h14" stroke="var(--g-ill-paper,#FFFFFF)" stroke-width="3" stroke-linecap="round"/>
+  </g>
+  <path d="M178 40l6-6M184 50l9-2M172 32l1-9" stroke="var(--g-ill-line,#1C1C20)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M56 37C56.756 43.48 58.52 45.244 65 46C58.52 46.756 56.756 48.52 56 55C55.244 48.52 53.48 46.756 47 46C53.48 45.244 55.244 43.48 56 37z" fill="var(--g-ill-amber,#FFAF33)" stroke="var(--g-ill-line,#1C1C20)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M196 106C196.504 110.32 197.68 111.496 202 112C197.68 112.504 196.504 113.68 196 118C195.496 113.68 194.32 112.504 190 112C194.32 111.496 195.496 110.32 196 106z" fill="var(--g-ill-violet,#D212D6)" stroke="var(--g-ill-line,#1C1C20)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M84 25C84.42 28.6 85.4 29.58 89 30C85.4 30.42 84.42 31.4 84 35C83.58 31.4 82.6 30.42 79 30C82.6 29.58 83.58 28.6 84 25z" fill="var(--g-ill-red-soft,#FFDDE2)" stroke="var(--g-ill-line,#1C1C20)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="40" cy="96" r="4" fill="var(--g-ill-green,#00A96E)"/>
+</svg>

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 180" fill="none" aria-hidden="true">
+  <ellipse cx="120" cy="152" rx="72" ry="9" fill="var(--g-ill-violet-soft,#FAE0FA)"/>
+  <path d="M74 96h92v50a6 6 0 0 1-6 6H80a6 6 0 0 1-6-6z" fill="var(--g-ill-amber,#FFAF33)"/>
+  <path d="M74 96h92l-10-14H84z" fill="var(--g-ill-amber-dark,#CC7B04)"/>
+  <path d="M74 96 52 84l18-10 14 8zM166 96l22-12-18-10-14 8z" fill="var(--g-ill-amber-soft,#FFE7BF)" stroke="var(--g-ill-line,#1C1C20)" stroke-width="1.5" stroke-linejoin="round"/>
+  <path d="M78 100h92v50a6 6 0 0 1-6 6H84a6 6 0 0 1-6-6z" stroke="var(--g-ill-line,#1C1C20)" stroke-width="1.5"/>
+  <path d="M106 120c5 4 23 4 28 0" stroke="var(--g-ill-line,#1C1C20)" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M150 20h40a10 10 0 0 1 10 10v18a10 10 0 0 1-10 10h-22l-10 9 1-9h-9a10 10 0 0 1-10-10V30a10 10 0 0 1 10-10z" fill="var(--g-ill-paper,#FFFFFF)" stroke="var(--g-ill-line,#1C1C20)" stroke-width="1.5" stroke-linejoin="round"/>
+  <path d="M164 33c1-5 5-7 9-7 5 0 8 3 8 7 0 6-8 6-8 11" stroke="var(--g-ill-red,#E40523)" stroke-width="2.6" stroke-linecap="round"/>
+  <circle cx="173" cy="50" r="2" fill="var(--g-ill-red,#E40523)"/>
+  <circle cx="56" cy="38" r="7" fill="var(--g-ill-violet,#D212D6)"/>
+  <circle cx="38" cy="58" r="3" fill="var(--g-ill-green,#00A96E)"/>
+</svg>
