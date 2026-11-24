@@ -36,6 +36,7 @@ const GROUPS = [
   ['color.spectrum', 'spectrum'],
   ['color.family', 'family'],
   ['gradient', 'gradient'],
+  ['illustration', 'ill'],
   ['role', ''],
   ['font', 'font'],
   ['text', 'size'],

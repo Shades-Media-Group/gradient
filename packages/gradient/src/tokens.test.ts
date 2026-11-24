@@ -74,6 +74,22 @@ describe('role colours', () => {
       })
 })
 
+/** Calm roles: filled fields and selected chips. The dark tint is a color-mix, checked by eye. */
+const FILLED: [string, string, ('light' | 'dark')[]][] = [
+  ['text', 'well', ['light', 'dark']],
+  ['text-2', 'well', ['light', 'dark']],
+  ['text', 'well-hover', ['light', 'dark']],
+  ['on-tint', 'tint', ['light']],
+]
+
+describe('filled roles', () => {
+  for (const [fg, bg, themes] of FILLED)
+    for (const theme of themes)
+      it(`${fg} on ${bg} reads at 4.5:1 or more (${theme})`, () => {
+        expect(contrast(role(fg, theme), role(bg, theme))).toBeGreaterThanOrEqual(4.5)
+      })
+})
+
 describe('brand colours', () => {
   it('keeps the logo red from shades.md', () => {
     expect(resolve('{color.red.500}')).toBe('#E40523')
