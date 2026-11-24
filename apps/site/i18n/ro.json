@@ -526,7 +526,8 @@
       "statusMore": "Informare, plus fundaluri discrete și umpluri pline pentru notificări, ferestre și butoane",
       "well": "Câmpuri pline, chip-uri și bara de căutare, în repaus și sub cursor",
       "tint": "Un chip sau o opțiune aleasă și textul de pe ea",
-      "stateHover": "Singurul strat de hover pentru rânduri și intrări de meniu"
+      "stateHover": "Singurul strat de hover pentru rânduri și intrări de meniu",
+      "panel": "Panouri colorate: o noutate, un rezumat, un singur îndemn"
     },
     "type": {
       "title": "Tipografie",
@@ -766,6 +767,39 @@
       "dark": "Tema întunecată",
       "rule1": "O propoziție și o acțiune. Niciodată o iconiță într-un cerc.",
       "rule2": "Alege desenul după moment: <code>nothing</code> pentru niciun rezultat, <code>pick</code> înaintea unei alegeri, <code>folder</code> pentru o listă goală, <code>done</code> când munca e gata, <code>welcome</code> prima dată, <code>offline</code> fără conexiune, <code>caller</code> pentru oameni și apeluri."
+    },
+    "panels": {
+      "title": "Panouri colorate",
+      "text": "O nuanță deschisă a unei culori de brand, fără contur, cu colțuri mari: pentru o noutate, un rezumat sau singurul îndemn. Roșul, al brandului, vine primul.",
+      "red": "Roșul vine primul",
+      "redText": "Nuanța brandului: o noutate, un rezumat, singurul îndemn de pe pagină.",
+      "violet": "Violet",
+      "violetText": "Ceva nou sau făcut cu grijă.",
+      "green": "Verde",
+      "greenText": "Un rezultat sau o schimbare bună.",
+      "amber": "Chihlimbar",
+      "amberText": "Ceva de planificat. Un avertisment e un mesaj, nu un panou.",
+      "blue": "Albastru",
+      "blueText": "O noutate, un sfat sau o trimitere spre altă pagină.",
+      "centerTitle": "Gata de început?",
+      "centerText": "Trimite brieful și un designer răspunde într-o zi lucrătoare.",
+      "centerAction": "Trimite brieful",
+      "rule1": "Fără contur și fără umbră: nuanța e conturul. Niciodată un panou în alt panou și cel mult două nuanțe una lângă alta.",
+      "rule2": "Cuvintele rămân în culorile textului; nuanța nu le colorează. În modul întunecat, nuanța e tonul 600 amestecat 14% în cerneală.",
+      "rule3": "Nu pentru avertismente sau erori: acelea sunt mesaje pe o linie fină."
+    },
+    "stats": {
+      "title": "Plăci cu cifre",
+      "text": "O etichetă, cifra mare și, când ajută, schimbarea față de data trecută. Între două și patru pe rând.",
+      "label": "Valori de exemplu",
+      "visitors": "Vizitatori",
+      "enquiries": "Cereri",
+      "calls": "Apeluri programate",
+      "pages": "Pagini pe vizită",
+      "rule1": "Cifrele de mai sus sunt exemple. Un produs arată doar cifre reale, niciodată un substituent care pare real.",
+      "rule2": "Scrie semnul în schimbare (+8.2%, −3.1%), ca să se citească fără culoare și fără săgeată.",
+      "rule3": "--up și --down urmează direcția. Lasă schimbarea neutră când o creștere nu e o veste bună.",
+      "rule4": "Pe o pagină albă, g-stat--well pune plăcile pe un fond gri în loc de o linie fină."
     },
     "people": {
       "title": "Oameni",
@@ -1127,10 +1161,11 @@
     "lead": "Emailuri tranzacționale care rezistă în orice inbox, inclusiv în Outlook pe Windows, cu coduri ușor de copiat și invitații care ajung direct în calendar.",
     "previews": {
       "title": "Previzualizări",
-      "text": "Trei emailuri reale, generate de pachet la build.",
+      "text": "Patru emailuri reale, generate de pachet la build.",
       "code": "Cod de autentificare",
       "booking": "Rezervare",
       "update": "Confirmare",
+      "report": "Raport",
       "note": "Persoane și detalii fictive. Emailurile sunt afișate în engleză; funcționează în orice limbă."
     },
     "clients": {

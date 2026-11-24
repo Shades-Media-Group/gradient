@@ -526,7 +526,8 @@
       "statusMore": "Informazione, più sfondi discreti e riempimenti pieni per avvisi, pop-up e pulsanti",
       "well": "Campi pieni, chip e barra di ricerca, a riposo e sotto il puntatore",
       "tint": "Un chip o un’opzione scelta, e il testo sopra",
-      "stateHover": "L’unico livello di hover per righe e voci di menu"
+      "stateHover": "L’unico livello di hover per righe e voci di menu",
+      "panel": "Pannelli tinti: una novità, un riepilogo, un solo invito all’azione"
     },
     "type": {
       "title": "Tipografia",
@@ -766,6 +767,39 @@
       "dark": "Tema scuro",
       "rule1": "Una frase e un’azione. Mai un’icona in un cerchio.",
       "rule2": "Scegli il disegno in base al momento: <code>nothing</code> per nessun risultato, <code>pick</code> prima di una scelta, <code>folder</code> per una lista vuota, <code>done</code> a lavoro finito, <code>welcome</code> la prima volta, <code>offline</code> senza connessione, <code>caller</code> per persone e chiamate."
+    },
+    "panels": {
+      "title": "Pannelli tinti",
+      "text": "Una tonalità chiara di un colore del marchio, senza bordo e con angoli ampi: per una novità, un riepilogo o l’unico invito all’azione. Il rosso, quello del marchio, viene prima.",
+      "red": "Prima il rosso",
+      "redText": "La tinta del marchio: una novità, un riepilogo, l’unico invito all’azione di una pagina.",
+      "violet": "Viola",
+      "violetText": "Qualcosa di nuovo, o fatto con cura.",
+      "green": "Verde",
+      "greenText": "Un risultato o un buon cambiamento.",
+      "amber": "Ambra",
+      "amberText": "Qualcosa da pianificare. Un avviso è un messaggio, non un pannello.",
+      "blue": "Blu",
+      "blueText": "Una notizia, un consiglio o un rimando a un’altra pagina.",
+      "centerTitle": "Pronti a iniziare?",
+      "centerText": "Invia il brief e un designer risponde entro un giorno lavorativo.",
+      "centerAction": "Invia il brief",
+      "rule1": "Niente bordo né ombra: la tinta è il bordo. Mai un pannello dentro un pannello, e al massimo due tinte affiancate.",
+      "rule2": "Le parole restano nei colori del testo; la tinta non le colora mai. Al buio la tinta è la tonalità 600 mescolata al 14% nell’inchiostro.",
+      "rule3": "Non per avvisi o errori: quelli sono messaggi su una linea sottile."
+    },
+    "stats": {
+      "title": "Riquadri numerici",
+      "text": "Un’etichetta, il numero in grande e, quando aiuta, la variazione dall’ultima volta. Da due a quattro per riga.",
+      "label": "Valori di esempio",
+      "visitors": "Visitatori",
+      "enquiries": "Richieste",
+      "calls": "Chiamate prenotate",
+      "pages": "Pagine per visita",
+      "rule1": "Le cifre qui sopra sono esempi. Un prodotto mostra solo cifre reali, mai un segnaposto che sembri vero.",
+      "rule2": "Scrivi il segno nella variazione (+8.2%, −3.1%), così si legge senza il colore e la freccia.",
+      "rule3": "--up e --down seguono la direzione. Lascia la variazione neutra quando una crescita non è una buona notizia.",
+      "rule4": "Su una pagina bianca, g-stat--well posa i riquadri su un fondo grigio invece di una linea sottile."
     },
     "people": {
       "title": "Persone",
@@ -1127,10 +1161,11 @@
     "lead": "Email transazionali che reggono in ogni casella, Outlook su Windows compreso, con codici che si copiano e inviti che finiscono nel calendario.",
     "previews": {
       "title": "Anteprime",
-      "text": "Tre email vere, generate dal pacchetto in fase di build.",
+      "text": "Quattro email vere, generate dal pacchetto in fase di build.",
       "code": "Codice di accesso",
       "booking": "Prenotazione",
       "update": "Conferma",
+      "report": "Report",
       "note": "Persone e dati di esempio. Le email sono mostrate in inglese; funzionano in qualsiasi lingua."
     },
     "clients": {

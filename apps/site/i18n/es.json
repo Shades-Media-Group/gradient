@@ -526,7 +526,8 @@
       "statusMore": "Información, más fondos discretos y rellenos sólidos para avisos, ventanas emergentes y botones",
       "well": "Campos rellenos, chips y la barra de búsqueda, en reposo y bajo el puntero",
       "tint": "Un chip u opción elegida, y el texto sobre ella",
-      "stateHover": "La única capa de hover para filas y entradas de menú"
+      "stateHover": "La única capa de hover para filas y entradas de menú",
+      "panel": "Paneles tintados: una novedad, un resumen, una sola llamada a la acción"
     },
     "type": {
       "title": "Tipografía",
@@ -766,6 +767,39 @@
       "dark": "Tema oscuro",
       "rule1": "Una frase y una acción. Nunca un icono en un círculo.",
       "rule2": "Elige el dibujo según el momento: <code>nothing</code> sin resultados, <code>pick</code> antes de elegir, <code>folder</code> para una lista vacía, <code>done</code> cuando el trabajo está hecho, <code>welcome</code> la primera vez, <code>offline</code> sin conexión, <code>caller</code> para personas y llamadas."
+    },
+    "panels": {
+      "title": "Paneles tintados",
+      "text": "Un tono claro de un color de la marca, sin borde y con esquinas amplias: para una novedad, un resumen o la única llamada a la acción. El rojo, el de la marca, va primero.",
+      "red": "Primero el rojo",
+      "redText": "El tinte de la marca: una novedad, un resumen, la única llamada a la acción de una página.",
+      "violet": "Violeta",
+      "violetText": "Algo nuevo, o hecho con cuidado.",
+      "green": "Verde",
+      "greenText": "Un resultado o un buen cambio.",
+      "amber": "Ámbar",
+      "amberText": "Algo que conviene planificar. Un aviso es un mensaje, no un panel.",
+      "blue": "Azul",
+      "blueText": "Una noticia, un consejo o un enlace a otra página.",
+      "centerTitle": "¿Listo para empezar?",
+      "centerText": "Envía el brief y un diseñador responde en un día laborable.",
+      "centerAction": "Enviar el brief",
+      "rule1": "Sin borde ni sombra: el tinte es el borde. Nunca un panel dentro de otro, y como mucho dos tintes uno al lado del otro.",
+      "rule2": "Las palabras siguen en los colores del texto; el tinte nunca las colorea. En oscuro, el tinte es el tono 600 mezclado al 14 % con la tinta.",
+      "rule3": "No para avisos ni errores: esos son mensajes sobre una línea fina."
+    },
+    "stats": {
+      "title": "Fichas de cifras",
+      "text": "Una etiqueta, la cifra en grande y, cuando ayuda, el cambio desde la última vez. De dos a cuatro por fila.",
+      "label": "Valores de ejemplo",
+      "visitors": "Visitantes",
+      "enquiries": "Consultas",
+      "calls": "Llamadas reservadas",
+      "pages": "Páginas por visita",
+      "rule1": "Las cifras de arriba son ejemplos. Un producto muestra solo cifras reales, nunca un relleno que parezca real.",
+      "rule2": "Escribe el signo en el cambio (+8.2%, −3.1%), para que se lea sin el color ni la flecha.",
+      "rule3": "--up y --down siguen la dirección. Deja el cambio neutro cuando una subida no es buena noticia.",
+      "rule4": "En una página blanca, g-stat--well pone las fichas sobre un fondo gris en lugar de una línea fina."
     },
     "people": {
       "title": "Personas",
@@ -1127,10 +1161,11 @@
     "lead": "Correo transaccional que resiste en cualquier bandeja de entrada, Outlook para Windows incluido, con códigos que se copian y invitaciones que llegan al calendario.",
     "previews": {
       "title": "Vistas previas",
-      "text": "Tres correos reales, renderizados por el paquete al compilar.",
+      "text": "Cuatro correos reales, renderizados por el paquete al compilar.",
       "code": "Código de acceso",
       "booking": "Reserva",
       "update": "Confirmación",
+      "report": "Informe",
       "note": "Personas y datos de ejemplo. Los correos se muestran en inglés; admiten cualquier idioma."
     },
     "clients": {

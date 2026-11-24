@@ -526,7 +526,8 @@
       "statusMore": "Information, et fonds discrets ou aplats pleins pour les notifications, fenêtres et boutons",
       "well": "Champs remplis, puces et barre de recherche, au repos et au survol",
       "tint": "Une puce ou une option choisie, et le texte dessus",
-      "stateHover": "L’unique calque de survol pour les lignes et les entrées de menu"
+      "stateHover": "L’unique calque de survol pour les lignes et les entrées de menu",
+      "panel": "Panneaux teintés : une nouveauté, un résumé, un seul appel à l’action"
     },
     "type": {
       "title": "Typographie",
@@ -766,6 +767,39 @@
       "dark": "Thème sombre",
       "rule1": "Une phrase et une action. Jamais une icône dans un cercle.",
       "rule2": "Choisissez le dessin selon le moment : <code>nothing</code> pour aucun résultat, <code>pick</code> avant un choix, <code>folder</code> pour une liste vide, <code>done</code> quand le travail est fini, <code>welcome</code> la première fois, <code>offline</code> sans connexion, <code>caller</code> pour les personnes et les appels."
+    },
+    "panels": {
+      "title": "Panneaux teintés",
+      "text": "Une nuance claire d’une couleur de la marque, sans bord, avec un grand arrondi : pour une nouveauté, un résumé ou le seul appel à l’action. Le rouge, celui de la marque, passe en premier.",
+      "red": "Le rouge d’abord",
+      "redText": "La teinte de la marque : une nouveauté, un résumé, le seul appel à l’action d’une page.",
+      "violet": "Violet",
+      "violetText": "Quelque chose de nouveau, ou fait avec soin.",
+      "green": "Vert",
+      "greenText": "Un résultat ou un bon changement.",
+      "amber": "Ambre",
+      "amberText": "Quelque chose à prévoir. Un avertissement est un message, pas un panneau.",
+      "blue": "Bleu",
+      "blueText": "Une nouvelle, un conseil ou un renvoi vers une autre page.",
+      "centerTitle": "Prêt à commencer ?",
+      "centerText": "Envoyez le brief : un designer répond sous un jour ouvré.",
+      "centerAction": "Envoyer le brief",
+      "rule1": "Ni bord ni ombre : la teinte fait le bord. Jamais un panneau dans un panneau, et au plus deux teintes côte à côte.",
+      "rule2": "Les mots gardent les couleurs du texte ; la teinte ne les colore jamais. En sombre, la teinte est la nuance 600 mêlée à 14 % dans l’encre.",
+      "rule3": "Pas pour les avertissements ni les erreurs : ce sont des messages sur un filet."
+    },
+    "stats": {
+      "title": "Tuiles de chiffres",
+      "text": "Un libellé, le chiffre en grand et, quand c’est utile, l’évolution depuis la dernière fois. De deux à quatre par ligne.",
+      "label": "Valeurs d’exemple",
+      "visitors": "Visiteurs",
+      "enquiries": "Demandes",
+      "calls": "Appels réservés",
+      "pages": "Pages par visite",
+      "rule1": "Les chiffres ci-dessus sont des exemples. Un produit n’affiche que des chiffres réels, jamais un faux chiffre crédible.",
+      "rule2": "Écrivez le signe dans l’évolution (+8.2%, −3.1%), pour qu’elle se lise sans la couleur ni la flèche.",
+      "rule3": "--up et --down suivent le sens. Laissez l’évolution neutre quand une hausse n’est pas une bonne nouvelle.",
+      "rule4": "Sur une page blanche, g-stat--well pose les tuiles sur un fond gris au lieu d’un filet."
     },
     "people": {
       "title": "Personnes",
@@ -1127,10 +1161,11 @@
     "lead": "Des e-mails transactionnels qui tiennent dans toutes les boîtes de réception, Outlook sur Windows compris, avec des codes faciles à copier et des invitations qui arrivent dans l'agenda.",
     "previews": {
       "title": "Aperçus",
-      "text": "Trois vrais e-mails, générés par le paquet au moment du build.",
+      "text": "Quatre vrais e-mails, générés par le paquet au moment du build.",
       "code": "Code de connexion",
       "booking": "Réservation",
       "update": "Confirmation",
+      "report": "Rapport",
       "note": "Personnes et détails fictifs. Les e-mails sont montrés en anglais ; ils acceptent n'importe quelle langue."
     },
     "clients": {

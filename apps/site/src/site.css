@@ -3342,6 +3342,18 @@ body {
   width: min(100%, 300px);
 }
 
+.panel-demo,
+.panel-demo__pair {
+  display: grid;
+  gap: 12px;
+}
+
+@media (min-width: 640px) {
+  .panel-demo__pair {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
 .ill-set {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(min(100%, 168px), 1fr));

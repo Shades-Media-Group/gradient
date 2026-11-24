@@ -526,7 +526,8 @@
       "statusMore": "Information, plus quiet backgrounds and solid fills for notices, pop-ups and buttons",
       "well": "Filled fields, chips and the search bar, at rest and under the pointer",
       "tint": "A selected chip or option, and the text on it",
-      "stateHover": "The one hover layer for rows and menu entries"
+      "stateHover": "The one hover layer for rows and menu entries",
+      "panel": "Tinted panels: a feature, a summary, one call to act"
     },
     "type": {
       "title": "Type",
@@ -766,6 +767,39 @@
       "dark": "Dark theme",
       "rule1": "One sentence and one action. Never an icon in a circle.",
       "rule2": "Pick the drawing by the moment: <code>nothing</code> for no results, <code>pick</code> before a choice, <code>folder</code> for an empty list, <code>done</code> when the work is finished, <code>welcome</code> the first time, <code>offline</code> without a connection, <code>caller</code> for people and calls."
+    },
+    "panels": {
+      "title": "Tinted panels",
+      "text": "A light shade of a brand colour, no edge and a large corner: for a feature, a summary or the one call to act. Red, the brand’s own, comes first.",
+      "red": "Red comes first",
+      "redText": "The brand’s own tint: a feature, a summary, the one call to act on a page.",
+      "violet": "Violet",
+      "violetText": "Something new, or made with care.",
+      "green": "Green",
+      "greenText": "A result or a good change.",
+      "amber": "Amber",
+      "amberText": "Something to plan for. A warning is a message, not a panel.",
+      "blue": "Blue",
+      "blueText": "News, a tip or a pointer to another page.",
+      "centerTitle": "Ready to start?",
+      "centerText": "Send the brief and a designer replies within one working day.",
+      "centerAction": "Send the brief",
+      "rule1": "No edge and no shadow: the tint is the edge. Never a panel inside a panel, and at most two tints side by side.",
+      "rule2": "Words stay in the text colours; the tint never colours them. In dark, the tint is the 600 shade mixed 14% into ink.",
+      "rule3": "Not for warnings or errors: those are messages on a hairline."
+    },
+    "stats": {
+      "title": "Stat tiles",
+      "text": "A label, the number set large and, when it helps, the change since last time. Two to four to a row.",
+      "label": "Example values",
+      "visitors": "Visitors",
+      "enquiries": "Enquiries",
+      "calls": "Calls booked",
+      "pages": "Pages per visit",
+      "rule1": "The figures above are examples. A product shows real figures only, never a placeholder that looks real.",
+      "rule2": "Write the sign into the change (+8.2%, −3.1%), so it reads without the colour and the arrow.",
+      "rule3": "--up and --down follow the direction. Leave the change plain when a rise is not good news.",
+      "rule4": "On a white page, g-stat--well sets the tiles on a grey fill instead of a hairline."
     },
     "people": {
       "title": "People",
@@ -1127,10 +1161,11 @@
     "lead": "Transactional email that holds up in every inbox, Outlook on Windows included, with codes people can copy and invites that land in their calendar.",
     "previews": {
       "title": "Previews",
-      "text": "Three real emails, rendered by the package at build time.",
+      "text": "Four real emails, rendered by the package at build time.",
       "code": "Sign-in code",
       "booking": "Booking",
       "update": "Confirmation",
+      "report": "Report",
       "note": "Sample people and details. The emails are shown in English; they take any language."
     },
     "clients": {

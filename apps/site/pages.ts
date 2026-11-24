@@ -393,6 +393,40 @@ function emailSamples() {
         email.button('Book a call', 'https://shades.md/call', false),
       ],
     }),
+    // A monthly report. Example figures only, and the email says so.
+    report: renderEmail({
+      lang: 'en',
+      subject: 'Your November on your site',
+      preheader: 'Visitors, enquiries and calls booked.',
+      heading: 'Your November in numbers',
+      lead: 'What changed on your site this month. These are example figures, for the layout only.',
+      blocks: [
+        email.stats([
+          { label: 'Visitors', value: '12,480', delta: { value: '+8.2%', direction: 'up' } },
+          { label: 'Enquiries', value: '318', delta: { value: '+4%', direction: 'up' } },
+          { label: 'Calls booked', value: '46', delta: { value: '−3.1%', direction: 'down' } },
+        ]),
+        email.tint(
+          'blue',
+          email.headline('Your pages, side by side', [
+            'See which pages bring enquiries in the ',
+            { label: 'full report', href: 'https://shades.md/report' },
+            '.',
+          ], { tag: 'New', size: 20, onTint: true }),
+        ),
+        email.headline('One thing to try', 'Answer new enquiries within the hour, while the question is still fresh.'),
+        email.tintCard({
+          tone: 'red',
+          title: 'Talk it through',
+          body: 'Half an hour with your designer, on the numbers above.',
+          align: 'center',
+          button: { label: 'Book a call', href: 'https://shades.md/call' },
+        }),
+        email.signoff('The Shades team'),
+      ],
+      greyFooter: { reason: 'You get this report because you have a Shades account.' },
+      unsubscribe: 'https://shades.md/email-preferences',
+    }),
   }
 }
 const SAMPLES = emailSamples()

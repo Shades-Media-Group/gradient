@@ -25,6 +25,8 @@
           <a href="#menus">{{components.menus.title}}</a>
           <a href="#feedback">{{components.feedback.title}}</a>
           <a href="#empty">{{components.empty.title}}</a>
+          <a href="#panels">{{components.panels.title}}</a>
+          <a href="#stats">{{components.stats.title}}</a>
           <a href="#people">{{components.people.title}}</a>
           <a href="#disclosure">{{components.disclosure.title}}</a>
           <a href="#brand-parts">{{components.brand.title}}</a>
@@ -373,6 +375,92 @@
           <ol class="rules">
             <li>{{components.empty.rule1}}</li>
             <li>{{components.empty.rule2}}</li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="doc" id="panels">
+        <div class="doc-head">
+          <h2>{{components.panels.title}}</h2>
+          <p>{{components.panels.text}}</p>
+        </div>
+        <div class="doc-body">
+          <div class="panel-demo">
+            <div class="g-panel g-panel--tint g-panel--red">
+              <h3 class="g-panel__title">{{components.panels.red}}</h3>
+              <p class="g-panel__text">{{components.panels.redText}}</p>
+            </div>
+            <div class="panel-demo__pair">
+              <div class="g-panel g-panel--tint g-panel--violet">
+                <h3 class="g-panel__title">{{components.panels.violet}}</h3>
+                <p class="g-panel__text">{{components.panels.violetText}}</p>
+              </div>
+              <div class="g-panel g-panel--tint g-panel--green">
+                <h3 class="g-panel__title">{{components.panels.green}}</h3>
+                <p class="g-panel__text">{{components.panels.greenText}}</p>
+              </div>
+            </div>
+            <div class="panel-demo__pair">
+              <div class="g-panel g-panel--tint g-panel--amber">
+                <h3 class="g-panel__title">{{components.panels.amber}}</h3>
+                <p class="g-panel__text">{{components.panels.amberText}}</p>
+              </div>
+              <div class="g-panel g-panel--tint g-panel--blue">
+                <h3 class="g-panel__title">{{components.panels.blue}}</h3>
+                <p class="g-panel__text">{{components.panels.blueText}}</p>
+              </div>
+            </div>
+            <div class="g-panel g-panel--tint g-panel--red g-panel--center">
+              <h3 class="g-panel__title">{{components.panels.centerTitle}}</h3>
+              <p class="g-panel__text">{{components.panels.centerText}}</p>
+              <div class="g-panel__actions"><button class="g-btn g-btn--primary" type="button">{{components.panels.centerAction}}</button></div>
+            </div>
+          </div>
+          <pre class="g-code"><code>&lt;div class="g-panel g-panel--tint g-panel--red"&gt;
+  &lt;h3 class="g-panel__title"&gt;Red comes first&lt;/h3&gt;
+  &lt;p class="g-panel__text"&gt;…&lt;/p&gt;
+&lt;/div&gt;
+&lt;!-- --violet, --green, --amber, --blue. Centred: a title, one sentence, one action. --&gt;
+&lt;div class="g-panel g-panel--tint g-panel--red g-panel--center"&gt;
+  &lt;h3 class="g-panel__title"&gt;Ready to start?&lt;/h3&gt;
+  &lt;p class="g-panel__text"&gt;…&lt;/p&gt;
+  &lt;div class="g-panel__actions"&gt;&lt;a class="g-btn g-btn--primary" href="…"&gt;Send the brief&lt;/a&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+          <ol class="rules">
+            <li>{{components.panels.rule1}}</li>
+            <li>{{components.panels.rule2}}</li>
+            <li>{{components.panels.rule3}}</li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="doc" id="stats">
+        <div class="doc-head">
+          <h2>{{components.stats.title}}</h2>
+          <p>{{components.stats.text}}</p>
+        </div>
+        <div class="doc-body">
+          <div class="demo">
+            <ul class="g-stats" aria-label="{{components.stats.label}}">
+              <li class="g-stat"><p class="g-stat__label">{{components.stats.visitors}}</p><p class="g-stat__value">12,480</p><span class="g-stat__delta g-stat__delta--up">+8.2%</span></li>
+              <li class="g-stat"><p class="g-stat__label">{{components.stats.enquiries}}</p><p class="g-stat__value">318</p><span class="g-stat__delta g-stat__delta--up">+4%</span></li>
+              <li class="g-stat"><p class="g-stat__label">{{components.stats.calls}}</p><p class="g-stat__value">46</p><span class="g-stat__delta g-stat__delta--down">−3.1%</span></li>
+              <li class="g-stat"><p class="g-stat__label">{{components.stats.pages}}</p><p class="g-stat__value">3.4</p><span class="g-stat__delta">0%</span></li>
+            </ul>
+            <p class="doc-note">{{components.stats.label}}</p>
+          </div>
+          <pre class="g-code"><code>&lt;ul class="g-stats"&gt;
+  &lt;li class="g-stat"&gt;
+    &lt;p class="g-stat__label"&gt;Visitors&lt;/p&gt;
+    &lt;p class="g-stat__value"&gt;{visitors}&lt;/p&gt;
+    &lt;span class="g-stat__delta g-stat__delta--up"&gt;+8.2%&lt;/span&gt;   &lt;!-- --down, or neither --&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+          <ol class="rules">
+            <li>{{components.stats.rule1}}</li>
+            <li>{{components.stats.rule2}}</li>
+            <li>{{components.stats.rule3}}</li>
+            <li>{{components.stats.rule4}}</li>
           </ol>
         </div>
       </section>

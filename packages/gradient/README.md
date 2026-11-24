@@ -96,6 +96,10 @@ The source SVGs are under `shades-gradient/icons/*`.
 
 Seven drawings for empty, first-time, done and offline states live under `shades-gradient/illustrations/*.svg` (`nothing`, `pick`, `folder`, `done`, `welcome`, `offline`, `caller`). Inline one inside `.g-empty` with the class `g-empty__art`; its colours read the `--g-ill-*` tokens, so it follows light and dark.
 
+### Tinted panels and stat tiles
+
+`.g-panel g-panel--tint` sets a panel on the light shade of a brand colour (`--red` first, then `--violet`, `--green`, `--amber`, `--blue`), with `.g-panel--center` for a title, one sentence and one action. `.g-stats` holds two to four `.g-stat` tiles to a row: `.g-stat__label`, `.g-stat__value` and an optional `.g-stat__delta--up` or `--down`.
+
 ### Brand files
 
 ```js
@@ -155,6 +159,8 @@ const { subject, html, text, attachments } = renderEmail({
 ```
 
 The layout is Outlook-safe: 560 px tables, inline styles and VML buttons. Codes are set so Gmail and Apple Mail offer to copy them. `icsFile()` writes invitations that Gmail and Outlook show as event cards, and `viewAction()` / `eventReservation()` add Gmail markup. See [gradient.shades.md/email](https://gradient.shades.md/email/).
+
+Reports and news use `email.headline()`, `email.rich()` for blue links inside a sentence, `email.tint()` and `email.tintCard()` for tinted sections, `email.stats()` for stat tiles with up and down changes, `email.pill()` (filled or outlined, with one optional icon), `email.tag('New')`, `email.signoff()` under a bar in the brand colours, and `greyFooter` for the grey footer with the unsubscribe line.
 
 ### Magnetic hover
 

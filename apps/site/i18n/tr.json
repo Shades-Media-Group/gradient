@@ -526,7 +526,8 @@
       "statusMore": "Bilgi, ayrıca bildirimler, açılır pencereler ve düğmeler için sakin arka planlar ve düz dolgular",
       "well": "Dolgulu alanlar, çipler ve arama çubuğu; dururken ve imlecin altında",
       "tint": "Seçili bir çip ya da seçenek ve üzerindeki metin",
-      "stateHover": "Satırlar ve menü girişleri için tek üzerine gelme katmanı"
+      "stateHover": "Satırlar ve menü girişleri için tek üzerine gelme katmanı",
+      "panel": "Renkli paneller: bir yenilik, bir özet, tek bir eylem çağrısı"
     },
     "type": {
       "title": "Tipografi",
@@ -766,6 +767,39 @@
       "dark": "Koyu tema",
       "rule1": "Bir cümle ve bir işlem. Asla daire içinde bir simge değil.",
       "rule2": "Çizimi ana göre seçin: sonuç yoksa <code>nothing</code>, bir seçimden önce <code>pick</code>, boş bir liste için <code>folder</code>, iş bitince <code>done</code>, ilk seferde <code>welcome</code>, bağlantı yokken <code>offline</code>, kişiler ve aramalar için <code>caller</code>."
+    },
+    "panels": {
+      "title": "Renkli paneller",
+      "text": "Bir marka renginin açık tonu, kenarlıksız ve geniş köşeli: bir yenilik, bir özet ya da tek eylem çağrısı için. Markanın kendi rengi olan kırmızı önce gelir.",
+      "red": "Önce kırmızı",
+      "redText": "Markanın kendi tonu: bir yenilik, bir özet, sayfadaki tek eylem çağrısı.",
+      "violet": "Mor",
+      "violetText": "Yeni ya da özenle yapılmış bir şey.",
+      "green": "Yeşil",
+      "greenText": "Bir sonuç ya da iyi bir değişiklik.",
+      "amber": "Kehribar",
+      "amberText": "Planlanması gereken bir şey. Uyarı bir mesajdır, panel değil.",
+      "blue": "Mavi",
+      "blueText": "Bir haber, bir ipucu ya da başka bir sayfaya yönlendirme.",
+      "centerTitle": "Başlamaya hazır mısınız?",
+      "centerText": "Brief’i gönderin, bir tasarımcı bir iş günü içinde yanıt verir.",
+      "centerAction": "Brief’i gönder",
+      "rule1": "Kenarlık da gölge de yok: kenarı ton çizer. Panel içinde panel asla; yan yana en fazla iki ton.",
+      "rule2": "Sözcükler metin renklerinde kalır; ton onları boyamaz. Koyu temada ton, mürekkebe %14 karıştırılmış 600 tonudur.",
+      "rule3": "Uyarılar ve hatalar için değil: onlar ince çizgi üzerindeki mesajlardır."
+    },
+    "stats": {
+      "title": "Sayı kutucukları",
+      "text": "Bir etiket, büyük yazılmış sayı ve işe yarıyorsa geçen seferden bu yana değişim. Satır başına iki ila dört.",
+      "label": "Örnek değerler",
+      "visitors": "Ziyaretçiler",
+      "enquiries": "Talepler",
+      "calls": "Planlanan görüşmeler",
+      "pages": "Ziyaret başına sayfa",
+      "rule1": "Yukarıdaki sayılar örnektir. Bir ürün yalnızca gerçek sayıları gösterir, gerçek gibi görünen bir yer tutucuyu asla.",
+      "rule2": "İşareti değişime yazın (+8.2%, −3.1%); böylece renk ve ok olmadan da okunur.",
+      "rule3": "--up ve --down yönü izler. Artış iyi haber değilse değişimi nötr bırakın.",
+      "rule4": "Beyaz bir sayfada g-stat--well kutucukları ince çizgi yerine gri bir zemine koyar."
     },
     "people": {
       "title": "Kişiler",
@@ -1127,10 +1161,11 @@
     "lead": "Windows'taki Outlook dahil her gelen kutusunda sağlam duran işlemsel e-posta; kopyalanabilen kodlar ve takvime düşen davetlerle.",
     "previews": {
       "title": "Önizlemeler",
-      "text": "Paketin derleme sırasında oluşturduğu üç gerçek e-posta.",
+      "text": "Paketin derleme sırasında oluşturduğu dört gerçek e-posta.",
       "code": "Giriş kodu",
       "booking": "Rezervasyon",
       "update": "Onay",
+      "report": "Rapor",
       "note": "Örnek kişiler ve bilgiler. E-postalar İngilizce gösteriliyor; her dilde çalışırlar."
     },
     "clients": {
