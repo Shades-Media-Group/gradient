@@ -4,6 +4,15 @@ Every notable change to Gradient and the `shades-gradient` package. The format f
 
 ## [Unreleased]
 
+## [0.14.0] - 2026-11-24
+
+### Added
+
+- Report blocks, tinted sections, stat tiles, pills and the grey footer (email)
+- Stat tiles (css)
+- Tinted panels in the brand colours (css)
+- Round 9, the desk up close (sound)
+
 ## [0.13.0] - 2026-11-24
 
 ### Added
