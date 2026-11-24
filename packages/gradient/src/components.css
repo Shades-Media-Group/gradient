@@ -423,6 +423,8 @@
 
   .g-search > input {
     flex: 1;
+    /* A percentage width drops the field's intrinsic size, so the bar shrinks in a grid. */
+    width: 100%;
     min-width: 0;
     height: 100%;
     padding: 0;
