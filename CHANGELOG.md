@@ -4,6 +4,14 @@ Every notable change to Gradient and the `shades-gradient` package. The format f
 
 ## [Unreleased]
 
+## [0.13.0] - 2026-11-24
+
+### Added
+
+- Filled pill fields, search bar, chips, menu slots and empty state (css)
+- Spot drawings for empty, first-time, done and offline states (illustrations)
+- Well, tint and hover roles, and the illustration colours (tokens)
+
 ## [0.12.0] - 2026-11-22
 
 ### Added
