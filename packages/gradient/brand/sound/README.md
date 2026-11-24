@@ -143,6 +143,7 @@ The four takes scored 10 of 10 share one shape: a small sound a hand makes on a 
 | Take | What you hear | Key |
 | --- | --- | --- |
 | w1 Ink and beats | The sheet slides, three heartbeats, the pen clicks, then the felt piano and the warm chord | B |
+| w1b Ink and beats, short | The same opening as w1, note for note; the chord lets go a second sooner (3.6 s) | B |
 | w2 Three strokes | A pencil signs in three strokes; each leaves a piano note | E-flat |
 | w3 Book closed | A hardback shuts; a low piano chord answers | F |
 | w4 Wood tune | Three tuned taps on wood, then a hum sings them back | A |
