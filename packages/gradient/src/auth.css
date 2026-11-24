@@ -130,9 +130,16 @@
   border-radius: var(--g-radius-md);
 }
 
-/* Focus in the text colour: a red outline would read as an error. */
-.g-auth-field > .g-input:focus-visible {
+/* Filled like every field: the well at rest, the surface with a 2 px edge in the text colour while
+   focused (a red edge would read as an error). The floating label keeps the corners at radius-md. */
+.g-auth-field > .g-input:focus {
+  outline: none;
+  background-color: var(--g-surface);
   box-shadow: inset 0 0 0 2px var(--g-text);
+}
+
+.g-auth-field > .g-input[aria-invalid='true'] {
+  box-shadow: inset 0 0 0 2px var(--g-danger);
 }
 
 .g-auth-field > label {
@@ -168,6 +175,10 @@
   position: absolute;
   top: 8px;
   right: 8px;
+}
+
+.g-auth-field > .g-icon-btn:hover {
+  background: var(--g-state-hover);
 }
 
 .g-auth-field:has(> .g-icon-btn) > .g-input {

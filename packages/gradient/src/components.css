@@ -236,32 +236,37 @@
     font-weight: 500;
   }
 
+  /* Fill means "type here": a soft filled pill with no edge at rest. While focused the field
+     turns to the surface with a 2 px edge in the text colour, so the active one is never in doubt. */
   .g-input,
   .g-select,
   .g-textarea {
     width: 100%;
     min-height: 48px;
-    padding: 0 0.875rem;
+    padding: 0 1.125rem;
     border: 0;
-    border-radius: var(--g-radius-md);
-    background: var(--g-surface);
-    box-shadow: inset 0 0 0 1px var(--g-line-strong);
+    border-radius: var(--g-radius-pill);
+    background-color: var(--g-well);
+    box-shadow: none;
     color: var(--g-text);
     font-size: 1rem;
-    transition: box-shadow var(--g-dur-snap) var(--g-ease-snap);
+    transition:
+      background-color var(--g-dur-snap) var(--g-ease-snap),
+      box-shadow var(--g-dur-snap) var(--g-ease-snap);
   }
 
   .g-textarea {
     min-height: 112px;
-    padding: 0.75rem 0.875rem;
+    padding: 0.875rem 1.125rem;
+    border-radius: var(--g-radius-lg);
     resize: vertical;
   }
 
   .g-select {
     appearance: none;
-    padding-right: 2.5rem;
+    padding-right: 2.75rem;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%236B6B73'%3E%3Cpath d='M8.12 9.29 12 13.17l3.88-3.88a.996.996 0 1 1 1.41 1.41l-4.59 4.59a.996.996 0 0 1-1.41 0L6.7 10.7a.996.996 0 0 1 0-1.41c.39-.38 1.03-.39 1.42 0z'/%3E%3C/svg%3E");
-    background-position: right 0.75rem center;
+    background-position: right 1rem center;
     background-repeat: no-repeat;
     background-size: 20px;
   }
@@ -274,13 +279,15 @@
   .g-input:hover,
   .g-select:hover,
   .g-textarea:hover {
-    box-shadow: inset 0 0 0 1px var(--g-text-3);
+    background-color: var(--g-well-hover);
   }
 
-  .g-input:focus-visible,
-  .g-select:focus-visible,
-  .g-textarea:focus-visible {
-    box-shadow: inset 0 0 0 2px var(--g-accent);
+  .g-input:focus,
+  .g-select:focus,
+  .g-textarea:focus {
+    outline: none;
+    background-color: var(--g-surface);
+    box-shadow: inset 0 0 0 2px var(--g-text);
   }
 
   .g-input[aria-invalid='true'],
@@ -292,7 +299,7 @@
   .g-input:disabled,
   .g-select:disabled,
   .g-textarea:disabled {
-    background: var(--g-sunken);
+    background-color: var(--g-sunken);
     color: var(--g-text-3);
     cursor: not-allowed;
   }
@@ -384,6 +391,179 @@
     background: var(--g-surface);
     box-shadow: var(--g-shadow-sm);
     color: var(--g-text);
+  }
+
+  /* Search: on a search-led screen it comes first and is the largest thing. A filled pill at rest;
+     focused, it lifts onto the surface. Wrap the input in a label so the whole bar takes clicks. */
+  .g-search {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    height: 52px;
+    padding: 0 1.25rem;
+    border-radius: var(--g-radius-pill);
+    background: var(--g-well);
+    color: var(--g-text-2);
+    cursor: text;
+    transition:
+      background-color var(--g-dur-snap) var(--g-ease-snap),
+      box-shadow var(--g-dur-snap) var(--g-ease-snap);
+  }
+
+  .g-search:hover {
+    background: var(--g-well-hover);
+  }
+
+  .g-search:focus-within {
+    background: var(--g-surface);
+    box-shadow:
+      var(--g-shadow-md),
+      inset 0 0 0 1px var(--g-line);
+  }
+
+  .g-search > input {
+    flex: 1;
+    min-width: 0;
+    height: 100%;
+    padding: 0;
+    border: 0;
+    outline: none;
+    background: transparent;
+    box-shadow: none;
+    color: var(--g-text);
+    font: inherit;
+    font-size: 1rem;
+  }
+
+  .g-search > input::placeholder {
+    color: var(--g-text-3);
+  }
+
+  .g-search > input::-webkit-search-cancel-button {
+    appearance: none;
+  }
+
+  .g-search__icon {
+    flex: none;
+    width: 20px;
+    height: 20px;
+  }
+
+  /* Trailing slot: a key hint, a clear button, a filter button. */
+  .g-search__end {
+    display: inline-flex;
+    flex: none;
+    align-items: center;
+    gap: 0.25rem;
+    margin-right: -0.5rem;
+  }
+
+  .g-search--lg {
+    height: 60px;
+  }
+
+  .g-search--lg > input {
+    font-size: 1.0625rem;
+  }
+
+  /* Chips: filters, never a form. A chip with a caret opens a menu; an active chip is tinted,
+     carries a check and says its value ("Owner: Ana"). */
+  .g-chips {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .g-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    height: 36px;
+    padding: 0 0.875rem;
+    border: 0;
+    border-radius: var(--g-radius-pill);
+    background: var(--g-well);
+    color: var(--g-text);
+    font: inherit;
+    font-size: var(--g-size-small);
+    font-weight: 500;
+    line-height: 1;
+    white-space: nowrap;
+    text-decoration: none;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    transition:
+      background-color var(--g-dur-snap) var(--g-ease-snap),
+      color var(--g-dur-snap) var(--g-ease-snap);
+  }
+
+  .g-chip:hover {
+    background: var(--g-well-hover);
+  }
+
+  .g-chip:focus-visible {
+    outline: 2px solid var(--g-text);
+    outline-offset: 2px;
+  }
+
+  .g-chip[aria-pressed='true'],
+  .g-chip[aria-checked='true'],
+  .g-chip.is-on {
+    background: var(--g-tint);
+    color: var(--g-on-tint);
+  }
+
+  .g-chip[aria-pressed='true']:hover,
+  .g-chip[aria-checked='true']:hover,
+  .g-chip.is-on:hover {
+    background: color-mix(in srgb, var(--g-on-tint) 8%, var(--g-tint));
+  }
+
+  .g-chip > svg {
+    flex: none;
+    width: 16px;
+    height: 16px;
+  }
+
+  .g-chip__caret {
+    flex: none;
+    width: 16px;
+    height: 16px;
+    margin-right: -0.25rem;
+    opacity: 0.7;
+  }
+
+  /* Icon slots take an svg directly or wrap one. */
+  :is(.g-search__icon, .g-chip__caret, .g-menu__icon) > svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  /* A remove button inside an active chip. */
+  .g-chip__x {
+    display: inline-grid;
+    place-items: center;
+    flex: none;
+    width: 22px;
+    height: 22px;
+    margin-right: -0.5rem;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: transparent;
+    color: inherit;
+    cursor: pointer;
+  }
+
+  .g-chip__x:hover {
+    background: var(--g-state-hover);
+  }
+
+  .g-chip__x > svg {
+    width: 14px;
+    height: 14px;
   }
 
   /* Tags and badges -------------------------------------------------------- */
@@ -796,5 +976,151 @@
 
   .g-avatar--lg {
     --g-avatar: 56px;
+  }
+
+  /* Menu: a list opened from a trigger. The script that opens it sets top and left from the
+     trigger, so it never clips inside a scrolling pane. A leading icon per entry is coloured by
+     what it does; the keyboard key sits on the right. */
+  .g-menu {
+    position: fixed;
+    z-index: 50;
+    display: grid;
+    min-width: 220px;
+    padding: 0.5rem 0;
+    border-radius: var(--g-radius-lg);
+    background: var(--g-surface);
+    box-shadow:
+      inset 0 0 0 1px var(--g-line),
+      var(--g-shadow-md);
+  }
+
+  .g-menu[hidden] {
+    display: none;
+  }
+
+  .g-menu__item {
+    display: flex;
+    align-items: center;
+    gap: 0.875rem;
+    width: 100%;
+    height: 40px;
+    padding: 0 1rem;
+    border: 0;
+    border-radius: 0;
+    background: none;
+    color: var(--g-text);
+    font: inherit;
+    font-size: 0.9375rem;
+    text-align: left;
+    text-decoration: none;
+    white-space: nowrap;
+    cursor: pointer;
+  }
+
+  .g-menu__item:hover,
+  .g-menu__item:focus-visible {
+    outline: none;
+    background: var(--g-state-hover);
+  }
+
+  .g-menu__item.is-danger {
+    color: var(--g-danger);
+  }
+
+  .g-menu__item:disabled,
+  .g-menu__item[aria-disabled='true'] {
+    color: var(--g-text-3);
+    cursor: default;
+  }
+
+  .g-menu__item:disabled:hover {
+    background: none;
+  }
+
+  .g-menu__icon {
+    flex: none;
+    width: 18px;
+    height: 18px;
+    color: var(--g-text-2);
+  }
+
+  /* Icon tones, by what the entry does. */
+  .g-menu__icon.is-blue {
+    color: light-dark(var(--g-blue-600), var(--g-blue-300));
+  }
+
+  .g-menu__icon.is-green {
+    color: light-dark(var(--g-green-700), var(--g-green-300));
+  }
+
+  .g-menu__icon.is-violet {
+    color: light-dark(var(--g-violet-600), var(--g-violet-300));
+  }
+
+  .g-menu__icon.is-amber {
+    color: light-dark(var(--g-amber-600), var(--g-amber-300));
+  }
+
+  .g-menu__icon.is-pink {
+    color: light-dark(var(--g-pink-600), var(--g-pink-300));
+  }
+
+  .g-menu__icon.is-red,
+  .g-menu__item.is-danger .g-menu__icon {
+    color: var(--g-danger);
+  }
+
+  .g-menu__hint {
+    margin-left: auto;
+    padding-left: 1rem;
+    color: var(--g-text-3);
+    font-size: var(--g-size-small);
+  }
+
+  .g-menu__rule {
+    height: 1px;
+    margin: 0.375rem 0;
+    border: 0;
+    background: var(--g-line);
+  }
+
+  /* Empty, first-time, done, offline and error states: a drawn spot illustration, one sentence
+     and one next action. Never an icon in a circle. */
+  .g-empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 2rem 1rem;
+    text-align: center;
+  }
+
+  .g-empty__art {
+    display: block;
+    width: 100%;
+    max-width: 220px;
+    height: auto;
+    margin-bottom: 0.5rem;
+  }
+
+  .g-empty__title {
+    margin: 0;
+    color: var(--g-text);
+    font: 600 var(--g-size-h3) / 1.25 var(--g-font-display);
+    letter-spacing: var(--g-tracking-heading);
+  }
+
+  .g-empty__text {
+    max-width: 44ch;
+    margin: 0;
+    color: var(--g-text-2);
+  }
+
+  .g-empty__actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 0.75rem;
   }
 }
