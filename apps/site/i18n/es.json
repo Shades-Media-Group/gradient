@@ -523,7 +523,10 @@
       "inverse": "Botones invertidos y secciones en tinta",
       "status": "Texto de éxito, advertencia y peligro",
       "theming": "Una marca cliente cambia los roles en una sola hoja de estilos. Todos los componentes la siguen, porque ninguno lee un color en bruto.",
-      "statusMore": "Información, más fondos discretos y rellenos sólidos para avisos, ventanas emergentes y botones"
+      "statusMore": "Información, más fondos discretos y rellenos sólidos para avisos, ventanas emergentes y botones",
+      "well": "Campos rellenos, chips y la barra de búsqueda, en reposo y bajo el puntero",
+      "tint": "Un chip u opción elegida, y el texto sobre ella",
+      "stateHover": "La única capa de hover para filas y entradas de menú"
     },
     "type": {
       "title": "Tipografía",
@@ -633,7 +636,7 @@
     },
     "fields": {
       "title": "Campos",
-      "text": "Una etiqueta visible sobre cada campo, una pista cuando ayuda y un error que dice cómo corregirlo.",
+      "text": "Una etiqueta visible sobre cada campo, una pista cuando ayuda y un error que dice cómo arreglarlo. Los campos van rellenos: una píldora suave que dice «escribe aquí».",
       "name": "Nombre completo",
       "nameHint": "Tal como debe aparecer en el contrato.",
       "email": "Correo de trabajo",
@@ -644,7 +647,23 @@
       "optCampaign": "Campaña",
       "locked": "Empresa",
       "brief": "Brief",
-      "briefPlaceholder": "¿Qué debería cambiar cuando el trabajo esté hecho?"
+      "briefPlaceholder": "¿Qué debería cambiar cuando el trabajo esté hecho?",
+      "rule1": "Sin borde en reposo. Mientras un campo tiene el foco, pasa al color de superficie con un borde de 2 px del color del texto, así el campo activo nunca está en duda.",
+      "rule2": "Un error mantiene el borde rojo y una línea bajo el campo que dice cómo arreglarlo."
+    },
+    "search": {
+      "title": "Búsqueda y filtros",
+      "text": "En una pantalla guiada por la búsqueda, la barra de búsqueda va primero y es lo más grande. Los filtros van debajo como chips, nunca como un formulario.",
+      "placeholder": "Buscar contactos, tratos y notas",
+      "label": "Buscar",
+      "filters": "Filtros",
+      "owner": "Responsable: Ana",
+      "status": "Estado",
+      "date": "Fecha",
+      "clear": "Borrar",
+      "rule1": "Un chip con flecha abre un menú. Al elegir un valor, el chip se tiñe, lleva una marca y muestra el valor.",
+      "rule2": "«Borrar» aparece en cuanto hay un filtro activo.",
+      "rule3": "Pulsa / para ir a la búsqueda desde cualquier parte de la pantalla."
     },
     "choices": {
       "title": "Opciones",
@@ -697,6 +716,28 @@
       "rule1": "Usa pestañas para vistas del mismo objeto, nunca como una segunda barra de navegación.",
       "rule2": "La pestaña actual se marca con una línea roja y aria-selected; las flechas del teclado pasan de una pestaña a otra."
     },
+    "menus": {
+      "title": "Menús",
+      "text": "Acciones sobre una cosa, abiertas desde un botón. Cada entrada lleva delante un icono coloreado según lo que hace y su tecla a la derecha.",
+      "label": "Acciones",
+      "open": "Abrir",
+      "share": "Compartir",
+      "download": "Descargar",
+      "rename": "Cambiar nombre",
+      "move": "Mover a carpeta",
+      "star": "Destacar",
+      "colour": "Cambiar color",
+      "remove": "Eliminar",
+      "tone": "Tono",
+      "toneUse": "Para",
+      "toneBlue": "Abrir y compartir",
+      "toneGreen": "Entrar y salir: descargar, importar, exportar",
+      "toneViolet": "Editar",
+      "toneAmber": "Organizar y destacar",
+      "tonePink": "Color",
+      "toneRed": "Eliminar",
+      "rule": "Las filas de una tabla siguen sin un icono cada una, salvo el tipo de archivo."
+    },
     "feedback": {
       "title": "Avisos",
       "text": "Los mensajes explican, el progreso tranquiliza, las notificaciones confirman. Ninguno grita.",
@@ -712,6 +753,19 @@
       "rule1": "Un mensaje nombra el problema y la salida, en ese orden.",
       "rule2": "Los errores usan role=\"alert\"; las confirmaciones, role=\"status\", para que los lectores de pantalla los anuncien una sola vez.",
       "rule3": "Una notificación dura unos dos segundos y nunca contiene una acción que alguien deba realizar."
+    },
+    "empty": {
+      "title": "Estados vacíos",
+      "text": "Los estados vacíos, de primera vez, terminados, sin conexión y de error llevan una ilustración dibujada, una frase y una sola acción siguiente.",
+      "demoTitle": "Nada coincide con estos filtros",
+      "demoText": "Prueba con menos filtros o busca en todos los contactos.",
+      "demoAction": "Borrar filtros",
+      "setTitle": "Ilustraciones",
+      "setText": "Siete dibujos vienen en <code>shades-gradient/illustrations</code>. Insertados en la página, siguen el tema mediante los colores <code>--g-ill-*</code>.",
+      "light": "Tema claro",
+      "dark": "Tema oscuro",
+      "rule1": "Una frase y una acción. Nunca un icono en un círculo.",
+      "rule2": "Elige el dibujo según el momento: <code>nothing</code> sin resultados, <code>pick</code> antes de elegir, <code>folder</code> para una lista vacía, <code>done</code> cuando el trabajo está hecho, <code>welcome</code> la primera vez, <code>offline</code> sin conexión, <code>caller</code> para personas y llamadas."
     },
     "people": {
       "title": "Personas",

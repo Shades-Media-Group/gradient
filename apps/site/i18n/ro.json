@@ -523,7 +523,10 @@
       "inverse": "Butoane inverse și secțiuni de cerneală",
       "status": "Text de succes, avertizare și pericol",
       "theming": "Brandul unui client schimbă rolurile într-o singură foaie de stil. Fiecare componentă le urmează, pentru că niciuna nu citește o culoare brută.",
-      "statusMore": "Informare, plus fundaluri discrete și umpluri pline pentru notificări, ferestre și butoane"
+      "statusMore": "Informare, plus fundaluri discrete și umpluri pline pentru notificări, ferestre și butoane",
+      "well": "Câmpuri pline, chip-uri și bara de căutare, în repaus și sub cursor",
+      "tint": "Un chip sau o opțiune aleasă și textul de pe ea",
+      "stateHover": "Singurul strat de hover pentru rânduri și intrări de meniu"
     },
     "type": {
       "title": "Tipografie",
@@ -633,7 +636,7 @@
     },
     "fields": {
       "title": "Câmpuri",
-      "text": "O etichetă vizibilă deasupra fiecărui câmp, un indiciu când ajută și o eroare care spune cum se repară.",
+      "text": "O etichetă vizibilă deasupra fiecărui câmp, un indiciu când ajută și o eroare care spune cum se repară. Câmpurile sunt pline: o pastilă moale care spune „scrie aici”.",
       "name": "Nume complet",
       "nameHint": "Așa cum trebuie să apară în contract.",
       "email": "Email de serviciu",
@@ -644,7 +647,23 @@
       "optCampaign": "Campanie",
       "locked": "Companie",
       "brief": "Brief",
-      "briefPlaceholder": "Ce ar trebui să se schimbe după ce lucrarea e gata?"
+      "briefPlaceholder": "Ce ar trebui să se schimbe după ce lucrarea e gata?",
+      "rule1": "Fără contur în repaus. Cât timp câmpul are focus, trece pe culoarea suprafeței cu un contur de 2 px în culoarea textului, așa că e mereu clar care e activ.",
+      "rule2": "O eroare păstrează conturul roșu și un rând sub câmp care spune cum se repară."
+    },
+    "search": {
+      "title": "Căutare și filtre",
+      "text": "Pe un ecran condus de căutare, bara de căutare vine prima și e cel mai mare lucru de pe el. Filtrele stau sub ea ca chip-uri, niciodată ca un formular.",
+      "placeholder": "Caută contacte, oferte și notițe",
+      "label": "Căutare",
+      "filters": "Filtre",
+      "owner": "Responsabil: Ana",
+      "status": "Stare",
+      "date": "Dată",
+      "clear": "Șterge",
+      "rule1": "Un chip cu săgeată deschide un meniu. După ce alegi o valoare, chip-ul devine colorat, primește o bifă și arată valoarea.",
+      "rule2": "„Șterge” apare imediat ce un filtru e pornit.",
+      "rule3": "Apasă / ca să sari la căutare de oriunde de pe ecran."
     },
     "choices": {
       "title": "Opțiuni",
@@ -697,6 +716,28 @@
       "rule1": "Folosește taburi pentru vizualizări ale aceluiași obiect, niciodată ca a doua bară de navigare.",
       "rule2": "Tabul curent e marcat cu o linie roșie și aria-selected; tastele săgeți trec de la un tab la altul."
     },
+    "menus": {
+      "title": "Meniuri",
+      "text": "Acțiuni asupra unui lucru, deschise dintr-un buton. Fiecare rând are în față o iconiță colorată după ce face și tasta lui în dreapta.",
+      "label": "Acțiuni",
+      "open": "Deschide",
+      "share": "Distribuie",
+      "download": "Descarcă",
+      "rename": "Redenumește",
+      "move": "Mută în dosar",
+      "star": "Marchează cu stea",
+      "colour": "Schimbă culoarea",
+      "remove": "Șterge",
+      "tone": "Ton",
+      "toneUse": "Pentru",
+      "toneBlue": "Deschidere și distribuire",
+      "toneGreen": "Intrare și ieșire: descărcare, import, export",
+      "toneViolet": "Editare",
+      "toneAmber": "Organizare și stele",
+      "tonePink": "Culoare",
+      "toneRed": "Ștergere",
+      "rule": "Rândurile unui tabel tot nu primesc câte o iconiță, cu excepția tipului de fișier."
+    },
     "feedback": {
       "title": "Feedback",
       "text": "Mesajele explică, progresul liniștește, notificările confirmă. Niciunul nu strigă.",
@@ -712,6 +753,19 @@
       "rule1": "Un mesaj numește problema și ieșirea din ea, în această ordine.",
       "rule2": "Erorile folosesc role=\"alert\"; confirmările folosesc role=\"status\", ca cititoarele de ecran să le anunțe o singură dată.",
       "rule3": "O notificare toast durează cam două secunde și nu conține niciodată o acțiune pe care cineva trebuie s-o facă."
+    },
+    "empty": {
+      "title": "Stări goale",
+      "text": "Stările goale, de început, de final, fără conexiune și de eroare primesc o ilustrație desenată, o propoziție și o singură acțiune următoare.",
+      "demoTitle": "Nimic nu se potrivește acestor filtre",
+      "demoText": "Încearcă mai puține filtre sau caută în toate contactele.",
+      "demoAction": "Șterge filtrele",
+      "setTitle": "Ilustrații",
+      "setText": "Șapte desene vin în <code>shades-gradient/illustrations</code>. Puse direct în pagină, urmează tema prin culorile <code>--g-ill-*</code>.",
+      "light": "Tema luminoasă",
+      "dark": "Tema întunecată",
+      "rule1": "O propoziție și o acțiune. Niciodată o iconiță într-un cerc.",
+      "rule2": "Alege desenul după moment: <code>nothing</code> pentru niciun rezultat, <code>pick</code> înaintea unei alegeri, <code>folder</code> pentru o listă goală, <code>done</code> când munca e gata, <code>welcome</code> prima dată, <code>offline</code> fără conexiune, <code>caller</code> pentru oameni și apeluri."
     },
     "people": {
       "title": "Oameni",

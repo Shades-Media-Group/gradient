@@ -431,6 +431,8 @@ function render(locale: Locale, page: Page): string {
     icon: (name) => icon(name),
     family: (name) => inline(`spectra/${name}.svg`, `spectra spectra--${name}`),
     mark: () => inline('shades-mark.svg', 'g-mark'),
+    // A spot illustration, inlined so its --g-ill-* colours follow the theme.
+    ill: (name) => inline(`../illustrations/${name}.svg`, 'g-empty__art'),
     lockup: () => inline('shades-lockup.svg', 'g-mark lockup'),
     // The wordmark alone: the mono lockup cropped past the mark, as the print renders do.
     wordmark: () =>

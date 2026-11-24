@@ -523,7 +523,10 @@
       "inverse": "Pulsanti invertiti e sezioni color inchiostro",
       "status": "Testo di successo, avviso e pericolo",
       "theming": "Un brand cliente cambia i ruoli in un solo foglio di stile. Ogni componente si adegua, perché nessuno legge un colore grezzo.",
-      "statusMore": "Informazione, più sfondi discreti e riempimenti pieni per avvisi, pop-up e pulsanti"
+      "statusMore": "Informazione, più sfondi discreti e riempimenti pieni per avvisi, pop-up e pulsanti",
+      "well": "Campi pieni, chip e barra di ricerca, a riposo e sotto il puntatore",
+      "tint": "Un chip o un’opzione scelta, e il testo sopra",
+      "stateHover": "L’unico livello di hover per righe e voci di menu"
     },
     "type": {
       "title": "Tipografia",
@@ -633,7 +636,7 @@
     },
     "fields": {
       "title": "Campi",
-      "text": "Un'etichetta visibile sopra ogni campo, un suggerimento quando serve e un errore che dice come correggerlo.",
+      "text": "Un’etichetta visibile sopra ogni campo, un suggerimento quando serve e un errore che dice come correggerlo. I campi sono pieni: una pillola morbida che dice «scrivi qui».",
       "name": "Nome e cognome",
       "nameHint": "Come deve comparire sul contratto.",
       "email": "Email di lavoro",
@@ -644,7 +647,23 @@
       "optCampaign": "Campagna",
       "locked": "Azienda",
       "brief": "Brief",
-      "briefPlaceholder": "Cosa deve cambiare una volta finito il lavoro?"
+      "briefPlaceholder": "Cosa deve cambiare una volta finito il lavoro?",
+      "rule1": "Nessun bordo a riposo. Quando un campo ha il focus passa al colore della superficie con un bordo di 2 px nel colore del testo, così il campo attivo non è mai in dubbio.",
+      "rule2": "Un errore mantiene il bordo rosso e una riga sotto il campo che dice come correggerlo."
+    },
+    "search": {
+      "title": "Ricerca e filtri",
+      "text": "In una schermata guidata dalla ricerca, la barra di ricerca viene prima ed è l’elemento più grande. I filtri stanno sotto come chip, mai come un modulo.",
+      "placeholder": "Cerca contatti, trattative e note",
+      "label": "Cerca",
+      "filters": "Filtri",
+      "owner": "Responsabile: Ana",
+      "status": "Stato",
+      "date": "Data",
+      "clear": "Azzera",
+      "rule1": "Un chip con la freccia apre un menu. Scelto un valore, il chip si colora, mostra una spunta e dice il valore.",
+      "rule2": "«Azzera» compare appena un filtro è attivo.",
+      "rule3": "Premi / per andare alla ricerca da qualsiasi punto dello schermo."
     },
     "choices": {
       "title": "Scelte",
@@ -697,6 +716,28 @@
       "rule1": "Usa le schede per le viste dello stesso oggetto, mai come seconda barra di navigazione.",
       "rule2": "La scheda corrente è segnata da una linea rossa e da aria-selected; i tasti freccia spostano da una scheda all'altra."
     },
+    "menus": {
+      "title": "Menu",
+      "text": "Azioni su una cosa, aperte da un pulsante. Ogni voce ha davanti un’icona colorata secondo ciò che fa e il suo tasto a destra.",
+      "label": "Azioni",
+      "open": "Apri",
+      "share": "Condividi",
+      "download": "Scarica",
+      "rename": "Rinomina",
+      "move": "Sposta in cartella",
+      "star": "Aggiungi stella",
+      "colour": "Cambia colore",
+      "remove": "Elimina",
+      "tone": "Tono",
+      "toneUse": "Per",
+      "toneBlue": "Aprire e condividere",
+      "toneGreen": "Entrare e uscire: scaricare, importare, esportare",
+      "toneViolet": "Modificare",
+      "toneAmber": "Organizzare e aggiungere stelle",
+      "tonePink": "Colore",
+      "toneRed": "Eliminare",
+      "rule": "Le righe di una tabella continuano a non avere un’icona ciascuna, tranne il tipo di file."
+    },
     "feedback": {
       "title": "Feedback",
       "text": "I messaggi spiegano, l'avanzamento rassicura, i toast confermano. Nessuno alza la voce.",
@@ -712,6 +753,19 @@
       "rule1": "Un messaggio nomina il problema e la via d'uscita, in quest'ordine.",
       "rule2": "Gli errori usano role=\"alert\"; le conferme usano role=\"status\", così gli screen reader li annunciano una volta sola.",
       "rule3": "Un toast dura circa due secondi e non contiene mai un'azione che qualcuno deve compiere."
+    },
+    "empty": {
+      "title": "Stati vuoti",
+      "text": "Gli stati vuoti, di primo accesso, completati, offline e di errore hanno un’illustrazione disegnata, una frase e una sola azione successiva.",
+      "demoTitle": "Niente corrisponde a questi filtri",
+      "demoText": "Prova con meno filtri o cerca in tutti i contatti.",
+      "demoAction": "Azzera i filtri",
+      "setTitle": "Illustrazioni",
+      "setText": "Sette disegni sono inclusi in <code>shades-gradient/illustrations</code>. Inseriti nella pagina, seguono il tema tramite i colori <code>--g-ill-*</code>.",
+      "light": "Tema chiaro",
+      "dark": "Tema scuro",
+      "rule1": "Una frase e un’azione. Mai un’icona in un cerchio.",
+      "rule2": "Scegli il disegno in base al momento: <code>nothing</code> per nessun risultato, <code>pick</code> prima di una scelta, <code>folder</code> per una lista vuota, <code>done</code> a lavoro finito, <code>welcome</code> la prima volta, <code>offline</code> senza connessione, <code>caller</code> per persone e chiamate."
     },
     "people": {
       "title": "Persone",

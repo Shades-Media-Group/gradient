@@ -523,7 +523,10 @@
       "inverse": "Boutons inversés et sections encre",
       "status": "Texte de succès, d'avertissement et de danger",
       "theming": "Une marque cliente modifie les rôles dans une seule feuille de style. Tous les composants suivent, car aucun ne lit une couleur brute.",
-      "statusMore": "Information, et fonds discrets ou aplats pleins pour les notifications, fenêtres et boutons"
+      "statusMore": "Information, et fonds discrets ou aplats pleins pour les notifications, fenêtres et boutons",
+      "well": "Champs remplis, puces et barre de recherche, au repos et au survol",
+      "tint": "Une puce ou une option choisie, et le texte dessus",
+      "stateHover": "L’unique calque de survol pour les lignes et les entrées de menu"
     },
     "type": {
       "title": "Typographie",
@@ -633,7 +636,7 @@
     },
     "fields": {
       "title": "Champs",
-      "text": "Un libellé visible au-dessus de chaque champ, une indication quand elle aide, et une erreur qui dit comment corriger.",
+      "text": "Un libellé visible au-dessus de chaque champ, une aide quand elle sert, et une erreur qui dit comment la corriger. Les champs sont remplis : une pastille douce qui dit « écrivez ici ».",
       "name": "Nom complet",
       "nameHint": "Tel qu'il doit figurer sur le contrat.",
       "email": "E-mail professionnel",
@@ -644,7 +647,23 @@
       "optCampaign": "Campagne",
       "locked": "Entreprise",
       "brief": "Brief",
-      "briefPlaceholder": "Qu'est-ce qui doit changer une fois le travail terminé ?"
+      "briefPlaceholder": "Qu'est-ce qui doit changer une fois le travail terminé ?",
+      "rule1": "Pas de contour au repos. Quand un champ a le focus, il passe à la couleur de surface avec un contour de 2 px couleur du texte : le champ actif ne fait jamais de doute.",
+      "rule2": "Une erreur garde un contour rouge et une ligne sous le champ qui dit comment la corriger."
+    },
+    "search": {
+      "title": "Recherche et filtres",
+      "text": "Sur un écran mené par la recherche, la barre de recherche vient en premier et c’est l’élément le plus grand. Les filtres se placent dessous, en puces, jamais en formulaire.",
+      "placeholder": "Rechercher contacts, affaires et notes",
+      "label": "Rechercher",
+      "filters": "Filtres",
+      "owner": "Responsable : Ana",
+      "status": "Statut",
+      "date": "Date",
+      "clear": "Effacer",
+      "rule1": "Une puce avec un chevron ouvre un menu. Une fois une valeur choisie, la puce se teinte, porte une coche et affiche la valeur.",
+      "rule2": "« Effacer » apparaît dès qu’un filtre est actif.",
+      "rule3": "Appuyez sur / pour aller à la recherche depuis n’importe où."
     },
     "choices": {
       "title": "Choix",
@@ -697,6 +716,28 @@
       "rule1": "Utilisez des onglets pour les vues d'un même objet, jamais comme seconde barre de navigation.",
       "rule2": "L'onglet actif est marqué d'un filet rouge et d'aria-selected ; les flèches du clavier passent d'un onglet à l'autre."
     },
+    "menus": {
+      "title": "Menus",
+      "text": "Des actions sur un élément, ouvertes depuis un déclencheur. Chaque entrée a une icône en tête, colorée selon ce qu’elle fait, et son raccourci à droite.",
+      "label": "Actions",
+      "open": "Ouvrir",
+      "share": "Partager",
+      "download": "Télécharger",
+      "rename": "Renommer",
+      "move": "Déplacer dans un dossier",
+      "star": "Ajouter une étoile",
+      "colour": "Changer la couleur",
+      "remove": "Supprimer",
+      "tone": "Ton",
+      "toneUse": "Pour",
+      "toneBlue": "Ouvrir et partager",
+      "toneGreen": "Entrer et sortir : télécharger, importer, exporter",
+      "toneViolet": "Modifier",
+      "toneAmber": "Ranger et marquer d’une étoile",
+      "tonePink": "Couleur",
+      "toneRed": "Supprimer",
+      "rule": "Les lignes d’un tableau n’ont toujours pas d’icône chacune, sauf un type de fichier."
+    },
     "feedback": {
       "title": "Retours",
       "text": "Les messages expliquent, la progression rassure, les toasts confirment. Aucun ne crie.",
@@ -712,6 +753,19 @@
       "rule1": "Un message nomme le problème, puis la solution, dans cet ordre.",
       "rule2": "Les erreurs utilisent role=\"alert\" ; les confirmations, role=\"status\", pour que les lecteurs d'écran les annoncent une seule fois.",
       "rule3": "Un toast dure environ deux secondes et ne porte jamais une action que l'on doit effectuer."
+    },
+    "empty": {
+      "title": "États vides",
+      "text": "Les états vides, de premier usage, terminés, hors ligne et d’erreur reçoivent une illustration dessinée, une phrase et une seule action suivante.",
+      "demoTitle": "Rien ne correspond à ces filtres",
+      "demoText": "Essayez moins de filtres, ou cherchez dans tous les contacts.",
+      "demoAction": "Effacer les filtres",
+      "setTitle": "Illustrations",
+      "setText": "Sept dessins sont livrés dans <code>shades-gradient/illustrations</code>. Intégrés dans la page, ils suivent le thème grâce aux couleurs <code>--g-ill-*</code>.",
+      "light": "Thème clair",
+      "dark": "Thème sombre",
+      "rule1": "Une phrase et une action. Jamais une icône dans un cercle.",
+      "rule2": "Choisissez le dessin selon le moment : <code>nothing</code> pour aucun résultat, <code>pick</code> avant un choix, <code>folder</code> pour une liste vide, <code>done</code> quand le travail est fini, <code>welcome</code> la première fois, <code>offline</code> sans connexion, <code>caller</code> pour les personnes et les appels."
     },
     "people": {
       "title": "Personnes",

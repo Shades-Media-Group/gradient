@@ -523,7 +523,10 @@
       "inverse": "Inverse buttons and ink sections",
       "status": "Success, warning and danger text",
       "theming": "A client brand changes the roles in one stylesheet. Every component follows, because none of them reads a raw colour.",
-      "statusMore": "Information, plus quiet backgrounds and solid fills for notices, pop-ups and buttons"
+      "statusMore": "Information, plus quiet backgrounds and solid fills for notices, pop-ups and buttons",
+      "well": "Filled fields, chips and the search bar, at rest and under the pointer",
+      "tint": "A selected chip or option, and the text on it",
+      "stateHover": "The one hover layer for rows and menu entries"
     },
     "type": {
       "title": "Type",
@@ -633,7 +636,7 @@
     },
     "fields": {
       "title": "Fields",
-      "text": "A visible label above every field, a hint when it helps, and an error that says how to fix it.",
+      "text": "A visible label above every field, a hint when it helps, and an error that says how to fix it. Fields are filled: a soft pill that says type here.",
       "name": "Full name",
       "nameHint": "As it should appear on the contract.",
       "email": "Work email",
@@ -644,7 +647,23 @@
       "optCampaign": "Campaign",
       "locked": "Company",
       "brief": "Brief",
-      "briefPlaceholder": "What should change after the work is done?"
+      "briefPlaceholder": "What should change after the work is done?",
+      "rule1": "No edge at rest. While a field is focused it turns to the surface with a 2 px edge in the text colour, so the active one is never in doubt.",
+      "rule2": "An error keeps a red edge and a line under the field that says how to fix it."
+    },
+    "search": {
+      "title": "Search and filters",
+      "text": "On a search-led screen the search bar comes first and is the largest thing on it. Filters sit under it as chips, never as a form.",
+      "placeholder": "Search contacts, deals and notes",
+      "label": "Search",
+      "filters": "Filters",
+      "owner": "Owner: Ana",
+      "status": "Status",
+      "date": "Date",
+      "clear": "Clear",
+      "rule1": "A chip with a caret opens a menu. Once a value is picked, the chip is tinted, carries a check and says the value.",
+      "rule2": "Clear appears as soon as one filter is on.",
+      "rule3": "Press / to jump to the search from anywhere on the screen."
     },
     "choices": {
       "title": "Choices",
@@ -697,6 +716,28 @@
       "rule1": "Use tabs for views of the same object, never as a second navigation bar.",
       "rule2": "The current tab is marked with a red line and aria-selected; arrow keys move between tabs."
     },
+    "menus": {
+      "title": "Menus",
+      "text": "Actions on one thing, opened from a trigger. Each entry has a leading icon coloured by what it does, and its keyboard key on the right.",
+      "label": "Actions",
+      "open": "Open",
+      "share": "Share",
+      "download": "Download",
+      "rename": "Rename",
+      "move": "Move to folder",
+      "star": "Star",
+      "colour": "Change colour",
+      "remove": "Delete",
+      "tone": "Tone",
+      "toneUse": "For",
+      "toneBlue": "Opening and sharing",
+      "toneGreen": "Bringing in and sending out: download, import, export",
+      "toneViolet": "Editing",
+      "toneAmber": "Organising and starring",
+      "tonePink": "Colour",
+      "toneRed": "Removing",
+      "rule": "Rows in a table still get no icon each, except a file type."
+    },
     "feedback": {
       "title": "Feedback",
       "text": "Messages explain, progress reassures, toasts confirm. None of them shouts.",
@@ -712,6 +753,19 @@
       "rule1": "A message names the problem and the way out, in that order.",
       "rule2": "Errors use role=\"alert\"; confirmations use role=\"status\" so screen readers hear them once.",
       "rule3": "A toast lasts about two seconds and never holds an action someone must take."
+    },
+    "empty": {
+      "title": "Empty states",
+      "text": "Empty, first-time, done, offline and error states get a drawn spot illustration, one sentence and one next action.",
+      "demoTitle": "Nothing matches these filters",
+      "demoText": "Try fewer filters, or search all contacts instead.",
+      "demoAction": "Clear filters",
+      "setTitle": "Illustrations",
+      "setText": "Seven spot drawings ship in <code>shades-gradient/illustrations</code>. Inline them and they follow the theme through the <code>--g-ill-*</code> colours.",
+      "light": "Light theme",
+      "dark": "Dark theme",
+      "rule1": "One sentence and one action. Never an icon in a circle.",
+      "rule2": "Pick the drawing by the moment: <code>nothing</code> for no results, <code>pick</code> before a choice, <code>folder</code> for an empty list, <code>done</code> when the work is finished, <code>welcome</code> the first time, <code>offline</code> without a connection, <code>caller</code> for people and calls."
     },
     "people": {
       "title": "People",

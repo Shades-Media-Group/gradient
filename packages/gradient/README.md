@@ -92,6 +92,10 @@ For plain HTML, copy `shades-gradient/icons.svg` next to your page:
 
 The source SVGs are under `shades-gradient/icons/*`.
 
+### Spot illustrations
+
+Seven drawings for empty, first-time, done and offline states live under `shades-gradient/illustrations/*.svg` (`nothing`, `pick`, `folder`, `done`, `welcome`, `offline`, `caller`). Inline one inside `.g-empty` with the class `g-empty__art`; its colours read the `--g-ill-*` tokens, so it follows light and dark.
+
 ### Brand files
 
 ```js

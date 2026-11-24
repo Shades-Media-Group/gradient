@@ -18,10 +18,13 @@
       <nav class="page-toc" aria-label="{{nav.onThisPage}}">
           <a href="#buttons">{{components.buttons.title}}</a>
           <a href="#fields">{{components.fields.title}}</a>
+          <a href="#search">{{components.search.title}}</a>
           <a href="#choices">{{components.choices.title}}</a>
           <a href="#labels">{{components.labels.title}}</a>
           <a href="#navigation">{{components.navigation.title}}</a>
+          <a href="#menus">{{components.menus.title}}</a>
           <a href="#feedback">{{components.feedback.title}}</a>
+          <a href="#empty">{{components.empty.title}}</a>
           <a href="#people">{{components.people.title}}</a>
           <a href="#disclosure">{{components.disclosure.title}}</a>
           <a href="#brand-parts">{{components.brand.title}}</a>
@@ -125,6 +128,46 @@
   &lt;input class="g-input" id="email" aria-invalid="true" aria-describedby="email-error"&gt;
   &lt;p class="g-error" id="email-error"&gt;Add the part after the @.&lt;/p&gt;
 &lt;/div&gt;</code></pre>
+          <ol class="rules">
+            <li>{{components.fields.rule1}}</li>
+            <li>{{components.fields.rule2}}</li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="doc" id="search">
+        <div class="doc-head">
+          <h2>{{components.search.title}}</h2>
+          <p>{{components.search.text}}</p>
+        </div>
+        <div class="doc-body">
+          <div class="demo">
+            <label class="g-search g-search--lg">
+              <span class="g-search__icon">{{@icon:search}}</span>
+              <input type="search" placeholder="{{components.search.placeholder}}" aria-label="{{components.search.label}}" />
+              <span class="g-search__end"><kbd class="g-kbd">/</kbd></span>
+            </label>
+            <div class="g-chips" role="group" aria-label="{{components.search.filters}}">
+              <button class="g-chip" type="button" aria-pressed="true">{{@icon:check}}{{components.search.owner}}</button>
+              <button class="g-chip" type="button" aria-haspopup="menu" aria-expanded="false">{{components.search.status}}<span class="g-chip__caret">{{@icon:chevronDown}}</span></button>
+              <button class="g-chip" type="button" aria-haspopup="menu" aria-expanded="false">{{components.search.date}}<span class="g-chip__caret">{{@icon:chevronDown}}</span></button>
+              <button class="g-btn g-btn--ghost g-btn--sm" type="button">{{components.search.clear}}</button>
+            </div>
+          </div>
+          <pre class="g-code"><code>&lt;label class="g-search g-search--lg"&gt;
+  &lt;svg class="g-search__icon" …/&gt;
+  &lt;input type="search" placeholder="Search contacts, deals, notes" aria-label="Search"&gt;
+  &lt;span class="g-search__end"&gt;&lt;kbd class="g-kbd"&gt;/&lt;/kbd&gt;&lt;/span&gt;
+&lt;/label&gt;
+&lt;div class="g-chips"&gt;
+  &lt;button class="g-chip" aria-pressed="true"&gt;&lt;svg …/&gt;Owner: Ana&lt;/button&gt;
+  &lt;button class="g-chip" aria-haspopup="menu"&gt;Status&lt;svg class="g-chip__caret" …/&gt;&lt;/button&gt;
+&lt;/div&gt;</code></pre>
+          <ol class="rules">
+            <li>{{components.search.rule1}}</li>
+            <li>{{components.search.rule2}}</li>
+            <li>{{components.search.rule3}}</li>
+          </ol>
         </div>
       </section>
 
@@ -214,6 +257,47 @@
         </div>
       </section>
 
+      <section class="doc" id="menus">
+        <div class="doc-head">
+          <h2>{{components.menus.title}}</h2>
+          <p>{{components.menus.text}}</p>
+        </div>
+        <div class="doc-body">
+          <div class="demo menu-demo">
+            <div class="g-menu" role="menu" aria-label="{{components.menus.label}}">
+              <button class="g-menu__item" type="button" role="menuitem" tabindex="-1"><span class="g-menu__icon is-blue">{{@icon:external}}</span>{{components.menus.open}}<span class="g-menu__hint">↵</span></button>
+              <button class="g-menu__item" type="button" role="menuitem" tabindex="-1"><span class="g-menu__icon is-blue">{{@icon:share}}</span>{{components.menus.share}}<span class="g-menu__hint">⇧⌘S</span></button>
+              <button class="g-menu__item" type="button" role="menuitem" tabindex="-1"><span class="g-menu__icon is-green">{{@icon:download}}</span>{{components.menus.download}}</button>
+              <button class="g-menu__item" type="button" role="menuitem" tabindex="-1"><span class="g-menu__icon is-violet">{{@icon:edit}}</span>{{components.menus.rename}}<span class="g-menu__hint">F2</span></button>
+              <button class="g-menu__item" type="button" role="menuitem" tabindex="-1"><span class="g-menu__icon is-amber">{{@icon:folder}}</span>{{components.menus.move}}</button>
+              <button class="g-menu__item" type="button" role="menuitem" tabindex="-1"><span class="g-menu__icon is-amber">{{@icon:star}}</span>{{components.menus.star}}<span class="g-menu__hint">S</span></button>
+              <button class="g-menu__item" type="button" role="menuitem" tabindex="-1"><span class="g-menu__icon is-pink">{{@icon:palette}}</span>{{components.menus.colour}}</button>
+              <hr class="g-menu__rule" />
+              <button class="g-menu__item is-danger" type="button" role="menuitem" tabindex="-1"><span class="g-menu__icon">{{@icon:delete}}</span>{{components.menus.remove}}<span class="g-menu__hint">⌫</span></button>
+            </div>
+          </div>
+          <pre class="g-code"><code>&lt;div class="g-menu" role="menu" hidden&gt;
+  &lt;button class="g-menu__item" role="menuitem"&gt;
+    &lt;svg class="g-menu__icon is-blue" …/&gt;Share&lt;span class="g-menu__hint"&gt;⇧⌘S&lt;/span&gt;
+  &lt;/button&gt;
+  &lt;hr class="g-menu__rule"&gt;
+  &lt;button class="g-menu__item is-danger" role="menuitem"&gt;&lt;svg class="g-menu__icon" …/&gt;Delete&lt;/button&gt;
+&lt;/div&gt;</code></pre>
+          <div class="table-scroll"><table class="g-table">
+            <thead><tr><th>{{components.menus.tone}}</th><th>{{components.menus.toneUse}}</th></tr></thead>
+            <tbody>
+              <tr><td><code>is-blue</code></td><td>{{components.menus.toneBlue}}</td></tr>
+              <tr><td><code>is-green</code></td><td>{{components.menus.toneGreen}}</td></tr>
+              <tr><td><code>is-violet</code></td><td>{{components.menus.toneViolet}}</td></tr>
+              <tr><td><code>is-amber</code></td><td>{{components.menus.toneAmber}}</td></tr>
+              <tr><td><code>is-pink</code></td><td>{{components.menus.tonePink}}</td></tr>
+              <tr><td><code>is-red</code></td><td>{{components.menus.toneRed}}</td></tr>
+            </tbody>
+          </table></div>
+          <p class="doc-note">{{components.menus.rule}}</p>
+        </div>
+      </section>
+
       <section class="doc" id="feedback">
         <div class="doc-head">
           <h2>{{components.feedback.title}}</h2>
@@ -242,6 +326,53 @@
             <li>{{components.feedback.rule1}}</li>
             <li>{{components.feedback.rule2}}</li>
             <li>{{components.feedback.rule3}}</li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="doc" id="empty">
+        <div class="doc-head">
+          <h2>{{components.empty.title}}</h2>
+          <p>{{components.empty.text}}</p>
+        </div>
+        <div class="doc-body">
+          <div class="demo">
+            <div class="g-empty">
+              {{@ill:nothing}}
+              <h3 class="g-empty__title">{{components.empty.demoTitle}}</h3>
+              <p class="g-empty__text">{{components.empty.demoText}}</p>
+              <div class="g-empty__actions"><button class="g-btn" type="button">{{components.empty.demoAction}}</button></div>
+            </div>
+          </div>
+          <pre class="g-code"><code>&lt;div class="g-empty"&gt;
+  &lt;svg class="g-empty__art" …/&gt;   &lt;!-- shades-gradient/illustrations/nothing.svg, inlined --&gt;
+  &lt;h3 class="g-empty__title"&gt;Nothing matches these filters&lt;/h3&gt;
+  &lt;p class="g-empty__text"&gt;…&lt;/p&gt;
+  &lt;div class="g-empty__actions"&gt;&lt;button class="g-btn"&gt;Clear filters&lt;/button&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+          <h3 class="doc-sub">{{components.empty.setTitle}}</h3>
+          <p class="doc-note">{{components.empty.setText}}</p>
+          <div class="ill-set" data-theme="light" role="group" aria-label="{{components.empty.light}}">
+            <figure>{{@ill:nothing}}<figcaption><code>nothing</code></figcaption></figure>
+            <figure>{{@ill:pick}}<figcaption><code>pick</code></figcaption></figure>
+            <figure>{{@ill:folder}}<figcaption><code>folder</code></figcaption></figure>
+            <figure>{{@ill:done}}<figcaption><code>done</code></figcaption></figure>
+            <figure>{{@ill:welcome}}<figcaption><code>welcome</code></figcaption></figure>
+            <figure>{{@ill:offline}}<figcaption><code>offline</code></figcaption></figure>
+            <figure>{{@ill:caller}}<figcaption><code>caller</code></figcaption></figure>
+          </div>
+          <div class="ill-set" data-theme="dark" role="group" aria-label="{{components.empty.dark}}">
+            <figure>{{@ill:nothing}}<figcaption><code>nothing</code></figcaption></figure>
+            <figure>{{@ill:pick}}<figcaption><code>pick</code></figcaption></figure>
+            <figure>{{@ill:folder}}<figcaption><code>folder</code></figcaption></figure>
+            <figure>{{@ill:done}}<figcaption><code>done</code></figcaption></figure>
+            <figure>{{@ill:welcome}}<figcaption><code>welcome</code></figcaption></figure>
+            <figure>{{@ill:offline}}<figcaption><code>offline</code></figcaption></figure>
+            <figure>{{@ill:caller}}<figcaption><code>caller</code></figcaption></figure>
+          </div>
+          <ol class="rules">
+            <li>{{components.empty.rule1}}</li>
+            <li>{{components.empty.rule2}}</li>
           </ol>
         </div>
       </section>

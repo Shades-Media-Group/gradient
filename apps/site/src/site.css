@@ -3331,6 +3331,47 @@ body {
   transform: scale(0.97);
 }
 
+.menu-demo {
+  justify-items: start;
+  background: var(--g-sunken);
+}
+
+/* The menu is placed by script in an app; here it sits in the page. */
+.menu-demo .g-menu {
+  position: static;
+  width: min(100%, 300px);
+}
+
+.ill-set {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 168px), 1fr));
+  gap: 8px;
+  padding: 16px;
+  border-radius: var(--g-radius-lg);
+  background: var(--g-surface);
+  box-shadow: inset 0 0 0 1px var(--g-line);
+}
+
+.ill-set + .ill-set {
+  margin-top: 12px;
+}
+
+.ill-set figure {
+  display: grid;
+  justify-items: center;
+  gap: 4px;
+  margin: 0;
+}
+
+.ill-set .g-empty__art {
+  max-width: 200px;
+}
+
+.ill-set figcaption {
+  color: var(--g-text-3);
+  font-size: var(--g-size-caption);
+}
+
 .demo--flat .g-message + .g-message {
   border-top: 0;
 }

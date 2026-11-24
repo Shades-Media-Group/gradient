@@ -178,12 +178,17 @@ The list is `position: fixed`; the script that opens it sets `top` and `left` fr
   <svg>…</svg>
 </button>
 <div class="g-menu" role="menu" hidden>
-  <button class="g-menu__item" role="menuitem">Edit</button>
-  <button class="g-menu__item is-danger" role="menuitem">Delete</button>
+  <button class="g-menu__item" role="menuitem">
+    <svg class="g-menu__icon is-violet">…</svg>Edit<span class="g-menu__hint">F2</span>
+  </button>
+  <hr class="g-menu__rule" />
+  <button class="g-menu__item is-danger" role="menuitem">
+    <svg class="g-menu__icon">…</svg>Delete
+  </button>
 </div>
 ```
 
-Without `--icon`, the trigger is a small outlined button with a label.
+Without `--icon`, the trigger is a small outlined button with a label. Rows run full width with no inner radius. Each entry leads with an icon toned by what it does (`is-blue` opens or shares, `is-green` brings in or sends out, `is-violet` edits, `is-amber` organises or stars, `is-pink` colour, `is-red` removes) and puts its key in `.g-menu__hint`. The same menu works at the default density from `components.css`.
 
 ### Command palette
 

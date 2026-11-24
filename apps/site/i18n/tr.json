@@ -523,7 +523,10 @@
       "inverse": "Ters butonlar ve mürekkep rengi bölümler",
       "status": "Başarı, uyarı ve tehlike metni",
       "theming": "Bir müşteri markası rolleri tek bir stil dosyasında değiştirir. Hiçbiri ham bir renk okumadığı için her bileşen buna uyar.",
-      "statusMore": "Bilgi, ayrıca bildirimler, açılır pencereler ve düğmeler için sakin arka planlar ve düz dolgular"
+      "statusMore": "Bilgi, ayrıca bildirimler, açılır pencereler ve düğmeler için sakin arka planlar ve düz dolgular",
+      "well": "Dolgulu alanlar, çipler ve arama çubuğu; dururken ve imlecin altında",
+      "tint": "Seçili bir çip ya da seçenek ve üzerindeki metin",
+      "stateHover": "Satırlar ve menü girişleri için tek üzerine gelme katmanı"
     },
     "type": {
       "title": "Tipografi",
@@ -633,7 +636,7 @@
     },
     "fields": {
       "title": "Alanlar",
-      "text": "Her alanın üstünde görünür bir etiket, işe yarıyorsa bir ipucu ve nasıl düzeltileceğini söyleyen bir hata mesajı.",
+      "text": "Her alanın üstünde görünür bir etiket, işe yaradığında bir ipucu ve nasıl düzeltileceğini söyleyen bir hata. Alanlar dolgulu: “buraya yazın” diyen yumuşak bir hap.",
       "name": "Ad soyad",
       "nameHint": "Sözleşmede görünmesi gerektiği gibi.",
       "email": "İş e-postası",
@@ -644,7 +647,23 @@
       "optCampaign": "Kampanya",
       "locked": "Şirket",
       "brief": "Brief",
-      "briefPlaceholder": "İş bittikten sonra ne değişmeli?"
+      "briefPlaceholder": "İş bittikten sonra ne değişmeli?",
+      "rule1": "Dururken kenarlık yok. Bir alan odaktayken yüzey rengine döner ve metin renginde 2 px bir kenar alır; etkin alan hiçbir zaman belirsiz kalmaz.",
+      "rule2": "Hata kırmızı kenarı ve alanın altında nasıl düzeltileceğini söyleyen bir satırı korur."
+    },
+    "search": {
+      "title": "Arama ve filtreler",
+      "text": "Aramanın öne çıktığı bir ekranda arama çubuğu ilk gelir ve ekrandaki en büyük şeydir. Filtreler altında çip olarak durur, asla form olarak değil.",
+      "placeholder": "Kişi, anlaşma ve not ara",
+      "label": "Ara",
+      "filters": "Filtreler",
+      "owner": "Sorumlu: Ana",
+      "status": "Durum",
+      "date": "Tarih",
+      "clear": "Temizle",
+      "rule1": "Oklu bir çip bir menü açar. Bir değer seçilince çip renklenir, bir onay işareti taşır ve değeri gösterir.",
+      "rule2": "Bir filtre açılır açılmaz “Temizle” görünür.",
+      "rule3": "Ekranın herhangi bir yerinden aramaya gitmek için / tuşuna basın."
     },
     "choices": {
       "title": "Seçimler",
@@ -697,6 +716,28 @@
       "rule1": "Sekmeleri aynı nesnenin görünümleri için kullan, asla ikinci bir gezinme çubuğu olarak değil.",
       "rule2": "Geçerli sekme kırmızı bir çizgi ve aria-selected ile işaretlenir; ok tuşları sekmeler arasında gezdirir."
     },
+    "menus": {
+      "title": "Menüler",
+      "text": "Bir şey üzerindeki işlemler, bir tetikleyiciden açılır. Her girişin başında yaptığı işe göre renklenmiş bir simge, sağında klavye tuşu vardır.",
+      "label": "İşlemler",
+      "open": "Aç",
+      "share": "Paylaş",
+      "download": "İndir",
+      "rename": "Yeniden adlandır",
+      "move": "Klasöre taşı",
+      "star": "Yıldızla",
+      "colour": "Rengi değiştir",
+      "remove": "Sil",
+      "tone": "Ton",
+      "toneUse": "Ne için",
+      "toneBlue": "Açma ve paylaşma",
+      "toneGreen": "İçeri ve dışarı: indirme, içe aktarma, dışa aktarma",
+      "toneViolet": "Düzenleme",
+      "toneAmber": "Düzenleme ve yıldızlama",
+      "tonePink": "Renk",
+      "toneRed": "Silme",
+      "rule": "Tablo satırları yine de tek tek simge almaz, dosya türü hariç."
+    },
     "feedback": {
       "title": "Geri bildirim",
       "text": "Mesajlar açıklar, ilerleme güven verir, toast bildirimleri onaylar. Hiçbiri bağırmaz.",
@@ -712,6 +753,19 @@
       "rule1": "Bir mesaj önce sorunu, sonra çıkış yolunu söyler.",
       "rule2": "Hatalar role=\"alert\", onaylar role=\"status\" kullanır; böylece ekran okuyucular onları bir kez duyurur.",
       "rule3": "Bir toast bildirimi yaklaşık iki saniye sürer ve asla birinin yapması gereken bir eylemi taşımaz."
+    },
+    "empty": {
+      "title": "Boş durumlar",
+      "text": "Boş, ilk kez, tamamlanmış, çevrimdışı ve hata durumları çizilmiş bir illüstrasyon, tek bir cümle ve tek bir sonraki işlem alır.",
+      "demoTitle": "Bu filtrelere uyan bir şey yok",
+      "demoText": "Daha az filtre deneyin ya da tüm kişilerde arayın.",
+      "demoAction": "Filtreleri temizle",
+      "setTitle": "İllüstrasyonlar",
+      "setText": "Yedi çizim <code>shades-gradient/illustrations</code> içinde gelir. Sayfaya gömüldüğünde <code>--g-ill-*</code> renkleriyle temayı izler.",
+      "light": "Açık tema",
+      "dark": "Koyu tema",
+      "rule1": "Bir cümle ve bir işlem. Asla daire içinde bir simge değil.",
+      "rule2": "Çizimi ana göre seçin: sonuç yoksa <code>nothing</code>, bir seçimden önce <code>pick</code>, boş bir liste için <code>folder</code>, iş bitince <code>done</code>, ilk seferde <code>welcome</code>, bağlantı yokken <code>offline</code>, kişiler ve aramalar için <code>caller</code>."
     },
     "people": {
       "title": "Kişiler",
