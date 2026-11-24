@@ -857,6 +857,94 @@
     justify-content: center;
   }
 
+  /* Stat tiles: a label, the number, an optional change. Two to four to a row. Real figures
+     only: the sign goes in the change's text (+12 %), so it reads without the colour. */
+  .g-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(max(8.5rem, calc((100% - 36px) / 4)), 1fr));
+    gap: 12px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .g-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.375rem;
+    min-width: 0;
+    padding: 20px;
+    border-radius: 16px;
+    background: var(--g-surface);
+    box-shadow: inset 0 0 0 1px var(--g-line);
+  }
+
+  /* On the well tone, for a page that is already white. */
+  .g-stat--well {
+    background: var(--g-well);
+    box-shadow: none;
+  }
+
+  .g-stat__label {
+    margin: 0;
+    color: var(--g-text-2);
+    font-size: var(--g-size-small);
+    font-weight: 500;
+    line-height: 1.3;
+  }
+
+  .g-stat__value {
+    margin: 0;
+    color: var(--g-text);
+    font: 600 clamp(1.75rem, 1.45rem + 1vw, 2.375rem) / 1.05 var(--g-font-display);
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -0.02em;
+    overflow-wrap: anywhere;
+  }
+
+  .g-stat__delta {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    min-height: 22px;
+    margin-top: 0.125rem;
+    padding: 0 8px 0 6px;
+    border-radius: var(--g-radius-pill);
+    background: var(--g-sunken);
+    color: var(--g-text-2);
+    font-size: var(--g-size-caption);
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+    line-height: 1;
+    white-space: nowrap;
+  }
+
+  .g-stat__delta--up {
+    background: var(--g-success-soft);
+    color: var(--g-success);
+  }
+
+  .g-stat__delta--down {
+    background: var(--g-danger-soft);
+    color: var(--g-danger);
+  }
+
+  .g-stat__delta--up::before,
+  .g-stat__delta--down::before {
+    content: '';
+    flex: none;
+    width: 12px;
+    height: 12px;
+    background: currentColor;
+    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2.75' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 20V4M6 10l6-6 6 6'/%3E%3C/svg%3E")
+      center / contain no-repeat;
+  }
+
+  .g-stat__delta--down::before {
+    transform: rotate(180deg);
+  }
+
   /* Tabs: views of one thing, a red underline on the current one. ---------- */
 
   .g-tabs {
