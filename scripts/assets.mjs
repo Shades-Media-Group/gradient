@@ -7,6 +7,7 @@
  *   apps/site/public/shades-mark.png      512 × 512, for structured data
  *   apps/site/public/email/shades-lockup.png 284 × 64, the email header
  *   apps/site/public/email/shades-lockup-dark.png 284 × 64, the same for dark mail apps
+ *   apps/site/public/email/shades-lockup-grey.png 284 × 64, the grey footer's logo
  *   assets/readme-banner-light.png        1600 × 560, README header
  *   assets/readme-banner-dark.png         1600 × 560
  *
@@ -175,6 +176,16 @@ const JOBS = [
     page(284, 64, brand('shades-lockup-reverse.svg')).replace(
       'body { background: #fdfdfc;',
       'body { background: transparent;',
+    ),
+  ],
+  // The grey footer's logo: the mono lockup in ink 300, readable on light and dark grey.
+  [
+    'apps/site/public/email/shades-lockup-grey.png',
+    284,
+    64,
+    page(284, 64, brand('shades-lockup-mono.svg')).replace(
+      'body { background: #fdfdfc; color: #0a0a0b;',
+      'body { background: transparent; color: #9a9aa2;',
     ),
   ],
 ]

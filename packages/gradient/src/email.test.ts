@@ -155,6 +155,107 @@ describe('campaign and update emails', () => {
   })
 })
 
+describe('report emails', () => {
+  const message = renderEmail({
+    lang: 'en',
+    subject: 'Your month on shades.md',
+    preheader: 'Example figures.',
+    heading: 'Your month in numbers',
+    lead: 'Example figures, for the layout only.',
+    blocks: [
+      email.tag('New'),
+      email.headline('Visitors', ['Read the ', { label: 'guide', href: 'https://shades.md/guide' }, '.']),
+      email.stats([
+        { label: 'Visitors', value: '1,000', delta: { value: '+10%', direction: 'up' } },
+        { label: 'Enquiries', value: '20', delta: { value: '−5%', direction: 'down' } },
+        { label: 'Calls booked', value: '3' },
+      ]),
+      email.tint('green', email.paragraph('Inside a tint.')),
+      email.tintCard({
+        tone: 'red',
+        title: 'Book a review',
+        body: 'Half an hour with a designer.',
+        tag: 'New',
+        align: 'center',
+        button: {
+          label: 'Book',
+          href: 'https://shades.md/call',
+          icon: { src: 'https://shades.md/icon.png' },
+        },
+      }),
+      email.pill('Open the report', 'https://shades.md/report', { variant: 'outline' }),
+      email.pill('Bad', 'javascript:alert(1)'),
+      email.signoff(['The Shades team', 'Chișinău']),
+    ],
+    greyFooter: { reason: 'You get this because you have a Shades account.' },
+    unsubscribe: 'https://shades.md/unsubscribe?u=1',
+  })
+
+  it('closes every table it opens', () => {
+    const count = (tag: string) => message.html.split(tag).length - 1
+    expect(count('<table')).toBe(count('</table>'))
+  })
+
+  it('sets links in the brand blue, underlined, and writes them out in the text', () => {
+    expect(message.html).toContain(
+      'href="https://shades.md/guide" style="color:#5052E4;text-decoration:underline"',
+    )
+    expect(message.text).toContain('Read the guide (https://shades.md/guide).')
+  })
+
+  it('draws the stat tiles in one row, with the change in words in the text', () => {
+    expect(message.html.split('class="g-e-stat"').length - 1).toBe(3)
+    expect(message.html).toContain('&#8593;&nbsp;+10%')
+    expect(message.html).toContain('class="g-e-down"')
+    expect(message.text).toContain('Visitors: 1,000 (up +10%)')
+    expect(message.text).toContain('Calls booked: 3')
+  })
+
+  it('puts four stats two by two', () => {
+    const four = email.stats(
+      ['A', 'B', 'C', 'D'].map((label) => ({ label, value: '1' })),
+    ).html
+    expect(four.split('<tr>').length - 1).toBe(3)
+  })
+
+  it('tints sections in the 50 shades, with dark values for dark mail apps', () => {
+    expect(message.html).toContain('class="g-e-tint-green" style="margin:0 0 24px;background:#EFFAF5')
+    expect(message.html).toContain('class="g-e-tint-red"')
+    expect(message.html).toContain('.g-e-tint-red{background:#2D1217 !important}')
+  })
+
+  it('draws pills for Outlook and everyone else, the icon only outside Outlook', () => {
+    expect(message.html).toContain('filled="f"')
+    expect(message.html).toContain('<img src="https://shades.md/icon.png" width="18" height="18"')
+    expect(message.html).not.toContain('javascript:')
+  })
+
+  it('marks new things with a tag', () => {
+    expect(message.html).toContain('g-e-tag-blue')
+    expect(message.html).toContain('g-e-tag-red g-e-tag-on')
+    expect(message.text).toContain('[New]')
+  })
+
+  it('signs off under a bar in the brand colours', () => {
+    const bar = message.html.indexOf('bgcolor="#E40523" style="width:20px')
+    expect(bar).toBeGreaterThan(-1)
+    expect(message.html).toContain('bgcolor="#D212D6"')
+    expect(message.html).toContain('bgcolor="#FF9A00"')
+    expect(message.html.indexOf('The Shades team')).toBeGreaterThan(bar)
+  })
+
+  it('ends on the grey footer: grey logo, hairline, address, reason and unsubscribe', () => {
+    expect(message.html).toContain('shades-lockup-grey.png')
+    expect(message.html).toContain('class="g-e-foot-rule"')
+    expect(message.html).toContain('Chișinău, Moldova')
+    expect(message.html).toMatch(
+      /You get this because you have a Shades account\. <a class="g-e-link" href="https:\/\/shades\.md\/unsubscribe\?u=1"/,
+    )
+    expect(message.html).not.toContain('shades-edge.png')
+    expect(message.text).toContain('Unsubscribe: https://shades.md/unsubscribe?u=1')
+  })
+})
+
 describe('footer site line', () => {
   it('ends the plain footer and the plain text with the product site', () => {
     const m = renderEmail({ lang: 'en', subject: 'S', preheader: 'P', heading: 'H', blocks: [] })

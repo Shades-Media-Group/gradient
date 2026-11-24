@@ -79,3 +79,43 @@ For offers, launches and project news to clients, the kit adds a richer frame ar
 - **Ink footer** (`inkFooter: true`): the page breaks into ink through layered waves with the brand's figures (`brand.edge`, transparent above the waves), then the links in two columns (Unsubscribe is replaced by `unsubscribe` when the message has its own), the AI notice in small print with room below it, the company name with the site, and the social icons.
 
 Shades ships all of these in `SHADES`; a client brand passes its own `hero`, `edge`, `footerLinks`, `social`, `legal` and `aiNote`.
+
+## Reports, news and account emails
+
+Monthly reports, product news and account notices read like a short page: a large bold heading over a smaller grey line, a few tinted sections, a row of numbers, one pill, a sign-off and a quiet grey footer. All of it is tables and inline styles, with dark values for the mail apps that switch.
+
+- **Headline** (`email.headline(title, body?, { tag?, tagTone?, size?, align?, onTint? })`): a section heading, 24px bold, over a 16px grey line. `tag` puts a small tag above it; set `onTint` when the headline sits inside `email.tint()`, so the tag turns white.
+- **Links** are the brand's link blue, underlined (`brand.link`, `#5052E4` for Shades; lighter in dark mail apps). Put a link inside a sentence with `email.rich(['Read the ', { label: 'guide', href }, ' first.'])`; `paragraph` and `note` take the same parts. The plain text writes it as "guide (url)". `email.link`, `calendarLinks` and the feature link are blue too.
+- **Tinted sections** (`email.tint(tone, ...blocks)`): any blocks on the 50 shade of a brand colour, no edge, 24px corners. Tones are `red`, `violet`, `green`, `amber` and `blue`; red, the brand's own, comes first. Never one inside another.
+- **Tinted card** (`email.tintCard({ tone, title, body?, tag?, button?, align? })`): a title, a sentence or two and one pill on a tint. `align: 'center'` makes it the call to act that closes the email.
+- **Stat tiles** (`email.stats(items, { tone? })`, items `{ label, value, delta?: { value, direction: 'up' | 'down' } }`): white tiles in a row, the number large, the change in a green or red pill with an arrow. Up to three share a row; four sit two by two. Write the sign into the change ("+12%"); the plain text says "up" or "down". Real figures only: samples and previews say they are examples.
+- **Pill** (`email.pill(label, url, { variant?: 'filled' | 'outline', icon?: { src, alt? }, color?, align? })`): filled in the brand accent or outlined in a grey hairline, with one optional leading icon (a PNG at 36 × 36 for its 18px). Outlook on Windows draws the pill as VML, without the icon. `email.button` still works as before.
+- **Tag** (`email.tag(label, tone = 'blue')`): a small "New" on its own line. On a tinted card it turns white so it stays visible.
+- **Sign-off** (`email.signoff(lines)`): a short bar in the brand's colours (`brand.bar`; red, violet and amber for Shades), then the team's name in bold and any lines under it.
+- **Grey footer** (`greyFooter: true | { reason?, linkLabel? }`): a light grey block with the grey logo (`brand.logoGrey`) at left, a vertical hairline, and the address lines (`brand.addressLines`) at right; under them the `footer` notes and one small line saying why the reader got the email, ending in the unsubscribe link in blue (`unsubscribe`, or the brand's own Unsubscribe link). It replaces the plain and the ink footer.
+
+```ts
+import { renderEmail, email } from 'shades-gradient/email'
+
+renderEmail({
+  lang: 'en',
+  subject: 'Your November on shades.md',
+  preheader: 'Visitors, enquiries and calls booked.',
+  heading: 'Your November in numbers',
+  lead: 'What changed on your site this month.',
+  blocks: [
+    email.stats([
+      { label: 'Visitors', value: visitors, delta: { value: '+12%', direction: 'up' } },
+      { label: 'Enquiries', value: enquiries, delta: { value: '−3%', direction: 'down' } },
+    ]),
+    email.tint('red', email.headline('One thing to try', 'Answer enquiries within the hour.')),
+    email.tintCard({ title: 'Talk it through', body: 'Half an hour with your designer.', align: 'center',
+      button: { label: 'Book a call', href: 'https://shades.md/call' } }),
+    email.signoff('The Shades team'),
+  ],
+  greyFooter: { reason: 'You get this report because you have a Shades account.' },
+  unsubscribe: 'https://shades.md/email-preferences',
+})
+```
+
+A client brand passes its own `link`, `logoGrey`, `addressLines` and `bar`; without them links stay in ink, the footer uses the main logo and `legal`, and the bar is one segment of the accent.

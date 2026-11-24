@@ -64,9 +64,42 @@ export interface EmailBrand {
   legal?: string[]
   /** A notice about generated content, shown in the ink footer. */
   aiNote?: string
+  /** Link colour, underlined. Falls back to `ink`. */
+  link?: string
+  /** The logo in one grey, a PNG at twice the size of `logo`, for the grey footer. Falls back to `logo`. */
+  logoGrey?: string
+  /** The grey footer's lines beside the logo: the company, the street, the town. Falls back to `legal`. */
+  addressLines?: string[]
+  /** The short bar above the sign-off, one segment per colour. Falls back to `accent`. */
+  bar?: string[]
 }
 
 export type PassTone = 'ink' | 'red' | 'paper'
+
+/** The tints of a tinted section, a "New" tag or a stat row. */
+export type TintTone = 'red' | 'violet' | 'green' | 'amber' | 'blue'
+
+/**
+ * Each tint's light field (the 50 shade), its dark field (the 600 shade, 14 % into ink 900),
+ * and the deep and light text for a tag on it. Hex, because mail apps don't read color-mix.
+ */
+export const TINTS: Record<TintTone, { field: string; dark: string; deep: string; light: string }> = {
+  red: { field: '#FFF0F2', dark: '#2D1217', deep: '#AB000D', light: '#FF8299' },
+  violet: { field: '#FDF3FD', dark: '#28132B', deep: '#770680', light: '#E96AE9' },
+  green: { field: '#EFFAF5', dark: '#122520', deep: '#00754D', light: '#5FD9AC' },
+  amber: { field: '#FAF6F0', dark: '#2E2213', deep: '#9C5D06', light: '#FFC24D' },
+  blue: { field: '#F5F6FF', dark: '#1C1D33', deep: '#3F40C9', light: '#9FA0FF' },
+}
+
+/** A run of text, or a link inside it. */
+export type Inline = string | { label: string; href: string }
+
+/** A stat in a row of tiles: a label, the number, and an optional change. */
+export interface Stat {
+  label: string
+  value: string
+  delta?: { value: string; direction: 'up' | 'down' }
+}
 
 /** A pass's field, its text, its deep tone (labels, from the same hue) and its perforation. */
 const TONES: Record<PassTone, { field: string; text: string; deep: string; perf: string }> = {
@@ -111,6 +144,10 @@ export const SHADES: EmailBrand = {
   ],
   legal: ['Shades Media Group'],
   aiNote: 'Images or text may have been created or edited with AI.',
+  link: '#5052E4',
+  logoGrey: 'https://gradient.shades.md/email/shades-lockup-grey.png',
+  addressLines: ['Shades Media Group', 'Chișinău, Moldova'],
+  bar: ['#E40523', '#D212D6', '#FF9A00'],
 }
 
 export interface Block {
@@ -156,10 +193,42 @@ const MSO_FONT = 'Arial,sans-serif'
 
 /** The building blocks. Each returns HTML and its plain-text twin. */
 export function blocks(brand: EmailBrand = SHADES) {
-  const p = (value: string, size = 16, color = brand.ink, cls = 'g-e-text'): Block => ({
-    html: `<p class="${cls}" style="margin:0 0 16px;font-size:${size}px;line-height:1.55;color:${color};mso-line-height-rule:exactly">${escapeHtml(value)}</p>`,
-    text: value,
-  })
+  const linkColor = brand.link ?? brand.ink
+
+  /** Text with links in it: blue and underlined in HTML, "label (url)" in the plain text. */
+  const rich = (parts: Inline | Inline[]): Block => {
+    const list = Array.isArray(parts) ? parts : [parts]
+    const html: string[] = []
+    const text: string[] = []
+    for (const part of list) {
+      if (typeof part === 'string') {
+        html.push(escapeHtml(part))
+        text.push(part)
+        continue
+      }
+      const href = safeUrl(part.href)
+      html.push(
+        href
+          ? `<a class="g-e-link" href="${escapeHtml(href)}" style="color:${linkColor};text-decoration:underline">${escapeHtml(part.label)}</a>`
+          : escapeHtml(part.label),
+      )
+      text.push(href ? `${part.label} (${href})` : part.label)
+    }
+    return { html: html.join(''), text: text.join('') }
+  }
+
+  const p = (
+    value: string | Inline[],
+    size = 16,
+    color = brand.ink,
+    cls = 'g-e-text',
+  ): Block => {
+    const body = rich(value)
+    return {
+      html: `<p class="${cls}" style="margin:0 0 16px;font-size:${size}px;line-height:1.55;color:${color};mso-line-height-rule:exactly">${body.html}</p>`,
+      text: body.text,
+    }
+  }
 
   type Field = { label: string; value: string | null | undefined }
 
@@ -233,8 +302,210 @@ export function blocks(brand: EmailBrand = SHADES) {
     }
   }
 
+  /** A tinted field holding other blocks: no edge, a 24 px corner, table-based for every client. */
+  const tintTable = (tone: TintTone, inner: string, align: 'left' | 'center', padding: string) =>
+    `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="${TINTS[tone].field}" class="g-e-tint-${tone}" style="margin:0 0 24px;background:${TINTS[tone].field};border-radius:24px;border-collapse:separate"><tr><td align="${align}" style="padding:${padding};text-align:${align}">${inner}</td></tr></table>`
+
+  /** A small pill of text on a tint: "New", "Beta". Inline, so it can sit before a title. */
+  const tagHtml = (label: string, tone: TintTone, onTint = false) =>
+    `<span class="g-e-tag-${tone}${onTint ? ' g-e-tag-on' : ''}" style="display:inline-block;padding:3px 10px;border-radius:999px;background:${onTint ? '#FFFFFF' : TINTS[tone].field};color:${TINTS[tone].deep};font-size:12px;line-height:16px;font-weight:700;letter-spacing:0.01em;mso-line-height-rule:exactly">${escapeHtml(label)}</span>`
+
+  /**
+   * A pill button, filled or outlined, with an optional leading icon (a PNG at twice its 18 px
+   * size). Outlook on Windows draws the pill as VML, without the icon.
+   */
+  const pill = (
+    label: string,
+    url: string,
+    opts: {
+      variant?: 'filled' | 'outline'
+      icon?: { src: string; alt?: string }
+      /** The fill of a filled pill. Defaults to the brand accent. */
+      color?: string
+      align?: 'left' | 'center'
+    } = {},
+  ): Block => {
+    const href = safeUrl(url)
+    if (!href) return NONE
+    const filled = (opts.variant ?? 'filled') === 'filled'
+    const fill = opts.color ?? brand.accent
+    const fg = filled ? (opts.color ? '#FFFFFF' : brand.onAccent) : brand.ink
+    const border = filled ? fill : '#C8C8CD'
+    const icon = opts.icon && safeUrl(opts.icon.src)
+    const width = Math.max(140, Math.round(label.length * 8.6 + 52))
+    const safe = escapeHtml(href)
+    const img = icon
+      ? `<img src="${escapeHtml(icon)}" width="18" height="18" alt="${escapeHtml(opts.icon!.alt ?? '')}" style="display:inline-block;width:18px;height:18px;border:0;vertical-align:-4px;margin-right:8px">`
+      : ''
+    const align = opts.align ?? 'left'
+    return {
+      html:
+        `<table role="presentation" cellpadding="0" cellspacing="0" border="0" align="${align}" style="margin:${align === 'center' ? '0 auto 12px' : '0 0 12px'}"><tr><td>` +
+        `<!--[if mso]><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="${safe}" style="height:44px;v-text-anchor:middle;width:${width}px" arcsize="50%" strokecolor="${border}" ${filled ? `fillcolor="${fill}"` : 'filled="f"'}><w:anchorlock/><center style="color:${fg};font-family:${MSO_FONT};font-size:15px;font-weight:bold">${escapeHtml(label)}</center></v:roundrect><![endif]-->` +
+        `<!--[if !mso]><!--><a class="${filled ? 'g-e-btn' : 'g-e-pill-alt'}" href="${safe}" style="display:inline-block;background:${filled ? fill : 'transparent'};color:${fg};border:1px solid ${border};border-radius:999px;padding:11px 22px;font-family:${brand.font};font-size:15px;font-weight:600;line-height:20px;text-decoration:none;white-space:nowrap">${img}${escapeHtml(label)}</a><!--<![endif]-->` +
+        `</td></tr></table>`,
+      text: `${label}: ${href}`,
+    }
+  }
+
+  /** A large bold heading over a smaller grey line, for a section inside the email. */
+  const headline = (
+    title: string,
+    body?: string | Inline[],
+    opts: {
+      tag?: string
+      tagTone?: TintTone
+      size?: number
+      align?: 'left' | 'center'
+      /** The headline sits on a tint: the tag turns white to stay visible. */
+      onTint?: boolean
+    } = {},
+  ): Block => {
+    const size = opts.size ?? 24
+    const lead = body ? rich(body) : NONE
+    const align = opts.align ?? 'left'
+    return {
+      html:
+        (opts.tag
+          ? `<p style="margin:0 0 10px;text-align:${align}">${tagHtml(opts.tag, opts.tagTone ?? 'blue', opts.onTint)}</p>`
+          : '') +
+        `<h2 class="g-e-text" style="margin:0 0 8px;font-size:${size}px;line-height:1.2;font-weight:700;letter-spacing:-0.015em;color:${brand.ink};text-align:${align};mso-line-height-rule:exactly">${escapeHtml(title)}</h2>` +
+        (lead.html
+          ? `<p class="g-e-muted" style="margin:0 0 16px;font-size:16px;line-height:1.55;color:${brand.muted};text-align:${align}">${lead.html}</p>`
+          : ''),
+      text: [opts.tag ? `[${opts.tag}] ${title}` : title, lead.text].filter(Boolean).join('\n'),
+    }
+  }
+
   return {
-    paragraph: (value: string) => p(value),
+    paragraph: (value: string | Inline[]) => p(value),
+
+    /** Text with links in it, written as strings and { label, href } parts. */
+    rich: (parts: Inline[]) => p(parts),
+
+    headline,
+
+    pill,
+
+    /** A small tag on its own line: "New". */
+    tag: (label: string, tone: TintTone = 'blue'): Block => ({
+      html: `<p style="margin:0 0 10px">${tagHtml(label, tone)}</p>`,
+      text: `[${label}]`,
+    }),
+
+    /** A tinted section holding other blocks. Red first; never one inside another. */
+    tint(tone: TintTone, ...inner: Block[]): Block {
+      const body = inner.filter((b) => b.html)
+      return {
+        html: tintTable(tone, body.map((b) => b.html).join(''), 'left', '28px 28px 12px'),
+        text: body.map((b) => b.text).join('\n'),
+      }
+    },
+
+    /**
+     * A tinted card: an optional tag, a title, one or two sentences and one pill. Centred, it is
+     * the call to act that closes an email.
+     */
+    tintCard(opts: {
+      tone?: TintTone
+      title: string
+      body?: string | Inline[]
+      tag?: string
+      button?: { label: string; href: string; variant?: 'filled' | 'outline'; icon?: { src: string; alt?: string } }
+      align?: 'left' | 'center'
+    }): Block {
+      const tone = opts.tone ?? 'red'
+      const align = opts.align ?? 'left'
+      const head = headline(opts.title, opts.body, {
+        tag: opts.tag,
+        tagTone: tone,
+        size: 22,
+        align,
+        onTint: true,
+      })
+      const action = opts.button
+        ? pill(opts.button.label, opts.button.href, {
+            variant: opts.button.variant,
+            icon: opts.button.icon,
+            align,
+          })
+        : NONE
+      return {
+        html: tintTable(
+          tone,
+          head.html +(action.html ? `<div style="height:8px;line-height:8px;font-size:0">&nbsp;</div>${action.html}` : ''),
+          align,
+          align === 'center' ? '36px 28px 24px' : '28px 28px 16px',
+        ),
+        text: [head.text, action.text].filter(Boolean).join('\n'),
+      }
+    },
+
+    /**
+     * Stat tiles in a row: a label, the number set large, and an optional change with an arrow,
+     * green up or red down. Up to three share a row; four sit two by two. Write the sign into
+     * the change ("+12 %"), so it reads without the colour.
+     */
+    stats(items: Stat[], opts: { tone?: TintTone } = {}): Block {
+      if (!items.length) return NONE
+      const cols = items.length === 4 ? 2 : Math.min(items.length, 3)
+      // White tiles: on the page with a hairline, on a tint without one.
+      const edge = opts.tone ? '' : `border:1px solid ${brand.line};`
+      const tile = (s: Stat) => {
+        const up = s.delta?.direction === 'up'
+        const delta = s.delta
+          ? `<p style="margin:10px 0 0"><span class="${up ? 'g-e-up' : 'g-e-down'}" style="display:inline-block;padding:3px 8px;border-radius:999px;background:${up ? '#EFFAF5' : '#FFF0F2'};color:${up ? '#00804F' : '#C4041E'};font-size:12px;line-height:16px;font-weight:700;white-space:nowrap;mso-line-height-rule:exactly">${up ? '&#8593;' : '&#8595;'}&nbsp;${escapeHtml(s.delta.value)}</span></p>`
+          : ''
+        return `<td valign="top" width="${Math.floor(100 / cols)}%" class="g-e-stat" bgcolor="#FFFFFF" style="background:#FFFFFF;${edge}border-radius:16px;padding:16px 16px 18px"><p class="g-e-muted" style="margin:0 0 6px;font-size:13px;line-height:1.35;font-weight:500;color:${brand.muted}">${escapeHtml(s.label)}</p><p class="g-e-text g-e-stat-v" style="margin:0;font-size:28px;line-height:1.1;font-weight:700;letter-spacing:-0.02em;font-variant-numeric:tabular-nums;color:${brand.ink};mso-line-height-rule:exactly">${escapeHtml(s.value)}</p>${delta}</td>`
+      }
+      const gap = `<td width="8" style="width:8px;font-size:0;line-height:0">&nbsp;</td>`
+      const rows: string[] = []
+      for (let i = 0; i < items.length; i += cols) {
+        const row = items.slice(i, i + cols)
+        const cells = row.map(tile)
+        while (cells.length < cols) cells.push('<td></td>')
+        rows.push(
+          `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="table-layout:fixed;border-collapse:separate;margin:0 0 8px"><tr>${cells.join(gap)}</tr></table>`,
+        )
+      }
+      const grid = rows.join('')
+      const html = opts.tone
+        ? tintTable(opts.tone, grid, 'left', '16px 16px 8px')
+        : `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:0 0 16px"><tr><td>${grid}</td></tr></table>`
+      return {
+        html,
+        text: items
+          .map(
+            (s) =>
+              `${s.label}: ${s.value}${s.delta ? ` (${s.delta.direction} ${s.delta.value})` : ''}`,
+          )
+          .join('\n'),
+      }
+    },
+
+    /** The closing: a short bar in the brand's colours, then the team's name and any lines under it. */
+    signoff(lines: string | string[]): Block {
+      const list = Array.isArray(lines) ? lines : [lines]
+      const colors = brand.bar?.length ? brand.bar : [brand.accent]
+      const bar = `<table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin:0 0 14px"><tr>${colors
+        .map(
+          (c) =>
+            `<td width="20" height="4" bgcolor="${c}" style="width:20px;height:4px;background:${c};font-size:0;line-height:0">&nbsp;</td>`,
+        )
+        .join('')}</tr></table>`
+      return {
+        html:
+          `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:16px 0 8px"><tr><td>${bar}` +
+          list
+            .map(
+              (line, i) =>
+                `<p class="${i ? 'g-e-muted' : 'g-e-text'}" style="margin:0 0 2px;font-size:${i ? 14 : 16}px;line-height:1.45;font-weight:${i ? 400 : 700};color:${i ? brand.muted : brand.ink}">${escapeHtml(line)}</p>`,
+            )
+            .join('') +
+          `</td></tr></table>`,
+        text: list.join('\n'),
+      }
+    },
 
     pass,
 
@@ -267,7 +538,7 @@ export function blocks(brand: EmailBrand = SHADES) {
       })
     },
     /** Smaller, quieter text: a reason, a reassurance, a legal line. */
-    note: (value: string) => p(value, 13, brand.muted, 'g-e-muted'),
+    note: (value: string | Inline[]) => p(value, 13, brand.muted, 'g-e-muted'),
 
     heading: (value: string): Block => ({
       html: `<h2 class="g-e-text" style="margin:24px 0 8px;font-size:18px;line-height:1.3;font-weight:700;color:${brand.ink}">${escapeHtml(value)}</h2>`,
@@ -296,12 +567,12 @@ export function blocks(brand: EmailBrand = SHADES) {
       }
     },
 
-    /** A quiet link on its own line. */
+    /** A link on its own line, in the brand's link colour. */
     link(label: string, url: string): Block {
       const href = safeUrl(url)
       if (!href) return NONE
       return {
-        html: `<p style="margin:0 0 12px;font-size:14px;line-height:1.5"><a class="g-e-text" href="${escapeHtml(href)}" style="color:${brand.ink};text-decoration:underline">${escapeHtml(label)}</a></p>`,
+        html: `<p style="margin:0 0 12px;font-size:14px;line-height:1.5"><a class="g-e-link" href="${escapeHtml(href)}" style="color:${linkColor};text-decoration:underline">${escapeHtml(label)}</a></p>`,
         text: `${label}: ${href}`,
       }
     },
@@ -361,7 +632,7 @@ export function blocks(brand: EmailBrand = SHADES) {
           (src ? `<img src="${escapeHtml(src)}" width="${w}" height="${h}" alt="${escapeHtml(image.alt)}" style="display:block;width:100%;max-width:${w}px;height:auto;border:0;border-radius:16px;margin:0 0 16px">` : '') +
           `<h2 class="g-e-text" style="margin:0 0 6px;font-size:20px;line-height:1.25;font-weight:700;letter-spacing:-0.01em;color:${brand.ink}">${escapeHtml(title)}</h2>` +
           `<p class="g-e-muted" style="margin:0 0 10px;font-size:16px;line-height:1.55;color:${brand.muted}">${escapeHtml(body)}</p>` +
-          (href ? `<a class="g-e-text" href="${escapeHtml(href)}" style="font-size:15px;font-weight:600;color:${brand.ink};text-decoration:underline">${escapeHtml(link!.label)} →</a>` : '') +
+          (href ? `<a class="g-e-link" href="${escapeHtml(href)}" style="font-size:15px;font-weight:600;color:${linkColor};text-decoration:underline">${escapeHtml(link!.label)} →</a>` : '') +
           `</td></tr></table>`,
         text: [title, body, href ? `${link!.label}: ${href}` : ''].filter(Boolean).join('\n'),
       }
@@ -401,6 +672,12 @@ export interface RenderOptions {
   hero?: { meta?: string; button?: { label: string; href: string } }
   /** Ends the email on the ink footer: the curved edge, the brand's links and the address. */
   inkFooter?: boolean
+  /**
+   * Ends the email on the grey footer: the grey logo, a hairline, the address lines, and under
+   * them why the reader got this email, with the unsubscribe link in blue. `true` uses the
+   * defaults; `linkLabel` is "Unsubscribe" and the link is `unsubscribe` or the brand's own.
+   */
+  greyFooter?: boolean | { reason?: string; linkLabel?: string }
   /** This message's own unsubscribe link; replaces the brand's Unsubscribe link. */
   unsubscribe?: string
   /** schema.org JSON-LD for Gmail: see viewAction() and eventReservation(). */
@@ -490,6 +767,35 @@ ${brand.aiNote ? `<p style="margin:0 0 42px;font-size:10px;line-height:1.5;color
 </tr></table>
 </td></tr>`
 
+  // The grey footer: the grey logo, a vertical hairline, the address lines; then the notes and
+  // the reason line with the unsubscribe link.
+  const grey = opts.greyFooter
+    ? typeof opts.greyFooter === 'object'
+      ? opts.greyFooter
+      : {}
+    : undefined
+  const unsubscribeHref = safeUrl(
+    opts.unsubscribe ?? brand.footerLinks?.find((l) => l.label === 'Unsubscribe')?.href,
+  )
+  const greyLink = unsubscribeHref
+    ? `<a class="g-e-link" href="${escapeHtml(unsubscribeHref)}" style="color:${brand.link ?? brand.ink};text-decoration:underline">${escapeHtml(grey?.linkLabel ?? 'Unsubscribe')}</a>`
+    : ''
+  const greyLines = brand.addressLines ?? brand.legal ?? [brand.address]
+  const greyLogoW = Math.round(brand.logo.width * 0.8)
+  const greyLogoH = Math.round(brand.logo.height * 0.8)
+  const greyFooter = grey
+    ? `<tr><td class="g-e-col" style="padding:32px 24px 0;font-family:${brand.font}">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="${brand.panel}" class="g-e-foot" style="background:${brand.panel};border-radius:20px;border-collapse:separate"><tr><td style="padding:24px">
+<table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+<td valign="middle" style="padding:0 20px 0 0"><a href="${escapeHtml(home)}" style="text-decoration:none"><img src="${escapeHtml(brand.logoGrey ?? brand.logo.src)}" width="${greyLogoW}" height="${greyLogoH}" alt="${escapeHtml(brand.name)}" style="display:block;border:0;width:${greyLogoW}px;height:auto;font-family:${MSO_FONT};font-size:13px;font-weight:bold;color:#9A9AA2"></a></td>
+<td valign="middle" class="g-e-foot-rule" style="padding:0 0 0 20px;border-left:1px solid #C8C8CD">${greyLines.map((line) => `<p class="g-e-muted" style="margin:0;font-size:12px;line-height:1.5;color:${brand.muted}">${escapeHtml(line)}</p>`).join('')}</td>
+</tr></table>
+${footer.filter((x) => x.text !== brand.address).map((x) => x.html.replace(/font-size:\d+px/, 'font-size:12px').replace('margin:0 0 16px', 'margin:16px 0 0')).join('\n')}
+${grey.reason || greyLink ? `<p class="g-e-muted" style="margin:16px 0 0;font-size:12px;line-height:1.5;color:${brand.muted}">${grey.reason ? `${escapeHtml(grey.reason)} ` : ''}${greyLink}</p>` : ''}
+</td></tr></table>
+</td></tr>`
+    : ''
+
   const html = `<!doctype html>
 <html lang="${escapeHtml(opts.lang)}" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
 <head>
@@ -507,8 +813,15 @@ ${brand.fontCss ? `<!--[if !mso]><!--><link href="${escapeHtml(brand.fontCss)}" 
 :root{color-scheme:light dark;supported-color-schemes:light dark}
 a[x-apple-data-detectors]{color:inherit !important;text-decoration:none !important;font-size:inherit !important;font-family:inherit !important;font-weight:inherit !important;line-height:inherit !important}
 #MessageViewBody a{color:inherit;text-decoration:none}
-@media (max-width:600px){.g-e-col{padding-left:20px !important;padding-right:20px !important}}
+@media (max-width:600px){.g-e-col{padding-left:20px !important;padding-right:20px !important}.g-e-stat{padding:14px 12px 16px !important}.g-e-stat-v{font-size:22px !important}}
 @media (prefers-color-scheme:dark){
+.g-e-link{color:#9FA0FF !important}
+${(Object.keys(TINTS) as TintTone[]).map((t) => `.g-e-tint-${t}{background:${TINTS[t].dark} !important}.g-e-tag-${t}{background:${TINTS[t].dark} !important;color:${TINTS[t].light} !important}`).join('')}
+.g-e-tag-on{background:#141416 !important}
+.g-e-stat{background:#1E1E22 !important;border-color:#2A2A31 !important}
+.g-e-up{background:#112C24 !important;color:#3CCF97 !important}.g-e-down{background:#351218 !important;color:#FF5C70 !important}
+.g-e-pill-alt{color:#ECECEA !important;border-color:#3A3A40 !important}
+.g-e-foot{background:#1E1E22 !important}.g-e-foot-rule{border-color:#3A3A40 !important}
 .g-e-page{background:#141416 !important}
 .g-e-logo-dark{display:block !important;max-height:none !important}.g-e-logo:not(:only-child){display:none !important}
 .g-e-text,.g-e-on-ink{color:#ECECEA !important}
@@ -539,7 +852,7 @@ ${heroRow}
 ${hero ? '' : headingHtml}
 ${body.map((x) => x.html).join('\n')}
 </td></tr>
-${opts.inkFooter ? inkFooter : plainFooter}
+${grey ? greyFooter : opts.inkFooter ? inkFooter : plainFooter}
 </table>
 <!--[if mso]></td></tr></table><![endif]-->
 </td></tr>
@@ -560,6 +873,8 @@ ${opts.inkFooter ? inkFooter : plainFooter}
     brand.name,
     ...footer.map((x) => x.text),
     ...(site.text ? [site.text] : []),
+    ...(grey?.reason ? ['', grey.reason] : []),
+    ...(grey && unsubscribeHref ? [`${grey.linkLabel ?? 'Unsubscribe'}: ${unsubscribeHref}`] : []),
     '',
   ].join('\n')
 
@@ -709,7 +1024,7 @@ export function calendarLinks(
     html: `<p style="margin:0 0 16px;font-size:14px;line-height:1.6">${links
       .map(
         ([label, url]) =>
-          `<a class="g-e-text" href="${escapeHtml(url!)}" style="color:${brand.ink};text-decoration:underline;margin-right:16px">${escapeHtml(label!)}</a>`,
+          `<a class="g-e-link" href="${escapeHtml(url!)}" style="color:${brand.link ?? brand.ink};text-decoration:underline;margin-right:16px">${escapeHtml(label!)}</a>`,
       )
       .join('')}</p>`,
     text: links.map(([label, url]) => `${label}: ${url}`).join('\n'),
