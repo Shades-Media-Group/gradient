@@ -219,7 +219,7 @@ describe('report emails', () => {
   })
 
   it('tints sections in the 50 shades, with dark values for dark mail apps', () => {
-    expect(message.html).toContain('class="g-e-tint-green" style="margin:0 0 24px;background:#EFFAF5')
+    expect(message.html).toContain('class="g-e-tint-green" style="margin:0 0 24px;background:#C5F4E3')
     expect(message.html).toContain('class="g-e-tint-red"')
     expect(message.html).toContain('.g-e-tint-red{background:#2D1217 !important}')
   })

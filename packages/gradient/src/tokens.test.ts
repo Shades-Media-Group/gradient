@@ -98,6 +98,16 @@ describe('filled roles', () => {
       })
 })
 
+describe('tinted panels', () => {
+  // A tint that matches the page reads as no panel at all: keep a visible step.
+  for (const hue of ['red', 'violet', 'green', 'amber', 'blue'])
+    it(`panel-${hue} stands clear of the page (light)`, () => {
+      expect(contrast(role(`panel-${hue}`, 'light'), role('bg', 'light'))).toBeGreaterThanOrEqual(
+        1.1,
+      )
+    })
+})
+
 describe('brand colours', () => {
   it('keeps the logo red from shades.md', () => {
     expect(resolve('{color.red.500}')).toBe('#E40523')

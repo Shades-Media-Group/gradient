@@ -80,15 +80,20 @@ export type PassTone = 'ink' | 'red' | 'paper'
 export type TintTone = 'red' | 'violet' | 'green' | 'amber' | 'blue'
 
 /**
- * Each tint's light field (the 50 shade), its dark field (the 600 shade, 14 % into ink 900),
- * and the deep and light text for a tag on it. Hex, because mail apps don't read color-mix.
+ * Each tint's light field (the 100 shade; green between 100 and 200, so every field
+ * stands clear of the page), its dark field (the 600 shade, 14 % into ink 900), the deep
+ * and light text for a tag, and the soft field under a tag that sits on the page (the
+ * 50 shade, so the deep text keeps 4.5:1). Hex, because mail apps don't read color-mix.
  */
-export const TINTS: Record<TintTone, { field: string; dark: string; deep: string; light: string }> = {
-  red: { field: '#FFF0F2', dark: '#2D1217', deep: '#AB000D', light: '#FF8299' },
-  violet: { field: '#FDF3FD', dark: '#28132B', deep: '#770680', light: '#E96AE9' },
-  green: { field: '#EFFAF5', dark: '#122520', deep: '#00754D', light: '#5FD9AC' },
-  amber: { field: '#FAF6F0', dark: '#2E2213', deep: '#9C5D06', light: '#FFC24D' },
-  blue: { field: '#F5F6FF', dark: '#1C1D33', deep: '#3F40C9', light: '#9FA0FF' },
+export const TINTS: Record<
+  TintTone,
+  { field: string; soft: string; dark: string; deep: string; light: string }
+> = {
+  red: { field: '#FFDDE2', soft: '#FFF0F2', dark: '#2D1217', deep: '#AB000D', light: '#FF8299' },
+  violet: { field: '#FAE0FA', soft: '#FDF3FD', dark: '#28132B', deep: '#770680', light: '#E96AE9' },
+  green: { field: '#C5F4E3', soft: '#EFFAF5', dark: '#122520', deep: '#00754D', light: '#5FD9AC' },
+  amber: { field: '#FFE7BF', soft: '#FAF6F0', dark: '#2E2213', deep: '#9C5D06', light: '#FFC24D' },
+  blue: { field: '#E7E7FE', soft: '#F5F6FF', dark: '#1C1D33', deep: '#3F40C9', light: '#9FA0FF' },
 }
 
 /** A run of text, or a link inside it. */
@@ -308,7 +313,7 @@ export function blocks(brand: EmailBrand = SHADES) {
 
   /** A small pill of text on a tint: "New", "Beta". Inline, so it can sit before a title. */
   const tagHtml = (label: string, tone: TintTone, onTint = false) =>
-    `<span class="g-e-tag-${tone}${onTint ? ' g-e-tag-on' : ''}" style="display:inline-block;padding:3px 10px;border-radius:999px;background:${onTint ? '#FFFFFF' : TINTS[tone].field};color:${TINTS[tone].deep};font-size:12px;line-height:16px;font-weight:700;letter-spacing:0.01em;mso-line-height-rule:exactly">${escapeHtml(label)}</span>`
+    `<span class="g-e-tag-${tone}${onTint ? ' g-e-tag-on' : ''}" style="display:inline-block;padding:3px 10px;border-radius:999px;background:${onTint ? '#FFFFFF' : TINTS[tone].soft};color:${TINTS[tone].deep};font-size:12px;line-height:16px;font-weight:700;letter-spacing:0.01em;mso-line-height-rule:exactly">${escapeHtml(label)}</span>`
 
   /**
    * A pill button, filled or outlined, with an optional leading icon (a PNG at twice its 18 px
