@@ -45,6 +45,7 @@ The site follows the PageRecast site's grammar, which the owner approved:
 - full-bleed chapters that alternate paper, ink and one red
 - a two-column chapter head (heading left, lead right)
 - pill buttons, lists on hairlines, real content at full size
+- tinted panels (`.g-panel--tint`) for a section, a summary or an announcement, like a Google Analytics report: one tone per section; warnings and errors stay `.g-message` (the Owner, 2026-11-24)
 
 Never ship any of these:
 
@@ -52,7 +53,8 @@ Never ship any of these:
 - monospace for numbers, labels or metadata (use `.g-num`); monospace is for code only
 - eyebrow labels, tracked small caps above headings, decorative section numbers
 - icons on every row, an icon in a circle as the centre of an empty state
-- cards inside cards, lists in rounded boxes, tinted callout boxes, coloured side borders
+- cards inside cards, lists in rounded boxes, coloured side borders
+- a tinted box as decoration: a tint marks a whole section, a summary or an announcement, never a pulled-out aside, a warning or an error
 - gradient text, glass, glow, decorative blur
 - emoji or Unicode glyphs as icons: icons come from `packages/gradient/icons`
 - italic buttons or links

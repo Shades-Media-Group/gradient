@@ -98,7 +98,7 @@ Seven drawings for empty, first-time, done and offline states live under `shades
 
 ### Tinted panels and stat tiles
 
-`.g-panel g-panel--tint` sets a panel on the light shade of a brand colour (`--red` first, then `--violet`, `--green`, `--amber`, `--blue`), with `.g-panel--center` for a title, one sentence and one action. `.g-stats` holds two to four `.g-stat` tiles to a row: `.g-stat__label`, `.g-stat__value` and an optional `.g-stat__delta--up` or `--down`.
+`.g-panel g-panel--tint` sets a panel on the light shade of a brand colour (`--red` first, then `--violet`, `--green`, `--amber`, `--blue`), with `.g-panel--center` for a title, one sentence and one action. Use a tint for a section, a summary or an announcement, one tone per section; warnings and errors use `.g-message`. `.g-stats` holds two to four `.g-stat` tiles to a row: `.g-stat__label`, `.g-stat__value` and an optional `.g-stat__delta--up` or `--down`.
 
 ### Brand files
 

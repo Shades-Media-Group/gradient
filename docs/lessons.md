@@ -19,7 +19,7 @@ If a rule seems to be in the way, raise it in an issue. Don't quietly break it.
 
 ## Layout
 
-8. **No boxes inside boxes.** Lists sit on hairlines. Cards are rare and never nested. No tinted callout boxes, no coloured side borders.
+8. **No boxes inside boxes.** Lists sit on hairlines. Cards are rare and never nested. No coloured side borders, and no tinted box used as decoration. Tinted panels (`.g-panel--tint`, the light shade of a brand colour) are for a section, a summary or an announcement, like a Google Analytics report, one tone per section; warnings and errors stay `.g-message`. The Owner asked for them on 2026-11-24.
 9. **Icons only when they mean something.** No icon on every row or list item, and no icon in a circle as the centrepiece of an empty state.
 10. **Every space has a job.** Dense and purposeful, never empty for effect and never padded with filler. "All the space needs to be used for a purpose."
 11. **Don't repeat a device.** PageRecast's red "Nothing leaves your computer" block was reused until he objected. One red chapter per page; vary the rest.
