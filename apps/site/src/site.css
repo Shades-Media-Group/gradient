@@ -1638,6 +1638,11 @@ body {
   font-size: var(--g-size-small);
 }
 
+/* A package path or token name stays on one line instead of breaking at a slash or hyphen. */
+.doc-note code {
+  white-space: nowrap;
+}
+
 .rules {
   display: grid;
   margin: 0;
