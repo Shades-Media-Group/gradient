@@ -1023,6 +1023,22 @@
     "last_500ms_peak_db": -37.0,
     "last_50ms_peak_db": -58.2
   },
+  "shades-logo-w1b-ink-and-beats-short-3.6s": {
+    "seconds": 3.6,
+    "lufs": -16.0,
+    "true_peak_dbtp": -2.17,
+    "clipped_samples": 0,
+    "band_energy_pct": {
+      "sub <120": 25.1,
+      "low 120-400": 46.5,
+      "mid 400-2k": 27.4,
+      "presence 2k-6k": 1.0,
+      "air >6k": 0.0
+    },
+    "phone_speaker_lufs": -18.27,
+    "last_500ms_peak_db": -34.0,
+    "last_50ms_peak_db": -53.1
+  },
   "shades-logo-w2-three-strokes-4.4s": {
     "seconds": 4.4,
     "lufs": -16.0,

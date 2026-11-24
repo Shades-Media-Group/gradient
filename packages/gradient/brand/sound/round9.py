@@ -72,10 +72,9 @@ def heartbeats(x, at=0.0, gap=0.24, f=54):
 
 # ---- the ten takes ---------------------------------------------------------------------
 
-def ink_and_beats():
+def ink_and_beats(end=2.7, rel=1.0, dur=4.0, hall=1.6):
     """The two tens joined: the sheet slides, three heartbeats at the bars' strengths, the pen
     clicks, then the felt piano rolls the chord and the warm synth opens under it. B."""
-    end, rel, dur = 2.7, 1.0, 4.0
     x = stage(dur)
     place(x, paper_swish() * 0.35, 0.0, -0.3)
     heartbeats(x, 0.38)
@@ -84,7 +83,12 @@ def ink_and_beats():
     score = []
     pad(score, 1.15, dur, end, rel, notes=("F#3", "B3", "D#4", "F#4"), amp=0.14, bass="B1")
     x += csound(score, dur, room=DRY)
-    return finish(x, wet=0.2, hall=1.6, close=0.2, sat=0.4, mud=-1.5, air=1.0)
+    return finish(x, wet=0.2, hall=hall, close=0.2, sat=0.4, mud=-1.5, air=1.0)
+
+
+def ink_and_beats_short():
+    """Ink and beats with the same opening, note for note; the chord lets go a second sooner."""
+    return ink_and_beats(end=1.85, rel=0.6, dur=2.9)
 
 
 def three_strokes():
@@ -203,7 +207,8 @@ def riffle():
     return finish(x, wet=0.2, hall=1.7, close=0.2, sat=0.35, mud=-2.0, presence=1.5)
 
 
-IDEAS = {"w1-ink-and-beats": ink_and_beats, "w2-three-strokes": three_strokes, "w3-book-closed": book_closed,
+IDEAS = {"w1-ink-and-beats": ink_and_beats, "w1b-ink-and-beats-short": ink_and_beats_short,
+         "w2-three-strokes": three_strokes, "w3-book-closed": book_closed,
          "w4-wood-tune": wood_tune, "w5-page-turn": page_turn, "w6-piano-heartbeat": piano_heartbeat,
          "w7-lid-wakes": lid_wakes, "w8-parcel": parcel, "w9-knock-room": knock_room, "w10-riffle": riffle}
 
