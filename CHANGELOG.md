@@ -4,6 +4,12 @@ Every notable change to Gradient and the `shades-gradient` package. The format f
 
 ## [Unreleased]
 
+## [0.15.0] - 2026-11-25
+
+### Added
+
+- Eight people scenes and the colours they read (illustrations)
+
 ## [0.14.2] - 2026-11-25
 
 ### Fixed
