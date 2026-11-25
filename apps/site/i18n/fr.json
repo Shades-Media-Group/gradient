@@ -766,7 +766,8 @@
       "light": "Thème clair",
       "dark": "Thème sombre",
       "rule1": "Une phrase et une action. Jamais une icône dans un cercle.",
-      "rule2": "Choisissez le dessin selon le moment : <code>nothing</code> pour aucun résultat, <code>pick</code> avant un choix, <code>folder</code> pour une liste vide, <code>done</code> quand le travail est fini, <code>welcome</code> la première fois, <code>offline</code> sans connexion, <code>caller</code> pour les personnes et les appels."
+      "rule2": "Choisissez le dessin selon le moment : <code>nothing</code> pour aucun résultat, <code>pick</code> avant un choix, <code>folder</code> pour une liste vide, <code>done</code> quand le travail est fini, <code>welcome</code> la première fois, <code>offline</code> sans connexion, <code>caller</code> pour les personnes et les appels.",
+      "peopleText": "Huit scènes avec des personnages les accompagnent, en <code>people-*</code>. Une par page entière ; les petits panneaux gardent les objets."
     },
     "panels": {
       "title": "Panneaux teintés",

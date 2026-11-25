@@ -766,7 +766,8 @@
       "light": "Tema chiaro",
       "dark": "Tema scuro",
       "rule1": "Una frase e un’azione. Mai un’icona in un cerchio.",
-      "rule2": "Scegli il disegno in base al momento: <code>nothing</code> per nessun risultato, <code>pick</code> prima di una scelta, <code>folder</code> per una lista vuota, <code>done</code> a lavoro finito, <code>welcome</code> la prima volta, <code>offline</code> senza connessione, <code>caller</code> per persone e chiamate."
+      "rule2": "Scegli il disegno in base al momento: <code>nothing</code> per nessun risultato, <code>pick</code> prima di una scelta, <code>folder</code> per una lista vuota, <code>done</code> a lavoro finito, <code>welcome</code> la prima volta, <code>offline</code> senza connessione, <code>caller</code> per persone e chiamate.",
+      "peopleText": "Accanto ci sono otto scene con persone, come <code>people-*</code>. Usane una su una pagina intera; i pannelli piccoli tengono gli oggetti."
     },
     "panels": {
       "title": "Pannelli tinti",

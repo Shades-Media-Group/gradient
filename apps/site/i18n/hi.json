@@ -766,7 +766,8 @@
       "light": "हल्की थीम",
       "dark": "गहरी थीम",
       "rule1": "एक वाक्य और एक कार्रवाई। कभी भी गोले में आइकन नहीं।",
-      "rule2": "पल के हिसाब से चित्र चुनें: कोई नतीजा न हो तो <code>nothing</code>, चुनाव से पहले <code>pick</code>, खाली सूची के लिए <code>folder</code>, काम पूरा होने पर <code>done</code>, पहली बार <code>welcome</code>, कनेक्शन न हो तो <code>offline</code>, लोगों और कॉल के लिए <code>caller</code>।"
+      "rule2": "पल के हिसाब से चित्र चुनें: कोई नतीजा न हो तो <code>nothing</code>, चुनाव से पहले <code>pick</code>, खाली सूची के लिए <code>folder</code>, काम पूरा होने पर <code>done</code>, पहली बार <code>welcome</code>, कनेक्शन न हो तो <code>offline</code>, लोगों और कॉल के लिए <code>caller</code>।",
+      "peopleText": "इनके साथ <code>people-*</code> नाम से लोगों के आठ दृश्य हैं। पूरे पेज पर एक इस्तेमाल करें; छोटे पैनल वस्तुओं वाले चित्र रखते हैं।"
     },
     "panels": {
       "title": "रंगीन पैनल",

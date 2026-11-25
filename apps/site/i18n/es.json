@@ -766,7 +766,8 @@
       "light": "Tema claro",
       "dark": "Tema oscuro",
       "rule1": "Una frase y una acción. Nunca un icono en un círculo.",
-      "rule2": "Elige el dibujo según el momento: <code>nothing</code> sin resultados, <code>pick</code> antes de elegir, <code>folder</code> para una lista vacía, <code>done</code> cuando el trabajo está hecho, <code>welcome</code> la primera vez, <code>offline</code> sin conexión, <code>caller</code> para personas y llamadas."
+      "rule2": "Elige el dibujo según el momento: <code>nothing</code> sin resultados, <code>pick</code> antes de elegir, <code>folder</code> para una lista vacía, <code>done</code> cuando el trabajo está hecho, <code>welcome</code> la primera vez, <code>offline</code> sin conexión, <code>caller</code> para personas y llamadas.",
+      "peopleText": "A su lado hay ocho escenas con personas, como <code>people-*</code>. Usa una en una página completa; los paneles pequeños mantienen los objetos."
     },
     "panels": {
       "title": "Paneles tintados",

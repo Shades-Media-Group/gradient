@@ -766,7 +766,8 @@
       "light": "Tema luminoasă",
       "dark": "Tema întunecată",
       "rule1": "O propoziție și o acțiune. Niciodată o iconiță într-un cerc.",
-      "rule2": "Alege desenul după moment: <code>nothing</code> pentru niciun rezultat, <code>pick</code> înaintea unei alegeri, <code>folder</code> pentru o listă goală, <code>done</code> când munca e gata, <code>welcome</code> prima dată, <code>offline</code> fără conexiune, <code>caller</code> pentru oameni și apeluri."
+      "rule2": "Alege desenul după moment: <code>nothing</code> pentru niciun rezultat, <code>pick</code> înaintea unei alegeri, <code>folder</code> pentru o listă goală, <code>done</code> când munca e gata, <code>welcome</code> prima dată, <code>offline</code> fără conexiune, <code>caller</code> pentru oameni și apeluri.",
+      "peopleText": "Opt scene cu oameni stau alături, ca <code>people-*</code>. Folosește una pe o pagină întreagă; panourile mici păstrează obiectele."
     },
     "panels": {
       "title": "Panouri colorate",

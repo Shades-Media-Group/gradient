@@ -766,7 +766,8 @@
       "light": "Light theme",
       "dark": "Dark theme",
       "rule1": "One sentence and one action. Never an icon in a circle.",
-      "rule2": "Pick the drawing by the moment: <code>nothing</code> for no results, <code>pick</code> before a choice, <code>folder</code> for an empty list, <code>done</code> when the work is finished, <code>welcome</code> the first time, <code>offline</code> without a connection, <code>caller</code> for people and calls."
+      "rule2": "Pick the drawing by the moment: <code>nothing</code> for no results, <code>pick</code> before a choice, <code>folder</code> for an empty list, <code>done</code> when the work is finished, <code>welcome</code> the first time, <code>offline</code> without a connection, <code>caller</code> for people and calls.",
+      "peopleText": "Eight people scenes sit beside them as <code>people-*</code>. Use one on a full page; small panes keep the objects."
     },
     "panels": {
       "title": "Tinted panels",
