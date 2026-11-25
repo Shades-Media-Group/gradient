@@ -96,6 +96,8 @@ The source SVGs are under `shades-gradient/icons/*`.
 
 Seven drawings for empty, first-time, done and offline states live under `shades-gradient/illustrations/*.svg` (`nothing`, `pick`, `folder`, `done`, `welcome`, `offline`, `caller`). Inline one inside `.g-empty` with the class `g-empty__art`; its colours read the `--g-ill-*` tokens, so it follows light and dark.
 
+Eight people scenes sit beside them, for full-page states: `people-lookup`, `people-done`, `people-empty`, `people-welcome`, `people-search`, `people-pick`, `people-offline` and `people-team`. The figures come from Humaaans by Pablo Stanley (CC0), recoloured to the brand; small panes keep the object drawings.
+
 ### Tinted panels and stat tiles
 
 `.g-panel g-panel--tint` sets a panel on the light shade of a brand colour (`--red` first, then `--violet`, `--green`, `--amber`, `--blue`), with `.g-panel--center` for a title, one sentence and one action. Use a tint for a section, a summary or an announcement, one tone per section; warnings and errors use `.g-message`. `.g-stats` holds two to four `.g-stat` tiles to a row: `.g-stat__label`, `.g-stat__value` and an optional `.g-stat__delta--up` or `--down`.
