@@ -4,6 +4,12 @@ Every notable change to Gradient and the `shades-gradient` package. The format f
 
 ## [Unreleased]
 
+## [0.14.2] - 2026-11-25
+
+### Fixed
+
+- Focus rings the whole pill and keeps its grey fill (search)
+
 ## [0.14.1] - 2026-11-24
 
 ### Fixed
