@@ -33,7 +33,8 @@
     "release": "node scripts/release.mjs",
     "assets": "node scripts/assets.mjs",
     "audit:layout": "node scripts/audit-layout.mjs",
-    "renders": "node scripts/renders.mjs"
+    "renders": "node scripts/renders.mjs",
+    "people": "node scripts/people/scenes.mjs"
   },
   "packageManager": "yarn@1.22.22",
   "type": "module",
