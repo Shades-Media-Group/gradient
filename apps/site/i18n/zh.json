@@ -767,7 +767,7 @@
       "dark": "深色主题",
       "rule1": "一句话，一个操作。绝不用圆圈里的图标。",
       "rule2": "按场景选择插图：无结果用 <code>nothing</code>，做选择前用 <code>pick</code>，空列表用 <code>folder</code>，完成时用 <code>done</code>，首次使用用 <code>welcome</code>，离线时用 <code>offline</code>，人与通话用 <code>caller</code>。",
-      "peopleText": "旁边还有八幅人物场景，名为 <code>people-*</code>。整页使用一幅；小面板保留物件插图。"
+      "peopleText": "旁边还有十个物件和十八个人物场景（<code>people-*</code>）：有的只有人物，有的是人物在使用物件。混用这三类，让每个界面都有自己的插图。"
     },
     "panels": {
       "title": "色块面板",

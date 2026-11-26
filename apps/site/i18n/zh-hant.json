@@ -767,7 +767,7 @@
       "dark": "深色主題",
       "rule1": "一句話，一個操作。絕不用圓圈裡的圖示。",
       "rule2": "依情境選擇插圖：無結果用 <code>nothing</code>，做選擇前用 <code>pick</code>，空清單用 <code>folder</code>，完成時用 <code>done</code>，首次使用用 <code>welcome</code>，離線時用 <code>offline</code>，人與通話用 <code>caller</code>。",
-      "peopleText": "旁邊還有八幅人物場景，名為 <code>people-*</code>。整頁使用一幅；小面板保留物件插圖。"
+      "peopleText": "旁邊還有十個物件和十八個人物場景（<code>people-*</code>）：有的只有人物，有的是人物在使用物件。混用這三類，讓每個畫面都有自己的插圖。"
     },
     "panels": {
       "title": "色塊面板",

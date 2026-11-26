@@ -767,7 +767,7 @@
       "dark": "Koyu tema",
       "rule1": "Bir cümle ve bir işlem. Asla daire içinde bir simge değil.",
       "rule2": "Çizimi ana göre seçin: sonuç yoksa <code>nothing</code>, bir seçimden önce <code>pick</code>, boş bir liste için <code>folder</code>, iş bitince <code>done</code>, ilk seferde <code>welcome</code>, bağlantı yokken <code>offline</code>, kişiler ve aramalar için <code>caller</code>.",
-      "peopleText": "Yanlarında <code>people-*</code> olarak sekiz insan sahnesi var. Tam sayfada birini kullanın; küçük paneller nesneleri korur."
+      "peopleText": "Yanlarında on nesne daha ve on sekiz insan sahnesi var, <code>people-*</code>: kimisinde kişi tek başına, kimisinde bir nesneyle bir şey yapıyor. Her ekranın kendi çizimi olsun diye üç türü karıştırın."
     },
     "panels": {
       "title": "Renkli paneller",

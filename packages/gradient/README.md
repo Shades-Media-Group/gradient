@@ -96,7 +96,9 @@ The source SVGs are under `shades-gradient/icons/*`.
 
 Seven drawings for empty, first-time, done and offline states live under `shades-gradient/illustrations/*.svg` (`nothing`, `pick`, `folder`, `done`, `welcome`, `offline`, `caller`). Inline one inside `.g-empty` with the class `g-empty__art`; its colours read the `--g-ill-*` tokens, so it follows light and dark.
 
-Eight people scenes sit beside them, for full-page states: `people-lookup`, `people-done`, `people-empty`, `people-welcome`, `people-search`, `people-pick`, `people-offline` and `people-team`. The figures come from Humaaans by Pablo Stanley (CC0), recoloured to the brand; small panes keep the object drawings.
+Ten more objects follow the same style: `inbox`, `calendar`, `chat`, `locked`, `error`, `photo`, `bell`, `chart`, `trash` and `filter`.
+
+Eighteen people scenes sit beside them, for full-page states. Eight show a person alone: `people-lookup`, `people-done`, `people-empty`, `people-welcome`, `people-search`, `people-pick`, `people-offline` and `people-team`. Ten show a person acting with an object: `people-inbox`, `people-calendar`, `people-chat`, `people-locked`, `people-error`, `people-upload`, `people-call`, `people-checklist`, `people-chart` and `people-notify`. The figures come from Humaaans by Pablo Stanley (CC0), recoloured to the brand. Mix the three kinds across a product so every screen has its own drawing. `yarn objects` and `yarn people` rebuild them from `scripts/`.
 
 ### Tinted panels and stat tiles
 
