@@ -4,6 +4,13 @@ Every notable change to Gradient and the `shades-gradient` package. The format f
 
 ## [Unreleased]
 
+## [0.16.0] - 2026-11-26
+
+### Added
+
+- Ten people scenes acting with an object (illustrations)
+- Ten more object drawings in the approved style (illustrations)
+
 ## [0.15.0] - 2026-11-25
 
 ### Added
