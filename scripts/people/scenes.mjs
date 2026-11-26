@@ -1,7 +1,7 @@
 // The Shades people scenes. `yarn people` writes packages/gradient/illustrations/people-*.svg
 // and the site's copies. `yarn people <name>` writes one. Method: scripts/people/README.md.
 import fs from 'node:fs';
-import { figure, svg, star4, blob, v, finish } from './kit.mjs';
+import { figure, object, svg, star4, blob, v, finish } from './kit.mjs';
 
 const ls = v('line-soft', '#E4E4EA'), paper = v('paper', '#FFFFFF'), dark = v('dark', '#26262E');
 
@@ -93,7 +93,34 @@ const SCENES = {
     B.push(star4([240, 52], 13, v('amber', '#FFAF33')), star4([100, 96], 8, v('violet', '#D212D6')), star4([400, 82], 9, v('red', '#E40523')));
     return B;
   },
+  // People with an object: a Humaaans figure acting with one of Gradient's object drawings.
+  ...withObject({
+    inbox: ['standing-3', 'red-wash', { '#2B44FF': v('red', '#E40523'), '#1F28CF': v('red-deep', '#B5031B') }],
+    calendar: ['standing-1', 'violet-wash', {}],
+    chat: ['sitting-2', 'amber-soft', { '#2B44FF': v('green', '#00A96E'), '#1F28CF': v('green-deep', '#008556') }, 'chat'],
+    locked: ['standing-9', 'red-wash', { '#FF4133': v('amber', '#FFAF33'), '#DB2721': v('amber-deep', '#E0900F') }],
+    error: ['standing-15', 'violet-wash', {}],
+    upload: ['standing-10', 'violet-wash', { '#2B44FF': dark, '#1F28CF': v('dark-mid', '#55556A') }, 'folder'],
+    call: ['standing-24', 'red-wash', { '#2B44FF': v('red', '#E40523'), '#1F28CF': v('red-deep', '#B5031B') }, 'caller'],
+    checklist: ['standing-8', 'green-wash', { '#2B44FF': v('green', '#00A96E'), '#1F28CF': v('green-deep', '#008556') }, 'done'],
+    chart: ['standing-17', 'amber-soft', {}],
+    notify: ['sitting-7', 'violet-wash', {}, 'bell'],
+  }),
 };
+
+function withObject(list) {
+  const out = {};
+  const wash = { 'red-wash': '#FFF0F2', 'violet-wash': '#FBF0FB', 'green-wash': '#EAF8F2', 'amber-soft': '#FFE7BF' };
+  for (const [name, [pose, w, swap, obj = name]] of Object.entries(list)) {
+    const sitting = pose.startsWith('sitting');
+    out[name] = () => [
+      blob(v(w, wash[w])),
+      object(obj, { x: 168, y: sitting ? 70 : 56, s: 1.3 }),
+      figure(pose, { x: 34, y: sitting ? 96 : 44, s: sitting ? 0.6 : 0.58, swap }),
+    ];
+  }
+  return out;
+}
 
 const root = new URL('../../', import.meta.url);
 const outs = ['packages/gradient/illustrations/', 'apps/site/public/illustrations/'].map(p => new URL(p, root));
