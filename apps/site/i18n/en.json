@@ -767,7 +767,7 @@
       "dark": "Dark theme",
       "rule1": "One sentence and one action. Never an icon in a circle.",
       "rule2": "Pick the drawing by the moment: <code>nothing</code> for no results, <code>pick</code> before a choice, <code>folder</code> for an empty list, <code>done</code> when the work is finished, <code>welcome</code> the first time, <code>offline</code> without a connection, <code>caller</code> for people and calls.",
-      "peopleText": "Ten more objects and eighteen people scenes sit beside them as <code>people-*</code>, some with a person alone and some acting with an object. Mix the three kinds so every screen has its own drawing."
+      "peopleText": "Ten more objects, eighteen people scenes (<code>people-*</code>) and ten duos (<code>duo-*</code>) sit beside them: a person alone, a person holding a flat prop, or a person beside an object drawing. Mix them so every screen has its own drawing."
     },
     "panels": {
       "title": "Tinted panels",

@@ -767,7 +767,7 @@
       "dark": "Thème sombre",
       "rule1": "Une phrase et une action. Jamais une icône dans un cercle.",
       "rule2": "Choisissez le dessin selon le moment : <code>nothing</code> pour aucun résultat, <code>pick</code> avant un choix, <code>folder</code> pour une liste vide, <code>done</code> quand le travail est fini, <code>welcome</code> la première fois, <code>offline</code> sans connexion, <code>caller</code> pour les personnes et les appels.",
-      "peopleText": "À côté, dix objets de plus et dix-huit scènes avec des personnes, <code>people-*</code> : certaines avec une personne seule, d’autres avec une personne qui agit sur un objet. Mélangez les trois types pour que chaque écran ait son propre dessin."
+      "peopleText": "À côté, dix objets de plus, dix-huit scènes avec des personnes (<code>people-*</code>) et dix duos (<code>duo-*</code>) : une personne seule, une personne qui tient un objet dessiné à plat, ou une personne à côté du dessin d’un objet. Mélangez-les pour que chaque écran ait son propre dessin."
     },
     "panels": {
       "title": "Panneaux teintés",

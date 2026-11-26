@@ -767,7 +767,7 @@
       "dark": "Tema oscuro",
       "rule1": "Una frase y una acción. Nunca un icono en un círculo.",
       "rule2": "Elige el dibujo según el momento: <code>nothing</code> sin resultados, <code>pick</code> antes de elegir, <code>folder</code> para una lista vacía, <code>done</code> cuando el trabajo está hecho, <code>welcome</code> la primera vez, <code>offline</code> sin conexión, <code>caller</code> para personas y llamadas.",
-      "peopleText": "Junto a ellas hay diez objetos más y dieciocho escenas con personas, <code>people-*</code>: unas con una persona sola y otras con una persona que usa un objeto. Mezcla los tres tipos para que cada pantalla tenga su propio dibujo."
+      "peopleText": "Junto a ellas hay diez objetos más, dieciocho escenas con personas (<code>people-*</code>) y diez dúos (<code>duo-*</code>): una persona sola, una persona con un objeto plano en las manos o una persona junto al dibujo de un objeto. Mézclalos para que cada pantalla tenga su propio dibujo."
     },
     "panels": {
       "title": "Paneles tintados",

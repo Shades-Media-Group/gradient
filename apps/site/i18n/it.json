@@ -767,7 +767,7 @@
       "dark": "Tema scuro",
       "rule1": "Una frase e un’azione. Mai un’icona in un cerchio.",
       "rule2": "Scegli il disegno in base al momento: <code>nothing</code> per nessun risultato, <code>pick</code> prima di una scelta, <code>folder</code> per una lista vuota, <code>done</code> a lavoro finito, <code>welcome</code> la prima volta, <code>offline</code> senza connessione, <code>caller</code> per persone e chiamate.",
-      "peopleText": "Accanto ci sono altri dieci oggetti e diciotto scene con persone, <code>people-*</code>: alcune con una persona sola, altre con una persona che usa un oggetto. Mescola i tre tipi perché ogni schermata abbia il suo disegno."
+      "peopleText": "Accanto ci sono altri dieci oggetti, diciotto scene con persone (<code>people-*</code>) e dieci duo (<code>duo-*</code>): una persona sola, una persona che tiene un oggetto disegnato piatto o una persona accanto al disegno di un oggetto. Mescolali perché ogni schermata abbia il suo disegno."
     },
     "panels": {
       "title": "Pannelli tinti",

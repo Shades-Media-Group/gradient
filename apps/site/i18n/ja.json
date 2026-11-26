@@ -767,7 +767,7 @@
       "dark": "ダークテーマ",
       "rule1": "一文と一つの操作。円の中のアイコンは使いません。",
       "rule2": "場面に合わせて選びます: 結果なしは <code>nothing</code>、選ぶ前は <code>pick</code>、空のリストは <code>folder</code>、作業完了は <code>done</code>、初回は <code>welcome</code>、接続なしは <code>offline</code>、人と通話は <code>caller</code>。",
-      "peopleText": "そのほかに、オブジェクト10点と人物シーン18点（<code>people-*</code>）があります。人物だけのシーンと、人物がオブジェクトを扱うシーンです。3種類を組み合わせ、画面ごとに別の絵を使います。"
+      "peopleText": "そのほかに、オブジェクト10点、人物シーン18点（<code>people-*</code>）、デュオ10点（<code>duo-*</code>）があります。人物だけ、平面の小物を手に持つ人物、オブジェクトの絵の横に立つ人物です。組み合わせて、画面ごとに別の絵を使います。"
     },
     "panels": {
       "title": "色付きパネル",

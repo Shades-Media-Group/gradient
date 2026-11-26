@@ -767,7 +767,7 @@
       "dark": "Tema întunecată",
       "rule1": "O propoziție și o acțiune. Niciodată o iconiță într-un cerc.",
       "rule2": "Alege desenul după moment: <code>nothing</code> pentru niciun rezultat, <code>pick</code> înaintea unei alegeri, <code>folder</code> pentru o listă goală, <code>done</code> când munca e gata, <code>welcome</code> prima dată, <code>offline</code> fără conexiune, <code>caller</code> pentru oameni și apeluri.",
-      "peopleText": "Alte zece obiecte și optsprezece scene cu oameni stau alături, ca <code>people-*</code>: unele cu o persoană singură, altele cu o persoană care folosește un obiect. Amestecă cele trei tipuri, ca fiecare ecran să aibă desenul lui."
+      "peopleText": "Alături stau alte zece obiecte, optsprezece scene cu oameni (<code>people-*</code>) și zece perechi (<code>duo-*</code>): o persoană singură, o persoană care ține un obiect desenat plat sau o persoană lângă un desen de obiect. Amestecă-le, ca fiecare ecran să aibă desenul lui."
     },
     "panels": {
       "title": "Panouri colorate",
