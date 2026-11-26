@@ -67,3 +67,14 @@ From the shared sign-in, which he called AI-made next to Google's.
 34. **Inspired by the giants, not copied.** "Maybe not copy so much Google, only inspire from it, but make better." The Shades sign-in keeps the account-page proportions and adds its own: the credit and mark in the card, the spectrum as the busy bar, a remembered email, a Caps Lock warning.
 35. **Emails do what the giants' emails do.** "Make my emails have the Google copy feature, or add to calendar, or ticket." Every email that carries a one-time code, a meeting or a booking ships the matching extras: the copyable code, the calendar invitation, the reservation pass. See [Email](guides/email.md).
 36. **Films are directed, not prompted.** "This look very AI slop and unfinished, first add them to Figma, then you will animate." A reel or story starts from a studied reference, its keyframes are approved in Figma on the real interface, and only then does it move, through the scored critique loop. The pipeline is in the Shades rulebook, [Films, reels and stories](https://gradient.shades.md/rulebook/motion-and-detail/#films-reels-and-stories).
+
+## Illustration
+
+From the spot illustrations for the CRM's empty states, 2026-11-24 to 2026-11-25.
+
+37. **Empty states get a drawing, not grey text.** "Make this product more alive and more user-friendly." Every empty, first-time, done and offline state gets one spot, one sentence and one action.
+38. **Shades colours, red first.** "Add more of the brand colors I have, like the red, the purple, the green… focus more on red." The palette is the brand's own, not a generic illustration palette.
+39. **People come from an illustrator, never from code.** Six rounds of hand-coded people were rejected: stick figures, long necks, mitten hands, then "distorphic and not human and imposible". Recoloured Humaaans figures (CC0) passed: "nice, like them". See [scripts/people](../scripts/people/README.md).
+40. **Learn from the giants' drawings, never copy them.** Copying Google's people 1:1 was declined. We take the idea (a person acting out the moment, one prop, sparkles, a soft wash) and draw our own.
+41. **New drawings go beside the approved ones.** "Not modify this only icons one, create new ones beside." The seven object drawings stay as they are; people scenes are a second set for full pages.
+

@@ -19,6 +19,7 @@ radius, logo and voice come from the tokens and the brand, never from a skill's 
 | Motion | `animation-vocabulary` to name it, `transitions-dev` and `gsap-core` / `gsap-scrolltrigger` to build it, `improve-animations` to review it, `fixing-motion-performance` when it stutters |
 | Prototypes and design-system extraction | `prototype`, `extract-design-system` |
 | Brand boards and identity explorations | `brandkit`, `canvas-design`, `algorithmic-art` |
+| Spot illustrations (empty, first-time, done, offline) | the seven object drawings and eight `people-*` scenes in `illustrations/`. A new people scene is built from Humaaans figures with `yarn people` ([scripts/people](../../scripts/people/README.md)), never drawn by hand. `illustration-flat` and its sibling styles only for studying construction |
 | Objects in 3D (merchandise, devices, signage) | `img2threejs`, then `threejs-materials`, `threejs-lighting`, `threejs-postprocessing`, shot in Gradient's studio (`scripts/renders/`) |
 | Video and motion graphics | `remotion-best-practices` (the router), then `remotion-create`, `-captions`, `-markup`, `-multimedia`, `-maps`, `-interactivity`, `-saas`, `-studio`, `-render`, `-docs`, `-upgrade` |
 | Store listings | `app-store-screenshots` |
