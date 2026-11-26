@@ -10,6 +10,6 @@
     "deploy": "vite build && node ../../scripts/audit-site.mjs && wrangler deploy"
   },
   "devDependencies": {
-    "marked": "15.0.12"
+    "marked": "18.1.2"
   }
 }
