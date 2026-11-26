@@ -81,6 +81,6 @@
   },
   "devDependencies": {
     "esbuild": "^0.28.2",
-    "simple-icons": "^16.35.0"
+    "simple-icons": "^16.36.0"
   }
 }
