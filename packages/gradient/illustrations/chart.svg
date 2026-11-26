@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 180" fill="none" aria-hidden="true">
+  <ellipse cx="120" cy="156" rx="74" ry="8" fill="var(--g-ill-amber-soft,#FFE7BF)"/>
+  <path d="M70 40h104a10 10 0 0 1 10 10v84a10 10 0 0 1 -10 10h-104a10 10 0 0 1 -10 -10v-84a10 10 0 0 1 10 -10z" fill="var(--g-ill-violet-soft,#FAE0FA)" transform="translate(-4 4)"/><path d="M70 40h104a10 10 0 0 1 10 10v84a10 10 0 0 1 -10 10h-104a10 10 0 0 1 -10 -10v-84a10 10 0 0 1 10 -10z" fill="var(--g-ill-paper,#FFFFFF)" stroke="var(--g-ill-line,#1C1C20)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="80" y="100" width="16" height="28" rx="3" fill="var(--g-ill-line-soft,#E4E4EA)"/><rect x="104" y="84" width="16" height="44" rx="3" fill="var(--g-ill-violet,#D212D6)"/><rect x="128" y="94" width="16" height="34" rx="3" fill="var(--g-ill-amber,#FFAF33)"/><rect x="152" y="68" width="16" height="60" rx="3" fill="var(--g-ill-red,#E40523)"/>
+  <path d="M74 128h100" stroke="var(--g-ill-line,#1C1C20)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M76 58h30" stroke="var(--g-ill-line,#1C1C20)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M84 86l26-14 22 8 30-20" stroke="var(--g-ill-green,#00A96E)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="162" cy="60" r="4" fill="var(--g-ill-green,#00A96E)"/>
+  <path d="M204 35C204.756 41.48 206.52 43.244 213 44C206.52 44.756 204.756 46.52 204 53C203.244 46.52 201.48 44.756 195 44C201.48 43.244 203.244 41.48 204 35z" fill="var(--g-ill-amber,#FFAF33)" stroke="var(--g-ill-line,#1C1C20)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M40 113C40.588 118.04 41.96 119.412 47 120C41.96 120.588 40.588 121.96 40 127C39.412 121.96 38.04 120.588 33 120C38.04 119.412 39.412 118.04 40 113z" fill="var(--g-ill-violet,#D212D6)" stroke="var(--g-ill-line,#1C1C20)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="40" cy="50" r="5" fill="var(--g-ill-red,#E40523)"/>
+</svg>

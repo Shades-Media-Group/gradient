@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 180" fill="none" aria-hidden="true">
+  <ellipse cx="120" cy="154" rx="72" ry="8" fill="var(--g-ill-violet-soft,#FAE0FA)"/>
+  <path d="M110 38h76a14 14 0 0 1 14 14v30a14 14 0 0 1-14 14h-6l2 14-16-14h-56a14 14 0 0 1-14-14V52a14 14 0 0 1 14-14z" fill="var(--g-ill-violet,#D212D6)" transform="translate(-4 4)"/><path d="M110 38h76a14 14 0 0 1 14 14v30a14 14 0 0 1-14 14h-6l2 14-16-14h-56a14 14 0 0 1-14-14V52a14 14 0 0 1 14-14z" fill="none" stroke="var(--g-ill-line,#1C1C20)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path transform="translate(-4 4)" d="M114 58h56M114 72h36" stroke="var(--g-ill-paper,#FFFFFF)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M62 84h74a14 14 0 0 1 14 14v28a14 14 0 0 1-14 14H80l-16 14 2-14h-4a14 14 0 0 1-14-14V98a14 14 0 0 1 14-14z" fill="var(--g-ill-paper,#FFFFFF)" stroke="var(--g-ill-line,#1C1C20)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="78" cy="112" r="5.5" fill="var(--g-ill-red,#E40523)"/>
+  <circle cx="98" cy="112" r="5.5" fill="var(--g-ill-amber,#FFAF33)"/>
+  <circle cx="118" cy="112" r="5.5" fill="var(--g-ill-green,#00A96E)"/>
+  <path d="M42 51C42.756 57.48 44.52 59.244 51 60C44.52 60.756 42.756 62.52 42 69C41.244 62.52 39.48 60.756 33 60C39.48 59.244 41.244 57.48 42 51z" fill="var(--g-ill-amber,#FFAF33)" stroke="var(--g-ill-line,#1C1C20)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M206 121C206.588 126.04 207.96 127.412 213 128C207.96 128.588 206.588 129.96 206 135C205.412 129.96 204.04 128.588 199 128C204.04 127.412 205.412 126.04 206 121z" fill="var(--g-ill-red,#E40523)" stroke="var(--g-ill-line,#1C1C20)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="214" cy="34" r="4" fill="var(--g-ill-green,#00A96E)"/>
+</svg>

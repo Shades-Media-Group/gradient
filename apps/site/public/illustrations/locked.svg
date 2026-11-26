@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 180" fill="none" aria-hidden="true">
+  <circle cx="120" cy="96" r="58" fill="var(--g-ill-amber-soft,#FFE7BF)"/>
+  <path d="M96 86V66a24 24 0 0 1 48 0v20" stroke="var(--g-ill-line,#1C1C20)" stroke-width="13" stroke-linecap="round"/>
+  <path d="M96 86V66a24 24 0 0 1 48 0v20" stroke="var(--g-ill-line-soft,#E4E4EA)" stroke-width="10" stroke-linecap="round"/>
+  <path d="M88 82h64a12 12 0 0 1 12 12v46a12 12 0 0 1 -12 12h-64a12 12 0 0 1 -12 -12v-46a12 12 0 0 1 12 -12z" fill="var(--g-ill-red,#E40523)" transform="translate(-4 4)"/><path d="M88 82h64a12 12 0 0 1 12 12v46a12 12 0 0 1 -12 12h-64a12 12 0 0 1 -12 -12v-46a12 12 0 0 1 12 -12z" fill="none" stroke="var(--g-ill-line,#1C1C20)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="116" cy="110" r="8" fill="var(--g-ill-paper,#FFFFFF)"/><rect x="112" y="112" width="8" height="18" rx="4" fill="var(--g-ill-paper,#FFFFFF)"/>
+  <path d="M186 45C186.756 51.48 188.52 53.244 195 54C188.52 54.756 186.756 56.52 186 63C185.244 56.52 183.48 54.756 177 54C183.48 53.244 185.244 51.48 186 45z" fill="var(--g-ill-violet,#D212D6)" stroke="var(--g-ill-line,#1C1C20)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M52 125C52.588 130.04 53.96 131.412 59 132C53.96 132.588 52.588 133.96 52 139C51.412 133.96 50.04 132.588 45 132C50.04 131.412 51.412 130.04 52 125z" fill="var(--g-ill-amber,#FFAF33)" stroke="var(--g-ill-line,#1C1C20)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="52" cy="58" r="6" fill="var(--g-ill-green,#00A96E)"/>
+  <path d="M160 62l8-6M164 72l10 0" stroke="var(--g-ill-line,#1C1C20)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

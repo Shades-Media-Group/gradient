@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 180" fill="none" aria-hidden="true">
+  <circle cx="120" cy="94" r="58" fill="var(--g-ill-violet-soft,#FAE0FA)"/>
+  <path d="M74 48h92a10 10 0 0 1 10 10v84a10 10 0 0 1 -10 10h-92a10 10 0 0 1 -10 -10v-84a10 10 0 0 1 10 -10z" fill="var(--g-ill-violet-soft,#FAE0FA)" transform="translate(-4 4)"/><path d="M74 48h92a10 10 0 0 1 10 10v84a10 10 0 0 1 -10 10h-92a10 10 0 0 1 -10 -10v-84a10 10 0 0 1 10 -10z" fill="var(--g-ill-paper,#FFFFFF)" stroke="var(--g-ill-line,#1C1C20)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M64 58a10 10 0 0 1 10-10h92a10 10 0 0 1 10 10v16H64z" fill="var(--g-ill-red,#E40523)" stroke="var(--g-ill-line,#1C1C20)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="88" y="38" width="7" height="18" rx="3.5" fill="var(--g-ill-dark,#26262E)"/><rect x="145" y="38" width="7" height="18" rx="3.5" fill="var(--g-ill-dark,#26262E)"/>
+  <circle cx="84" cy="96" r="3.2" fill="var(--g-ill-line-soft,#E4E4EA)"/>
+  <circle cx="102" cy="96" r="3.2" fill="var(--g-ill-line-soft,#E4E4EA)"/>
+  <circle cx="120" cy="96" r="3.2" fill="var(--g-ill-line-soft,#E4E4EA)"/>
+  <circle cx="138" cy="96" r="3.2" fill="var(--g-ill-line-soft,#E4E4EA)"/>
+  <circle cx="156" cy="96" r="3.2" fill="var(--g-ill-line-soft,#E4E4EA)"/>
+  <circle cx="84" cy="114" r="3.2" fill="var(--g-ill-line-soft,#E4E4EA)"/>
+  <circle cx="102" cy="114" r="3.2" fill="var(--g-ill-line-soft,#E4E4EA)"/>
+  <circle cx="120" cy="114" r="3.2" fill="var(--g-ill-line-soft,#E4E4EA)"/>
+  <circle cx="138" cy="114" r="3.2" fill="var(--g-ill-red,#E40523)"/>
+  <circle cx="156" cy="114" r="3.2" fill="var(--g-ill-line-soft,#E4E4EA)"/>
+  <circle cx="84" cy="132" r="3.2" fill="var(--g-ill-line-soft,#E4E4EA)"/>
+  <circle cx="102" cy="132" r="3.2" fill="var(--g-ill-line-soft,#E4E4EA)"/>
+  <circle cx="120" cy="132" r="3.2" fill="var(--g-ill-line-soft,#E4E4EA)"/>
+  <circle cx="138" cy="132" r="3.2" fill="var(--g-ill-line-soft,#E4E4EA)"/>
+  <circle cx="156" cy="132" r="3.2" fill="var(--g-ill-line-soft,#E4E4EA)"/>
+  <circle cx="138" cy="114" r="10" stroke="var(--g-ill-red,#E40523)" stroke-width="2.4"/>
+  <path d="M194 43C194.756 49.48 196.52 51.244 203 52C196.52 52.756 194.756 54.52 194 61C193.244 54.52 191.48 52.756 185 52C191.48 51.244 193.244 49.48 194 43z" fill="var(--g-ill-amber,#FFAF33)" stroke="var(--g-ill-line,#1C1C20)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M44 113C44.588 118.04 45.96 119.412 51 120C45.96 120.588 44.588 121.96 44 127C43.412 121.96 42.04 120.588 37 120C42.04 119.412 43.412 118.04 44 113z" fill="var(--g-ill-red,#E40523)" stroke="var(--g-ill-line,#1C1C20)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="48" cy="60" r="5" fill="var(--g-ill-green,#00A96E)"/>
+</svg>

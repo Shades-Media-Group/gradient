@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 180" fill="none" aria-hidden="true">
+  <circle cx="120" cy="100" r="58" fill="var(--g-ill-amber-soft,#FFE7BF)"/>
+  <circle cx="96" cy="34" r="6" fill="var(--g-ill-red,#E40523)" stroke="var(--g-ill-line,#1C1C20)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="122" cy="26" r="6" fill="var(--g-ill-amber,#FFAF33)" stroke="var(--g-ill-line,#1C1C20)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="146" cy="38" r="6" fill="var(--g-ill-green,#00A96E)" stroke="var(--g-ill-line,#1C1C20)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M58 56h124l-46 50v34l-32 14v-48z" fill="var(--g-ill-violet,#D212D6)" transform="translate(-4 4)"/><path d="M58 56h124l-46 50v34l-32 14v-48z" fill="none" stroke="var(--g-ill-line,#1C1C20)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M128 156h24" stroke="var(--g-ill-line,#1C1C20)" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="2 5"/>
+  <path d="M196 65C196.756 71.48 198.52 73.244 205 74C198.52 74.756 196.756 76.52 196 83C195.244 76.52 193.48 74.756 187 74C193.48 73.244 195.244 71.48 196 65z" fill="var(--g-ill-red,#E40523)" stroke="var(--g-ill-line,#1C1C20)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M42 113C42.588 118.04 43.96 119.412 49 120C43.96 120.588 42.588 121.96 42 127C41.412 121.96 40.04 120.588 35 120C40.04 119.412 41.412 118.04 42 113z" fill="var(--g-ill-amber,#FFAF33)" stroke="var(--g-ill-line,#1C1C20)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="194" cy="140" r="5" fill="var(--g-ill-green,#00A96E)"/>
+</svg>

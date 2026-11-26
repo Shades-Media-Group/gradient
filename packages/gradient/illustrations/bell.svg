@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 180" fill="none" aria-hidden="true">
+  <circle cx="120" cy="96" r="58" fill="var(--g-ill-violet-soft,#FAE0FA)"/>
+  <circle cx="120" cy="40" r="6" fill="var(--g-ill-paper,#FFFFFF)" stroke="var(--g-ill-line,#1C1C20)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M120 46c-24 0-38 18-38 42v20l-12 16h100l-12-16V88c0-24-14-42-38-42z" fill="var(--g-ill-amber,#FFAF33)" transform="translate(-4 4)"/><path d="M120 46c-24 0-38 18-38 42v20l-12 16h100l-12-16V88c0-24-14-42-38-42z" fill="none" stroke="var(--g-ill-line,#1C1C20)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M108 128a12 12 0 0 0 24 0z" fill="var(--g-ill-dark,#26262E)"/>
+  <path transform="translate(-4 4)" d="M100 70c2-6 6-10 12-12" stroke="var(--g-ill-paper,#FFFFFF)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M164 46h10l-10 10h10M180 30h7l-7 7h7" stroke="var(--g-ill-violet,#D212D6)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M52 52C52.672 57.76 54.24 59.328 60 60C54.24 60.672 52.672 62.24 52 68C51.328 62.24 49.76 60.672 44 60C49.76 59.328 51.328 57.76 52 52z" fill="var(--g-ill-red,#E40523)" stroke="var(--g-ill-line,#1C1C20)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M190 121C190.588 126.04 191.96 127.412 197 128C191.96 128.588 190.588 129.96 190 135C189.412 129.96 188.04 128.588 183 128C188.04 127.412 189.412 126.04 190 121z" fill="var(--g-ill-amber,#FFAF33)" stroke="var(--g-ill-line,#1C1C20)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="50" cy="130" r="5" fill="var(--g-ill-green,#00A96E)"/>
+</svg>

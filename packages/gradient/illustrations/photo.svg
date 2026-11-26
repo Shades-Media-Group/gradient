@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 180" fill="none" aria-hidden="true">
+  <circle cx="120" cy="92" r="58" fill="var(--g-ill-green-soft,#D8F7EB)"/>
+  <g transform="rotate(-9 116 92)"><path d="M70 48h92a8 8 0 0 1 8 8v68a8 8 0 0 1 -8 8h-92a8 8 0 0 1 -8 -8v-68a8 8 0 0 1 8 -8z" fill="var(--g-ill-violet-soft,#FAE0FA)" stroke="var(--g-ill-line,#1C1C20)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></g>
+  <path d="M78 44h92a8 8 0 0 1 8 8v68a8 8 0 0 1 -8 8h-92a8 8 0 0 1 -8 -8v-68a8 8 0 0 1 8 -8z" fill="var(--g-ill-paper,#FFFFFF)" stroke="var(--g-ill-line,#1C1C20)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M84 54h80a4 4 0 0 1 4 4v48a4 4 0 0 1 -4 4h-80a4 4 0 0 1 -4 -4v-48a4 4 0 0 1 4 -4z" fill="var(--g-ill-green-soft,#D8F7EB)"/>
+  <path d="M80 110l26-28 18 18 12-10 32 20z" fill="var(--g-ill-green,#00A96E)"/>
+  <circle cx="148" cy="70" r="7" fill="var(--g-ill-amber,#FFAF33)"/>
+  <g transform="translate(178 128)"><circle r="15" fill="var(--g-ill-red,#E40523)" stroke="var(--g-ill-line,#1C1C20)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M0-6v12M-6 0h12" stroke="var(--g-ill-paper,#FFFFFF)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></g>
+  <path d="M48 43C48.756 49.48 50.52 51.244 57 52C50.52 52.756 48.756 54.52 48 61C47.244 54.52 45.48 52.756 39 52C45.48 51.244 47.244 49.48 48 43z" fill="var(--g-ill-amber,#FFAF33)" stroke="var(--g-ill-line,#1C1C20)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M206 60C206.504 64.32 207.68 65.496 212 66C207.68 66.504 206.504 67.68 206 72C205.496 67.68 204.32 66.504 200 66C204.32 65.496 205.496 64.32 206 60z" fill="var(--g-ill-violet,#D212D6)" stroke="var(--g-ill-line,#1C1C20)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="50" cy="132" r="4" fill="var(--g-ill-red,#E40523)"/>
+</svg>
