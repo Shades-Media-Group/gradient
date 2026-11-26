@@ -31,6 +31,14 @@ export function figure(name, { x, y, s, flip = false, swap = {} }) {
   return `<g transform="${tf}">${g}</g>`;
 }
 
+/** One of Gradient's outlined object drawings (240 x 180), placed whole into a duo-* scene beside a person.
+ * For a people-* scene, draw the prop flat in the people style and put it in the hands instead. */
+export function object(name, { x, y, s }) {
+  const t = fs.readFileSync(new URL(`../../packages/gradient/illustrations/${name}.svg`, import.meta.url), 'utf8');
+  const inner = t.slice(t.indexOf('>', t.indexOf('<svg')) + 1, t.lastIndexOf('</svg>'));
+  return `<g transform="translate(${x} ${y}) scale(${s})">${inner}</g>`;
+}
+
 /** The 4-point sparkle every Shades spot uses. */
 export const star4 = (c, r, col) => {
   const [x, y] = c, k = r * 0.14;

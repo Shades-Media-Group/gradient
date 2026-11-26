@@ -22,3 +22,10 @@ The eight `people-*` illustrations in `packages/gradient/illustrations/` are bui
 - **People drawn in code.** He rejected six rounds of these between 2026-11-24 and 2026-11-25: outlined stick figures, colour-block figures with long necks and mitten hands, figures built from a kit, and people hand-coded from Google's rules ("distorphic and not human and imposible").
 - **A stock library used as it comes.** "better, but not the new style, too detailed".
 - **Copying Google's people 1:1.** That would be their work.
+
+## Two ways to show a person with an object
+
+- **`people-*`**: draw the prop flat, in the people style, sized to the person, and put it in or under the hands (`people-lookup`, `people-pick`, `people-inbox`). Measure the pose's hands first.
+- **`duo-*`**: place a whole outlined object drawing beside the figure with `object()` from `kit.mjs`. The Owner approved these on 2026-11-26.
+
+Both ship. Mix them with objects alone and people alone, so every screen has its own drawing.

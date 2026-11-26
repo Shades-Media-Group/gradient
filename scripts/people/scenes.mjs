@@ -1,7 +1,7 @@
-// The Shades people scenes. `yarn people` writes packages/gradient/illustrations/people-*.svg
+// The Shades people scenes. `yarn people` writes packages/gradient/illustrations/people-*.svg and duo-*.svg
 // and the site's copies. `yarn people <name>` writes one. Method: scripts/people/README.md.
 import fs from 'node:fs';
-import { figure, svg, star4, blob, v, finish } from './kit.mjs';
+import { figure, object, svg, star4, blob, v, finish } from './kit.mjs';
 
 const ls = v('line-soft', '#E4E4EA'), paper = v('paper', '#FFFFFF'), dark = v('dark', '#26262E');
 
@@ -216,12 +216,37 @@ function paperCard(x, y, a, dot) {
   return `<g transform="translate(${x} ${y}) rotate(${a})"><rect x="-34" y="-22" width="68" height="44" rx="8" fill="${paper}" stroke="${ls}" stroke-width="2"/><circle cx="-16" cy="-3" r="8" fill="${dot}"/><rect x="-2" y="-10" width="26" height="5" rx="2.5" fill="${dark}"/><rect x="-2" y="0" width="18" height="4" rx="2" fill="${ls}"/><rect x="-22" y="11" width="44" height="4" rx="2" fill="${ls}"/></g>`;
 }
 
+// Duo: a person beside one of the outlined object drawings, two styles side by side.
+// The Owner approved these in SocialMonitor on 2026-11-26, next to the held-prop people-* scenes.
+const DUO = {
+  inbox: ['standing-3', 'red-wash', { '#2B44FF': v('red', '#E40523'), '#1F28CF': v('red-deep', '#B5031B') }],
+  calendar: ['standing-1', 'violet-wash', {}],
+  chat: ['sitting-2', 'amber-soft', { '#2B44FF': v('green', '#00A96E'), '#1F28CF': v('green-deep', '#008556') }, 'chat'],
+  locked: ['standing-9', 'red-wash', { '#FF4133': v('amber', '#FFAF33'), '#DB2721': v('amber-deep', '#E0900F') }],
+  error: ['standing-15', 'violet-wash', {}],
+  upload: ['standing-10', 'violet-wash', { '#2B44FF': dark, '#1F28CF': v('dark-mid', '#55556A') }, 'folder'],
+  call: ['standing-24', 'red-wash', { '#2B44FF': v('red', '#E40523'), '#1F28CF': v('red-deep', '#B5031B') }, 'caller'],
+  checklist: ['standing-8', 'green-wash', { '#2B44FF': v('green', '#00A96E'), '#1F28CF': v('green-deep', '#008556') }, 'done'],
+  chart: ['standing-17', 'amber-soft', {}],
+  notify: ['sitting-7', 'violet-wash', {}, 'bell'],
+};
+const WASH = { 'red-wash': '#FFF0F2', 'violet-wash': '#FBF0FB', 'green-wash': '#EAF8F2', 'amber-soft': '#FFE7BF' };
+for (const [name, [pose, w, swap, obj = name]] of Object.entries(DUO)) {
+  const sitting = pose.startsWith('sitting');
+  SCENES[`duo-${name}`] = () => [
+    blob(v(w, WASH[w])),
+    object(obj, { x: 168, y: sitting ? 70 : 56, s: 1.3 }),
+    figure(pose, { x: 34, y: sitting ? 96 : 44, s: sitting ? 0.6 : 0.58, swap }),
+  ];
+}
+
 const root = new URL('../../', import.meta.url);
 const outs = ['packages/gradient/illustrations/', 'apps/site/public/illustrations/'].map(p => new URL(p, root));
 const only = process.argv.slice(2);
 for (const [name, draw] of Object.entries(SCENES)) {
   if (only.length && !only.includes(name)) continue;
   const s = finish(name, svg(draw()));
-  for (const o of outs) fs.writeFileSync(new URL(`people-${name}.svg`, o), s);
-  console.log(`people-${name}.svg ${s.length} B`);
+  const file = name.startsWith('duo-') ? `${name}.svg` : `people-${name}.svg`;
+  for (const o of outs) fs.writeFileSync(new URL(file, o), s);
+  console.log(`${file} ${s.length} B`);
 }
