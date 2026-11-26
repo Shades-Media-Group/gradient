@@ -4,6 +4,12 @@ Every notable change to Gradient and the `shades-gradient` package. The format f
 
 ## [Unreleased]
 
+## [0.17.0] - 2026-11-26
+
+### Fixed
+
+- People scenes hold flat props, not pasted object drawings (illustrations)
+
 ## [0.16.0] - 2026-11-26
 
 ### Added
